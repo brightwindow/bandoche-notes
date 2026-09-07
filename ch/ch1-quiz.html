@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>반도체공학 Ch.1 결정 구조 — 4지선다 40문항</title>
+<style>
+:root{
+  --bg:#f7f7f5; --card:#fff; --ink:#1c1c1a; --dim:#5f5f58; --line:#e3e2dd;
+  --accent:#1b4d8f; --accent-soft:#e8f0fa;
+  --ok:#1d6b45; --ok-soft:#e6f3ec;
+  --no:#a8320f; --no-soft:#fdeee9;
+  --easy:#1d6b45; --easy-soft:#e6f3ec;
+  --mid:#8a6100; --mid-soft:#fdf4e0;
+  --hard:#a8320f; --hard-soft:#fdeee9;
+  --code:#f0efeb;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#16171a; --card:#1e2024; --ink:#e8e8e4; --dim:#a3a39c; --line:#31343a;
+  --accent:#7fb0ea; --accent-soft:#1c2a3d;
+  --ok:#7fd0a4; --ok-soft:#172f23;
+  --no:#f0866a; --no-soft:#3a2019;
+  --easy:#7fd0a4; --easy-soft:#172f23;
+  --mid:#e0b458; --mid-soft:#332a15;
+  --hard:#f0866a; --hard-soft:#3a2019;
+  --code:#25282d;
+}}
+:root[data-theme="dark"]{
+  --bg:#16171a; --card:#1e2024; --ink:#e8e8e4; --dim:#a3a39c; --line:#31343a;
+  --accent:#7fb0ea; --accent-soft:#1c2a3d;
+  --ok:#7fd0a4; --ok-soft:#172f23; --no:#f0866a; --no-soft:#3a2019;
+  --easy:#7fd0a4; --easy-soft:#172f23; --mid:#e0b458; --mid-soft:#332a15;
+  --hard:#f0866a; --hard-soft:#3a2019; --code:#25282d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.7;letter-spacing:-.005em}
+.wrap{max-width:820px;margin:0 auto;padding:40px 18px 120px}
+header{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:20px}
+.kicker{font-size:.76rem;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:6px}
+h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:.9rem;margin:0}
+
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);
+  border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:18px}
+.bar .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-size:.86rem;padding:6px 13px;border-radius:20px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+.score{margin-left:auto;font-size:.9rem;font-weight:700;white-space:nowrap}
+.score b{color:var(--accent)}
+.prog{height:5px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;margin:14px 0}
+.q.done{border-color:var(--line)}
+.qh{display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap}
+.num{font-size:.76rem;font-weight:700;color:#fff;background:var(--accent);
+  border-radius:5px;padding:2px 8px;flex:none}
+.lv{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px}
+.lv.h{background:var(--easy-soft);color:var(--easy)}
+.lv.m{background:var(--mid-soft);color:var(--mid)}
+.lv.s{background:var(--hard-soft);color:var(--hard)}
+.tag{font-size:.72rem;color:var(--dim);margin-left:auto}
+.stem{margin:0 0 12px;font-weight:500}
+.stem code,.ex code{background:var(--code);border-radius:4px;padding:1px 5px;
+  font-family:"Cambria Math",Consolas,monospace;font-size:.93em}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:9px 13px;border:1px solid var(--line);
+  border-radius:9px;cursor:pointer;background:transparent;text-align:left;font-size:.95rem;width:100%}
+.opt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.opt .k{font-weight:700;color:var(--dim);flex:none}
+.opt.ok{background:var(--ok-soft);border-color:var(--ok)}
+.opt.ok .k{color:var(--ok)}
+.opt.no{background:var(--no-soft);border-color:var(--no)}
+.opt.no .k{color:var(--no)}
+.opt:disabled{cursor:default}
+.ex{margin-top:12px;padding:12px 15px;border-left:4px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:.92rem;display:none}
+.ex.show{display:block}
+.ex .t{font-weight:700;margin-bottom:3px}
+.ex.ok{border-left-color:var(--ok);background:var(--ok-soft)}
+.ex.ok .t{color:var(--ok)}
+.ex.no{border-left-color:var(--no);background:var(--no-soft)}
+.ex.no .t{color:var(--no)}
+.eq{font-family:"Cambria Math",Georgia,serif;background:var(--code);
+  border-radius:6px;padding:7px 12px;margin:8px 0;text-align:center;overflow-x:auto}
+.done-msg{background:var(--card);border:2px solid var(--accent);border-radius:12px;
+  padding:22px;margin:24px 0;text-align:center;display:none}
+.done-msg.show{display:block}
+.done-msg h3{margin:0 0 8px;font-size:1.3rem}
+.done-msg .big{font-size:2.4rem;font-weight:700;color:var(--accent);line-height:1.2}
+.hint{color:var(--dim);font-size:.85rem;margin-top:6px}
+@media(max-width:520px){.wrap{padding:26px 13px 100px}h1{font-size:1.35rem}.tag{display:none}}
+@media print{.bar{position:static}.ex{display:block!important}button{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">SEMICONDUCTOR ENGINEERING · CHAPTER 1</div>
+  <h1>결정 구조 — 4지선다 40문항</h1>
+  <p class="sub">난이도 하 15 · 중 15 · 상 10 · 강의자료 Ch.1 전 범위 · 보기를 누르면 바로 채점된다</p>
+</header>
+
+<div class="bar">
+  <div class="row">
+    <button class="on" data-f="all">전체 40</button>
+    <button data-f="h">하 15</button>
+    <button data-f="m">중 15</button>
+    <button data-f="s">상 10</button>
+    <button id="reset">다시 풀기</button>
+    <span class="score"><b id="sc">0</b> / <span id="tot">0</span> 정답</span>
+  </div>
+  <div class="prog"><i id="pg"></i></div>
+</div>
+
+<div id="list"></div>
+
+<div class="done-msg" id="done">
+  <h3>다 풀었다</h3>
+  <div class="big"><span id="fsc">0</span> / <span id="ftot">40</span></div>
+  <p class="hint" id="fmsg"></p>
+</div>
+
+</div>
+<script>
+const Q=[
+// ===== 하 (1~15) =====
+{lv:"h",tag:"1.1 반도체 정의",q:"반도체를 도체·부도체와 구분하는 가장 본질적인 특징은?",
+ o:["전도도가 하나의 값이 아니라 범위를 가지며 도핑으로 조절할 수 있다","전도도가 항상 도체와 부도체의 중간값으로 고정되어 있다","상온에서 전류가 전혀 흐르지 않는다","금속처럼 자유전자만으로 전류가 흐른다"],
+ a:0,e:"슬라이드 4쪽의 핵심 문장이다. 도체와 부도체는 <b>전도도 값</b>을 갖지만 반도체는 <b>전도도 범위</b>를 갖는다. 도핑으로 그 안에서 값을 고를 수 있어서 스위치를 만들 수 있고, 그게 반도체를 쓰는 이유다."},
+{lv:"h",tag:"1.1 재료 분류",q:"다음 중 <b>단원소(elemental) 반도체</b>가 아닌 것은?",
+ o:["Si (실리콘)","GaAs (갈륨비소)","C (다이아몬드)","Ge (저마늄)"],
+ a:1,e:"단원소 반도체는 <b>한 종류의 원자</b>로만 이루어진 4족 물질이다. Si, Ge, 다이아몬드(C)가 여기 해당한다. GaAs는 Ga(3족)와 As(5족) 둘로 이루어진 <b>화합물(compound) 반도체</b>, 그중에서도 원소가 둘이라 <b>binary(이원계)</b>다."},
+{lv:"h",tag:"1.1 화합물 반도체",q:"GaAs가 LED·레이저 같은 <b>광소자</b>에 주로 쓰이는 이유는?",
+ o:["Si보다 값이 싸기 때문","녹는점이 높아 열에 강하기 때문","direct bandgap 물질이라 빛을 잘 내기 때문","산화막이 잘 자라기 때문"],
+ a:2,e:"GaAs는 전도띠 최저점과 가전자띠 최고점이 <b>같은 k</b>에 있는 direct bandgap 물질이라, 전자가 떨어질 때 모멘텀 변화 없이 곧바로 광자를 낸다. Si는 indirect라 빛 대신 열로 빠져서 LED에 부적합하다. 값은 오히려 Si가 훨씬 싸다."},
+{lv:"h",tag:"1.2 고체 분류",q:"결정성(crystallinity)에 따른 고체 세 가지를 <b>규칙적으로 배열된 영역이 작은 것부터</b> 나열하면?",
+ o:["단결정 → 다결정 → 비정질","비정질 → 단결정 → 다결정","다결정 → 비정질 → 단결정","비정질 → 다결정 → 단결정"],
+ a:3,e:"<b>비정질(amorphous)</b>은 원자 몇 개 수준에서만 규칙이 있고, <b>다결정(polycrystalline)</b>은 규칙적인 덩어리(grain)들이 모여 있으며, <b>단결정(single crystal)</b>은 전체가 하나의 규칙으로 이어진다. 규칙이 이어지는 범위가 곧 순서다."},
+{lv:"h",tag:"1.3 격자",q:"<b>lattice(격자)</b>의 정의로 옳은 것은?",
+ o:["결정 안에서 원자가 주기적으로 배열된 것","결정을 이루는 원자 하나","결정을 자른 가상의 평면","결정의 표면에 생긴 결함"],
+ a:0,e:"lattice는 <b>주기성(periodicity)</b> 그 자체다. 같은 원자 배열이 규칙적으로 반복되는 것이고, 그 반복의 기준점들을 lattice point라 부른다. 가상의 평면은 crystal plane, 결함은 defect다."},
+{lv:"h",tag:"1.3 단위격자",q:"<b>unit cell</b>과 <b>primitive cell</b>의 관계로 옳은 것은?",
+ o:["둘은 완전히 같은 말이다","primitive cell은 가장 작은 unit cell이다","unit cell이 primitive cell보다 항상 작다","primitive cell은 항상 정육면체다"],
+ a:1,e:"unit cell은 <b>반복하면 결정 전체를 만들 수 있는 최소 단위</b>인데, 그런 단위를 잡는 방법은 여러 가지다. 그중 <b>부피가 가장 작은 것</b>이 primitive cell이다. 계산 편의상 primitive가 아닌 unit cell(예: FCC의 정육면체)을 더 자주 쓴다."},
+{lv:"h",tag:"1.3 구조별 원자수",q:"<b>단순입방(SC)</b> 구조의 단위격자당 원자 수는?",
+ o:["4개","2개","1개","8개"],
+ a:2,e:"꼭짓점 8개에 원자가 하나씩 있는데, 각 꼭짓점은 이웃한 큐브 <b>8개가 나눠 갖는다.</b> 따라서 <code>8 × 1/8 = 1</code>개다. 아파트 여덟 집이 기둥 하나를 나눠 갖는 것과 같다."},
+{lv:"h",tag:"1.3 구조별 원자수",q:"<b>체심입방(BCC)</b> 구조의 단위격자당 원자 수는?",
+ o:["1개","8개","4개","2개"],
+ a:3,e:"꼭짓점 몫 <code>8 × 1/8 = 1</code>에, 정중앙(body center)에 온전히 들어 있는 원자 1개를 더해 <b>2개</b>다. body center 원자는 다른 큐브와 나눠 갖지 않으므로 통째로 1로 센다."},
+{lv:"h",tag:"1.3 구조별 원자수",q:"<b>면심입방(FCC)</b> 구조의 단위격자당 원자 수는?",
+ o:["4개","2개","1개","8개"],
+ a:0,e:"꼭짓점 <code>8 × 1/8 = 1</code>에, 여섯 면의 중심 원자가 각각 이웃 큐브 <b>2개와 반씩 나눠</b> 갖는 <code>6 × 1/2 = 3</code>을 더해 <b>4개</b>다."},
+{lv:"h",tag:"1.4 다이아몬드 구조",q:"실리콘이 갖는 <b>다이아몬드 구조</b>의 단위격자당 원자 수는?",
+ o:["2개","8개","4개","12개"],
+ a:1,e:"다이아몬드 구조는 <b>FCC 격자(4개)에 내부 원자 4개가 더 박힌</b> 형태라 총 <b>8개</b>다. 내부 4개는 다른 큐브와 나눠 갖지 않으니 그대로 4로 센다. 판서의 <code>FCC + 4 = 8</code>이 이 뜻이다."},
+{lv:"h",tag:"1.4 결합 구조",q:"다이아몬드 구조에서 원자 하나는 몇 개의 최근접 원자와 결합하는가?",
+ o:["2개","3개","4개 (정사면체 배치)","6개"],
+ a:2,e:"각 원자가 <b>4개의 최근접 원자</b>와 결합하며, 그 배치가 정사면체(tetrahedral) 모양이다. 실리콘의 최외각 전자가 4개인 것과 정확히 맞물린다. 네 방향으로 하나씩 공유결합을 만든다."},
+{lv:"h",tag:"1.5 결합",q:"다음 결합 중 <b>가장 약한</b> 것은?",
+ o:["이온 결합 (ionic)","공유 결합 (covalent)","금속 결합 (metallic)","반데르발스 결합 (van der Waals)"],
+ a:3,e:"<b>반데르발스 결합</b>이 가장 약하다. 전자를 주고받거나 공유하는 것이 아니라 <b>작은 전기 쌍극자끼리의 약한 끌림</b>이기 때문이다. 그래서 이 결합으로 이루어진 물질은 녹는점이 낮고 무르다."},
+{lv:"h",tag:"1.5 결합",q:"NaCl(소금)의 결합 방식과 그 원리로 옳은 것은?",
+ o:["이온 결합 — 쿨롱 힘에 의한 인력","공유 결합 — 최외각 전자를 서로 공유","금속 결합 — 자유전자의 바다","반데르발스 결합 — 쌍극자 상호작용"],
+ a:0,e:"Na가 전자를 내주고 Cl이 받아 각각 Na⁺, Cl⁻ 이온이 되고, <b>+와 −가 쿨롱 힘으로 끌어당겨</b> 결합한다. 이 강한 정전기력 때문에 이온 결정은 녹는점이 높고 단단하지만 잘 부서진다."},
+{lv:"h",tag:"1.7 성장",q:"<b>초크랄스키(Czochralski) 법</b>에 대한 설명으로 옳은 것은?",
+ o:["기체 상태의 원료를 기판 위에 쌓는다","녹인 실리콘에 씨앗 결정(seed)을 담갔다가 회전시키며 천천히 끌어올린다","고체 실리콘을 잘라서 다듬는다","전기장을 걸어 불순물을 밀어낸다"],
+ a:1,e:"이름 그대로 <b>녹은 상태(melt)에서 결정을 키우는</b> 방법이다. 씨앗 결정을 액체 실리콘 표면에 닿게 한 뒤 <b>회전시키면서 천천히 끌어올리면</b> 고체-액체 경계면에서 응고가 일어나며 커다란 단결정 잉곳이 자란다."},
+{lv:"h",tag:"1.6 불순물",q:"<b>도핑(doping)</b>을 불순물(impurity)과 구분하는 기준은?",
+ o:["원자의 크기가 다르다","결정 표면에만 존재하는가","전기적 성질을 바꾸려고 의도적으로 넣었는가","금속 원소인가 아닌가"],
+ a:2,e:"슬라이드 21쪽 구분 그대로다. 외부 원자가 들어온 것은 같지만, <b>의도하지 않은 것(non-intentional)이 impurity</b>이고 <b>의도적으로 넣은 것(intentional)이 doping</b>이다. 목적이 있느냐가 유일한 차이다."},
+// ===== 중 (16~30) =====
+{lv:"m",tag:"1.1 Why silicon",q:"판서에 적힌 <b>실리콘을 주력으로 쓰는 이유</b> 세 가지에 해당하지 <b>않는</b> 것은?",
+ o:["지구상에 풍부해 재료를 구하기 쉽다","밴드갭이 적절한 크기다","SiO₂라는 좋은 절연막을 만들 수 있다","direct bandgap이라 발광 효율이 높다"],
+ a:3,e:"판서의 세 가지는 ① 재료가 풍부함 ② 밴드갭이 적절함 ③ <b>SiO₂가 훌륭한 절연체</b>라는 점이다. 마지막이 특히 결정적인데, 산화막을 손쉽게 키울 수 있어야 MOS 소자를 만들 수 있기 때문이다. Si는 <b>indirect</b> bandgap이라 오히려 발광에는 불리하다."},
+{lv:"m",tag:"1.3 밀러지수",q:"어떤 면이 세 축을 각각 <code>3a, 2b, 1c</code>에서 자른다. 이 면의 밀러지수는?",
+ o:["(2 3 6)","(1 2 3)","(3 2 1)","(6 3 2)"],
+ a:0,e:"밀러지수는 <b>절편의 역수</b>를 정수로 만든 것이다.<div class='eq'>(3, 2, 1) → 역수 (1/3, 1/2, 1) → ×6 → <b>(2, 3, 6)</b></div>최소공배수 6을 곱해 분모를 없앤다. 역수를 취하는 이유는 축과 평행한 면(절편 ∞)을 0으로 깔끔하게 표현하기 위해서다."},
+{lv:"m",tag:"1.3 밀러지수",q:"세 축의 절편이 각각 <code>1a, 1a, ∞</code>인 면의 밀러지수는?",
+ o:["(1 1 1)","(1 1 0)","(1 1 ∞)","(0 0 1)"],
+ a:1,e:"역수를 취하면 <code>(1, 1, 1/∞) = (1, 1, 0)</code>이다. <b>∞의 역수는 0</b>이라는 것이 핵심이다. 어떤 축과 <b>평행한 면</b>은 그 축을 만나지 않으므로 절편이 ∞이고, 밀러지수에서는 0이 된다."},
+{lv:"m",tag:"1.3 등가면",q:"<b>{100} 면족(family of planes)</b>에 속하는 면의 개수는?",
+ o:["3개","8개","6개","12개"],
+ a:2,e:"(100), (010), (001)과 각각의 음수 면 (1̄00), (01̄0), (001̄) 해서 <b>6개</b>다. 정육면체의 여섯 면이라고 생각하면 정확하다. 결정 대칭성 때문에 이 여섯은 물리적으로 구분되지 않아 중괄호 { }로 묶어 부른다."},
+{lv:"m",tag:"1.3 등가면",q:"<b>{110} 면족</b>에 속하는 면의 개수는?",
+ o:["6개","8개","24개","12개"],
+ a:3,e:"두 자리가 1이고 한 자리가 0인 조합 3가지 × 부호 조합 4가지 = <b>12개</b>다. 정육면체의 <b>모서리를 지나는 대각면</b>이 12개라고 보면 된다. 참고로 {111}은 <b>8개</b>(꼭짓점을 자르는 면)다. 판서에 셋 다 세어져 있다."},
+{lv:"m",tag:"1.3 원자밀도",q:"BCC 구조이고 격자상수가 <code>a = 5 Å = 5×10⁻⁸ cm</code>인 결정의 <b>부피당 원자 밀도</b>는? (교재 예제 1.1)",
+ o:["1.6 × 10²² cm⁻³","8.0 × 10²¹ cm⁻³","1.6 × 10²³ cm⁻³","3.2 × 10²² cm⁻³"],
+ a:0,e:"BCC는 단위격자당 <b>2개</b>이므로<div class='eq'>N = 2 / a³ = 2 / (5×10⁻⁸)³ = 2 / (1.25×10⁻²²) = <b>1.6 × 10²² cm⁻³</b></div><b>주의</b> — 강의자료 12쪽 판서에는 <code>1.6 × 10²³</code>으로 적혀 있으나 <b>지수 오기</b>다. 직접 계산하면 10²²이 맞다."},
+{lv:"m",tag:"1.4 원자밀도",q:"실리콘은 다이아몬드 구조이고 격자상수는 <code>a = 5.43 Å</code>이다. 부피당 실리콘 원자 수는?",
+ o:["1.25 × 10²² cm⁻³","5.00 × 10²² cm⁻³","2.50 × 10²² cm⁻³","2.00 × 10²³ cm⁻³"],
+ a:1,e:"다이아몬드 구조는 단위격자당 <b>8개</b>다.<div class='eq'>N = 8 / (5.43×10⁻⁸)³ = 8 / (1.60×10⁻²²) ≈ <b>5.0 × 10²² cm⁻³</b></div>이 값(4.99×10²²)은 이 과목에서 계속 나오므로 외워 두는 편이 낫다."},
+{lv:"m",tag:"1.4 응용 계산",q:"실리콘의 원자 밀도가 <code>5.0 × 10²² cm⁻³</code>일 때, <b>최외각 전자(valence electron)의 밀도</b>는?",
+ o:["1.25 × 10²² cm⁻³","5.0 × 10²² cm⁻³","2.0 × 10²³ cm⁻³","2.0 × 10²² cm⁻³"],
+ a:2,e:"실리콘은 4족이라 원자 하나가 최외각 전자를 <b>4개</b> 갖는다.<div class='eq'>4 × 5.0×10²² = <b>2.0 × 10²³ cm⁻³</b></div>2024 중간 1-a)가 정확히 이 문제였다. 원자 밀도를 구한 뒤 <b>4를 곱하는 것</b>을 잊지 않는 것이 전부다."},
+{lv:"m",tag:"1.2 전기적 성질",q:"판서에 적힌 결정성별 <b>전자 이동도(μ)</b> 크기 순서로 옳은 것은?",
+ o:["비정질 > 다결정 > 단결정","다결정 > 단결정 > 비정질","셋이 거의 같다","단결정 > 다결정 > 비정질"],
+ a:3,e:"판서 수치는 비정질 Si <code>0.1~1</code>, 다결정 <code>~100</code>, 단결정 <code>1000 cm²/V·s</code>다. <b>결정성이 좋을수록 전자가 부딪힐 것이 없어 잘 달린다.</b> 다결정은 grain boundary(결정립계)에서, 비정질은 아예 사방에서 산란된다."},
+{lv:"m",tag:"1.2 다결정",q:"다결정(polycrystalline) 재료에서 전기적 성질을 나쁘게 만드는 주된 원인은?",
+ o:["결정립계(grain boundary)에서의 산란","원자의 종류가 서로 다름","격자상수가 커짐","공유결합이 이온결합으로 바뀜"],
+ a:0,e:"다결정은 규칙적인 덩어리(grain) 여럿이 서로 다른 방향으로 붙어 있는 구조다. 그 <b>경계면(grain boundary)에서 주기성이 끊기며</b> 전자가 산란되고, 결함 준위도 몰려 있다. 그래서 소자에는 단결정 웨이퍼를 쓴다."},
+{lv:"m",tag:"1.4 화합물 구조",q:"GaAs처럼 <b>두 종류의 원소</b>가 다이아몬드와 같은 배열을 이룰 때, 이 구조를 무엇이라 부르는가?",
+ o:["암염(rock salt) 구조","징크블렌드(zincblende) 구조","우르차이트(wurtzite) 구조","페로브스카이트 구조"],
+ a:1,e:"뼈대는 다이아몬드 구조와 똑같지만 <b>두 자리를 서로 다른 원소가 번갈아 차지</b>하는 것이 징크블렌드다. GaAs, InP 같은 III-V 화합물 반도체가 대부분 이 구조다. 원소가 하나면 다이아몬드, 둘이면 징크블렌드다."},
+{lv:"m",tag:"1.3 방향지수",q:"단순입방 격자에서 <code>[100]</code> 방향과 <code>(100)</code> 면의 관계는?",
+ o:["서로 평행하다","45° 각을 이룬다","서로 수직이다","관계를 정할 수 없다"],
+ a:2,e:"단순입방 격자에서는 <code>[hkl]</code> 방향이 <code>(hkl)</code> 면에 <b>수직</b>이다. 그래서 대괄호 [ ]는 방향, 소괄호 ( )는 면으로 표기를 구분한다. 이 성질은 입방 격자에서만 성립한다."},
+{lv:"m",tag:"1.6 결함",q:"결함의 분류가 <b>잘못</b> 짝지어진 것은?",
+ o:["빈자리(vacancy) — 점결함","격자 사이 원자(interstitial) — 점결함","선전위(line dislocation) — 선결함","결정립계(grain boundary) — 점결함"],
+ a:3,e:"결정립계는 <b>면 결함</b>이다. 원자 하나 규모의 사고(빈자리, 격자 사이 낀 원자)가 점결함이고, 원자 줄이 어긋난 것이 선결함이며, 방향이 다른 결정 덩어리가 만나는 면은 그보다 큰 규모의 결함이다."},
+{lv:"m",tag:"1.7 에피택시",q:"<b>에피택셜 성장(epitaxial growth)</b>의 정의로 옳은 것은?",
+ o:["단결정 기판 위에 얇은 단결정 층을 이어서 키우는 것","녹인 재료에서 잉곳을 끌어올리는 것","웨이퍼를 잘라 칩으로 나누는 것","불순물을 열로 확산시키는 것"],
+ a:0,e:"기판이 <b>씨앗(seed) 역할</b>을 해서 그 결정 방향을 그대로 이어받은 단결정 박막이 자란다. 같은 물질 위에 키우면 <b>homoepitaxy</b>, 다른 물질 위면 <b>heteroepitaxy</b>다. 대표 공정이 CVD(화학기상증착)다."},
+{lv:"m",tag:"1.4 결정면",q:"실리콘의 (100), (110), (111) 면에서 이동도가 서로 다른 이유는?",
+ o:["면마다 격자상수가 다르기 때문","면마다 원자 배열과 밀도가 달라 전자가 느끼는 환경이 다르기 때문","면마다 밴드갭이 다르기 때문","면마다 온도가 다르기 때문"],
+ a:1,e:"같은 결정이라도 <b>어느 방향으로 자르느냐</b>에 따라 면 위의 원자 배치와 밀도가 달라진다. 그래서 이동도가 방향에 따라 달라지고(orientation-dependent mobility), MOSFET을 만들 때 어떤 면의 웨이퍼를 쓸지가 성능에 영향을 준다."},
+// ===== 상 (31~40) =====
+{lv:"s",tag:"1.3 APF",q:"<b>단순입방(SC)</b> 구조의 원자 충진율(APF)은? (강체구 접촉 가정)",
+ o:["74 %","68 %","52 %","34 %"],
+ a:2,e:"SC는 <b>모서리를 따라</b> 원자가 닿으므로 <code>2r = a</code>, 즉 <code>r = a/2</code>다.<div class='eq'>APF = 1 × (4/3)π(a/2)³ / a³ = π/6 ≈ <b>0.524</b></div>원자 1개짜리에 빈 공간이 절반 가까이라 실제 물질에서는 거의 나타나지 않는 구조다."},
+{lv:"s",tag:"1.3 APF",q:"<b>체심입방(BCC)</b> 구조의 원자 충진율(APF)은?",
+ o:["52 %","34 %","74 %","68 %"],
+ a:3,e:"BCC는 <b>공간대각선을 따라</b> 원자가 닿는다. 대각선 길이 <code>√3·a = 4r</code>이므로 <code>r = √3a/4</code>다.<div class='eq'>APF = 2 × (4/3)π(√3a/4)³ / a³ = √3π/8 ≈ <b>0.680</b></div>어느 방향으로 원자가 닿는지를 먼저 정하는 것이 이 유형의 전부다."},
+{lv:"s",tag:"1.3 APF",q:"<b>면심입방(FCC)</b> 구조의 원자 충진율(APF)은?",
+ o:["74 %","68 %","52 %","34 %"],
+ a:0,e:"FCC는 <b>면대각선을 따라</b> 닿는다. <code>√2·a = 4r</code>이므로 <code>r = √2a/4</code>다.<div class='eq'>APF = 4 × (4/3)π(√2a/4)³ / a³ = √2π/6 ≈ <b>0.740</b></div>74 %는 <b>구를 쌓을 수 있는 이론적 최대값</b>이고, 그래서 FCC를 최밀충전(close-packed) 구조라 부른다."},
+{lv:"s",tag:"1.4 APF",q:"실리콘의 <b>다이아몬드 구조</b> 원자 충진율(APF)은?",
+ o:["68 %","34 %","52 %","74 %"],
+ a:1,e:"다이아몬드는 최근접 거리가 <code>√3a/4</code>이므로 <code>r = √3a/8</code>이다.<div class='eq'>APF = 8 × (4/3)π(√3a/8)³ / a³ = √3π/16 ≈ <b>0.340</b></div>원자가 8개나 되는데도 충진율이 <b>가장 낮다.</b> 정사면체 결합이 방향을 강하게 고집해서 빈 공간을 많이 남기기 때문이다. 이 빈 공간이 나중에 도핑 원자가 들어갈 자리가 된다."},
+{lv:"s",tag:"1.3 면밀도",q:"BCC 구조, <code>a = 5 Å</code>일 때 <b>(110) 면의 단위 면적당 원자 수</b>는? (교재 예제 1.3)",
+ o:["4.00 × 10¹⁴ cm⁻²","2.31 × 10¹⁴ cm⁻²","5.66 × 10¹⁴ cm⁻²","8.00 × 10¹⁴ cm⁻²"],
+ a:2,e:"(110) 면은 가로 <code>a</code>, 세로 <code>√2a</code>인 직사각형이다. 원자는 <b>네 꼭짓점 × 1/4 + 중심 1개 = 2개</b>다.<div class='eq'>면밀도 = 2 / (√2 a²) = √2 / (5×10⁻⁸)² ≈ <b>5.66 × 10¹⁴ cm⁻²</b></div>면 위에서는 꼭짓점을 <b>1/4</b>로 센다는 점에 주의. 3차원의 1/8이 아니다."},
+{lv:"s",tag:"1.3 면밀도 비교",q:"BCC 구조에서 <b>원자 면밀도가 가장 높은 면</b>은? (2024 중간 1-d 기출)",
+ o:["(100)","셋이 모두 같다","(111)","(110)"],
+ a:3,e:"세 면을 각각 계산해 비교한다.<div class='eq'>(100): 1/a² = 4.0×10¹⁴　(110): √2/a² = 5.66×10¹⁴　(111): 0.577/a² = 2.31×10¹⁴</div>BCC에서는 <b>(110)이 최조밀면</b>이다. 중심 원자가 (110) 면 위에 정확히 놓여 원자 수가 하나 더 늘기 때문이다. 참고로 FCC의 최조밀면은 (111)로 <b>구조마다 답이 다르다.</b>"},
+{lv:"s",tag:"1.4 기하",q:"다이아몬드 구조에서 <b>최근접 원자 사이의 거리</b>를 격자상수 <code>a</code>로 나타내면?",
+ o:["√3a/4","√2a/4","a/2","√3a/2"],
+ a:0,e:"다이아몬드 구조의 내부 원자는 큐브를 8등분한 작은 정육면체의 중심에 있다. 꼭짓점 원자에서 거기까지는 <b>작은 큐브의 공간대각선 절반</b>이므로<div class='eq'>d = (√3 · a/2) / 2 = <b>√3a / 4</b></div>이 값이 곧 <code>2r</code>이므로 <code>r = √3a/8</code>이고, 앞의 APF 34 %가 여기서 나온다."},
+{lv:"s",tag:"검산 능력",q:"강의자료 12쪽 예제 1.1의 판서 답은 <code>1.6 × 10²³ /cm³</code>이다. 이 값이 맞는지 <b>가장 빠르게 판별하는 방법</b>은?",
+ o:["교재 뒤편 정답과 대조한다","실리콘 원자 밀도 <code>5×10²²</code>와 견준다 — BCC가 다이아몬드보다 원자가 적으므로 10²³은 나올 수 없다","단위가 cm⁻³인지 확인한다","격자상수를 다시 잰다"],
+ a:1,e:"이미 아는 값과 <b>자릿수를 견주는 것</b>이 가장 빠르다. 실리콘은 단위격자당 8개인데도 5×10²²인데, 원자가 2개뿐인 BCC가 그보다 <b>큰 값</b>이 나올 수는 없다. 실제 계산은 <code>2/(5×10⁻⁸)³ = 1.6×10²²</code>로 <b>판서가 지수 오기</b>다. 시험에서 이 숫자를 그대로 쓰면 틀린다."},
+{lv:"s",tag:"1.3 역산",q:"어떤 물질이 FCC 구조이고 부피당 원자 밀도가 <code>3.2 × 10²² cm⁻³</code>이다. 격자상수 <code>a</code>는?",
+ o:["2.5 Å","5.43 Å","5.0 Å","10.0 Å"],
+ a:2,e:"FCC는 단위격자당 4개이므로 <code>N = 4/a³</code>를 거꾸로 푼다.<div class='eq'>a³ = 4 / 3.2×10²² = 1.25×10⁻²² cm³　→　a = 5.0×10⁻⁸ cm = <b>5.0 Å</b></div>밀도·구조·격자상수 중 <b>둘을 주고 나머지 하나를 묻는</b> 유형이다. 방향이 바뀌어도 쓰는 식은 <code>N = (원자수)/a³</code> 하나뿐이다."},
+{lv:"s",tag:"1.7 헤테로에피",q:"<b>헤테로에피택시(heteroepitaxy)</b>가 성공하려면 반드시 필요한 조건은?",
+ o:["두 물질의 녹는점이 같아야 한다","기판이 비정질이어야 한다","두 물질이 모두 4족이어야 한다","두 물질의 결정 구조와 격자상수가 매우 비슷해야 한다"],
+ a:3,e:"기판의 결정 배열을 이어받아 자라는 것이므로, <b>격자상수가 많이 다르면 이어 붙는 자리에서 어긋남</b>이 생긴다. 그 어긋남이 선전위(dislocation) 같은 결함이 되어 소자 성능을 망친다. 이 격자 불일치(lattice mismatch)를 줄이는 것이 화합물 반도체 공정의 큰 과제다."}
+];
+
+const list=document.getElementById('list'), K=['①','②','③','④'];
+let filter='all', answered={}, correct=0;
+
+function shown(){return Q.map((q,i)=>({q,i})).filter(x=>filter==='all'||x.q.lv===filter);}
+
+function render(){
+  const s=shown();
+  list.innerHTML=s.map(({q,i})=>{
+    const lvName={h:'하',m:'중',s:'상'}[q.lv];
+    return `<div class="q" id="q${i}">
+      <div class="qh"><span class="num">${i+1}</span>
+        <span class="lv ${q.lv}">${lvName}</span>
+        <span class="tag">${q.tag}</span></div>
+      <p class="stem">${q.q}</p>
+      <div class="opts">${q.o.map((o,j)=>
+        `<button class="opt" data-q="${i}" data-o="${j}"><span class="k">${K[j]}</span><span>${o}</span></button>`
+      ).join('')}</div>
+      <div class="ex" id="e${i}"><div class="t"></div><div class="b">${q.e}</div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('tot').textContent=s.length;
+  Object.keys(answered).forEach(i=>{if(document.getElementById('q'+i))paint(+i);});
+  bind(); prog();
+}
+
+function paint(i){
+  const pick=answered[i], q=Q[i];
+  document.querySelectorAll(`.opt[data-q="${i}"]`).forEach(b=>{
+    const j=+b.dataset.o; b.disabled=true;
+    if(j===q.a)b.classList.add('ok');
+    else if(j===pick)b.classList.add('no');
+  });
+  const ex=document.getElementById('e'+i);
+  const ok=pick===q.a;
+  ex.classList.add('show',ok?'ok':'no');
+  ex.querySelector('.t').textContent=ok?'정답':`오답 — 정답은 ${K[q.a]}`;
+  document.getElementById('q'+i).classList.add('done');
+}
+
+function bind(){
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.q; if(i in answered)return;
+    answered[i]=+b.dataset.o;
+    if(answered[i]===Q[i].a)correct++;
+    paint(i); prog();
+  });
+}
+
+function prog(){
+  const s=shown(), done=s.filter(x=>x.i in answered).length;
+  const hit=s.filter(x=>answered[x.i]===x.q.a).length;
+  document.getElementById('sc').textContent=hit;
+  document.getElementById('pg').style.width=(done/s.length*100)+'%';
+  const d=document.getElementById('done');
+  if(done===s.length&&s.length){
+    d.classList.add('show');
+    document.getElementById('fsc').textContent=hit;
+    document.getElementById('ftot').textContent=s.length;
+    const r=hit/s.length;
+    document.getElementById('fmsg').textContent =
+      r===1?'전부 맞았다. Ch.1은 더 볼 것이 없다.':
+      r>=.9?'거의 완벽하다. 틀린 것만 해설 다시 읽으면 끝난다.':
+      r>=.75?'기본은 잡혔다. 틀린 문항의 난이도를 보고 그 부분만 보강하면 된다.':
+      r>=.5?'개념은 아는데 계산에서 흘리고 있다. 한줄해설의 원자밀도·APF·면밀도 쪽을 다시 볼 것.':
+            '강의자료 Ch.1 한줄해설을 한 번 훑고 다시 푸는 편이 빠르다.';
+  } else d.classList.remove('show');
+}
+
+document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('[data-f]').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); filter=b.dataset.f; render();
+});
+document.getElementById('reset').onclick=()=>{answered={};correct=0;
+  document.getElementById('done').classList.remove('show');render();};
+render();
+</script>
+<a href="../index.html" style="position:fixed;left:14px;bottom:16px;z-index:99;background:#1b4d8f;color:#fff;text-decoration:none;font:600 13px/1 -apple-system,sans-serif;padding:11px 15px;border-radius:22px;box-shadow:0 3px 10px rgba(0,0,0,.28)">&#8592; 목록</a>
+</body>
+</html>

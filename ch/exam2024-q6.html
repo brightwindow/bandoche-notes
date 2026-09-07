@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>2024 중간 6번 완전 해설 — 아무것도 모르는 상태에서 시작</title>
+<style>
+:root{
+  --bg:#f7f7f5; --card:#fff; --ink:#1c1c1a; --dim:#5f5f58; --line:#e3e2dd;
+  --accent:#1b4d8f; --accent-soft:#e8f0fa;
+  --warn:#a8320f; --warn-soft:#fdeee9;
+  --good:#1d6b45; --good-soft:#e6f3ec;
+  --gold:#8a6100; --gold-soft:#fdf4e0;
+  --code:#f0efeb;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#16171a; --card:#1e2024; --ink:#e8e8e4; --dim:#a3a39c; --line:#31343a;
+  --accent:#7fb0ea; --accent-soft:#1c2a3d;
+  --warn:#f0866a; --warn-soft:#3a2019;
+  --good:#7fd0a4; --good-soft:#172f23;
+  --gold:#e0b458; --gold-soft:#332a15;
+  --code:#25282d;
+}}
+:root[data-theme="dark"]{
+  --bg:#16171a; --card:#1e2024; --ink:#e8e8e4; --dim:#a3a39c; --line:#31343a;
+  --accent:#7fb0ea; --accent-soft:#1c2a3d;
+  --warn:#f0866a; --warn-soft:#3a2019;
+  --good:#7fd0a4; --good-soft:#172f23;
+  --gold:#e0b458; --gold-soft:#332a15;
+  --code:#25282d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.78;letter-spacing:-.005em}
+.wrap{max-width:900px;margin:0 auto;padding:44px 20px 100px}
+header{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:8px}
+.kicker{font-size:.78rem;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:8px}
+h1{font-size:1.9rem;line-height:1.3;margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--dim);font-size:.93rem;margin:0}
+h2{font-size:1.26rem;margin:54px 0 4px;letter-spacing:-.015em;display:flex;align-items:baseline;gap:10px}
+h2 .n{font-size:.7rem;font-weight:700;color:#fff;background:var(--accent);
+  border-radius:5px;padding:3px 8px;flex:none;letter-spacing:.04em}
+h2.q .n{background:var(--gold)}
+.lead{color:var(--dim);font-size:.92rem;margin:0 0 18px}
+h3{font-size:1.03rem;margin:26px 0 8px}
+p{margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0}
+.eq{background:var(--code);border-radius:9px;padding:14px 18px;margin:14px 0;
+  font-family:"Cambria Math","Times New Roman",Georgia,serif;font-size:1.1rem;
+  text-align:center;overflow-x:auto;line-height:2.1}
+.eq.big{font-size:1.25rem}
+.eq small{font-family:inherit;font-size:.72rem;color:var(--dim);display:block;margin-top:6px;letter-spacing:0}
+.ans{background:var(--good-soft);border:2px solid var(--good);border-radius:10px;
+  padding:16px 18px;margin:16px 0;text-align:center;
+  font-family:"Cambria Math",Georgia,serif;font-size:1.22rem;line-height:2}
+.ans .lbl{display:block;font-family:inherit;font-size:.72rem;font-weight:700;
+  color:var(--good);letter-spacing:.1em;margin-bottom:4px}
+code{background:var(--code);border-radius:4px;padding:1px 6px;font-size:.92em;
+  font-family:"Cambria Math",Consolas,monospace}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-weight:700;white-space:nowrap}
+td.f{font-family:"Cambria Math",Georgia,serif;white-space:nowrap}
+.box{border-left:4px solid var(--accent);background:var(--accent-soft);
+  padding:14px 18px;border-radius:0 9px 9px 0;margin:16px 0}
+.box.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+.box.good{border-left-color:var(--good);background:var(--good-soft)}
+.box.gold{border-left-color:var(--gold);background:var(--gold-soft)}
+.box .t{font-weight:700;margin-bottom:5px;font-size:.94rem}
+.box.warn .t{color:var(--warn)} .box.good .t{color:var(--good)} .box.gold .t{color:var(--gold)}
+ul,ol{margin:0 0 14px;padding-left:1.35em} li{margin-bottom:7px}
+.slide{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;
+  border-radius:20px;background:var(--gold-soft);color:var(--gold);
+  border:1px solid var(--gold);margin:0 4px}
+.qbox{background:var(--card);border:2px solid var(--gold);border-radius:12px;
+  padding:18px 20px;margin:18px 0}
+.qbox .en{font-family:Georgia,"Times New Roman",serif;font-size:.97rem;
+  color:var(--ink);margin-bottom:12px;line-height:1.7}
+.qbox .ko{border-top:1px dashed var(--line);padding-top:12px;font-size:.95rem;color:var(--dim)}
+.step{counter-reset:none;margin:18px 0}
+.step .h{display:flex;align-items:center;gap:10px;font-weight:700;margin-bottom:8px}
+.step .h i{font-style:normal;font-size:.74rem;color:#fff;background:var(--accent);
+  border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;
+  justify-content:center;flex:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:16px 0}
+.grid .card{margin:0}
+.strike{text-decoration:line-through;color:var(--warn);opacity:.7}
+.chk{list-style:none;padding-left:0}
+.chk li{padding-left:28px;position:relative}
+.chk li::before{content:"☐";position:absolute;left:4px;color:var(--accent);font-size:1.1rem}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 22px;margin:22px 0 8px}
+.toc ol{margin:0;padding-left:1.3em;columns:2;column-gap:28px}
+.toc li{margin-bottom:4px;font-size:.91rem}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.toc a:hover{border-bottom-color:var(--accent);color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:.85rem}
+@media (max-width:560px){.toc ol{columns:1} h1{font-size:1.5rem} .wrap{padding:30px 15px 60px}}
+@media print{body{background:#fff} .card,.box,.qbox{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">반도체공학 · 2024년도 2학기 중간고사 · 6번 [40점]</div>
+  <h1>이 문제 하나를 풀기 위한 전부</h1>
+  <p class="sub">반도체가 뭔지도 모르는 상태에서 시작해서, 답안을 쓰는 데까지</p>
+</header>
+
+<div class="toc"><ol>
+<li><a href="#s0">봐야 할 슬라이드는 6장뿐</a></li>
+<li><a href="#s1">아무것도 모르는 사람을 위한 10분</a></li>
+<li><a href="#s2">문제 읽기 — 영어 한 줄씩</a></li>
+<li><a href="#s3">준비물 — 숫자 두 개</a></li>
+<li><a href="#s4">도구 ① 하나뿐인 방정식</a></li>
+<li><a href="#s5">도구 ② 항 지우기</a></li>
+<li><a href="#s6">도구 ③ 답의 세 가지 모양</a></li>
+<li><a href="#a">a) 빛을 켰다</a></li>
+<li><a href="#b">b) 빛을 껐다</a></li>
+<li><a href="#c">c) 그래프 그리기</a></li>
+<li><a href="#d">d) 한 점에만 빛</a></li>
+<li><a href="#s7">답안 그대로 옮겨 쓰기</a></li>
+<li><a href="#s8">자주 틀리는 곳</a></li>
+</ol></div>
+
+<h2 id="s0"><span class="n">0</span>봐야 할 슬라이드는 6장뿐</h2>
+<p class="lead">Ch.6 강의자료는 18쪽이다. 이 문제를 풀려고 18쪽을 다 볼 필요는 없다.</p>
+
+<div class="scroll"><table>
+<tr><th>슬라이드</th><th>거기서 가져올 것</th><th>어디에 쓰나</th></tr>
+<tr><td class="f">5쪽</td><td>과잉 캐리어 정의, <code>n = n₀+δn</code>, <code>δn = δp</code></td><td>전체 · <b>c)</b></td></tr>
+<tr><td class="f">6쪽</td><td>저준위 주입, 수명 τ, <code>R′ = δp/τ</code></td><td>전체</td></tr>
+<tr><td class="f">11쪽</td><td>n형이면 <b>정공</b>의 값(D<sub>p</sub>, τ<sub>p0</sub>)을 쓴다</td><td>전체</td></tr>
+<tr><td class="f"><b>12쪽</b></td><td><b>최종 방정식 (붉은 상자 2개)</b></td><td><b>전체 — 여기가 출발점</b></td></tr>
+<tr><td class="f"><b>13쪽</b></td><td>Table 6.2 항 지우기 표 + <b>예제 6.2 · 6.3</b></td><td><b>a) b)</b></td></tr>
+<tr><td class="f"><b>14쪽</b></td><td><b>예제 6.4</b> + Figure 6.7 (log 그래프)</td><td><b>c) d)</b></td></tr>
+</table></div>
+
+<div class="box gold">
+  <div class="t">한 줄로 말하면</div>
+  <b>12쪽에서 식을 가져와, 13쪽 표로 항을 지우고, 13·14쪽 예제와 같은 답을 쓴다.</b><br>
+  나머지 12장은 이 세 장을 이해하기 위한 배경이다. 시간이 없으면 <b>12·13·14쪽만</b> 봐도 된다.
+</div>
+
+<h2 id="s1"><span class="n">1</span>아무것도 모르는 사람을 위한 10분</h2>
+<p class="lead">여기만 읽으면 문제 문장이 읽히기 시작한다. 이미 아는 부분은 건너뛰어도 된다.</p>
+
+<h3>반도체가 뭔가</h3>
+<p>전기가 <b>통할지 말지를 우리가 정할 수 있는</b> 물질이다. 구리는 무조건 통하고 유리는 무조건 안 통한다.
+실리콘(Si)은 그 중간이라, 손을 대면 통하게도 안 통하게도 만들 수 있다. 그래서 스위치를 만들 수 있고, 그게 반도체의 쓸모다.</p>
+
+<h3>전자와 정공 — 두 종류의 운반체</h3>
+<p>전기가 흐른다는 것은 <b>전하를 띤 무언가가 움직인다</b>는 뜻이다. 반도체 안에서 움직이는 것은 두 가지다.</p>
+<div class="grid">
+  <div class="card"><h3 style="margin-top:0">전자 (electron)</h3>
+  <p style="margin:0"><b>음전하(−)</b>를 띤 진짜 알갱이다. 기호는 <code>n</code>. 갯수를 세면 <b>농도</b>가 된다.</p></div>
+  <div class="card"><h3 style="margin-top:0">정공 (hole)</h3>
+  <p style="margin:0"><b>전자가 빠져나간 빈자리</b>다. 기호는 <code>p</code>. 빈자리가 옆으로 옮겨 다니면 <b>양전하(+)가 움직이는 것처럼</b> 보인다.</p></div>
+</div>
+<p>정공이 헷갈리면 이렇게 보면 된다. 극장에 사람이 꽉 찼는데 한 자리가 비었다. 옆 사람이 그 자리로 옮기면
+<b>빈자리가 반대쪽으로 한 칸 이동</b>한다. 사람이 움직인 건데 빈자리가 움직인 것처럼 셀 수도 있다. 그 빈자리가 정공이다.</p>
+
+<h3>농도의 단위 — cm⁻³</h3>
+<p>이 과목에서 <code>10¹⁶ cm⁻³</code> 같은 숫자가 계속 나온다.
+<b>가로세로높이 1 cm 짜리 정육면체 안에 몇 개 들어 있나</b>라는 뜻이다. 밀도라고 생각하면 된다.</p>
+
+<h3>도핑 — 불순물을 일부러 넣는다</h3>
+<p>순수한 실리콘에는 캐리어가 거의 없어서 사실상 안 통한다. 그래서 <b>다른 원소를 조금 섞는다.</b> 이것이 도핑이다.</p>
+<div class="scroll"><table>
+<tr><th>넣는 원소</th><th>무슨 일이 생기나</th><th>이름</th><th>많아지는 쪽</th></tr>
+<tr><td><b>5족</b> — P(인), <b>As(비소)</b></td><td>실리콘보다 전자가 하나 남는다</td><td class="f"><b>n형</b> (negative)</td><td><b>전자</b></td></tr>
+<tr><td><b>3족</b> — B(붕소)</td><td>전자가 하나 모자라 빈자리가 생긴다</td><td class="f"><b>p형</b> (positive)</td><td><b>정공</b></td></tr>
+</table></div>
+<div class="box gold">
+  <div class="t">이 문제에서 가장 먼저 봐야 할 한 글자</div>
+  문제 첫 줄에 <b>arsenic (As)</b> 라고 쓰여 있다. As 는 <b>5족</b>이다. 따라서 이 반도체는 <b>n형</b>이다.<br>
+  이 한 줄에서 나머지 전부가 결정된다. 여기서 틀리면 40점이 통째로 날아간다.
+</div>
+
+<h3>다수 캐리어와 소수 캐리어</h3>
+<p>도핑을 하면 한쪽이 압도적으로 많아진다. 많은 쪽을 <b>다수(majority)</b>, 적은 쪽을 <b>소수(minority)</b>라 부른다.</p>
+<ul>
+<li><b>n형</b> → 다수 = 전자, <b>소수 = 정공</b></li>
+<li><b>p형</b> → 다수 = 정공, <b>소수 = 전자</b></li>
+</ul>
+<p>6장의 모든 식은 <b>소수 캐리어를 따라간다.</b> 다수는 원래 워낙 많아서 조금 늘고 줄어도 티가 안 나기 때문이다.
+바다에 물 한 컵을 부어도 바다는 그대로다. 하지만 컵 속 물에게는 전부가 바뀐 것이다.</p>
+
+<h3>δ(델타) — 이 장의 주인공</h3>
+<p>빛을 쬐면 전자와 정공이 <b>늘어난다.</b> 그 <b>늘어난 몫</b>을 δ 로 쓴다.</p>
+<div class="eq">n = n₀ + δn &nbsp;&nbsp;&nbsp;&nbsp; p = p₀ + δp
+<small>지금 농도 = 원래 있던 것(아래첨자 0) + 빛으로 늘어난 것(δ)</small></div>
+<p>빛알 하나가 전자를 밀어 올리면 그 자리에 빈자리가 남는다. 그래서 <b>반드시 쌍으로</b> 생긴다.</p>
+<div class="eq big">δn = δp</div>
+<p>c) 를 푸는 열쇠가 이 한 줄이다.</p>
+
+<h3>미분 기호 읽는 법</h3>
+<div class="scroll"><table>
+<tr><th>기호</th><th>읽는 법</th></tr>
+<tr><td class="f">∂(δp)/∂t</td><td>δp 가 <b>시간에 따라 얼마나 빨리 변하는가</b>. 그래프의 기울기</td></tr>
+<tr><td class="f">∂²(δp)/∂x²</td><td>기울기의 기울기, 곧 <b>휘어진 정도</b>. 농도 그래프가 뾰족할수록 크다</td></tr>
+<tr><td class="f">∂ (라운드)</td><td>변수가 둘 이상(시간 t, 위치 x)일 때 쓰는 미분. 계산은 보통 미분과 같다</td></tr>
+<tr><td class="f">e<sup>−t/τ</sup></td><td>τ 만큼 지날 때마다 <b>37 %(=1/e)로 줄어드는 감쇠</b></td></tr>
+<tr><td class="f">≫</td><td>압도적으로 크다. <b>작은 쪽은 버려도 된다</b>는 신호</td></tr>
+</table></div>
+
+<div class="box good">
+  <div class="t">여기까지 알면 준비 끝</div>
+  ① As = 5족 = n형 = 소수는 정공 &nbsp; ② δ = 빛으로 늘어난 몫, δn = δp<br>
+  ③ ∂/∂t 는 변하는 빠르기, ∂²/∂x² 는 휘어진 정도
+</div>
+
+<h2 id="s2"><span class="n">2</span>문제 읽기 — 영어 한 줄씩</h2>
+<p class="lead">문장은 영어지만 쓰이는 단어는 정해져 있다. 조건 하나하나가 뒤에서 식을 지우는 근거가 된다.</p>
+
+<div class="qbox">
+<div class="en"><b>6. [40 points]</b> Silicon at T = 300 K has been <u>uniformly</u> doped with <u>arsenic (As)</u> atoms with a concentration of 10<sup>16</sup> cm<sup>−3</sup>.</div>
+<div class="ko"><b>번역</b> — 300 K(상온)의 실리콘에 <b>비소(As)</b>를 <b>고르게</b> 10<sup>16</sup> cm<sup>−3</sup> 만큼 도핑했다.<br>
+<b>읽어야 할 것 두 가지</b> — ① <b>As = 5족 → n형 → 소수는 정공(δp)</b> &nbsp; ② <b>uniformly(고르게) → 어디를 봐도 농도가 같다</b>. 이것이 a) b) c) 에서 확산 항을 지우는 근거다.</div>
+</div>
+
+<div class="qbox">
+<div class="en"><b>a) [10 points]</b> The silicon sample is in <u>thermal equilibrium</u> for t &lt; 0. At t = 0, a light source generating excess carriers is <u>turned on</u>, producing a generation rate of g′ = 10<sup>20</sup> cm<sup>−3</sup>s<sup>−1</sup>. The <u>minority carrier lifetime</u> is 1 μs. Determine the excess minority carrier concentration for t &gt; 0.</div>
+<div class="ko"><b>번역</b> — t &lt; 0 에서는 <b>평형</b>(빛 없음). t = 0 에 <b>빛을 켰고</b>, 생성률은 10<sup>20</sup> cm<sup>−3</sup>s<sup>−1</sup> 이다. <b>소수 캐리어 수명</b>은 1 μs. t &gt; 0 의 과잉 소수 캐리어 농도를 구하라.<br>
+<b>읽어야 할 것</b> — <b>thermal equilibrium for t &lt; 0</b> 은 "켜기 전에는 δp = 0 이었다"는 <b>출발 조건</b>이다. 이게 있어야 답의 상수가 정해진다.</div>
+</div>
+
+<div class="qbox">
+<div class="en"><b>b) [10 points]</b> Then, the light source is <u>turned off at t = 10 s</u>. Determine the excess minority carrier concentration for t ≥ 10.</div>
+<div class="ko"><b>번역</b> — 그 다음 <b>t = 10 초에 빛을 껐다.</b> t ≥ 10 의 과잉 소수 캐리어 농도를 구하라.<br>
+<b>읽어야 할 것</b> — 빛을 껐으니 <b>g′ = 0</b>. 그리고 <b>시간의 원점이 10 초로 옮겨간다.</b> 지수에 t 가 아니라 (t − 10) 이 들어간다.</div>
+</div>
+
+<div class="qbox">
+<div class="en"><b>c) [10 points]</b> <u>Plot</u> the time-dependent majority and minority carrier concentration (i.e., n(t) and p(t)).</div>
+<div class="ko"><b>번역</b> — 시간에 따른 <b>다수</b>와 <b>소수</b> 캐리어 농도 n(t), p(t) 를 <b>그려라.</b><br>
+<b>읽어야 할 것</b> — δp 가 아니라 <b>n(t) 와 p(t)</b> 를 묻는다. 원래 있던 값(n₀, p₀)을 더해야 한다.</div>
+</div>
+
+<div class="qbox">
+<div class="en"><b>d) [10 points]</b> After a long period of time, the light source <u>illuminates only at x = 0</u>. Determine the <u>steady-state spatial dependence</u> of the excess minority carrier concentration. <u>Assume a zero applied E-field.</u></div>
+<div class="ko"><b>번역</b> — 충분한 시간이 지난 뒤, 빛이 <b>x = 0 한 점에만</b> 비친다. 과잉 소수 캐리어 농도의 <b>정상상태 공간 분포</b>를 구하라. <b>전기장은 0 이라고 가정.</b><br>
+<b>읽어야 할 것 세 가지</b> — ① <b>only at x = 0</b> → 다른 곳은 g′ = 0 ② <b>steady-state</b> → 시간 항이 0 ③ <b>zero E-field</b> → 드리프트 항이 0. 이번엔 <b>확산 항이 살아남는다.</b></div>
+</div>
+
+<h2 id="s3"><span class="n">3</span>준비물 — 숫자 두 개</h2>
+<p class="lead">계산에 들어가기 전에 이 둘을 먼저 적어 둔다. 네 문항 내내 쓴다.</p>
+
+<div class="card">
+<div class="step"><div class="h"><i>1</i>다수 캐리어 — 도핑한 만큼 그대로</div>
+<p>As 를 10<sup>16</sup> 개 넣었으면 전자도 대략 그만큼 생긴다. 원래 있던 것(10<sup>10</sup>)은 비교가 안 될 만큼 적어서 무시한다.</p>
+<div class="eq">n₀ ≈ N<sub>d</sub> = 10<sup>16</sup> cm<sup>−3</sup></div>
+</div>
+
+<div class="step"><div class="h"><i>2</i>소수 캐리어 — 질량작용법칙으로</div>
+<p><b>평형에서만</b> 성립하는 관계가 하나 있다. 전자 농도와 정공 농도를 곱하면 항상 <code>nᵢ²</code> 이다.
+<code>nᵢ</code> 는 <b>진성 캐리어 농도</b>, 도핑을 안 한 순수 실리콘의 캐리어 농도이고 상온에서 10<sup>10</sup> cm<sup>−3</sup> 이다.</p>
+<div class="eq">n₀p₀ = nᵢ² &nbsp;⟹&nbsp; p₀ = nᵢ²/n₀ = (10<sup>10</sup>)²/10<sup>16</sup> = <b>10<sup>4</sup> cm<sup>−3</sup></b></div>
+</div>
+</div>
+
+<div class="box warn">
+  <div class="t">여기서 정신 차릴 것</div>
+  <b>n₀ = 10¹⁶ 이고 p₀ = 10⁴ 다. 무려 10¹² 배 차이다.</b><br>
+  이 어마어마한 차이가 c) 의 그래프 모양을 통째로 결정한다. 지금 이 숫자를 눈에 새겨 둘 것.
+</div>
+
+<h2 id="s4"><span class="n">4</span>도구 ① 하나뿐인 방정식</h2>
+<p class="lead">6장 문제는 전부 이 식 하나에서 시작한다. <span class="slide">슬라이드 12쪽</span></p>
+
+<p>슬라이드 12쪽에 붉은 상자가 두 개 있다. 도핑 타입에 따라 골라 쓴다.</p>
+
+<div class="card">
+<p style="margin-bottom:6px"><b>p형용</b> (소수 = 전자)</p>
+<div class="eq">D<sub>n</sub> ∂²(δn)/∂x² <b>+</b> μ<sub>n</sub>E ∂(δn)/∂x + g′ − δn/τ<sub>n0</sub> = ∂(δn)/∂t</div>
+<p style="margin:14px 0 6px"><b>n형용</b> (소수 = 정공) ← <b>이 문제가 쓸 식</b></p>
+<div class="eq big">D<sub>p</sub> ∂²(δp)/∂x² <b>−</b> μ<sub>p</sub>E ∂(δp)/∂x + g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</div>
+</div>
+
+<h3>네 항이 각각 무슨 뜻인가</h3>
+<div class="scroll"><table>
+<tr><th>항</th><th>이름</th><th>무슨 일</th></tr>
+<tr><td class="f">D<sub>p</sub> ∂²(δp)/∂x²</td><td>확산</td><td>진한 데서 옅은 데로 <b>저절로 퍼짐</b>. 향수 뚜껑을 열면 퍼지는 것과 같다</td></tr>
+<tr><td class="f">− μ<sub>p</sub>E ∂(δp)/∂x</td><td>드리프트</td><td>전기장에 <b>밀려서</b> 통째로 이동</td></tr>
+<tr><td class="f">+ g′</td><td>생성</td><td>빛으로 <b>새로 생김</b></td></tr>
+<tr><td class="f">− δp/τ<sub>p0</sub></td><td>재결합</td><td>전자와 정공이 만나 <b>사라짐</b></td></tr>
+<tr><td class="f">= ∂(δp)/∂t</td><td>시간 변화</td><td>그래서 결과적으로 얼마나 빨리 변하는가</td></tr>
+</table></div>
+
+<p>은행 계좌처럼 읽으면 된다. <b>잔액 변화 = 흘러 들어온 것(확산·드리프트) + 입금(생성) − 출금(재결합)</b>.</p>
+
+<div class="box">
+  <div class="t">왜 n형인데 정공(p)의 값을 쓰나 <span class="slide">슬라이드 11쪽</span></div>
+  n형이면 전자가 다수인데 식에는 <code>D<sub>p</sub></code>, <code>τ<sub>p0</sub></code> 처럼 <b>정공의 값</b>이 들어간다. 이상해 보이지만 이유가 있다.<br><br>
+  다수 캐리어(전자)는 10<sup>16</sup> 개나 있어서 10<sup>14</sup> 개가 더 생겨도 <b>거의 안 변한다.</b>
+  변화를 실제로 좌우하는 것은 원래 10<sup>4</sup> 개뿐이던 <b>소수 캐리어</b>다.
+  그래서 슬라이드 11쪽 결론이 <b>"ambipolar 계수는 소수 캐리어 값으로 수렴한다"</b> 인 것이다.
+</div>
+
+<h2 id="s5"><span class="n">5</span>도구 ② 항 지우기</h2>
+<p class="lead">문제의 조건 문장을 이 표에서 찾아 해당 항을 지운다. 계산 문제는 사실상 이 작업이 전부다. <span class="slide">슬라이드 13쪽 Table 6.2</span></p>
+
+<div class="scroll"><table>
+<tr><th>문제에 이 말이 있으면</th><th>뜻</th><th>이 항이 0</th></tr>
+<tr><td><b>uniform</b> / uniformly doped</td><td>어디를 봐도 농도가 같다 → 기울기 없음</td><td class="f">D<sub>p</sub> ∂²(δp)/∂x² = 0</td></tr>
+<tr><td><b>zero applied E-field</b></td><td>전기장을 안 걸었다</td><td class="f">μ<sub>p</sub>E ∂(δp)/∂x = 0</td></tr>
+<tr><td><b>turned off</b> / no generation</td><td>빛이 꺼져 있다</td><td class="f">g′ = 0</td></tr>
+<tr><td><b>steady state</b></td><td>시간이 지나도 더는 안 변한다</td><td class="f">∂(δp)/∂t = 0</td></tr>
+<tr><td>infinite lifetime</td><td>재결합이 안 일어난다</td><td class="f">δp/τ<sub>p0</sub> = 0</td></tr>
+</table></div>
+
+<div class="box good">
+  <div class="t">답안 쓰는 요령</div>
+  지운 항마다 <b>왜 지웠는지 한 줄씩</b> 쓴다. 교수님 슬라이드 필기도 그렇게 돼 있다.<br>
+  예 — "uniform 이므로 확산 항 = 0", "E = 0 이므로 드리프트 항 = 0"<br>
+  <b>이 한 줄들이 서술 배점</b>이다. 답만 맞으면 반만 받는다.
+</div>
+
+<h2 id="s6"><span class="n">6</span>도구 ③ 답의 세 가지 모양</h2>
+<p class="lead">항을 지우고 나면 남는 식은 셋 중 하나다. 그러니 답도 셋 중 하나다. <span class="slide">슬라이드 13·14쪽</span></p>
+
+<div class="grid">
+<div class="card"><h3 style="margin-top:0">① 차오름</h3>
+<p style="font-size:.9rem;color:var(--dim);margin-bottom:8px">빛을 켰다 (예제 6.3)</p>
+<div class="eq" style="font-size:.98rem;margin:8px 0">δp = g′τ(1 − e<sup>−t/τ</sup>)</div>
+<p style="margin:0;font-size:.92rem">0 에서 시작해 <b>g′τ 로 차오른다.</b></p></div>
+
+<div class="card"><h3 style="margin-top:0">② 사라짐</h3>
+<p style="font-size:.9rem;color:var(--dim);margin-bottom:8px">빛을 껐다 (예제 6.2)</p>
+<div class="eq" style="font-size:.98rem;margin:8px 0">δp = δp(0) e<sup>−t/τ</sup></div>
+<p style="margin:0;font-size:.92rem">있던 값에서 <b>0 으로 줄어든다.</b></p></div>
+
+<div class="card"><h3 style="margin-top:0">③ 퍼짐</h3>
+<p style="font-size:.9rem;color:var(--dim);margin-bottom:8px">한 점에만 빛 (예제 6.4)</p>
+<div class="eq" style="font-size:.98rem;margin:8px 0">δp = δp(0) e<sup>−|x|/L</sup></div>
+<p style="margin:0;font-size:.92rem">x = 0 에서 <b>양옆으로 줄어든다.</b></p></div>
+</div>
+
+<div class="box gold">
+  <div class="t">눈치챘겠지만</div>
+  <b>a) 는 ①, b) 는 ②, d) 는 ③ 이다.</b> 2024 6번은 이 세 패턴을 한 문제에 다 넣은 것이다.<br>
+  세 모양만 외우면 답의 <b>생김새</b>는 이미 아는 셈이고, 남은 일은 숫자를 끼워 넣는 것뿐이다.
+</div>
+
+<hr>
+
+<h2 id="a" class="q"><span class="n">a</span>빛을 켰다 &nbsp;<span style="font-size:.8rem;color:var(--dim);font-weight:400">10점 · 슬라이드 13쪽 예제 6.3</span></h2>
+
+<div class="step"><div class="h"><i>1</i>쓸 식을 고른다</div>
+<p>As = 5족 = <b>n형</b> → 소수는 <b>정공</b> → n형용 식을 가져온다.</p>
+<div class="eq">D<sub>p</sub> ∂²(δp)/∂x² − μ<sub>p</sub>E ∂(δp)/∂x + g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</div>
+</div>
+
+<div class="step"><div class="h"><i>2</i>조건을 보고 항을 지운다</div>
+<div class="eq"><span class="strike">D<sub>p</sub> ∂²(δp)/∂x²</span> <span class="strike">− μ<sub>p</sub>E ∂(δp)/∂x</span> + g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t
+<small>uniformly doped → 확산 항 = 0 &nbsp;|&nbsp; 전기장을 안 걸었다 → 드리프트 항 = 0</small></div>
+<p><b>빛은 켜져 있으므로 g′ 는 남는다.</b> 남은 식은 이것뿐이다.</p>
+<div class="eq">g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</div>
+</div>
+
+<div class="step"><div class="h"><i>3</i>식이 하는 말을 이해한다</div>
+<p>욕조를 떠올리면 정확하다. <b>수도꼭지(g′)로 물이 들어오고, 배수구(δp/τ)로 빠진다.</b>
+빠지는 양은 지금 담긴 물이 많을수록 크다.</p>
+<p>처음엔 담긴 게 없어 배수가 거의 없으니 빨리 차오른다. 물이 찰수록 배수가 늘어 차오르는 속도가 느려진다.
+결국 <b>들어오는 양 = 나가는 양</b> 이 되면 수위가 멈춘다. 그 멈춘 값이 답의 앞부분이다.</p>
+</div>
+
+<div class="step"><div class="h"><i>4</i>답의 모양을 적는다</div>
+<p>패턴 ① 그대로다. 출발 조건은 문제의 <b>"thermal equilibrium for t &lt; 0"</b> 에서 <code>δp(0) = 0</code> 이다.</p>
+<div class="eq">δp(t) = g′τ<sub>p0</sub> (1 − e<sup>−t/τ<sub>p0</sub></sup>)</div>
+<p>확인해 보자. t = 0 이면 <code>e⁰ = 1</code> 이라 δp = 0 → 출발 조건과 맞는다.
+t 가 아주 커지면 <code>e<sup>−∞</sup> = 0</code> 이라 δp → g′τ<sub>p0</sub> → 수위가 멈춘 값이다.</p>
+</div>
+
+<div class="step"><div class="h"><i>5</i>숫자를 넣는다</div>
+<p>μ 는 마이크로, <b>10<sup>−6</sup></b> 이다. 그러니 τ<sub>p0</sub> = 1 μs = 10<sup>−6</sup> s.</p>
+<div class="eq">g′τ<sub>p0</sub> = 10<sup>20</sup> × 10<sup>−6</sup> = 10<sup>14</sup> cm<sup>−3</sup></div>
+</div>
+
+<div class="ans"><span class="lbl">a) 답</span>
+δp(t) = 10<sup>14</sup> (1 − e<sup>−t / 1μs</sup>) cm<sup>−3</sup>
+</div>
+
+<div class="box">
+  <div class="t">포화값이 g′τ 인 데는 뜻이 있다</div>
+  초당 <b>g′ 개</b>가 새로 생기고, 하나가 평균 <b>τ 초</b>를 버틴다. 그러면 어느 순간 살아 있는 개수는
+  <b>g′ × τ</b> 다. 식을 안 풀어도 이 곱으로 포화값을 바로 짐작할 수 있다.
+</div>
+
+<h2 id="b" class="q"><span class="n">b</span>빛을 껐다 &nbsp;<span style="font-size:.8rem;color:var(--dim);font-weight:400">10점 · 슬라이드 13쪽 예제 6.2</span></h2>
+
+<div class="step"><div class="h"><i>1</i>바뀐 조건은 하나</div>
+<p>빛을 껐으므로 <b>g′ = 0</b> 이다. a) 에서 남았던 식에서 g′ 까지 지워진다.</p>
+<div class="eq"><span class="strike">g′</span> − δp/τ<sub>p0</sub> = ∂(δp)/∂t &nbsp;⟹&nbsp; ∂(δp)/∂t = − δp/τ<sub>p0</sub></div>
+<p>이 식은 <b>"줄어드는 속도가 지금 남은 양에 비례한다"</b>는 말이다. 이런 꼴은 언제나 <b>지수 감쇠</b> 답을 갖는다.
+많이 남았을 때는 빨리 줄고, 적게 남았을 때는 천천히 준다.</p>
+</div>
+
+<div class="step"><div class="h"><i>2</i>출발값을 정한다 — 여기가 이 문항의 핵심</div>
+<p>빛을 끈 순간(t = 10 s)에 δp 가 얼마였는지를 알아야 한다. a) 의 답에 t = 10 을 넣어 본다.</p>
+<div class="eq">δp(10) = 10<sup>14</sup> (1 − e<sup>−10 / 10<sup>−6</sup></sup>) = 10<sup>14</sup> (1 − e<sup>−10<sup>7</sup></sup>)</div>
+<p><b>e<sup>−10<sup>7</sup></sup> 은 사실상 0 이다.</b> 수명이 1 μs 인데 10 초를 켜 뒀으니 <b>수명의 천만 배</b>다.
+차오를 시간이 넘치도록 있었다는 뜻이라, 이미 <b>완전히 포화</b>돼 있다.</p>
+<div class="eq">δp(10) = 10<sup>14</sup> cm<sup>−3</sup></div>
+</div>
+
+<div class="step"><div class="h"><i>3</i>시간의 원점을 옮긴다</div>
+<p>감쇠는 <b>빛을 끈 순간부터</b> 시작한다. 그러니 지수에 들어갈 것은 t 가 아니라 <b>t − 10</b>, 곧 "끄고 나서 얼마나 지났나" 다.</p>
+<p>스톱워치를 새로 누른다고 생각하면 된다. t = 10 일 때 지수가 <code>e⁰ = 1</code> 이 되어 δp = 10<sup>14</sup> 로 이어진다.
+만약 t 를 그대로 쓰면 t = 10 에서 이미 <code>e<sup>−10<sup>7</sup></sup> ≈ 0</code> 이 되어 <b>값이 끊긴다.</b></p>
+</div>
+
+<div class="ans"><span class="lbl">b) 답</span>
+δp(t) = 10<sup>14</sup> · e<sup>−(t − 10) / 1μs</sup> cm<sup>−3</sup> &nbsp;&nbsp;(t ≥ 10 s)
+</div>
+
+<div class="box warn">
+  <div class="t">이 문항에서 가장 많이 틀리는 곳</div>
+  지수에 <b>t</b> 를 그대로 쓰는 것이다. 반드시 <b>(t − 10)</b> 이어야 한다.<br>
+  채점자가 여기를 본다. 나머지가 다 맞아도 이것 하나로 감점된다.
+</div>
+
+<h2 id="c" class="q"><span class="n">c</span>그래프 그리기 &nbsp;<span style="font-size:.8rem;color:var(--dim);font-weight:400">10점 · 슬라이드 5쪽 + 14쪽 Figure 6.7</span></h2>
+
+<div class="step"><div class="h"><i>1</i>묻는 것이 δp 가 아님을 본다</div>
+<p>a) b) 는 <b>늘어난 몫(δp)</b>만 구했다. c) 는 <b>전체 농도 n(t), p(t)</b> 를 묻는다. 원래 있던 값을 더해야 한다.</p>
+<div class="eq">n(t) = n₀ + δn(t) &nbsp;&nbsp;&nbsp; p(t) = p₀ + δp(t)</div>
+<p>그리고 빛은 전자·정공을 쌍으로 만들므로 <b>δn = δp</b> 다. 즉 <b>둘 다 똑같은 양이 더해진다.</b></p>
+</div>
+
+<div class="step"><div class="h"><i>2</i>숫자를 넣어 본다 — 여기서 놀라야 정상이다</div>
+<div class="scroll"><table>
+<tr><th></th><th>빛 켜기 전</th><th>포화된 뒤</th><th>변화</th></tr>
+<tr><td><b>다수 (전자)</b></td><td class="f">n₀ = 10<sup>16</sup></td><td class="f">10<sup>16</sup> + 10<sup>14</sup> = 1.01 × 10<sup>16</sup></td><td><b>1 % 증가</b></td></tr>
+<tr><td><b>소수 (정공)</b></td><td class="f">p₀ = 10<sup>4</sup></td><td class="f">10<sup>4</sup> + 10<sup>14</sup> ≈ 10<sup>14</sup></td><td><b>10<sup>10</sup> 배 증가</b></td></tr>
+</table></div>
+<p><b>똑같이 10<sup>14</sup> 를 더했는데 결과가 완전히 다르다.</b> 원래 갖고 있던 값이 10<sup>12</sup> 배 차이 났기 때문이다.
+바다에 물 한 컵을 부으면 바다는 그대로지만, 컵 속 물에게는 전부가 바뀐 것이다.</p>
+</div>
+
+<div class="step"><div class="h"><i>3</i>그래서 세로축을 log 로 그린다</div>
+<p>10<sup>4</sup> 과 10<sup>16</sup> 을 한 그림에 담아야 하는데, 보통 눈금으로는 불가능하다.
+10<sup>4</sup> 이 바닥에 붙어 아예 안 보인다.</p>
+<p><b>log 눈금</b>을 쓰면 <b>한 칸이 10 배</b>가 되어 둘 다 보인다. 슬라이드 14쪽 Figure 6.7 이 정확히 그 그림이다.</p>
+</div>
+
+<div class="step"><div class="h"><i>4</i>그림의 모양</div>
+<div class="card" style="font-family:Consolas,monospace;font-size:.86rem;line-height:1.9;overflow-x:auto">
+농도 (log)<br>
+10<sup>16</sup> ─── ━━━━━━━━━━━━━━━━━━━━━━━ &nbsp;&nbsp;<b>n(t)</b> 다수 · 거의 평평 (1 % 만 올라감)<br>
+<br>
+10<sup>14</sup> ─── &nbsp;&nbsp;&nbsp;&nbsp;╭━━━━━━━━━━━━╮<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╱ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╲ &nbsp;&nbsp;<b>p(t)</b> 소수 · 10<sup>10</sup> 배 치솟음<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+10<sup>4</sup> &nbsp;─── ━━━┛ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┗━━━<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─────────────────────→ 시간<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t=0 (켬) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t=10s (끔)
+</div>
+<p>답안에는 이 정도를 손으로 그리고 <b>세 가지를 반드시 표시</b>한다.</p>
+<ul>
+<li><b>세로축이 log scale</b> 이라고 적을 것</li>
+<li><b>n₀ = 10<sup>16</sup>, p₀ = 10<sup>4</sup></b> 값을 축에 적을 것</li>
+<li>빛을 끈 뒤 <b>원래 값으로 되돌아간다</b>고 그릴 것 — 0 으로 내려가지 않는다</li>
+</ul>
+</div>
+
+<div class="ans"><span class="lbl">c) 답 요지</span>
+<span style="font-size:1rem">n(t) = 10<sup>16</sup> + δp(t) → 거의 평평 (1 % 증가)<br>
+p(t) = 10<sup>4</sup> + δp(t) → 10<sup>10</sup> 배 치솟음<br>
+세로축 log scale, 빛을 끄면 각각 10<sup>16</sup> 과 10<sup>4</sup> 로 복귀</span>
+</div>
+
+<div class="box warn">
+  <div class="t">가장 흔한 실수</div>
+  감쇠 곡선을 <b>0 까지 내려 긋는 것</b>이다. 사라지는 것은 <b>늘어난 몫(δp)</b> 이지 캐리어 전부가 아니다.
+  빛을 끄면 <b>평형값으로 돌아간다.</b>
+</div>
+
+<h2 id="d" class="q"><span class="n">d</span>한 점에만 빛 &nbsp;<span style="font-size:.8rem;color:var(--dim);font-weight:400">10점 · 슬라이드 14쪽 예제 6.4</span></h2>
+
+<div class="step"><div class="h"><i>1</i>이번엔 지워지는 항이 다르다</div>
+<p>a) b) 는 <b>시간</b> 문제였고 d) 는 <b>위치</b> 문제다. 조건이 셋이나 붙어 있다.</p>
+<div class="eq">D<sub>p</sub> ∂²(δp)/∂x² <span class="strike">− μ<sub>p</sub>E ∂(δp)/∂x</span> <span class="strike">+ g′</span> − δp/τ<sub>p0</sub> = <span class="strike">∂(δp)/∂t</span>
+<small>zero E-field → 드리프트 = 0 &nbsp;|&nbsp; x ≠ 0 에서는 빛이 없다 → g′ = 0 &nbsp;|&nbsp; steady state → 시간 변화 = 0</small></div>
+<p><b>이번엔 확산 항이 살아남는다.</b> a) b) 와 정반대다.</p>
+<div class="eq">D<sub>p</sub> ∂²(δp)/∂x² − δp/τ<sub>p0</sub> = 0</div>
+</div>
+
+<div class="step"><div class="h"><i>2</i>보기 좋게 정리하고 이름을 붙인다</div>
+<p>양변을 D<sub>p</sub> 로 나눈다.</p>
+<div class="eq">∂²(δp)/∂x² − δp/(D<sub>p</sub>τ<sub>p0</sub>) = 0</div>
+<p>분모의 <code>D<sub>p</sub>τ<sub>p0</sub></code> 에 <b>L<sub>p</sub>²</b> 이라는 이름을 붙인다. 즉</p>
+<div class="eq">L<sub>p</sub> = √(D<sub>p</sub>τ<sub>p0</sub>) &nbsp;&nbsp; <b>확산거리 (diffusion length)</b>
+<small>과잉 캐리어가 사라지기 전까지 평균적으로 퍼져 나가는 거리</small></div>
+<p>왜 이게 거리인지는 단위로 확인된다. D 는 cm²/s, τ 는 s 이므로 곱하면 cm², 제곱근을 씌우면 <b>cm</b> 다.
+<b>잘 퍼지고(D 큼) 오래 살수록(τ 큼) 멀리 간다</b>는 뜻이라 직관과도 맞는다.</p>
+</div>
+
+<div class="step"><div class="h"><i>3</i>푼다</div>
+<p><b>"두 번 미분한 것이 자기 자신에 비례한다"</b>는 꼴이다. 이런 방정식의 답은 지수함수 두 개의 합이다.</p>
+<div class="eq">δp(x) = A e<sup>x/L<sub>p</sub></sup> + B e<sup>−x/L<sub>p</sub></sup></div>
+<p>하나는 오른쪽으로 갈수록 커지고, 하나는 작아진다. <b>어느 쪽을 버릴지는 상식이 정한다.</b></p>
+</div>
+
+<div class="step"><div class="h"><i>4</i>말이 안 되는 항을 버린다</div>
+<p><b>x &gt; 0 쪽</b>에서 <code>e<sup>x/L</sup></code> 은 멀어질수록 무한대로 커진다.
+광원에서 멀어질수록 캐리어가 많아진다는 뜻이 되므로 말이 안 된다. → <b>A = 0</b></p>
+<p><b>x &lt; 0 쪽</b>도 같은 이유로 반대 항을 버린다. → <b>B = 0</b></p>
+<p>양쪽을 합치면 <b>절댓값</b> 하나로 쓸 수 있다.</p>
+</div>
+
+<div class="ans"><span class="lbl">d) 답</span>
+δp(x) = δp(0) · e<sup>−|x| / L<sub>p</sub></sup>, &nbsp;&nbsp; L<sub>p</sub> = √(D<sub>p</sub>τ<sub>p0</sub>)
+</div>
+
+<p>x = 0 을 꼭짓점으로 <b>좌우 대칭으로 줄어드는 뾰족한 산</b> 모양이다. 슬라이드 14쪽 Figure 6.7 아래 그림이 바로 이것이다.</p>
+
+<div class="box">
+  <div class="t">숫자까지 요구하면</div>
+  6번 문제 자체에는 D<sub>p</sub> 가 안 주어져 있으므로 <b>L<sub>p</sub> 기호로 두는 것이 정답</b>이다.<br>
+  다만 같은 시험 5번에 <code>μ<sub>p</sub> = 500 cm²/Vs</code> 가 있으므로, 요구하면 <b>아인슈타인 관계</b>로 넘어갈 수 있다.
+  <div class="eq" style="margin:12px 0">D<sub>p</sub> = (kT/e)·μ<sub>p</sub> = 0.0259 × 500 = 12.95 cm²/s</div>
+  <div class="eq" style="margin:0">L<sub>p</sub> = √(12.95 × 10<sup>−6</sup>) ≈ 3.6 × 10<sup>−3</sup> cm = <b>36 μm</b></div>
+</div>
+
+<hr>
+
+<h2 id="s7"><span class="n">7</span>답안 그대로 옮겨 쓰기</h2>
+<p class="lead">시험지에 이 순서로 쓰면 된다. 지운 이유를 적는 줄이 서술 배점이다.</p>
+
+<div class="card" style="font-size:.95rem">
+<p><b>[공통]</b> As 는 5족 원소이므로 n형 반도체이다. 따라서 소수 캐리어는 정공이고 δp 로 푼다.<br>
+n₀ ≈ N<sub>d</sub> = 10<sup>16</sup> cm<sup>−3</sup>, &nbsp; p₀ = nᵢ²/n₀ = 10<sup>20</sup>/10<sup>16</sup> = 10<sup>4</sup> cm<sup>−3</sup><br>
+n형 ambipolar transport equation :<br>
+<span style="font-family:Georgia,serif">D<sub>p</sub>∂²(δp)/∂x² − μ<sub>p</sub>E∂(δp)/∂x + g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</span></p>
+
+<p><b>(a)</b> uniform 이므로 확산 항 = 0, 전기장이 없으므로 드리프트 항 = 0.<br>
+∴ g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t<br>
+t &lt; 0 에서 평형이므로 δp(0) = 0.<br>
+∴ <b>δp(t) = g′τ<sub>p0</sub>(1 − e<sup>−t/τ<sub>p0</sub></sup>) = 10<sup>14</sup>(1 − e<sup>−t/1μs</sup>) cm<sup>−3</sup></b></p>
+
+<p><b>(b)</b> 빛을 껐으므로 g′ = 0.<br>
+∴ ∂(δp)/∂t = −δp/τ<sub>p0</sub><br>
+τ<sub>p0</sub> = 1 μs 에 비해 10 s 는 충분히 길어 이미 포화 상태이므로 δp(10) = 10<sup>14</sup> cm<sup>−3</sup>.<br>
+∴ <b>δp(t) = 10<sup>14</sup>·e<sup>−(t−10)/1μs</sup> cm<sup>−3</sup></b></p>
+
+<p><b>(c)</b> δn = δp 이므로 n(t) = n₀ + δp(t), p(t) = p₀ + δp(t).<br>
+다수 : 10<sup>16</sup> → 1.01×10<sup>16</sup> (약 1 % 증가로 거의 일정)<br>
+소수 : 10<sup>4</sup> → 약 10<sup>14</sup> (10<sup>10</sup> 배 증가)<br>
+두 값의 차이가 커서 세로축을 log scale 로 그린다. 빛을 끄면 각각 10<sup>16</sup>, 10<sup>4</sup> 로 복귀한다. <i>(그래프 첨부)</i></p>
+
+<p><b>(d)</b> 전기장이 0 이므로 드리프트 항 = 0, x ≠ 0 에서 g′ = 0, 정상상태이므로 시간 항 = 0.<br>
+∴ ∂²(δp)/∂x² − δp/L<sub>p</sub>² = 0, &nbsp; L<sub>p</sub> = √(D<sub>p</sub>τ<sub>p0</sub>)<br>
+일반해 δp(x) = Ae<sup>x/L<sub>p</sub></sup> + Be<sup>−x/L<sub>p</sub></sup> 에서 x → ±∞ 에서 발산하면 안 되므로<br>
+x &gt; 0 : A = 0, &nbsp; x &lt; 0 : B = 0<br>
+∴ <b>δp(x) = δp(0)·e<sup>−|x|/L<sub>p</sub></sup></b></p>
+</div>
+
+<h2 id="s8"><span class="n">8</span>자주 틀리는 곳</h2>
+<p class="lead">배점 40점이 갈리는 자리 다섯.</p>
+
+<div class="card">
+<ul class="chk">
+<li><b>As 를 보고 n형을 잡았나</b> — 여기서 틀리면 δn/δp, D<sub>n</sub>/D<sub>p</sub>, τ 가 전부 반대로 간다. <b>40점 전멸</b></li>
+<li><b>b) 지수에 (t − 10) 을 썼나</b> — 시간 원점 이동. t 를 그대로 쓰면 감점</li>
+<li><b>c) 를 log scale 로 그렸나</b> — 10<sup>4</sup> 과 10<sup>16</sup> 을 한 그림에 담는 유일한 방법</li>
+<li><b>c) 에서 0 까지 내려 긋지 않았나</b> — 평형값으로 돌아간다</li>
+<li><b>지운 항마다 근거를 한 줄씩 썼나</b> — 답만 맞으면 반만 받는다</li>
+</ul>
+</div>
+
+<div class="box warn">
+  <div class="t">그리고 하나 더 — 예제를 그대로 베끼지 말 것</div>
+  슬라이드 14쪽 <b>예제 6.4 는 p형(δn)</b> 인데 이 문제는 <b>n형(δp)</b> 이다.
+  기호를 안 바꾸고 그대로 옮겨 적으면 틀린다. 다른 해에는 도핑 원소가 <b>B(붕소, 3족)</b> 로 나온 적도 있으니
+  <b>매번 첫 줄부터 확인</b>해야 한다.
+</div>
+
+<div class="box good">
+  <div class="t">마지막으로 — 이 문제는 매년 나온다</div>
+  2020~2024 중간 6번이 전부 같은 구조다. 도핑 원소와 숫자만 바뀐다.<br>
+  <b>세 가지 답 모양(차오름 · 사라짐 · 퍼짐)</b>과 <b>항 지우기 표</b> 두 개만 손에 익히면 40점이 고정으로 들어온다.
+</div>
+
+<footer>
+반도체공학 2024년도 2학기 중간고사 6번 [40점] · Neamen 4판 Ch.6 기준<br>
+관련 자료 — <b>Ch.6_한줄해설_고졸판.html</b> (슬라이드 전체 한 줄 해설) · <b>Ch.6_요약정리_고졸판.html</b> (챕터 요약)
+</footer>
+
+</div>
+<a href="../index.html" style="position:fixed;left:14px;bottom:16px;z-index:99;background:#1b4d8f;color:#fff;text-decoration:none;font:600 13px/1 -apple-system,sans-serif;padding:11px 15px;border-radius:22px;box-shadow:0 3px 10px rgba(0,0,0,.28)">&#8592; 목록</a>
+</body>
+</html>

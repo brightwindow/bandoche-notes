@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>반도체공학 — 학습 자료</title>
+<style>
+:root{
+  --bg:#f6f6f4; --card:#fff; --ink:#1b1b19; --dim:#63635c; --line:#e2e1dc;
+  --accent:#1b4d8f; --accent-soft:#e8f0fa;
+  --a:#1d6b45; --a-soft:#e6f3ec;
+  --b:#8a6100; --b-soft:#fdf4e0;
+  --c:#a8320f; --c-soft:#fdeee9;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#151619; --card:#1e2024; --ink:#e9e9e5; --dim:#a5a59e; --line:#31343a;
+  --accent:#7fb0ea; --accent-soft:#1c2a3d;
+  --a:#7fd0a4; --a-soft:#172f23;
+  --b:#e0b458; --b-soft:#332a15;
+  --c:#f0866a; --c-soft:#3a2019;
+}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:17px;line-height:1.65;letter-spacing:-.01em;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.wrap{max-width:760px;margin:0 auto;padding:34px 18px 80px}
+header{border-bottom:3px solid var(--accent);padding-bottom:16px;margin-bottom:6px}
+.kicker{font-size:.72rem;letter-spacing:.15em;color:var(--accent);font-weight:800;margin-bottom:7px}
+h1{font-size:1.75rem;margin:0 0 6px;letter-spacing:-.025em;line-height:1.25}
+.sub{color:var(--dim);font-size:.9rem;margin:0}
+h2{font-size:1.02rem;margin:34px 0 10px;letter-spacing:-.015em;
+   display:flex;align-items:center;gap:9px}
+h2 span{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:20px}
+.t1 span{background:var(--a-soft);color:var(--a)}
+.t2 span{background:var(--b-soft);color:var(--b)}
+.t3 span{background:var(--c-soft);color:var(--c)}
+.lead{color:var(--dim);font-size:.87rem;margin:-4px 0 12px}
+a.card{display:block;text-decoration:none;color:inherit;background:var(--card);
+  border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin-bottom:9px;
+  transition:border-color .15s, transform .08s}
+a.card:active{transform:scale(.985)}
+a.card:hover{border-color:var(--accent)}
+.ttl{font-weight:700;font-size:1.03rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ttl .n{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.02em}
+.ttl .sz{margin-left:auto;color:var(--dim);font-size:.74rem;font-weight:500;white-space:nowrap}
+.d{color:var(--dim);font-size:.85rem;margin-top:3px;line-height:1.5}
+.note{background:var(--accent-soft);border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:13px 16px;margin:22px 0;font-size:.88rem}
+.note b{color:var(--accent)}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  color:var(--dim);font-size:.79rem;line-height:1.6}
+@media(max-width:430px){.wrap{padding:26px 14px 60px}h1{font-size:1.45rem}.ttl .sz{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">SEMICONDUCTOR ENGINEERING · 2026-2</div>
+  <h1>반도체공학 학습 자료</h1>
+  <p class="sub">Neamen 4판 기준 · 노정균 교수님 · 강의자료 148쪽 + 강의 영상 93분에서 뽑음</p>
+</header>
+
+<h2 class="t1"><span>한 줄 해설</span></h2>
+<p class="lead">슬라이드 원문을 한 줄씩 옮기고 그 옆에 고졸 수준 해설을 붙였다. 교수님 손글씨 필기까지 전부 복원했다. 처음 공부할 때, 막힐 때 본다.</p>
+
+<a class="card" href="ch/ch1-line.html">
+  <div class="ttl"><span class="n">Ch.1</span>결정 구조<span class="sz">26쪽 · 128KB</span></div>
+  <div class="d">단위세포 원자수, 밀러지수, 원자밀도·면밀도, 결합 네 종류, 결함, 결정 성장</div>
+</a>
+<a class="card" href="ch/ch2-line.html">
+  <div class="ttl"><span class="n">Ch.2</span>양자역학 입문<span class="sz">24쪽 · 145KB</span></div>
+  <div class="d">슈뢰딩거 방정식, 무한·유한 우물, 파동함수, 터널링, 축퇴</div>
+</a>
+<a class="card" href="ch/ch3-line.html">
+  <div class="ttl"><span class="n">Ch.3</span>고체의 양자론<span class="sz">37쪽 · 194KB</span></div>
+  <div class="d">Kronig-Penney, 유효질량, DOS 3D·2D·1D 유도, Fermi-Dirac 분포</div>
+</a>
+<a class="card" href="ch/ch4-line.html">
+  <div class="ttl"><span class="n">Ch.4</span>평형 상태의 반도체<span class="sz">27쪽 · 155KB</span></div>
+  <div class="d">도핑, 다수·소수 캐리어, E<sub>F</sub> 위치, 축퇴 반도체, 온도 3구간</div>
+</a>
+<a class="card" href="ch/ch5-line.html">
+  <div class="ttl"><span class="n">Ch.5</span>전하 수송 현상<span class="sz">16쪽 · 127KB</span></div>
+  <div class="d">드리프트·확산, 두 가지 산란, Einstein 관계, Hall 효과</div>
+</a>
+<a class="card" href="ch/ch6-line.html">
+  <div class="ttl"><span class="n">Ch.6</span>비평형 과잉 캐리어<span class="sz">18쪽 · 102KB</span></div>
+  <div class="d">생성·재결합, 수명 τ, ambipolar 수송방정식, quasi-Fermi, SRH</div>
+</a>
+
+<h2 class="t2"><span>요약 · 문제</span></h2>
+<p class="lead">시험 전날 훑는 용도와, 아는지 확인하는 용도.</p>
+
+<a class="card" href="ch/ch6-summary.html">
+  <div class="ttl"><span class="n">요약</span>Ch.6 한 장 정리<span class="sz">13항목 · 28KB</span></div>
+  <div class="d">기호 읽는 규칙 → 개념 → 항 지우기 표 → 3대 답 패턴 → 시험 체크리스트</div>
+</a>
+<a class="card" href="ch/ch1-quiz.html">
+  <div class="ttl"><span class="n">문제</span>Ch.1 4지선다 40문항<span class="sz">하15 중15 상10</span></div>
+  <div class="d">보기를 누르면 바로 채점되고 해설이 펼쳐진다. 난이도별 필터 있음</div>
+</a>
+
+<h2 class="t3"><span>강의 · 기출</span></h2>
+<p class="lead">교수님이 실제로 하신 말과 판서까지 넣은 것, 그리고 기출 한 문항 완전 풀이.</p>
+
+<a class="card" href="ch/ch1-full.html">
+  <div class="ttl"><span class="n">통합</span>Ch.1 강의 통합 해설<span class="sz">326KB</span></div>
+  <div class="d">원문 + 해설 + <b>강의 중 판서 112곳</b> + 강의 육성 145곳(타임스탬프) + 자료에 없는 내용 59곳. 전사 886줄 100% 배정</div>
+</a>
+<a class="card" href="ch/exam2024-q6.html">
+  <div class="ttl"><span class="n">기출</span>2024 중간 6번 완전 해설<span class="sz">40점 · 40KB</span></div>
+  <div class="d">반도체가 뭔지 모르는 상태에서 시작해 답안 쓰는 데까지. 봐야 할 슬라이드 6장만 골라 준다</div>
+</a>
+
+<div class="note">
+  <b>어디부터 보나</b><br>
+  중간 범위는 Ch.1~6이다. 물리전자(3-1)에서 이미 한 내용이 대부분이라
+  <b>Ch.6이 유일하게 새로 배우는 장</b>이다. 거기부터 잡고 나머지는 훑는 순서가 빠르다.<br><br>
+  Ch.1 강의 통합 해설의 <b>주황색 판서 상자</b>와 <b>보라색 자료에 없는 내용</b>은
+  슬라이드에 없고 영상에만 있는 것들이다. 대면 수업에서 되물을 확률이 높은 자리다.
+</div>
+
+<footer>
+  개인 학습용 정리본이다. 강의자료와 강의 내용의 저작권은 담당 교수님께 있다.<br>
+  검색 노출을 막아 두었으니 링크를 아는 사람만 볼 수 있다. 외부에 퍼뜨리지 말 것.
+</footer>
+
+</div>
+</body>
+</html>
