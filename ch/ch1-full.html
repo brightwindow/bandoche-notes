@@ -93,6 +93,17 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 .said.rv b{color:#176b5d}
 .said.rv .ts{background:var(--rvb)}
 .c8{background:var(--rv);border-color:var(--rvb)}
+
+/* 내 굿노트 필기 */
+.gn{margin:12px 0;padding:11px 16px;background:#fff7e6;border-left:3px solid #e08a00;border-radius:0 6px 6px 0;font-size:14.3px}
+.gn>b:first-child{color:#a35f00}
+.gnh{color:#0b3d91;font-weight:600;background:#eef3ff;padding:0 4px;border-radius:3px}
+.gnh.r{color:#b00000;background:#fff0f0}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#a35f00;font-size:13.5px}
+details.gnd img,.gnimg img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
+.gnimg{margin:8px 0}
+.c9{background:#fff7e6;border-color:#e08a00}
+h3.gnh3{color:#a35f00;border-bottom-color:#f3c77a}
 </style>
 </head>
 <body>
@@ -100,8 +111,8 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <h1>반도체공학 Ch.1 결정 구조 — 강의 통합 해설</h1>
 <div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
 <div class="cov ok">영상 강의 전사 <b>886줄</b> + 오프라인 수업 전사 <b>2,469줄</b>(OT 53분 · 1장 리뷰 70분) <b>전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
-<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-09 추가 — 실제 오프라인 수업(한국어)</b><br>영상 강의 위에 <b>교실에서 한 1장 리뷰 수업</b>과 <b>첫 OT 수업</b>을 겹쳐 넣었다. 초록색 상자가 그것이다. 리뷰 수업 칠판 세 장(현장 사진)은 <a href="#s2">2쪽</a>에 한 줄씩 옮겼고, 말로 한 설명은 해당 쪽 끝에 붙였다 — <a href="#s4">4쪽</a> 고체 종류 · <a href="#s5">5쪽</a> 격자 상수 · <a href="#s6">6쪽</a> 정의·역사 · <a href="#s7">7쪽</a> 왜 실리콘·CPO · <a href="#s21">21쪽</a> (100) 90% · <a href="#s24">24쪽</a> CZ법 · <a href="#s25">25쪽</a> 웨이퍼 크기·SiC. 수업 운영·산업·진로 이야기는 <a href="#s903">부록 ③④</a>. 타임스탬프 <span class="eq">리뷰</span> = 1장 리뷰 녹음, <span class="eq">OT①·OT②</span> = 첫 오프라인 수업 녹음 두 개.</div>
-<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
+<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-09 추가 — 실제 오프라인 수업(한국어)</b><br>영상 강의 위에 <b>교실에서 한 1장 리뷰 수업</b>과 <b>첫 OT 수업</b>을 겹쳐 넣었다. 초록색 상자가 그것이다. 리뷰 수업 칠판 세 장(현장 사진)은 <a href="#s2">2쪽</a>에 한 줄씩 옮겼고, 말로 한 설명은 해당 쪽 끝에 붙였다 — <a href="#s4">4쪽</a> 고체 종류 · <a href="#s5">5쪽</a> 격자 상수 · <a href="#s6">6쪽</a> 정의·역사 · <a href="#s7">7쪽</a> 왜 실리콘·CPO · <a href="#s21">21쪽</a> (100) 90% · <a href="#s24">24쪽</a> CZ법 · <a href="#s25">25쪽</a> 웨이퍼 크기·SiC. <b>내 굿노트 필기</b>(주황 상자)도 21개 쪽에 옮기고, 필기만 진하게 표시한 쪽 이미지를 접어 두었다. 수업 운영·산업·진로 이야기는 <a href="#s903">부록 ③④</a>. 타임스탬프 <span class="eq">리뷰</span> = 1장 리뷰 녹음, <span class="eq">OT①·OT②</span> = 첫 오프라인 수업 녹음 두 개.</div>
+<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c9"></i>내 굿노트 필기</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
 <div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Chapter Overview + 리뷰 칠판</a><a href="#s3">3쪽 · Contents</a><a href="#s4">4쪽 · 고체의 종류</a><a href="#s5">5쪽 · 결정 요약과 결정 성장</a><a href="#s6">6쪽 · 1.1 Definition of Semiconductors</a><a href="#s7">7쪽 · 1.1 Types of Semiconductors</a><a href="#s8">8쪽 · 1.2 Three Types of Solids</a><a href="#s9">9쪽 · 1.3 Lattice</a><a href="#s10">10쪽 · 1.3 Unit Cell and Primitive</a><a href="#s11">11쪽 · 1.3 Semiconductor Crystals</a><a href="#s12">12쪽 · 1.3 Basic Crystal Structures</a><a href="#s13">13쪽 · 1.3 Basic Crystal Structures</a><a href="#s14">14쪽 · Example 1.1</a><a href="#s15">15쪽 · 1.3 Crystal Planes and Miller Indices</a><a href="#s16">16쪽 · 1.3 Miller Indices</a><a href="#s17">17쪽 · 1.3 (100) · (110) · (111) 과 등가면 집합</a><a href="#s18">18쪽 · 1.3 Miller Indices for Directions</a><a href="#s19">19쪽 · Example 1.3</a><a href="#s20">20쪽 · 1.4 Diamond Structure</a><a href="#s21">21쪽 · 1.4 실리콘 결정의 면과 방향에 따른 이동도</a><a href="#s22">22쪽 · 1.5 Bonding Mechanisms in Solids</a><a href="#s23">23쪽 · 1.6 Defects and Impurities</a><a href="#s24">24쪽 · 1.7 Growing Methods</a><a href="#s25">25쪽 · 1.7 From Wafer to Chip</a><a href="#s26">26쪽 · 1.7 Epitaxial growth</a><a href="#s901" class="apx">부록 · 부록 ① 수업 운영 안내</a><a href="#s902" class="apx">부록 · 부록 ② 마무리 인사</a><a href="#s903" class="apx">부록 · 부록 ③ 첫 오프라인 수업(OT)</a><a href="#s904" class="apx">부록 · 부록 ④ 리뷰 수업 첫머리</a></div>
 <h2 id="s1">1쪽<small>표지 — Ch. 1 The Crystal Structure of Solids</small></h2>
 <div class="row"><div class="orig"><b>Semiconductor Engineering</b><br>Ch. 1 The Crystal Structure of Solids</div><div class="exp">과목 이름은 <b>반도체공학</b>, 1장 제목은 <b>고체의 결정 구조</b>다.<br><b>결정(crystal)</b> = 원자가 아무렇게나 놓인 것이 아니라 <b>같은 배열이 계속 반복되도록</b> 줄 맞춰 쌓인 상태다. 벽돌담을 떠올리면 된다. 벽돌 하나의 모양과 쌓는 규칙만 알면 담 전체를 알 수 있다.<br>반도체 소자 이야기를 하기 전에 결정부터 배우는 이유가 여기 있다. <b>원자가 어떻게 줄 서 있느냐가 전기가 얼마나 잘 흐르느냐를 결정</b>하기 때문이다.</div></div>
@@ -115,6 +126,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="said"><b>강의</b> <span class="ts">01:39</span> "자 그럼 본격적으로 시작해 보도록 하죠."<br>표지에 머문 시간이 <b>22초</b>뿐이다. 표지를 설명하지 않고 넘어가셨다는 뜻이다.</div>
 
 <div class="only"><b>자료에 없음</b> <span class="ts">01:25</span> 슬라이드 어디에도 <b>강의를 어떤 언어로 어떤 순서로 진행하는지</b>는 적혀 있지 않다. 말로만 정해 주신 규칙이 둘이다.<br>① 온라인 강의 영상은 <b>영어</b>로 한다.<br>② 챕터마다 그 앞에 <b>한국어 오버뷰</b>를 붙인다. 영어 본문에서 막히더라도 "이 챕터가 무엇을 하는 챕터인지"는 먼저 한국어로 듣고 들어가게 해 두신 장치다.<br>공부 순서도 여기서 정해진다. <b>2쪽 오버뷰를 완전히 소화한 뒤</b> 영어 본문으로 들어가는 것이 교수님이 깔아 둔 길이다.</div>
+
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 표지 위 여백에 1장 역사를 한 줄로 정리해 두었다.<br><span class="gnh">History</span> 초창기 ZnSb, PbS · <span class="gnh r">electric switch</span> · <span class="gnh r">if conductor</span><br><span class="gnh">1947 point contact transistor (Ge)</span> 트랜지스터 — <span class="gnh">transistor 개발까지!!</span> → <span class="gnh">John Bardeen, Walter Brattain, [William Shockley]</span> (성격 X) · (Bell lab) · Nobel prize in physics (1956) → <span class="gnh">Fairchild semi → …</span><br>아래 여백: <span class="gnh">반도체는 스위치다 → 스위치는 신호를 … → 신호로 정보를 …</span> (뒤 두 마디는 판독이 확실하지 않다)<br>리뷰 수업 칠판 ①(2쪽)과 6쪽 리뷰의 요약이다. 맨 왼쪽 동그라미 속 낱말 하나는 판독 불가.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn01.jpg" alt="1쪽 굿노트 필기" loading="lazy"></details>
 
 <h2 id="s2">2쪽<small>Chapter Overview — 이 장 전체 지도 (전부 붉은 손글씨)</small></h2>
 <div class="fig">이 쪽은 인쇄된 글자가 제목 두 줄뿐이고 <b>나머지가 전부 교수님 붉은 펜 손글씨</b>다. 챕터 1 전체를 한 장으로 압축한 지도라서, 시험 직전에 이 쪽만 봐도 무엇이 나오는지 순서가 잡힌다.</div>
@@ -188,6 +203,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ④ <b><code>periodicity → defect</code> 의 관통 이중밑줄</b>(11:05) — 결함의 정의를 "주기성을 깨뜨리는 것"으로 답할 것<br>
 ⑤ 말로 하신 강조 — <b>"이 챕터 1 중요한 챕터"</b>(12:31)</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> <span class="gnh">Periodicity !!</span> (동그라미) · 네모 안에 <span class="gnh">결정 ⟺ 주기적 배열</span> · 오른쪽에 잉곳 그림과 <span class="gnh">ingot</span>.<br>결정의 정의를 "주기적 배열" 한 마디로 못박은 필기다. 교수님 필기의 <span class="hand">periodic arrangement ⇒ crystal</span> 과 같은 말이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn02.jpg" alt="2쪽 굿노트 필기" loading="lazy"></details>
+
 <h3 class="rvh">오프라인 리뷰 수업 칠판 — 실제 강의에서 그린 Chapter 1 오버뷰</h3>
 <div class="fig">여기부터는 <b>영상 강의가 아니라 오프라인(한국어) 리뷰 수업</b>이다. 영상으로 1장을 다 본 뒤 교실에서 교수님이 <b>칠판(프로젝터 화면)에 1장 전체를 한 번에 다시 정리</b>하셨다. 아래는 그 칠판 세 장을 <b>현장 사진에서 한 줄씩 옮긴 것</b>이다. 슬라이드 2쪽의 짧은 필기가 목차라면, 이 칠판은 <b>그 목차를 교수님이 직접 채운 완성판</b>이다.<br>타임스탬프의 <span class="eq">리뷰</span> 는 리뷰 수업 녹음(70분) 기준이다. 쓰는 순서대로 칠판이 쌓였으므로 위에서 아래로 읽으면 수업 흐름 그대로다.</div>
 
@@ -254,6 +273,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ② 화살표가 알려 주듯 <b>1.2 와 1.3 은 한 문제로 묶여 나오기 좋다</b> — "단결정인지 아닌지"를 묻고 이어서 "그 단위세포는 무엇인지"를 묻는 식이다<br>
 ③ 말로 하신 범위 조정 — <b>1.5 Atomic Bonding 은 "간단히 언급만"</b>(13:43). 결합의 네 종류 이름 정도로 정리하고 넘어가면 된다</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 목차 옆에 1.1절을 통째로 정리했다.<br>elemental 에 네모, compound 에 동그라미 · compound 줄 밑 물결 → <span class="gnh">optical device (LED, Laser)</span> · 그 밑 <span class="gnh">AI 데이터센터</span>(흘려 씀)<br>오른쪽: <span class="gnh">Si, Ge, Diamond</span> / <span class="gnh">GaAs, InP, GaN</span> → <span class="gnh">Silicon photonics</span> · <span class="gnh">Co-packaged optics (CPO)</span><br>Why silicon 의 2(bandgap 적절)·3(SiO₂ ⇒ 적절한 절연체)에 네모와 물결 밑줄 · <span class="gnh">μ<sub>e</sub> Si : 1350</span> · <span class="gnh">μ<sub>e</sub> Ge : 3900</span> · <span class="gnh">μ (mobility) ↑</span> 밑에 <span class="gnh">1350</span>, <span class="gnh">3900</span> 동그라미.<br>7쪽 리뷰의 "AI 데이터센터 → 빛 → 실리콘 포토닉스 → CPO" 흐름이 여기 한 장에 들어 있다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn03.jpg" alt="3쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s4">4쪽<small>고체의 종류 — 결정성과 이동도 (전부 손글씨)</small></h2>
 <div class="fig">이 쪽은 인쇄된 글자가 하나도 없고 <b>전부 교수님 손글씨</b>다. 다음 쪽(6쪽)에 나올 "고체 세 종류"를 미리 정리해 둔 판서다.</div>
 <div class="row"><div class="orig"><span class="hand">[필기] ○ Type of Solid</span><br><span class="hand">[필기] Crystallinity.</span> (밑줄)</div><div class="exp">고체를 나누는 기준이 <b>결정성(crystallinity)</b> 하나라고 못 박은 것이다.<br><b>결정성</b> = 원자의 줄이 얼마나 멀리까지 맞아 있는가. 높을수록 규칙적이다.<br>단단하다, 무겁다 같은 다른 성질이 아니라 <b>줄 맞음의 정도</b>로만 나눈다는 점이 중요하다.</div></div>
@@ -263,6 +286,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="fig"><b>오른쪽 그림</b> — 같은 구조인데 기판이 <span class="hand">glass / 결정성X</span> 로 바뀌었고, 맨 위층에 <span class="hand">Amor. Si.</span>(비정질 실리콘)를 올렸다. <b>유리는 줄이 안 맞은 재료</b>라 그 위에 자란 실리콘도 줄을 맞출 수가 없다. 그래서 비정질이 된다.<br>이것이 디스플레이 패널의 사정이다. 화면은 유리 위에 만들어야 하니 이동도 1 짜리 비정질 실리콘으로 만족해야 한다. CPU 처럼 빠를 수는 없지만 <b>화소를 껐다 켜는 데는 충분</b>하다.</div>
 <div class="key"><b>정리</b> — <b>바탕이 결정이면 그 위도 결정이 된다.</b> 반대로 바탕이 유리면 위도 비정질이다. 이 원리를 뒤에서 <b>에피택시(epitaxy)</b> 라는 이름으로 다시 만난다(24쪽). 결정성이 곧 이동도이고, 이동도가 곧 소자의 속도다.</div>
 <div class="key"><b>이 쪽은 강의 영상에 없다.</b> 교수님이 나중에 자료에만 따로 정리해 두신 쪽이라 대응하는 판서도 육성도 없다. 위 해설은 필기 자체를 읽은 것이다.</div>
+
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 세 낱말 위에 한국어를 달았다 — <span class="gnh">비정질</span> · <span class="gnh">다결정</span> · <span class="gnh">단결정</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn04.jpg" alt="4쪽 굿노트 필기" loading="lazy"></details>
 
 <h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
 <div class="fig">리뷰 수업 <b>37:29 ~ 44:48</b> 구간이 이 쪽 내용이다. 칠판 ②(2쪽에 옮김)의 윗부분을 쓰면서 한 설명이다. 영상에는 이 쪽이 없었지만 <b>리뷰 수업에서는 이 쪽을 7분 넘게</b> 다뤘다.</div>
@@ -292,6 +319,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="row"><div class="orig"><span class="hand">[필기] SiC → 6" : 4" → (8") &nbsp; 9 : 1 &nbsp; DB하이텍.</span><br><span class="hand">[필기] ↓ Wolf speed. CREE</span></div><div class="exp">비교 대상으로 <b>SiC(탄화규소)</b> 를 적어 두셨다.<br>SiC 는 실리콘보다 밴드갭이 크고 열에 강해 <b>전기차 인버터 같은 고전력 소자</b>에 쓴다. 그런데 결정을 키우기가 훨씬 어렵다.<br>그래서 웨이퍼가 아직 <b>6인치와 4인치 수준</b>이고, 이제 8인치로 넘어가는 중이다. 실리콘이 12인치인 것과 비교하면 <b>두 세대 이상 뒤</b>다.<br><b>Wolfspeed(옛 CREE)</b> 는 SiC 웨이퍼를 만드는 대표 회사이고, <b>DB하이텍</b> 은 국내 파운드리다. 산업 현실을 붙여 설명하신 대목이다.</div></div>
 <div class="exam"><b>★ 시험 포인트</b> — 붉은 표시가 웨이퍼 <b>두께 1 mm</b> 와 <b>"사용중" 12인치</b> 두 곳에 있다.<br>① <b>Czochralski 법</b> — 씨앗 결정을 녹은 실리콘에 담가 <b>돌리면서 천천히 끌어올린다</b>. 세 동작(접촉 · 회전 · 인상)을 다 써야 한다<br>② 결과물은 <b>잉곳</b> → 썰면 <b>웨이퍼</b>(두께 약 1 mm)<br>③ 현재 주력 웨이퍼는 <b>12인치 = 300 mm</b><br>④ 실리콘 웨이퍼의 <b>90 %가 (100) 면</b></div>
 <div class="key"><b>이 쪽은 강의 영상에 없다.</b> 교수님이 나중에 자료에만 따로 정리해 두신 쪽이라 대응하는 판서도 육성도 없다. 위 해설은 필기 자체를 읽은 것이다.</div>
+
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 리뷰 수업을 들으며 이 쪽에 덧쓴 것이다.<br>• <span class="gnh">0.5nm</span> 동그라미 + <span class="gnh">lattice constant</span> + <span class="gnh">5×10⁻⁸</span>(cm) — 위쪽 "0.5nm"로 화살표를 되돌려 그었다. 격자 상수를 cm 로 바꾼 값이다.<br>• 네모 두 개를 쌓은 그림 + <span class="gnh">벽돌 크기(?)!!</span> — 5쪽 리뷰의 <b>벽돌 비유</b>(격자 상수 = 벽돌 한 장 크기)다.<br>• <span class="gnh">에칭</span>(동그라미) → <span class="gnh">비등방성 식각</span> — 21쪽 리뷰의 KOH 이야기.<br>• (111) 밑에 원과 삼각형 그림 — (111)면 식각으로 생기는 모양.<br>• SiC 옆 큰 동그라미 <span class="gnh">wafer부터 직접(?)!!</span> — SiC 회사들이 웨이퍼부터 직접 만든다는 25쪽 리뷰 대목. 아래 <span class="gnh">두산</span> — SK실트론 매각처. 녹음에서 흐렸던 "두산"이 필기로 확인된다.<br>• 오른쪽 위 <span class="gnh">10 : 20</span>(?)은 판독이 애매하다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn05.jpg" alt="5쪽 굿노트 필기" loading="lazy"></details>
 
 <h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
 <div class="fig">리뷰 수업 <b>44:48 ~ 50:48</b> 구간이 이 쪽 윗부분(Crystal · 격자 상수 · 단위 부피당 원자 수)이다. 칠판 ②의 아래쪽(Crystal 줄과 lattice mismatch 그림)을 쓰면서 한 설명이다. 이 쪽 아랫부분(성장법·웨이퍼 크기)은 <b>24·25쪽 리뷰</b>로 나눠 옮겼다.</div>
@@ -357,6 +388,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ④ 경계 숫자 — <b>σ &lt; 10<sup>−8</sup> 절연체, σ &gt; 10<sup>3</sup> 도체</b>(말로만 주셨다)<br>
 ⑤ 한 단계 더 — <b>소자 수준에서 전기적으로도 바꿀 수 있고, 그래서 스위치가 된다</b>(17:22)</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b><br>• 제목 옆: <span class="gnh">*반도체를 바꾸는 방법</span> — ┌ <span class="gnh">도핑</span> └ <span class="gnh">전기장 (스위치)</span>. 전도도를 바꾸는 두 수단을 짝지었다.<br>• 눈금의 <span class="eq">10⁻⁸</span> 과 <span class="eq">10⁴</span> 에 동그라미 — 반도체 구간의 양 끝. 빨강으로 <span class="gnh r">log 눈금</span>.<br>• <span class="gnh">① 도체와 부도체의 중간</span> <span class="gnh">② 조건에 따라 도체/부도체 → 스위치로 이용 가능</span>, ②에 동그라미 <span class="gnh">정답(?)</span>!! — 교수님이 원하는 정의는 ②라는 표시(6쪽 리뷰의 if/else).<br>• "values" 옆 <span class="gnh">value</span>, "range" 옆 <span class="gnh">range</span>, 두 낱말에 노란 형광. between / metals and insulators 에 자주색 밑줄.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn06.jpg" alt="6쪽 굿노트 필기" loading="lazy"></details>
+
 <h3 class="rvh">오프라인 수업에서 (실제 강의 · 한국어)</h3>
 <div class="fig">이 쪽 내용은 오프라인 수업에서 <b>두 번</b> 나왔다. 첫 오프라인 시간(OT) 끝머리 <span class="eq">OT① 19:14~</span> · <span class="eq">OT② 00:00~05:17</span> 에서 한 번, 1장 리뷰 수업 <span class="eq">리뷰 08:53~21:47</span> 에서 한 번이다. 칠판 ① 윗부분(2쪽에 옮김)이 이 대목의 판서다.</div>
 <div class="said rv"><b>OT</b> <span class="ts">OT① 19:14</span> "반도체 공학 … 그러면 사실 우리 과목의 질문은 <b>딱 두 가지</b>예요. 1번은 뭐예요? <b>반도체가 뭐냐.</b> 2번 뭐예요? <b>반도체 소자는 뭔가.</b>"<br>과목 전체를 두 질문으로 줄이셨다. 1장이 첫 번째 질문, 뒤 장들이 두 번째 질문이다.</div>
@@ -409,6 +444,12 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">20:15</span> "You will learn the concept of <b>direct-indirect band gap</b> in the later chapter." / <span class="ts">20:35</span> "having the <b>direct band gap is really important to make high-performance optical devices</b>." / <span class="ts">20:42</span> "So <b>that's why we cannot make the optical devices out of silicon</b>. And we need a direct band gap such as <b>indium phosphide or gallium arsenide</b>."<br>판서의 <b>direct vs indirect bandgap</b> 을 말로 푼 대목이고, <b>슬라이드·표·필기 어디에도 없는 내용</b>이다.<br>지금 단계에서 챙길 결론은 셋이다. ① 밴드갭에는 <b>direct(직접)와 indirect(간접)</b> 두 종류가 있다. ② <b>direct 라야 빛을 낼 수 있다.</b> ③ <b>실리콘은 indirect 라서 광소자를 못 만든다.</b> 그래서 값싸고 흔한 실리콘을 두고도 LED 와 레이저는 GaAs·InP 로 만든다.<br>왜 그런지는 밴드 구조를 배우는 뒤 장으로 미루셨다. 지금은 <b>"Si 는 빛을 못 낸다"</b> 라는 사실만 붙잡아 두면 된다.<br>참고로 <span class="ts">20:51</span> 부근에서 전사가 한 번 깨진다("가유 마스 나이트"). 앞뒤로 보아 <b>gallium arsenide</b> 를 말하는 대목이고, 바로 앞 문장을 다시 맺은 것이다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — <b>direct vs indirect bandgap</b>. 판서로만 남고 <b>슬라이드에는 한 글자도 없는데</b>, 기출에서 반복해 나온 항목이다.<br>① <b>direct = 빛을 낸다 / indirect = 빛 대신 열로 흘린다</b><br>② <b>Si, Ge = indirect</b> → 집적회로용. <b>GaAs, InP = direct</b> → LED·레이저용<br>③ 묻는 방식은 대개 <b>"왜 실리콘으로 LED 를 못 만드는가"</b> 또는 <b>"GaAs 를 광소자에 쓰는 이유"</b> 다. 답의 핵심 낱말은 <b>direct bandgap</b> 하나다<br>교수님이 이 여백 메모를 적으면서 <b>"뒤 장에서 배운다"고 예고까지 하셨다.</b> 뒤 장에서 다시 나오면 그때 이 쪽으로 돌아와 맞춰 볼 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> Elemental 에 자주색 네모, Compound 에 자주색 동그라미, 빨강으로 <span class="gnh r">원소</span> · <span class="gnh r">화합물</span>. 표의 InP 에 동그라미, 맨 아래 <span class="gnh">↓ 빛</span>.<br>이 쪽에는 <b>다른 자료에서 오려 붙인 이미지 두 장</b>이 들어 있다. 직접·간접 밴드갭 이야기를 보충하려고 붙인 것이다.</div>
+<div class="gnimg"><img src="img/ch1/att2.jpg" alt="간접 반도체 재결합 설명 필기" loading="lazy"><img src="img/ch1/att1.jpg" alt="Trapping 정의" loading="lazy"></div>
+<div class="exp" style="border:1px solid var(--line)">붙인 필기의 요지 — <b>간접(indirect) 반도체</b>에서는 E–k 그림에서 전자와 정공의 운동량(momentum)이 달라 바로 만나지 못한다. 그래서 <b>재결합 중심(recombination center)</b>을 거쳐 재결합한다. 재결합 중심은 불순물이나 결함에 생긴다. 전자가 거기 붙잡혀 있다가 정공과 운동량이 맞으면 재결합하는데, 이때 나오는 에너지가 빛이 아니라 <b>격자 진동(포논)</b>이라 LED 에 맞지 않는다.<br>두 번째 조각은 <b>Trapping</b> 의 정의 — 국소 준위(localized state)가 전도대 전자를 잠시 붙잡는 것. 5쪽 리뷰의 "빈 공간이 트랩이 된다"와 같은 트랩이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn07.jpg" alt="7쪽 굿노트 필기" loading="lazy"></details>
+
 <h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
 <div class="fig">리뷰 수업 <b>21:47 ~ 37:29</b> 구간이다. 칠판 ① 아래쪽 — Type of semiconductor, why silicon?, 이동도, 밴드갭, 실리콘 포토닉스, CPO — 가 이 대목의 판서다(2쪽에 옮김).</div>
 <div class="said rv"><b>리뷰</b> <span class="ts">리뷰 21:55</span> "이 타입 오브 세미컨덕터는 두 가지가 있었습니다. 첫 번째는 바로 <b>엘리멘탈</b>, 두 번째는 <b>컴파운드</b>. 엘리멘탈은 그냥 <b>원소 하나로</b> 구성돼요. 예를 들어서 실리콘, 저마늄." … "컴파운드는 갈륨 나이트라이드, 실리콘 카바이드 … 두 개 이상."</div>
@@ -474,6 +515,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">29:04</span> "when you do a research with the <b>polycrystalline</b> semiconductors, it's always necessary to <b>improve its uniformity, not the performance</b>." / <span class="ts">29:23</span> "if you use the <b>amorphous</b> semiconductors for your research, then you always need to <b>improve its performance</b>. Conductivity."<br>슬라이드에 전혀 없는, <b>연구를 어느 쪽으로 끌고 갈지</b>에 관한 이야기다. 정리하면 이렇게 갈린다.<br><b>다결정을 쓴다 → 성능은 이미 쓸 만하다. 숙제는 균일성이다.</b><br><b>비정질을 쓴다 → 균일성은 이미 좋다. 숙제는 성능(전도도)이다.</b><br>같은 재료 이야기를 <b>"무엇이 이미 좋고 무엇이 모자란가"</b> 로 뒤집어 말한 것이라, 세 종류의 장단점을 외우는 것보다 이 두 줄이 오래 남는다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — 슬라이드가 던진 물음 <b>"Amorphous vs. polycrystalline?"</b> 에 교수님이 직접 답을 다신 쪽이다. 판서에서 <b>poor 를 지우고 Uniformity?? 로 고쳐 쓴 것</b>과, <b>uniformity 를 말로 다섯 번 반복한 것</b>이 이 쪽의 강조 전부다.<br>① <b>전기전도도만 보면 단결정 &gt; 다결정 &gt; 비정질</b>. 여기까지는 슬라이드대로다<br>② 그런데 <b>다결정이 늘 비정질보다 낫지는 않다</b>. 이유는 <b>grain boundary 의 deep trap state</b> — 경계에서 전자가 붙잡혀 평균 전도도가 떨어지고, 자리마다 성능이 달라진다<br>③ 그 결과가 <b>균일성(uniformity) 저하</b>다. 100 개를 만들면 70 개만 동작하는 식이다<br>④ 그래서 <b>비정질을 일부러 고르는 경우가 있다.</b> "성능은 낮지만 균일하다"가 이유다<br>⑤ 물음이 <b>"어느 것이 전도도가 높은가"</b> 인지 <b>"어느 것을 고르겠는가"</b> 인지 잘 볼 것. 답이 서로 다르다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b><br>• 비정질 쪽: 빨강 <span class="gnh r">비정질</span>, <span class="gnh">AMO</span> 동그라미 → <span class="gnh">Amorphous metal oxide</span>, 그림 속 동그라미 <span class="gnh">0.1~1</span>(이동도로 보인다), 아래 <span class="gnh">Poly silicon</span>, <span class="gnh">공정(?)</span><br>• 다결정 쪽: 빨강 <span class="gnh r">다결정</span>, <span class="gnh">LTPS – samsung</span> 에 X 표 — 칠판의 "LTPS 옆 낱말"이 samsung 이었음이 필기로 확인된다.<br>• 단결정 쪽: 큰 동그라미 + <span class="gnh">uniformity</span> 동그라미 + <span class="gnh">No!!</span>, 위에 <span class="gnh">μe</span> 동그라미.<br>"단결정이면 무조건 좋다 → No, 균일도(uniformity)가 문제" — 4쪽 리뷰의 <b>레슨 2</b>를 그대로 옮긴 것이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn08.jpg" alt="8쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s9">9쪽<small>1.3 Lattice — 격자와 주기성</small></h2>
 <div class="row"><div class="orig">Lattice &nbsp;&nbsp; <span class="hand">[필기] 격자 &nbsp; 격자구조</span> (제목 옆 붉은 펜)</div><div class="exp">제목 옆에 우리말 <b>"격자"</b> 를 달아 두셨다.<br><b>lattice(격자)</b> = 창살, 격자무늬라는 뜻의 낱말이다. 바둑판이나 모눈종이를 떠올리면 된다.</div></div>
 <div class="row"><div class="orig">Crystal: the component atoms are arranged in a <u>highly ordered structure</u> (붉은 밑줄)</div><div class="exp"><b>결정</b>의 정의다. <b>구성 원자가 매우 질서 있는 구조로 배열되어 있는 것</b>이다.<br>붉은 밑줄이 <b>highly ordered structure</b> 에 그어져 있다. <b>"고도로 질서 잡힌"</b> 이 결정의 자격 조건이다.<br>여기서 질서란 <b>같은 배열이 반복된다</b>는 뜻이지 예쁘다거나 단단하다는 뜻이 아니다.</div></div>
@@ -502,6 +547,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">31:02</span> "So <b>to describe the periodicity of crystal, we employ a concept of lattice</b>."<br>슬라이드에는 격자의 정의만 적혀 있고, <b>왜 격자라는 개념을 끌어들이는지</b>는 없다. 그 이유를 말로만 하신 대목이다.<br>격자는 새로 발견한 물건이 아니라 <b>주기성을 적어 두려고 사람이 만든 도구</b>다. 원자가 어디에 있는지를 일일이 말하는 대신 <b>"이 점들의 규칙을 따른다"</b> 한 줄로 끝내려고 쓰는 것이다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — 판서에서 <b>큰 체크 V</b> 가 붙은 곳은 <b>[단위] × [횟수] = [전체]</b> 그림 하나뿐이다.<br>① <b>Crystal(결정)</b> = 원자가 <b>highly ordered</b> 하게 배열된 고체. 밑줄이 그어진 그 표현으로 답할 것<br>② <b>Periodicity(주기성)</b> = <b>어떤 단위를 반복해 전체를 복원할 수 있는 성질</b><br>③ <b>Lattice(격자)</b> = 결정 안 <b>원자의 주기적 배열</b>, 정확히는 <b>원자가 놓일 자리(격자점)의 집합</b>. "격자 = 원자"라고 답하면 감점 요소다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 빨강 동그라미 Crystal → <span class="gnh r">결정</span>, Lattice → <span class="gnh r">격자</span>, 가운데 <span class="gnh r">격자</span> 동그라미. 파랑으로 <span class="gnh">질서 있는 구조</span>, 그리고 Lattice 정의 옆 <span class="gnh">결정 안에서 원자가 주기적으로 배열된 것</span> · <span class="gnh">원자 배열의 반복</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn09.jpg" alt="9쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s10">10쪽<small>1.3 Unit Cell and Primitive — 단위세포와 원시세포</small></h2>
 <div class="row"><div class="orig">Unit cell: a small volume of the crystal that <u>can be used to reproduce the entire crystal</u> (붉은 밑줄)</div><div class="exp"><b>단위세포</b>의 정의다. <b>이것만 반복하면 결정 전체를 다시 만들어 낼 수 있는 작은 부피</b>다.<br>붉은 밑줄이 <b>"전체 결정을 재현할 수 있는"</b> 에 그어져 있다. 이것이 단위세포의 자격 조건이다. 크기가 작다는 것이 조건이 아니라 <b>반복해서 빈틈없이 채워지느냐</b>가 조건이다.<br>벽지 무늬의 한 칸, 타일 한 장과 같다.</div></div>
 <div class="row"><div class="orig">● : Atom &nbsp;&nbsp; Crystal → Unit cell → Unit cell × 4 = original lattice &nbsp;&nbsp; <span class="hand">[필기] 붉은 동그라미</span></div><div class="exp">왼쪽부터 오른쪽으로 <b>결정 전체 → 거기서 떼어 낸 한 칸 → 그 한 칸을 네 번 붙여 원래 격자로 되돌리기</b> 순이다.<br>교수님이 <b>"= original lattice"</b> 에 붉은 동그라미를 치셨다. <b>붙여 놓으면 원래 것과 똑같아진다</b>는 점이 핵심이라는 표시다.<br>붙였을 때 원래와 달라지면 그것은 단위세포가 아니다.</div></div>
@@ -529,6 +578,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">33:04</span> "Then <b>do you think the primitive cell is unique?</b>" / <span class="ts">33:09</span> "primitive cell has to have <b>the smallest volume</b>… and <b>there's another way to choose the primitive cell with the same volume</b> as this. We can also choose the primitive cell in another way like this." / <span class="ts">33:33</span> "similar to the unit cell, <b>the primitive cell doesn't have to be unique as well</b>."<br>슬라이드에는 <b>"Primitive cell: the smallest unit cell"</b> 한 줄뿐이고, <b>원시세포도 유일하지 않다는 말은 어디에도 없다.</b> 교수님이 자문자답으로 덧붙이신 내용이다.<br>헷갈리기 쉬운 곳이라 정확히 갈라 둔다. <b>부피(2 차원에서는 넓이)는 유일하게 정해진다.</b> 가장 작은 값이니 하나뿐이다. 그런데 <b>그 부피를 갖는 모양은 여러 가지</b>다. 같은 넓이를 갖도록 비스듬히 잘라도 되고 반듯하게 잘라도 된다.<br>정리하면 <b>"크기는 하나, 모양은 여럿"</b> 이다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — 이 쪽에서 판서가 붙은 곳은 <b>여러 후보를 가리킨 화살표</b>와 <b>smallest 에 그은 물결밑줄</b>이고, 말로 강조한 것은 <b>"유일하지 않다"</b> 다. 이 둘이 그대로 문제가 된다.<br>① <b>Unit cell</b> = <b>반복하면 결정 전체를 재현할 수 있는 작은 부피</b>. 정의를 이 문장으로 쓸 것<br>② <b>Primitive cell</b> = <b>단위세포 중 가장 작은 것</b>. 격자점을 <b>하나</b>만 품는다<br>③ <b>단위세포도 원시세포도 유일하지 않다.</b> 다만 원시세포의 <b>부피는 유일하게 정해지고 모양만 여럿</b>이다 — 교수님이 자문자답으로 두 번 짚은 곳이다<br>④ "가장 작은 것이 늘 쓰는 것"은 아니다. 실제 계산에서는 <b>대칭이 잘 보이는 정육면체</b>를 쓴다. 다음 쪽 SC·BCC·FCC 가 그 예다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> Unit cell 에 빨강 동그라미 <span class="gnh r">단위세포</span>, entire crystal 에 동그라미와 노란 형광 → <span class="gnh r">*전체 결정</span>. reproduce 에 자주색 밑줄. Primitive cell 밑 <span class="gnh">smallest(?)</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn10.jpg" alt="10쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s11">11쪽<small>1.3 Semiconductor Crystals — 3차원 단위세포 SC · BCC · FCC</small></h2>
 <div class="row"><div class="orig">In reality, we are dealing with 3D crystals.</div><div class="exp">지금까지 평면으로 설명한 것을 <b>입체로 올린다</b>는 예고다.<br>실제 결정은 3차원이고, 단위세포도 정사각형이 아니라 <b>정육면체</b>가 된다.</div></div>
 <div class="row"><div class="orig">Silicon crystal (실리콘 덩어리 사진 → 원자 배열 확대 → 단위세포)</div><div class="exp">사진 세 장이 <b>돋보기로 점점 확대해 들어가는</b> 순서다.<br>맨 왼쪽이 눈에 보이는 <b>실리콘 덩어리</b>, 가운데가 그 안의 원자 배열, 오른쪽이 거기서 떼어 낸 <b>단위세포 하나</b>다.<br>손에 잡히는 금속 덩어리와 교과서의 막대기·공 그림이 <b>같은 것</b>임을 보여 주는 사진이다.</div></div>
@@ -592,6 +645,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">39:36</span> <b>"지분(participating fraction)"</b> 이라는 개념어 자체가 슬라이드에도 필기에도 없다. 말과 판서로만 나왔다.<br>다음 쪽 식 <span class="eq">(1/8)×8 + (1/2)×6</span> 을 보면 1/8 과 1/2 이 <b>이유 없이 튀어나온 상수</b>처럼 보인다. 그 두 숫자가 "여덟 집이 나눠 쓰는 몫", "두 집이 나눠 쓰는 몫"이라는 <b>설명은 오직 이 쪽 강의에만</b> 있다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — 판서에서 <span class="eq">1/8</span> 을 <b>상자로 크게</b> 쓰고 <span class="eq">1/2</span> 을 화살표로 그림에 붙인 자리다. 다음 쪽 계산의 뿌리이므로 여기를 놓치면 뒤가 통째로 암기가 된다.<br>① <b>지분 규칙</b> — 꼭짓점 <b>1/8</b>(8칸이 공유), 면심 <b>1/2</b>(2칸이 공유), 모서리 <b>1/4</b>(4칸이 공유), 내부 <b>1</b>(독차지)<br>② 규칙의 근거는 하나다. <b>그 위치를 몇 개의 단위세포가 함께 쓰는가.</b> 외우지 말고 그림에서 세면 된다<br>③ 시험에 <b>배우지 않은 구조</b>(예: 육방정, 다이아몬드)가 나와도 이 규칙만으로 원자수를 셀 수 있다</div>
+
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 세 그림 위에 빨강으로 <span class="gnh r">SC</span> · <span class="gnh r">BCC</span> · <span class="gnh r">FCC</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn12.jpg" alt="12쪽 굿노트 필기" loading="lazy"></details>
 
 <h2 id="s13">13쪽<small>1.3 Basic Crystal Structures — 단위세포 원자수와 체적밀도</small></h2>
 <div class="row"><div class="orig">*a: lattice constant (parameter)</div><div class="exp"><b>a 는 정육면체 한 변의 길이</b>라는 것을 다시 적어 두었다.<br>아래 계산이 전부 a 로 표현되므로 이 정의를 먼저 확인하고 들어간다.</div></div>
@@ -686,6 +743,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 
 <div class="exam"><b>★ 시험 포인트</b> — <b>이 쪽은 자료와 영상이 어긋난다.</b> 반드시 확인하고 넘어갈 것.<br>① <b>PDF 12쪽 필기의 <span class="eq">1.6 × 10²³</span> 은 지수 오기다.</b> 영상 판서는 <span class="eq">1.6 × 10²²</span> 로 적었고 <span class="eq">10²²</span> 에 굵은 동그라미까지 쳤으며, 말로도 <span class="ts">46:47</span> "1.6, 10 to <b>22</b>" 라고 읽었다. <b>정답은 <span class="eq">1.6 × 10²² 개/cm³</span></b><br>② 직접 계산해도 같다 — <span class="eq">(5 × 10⁻⁸)³ = 125 × 10⁻²⁴ = 1.25 × 10⁻²²</span>, <span class="eq">2 ÷ 1.25 × 10⁻²² = 1.6 × 10²²</span><br>③ <b>자릿수 검산</b> — 답이 <span class="eq">10²² ~ 10²³</span> 밖으로 나가면 지수를 틀린 것이다. 타원 판서가 이 검산법을 준 것이다<br>④ <b>풀이 세 단계</b> — 구조에서 원자수(<b>분자</b>) → a 를 <b>cm 로 환산</b> → <span class="eq">a³</span> 로 나눈다. 판서의 <b>세 칸 치환</b>을 그대로 답안에 옮겨 쓰면 된다<br>⑤ <b>Å → cm 는 <span class="eq">10⁻⁸</span> 배, nm → cm 는 <span class="eq">10⁻⁷</span> 배.</b> 여기서 지수가 하나 틀리면 답이 <span class="eq">10³</span> 배씩 어긋난다<br>⑥ 단위 <b>개/cm³</b> 를 반드시 붙일 것</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> "volume density of atoms"에 빨강 밑줄 <span class="gnh r">원자밀도</span>, atoms 에 동그라미. 풀이 <span class="eq">2 / (5×10⁻⁸)³</span> 을 두 번 썼고 하나는 큰 동그라미 — BCC 단위세포 원자 2개를 부피로 나누는 식을 따로 외워 둔 것이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn14.jpg" alt="14쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s15">15쪽<small>1.3 Crystal Planes and Miller Indices — 왜 면에 이름이 필요한가</small></h2>
 <div class="row"><div class="orig">Frequently, we need to describe a particular plane in a crystal.</div><div class="exp">밀러 지수를 배우는 이유를 먼저 말해 준다. <b>결정 안의 특정 면을 지목해서 부를 일이 자주 있다</b>는 것이다.<br>왜 그런가. 결정은 방향에 따라 성질이 다르기 때문이다. 나뭇결이 있는 목재를 결 방향으로 쪼개면 쉽게 갈라지고 결을 가로질러 자르면 힘든 것과 같다. <b>결정에도 결이 있다.</b></div></div>
 <div class="row"><div class="orig">Crystal planes: some imaginary planes inside a crystal in which large concentration of atoms are present</div><div class="exp"><b>결정면</b>의 정의다. <b>결정 안에 그은 가상의 면 중에서 원자가 많이 몰려 있는 면</b>이다.<br><b>imaginary(가상의)</b> — 실제로 칼자국이 있는 것이 아니라 <b>사람이 머릿속에서 그은 면</b>이다.<br><b>large concentration of atoms(원자가 많이 모인)</b> — 아무 데나 그은 면이 아니라 <b>원자들이 실제로 나란히 놓여 있는 면</b>을 고른다는 뜻이다.<br>실제로 결정이 쪼개질 때는 이런 면을 따라 갈라지고, 웨이퍼를 자를 때도 이런 면으로 자른다.</div></div>
@@ -767,6 +828,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 
 <div class="exam"><b>★ 시험 포인트</b> — 4단계 <b>전체에 밑줄</b>을 긋고, 분모 <b>3·2·1 을 각각 동그라미</b> 쳤으며, 답 <b>(2,3,6) 을 손으로 덧써</b> 굵게 만들고 화살표까지 보냈다. <b>계산 문제로 반드시 나온다.</b><br>① <b>네 단계를 순서대로</b> — 절편 찾기 → 격자상수 떼기 → <b>역수</b> → <b>최소공분모 곱해 정수화</b><br>② <b>최소공분모는 분모에서 뽑는다</b> — (1/3, 1/2, 1/1) 의 분모 3·2·1 의 최소공배수 <b>6</b>. 동그라미가 거기에 간 이유다<br>③ 절편이 <b>큰 축일수록 지수가 작아진다</b>(3a 인 x축이 2 가 됐다). <b>역수를 취했기 때문</b>이고, 이걸 거꾸로 아는 실수가 잦다<br>④ 답은 <b>정수 세 개</b>, 표기는 <b>둥근 괄호 (236)</b>. 쉼표 없이 붙여 쓰는 것이 원칙이다<br>⑤ 전체에 같은 수를 곱해도 <b>가리키는 면은 그대로</b>다 — 비율만 유지되면 같은 면이다</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 그림 옆 빨강 동그라미: <span class="gnh r">원점을 지나면 무한대 ⇓ 원점을 옮겨야 함(?)</span> — 면이 원점을 지나면 절편이 0 이 되어 역수를 못 구하므로, 원점을 옆 격자점으로 옮겨서 구하라는 요령이다(판독 일부 애매).</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn16.jpg" alt="16쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s17">17쪽<small>1.3 (100) · (110) · (111) 과 등가면 집합</small></h2>
 <div class="row"><div class="orig">1. (1a, ∞a, ∞a) &nbsp; 2. (1, ∞, ∞) &nbsp; 3. (1, 0, 0) &nbsp;&nbsp; <b>(100 plane)</b></div><div class="exp">가장 간단한 면이다. 정육면체의 <b>한 옆면</b>을 그대로 쓴 것이다.<br>x축은 <b>1a 자리에서</b> 자르는데, y축과 z축과는 <b>평행해서 영원히 안 만난다.</b> 그래서 절편이 <b>∞</b> 다.<br>역수를 취하면 <span class="eq">1/1 = 1</span>, <span class="eq">1/∞ = 0</span>, <span class="eq">1/∞ = 0</span> 이라 <b>(100)</b> 이 된다. 정수화할 분수가 없으니 4단계는 건너뛴다.<br>앞 쪽에서 "역수를 쓰는 이유"라고 한 것이 바로 이 자리다. <b>∞ 가 0 으로 깔끔하게 바뀐다.</b></div></div>
 <div class="row"><div class="orig">1. (1a, 1a, ∞a) &nbsp; 2. (1, 1, ∞) &nbsp; 3. (1, 1, 0) &nbsp;&nbsp; <b>(110 plane)</b></div><div class="exp">두 축을 <b>1a 자리에서</b> 자르고 나머지 한 축과는 평행한 면이다. 정육면체를 <b>마주 보는 모서리 방향으로 비스듬히</b> 자른 직사각형이다.<br>역수를 취하면 <b>(110)</b>. 이 면이 5쪽의 밀도 계산과 17쪽 Example 1.3 의 무대가 된다.<br>대각선으로 잘랐으므로 이 면의 가로 길이는 <span class="eq">√2 · a</span> 다. 정사각형의 대각선이 한 변의 √2 배이기 때문이다. 면적 계산에서 이 √2 가 늘 따라온다.</div></div>
@@ -819,6 +884,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 
 <div class="exam"><b>★ 시험 포인트</b> — 이 쪽에 <b>7분</b>을 썼고, <b>(111 plane) 아래 이 쪽에서 가장 진한 이중선</b>이 있으며, 여섯 그림에 <b>체크를 하나씩</b> 쳤고, 슬라이드에 없는 <span class="eq">(1̄00)</span> <b>그림을 직접 그렸다.</b> 표시가 가장 많이 몰린 쪽이다.<br>① <b>"이 3개의 plane 가 가장 중요합니다"</b> — <b>(100)·(110)·(111)</b> 의 절편과 역수를 즉시 쓸 것: <span class="eq">(1,∞,∞) → (100)</span>, <span class="eq">(1,1,∞) → (110)</span>, <span class="eq">(1,1,1) → (111)</span><br>② <b>역수를 쓰는 이유</b> — 축과 <b>평행한 면의 절편 ∞ 를 0 으로 바꾸기 위해서</b>. <span class="eq">1/∞ = 0</span><br>③ <b>등가의 판정 기준</b> — <b>면 위 원자 개수</b>가 같고 <b>원자 사이 거리</b>가 같으면 등가. 서술형으로 물을 수 있다<br>④ <b>바(bar) 표기</b> — "<b>don't forget this</b>" 라고 못 박았다. 마이너스는 <b>앞에 붙이지 말고 숫자 위에</b> 얹는다<br>⑤ <b>괄호 네 종류</b> — <span class="eq">( ) 면 하나</span>, <span class="eq">{ } 등가면 집합</span>, <span class="eq">[ ] 방향 하나</span>, <span class="eq">&lt; &gt; 등가방향 집합</span><br>⑥ <b>{100} = 6개, {110} = 12개, {111} = 8개</b> — 붉은 필기로 일일이 세어 놓은 자리다</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 제목 위 <span class="gnh">perpendicular — normal</span>(면에 수직인 방향 = 법선). 빨강으로 (110) 옆에 <span class="gnh r">(1 1 ∞)</span> <span class="gnh r">(1 1 0)</span>, (111) 옆에 <span class="gnh r">(1 · · )</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn17.jpg" alt="17쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s18">18쪽<small>1.3 Miller Indices for Directions — 방향의 표기</small></h2>
 <div class="row"><div class="orig">The direction can be expressed as a set of three integers that are the components of a vector in that direction</div><div class="exp"><b>방향</b>도 정수 세 개로 나타낸다는 뜻이다.<br>면은 절편의 역수를 썼지만 <b>방향은 그냥 벡터 성분</b>이다. 훨씬 간단하다.<br>원점에서 출발해 <b>x로 몇 칸, y로 몇 칸, z로 몇 칸</b> 갔는지를 적으면 끝이다. [111] 은 세 축으로 똑같이 한 칸씩 간 대각선 방향이다.</div></div>
 <div class="row"><div class="orig">The square brackets [ ] are used to designate direction as distinct from the round brackets ( ) used for the crystal plane.</div><div class="exp">괄호로 둘을 구분한다는 약속이다.<br><b>[ ] 각괄호 = 방향</b>, <b>( ) 둥근괄호 = 면</b>.<br>같은 숫자 111 이라도 <b>(111) 은 면이고 [111] 은 방향</b>이라 전혀 다른 것을 가리킨다. 답을 쓸 때 괄호를 잘못 쓰면 틀린 답이 된다.</div></div>
@@ -868,6 +937,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">69:46</span> <b>구조 3 × 면 3 = 9가지 조합</b>이라는 정리. 슬라이드는 BCC 의 (110) 하나만 다루고, 조합표는 <b>판서와 말로만</b> 나왔다.</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">69:11</span> Å 를 cm 로 바꾸는 이유가 <b>"반도체에서 흔히 쓰는 단위라서"</b> 라는 설명. 슬라이드에는 환산된 값만 적혀 있다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — 판서의 <b>두 상자와 동그라미 친 <span class="hand">BCC</span></b>, 그리고 <span class="ts">69:46</span> 의 <b>"아홉 가지 조합"</b> 이 사실상 출제 범위 선언이다.<br>① <b>SC · BCC · FCC</b> × <b>(100) · (110) · (111)</b> = <b>9가지.</b> 예제는 그중 <b>BCC (110)</b> 하나일 뿐이다<br>② <b>2024년 중간고사 1-d) 가 이 예제와 다른 조합으로 출제됐다.</b> 예제 답 5.66×10<sup>14</sup> 를 외워 가면 못 푼다. <b>외울 것은 답이 아니라 절차</b>다<br>③ 절차는 셋뿐이다 — <b>ⓐ 구조를 직접 그린다 → ⓑ 그 면을 2차원으로 눕혀 가로·세로를 잰다 → ⓒ 면 위 원자수 ÷ 넓이</b><br>④ 면 한 칸의 넓이 — (100) 은 <span class="eq">a²</span>, (110) 은 <span class="eq">√2·a²</span>, (111) 은 <span class="eq">(√3/2)·a²</span><br>⑤ <b>단위 지수를 여러 번 덧칠하신 자리</b>다. 표면밀도는 <b>cm<sup>−2</sup></b>, 부피밀도는 <b>cm<sup>−3</sup></b><br>⑥ <b>시험지에는 그림이 없다.</b> 아홉 가지 조합을 스스로 그려 보는 연습을 미리 해 둘 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 빨강으로 <span class="eq">2 / (√2 a₁²)</span> — (110)면 한 칸의 넓이 <span class="eq">a₁ × √2a₁</span> 안에 원자 2개.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn19.jpg" alt="19쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s20">20쪽<small>1.4 Diamond Structure — 다이아몬드 구조와 징크블렌드</small></h2>
 <div class="row"><div class="orig">Group IV semiconductors (Si, Ge), diamond</div><div class="exp"><b>4족 반도체와 다이아몬드가 이 구조를 쓴다</b>는 뜻이다.<br>실리콘, 저마늄, 탄소(다이아몬드)가 전부 같은 모양으로 굳는다. <b>바깥 전자가 4개</b>라는 공통점 하나 때문이다.<br>구조 이름이 "다이아몬드"인 것은 이 배열이 다이아몬드에서 처음 밝혀졌기 때문이다. <b>실리콘 결정과 다이아몬드는 원자만 다르고 배열은 똑같다.</b></div></div>
 <div class="row"><div class="orig">Tetrahedral structure : each atom has four nearest neighbors</div><div class="exp">이 구조의 정의라 할 만한 줄이다. <b>모든 원자가 가장 가까운 이웃 넷을 갖는다.</b><br><b>tetrahedral(정사면체형)</b> — 그 이웃 넷이 <b>정사면체의 네 꼭짓점 방향</b>으로 뻗어 있다. 삼각뿔 한가운데에 서서 네 꼭짓점을 바라보는 모양이다.<br>왜 하필 이 각도인가. 손 넷을 <b>서로 최대한 멀리 벌리는</b> 배치이기 때문이다. 전자쌍끼리 밀어내므로 가장 멀리 떨어지려 한다. 그 각도가 약 109.5도다.<br>9쪽 필기의 <b>"⇒ 테트라히드랄"</b> 이 이 말이다.</div></div>
@@ -896,6 +969,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">71:43</span> <b>"2차원 그림으로는 이해하기 어렵다."</b> 그림이 안 읽히는 것이 당연하다는 말이자, <b>3차원 모형으로 봐야 한다</b>는 공부법 지시다.</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">75:31</span> <b>징크블렌드 구조 안에 FCC 원자가 다 들어 있다</b>는 확인. 슬라이드는 zincblende 를 diamond 의 두 원소 판으로만 소개하고, <b>FCC 와의 관계</b>는 판서와 말로만 짚었다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — 판서가 <b>제목 옆 <span class="hand">4 + 4</span></b> 로 열려 <b>오른쪽 아래 타원 → <span class="hand">8</span></b> 로 닫힌다. 이 쪽 전체가 <b>숫자 8을 유도하는 쪽</b>이다.<br>① <b>단위세포당 원자수 = 8</b> — 다이아몬드 구조와 징크블렌드 구조 <b>둘 다</b> 8이다<br>② 8의 출처는 <b>FCC 몫 4</b>(꼭짓점 8×1/8 + 면심 6×1/2) <b>+ 안에 통째로 박힌 4</b>. 이 분해를 그대로 쓸 수 있어야 한다<br>③ <b>다이아몬드 구조의 뼈대는 FCC 다.</b> SC 와 BCC 에 X 를 치신 자리다<br>④ <b>한 원소면 diamond, 두 원소면 zincblende</b> — Si·Ge·C 대 GaAs·InP·GaN. 배열은 같고 이름만 다르다<br>⑤ <b>최근접 이웃 수는 4</b>(tetrahedral). 단위세포 원자수 8과 헷갈리지 말 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> Tetrahedral 에 자주색 네모, four nearest neighbors 에 자주색 밑줄.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn20.jpg" alt="20쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s21">21쪽<small>1.4 실리콘 결정의 면과 방향에 따른 이동도</small></h2>
 <div class="row"><div class="orig">Planes in Silicon crystals (diamond structure) — (100 plane) · (110 plane) · (111 plane)</div><div class="exp">앞에서 단순입방으로 배운 (100), (110), (111) 을 <b>실제 실리콘(다이아몬드 구조)에 적용</b>한 그림이다.<br>이름 붙이는 규칙은 같다. 절편의 역수다. 다만 <b>구조가 복잡해져 면 위 원자 배치가 훨씬 촘촘</b>하다.<br>웨이퍼를 살 때 "(100) 웨이퍼"라고 부르는 것이 바로 이 이야기다. <b>표면이 어느 면인지가 상품 규격</b>이다.</div></div>
 <div class="row"><div class="orig"><span class="hand">[필기] (100 plane) ← 파란 동그라미 ①</span> &nbsp;&nbsp; <span class="hand">[필기] (110 plane) ← 파란 동그라미 ②</span></div><div class="exp">교수님이 (100) 에 <b>①</b>, (110) 에 <b>②</b> 를 매기며 동그라미를 치셨다. (111) 에는 표시가 없다.<br>오른쪽 그래프와 맞춰 보면 뜻이 읽힌다. <b>정공(hole) 이동도에서 (110) 이 가장 높고 (100) 이 가장 낮다.</b> 전자에서는 순서가 정반대다.<br>번호는 <b>실무에서 쓰이는 순서 또는 눈여겨볼 순서</b>로 매기신 것으로 읽힌다. 5쪽 필기의 "Si → (100) → 90%" 와 이어진다.</div></div>
@@ -948,6 +1025,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">82:16</span> <b>"이 단순한 원리는 언제나, 어디에나 적용된다."</b> 결합뿐 아니라 이 과목 뒤쪽의 평형 이야기 전체를 관통하는 원칙이라는 예고다.</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">82:34</span> <b>cation(양이온) / anion(음이온)</b> 이라는 용어. 슬라이드에는 "two ions" 라고만 적혀 있어, 어느 쪽이 어느 이름인지는 강의에서만 나왔다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — 이 쪽은 <b>슬라이드에 붉은 표시가 없고 강의 중 판서만 있다.</b> 판서가 짚은 자리가 그대로 출제 지점이다.<br>① <b>대원칙 문장 전체에 밑줄</b> — <b>결합 후 에너지 &lt; 결합 전 에너지</b> 이면 결합이 생긴다. 네 결합을 관통하는 하나의 이유다<br>② <b>공유결합 예시 중 Si · GaAs 에만 굵은 밑줄</b> — 반도체는 공유결합이다. H₂·HCl 은 곁들인 예일 뿐이다<br>③ <b>Vander Waals 에 밑줄 두 줄</b> — <b>가장 약한 결합.</b> "가장 약한 것을 고르라"는 물음의 답이고, 넷 중 <b>이것만 분자와 분자 사이</b> 결합이다<br>④ 금속결합의 핵심어는 <b>자유전자(전자의 바다)</b>. 판서의 <span class="hand">e</span> 세 개가 그 표시다<br>⑤ 네 결합을 <b>「무엇을 주고받는가 → 대표 물질 → 전기가 통하는가」</b> 세 칸 표로 묶어 외워 둘 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 네 결합에 빨강 번호 <span class="gnh r">① Ionic ② Covalent ③ Metallic ④ Van der Waals</span>, 가운데 파랑 화살표로 순서를 이었다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn22.jpg" alt="22쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s23">23쪽<small>1.6 Defects and Impurities — 결함과 불순물</small></h2>
 <div class="row"><div class="orig">In a real crystal, the lattice is not perfect, but contains defects.</div><div class="exp">지금까지의 이야기를 뒤집는 줄이다. <b>실제 결정의 격자는 완벽하지 않고 결함을 품고 있다.</b><br>8쪽 필기의 <b>"완벽 single crystal 제작은 어려움"</b> 이 여기서 이어진다.<br>온도가 절대영도가 아닌 이상 원자는 늘 떨고 있고, 그러다 자리를 벗어나는 놈이 생긴다. <b>결함은 없앨 수 있는 것이 아니라 관리하는 것</b>이다.</div></div>
 <div class="row"><div class="orig">Defects in crystal disrupt the perfect geometric periodicity in solids.</div><div class="exp"><b>결함은 완벽한 기하학적 주기성을 깨뜨린다.</b><br><b>periodicity(주기성)</b> = 같은 배열이 되풀이되는 성질(7쪽). 결정을 결정이게 하는 바로 그 성질이다.<br>결함이란 <b>그 되풀이가 어긋난 자리</b>다. 벽지 무늬가 한 군데 어긋나 있는 것과 같다.<br>2쪽 첫 필기 <span class="hand">Solid → crystal → periodicity ⇒ defect</span> 의 마지막 칸이 이 자리다.</div></div>
@@ -978,6 +1059,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">85:59</span> <b>"그림은 2차원이지만 실제 결함은 3차원에서 생각해야 한다."</b> 슬라이드의 평면 격자 그림이 <b>편의상 눌러 그린 것</b>임을 밝힌 말이다. 공공 하나가 실제로는 <b>사방 여섯 방향의 이웃</b>과 얽힌다.</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">87:07</span> <b>"도핑을 통해 반도체를 바꿀 수 있다"</b> 는 반복 강조와, <b>뒤에서 더 깊이 다룬다</b>는 예고. 슬라이드에는 "Intentional: doping" 이라는 한 줄뿐이다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — 판서 표시가 <b>제목 옆 <span class="hand">periodicity</span> 화살표</b>, <b>Line defect 동그라미</b>, <b>전위선 타원과 직접 작도</b>, <b>doping 동그라미</b> 네 곳이다.<br>① <b>주기성 → 결함 → 전기적 성질 변화.</b> 이 인과를 한 문장으로 쓸 수 있어야 한다. 2쪽 Overview 필기의 화살표가 여기서 닫힌다<br>② <b>점결함 · 선결함 · 불순물</b> 세 갈래와 각각의 예<br>③ <b>vacancy(빠진 자리) ↔ interstitial(틈에 낀 원자)</b> — 정반대 개념. 그림을 주고 고르게 하는 문제로 나온다<br>④ <b>substitutional(치환형) ↔ interstitial(침입형) impurity</b> — 도핑은 <b>치환형</b>이어야 제 구실을 한다<br>⑤ <b>impurity 와 doping 의 차이는 오직 "의도했는가"</b> 다. doping 에만 동그라미가 쳐진 이유이자 서술형 단골이다<br>⑥ 선결함의 원인은 <b>격자상수 불일치.</b> 24쪽 heteroepitaxy 조건과 이어서 답할 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> Vacancy 옆 <span class="gnh r">한 원자 이탈(?)</span>, Interstitial 에 선을 그어 <span class="gnh r">격자 사이에 끼어듦(?)</span>, Line defect 옆 <span class="gnh r">선결함</span>, 그림에 세로선으로 어긋난 줄을 표시.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn23.jpg" alt="23쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s24">24쪽<small>1.7 Growing Methods — Czochralski 법</small></h2>
 <div class="row"><div class="orig">Growth from a melt (Czochralski method)</div><div class="exp"><b>녹인 재료에서 결정을 키우는 방법</b>이고 이름이 <b>초크랄스키(Czochralski) 법</b>이다. 줄여서 <b>CZ 법</b> 이라고도 한다.<br><b>melt(멜트)</b> = 녹아서 액체가 된 상태. 실리콘을 1400도가 넘게 달궈 국물처럼 만든 것이다.<br>세상의 거의 모든 실리콘 웨이퍼가 이 방법으로 만들어진다. 5쪽 필기에서 밑줄까지 그으며 적어 두신 이름이다.</div></div>
 <div class="row"><div class="orig">Seed crystal · Silicon melt · Silicon crystal</div><div class="exp">등장하는 세 가지다.<br><b>Seed crystal(씨앗 결정)</b> = <b>줄이 완벽하게 맞은 작은 실리콘 조각.</b> 앞으로 자랄 결정 전체의 <b>본보기</b> 노릇을 한다.<br><b>Silicon melt(실리콘 용융액)</b> = 녹은 실리콘. 원자들이 자리 없이 돌아다니는 상태다.<br><b>Silicon crystal(실리콘 결정)</b> = 그렇게 자라 나온 통짜 기둥. 이것을 <b>잉곳(ingot)</b> 이라 부른다.</div></div>
@@ -1030,6 +1115,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">88:56</span> 결과물을 <b>high purity</b> 와 <b>highly crystalline</b> 두 가지로 갈라 말씀하신 것.<br>슬라이드 그림에는 <b>Silicon crystal</b> 이라는 이름표뿐이라 "무엇이 좋은 결정인가"라는 기준이 없다. 그 기준을 말로 세워 주신 것이다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — <b>순도는 슬라이드가 붉은 상자로 질문만 남기고 비워 둔 자리다.</b> 답은 판서와 육성에만 있다.<br>① <b>실리콘 원자 100만 개당 불순물 1~2 개</b> — 판서 <span class="eq">1~2</span> 와 <span class="eq">1 million Si</span> 를 화살표로 붉은 질문 상자에 이어 붙이셨고, 말로도 세 번 되풀이하셨다. <b>이 쪽에서 가장 확실한 출제 자리다.</b><br>② <b>실리콘의 녹는점 1400 ℃</b> — 판서로만 남은 숫자. "녹는점보다 높은 온도를 가한다"와 짝으로 외운다<br>③ <b>도가니(crucible)</b> — 슬라이드에 이름이 없는데 판서로 채워 넣으신 낱말. 공정 서술에서 그릇 이름을 쓸 줄 알아야 한다<br>④ <b>인상(pulling)과 회전(rotation)은 동시에</b> — "slowly pulled up <b>while</b> rotating" 이라고 말씀하셨다. 하나만 쓰면 반쪽 답이다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 제목 옆 <span class="gnh r">초크랄스키 방법</span>. single crystal material 에 빨강 네모 + 위에 <span class="gnh r">씨앗 결정(?)</span>. same material 옆 <span class="gnh r">재료와 같은 물질(?)</span>. solid-liquid interface 노란 형광. The purity 옆 <span class="gnh r">순도</span> 동그라미 !! · 맨 아래 <span class="gnh r">끌어올리는 방향(?)</span>. 일부 낱말은 판독이 애매하다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn24.jpg" alt="24쪽 굿노트 필기" loading="lazy"></details>
+
 <h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
 <div class="fig">리뷰 수업 <b>55:57 ~ 58:16</b> 구간이다. 칠판 ③ 첫 줄 <span class="hand">Crystal growing method — Czochralski method.</span> 을 쓰면서 한 설명이다(2쪽에 옮김).</div>
 <div class="said rv"><b>리뷰</b> <span class="ts">리뷰 55:57</span> "마지막으로 나온 개념이 <b>결정 성장법</b>에 대해서 나왔습니다. 가장 대표적인 결정 성장법으로 <b>초크랄스키</b>."</div>
@@ -1078,6 +1167,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">91:04</span> 깨진 전사에 <b>"100,000 IC 칩"</b> 이라는 조각이 남아 있다. <b>웨이퍼 한 장에서 나오는 칩의 개수</b>를 말씀하신 대목으로 보인다.<br>슬라이드에는 개수가 전혀 없다. 다만 <b>전사가 무너진 구간이라 숫자를 그대로 믿지는 말고 직접 확인하는 편이 좋다.</b><br>자릿수 감각만 챙겨 두면 된다. 웨이퍼 한 장이 칩 <b>수만~수십만 개</b>가 된다는 것, 그래서 <b>웨이퍼가 클수록(12인치) 장당 이익이 커진다</b>는 것이다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — 이 쪽에는 붉은 표시가 없다. 대신 <b>판서가 화살표로 공정 순서를 하나씩 짚었다.</b> 순서 자체가 이 쪽의 답이다.<br>① <b>전체 흐름</b> — <span class="eq">다결정 덩어리 → (Czochralski) 잉곳 → 썰어서 웨이퍼 → 회로 형성(IC) → Dicing → Packaging → IC chip</span><br>② <b>Dicing 과 Packaging 의 구분</b> — 다이싱은 <b>낱개로 자르는</b> 일, 패키징은 <b>껍데기와 배선을 붙이는</b> 일. 두 화살표를 나란히 그으신 자리다<br>③ <b>1장이 다루는 범위는 웨이퍼까지</b>다. 그 뒤는 이름만 알아 두면 된다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 빨강 화살표로 <b>잉곳 → 웨이퍼 묶음 → 웨이퍼 한 장</b> 순서를 이었다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn25.jpg" alt="25쪽 굿노트 필기" loading="lazy"></details>
+
 <h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
 <div class="fig">리뷰 수업 <b>58:16 ~ 70:00(끝)</b> 구간이다. 칠판 ③의 나머지 전부 — 웨이퍼 크기 변천, 18인치 실패, 시장 비중, SiC — 가 이 대목의 판서다(2쪽에 옮김). 5쪽 필기의 <span class="hand">Wafer size</span> 그림과 같은 내용을 칠판에서 다시 쓰셨다.</div>
 <div class="said rv"><b>리뷰</b> <span class="ts">리뷰 58:20</span> "웨이퍼 사이즈 … <b>4인치부터 시작</b>을 했습니다. 다음이 6인치가 됐고, 8인치가 됐고, 12인치 됐고, 18인치 됐고." … "1인치가 몇 센티? … <b>2.5센티</b>. … 그래서 이게 100밀리. 그래서 밀리로 얘기하는 거 많아요. 150밀리, 200밀리."</div>
@@ -1129,6 +1222,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">92:30</span> <b>여기서 챕터 1 의 내용 설명이 끝난다.</b> 화면 녹화도 이 시각 이후로는 완전한 검은 화면이다.<br>즉 <b>26쪽이 1장의 마지막 내용 쪽</b>이고, 뒤에는 마무리 인사만 남는다(부록 902). 시험 범위의 끝을 여기로 잡으면 된다.</div>
 
 <div class="exam"><b>★ 시험 포인트</b> — 이 쪽은 <b>붉은 필기 두 곳</b>에 더해 <b>영상 판서 두 곳</b>이 겹친 자리다. 겹친 곳이 곧 답이다.<br>① <b>"단결정 기판이 씨앗 노릇을 한다"</b> — 문장 전체에 밑줄. <b>24쪽의 Seed 동그라미와 짝으로 묻는다.</b> 초크랄스키의 씨앗은 작은 조각, 에피택시의 씨앗은 기판 전체. <b>하는 일은 같다(방향을 넘겨준다)</b><br>② <b>vapor(기체)</b> — 동그라미. <b>CVD 의 핵심은 실리콘을 기체로 실어 나른다는 것.</b> 액체에서 키우는 초크랄스키와 갈리는 지점이고, 그래서 <b>원자 층 단위 두께 조절</b>이 가능하다<br>③ (붉은 필기) <b>heteroepitaxy 의 조건</b> — 두 결정 구조가 매우 비슷해야 한다. 이유는 <b>격자상수 차이 → line defect(선결함)</b><br>④ (붉은 필기) <b>결정성 있는 기판</b> — 바탕이 단결정이라야 위층도 단결정이 된다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b><br>• thin 에 동그라미, single-crystal layer 에 밑줄 · <span class="gnh">epitaxy</span> 동그라미 <span class="gnh">!! (기판 …)</span><br>• should be very similar 옆 빨강 <span class="gnh r">lattice parameter가 같아야 하기 때문</span> · Heteroepitaxy 줄 위 괄호 → <span class="gnh">Homo / Hetero : 주로 line defect</span><br>• 왼쪽 아래 <span class="gnh">성장 ┌ 액체 : 초크랄스키 └ 기체 : 에피택시</span> — 24쪽(액체에서 끌어올리기)과 26쪽(기체에서 쌓기)을 한 줄로 가른 정리다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch1/gn26.jpg" alt="26쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s901">부록<small>부록 ① 수업 운영 안내 — 온라인 영어 강의 + 오프라인 한국어 디스커션</small></h2>
 <p class="fig">이 조각은 슬라이드와 무관한 <b>강의 첫머리 00:00 ~ 01:20</b> 구간이다. 이 과목을 어떻게 듣고 어떻게 평가받는지에 대한 안내라서 내용보다 먼저 알아야 하는 이야기다.</p>
 
