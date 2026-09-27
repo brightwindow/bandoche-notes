@@ -84,15 +84,33 @@ sub,sup{font-size:11px}
 .top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
      padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
 @media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+
+/* 오프라인(한국어) 수업 */
+:root{--rv:#e8f6f2;--rvb:#1f8a78}
+h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
+.said.rv{background:var(--rv);border-left-color:var(--rvb)}
+.said.rv b{color:#176b5d}
+.said.rv .ts{background:var(--rvb)}
+.c8{background:var(--rv);border-color:var(--rvb)}
+/* 내 굿노트 필기 */
+.gn{margin:12px 0;padding:11px 16px;background:#fff7e6;border-left:3px solid #e08a00;border-radius:0 6px 6px 0;font-size:14.3px}
+.gn>b:first-child{color:#a35f00}
+.gnh{color:#0b3d91;font-weight:600;background:#eef3ff;padding:0 4px;border-radius:3px}
+.gnh.r{color:#b00000;background:#fff0f0}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#a35f00;font-size:13.5px}
+details.gnd img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
+.c9{background:#fff7e6;border-color:#e08a00}
+h3.gnh3{color:#a35f00;border-bottom-color:#f3c77a}
 </style>
 </head>
 <body>
 <div class="wrap" id="top">
 <h1>반도체공학 Ch.2 — 양자역학 입문 · 강의 통합 해설</h1>
 <div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
-<div class="cov ok">강의 전사 <b>2921줄 전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
-<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
-<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Chapter Overview</a><a href="#s3">3쪽 · Chapter Overview</a><a href="#s4">4쪽 · Chapter Overview</a><a href="#s5">5쪽 · Contents</a><a href="#s6">6쪽 · Photoelectric Effect</a><a href="#s7">7쪽 · Particle-Like Wave</a><a href="#s8">8쪽 · Wave-Particle Duality</a><a href="#s9">9쪽 · Wave-Nature of Particles</a><a href="#s10">10쪽 · Example 2.2</a><a href="#s11">11쪽 · The Uncertainty Principle</a><a href="#s12">12쪽 · The Schrodinger's Wave Equation</a><a href="#s13">13쪽 · The Schrodinger's Wave Equation</a><a href="#s14">14쪽 · Derivation</a><a href="#s15">15쪽 · Physical Meaning of the Wave Function</a><a href="#s16">16쪽 · Boundary Conditions</a><a href="#s17">17쪽 · Electron in Free Space</a><a href="#s18">18쪽 · The Infinite Potential Well</a><a href="#s19">19쪽 · Example 2.3</a><a href="#s20">20쪽 · The Potential Barrier and Tunneling</a><a href="#s21">21쪽 · Example 2.4</a><a href="#s22">22쪽 · The One-Electron Atom</a><a href="#s23">23쪽 · The One-Electron Atom</a><a href="#s24">24쪽 · The Periodic Table</a><a href="#s901" class="apx">부록 · 부록</a><a href="#s902" class="apx">부록 · 부록</a></div>
+<div class="cov ok">영상 강의 전사 <b>2921줄</b> + 오프라인 리뷰 수업 전사 <b>1,314줄</b>(65분) <b>전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
+<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-09 추가 — 실제 오프라인 리뷰 수업(한국어) + 내 굿노트 필기</b><br>영상 강의 위에 <b>교실에서 한 2장 리뷰 수업</b>을 겹쳐 넣었다(초록 상자). 칠판 사진 여섯 장은 <a href="#s2">2쪽</a>에 한 줄씩 옮겼고, 말로 한 설명은 해당 쪽 끝에 붙였다 — <a href="#s3">3쪽</a> 2장 줄거리 · <a href="#s4">4쪽</a> FN 터널링 → 낸드 플래시(SLC~QLC, 3D) · <a href="#s6">6쪽</a> 일함수 → UPS·XPS · <a href="#s8">8쪽</a> 멤리스터·드브로이 · <a href="#s16">16</a>·<a href="#s17">17</a>·<a href="#s18">18</a>·<a href="#s20">20</a>·<a href="#s22">22쪽</a> 다섯 상황 · <a href="#s19">19쪽</a> 양자점 → 디스플레이. <b>내 굿노트 필기</b>(주황 상자)는 15개 쪽에 옮기고 필기만 진하게 표시한 이미지를 접어 두었다. 타임스탬프 <span class="eq">리뷰</span> = 리뷰 녹음 기준.</div>
+<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c9"></i>내 굿노트 필기</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
+<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Chapter Overview + 리뷰 칠판</a><a href="#s3">3쪽 · Chapter Overview</a><a href="#s4">4쪽 · Chapter Overview</a><a href="#s5">5쪽 · Contents</a><a href="#s6">6쪽 · Photoelectric Effect</a><a href="#s7">7쪽 · Particle-Like Wave</a><a href="#s8">8쪽 · Wave-Particle Duality</a><a href="#s9">9쪽 · Wave-Nature of Particles</a><a href="#s10">10쪽 · Example 2.2</a><a href="#s11">11쪽 · The Uncertainty Principle</a><a href="#s12">12쪽 · The Schrodinger's Wave Equation</a><a href="#s13">13쪽 · The Schrodinger's Wave Equation</a><a href="#s14">14쪽 · Derivation</a><a href="#s15">15쪽 · Physical Meaning of the Wave Function</a><a href="#s16">16쪽 · Boundary Conditions</a><a href="#s17">17쪽 · Electron in Free Space</a><a href="#s18">18쪽 · The Infinite Potential Well</a><a href="#s19">19쪽 · Example 2.3</a><a href="#s20">20쪽 · The Potential Barrier and Tunneling</a><a href="#s21">21쪽 · Example 2.4</a><a href="#s22">22쪽 · The One-Electron Atom</a><a href="#s23">23쪽 · The One-Electron Atom</a><a href="#s24">24쪽 · The Periodic Table</a><a href="#s901" class="apx">부록 · 부록</a><a href="#s902" class="apx">부록 · 부록</a><a href="#s903" class="apx">부록 · 부록 ③ 리뷰 수업 잡담</a></div>
 <h2 id="s1">1쪽<small>표지 — Ch.2 양자역학 입문</small></h2>
 <p class="fig">표지 쪽이다. 인쇄된 글자는 네 줄뿐이지만, 교수님이 이 쪽을 띄워 놓고 <b>2분 20초 동안</b> 이 단원을 어떤 태도로 들어야 하는지를 이야기했다. 그 말이 이 단원 전체의 사용법이므로 여기 그대로 옮긴다.</p>
 
@@ -486,6 +504,46 @@ sub,sup{font-size:11px}
 서술형으로 "고전역학과 양자역학의 차이를 설명하라"가 나오면 <b>확정 → 확률</b>, <b>운동방정식 → 슈뢰딩거 방정식</b> 두 축으로 쓰면 된다.</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — <b>빛(파동) → 광전효과·흑체복사 → 빛도 입자 → 그럼 입자도 파동 → 전자는 파동 → 파동이니 새 방정식(슈뢰딩거) + 위치가 확정 안 됨(불확정성) → 그 식을 우물·장벽에 풀어 본다.</b> 이 한 줄이 2장 전체다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 오른쪽 빈자리에 리뷰 수업 첫 대목을 받아 적었다.<br>• <span class="gnh r">photoelectric effect</span> — 금속 표면에서 전자가 튀어나가는 그림 → <span class="gnh r">work function (Φ)</span><br>• <span class="gnh r">light – photon / wave – particle</span><br>• <span class="gnh r">E = hf</span> 와 큰 동그라미 안 <span class="gnh r">λ = h/p</span>: λ → <span class="gnh r">파장</span>, p → <span class="gnh r">운동량</span> — 8쪽 리뷰의 "파동의 대표(파장)와 입자의 대표(운동량)를 잇는 식"이다.<br>• <span class="gnh r">electron : particle ⋯ wave !!</span><br>• 교수님 필기 "VS ○정성"에 동그라미, 옆 따옴표 낱말에 X 표 (판독 애매) · duality 자리에 굵은 동그라미.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn02.jpg" alt="2쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업 칠판 — 실제 강의에서 그린 Chapter 2 정리</h3>
+<div class="fig">여기부터는 영상 강의가 아니라 <b>오프라인(한국어) 리뷰 수업</b>이다. 교수님이 2장을 칠판(프로젝터 화면)에 한 번 더 정리하고, 이어서 <b>"디스커션" 세 가지</b>(광전효과 → UPS·XPS 장비 / 무한 우물 → 양자점 디스플레이 / 터널링 → 플래시 메모리)를 이야기하셨다. 칠판 사진 여섯 장을 쓰인 순서대로 한 줄씩 옮겼다. 타임스탬프 <span class="eq">리뷰</span> 는 리뷰 녹음(65분) 기준이다.</div>
+
+<h3>칠판 ① (빨강) — 광전효과에서 슈뢰딩거 방정식까지</h3>
+<div class="fig">사진이 옆으로 누워 있고 한 장은 흔들렸다. 화면 가운데에 PPT 오른쪽 클릭 메뉴가 떠서 일부 글자(예: <span class="hand">if E…</span> 뒤)가 가려졌다. 가려진 곳은 녹음으로 채웠다.</div>
+<div class="row"><div class="orig"><span class="hand">[칠판] Chapter 2 &nbsp; photoelectric effect — (light) hf → (metal) → (KE)</span><br><span class="hand">[칠판] if E<sub>light</sub> (> 특정 에너지) ⇒ emission occurs &nbsp;&nbsp; KE = E − Φ</span></div><div class="exp"><b>광전효과</b> — 빛을 금속에 쬐면 전자가 튀어나온다. 단, 빛 에너지가 <b>일함수 Φ</b>(전자가 금속을 벗어나는 데 필요한 최소 에너지)보다 클 때만. 튀어나온 전자의 운동에너지는 <span class="eq">KE = E − Φ</span>.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] evidence for "light as a particle" &nbsp; "photon" &nbsp; E<sub>light</sub> = hf</span></div><div class="exp">빛이 <b>입자처럼</b> 군다는 증거다. 그 알갱이가 <b>광자(photon)</b>, 한 알의 에너지가 <span class="eq">E = hf</span>(f = 진동수, h = 플랑크 상수).</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] [light — photon / (wave) ⟷ particle / wavelength ⟷ momentum] ⇒ wave — de Broglie wavelength [λ = h/p]</span></div><div class="exp">파동의 대표 성질 <b>파장</b>과 입자의 대표 성질 <b>운동량</b>을 잇는 식이 <b>드브로이 파장</b> <span class="eq">λ = h/p</span> 다. 네모로 따로 쳤다.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] electron → (wave)-like properties &nbsp; ① wavelength &nbsp; ② Uncertainty principle ΔpΔx ≥ ħ &nbsp; ③ Wave equation ⇒ Schrödinger's wave equation</span><br><span class="hand">[칠판] electron 어떤 상태?? → (position) & (energy)</span></div><div class="exp">빛이 입자였다면 입자(전자)도 파동이다. 그러면 전자에 대해 <b>새로 따져야 할 것 세 가지</b>: ① 파장 ② 불확정성(위치와 운동량을 동시에 정확히 알 수 없음) ③ 파동을 다루는 방정식 = 슈뢰딩거 방정식.<br>그리고 우리가 궁금한 것은 딱 둘 — 전자의 <b>위치</b>와 <b>에너지</b>. 동그라미 두 개가 이 장의 목표다.</div></div>
+
+<h3>칠판 ② (빨강) — 주변 환경 → 슈뢰딩거 → 해, 그리고 다섯 상황</h3>
+<div class="row"><div class="orig"><span class="hand">[칠판] (주변환경) ⇒ (S.W.E) ⇒ solution : wave function (ψ) → |ψ|² : (probability) (position)</span><br><span class="hand">[칠판] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑ (boundary condition) &nbsp;&nbsp;&nbsp; └ (Energy)</span></div><div class="exp">2장 전체의 <b>풀이 틀</b>이다. 전자가 놓인 <b>환경</b>(퍼텐셜)을 정하고 → 슈뢰딩거 방정식에 넣고 → <b>경계조건</b>으로 풀면 → 해 ψ(파동함수)가 나온다. ψ 자체엔 물리적 뜻이 없고 <b>|ψ|² 가 그 자리에 있을 확률</b>(위치)이다. 푸는 도중에 <b>에너지</b>도 나온다.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ① Free space &nbsp; e〰 &nbsp; well-defined λ</span></div><div class="exp">아무것도 없는 공간의 전자 — 진행파로 잘 움직인다. 파장이 딱 정해진다. "전자는 파동이다"를 확인하는 경우.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ② (infinite) potential well &nbsp; ∞ | e | ∞ &nbsp; bounded (confined) electron ⇒ Quantized energy &nbsp; E<sub>n</sub> = ħ²π²n² / 2ma²</span></div><div class="exp">무한히 높은 벽 사이에 <b>갇힌(bounded, confined) 전자</b> → 에너지가 <b>띄엄띄엄(양자화)</b>. 폭 a 가 식의 분모에 제곱으로 들어간다는 것이 뒤 양자점 이야기의 씨앗이다.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ③ Finite potential well &nbsp; I | II | III (V₀) &nbsp; Quantized energy + &nbsp; ψ<sub>I</sub> ≠ 0 ⇒ |ψ<sub>I</sub>|² ≠ 0, ψ<sub>III</sub> ≠ 0 ⇒ |ψ<sub>III</sub>|² ≠ 0 &nbsp; non-zero probability inside the potential well(벽 속)</span></div><div class="exp">벽 높이가 유한하면 여전히 양자화되지만, <b>벽 안쪽(I, III)에서도 ψ 가 0 이 아니다</b>. 곧 전자가 벽 속에 있을 확률이 있다. 양쪽 영역에 큰 타원을 친 이유다.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ④ Tunneling &nbsp; (e)→ | V₀ | → e &nbsp; |ψ<sub>I</sub>|² ≠ 0, |ψ<sub>III</sub>|² ≠ 0 &nbsp; T : transmission coeff. &nbsp; a↓ → T↑↑↑</span></div><div class="exp">벽 속에 있을 확률이 있다면 <b>벽 너머에 나타날 확률</b>도 있다 = 터널링. 그 확률이 <b>투과계수 T</b>. 벽 두께 a 가 줄면 T 가 <b>화살표 세 개만큼</b> 커진다(지수함수로).</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ⑤ H-atom &nbsp; (+) 주위를 도는 e</span></div><div class="exp">수소 원자. 핵의 끌어당김이 우물 역할을 하므로 유한 우물과 닮았다. 결론도 같다 — 에너지 양자화.</div></div>
+
+<h3>칠판 ③ (파랑) — 디스커션 ① 광전효과와 분광 장비, ② 무한 우물과 색</h3>
+<div class="row"><div class="orig"><span class="hand">[칠판] ① 광전효과 &nbsp; 원자 그림: 바깥 궤도 → valence region &nbsp;/ &nbsp; 안쪽 (+) 가까이 → core region</span><br><span class="hand">[칠판] (E<sub>light</sub>) > φ &nbsp;&nbsp; hf = h c/(λ)↓ &nbsp;&nbsp; λ : (B 450nm) · G 550 · R 650</span></div><div class="exp">바깥 전자(valence)를 떼는 데와 핵 근처 전자(core)를 떼는 데 필요한 에너지가 다르다. 빛 에너지를 키우려면 <b>파장을 줄여야</b> 한다(<span class="eq">E = hc/λ</span>). 가시광선은 <b>파랑 450 · 초록 550 · 빨강 650 nm</b> — 파랑이 에너지가 제일 높다.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] (Ultra violet) photoelectron (spectroscopy) (UPS) &nbsp; 분광학</span><br><span class="hand">[칠판] → core region &nbsp; X-ray &nbsp; 〃 &nbsp; (XPS)</span></div><div class="exp"><b>UPS</b> = 자외선으로 바깥 전자를 떼어 보는 분광법. <b>XPS</b> = X선으로 안쪽(core) 전자를 떼어 보는 분광법. 둘 다 광전효과를 이용한 <b>물질 분석 장비</b>다(6쪽 리뷰).</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ② 무한 우물 그림 (E₁, E₂, 폭 a) → λ &nbsp; color &nbsp;&nbsp; E<sub>n</sub> = ħ²π²n² / 2ma²</span><br><span class="hand">[칠판] (E₂ − E₁) = hf = hc/(λ) &nbsp;&nbsp; E₂ − E₁ = (ħ²π²/2ma²)(2² − 1²) = hc/λ</span></div><div class="exp">위 준위에서 아래 준위로 떨어지며 그 차이를 <b>빛으로</b> 내놓으면 파장이 정해진다 = <b>색</b>. 그리고 그 차이는 폭 a 로 정해진다. 폭만 바꿔도 색이 바뀐다(19쪽 리뷰).</div></div>
+
+<h3>칠판 ④ (파랑) — 실리콘 1.1 eV, 양자점, 디스플레이 / 터널링과 메모리</h3>
+<div class="row"><div class="orig"><span class="hand">[칠판] (Si) &nbsp; CB ─ VB 사이 E<sub>g</sub> = 1.1eV → λ = (1200nm) &nbsp;&nbsp; (E<sub>g</sub>) = hf = (h c)/(λ) = (1240) &nbsp; 1.1eV</span></div><div class="exp">실리콘 밴드갭 1.1 eV 를 빛으로 바꾸면 <span class="eq">λ(nm) = 1240 / E(eV)</span> 로 약 1100~1200 nm, <b>적외선</b>이다. 칠판은 1200nm 로 적었다(1240/1.1 ≈ 1127). <b>1240</b> 에 동그라미 — 에너지(eV)와 파장(nm)을 오가는 암산 상수다.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] (큰 상자 4nm · 작은 상자 2nm 그림) &nbsp; R · G · B → Display &nbsp; Quantum dot → (QD-OLED) · (Neo QLED)</span></div><div class="exp">같은 재료라도 <b>알갱이를 작게 만들면</b> 갇힘이 세져 준위 간격이 벌어지고 색이 파랑 쪽으로 간다. 이것이 <b>양자점(quantum dot)</b>. 크기만 바꿔 빨강·초록·파랑을 다 낼 수 있으니 → 디스플레이. 삼성의 <b>QD-OLED</b>, <b>Neo QLED</b> 가 예.</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] ○ Tunneling & (memory) &nbsp; a↓ → (T)↑↑ &nbsp; 장벽 그림: e→ (금속) | 절연체 | (금속) &nbsp; (전압) → (FN tunneling)↑ → T↑ → Flash m.</span></div><div class="exp">금속-절연체-금속. 평소엔 절연체가 두꺼운 벽이라 못 지나간다. <b>전압을 걸면</b> 벽이 기울어 삼각형이 되고 실제로 지나야 할 두께가 줄어든다 → 터널링이 급증 = <b>FN(Fowler–Nordheim) 터널링</b> → 이것을 쓰는 것이 <b>플래시 메모리</b>(4쪽 리뷰).</div></div>
+
+<h3>칠판 ⑤ (파랑) — MOSFET vs 플로팅 게이트</h3>
+<div class="row"><div class="orig"><span class="hand">[칠판] MOSFET &nbsp; (S) · gate(+++) · GO · n⁺ │ n⁺ · (D) · p &nbsp; ⟸ I<sub>D</sub></span><br><span class="hand">[칠판] vs. &nbsp; (+++)(3V) gate / GO / floating gate / tunneling oxide · n⁺ │ n⁺ · p</span></div><div class="exp">왼쪽은 보통 MOSFET — 게이트에 + 를 걸면 밑에 전자가 모여 통로가 생기고 전류가 흐른다. 오른쪽 메모리 소자는 구조가 같은데 <b>두 층만 다르다</b> — 아주 얇은 <b>터널링 산화막</b>과 그 위의 <b>플로팅 게이트</b>(전자를 가둬 두는 곳).</div></div>
+<div class="row"><div class="orig"><span class="hand">[칠판] I–V 그래프(위로 휘는 곡선) &nbsp;&nbsp; I = ½ μ C (W/L)(V<sub>G</sub> − V<sub>th</sub>)² &nbsp;&nbsp; I ∝ V<sub>G</sub>²</span></div><div class="exp">MOSFET 전류는 게이트 전압(문턱을 넘은 만큼)의 <b>제곱</b>에 비례한다. 그래서 곡선이 포물선처럼 올라간다. 이동도 μ 가 식에 들어 있다 — 1장 "이동도 = 소자 속도"가 여기서 식으로 확인된다.</div></div>
+
+<h3>칠판 ⑥ (파랑) — 읽기: 곡선이 옆으로 밀린다</h3>
+<div class="row"><div class="orig"><span class="hand">[칠판] I–V 곡선 두 개(왼쪽 곡선, 오른쪽으로 밀린 곡선 "0") &nbsp; 가로축 위 읽기 점 (R) &nbsp; 위쪽 동그라미 (1)</span></div><div class="exp">플로팅 게이트에 전자를 넣으면 그 음전하가 게이트 전압을 상쇄해 <b>문턱이 올라가고 곡선이 오른쪽으로 밀린다</b>. 정해 둔 읽기 전압 R 에서 전류를 재면 — 많이 흐르면 전자가 <b>없는</b> 상태, 거의 안 흐르면 전자가 <b>있는</b> 상태. 이 둘을 1 과 0 으로 약속한 것이 플래시 메모리다. (왼쪽 아래·위의 동그라미 숫자는 사진이 흐려 확실치 않다.)</div></div>
+<div class="key"><b>정리 — 칠판 여섯 장이 2장의 뼈대</b><br>① 빛은 입자(광자, E = hf) → 입자도 파동(λ = h/p) → 파장·불확정성·파동방정식 → 목표는 <b>위치와 에너지</b><br>② 환경 → S.W.E + 경계조건 → ψ, |ψ|² = 확률 · 에너지 / 다섯 상황(자유·무한·유한·터널링·수소)<br>③~⑥ 디스커션 — 광전효과 → <b>UPS·XPS</b> / 무한 우물 → <b>색 → 양자점 → 디스플레이</b> / 터널링 → <b>FN 터널링 → 플래시 메모리</b></div>
+
 <h2 id="s3">3쪽<small>Chapter Overview — Review(광전효과·PES)</small></h2>
 <p class="fig">역시 전부 손글씨인 쪽이다. 2쪽이 "앞으로 배울 것"의 지도라면, 이 쪽은 <b>2.1~2.3을 다 배우고 난 뒤에 적은 복습 지도</b>다. 파란 글씨가 먼저 적은 줄기이고, 붉은 글씨가 나중에 덧붙인 강조다.</p>
 
@@ -590,6 +648,22 @@ sub,sup{font-size:11px}
 ④ <b>finite 우물의 penetration depth</b> — "무한 우물과 유한 우물의 차이를 쓰라"는 물음의 답이 바로 이것이다. 유한 우물은 벽 속에서 ψ ≠ 0 이라 전자가 스며든다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — <b>광전효과(hν &gt; φ)로 빛의 입자성을 확인하고, 대칭으로 전자의 파동성(λ = h/p)을 받아들인 뒤, 불확정성 원리와 슈뢰딩거 방정식을 도구로 삼아 다섯 가지 상황(자유·무한우물·유한우물·장벽·수소원자)에서 위치와 에너지를 구한다.</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 리뷰 수업을 들으며 이 한 장에 가장 많이 적었다. 획이 겹쳐 일부는 판독이 애매하다.<br>• 맨 위 큰 타원: 우물 그림 <span class="gnh r">↓1.1eV → (1200nm)</span> · <span class="gnh r">ħ²π²/2ma²</span> · 작은 우물 <span class="gnh r">a↓ ← quantum dot · 0.5nm !!</span> → 왼쪽 <span class="gnh r">quantum dot → display !!</span> — 19쪽 리뷰(양자점) 요약.<br>• <span class="gnh r">λ 짧을수록 에너지 높음 · 파란색 쪽(?)</span>, <span class="gnh r">quantum dot !!!</span><br>• <span class="gnh r">E₂ − E₁ = hf</span> · <span class="gnh r">ψ : solution</span> · <span class="gnh r">|ψ|² : probability !!</span> · <span class="gnh r">|ψ<sub>I</sub>|² ≠ 0, |ψ<sub>III</sub>|² ≠ 0</span><br>• PES 옆: <span class="gnh r">X-ray !!</span>, <span class="gnh r">XPS !!</span>, <span class="gnh r">UPS</span>, 동그라미 속 <span class="gnh r">핵 근처(?)</span>, <span class="gnh r">밖의 전자(?)</span> — 6쪽 리뷰의 valence/core 구분.<br>• electron 에 동그라미 · ②불확정성 ③파동방정식 줄에 큰 괄호와 물결 · 큰 동그라미 <span class="gnh r">λ = h/p</span> 여러 번.<br>• 상황 목록 옆: <span class="gnh r">Energy</span> ← <span class="gnh r">boundary condition !!</span> · <span class="gnh r">E₁ = ħ²π²/2ma²</span> 에서 ③finite 로 긴 화살표 · <span class="gnh r">a↓ → T↑</span> · 장벽 그림 · <span class="gnh r">most probable distance → Bohr distance</span> — 22쪽 리뷰.<br>• 맨 아래 동그라미 한 개(<span class="gnh r">a₀ … ?</span>)는 판독 불가.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn03.jpg" alt="3쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>00:00~04:07</b>, <b>09:29~21:14</b>(잡담 17:24~19:51 제외), <b>30:36~31:19</b> 가 이 쪽 내용이다. 이 쪽이 이미 교수님이 쓰신 2장 한 장 요약(Review)이라 리뷰 수업의 줄기가 거의 여기 걸린다. 칠판 ①② 가 이 대목의 판서다(2쪽에 옮김).</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 00:43</span> "이 입사된 빛의 에너지가 어떤 특정 에너지보다 높으면 … <b>이미션이 일어납니다</b>. 그 특정 에너지를 우리가 <b>워크 펑션</b>이라고 했으니까." … "측정하는 운동에너지는 … 금속의 속박을 벗어나는 데 필요한 에너지, 워크 펑션을 빼면 그만큼 운동에너지를 가지게 된다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 02:18</span> "파티클적인 특징을 가진 어떤 특정 실험이 먼저 나왔습니다. 대표적인 게 광전효과, 그리고 또 뭐가 있을까요? <b>컴프턴 스캐터링</b>. 당구공 치듯이 빛도 이렇게 튕겨 나가네." … "빛이 원래는 웨이브였는데 … 동시에 파티클의 특징도 가지더라. 그때 그 파티클을 <b>포톤</b>이라고 부른 거예요."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 09:32</span> "빛이 웨이브였는데 알고 보니까 파티클이다. 그렇다면 <b>파티클 또한 웨이브겠네</b> 라고 해서 파티클의 가장 대표적인 일렉트론을 가지고 오는 거죠. 우리 반도체에서." … "그렇게 하면 기존에는 고려하지 않았던 <b>세 가지</b>를 이제 고려하면 됩니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 10:26</span> "첫 번째, 이 전자가 <b>웨이브 렝스</b>를 가진다는 거. 그 전까지 전자의 파장에 대해서 아무 얘기 안 했었는데." … <span class="ts">11:44</span> "원래 공이 어디 있다 — 정확하잖아. 그런데 웨이브를 보면 파고가 치고 있을 때 그 위치를 얘기하기 애매하죠. 그걸 표현하는 수식이 바로 <b>불확정성 원리</b>." … <span class="ts">12:13</span> "세 번째, 웨이브의 특징을 가진다면 뭐가 필요하다? <b>웨이브 이퀘이션</b>이 필요하다. 입자라면 운동방정식으로 다 풀어야 되는데, 웨이브라면 운동방정식으로 풀면 안 되니까."</div>
+<div class="fig">전사가 깨진 구간 — <b>리뷰 12:50~14:33</b> 은 숫자 나열로만 인식되었다. "일렉트론은 과연 어떤 상태인가? 궁금한 건 두 가지 — 위치와 에너지"로 넘어가는 대목이다(칠판 ① 마지막 줄). 직접 들어볼 것.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 14:47</span> "바운더리 컨디션을 이용하죠. 그렇게 해서 솔루션을 찾는데, 웨이브 이퀘이션의 솔루션은 <b>웨이브 펑션</b>입니다." … "그리고 그 ψ 자체로는 사실 큰 물리적 의미가 없는 거예요. … <b>특정 위치의 존재 확률</b>이 나오더라." … <span class="ts">15:57</span> "궁금한 게 두 가지, 포지션과 에너지. … 컨디션 맞춰서 잘 풀다 보면 중간에 에너지도 알려 주고, 그리고 ψ 를 제곱하면 확률을 알 수 있어. 이렇게 하면 우리의 궁금증이 다 해결되는 거예요."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 16:12</span> "그럼 이제 우리가 주의 깊게 봐야 될 거 — 이 <b>주변 환경</b>이 어떻게 되냐. 일렉트론이 넓은 데 있냐, 좁은 데 있냐, 어떤 계단을 오르고 있냐." … "총 몇 가지 환경이 나오냐 — <b>다섯 가지</b>." … "1번은 <b>프리 스페이스</b>. 2번은 <b>무한대 전위 우물</b>에 갇혀 있는 경우. 3번은 <b>파이나이트</b>." … <span class="ts">20:07</span> "장벽을 향해서 들어가는 경우, 그리고 마지막 상황 — (학생: 아톰) 수소 원자."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 30:36</span> <b>2장의 구조를 한 줄로</b> — "여기까지 챕터 2 정리입니다. … 챕터 2는 <b>절반이 양자역학의 탄생</b>(왜 전자를 파동으로 봐야 하나)과 관련된 거고, 나머지 반은 어떤 상황이 주어지면 그 상황에 맞춰서 슈뢰딩거 이퀘이션을 풀어서 <b>일렉트론의 상태</b>를 안다 — 상태를 안다는 건 <b>에너지와 위치</b>. 아주 심플한 스토리입니다."</div>
+<div class="exam"><b>★ 시험 포인트</b> — 교수님이 정리한 2장의 <b>답안 골격</b>: ① 빛의 입자성(광전효과·컴프턴) → ② 전자의 파동성 → ③ 새로 따질 세 가지(파장 λ = h/p · 불확정성 ΔpΔx ≥ ħ · 슈뢰딩거 방정식) → ④ 환경 → S.W.E + 경계조건 → ψ → |ψ|² = 확률, 에너지 → ⑤ 다섯 상황. "상태를 안다 = <b>위치와 에너지</b>를 안다"는 문장을 그대로 쓸 수 있어야 한다.</div>
+
 <h2 id="s4">4쪽<small>Chapter Overview — 터널링 효과</small></h2>
 <p class="fig">세 장짜리 Chapter Overview의 마지막이다. 인쇄된 글자는 제목뿐이고 손글씨도 몇 줄 안 된다. 그런데 그 몇 줄이 <b>"터널링을 배우면 무엇을 설명할 수 있는가"</b>를 전부 담고 있다.</p>
 
@@ -628,6 +702,24 @@ sub,sup{font-size:11px}
 <div class="exam"><b>★ 시험 포인트</b> — 이 쪽에 붉은 표시는 없다. 대신 <b>번호를 매겨 셋을 나열한 것</b> 자체가 표시다. "터널링의 응용 예를 세 가지 쓰라"는 물음에 <b>터널 다이오드 · 플래시 메모리 · STM</b> 이라고 답하면 된다. 조건 <b>E &lt; V₀</b>를 함께 적어 두면 완성이다. 터널링은 <b>넘을 에너지가 모자란데도 통과하는 것</b>이라는 정의가 거기 들어 있기 때문이다.</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 에너지가 모자라도(E &lt; V₀) 장벽을 <b>뚫고</b> 지나갈 확률이 있다. 그 덕에 <b>터널 다이오드 · 플래시 메모리 · STM</b>이 존재한다. 1973년 에사키의 노벨상 주제다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 디스커션 ③(터널링 → 메모리)을 이 쪽에 통째로 적었다.<br>• 맨 위 <span class="gnh r">① 두께 ② 전압(전계)</span> — 터널링을 늘리는 두 방법. ②에 굵은 동그라미.<br>• <span class="gnh r">Tunneling</span> 동그라미 · <span class="gnh r">금속 | 절연체 | 금속</span> 장벽 그림 · <span class="gnh r">a↓ → T↑↑↑</span> · <span class="gnh r">e → FN tunneling !!</span> → 네모 <span class="gnh r">Flash memory</span><br>• MOSFET 그림(<span class="gnh r">MOSFET</span>, gate, n⁺) 과 메모리 소자 그림: <span class="gnh r">floating gate</span> · <span class="gnh r">tunneling oxide</span> · <span class="gnh r">10V writing</span> · <span class="gnh r">−10V erasing</span> · <span class="gnh r">writing / erasing</span><br>• 왼쪽: <span class="gnh r">SLC → MLC → TLC → QLC</span>, 각각 1bit·2bit·3bit·4bit 로 보이는 작은 글씨, <span class="gnh r">10V 1s(?)</span><br>• <span class="gnh r">2D → 3D</span> 를 두 번 적고 아래 것에 굵은 동그라미.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn04.jpg" alt="4쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>49:29 ~ 65:31(끝)</b> — <b>디스커션 ③ 터널링과 메모리</b>. 이 쪽의 <span class="hand">② Flash memory</span> 를 16분 동안 풀었다. 칠판 ④ 아래쪽, ⑤, ⑥ 이 이 대목의 판서다(2쪽에 옮김).</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 49:29</span> "이 <b>트랜스미션 코에피션트</b>를 구하면서 알 수 있었어요. 포텐셜 장벽이 얇으면 일렉트론이 통과할 수 있다. 이걸 이용한 게 바로 <b>메모리 소자</b>입니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 49:53</span> "여기가 금속이고 여기가 절연체였어요. 절연체 같은 경우에는 밴드갭 크기 때문에 … 일렉트론이 이 금속으로 넘어가려면 장벽이 엄청 높아. 전압을 걸어도 얘가 못 넘어. 그리고 폭이 길면 터널링도 잘 일어나지 않아." … <span class="ts">50:45</span> "그런데 전압을 걸면 어떻게 되냐면 … 밴드가 이렇게 기울어. 그렇게 되면 … 통과해서 넘어가는 방법도 <b>증가</b>하게 됩니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 51:26</span> "이 터널링을 뭐라고 합니까? 물리전자 때 이름인데 — <b>F-N 터널링</b>. <b>파울러-노드하임 터널링</b> 기억나요?" … "전압을 가해 주면 폭이 줄어들어서 F-N 터널링 비율이 높아지겠다." … <span class="ts">52:06</span> "이 성질을 이용한 게 바로 메모리, 메모리 중에서도 <b>낸드 플래시</b>라고 불리는 거. 거기에 들어가는 거죠."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 52:35</span> "<b>MOSFET</b> 같은 경우는 이렇게 생겼어요. … 게이트에 플러스를 걸어. 그러면 여기 전자가 이렇게 모입니다. … 흐르면서 이쪽으로 전류가 흐르는, 요게 바로 MOSFET." … <span class="ts">53:26</span> "메모리 소자는 사실 똑같은 구조인데 요게 아주 얇은 절연체 — <b>터널링 옥사이드</b>. 그리고 요 쪽에 금속 — <b>플로팅 게이트</b>. 그리고 게이트 옥사이드, 게이트. MOSFET 이랑 비교했을 때 <b>요 두 개만 달라</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 55:04</span> "이런 상태에서 내가 프로그램을 한다 — 원래는 3볼트 걸어 줬어요. 여기 갑자기 <b>10볼트</b>. 근데 10볼트를 짧게, 엄청 짧게 해 줘요. 그럼 어떤 일이 벌어지냐? 전자들이 터널링을 통해서 요기(플로팅 게이트)로 들어가게 됩니다." … "여기 전자가 갇혀 있으면 … 원래 켜져야 되는 게 안 켜져. 그러면 더 높은 전압을 걸어야 돼. … 전체적으로 그래프가 <b>오른쪽으로 가</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 56:13</span> "내가 <b>리드 포인트</b>를 요 지점에 놓습니다. … 요 지점에서 전류가 엄청 많이 흘러 — 그러면 전자가 없다는 거야. 근데 전류가 조금밖에 안 흘러 — 전자가 있다는 걸 알 수 있다는 거지." … "트랜지스터 100개를 만들어서 … 얘는 10볼트 1초 가하고, 얘는 안 가하고 … 0, 1, 1, 1 이라는 정보가 저장되네. 이렇게 저장하는 게 바로 <b>낸드 플래시</b>. 지금 여러분들 USB 에 있는 메모리입니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 59:00</span> "그걸 빼려면 어떻게 해야 돼요? 반대 전압을 걸면 얘가 쏙 빠집니다. 그래서 전자를 넣는 걸 <b>라이트(write)</b>, 빼는 걸 <b>이레이즈(erase)</b>, 이 포인트에서 읽는 걸 <b>리드(read)</b>."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 57:24</span> <b>메모리가 발전해 온 길</b> — "메모리의 발전 방향은 뭘까요? <b>더 많은 정보를 저장</b>하는 겁니다. 그러려면 제일 먼저 — <b>스케일 다운</b>, 작게 만들기. 근데 작게 만들다 보니까 더 이상 작게 못 만들겠어. 그러면 어떻게 해야 돼요? <b>위로 쌓자</b>. 아파트처럼. 그래서 지금은 <b>2D 에서 3D</b> 로 바뀌었습니다." … <span class="ts">58:10</span> "그리고 전자를 저장하는 곳이 플로팅 게이트 — 금속이었는데, 지금은 <b>차지 트랩 레이어</b>, <b>절연체</b>에 저장하는 방식으로 바뀌었고."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 60:43</span> <b>한 칸에 여러 비트</b> — "트랜지스터 하나가 0, 1 두 가지만 저장합니다. 더 많은 정보를 한 소자에 저장할 수 없을까?" … "10볼트 아니고 5볼트를 가해. 그때는 세 개가 아니라 한 두 개만 넘겨. 전류는 중간 … 0.5라는 정보로 약속을 한다면 … 세 가지를 저장하는 거였어." … <span class="ts">63:13</span> "0, 1 만 쓰는 디지털은 사실 <b>노이즈에 대해서 엄청난 내구성</b>을 갖고 있습니다. 0.6 이 되더라도 1 로 읽으면 되니까. 근데 이걸 쪼개는 순간 사실 엄청 어려워진다. 하지만 다들 하고 있습니다."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 63:43</span> "한 셀에 1비트 저장하는 걸 <b>SLC</b>(Single Level Cell), 2비트를 <b>MLC</b>(Multi), 3비트 <b>TLC</b>(Triple), 4비트 <b>QLC</b>(Quad)." … "4비트를 쓰려면 16단계로 쪼개야 돼." … <span class="ts">64:29</span> "지금 3D 낸드에서 뭐 쓸까요? … 지금 상업화하는 건 <b>TLC 와 QLC</b>." … "3D 낸드 … 정말 대단한 걸 다 하고 있습니다."<br>n 비트면 전류(문턱) 단계가 <span class="eq">2ⁿ</span> 개 필요하다. SLC 2 · MLC 4 · TLC 8 · QLC 16. 단계가 많을수록 간격이 좁아져 잡음에 약해진다.</div>
+<div class="exam"><b>★ 교수님이 찍어 준 키워드</b> <span class="ts">리뷰 65:05</span> "제가 모든 걸 설명하겠다는 게 아니고 여러분들 지식을 넓히려고 하는 게 목표니까 — 이번에 제가 얘기했던 키워드 있잖아요. <b>UPS, XPS, 그리고 퀀텀 닷</b>. 그리고 <b>터널링과 이런 메모리</b>. 이런 거 한 번 더 찾아보시고."<br>디스커션 세 주제가 그대로 키워드다. 각각 <b>광전효과 → UPS/XPS</b>, <b>무한 우물의 폭 → 양자점 색</b>, <b>터널링(FN) → 낸드 플래시</b> 로 "2장 이론이 어디에 쓰이나"를 묻는 문항에 쓸 수 있게 정리해 두면 된다.</div>
+
 <h2 id="s5">5쪽<small>Contents — 2.1 ~ 2.4</small></h2>
 <p class="fig">차례 쪽이다. 인쇄된 것은 네 줄뿐이고, 오른쪽 붉은 글씨가 그 네 줄을 한 흐름으로 이어 놓은 필기다. 교수님은 <b>"콘텐츠까지만 한국말로 하고 다음 쪽부터 영어로 진도를 나간다"</b>고 못 박았다. 실제로 다음 쪽(6쪽)부터 강의가 영어로 바뀐다.</p>
 
@@ -715,6 +807,10 @@ sub,sup{font-size:11px}
 <div class="exp">오버뷰(2~5쪽)를 닫는다. 다음 쪽부터 영어로 본 진도가 시작된다.</div>
 
 <div class="key"><b>정리</b> — 네 절의 관계. <b>2.1</b> 왜 새 도구가 필요한가(실험이 고전 이론과 안 맞는다) → <b>2.2</b> 도구를 만든다(슈뢰딩거 방정식) → <b>2.3</b> 도구를 써 본다(우물·장벽) → <b>2.4</b> 도구를 원자에 쓴다(수소·주기율표). 그리고 <b>3장</b>에서 반도체에 쓴다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 2.1~2.2 옆에 괄호로 <span class="gnh r">wave / particle</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn05.jpg" alt="5쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s6">6쪽<small>Photoelectric Effect — 광전효과</small></h2>
 <p class="fig">여기서부터 강의가 <b>영어</b>로 바뀐다. 이 쪽은 2장 전체의 출발점이다. <b>"빛이 파동이기만 하면 절대 나올 수 없는 실험 결과"</b>가 무엇인지를 그래프 두 개로 보여 준다.</p>
 
@@ -866,6 +962,20 @@ sub,sup{font-size:11px}
 ①과 ②를 바꿔 쓰는 것이 가장 흔한 실수다. <b>세기 = 개수, 진동수 = 에너지</b>로 묶어 두면 헷갈리지 않는다.</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 금속에 빛을 쬐면 전자가 나오고 그 운동에너지는 <b>T = E − Φ</b> 다. 여기까지는 파동으로도 설명된다. 그런데 <b>세기를 올려도 T 가 안 변하고, 진동수가 υ₀ 아래면 아무리 기다려도 하나도 안 나온다.</b> 이 두 가지가 파동 이론을 무너뜨린다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 제목 옆 빨강 꺾쇠(판독 애매). "the minimum energy" 에 자주색 밑줄, "(T) is E − Φ" 에 자주색 네모 — 운동에너지 식을 표시해 두었다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn06.jpg" alt="6쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>31:19 ~ 41:10</b> — <b>디스커션 ① 광전효과와 분석 장비</b>. 칠판 ③ 윗부분이 이 대목의 판서다(2쪽에 옮김).</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 31:28</span> <b>어느 금속이 전자를 잘 내놓나</b> — "금이 있고 구리가 있어요. 빛을 비춰서 전자를 튀어 나가게 했을 때 뭐가 더 쉽게 나오냐?" … "칼슘, 마그네슘 바꿔 봐라." … <span class="ts">32:30</span> "금속을 놔둘 때 우리가 아는 또 하나가 — 바로 <b>산화</b>입니다. 산화가 잘 되는 금속이 있고 산화가 안 되는 금속이 있는데 … 금은 상당히 안정적이죠. 반면에 칼슘이랑 마그네슘은 산화가 잘 됩니다. 근데 얘들이 <b>일함수가 낮은</b> 애들이 훨씬 더 전자를 잘 내놓고."<br>일함수가 낮다 = 전자를 붙잡는 힘이 약하다 = 전자를 잘 내준다 = 산소에게도 전자를 잘 뺏긴다(산화). 그래서 <b>일함수 낮은 금속일수록 반응성이 크다</b>.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 33:27</span> "그래서 일함수라는 거는 금속 <b>고유의 특성</b>. … 그러면 우리가 모르는 금속이 있을 때, 빛을 쪼여서 나오는 운동에너지를 측정해서 일함수를 알면 그 물질을 알 수 있다. 어느 금속인지 알 수 있다." … "새로운 신소재를 개발했을 때 그 특성을 알기 위해서 뭘 하겠어요? 빛을 쪼여서 일렉트론이 어떻게 튀어나오는지 봅니다."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 35:46</span> <b>블루라이트 비유</b> — "파장이 짧으면 에너지가 높습니다. 빨간색, 초록색, 파란색 — 여러분들은 <b>650, 550, 450</b> 을 기억합니다. 그래서 파란색 쪽이 에너지가 높아." … "모니터나 안경의 <b>블루라이트 차단</b>이 참 유사합니다. 에너지가 높은 걸 좀 차단해야 눈이 안 좋아지는." … "그러면 파란색보다 에너지가 높은 거는 무슨 빛일까요? — <b>울트라 바이올렛</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 37:11</span> "그래서 이 워크 펑션 같은 걸 측정하기 위해서 밸런스(바깥)의 일렉트론을 떼어 내서 — 금속뿐만 아니라 반도체, 절연체 다 분석할 수 있어요 — 특성을 파악하는 방법을 <b>울트라바이올렛 포토일렉트론 스펙트로스코피, UPS</b> 라고 합니다." … "반도체 장비 중의 UPS."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 38:18</span> "이걸로 어떤 원소인지 파악하는 건 좀 어려워. 이 원소가 어떤 상태인지 파악하는 게 바로 UPS 입니다. … 밸런스 일렉트론은 사실 끝에 있기 때문에 이 상태가 주변 환경에 따라 막 달라질 수도 있어요." … "정말 찐 성질을 보려면 어디를 봐야 될까? 바깥쪽보다 진짜 요 <b>중앙</b>을 봐야 … 바깥쪽을 밸런스 영역이라고 한다면 안쪽을 <b>코어</b>라고 합니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 39:09</span> "코어 전자는 붙잡는 힘이 엄청 세. … 어떻게 하면 될까요? (학생: 더 세게) 그렇지. … 우리 몸 안에 뼈 보려고 쏘는 거 — <b>X-ray</b>." … "<b>X-ray 포토일렉트론 스펙트로스코피, XPS</b>." … <span class="ts">40:31</span> "반도체 관련한 모든 연구소에 당연히 있다. 우리 부산대에도 있다. 이런 장비들은 비싸서 대부분 <b>공동 장비</b> … 공동실험실습관에 있어. 학교에서 쓰는 것도 돈을 내고, 시간당 얼마 이렇게 해서 쓰죠."</div>
+<div class="key"><b>정리 — UPS vs XPS</b><br><b>UPS</b> = 자외선(UV) → 바깥(valence) 전자 → <b>일함수 · 표면 전자 상태</b>. 주변 환경에 민감하다.<br><b>XPS</b> = X선 → 안쪽(core) 전자 → <b>어떤 원소인지 · 화학 결합 상태</b>. 핵 근처 전자라 원소마다 고유하다.<br>둘 다 <span class="eq">KE = hf − (결합 에너지)</span> 라는 광전효과 식 하나로 돌아간다.</div>
+
 <h2 id="s7">7쪽<small>Particle-Like Wave — 빛이 입자처럼 굴다</small></h2>
 <p class="fig">앞 쪽에서 "파동으로는 설명이 안 된다"까지 왔다. 이 쪽이 그 <b>해결책</b>이다. 빛을 <b>알갱이(광자)의 모임</b>으로 보면 전부 풀린다. 이 단원에서 가장 중요한 낱말 <b>양자화(quantized)</b>가 여기서 처음 나온다.</p>
 
@@ -987,6 +1097,10 @@ sub,sup{font-size:11px}
 ④ <b>세기 ↔ 개수, 진동수 ↔ 하나의 에너지</b> — 6쪽 두 그래프를 E = hν 하나로 설명하는 논리</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 이중슬릿은 빛이 파동임을 말하고 광전효과는 입자임을 말한다. 둘 다 맞다. 빛은 <b>에너지 꾸러미인 광자의 모임</b>이고, 광자 하나의 에너지는 <b>E = hν</b> 다. 그래서 빛의 에너지는 <b>hν 의 정수배로만 존재한다(양자화).</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b><br>• 제목 위 <span class="gnh r">Photoelectric effect · Compton scattering !!</span> → <span class="gnh r">입자성</span><br>• <span class="gnh r">E = hf</span>(f 에 굵은 동그라미) · <span class="gnh r">Monochromatic light</span>(단색광)<br>• 그림 사이 세로 화살표와 몇 줄(<span class="gnh r">만약 세기↑ : f 도 일정한 빛, 광자 수만(?)</span>) — 세기를 올려도 진동수가 같으면 광자 수만 는다는 뜻으로 보인다(판독 일부 애매).<br>• cannot be explained 에 자주색 밑줄 → <span class="gnh r">빛은 입자이다(?)</span> · photon 옆 <span class="gnh r">양자(?)</span> · hν 앞에 굵은 동그라미 <span class="gnh r">에너지</span> · 그림 위 <span class="gnh r">방출된 전자(?)</span></div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn07.jpg" alt="7쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s8">8쪽<small>Wave-Particle Duality — 파동·입자 이중성</small></h2>
 <p class="fig">빛이 입자라는 <b>두 번째 증거</b>(콤프턴 산란)를 보이고, 거기서 <b>방향을 뒤집어</b> "그럼 입자도 파동이겠다"로 넘어가는 쪽이다. 이 단원의 <b>경첩</b>에 해당한다.</p>
 
@@ -1076,6 +1190,17 @@ sub,sup{font-size:11px}
 ④ <b>빛의 입자성 증거 두 가지</b> = 광전효과 + 콤프턴 산란. 이렇게 묶어 외운다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 콤프턴 산란(X선이 전자를 당구공처럼 때리고 파장이 길어짐)으로 빛의 입자성이 한 번 더 확인된다. 대칭성에 따라 <b>입자도 파동일 것</b>이라 기대하고, 그 파장을 <b>λ = h/p</b>(드브로이 파장)로 적는다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 컴프턴 산란 파동 밑 물결 + <span class="gnh r">충돌 후 산란(?)</span> · <span class="gnh r">( light / wave</span> · 당구공 그림 옆 동그라미 <span class="gnh r">에너지는 보존된다(?)</span> !! · 아래 <span class="gnh r">λ = h/p</span>. 노란 형광: Compton Scattering, Wave-particle duality principle, particles should be / wave-like properties.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn08.jpg" alt="8쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>04:07 ~ 09:29</b>. 파동·입자 이중성의 "대칭" 이야기에서 1장 때 못 한 <b>멤리스터</b> 이야기로 샜다가, 드브로이 식의 의미로 돌아온다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 04:43</span> <b>멤리스터</b> — "챕터 1 할 때 시간이 없어서 건너뛴 거 같은데 … 트랜지스터가 뭐의 합성어라 그랬죠? 트랜스 + 레지스터." … "그럼 여러분들 <b>멤리스터</b>라는 건 알아요? … 메모리 + 레지스터." … "근데 이게 발견된 지 얼마 안 됐어요."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 05:31</span> "자연이 되게 오묘하잖아요. 이게 <b>시메트리</b> — 낮이 있으면 밤이 있고, 웨이브가 파티클이면 파티클도 웨이브이고 이렇게 자연은 대칭으로 있잖아요." … "커패시터도 있고 인덕터도 있고 저항도 있는데 … 뭔가 하나 비는 거야. 그래서 이 특성을 가진 소자가 어딘가 있을 거다라고 누군가 예측을 했어. 그래서 그게 발견된 게 바로 멤리스터예요." … <span class="ts">06:23</span> "<b>2008년</b>도에 <b>네이처</b>. 'The missing memristor found'." … <span class="ts">07:25</span> "<b>1971년</b>에 이런 게 수학적으로 있을 거다, 4번째 기본 소자다."<br>전압·전류·전하·자속 네 양을 짝지으면 저항(V–I), 커패시터(Q–V), 인덕터(Φ–I) 에 이어 <b>전하–자속</b> 짝이 비어 있다. 1971년 추아(Chua)가 이 자리를 채울 소자를 예측했고, 2008년 HP 연구소가 실제로 찾았다. 파동–입자 대칭처럼 "대칭이 비면 무언가 있다"는 발상의 예로 드신 것이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 08:04</span> "드브로이 웨이브렝스인데, 정말 <b>미친 식</b>이라고 제가 생각을 합니다. 왜냐하면 심플하니까." … "누군가 이 식이 가지는 의미를 묻는다 — 모두가 다르다고 생각했던 <b>두 종류, 웨이브와 파티클을 연결시키는 식</b>. 웨이브의 대표적인 특성은 웨이브렝스, 입자가 가질 수 있는 물리적 특성은 질량, 질량을 가진 게 움직이면 모멘텀. … 원래 따로 놀던 걸 두 개를 연결시키는 아주 미친 식이라는 거죠."</div>
+<div class="exam"><b>★ 서술형 대비</b> — "드브로이 식 <span class="eq">λ = h/p</span> 의 의미는?" 에 교수님이 준 답: <b>파동의 대표 성질(파장)과 입자의 대표 성질(운동량)을 한 식으로 이은 것</b>. "이렇게 대답해야 돼요"라고 답의 형태까지 짚어 주셨다(08:46).</div>
+
 <h2 id="s9">9쪽<small>Wave-Nature of Particles — 입자가 파동처럼 굴다</small></h2>
 <p class="fig">앞 쪽에서 <b>"입자도 파동일 것이다"</b>라고 기대만 했다. 이 쪽은 그 기대가 <b>실제 실험으로 확인되었다</b>는 증거 두 개를 보인다. 이제 전자가 파동이라는 것은 가정이 아니라 사실이 된다.</p>
 
@@ -1158,6 +1283,10 @@ sub,sup{font-size:11px}
 ③ <b>빛과 전자의 대응표</b> — 빛의 입자성(광전효과·콤프턴) ↔ 전자의 파동성(데이비슨-거머·이중슬릿). 이 네 실험을 <b>2×2로</b> 정리해 두면 어떤 형태로 물어도 답할 수 있다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 전자를 금속 결정에 쏘았더니 특정 각도에서만 많이 튀어나왔고(데이비슨-거머), 전자를 두 틈에 통과시켰더니 <b>간섭 무늬</b>가 생겼다(이중슬릿). 간섭은 파동만 하므로, <b>전자는 파동이다</b>가 실험으로 확인되었다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> function of angle 노란 형광 → 동그라미 <span class="gnh r">특정 각도 !! → 간섭(?)</span>. Interference 에 큰 동그라미 + <span class="gnh r">간섭</span> → <span class="gnh r">간섭 ⇒ "밝고 어두운 무늬" 반복</span>. Davisson–Germer · Double-slits 제목에 노란 형광.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn09.jpg" alt="9쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s10">10쪽<small>Example 2.2 — 드브로이 파장 계산</small></h2>
 <p class="fig">앞 쪽까지 "모든 입자는 파동이다"라고 했다. 그러면 당연한 물음이 나온다. <b>"그런데 왜 우리는 한 번도 본 적이 없는가?"</b> 이 예제가 그 답이다. 전자와 야구공의 파장을 <b>숫자로</b> 견주어 본다.</p>
 
@@ -1459,6 +1588,10 @@ sub,sup{font-size:11px}
 ⑤ 서술형 대비 — <b>"p 알수록 x?, x 알수록 p?"</b> 두 방향을 모두 적는다. 한 방향만 쓰면 감점 요인이다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 전자는 파동이라 <b>위치와 운동량을 동시에 정확히 알 수 없다(Δp·Δx ≥ ℏ)</b>. 같은 원리가 에너지와 시간에도 적용된다(ΔE·Δt ≥ ℏ). ℏ 가 워낙 작아 거시 물체에서는 무의미하고, 전자에서는 결정적이다. 그래서 위치를 <b>확률</b>로 말하게 된다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 제목 위 <span class="gnh r">ħ = h/2π</span> · simultaneously 에 자주색 밑줄 · ΔpΔx ≥ ħ 사이 기호에 빨강 표시.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn11.jpg" alt="11쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s12">12쪽<small>The Schrodinger's Wave Equation — 변수분리</small></h2>
 <p class="fig">2.2 절의 첫 쪽이다. 이 단원의 <b>주인공 식</b>이 여기서 처음 등장한다. 그리고 그 식을 풀 수 있게 만드는 첫 번째 수법인 <b>변수분리</b>를 바로 쓴다.</p>
 
@@ -1581,6 +1714,10 @@ sub,sup{font-size:11px}
 ④ <b>양변이 상수여야 하는 이유</b> — "한쪽은 x 만의 함수, 다른 쪽은 t 만의 함수인데 늘 같다면 둘 다 상수다." 이 논증을 그대로 쓸 수 있어야 한다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 슈뢰딩거 파동방정식은 <b>입자의 파동적 거동을 적는 2계 미분방정식</b>이고, <b>V(x)를 바꿔 끼워</b> 어떤 상황에나 쓴다. 이 식을 <b>Ψ = ψ(x)·φ(t)</b> 로 갈라 놓으면 양변이 각각 x 만·t 만의 함수가 되고, 따라서 <b>양변은 상수</b>여야 한다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> "The Schrodinger's wave equation:" 에 자주색 네모 · V(x) 옆 <span class="gnh r">M(?)</span> · 아래 동그라미 <span class="gnh r">변수분리(?)</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn12.jpg" alt="12쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s13">13쪽<small>The Schrodinger's Wave Equation — 시간 없는 식 만들기</small></h2>
 <p class="fig">앞 쪽에서 "양변이 상수다"까지 왔다. 이 쪽은 <b>그 상수의 정체가 에너지 E 라는 것</b>을 밝히고, 그 결과 <b>시간이 사라진 식</b>을 얻는다. 2.3절에서 실제로 푸는 식이 바로 이 쪽 맨 아래 붉은 상자 안의 식이다.</p>
 
@@ -1900,6 +2037,10 @@ sub,sup{font-size:11px}
 ⑥ <b>이 유도는 정식 증명이 아니다</b> — 양변에서 Ψ 를 약분하는 대목이 <b>수학적으로 틀렸다고 교수님이 두 번 말했다.</b> "유도 과정을 증명하라"가 아니라 <b>"어떤 연산자를 어디에 대입하는가"</b>를 묻는 문제가 나온다고 보는 편이 맞다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 슈뢰딩거 방정식은 하늘에서 떨어진 것이 아니다. <b>빛의 파동방정식과 그 진행파 답을 전자에 빌려 오고</b>, 미분해서 얻은 <b>양자 연산자 p = (ℏ/j)∂/∂x, E = jℏ∂/∂t</b> 를 <b>고전 에너지 보존식에 대입</b>하면 그대로 나온다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> "wave equation to describe" 에 동그라미 <span class="gnh r">Why !!</span> · Wave equation 상자 위 <span class="gnh r">should be x, t</span> · 오른쪽 끝에 위에서 아래로 긴 괄호 — 유도 전체를 한 덩어리로 묶었다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn14.jpg" alt="14쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s15">15쪽<small>Physical Meaning of the Wave Function — 파동함수의 뜻</small></h2>
 <p class="fig">슈뢰딩거 식을 풀면 답으로 <b>파동함수 Ψ</b> 가 나온다. 그런데 그 Ψ 가 <b>무엇인지</b>를 아직 말하지 않았다. 이 쪽이 그 답이다. 결론이 뜻밖이다. <b>Ψ 자체는 아무 물리적 의미가 없다.</b></p>
 
@@ -2015,6 +2156,10 @@ sub,sup{font-size:11px}
 ④ <b>고전 vs 양자</b> — 정확한 위치 vs 확률. 2쪽·11쪽과 묶어 하나의 답안으로 쓸 수 있다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 파동함수 <b>Ψ 는 복소함수라 그 자체로는 아무 물리적 의미가 없다.</b> 대신 <b>켤레복소수를 곱한 |Ψ|² = |ψ(x)|²</b> 가 <b>그 자리에서 입자를 발견할 확률</b>이 된다. 이때 시간 부분이 저절로 사라진다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> Total wave function 위 <span class="gnh r">should be x, t</span> · "describe the behavior" 에 자주색 표시.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn15.jpg" alt="15쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s16">16쪽<small>Boundary Conditions — 경계조건</small></h2>
 <p class="fig">2.2절의 마지막 쪽이다. 슈뢰딩거 식은 2계 미분방정식이라 <b>식만으로는 답이 하나로 안 정해진다.</b> 답을 확정하려면 <b>경계조건</b>이 필요하다. 이 쪽이 그 조건을 정리한다. 17쪽부터의 모든 풀이가 여기서 정한 규칙을 따른다.</p>
 
@@ -2162,6 +2307,18 @@ sub,sup{font-size:11px}
 ④ <b>2계 ⇒ 조건 두 개</b> — 12쪽의 "2nd D.E." 필기와 묶어 이해한다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 슈뢰딩거 식은 2계라서 <b>경계조건 두 개</b>가 있어야 답이 정해진다. 조건은 <b>① 온 공간 확률의 합이 1</b>, <b>② ψ 와 ∂ψ/∂x 가 유한·일가·연속</b>이다. 단, ②는 <b>E 와 V 가 유한할 때만</b> 성립한다. <b>무한 우물에서는 ψ 만 연속이고 기울기는 불연속이며, 경계에서 ψ = 0</b> 이다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 제목 옆 <span class="gnh r">ψ(0) = ψ(a) = 0</span> · ∫|ψ|²dx = 1 에 자주색 네모 · Condition 1 의 finite / single-valued / continuous 위에 <span class="gnh r">유한 / 단일 값 / 연속</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn16.jpg" alt="16쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>23:25 ~ 25:46</b> — 다섯 상황 중 <b>③ 유한 우물(finite potential well)</b>. 이 쪽 아래 그림 ①(finite potential well)이 그것이다. 칠판 ② 의 ③번 칸이 이 대목의 판서다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 23:25</span> "이 유한한 전위 우물에 갇혀 있을 때 역시 — 얘도 <b>양자화된 에너지</b>를 가집니다." … "여기서 또 중요한 게 한 개 더 있어. 중요한 결론."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 23:53</span> "1번, 3번 영역에 해당하는 이 파이나이트 포텐셜 월(벽)에서 — ψ 가 <b>0 이 아니게</b> 될 거야. 이걸 제곱을 해도 0 이 아니게 될 거야." … <span class="ts">24:57</span> "이 벽 안에 존재할 확률이 있더라."</div>
+<div class="fig">전사가 흐린 구간 — <b>리뷰 24:18~25:28</b> 에 한 줄 깨진 곳이 있다("벽 속 확률"을 설명하는 대목).</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 25:33</span> "여기 벽에 존재할 확률도 있습니다. 그렇죠? 그렇다면 벽 너머에도 당연히 존재할 확률이 있게 됩니다. 왜냐하면 이어져 있어야 되니까."<br>이 쪽의 <b>경계조건</b>(ψ 와 dψ/dx 가 연속)이 바로 "이어져 있어야 되니까"의 근거다. 벽 속에서 0 이 아니었던 ψ 가 벽 끝에서 끊기지 않고 이어지므로 벽 너머에서도 0 이 아니다 → 다음 상황 ④ 터널링(20쪽).</div>
+<div class="exam"><b>★ 핵심 결론 두 개</b> — 유한 우물은 ① <b>무한 우물처럼 에너지가 양자화</b>되고, ② 무한 우물과 달리 <b>벽 속에서도 |ψ|² ≠ 0</b>. 교수님이 "중요한 결론 한 개 더"라며 ②를 따로 세우셨다. 칠판에 <span class="hand">non-zero probability inside the potential well</span> 로 적은 문장이다.</div>
+
 <h2 id="s17">17쪽<small>Electron in Free Space — 자유공간의 전자</small></h2>
 <p class="fig">2.3절이 시작된다. 지금까지 만든 슈뢰딩거 식을 <b>상황에 넣어 실제로 푸는</b> 첫 쪽이다. 가장 쉬운 상황인 <b>아무것도 없는 자유공간</b>부터 시작한다.</p>
 
@@ -2321,6 +2478,9 @@ sub,sup{font-size:11px}
 ⑤ <b>결론과 불확정성 원리의 연결</b> — 운동량을 정확히 알면(k 가 정해지면) 위치는 전혀 모른다. 교수님이 직접 이어 준 대목이다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 자유공간(V = 0)에서 슈뢰딩거 식을 풀면 답은 <b>진행파 Ψ = A exp[j(kx − ωt)]</b> 이고, <b>k = p/ℏ = 2π/λ</b> 다. 확률밀도가 <b>어디서나 같은 상수</b>라서, 운동량을 정확히 아는 대신 <b>위치는 전혀 모른다.</b></div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 21:23</span> "(자유 공간의 전자는) 웨이브렝스를 가지더라. 파장이 한 개, 두 개 … 진짜 웨이브처럼 이렇게. 그래서 이 프리 스페이스 때는 이렇게 <b>트래블링 웨이브</b>로 아주 잘 움직이고 있다, 이걸 확인할 수가 있고요. 그래서 <b>일렉트론이 웨이브가 맞다</b>, 그런 거를 검증합니다."<br>다섯 상황 중 ① 자유 공간이 하는 역할 — 전자가 파동이라는 <b>확인</b>. 칠판 ② 의 <span class="hand">well-defined λ</span>.</div>
+
 <h2 id="s18">18쪽<small>The Infinite Potential Well — 무한 우물(상자 속 입자)</small></h2>
 <p class="fig">2.3절의 두 번째 상황이자 <b>이 단원에서 가장 중요한 쪽</b>이다. 전자를 상자에 가두면 <b>에너지가 아무 값이나 될 수 없다</b>는 결과가 여기서 나온다. 7쪽에서 빛에 대해 말했던 <b>양자화</b>가 전자에서 다시 나타난다.</p>
 
@@ -2493,6 +2653,11 @@ sub,sup{font-size:11px}
 ⑥ <b>양자화의 이유</b> — 경계조건 때문에 정수 n 이 생긴다. "왜 양자화되는가"를 묻는 서술형의 답이다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 무한히 높은 벽 사이(폭 a)에 전자를 가두면, <b>ψ(0) = ψ(a) = 0</b> 이라는 경계조건 때문에 <b>k = nπ/a</b> 로 띄엄띄엄해지고, 따라서 에너지도 <b>E<sub>n</sub> = ℏ²n²π²/2ma²</b> 로 <b>양자화</b>된다. 파동함수는 <b>√(2/a) sin(nπx/a)</b>, 곧 <b>양 끝이 묶인 줄의 진동</b>과 같은 모양이다.</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 21:42</span> "무한대 전위 우물에 갇혔을 때는 … 전자가 갇혀 있다. 갇혀 있는 전자를 우리가 <b>바운디드</b>라고 써도 되고 또는 <b>컨파인드</b>. 속박되어 있는 일렉트론입니다." … "여기서 핵심 뭐냐. 일렉트론이 갇혀 있으면 프리 스페이스에 있는 일렉트론과 달리 뭐가 어떻게 된다?"</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 22:58</span> "프리 스페이스랑 비교해 봤더니 프리 스페이스에서는 이렇게 <b>양자화된 게 없었어요</b>. 양자화된다는 말은 디지털처럼 1, 4, 9 … 이렇게 다 끊어져 있는." … "속박되지 않았을 때는 모든 에너지를 다 가질 수 있었는데, 이렇게 갇히게 되니까 양자화된 에너지를 가진다 — 이게 중요한 결론이었고요."</div>
+<div class="exam"><b>★ 한 줄 결론</b> — <b>갇히면(bounded/confined) 양자화된다.</b> 자유 공간에는 없던 양자화가 우물에서 생긴다. <span class="eq">E<sub>n</sub> = ħ²π²n² / 2ma²</span> 의 n² 이 "1, 4, 9" 로 끊어진 준위다. 19쪽 리뷰에서 이 식의 a² 이 양자점으로 이어진다.</div>
+
 <h2 id="s19">19쪽<small>Example 2.3 — 무한 우물의 에너지 준위</small></h2>
 <p class="fig">18쪽에서 만든 식을 <b>숫자로 확인하는</b> 쪽이다. 폭 5 Å 짜리 우물에 전자를 넣고 에너지 준위 세 개를 실제로 구한다.</p>
 
@@ -2664,6 +2829,16 @@ sub,sup{font-size:11px}
 ⑥ 그림의 <b>세로축 단위가 π²ℏ²/2ma²</b> 라는 것. 그래서 눈금이 <b>n²</b> 으로 읽힌다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 폭 5 Å 우물의 전자는 <b>E₁ = 1.51 eV, E₂ = 6.04 eV, E₃ = 13.59 eV</b> 만 가질 수 있고 <b>그 사이 값(예: 3 eV)은 불가능</b>하다. 준위마다 <b>ψ<sub>n</sub> = √(2/a) sin(nπx/a)</b> 가 짝지어 있고, 그것을 제곱하면 <b>어디서 발견할 확률이 높은지</b>가 나온다.</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>41:10 ~ 49:29</b> — <b>디스커션 ② 무한 우물과 양자점</b>. 이 쪽(무한 우물의 에너지 준위 예제)의 식이 그대로 쓰인다. 칠판 ③ 아래쪽과 ④ 윗부분이 이 대목의 판서다(2쪽에 옮김).</div>
+<div class="fig">전사가 깨진 구간 — <b>리뷰 41:46~42:10</b> 은 알 수 없는 영문으로 인식되었다. "E₂ 에서 E₁ 으로 떨어진다"를 설명하는 대목이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 42:10</span> "(E₂ 에서 E₁ 으로 떨어질 때) 이 차이만큼의 에너지를 빛으로 방출한다면 얘가 <b>hf</b> 가 됩니다." … "방출한 에너지 크기에 따라서 방출된 빛의 <b>람다, 즉 색깔</b>이 달라진다." … "<span class="eq">E₂ − E₁ = (ħ²π²/2ma²)(2² − 1²) = hc/λ</span>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 43:19</span> "여기서 좀 중요한 건 — 이 a, 이게 <b>컨파인먼트 위드스</b>. 갇혀 있는 방의 크기. 이 컨파인먼트 위드스가 만약에 반으로 줄었다. … a 가 2분의 1 a, 제곱이니까 4분의 1 a² 이 된다." … "원래 속박돼 있던 애가 떨어지면서 1200 나노미터라는 빛을 냈다 — 여러분들 눈에 안 보이는 <b>인프라레드, IR</b>. 근데 만약에 다른 건 그대로 놔두고 <b>폭만</b> 줄였어. … 갑자기 나오는 빛 색깔이 달라지더라."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 45:39</span> "실리콘 같은 경우에 … 밴드갭 크기가 <b>1.1 일렉트론볼트</b>. 그러면 여기에서 떨어질 때 나오는 색깔이 뭡니까? 람다가 대충 1000 을 조금 넘습니다." … "(eV 를 nm 로 바꿀 때) 대충 <b>1240</b> 나누기." … "그러면 실리콘은 사실 빛을 내는 애가 아니야. 근데 만약에 실리콘을 웨이퍼 이렇게 큰 게 아니라 아주 작게 쪼개 가지고 … 갑자기 인프라레드가 아니라 <b>빨간색</b>이 나오기도 하고, 더 작게 하면 <b>파란색</b>, 중간 사이면 <b>초록색</b>이 나온다는 겁니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 47:14</span> "그래서 이 기술을 우리가 <b>퀀텀 닷</b>(양자점). 실리콘 닷. … 웬만한 반도체는 퀀텀 닷으로 만들 수 있고, 심지어 <b>카본</b>도 만들 수 있어요." … "얼마나 작아져야 되냐? 속박을 느낄 정도로 작아져야 되는데, 그 크기를 … <b>보어 반지름</b>(엑시톤 보어 반경)보다 작아져야 된다 이렇게 얘기합니다."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 47:57</span> <b>디스플레이</b> — "이 퀀텀 닷 기술을 이용하면 <b>한 가지 물질로</b> 내가 원하는 색깔 — 빨간색, 초록색, 파란색 — 이런 걸 낼 수 있다. 그러면 얘가 어디 쓰이냐? 당연히 <b>디스플레이</b>." … "삼성에서 팔고 있는 <b>QD-OLED</b> TV — 그게 퀀텀 닷이고요. 그리고 삼성에서 팔고 있는 <b>Neo QLED</b> — 얘는 퀀텀 닷 시트를 깐 LCD … QD 컬러 컨버전을 써서 만드는."<br>QD-OLED 는 파란 OLED 빛을 양자점이 빨강·초록으로 바꾸는 방식, (Neo) QLED 는 LCD 백라이트 앞에 양자점 필름을 두는 방식이다. 둘 다 "크기로 색을 고른다"는 같은 원리.</div>
+<div class="exam"><b>★ 시험 포인트</b> — ① <span class="eq">E<sub>n</sub> ∝ 1/a²</span>: 폭을 반으로 줄이면 준위 간격이 <b>4배</b>. ② 준위 차이 = <span class="eq">hc/λ</span> → 폭이 줄수록 <b>파장이 짧아진다(파랑 쪽)</b>. ③ 암산: <span class="eq">λ(nm) ≈ 1240 / E(eV)</span>, Si 1.1 eV → 약 1100~1200 nm(적외선). ④ 이것이 양자점 → 디스플레이. "무한 우물 식이 실제로 어디 쓰이나"에 대한 교수님 답이다.</div>
+
 <h2 id="s20">20쪽<small>The Potential Barrier and Tunneling — 장벽과 터널링</small></h2>
 <p class="fig">2.3절의 세 번째이자 마지막 상황이다. <b>넘을 힘이 모자란 전자가 장벽을 뚫고 지나간다.</b> 4쪽 오버뷰에서 예고한 터널링이 여기서 실제로 나온다. 이 쪽 중간(9/14 녹화5 14:44)에서 <b>한 차시가 끝나고 다음 차시가 이어진다.</b></p>
 
@@ -2868,6 +3043,13 @@ sub,sup{font-size:11px}
 ⑥ <b>"유한한 확률"의 뜻</b> — 크다는 것이 아니라 <b>0 이 아니라는 것</b></div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — E &lt; V₀ 인 전자가 폭 a 의 장벽을 만나면, <b>장벽 속에서 ψ 가 출렁이지 않고 지수적으로 줄어들 뿐 0 이 되지는 않는다.</b> 그래서 반대편으로 빠져나갈 확률 <b>T ≈ 16(E/V₀)(1−E/V₀)exp(−2k₂a)</b> 가 0 이 아니다. 이것이 <b>터널링</b>이고, 플래시 메모리가 이것으로 작동한다.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 그림 왼쪽 위 <span class="gnh r">?</span> 화살표 · T 식 옆 <span class="gnh r">A₃/A₁</span> 에 제곱 표시 · 오른쪽 아래 두 동그라미(<span class="gnh r">파동 · 확률(?)</span>, 판독 애매) · 왼쪽에 세로 괄호.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn20.jpg" alt="20쪽 굿노트 필기" loading="lazy"></details>
+
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 25:46</span> "무슨 말이냐? 여기서 넘어가는 일을 — 그때 그 현상을 여러분이 <b>터널링</b>이라고 얘기를 하고." … "T 를 우리가 <b>트랜스미션 코에피션트</b>로 정의를 하면, 이 T 가 뭐에 민감하냐면 — 이 a, 터널링하는 <b>폭이 줄어들면</b> T 가 늘어나는데 어떻게 늘어나냐 — <b>익스포넨셜</b>하게."<br>칠판 ② 의 <span class="hand">a↓ → T↑↑↑</span> 다. 이 쪽 식 <span class="eq">T ≈ 16(E/V₀)(1 − E/V₀) exp(−2k₂a)</span> 에서 a 가 지수 안에 있으므로 폭이 조금만 줄어도 T 가 폭발적으로 커진다. 이 성질이 4쪽 리뷰의 플래시 메모리로 이어진다.</div>
+
 <h2 id="s21">21쪽<small>Example 2.4 — 터널링 확률 계산</small></h2>
 <p class="fig">20쪽의 근사식을 <b>숫자로 확인하는</b> 쪽이다. 답이 <b>3.17 × 10⁻⁶</b> 로 아주 작게 나오는데, 이 쪽의 요점은 그 값이 작다는 것이 아니라 <b>0 이 아니라는 것</b>이다.</p>
 
@@ -3027,6 +3209,10 @@ sub,sup{font-size:11px}
 ⑥ <b>"10⁻⁶ 인데 왜 중요한가"</b> — <b>전자 개수를 곱하면</b> 된다. 10¹⁰ 개면 통과하는 것이 10⁴ 개이고, 반도체에서는 전자가 10²⁰~10³⁰ 개다. <b>확률이 작아도 개수가 많으면 실제로 일어난다.</b> 교수님이 숫자로 직접 보여 준 논증이다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — E = 2 eV 전자가 V₀ = 20 eV, 두께 3 Å 장벽을 만나면 통과 확률은 <b>T = 3.17 × 10⁻⁶</b> 이다. 아주 작지만 <b>0 이 아니다.</b> 고전역학이라면 장벽이 아무리 얇아도 정확히 0 이다. <b>E 를 높이거나 a 를 줄이면 T 가 커진다.</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 답 T = 3.17×10⁻⁶ 아래 <span class="gnh r">(T≠0) → ① (터널링 가능)(?)</span> !! — "0 이 아니다 = 뚫고 지나갈 수 있다"는 결론을 따로 적었다. 제목 위 가로로 긴 빨강 선.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch2/gn21.jpg" alt="21쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s22">22쪽<small>The One-Electron Atom — 수소 원자 (1)</small></h2>
 <p class="fig">2.4절이 시작된다. 지금까지는 <b>사람이 만든 상황</b>(네모난 우물, 네모난 장벽)에 전자를 넣고 풀었다. 이제 <b>진짜 원자</b>에 적용한다. 결과로 <b>양자수 세 개</b>가 나온다.</p>
 
@@ -3189,6 +3375,14 @@ sub,sup{font-size:11px}
 ⑥ <b>"갇힌 입자는 에너지가 양자화된다"</b> — 제목 위 필기. 무한 우물과 수소 원자를 하나로 묶는 문장이다</div>
 
 <div class="key"><b>이 쪽 한 줄 요약</b> — 수소 원자는 <b>쿨롱 퍼텐셜 V(r) = −e²/4πε₀r</b> 에 갇힌 전자 문제다. 3차원 구면좌표에서 슈뢰딩거 식을 <b>ψ = R(r)Θ(θ)Φ(φ)</b> 로 변수분리하면 <b>양자수 세 개</b>가 나온다. <b>n(주), l(각), m(자기)</b>. 이 셋의 조합이 전자 하나의 <b>양자 상태</b>를 정한다.</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>26:37 ~ 30:36</b> — 다섯 상황 중 <b>⑤ 수소 원자</b>.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 26:40</span> "마지막이 이제 수소 원자. 수소 원자는 1번부터 4번 중에 뭐랑 제일 가까울까요? 사실 이 <b>파이나이트 포텐셜 웰</b>이랑 상당히 가까워요. 핵 주변을 돌고 있는데 … 쿨롱 포스 때문에 이제 그 포텐셜 웰이 존재하게 되는 거죠." … "그러면 이 수소 원자도 동일한 결론 — <b>양자화</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 28:10</span> "슈뢰딩거 웨이브 이퀘이션 풀어서 웨이브 펑션 구하고 그리고 제곱해 봤어. … 펑션 오브 r, 어디에 얘가 제일 많이 있을 확률이 높은지 볼 수 있는 거죠. 그렇게 했더니 — <b>모스트 프로버블 디스턴스</b>, 핵으로부터 가장 있을 법한 거리를 계산해 봤더니 …" … <span class="ts">29:23</span> "그게 <b>보어 반지름</b>과 동일한 값으로 나오는데, 그 보어 반지름은 우리가 어디서 봤냐 — 보어 모델의 껍질 얘기할 때."</div>
+<div class="fig">전사가 흐린 구간 — <b>리뷰 28:37~29:06</b>(가장 있을 법한 거리를 구하는 대목)과 27:12~27:40(결론 "양자화"를 묻고 답하는 대목).</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰 29:44</span> <b>고전과 양자가 만나는 자리</b> — "이 양자역학이라는 게 지금까지 우리가 받아들였던 거랑 완전히 다른 게 아니고 연결된 게 여기서 나오는 거지." … "인공위성이 1000km 떨어져서 돌고 있다 이랬죠? 근데 양자역학에서는 인공위성이 확률적으로 말할 수 있고 정확히 할 수 없는데, <b>확률적으로 제일 높은 곳</b>이 그 거리더라." … "기존에 약간 클래식한 관점과 이 퀀텀 관점이 <b>만나는 지점</b>이 요 지점이라고 강의에서 제가 아마 얘기했을 거예요."</div>
+<div class="exam"><b>★ 시험 포인트</b> — 수소 원자의 <b>가장 있을 법한 거리(most probable distance) = 보어 반지름 a₀ ≈ 0.53 Å</b>. 보어 모델(고전적 궤도)과 슈뢰딩거 해(확률)가 같은 값을 준다는 것이 요점이다. 그리고 수소 원자는 <b>유한 우물과 닮았다 → 양자화</b>.</div>
+
 <h2 id="s23">23쪽<small>The One-Electron Atom — 수소 원자 (2)</small></h2>
 <p class="fig">22쪽에서 양자수 셋을 얻었다. 이 쪽은 그것으로 <b>에너지와 파동함수</b>를 적는다. 그리고 결과가 <b>고등학교에서 배운 보어 모델</b>과 만난다. 2.4절의 약속이 여기서 지켜진다.</p>
 
@@ -3639,6 +3833,10 @@ sub,sup{font-size:11px}
 </div>
 
 <div class="key"><b>정리</b> — 전사된 <b>2,921 줄</b>(9/14 1,444 + 9/15 1,477)이 모두 어느 쪽엔가 배정되었고 <b>미배정은 0 줄</b>이다. 그중 <b>기준선으로 고른 하루치를 문장 단위로 다듬어 712 문장</b>을 만들었고, <b>그 전부에 한 줄씩 해설을 달았다.</b> <b>강의 육성이 없는 쪽은 3·4쪽 두 장뿐</b>이고, 나머지 22쪽은 원문·해설·판서·강의·시험 포인트가 모두 채워져 있다.<br>아직 복구하지 못한 구간은 <b>8·9·23쪽의 세 대목</b>이며, 그 자리에 무엇이 있었을지도 함께 적어 두었다. <b>같은 대목이 두 날짜 모두에서 깨졌다</b>는 것은 원본 소리 자체가 그 구간에서 알아듣기 어렵다는 뜻이다.</div>
+<h2 id="s903">부록<small>부록 ③ 2장 리뷰 수업 — 슬라이드 밖 구간</small></h2>
+<p class="fig">2장 오프라인 리뷰 녹음(65분) 중 슬라이드와 무관한 부분은 <b>17:24 ~ 19:51</b> 한 구간뿐이다. 나머지는 전부 해당 쪽(2·3·4·6·8·16·17·18·19·20·22쪽)에 옮겼다.</p>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰 17:24~19:51</span> <b>학교 이야기(잡담)</b> — 수시 경쟁률과 수도권 지원 비율이 늘었다는 이야기, LG전자 계약학과 경쟁률, "내가 속한 집단을 사랑해야 나중에 그 혜택을 본다", 기부할 대학을 고른다면 어디를 고르겠냐는 이야기. 2장 내용과는 무관하다. (숫자는 전사가 흐리다.)</div>
+<p class="fig" style="margin-top:40px">오프라인 수업 인용은 자동 전사를 문맥으로 복원한 것이다. 강의실 녹음이라 인식 품질이 낮은 구간이 있어 조사·어미와 일부 숫자는 실제와 다를 수 있다. 흐린 대목은 본문에 따로 표시했다. 칠판 내용은 현장 사진에서, 굿노트 필기는 굿노트 파일의 획 데이터를 직접 읽어 옮겼다.</p>
 <a class="top" href="#top">맨 위로</a>
 </div>
 </body>
