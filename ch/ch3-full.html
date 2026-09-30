@@ -92,6 +92,16 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 .said.rv b{color:#176b5d}
 .said.rv .ts{background:var(--rvb)}
 .c8{background:var(--rv);border-color:var(--rvb)}
+
+/* 내 굿노트 필기 */
+.gn{margin:12px 0;padding:11px 16px;background:#fff7e6;border-left:3px solid #e08a00;border-radius:0 6px 6px 0;font-size:14.3px}
+.gn>b:first-child{color:#a35f00}
+.gnh{color:#0b3d91;font-weight:600;background:#eef3ff;padding:0 4px;border-radius:3px}
+.gnh.r{color:#b00000;background:#fff0f0}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#a35f00;font-size:13.5px}
+details.gnd img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
+.c9{background:#fff7e6;border-color:#e08a00}
+h3.gnh3{color:#a35f00;border-bottom-color:#f3c77a}
 </style>
 </head>
 <body>
@@ -99,8 +109,8 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <h1>반도체공학 Ch.3 — 고체의 양자론 입문 · 강의 통합 해설</h1>
 <div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
 <div class="cov ok">영상 강의 전사 <b>1314줄</b> + 오프라인 리뷰 수업 전사 <b>1,301줄</b>(69분) <b>전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
-<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-09 추가 — 실제 오프라인 리뷰 수업(한국어)</b><br>영상 강의 위에 <b>교실에서 한 3장 리뷰 수업</b>(69분)을 겹쳐 넣었다. 초록색 상자가 그것이다. 이 수업은 <b>Chapter Overview 필기를 쓰면서 한 설명</b>이라, 그동안 "녹화에 음성이 없다"고 비어 있던 쪽이 채워졌다 — <a href="#s3">3쪽</a> 밴드 형성·밴드갭 숫자(실리콘 ×3, ×5) · <a href="#s4">4쪽</a> E−k·유효질량·direct/indirect·heavy/light hole·그래핀 · <a href="#s5">5쪽</a> DOS × FDF·2D/1D/0D·퀀텀닷. 수업 끝에 낸 <b>과제(테이크홈 메시지)</b>는 <a href="#s903">부록 ③</a>, 출장 이야기는 <a href="#s902">부록 ②</a>. 타임스탬프 <span class="eq">리뷰① · 리뷰② · 리뷰③</span> = 리뷰 수업 녹음 세 개를 <b>수업 순서대로</b> 붙인 이름(10분 · 38분 · 20분).</div>
-<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
+<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-09 추가 — 실제 오프라인 리뷰 수업(한국어)</b><br>영상 강의 위에 <b>교실에서 한 3장 리뷰 수업</b>(69분)을 겹쳐 넣었다. 초록색 상자가 그것이다. 이 수업은 <b>Chapter Overview 필기를 쓰면서 한 설명</b>이라, 그동안 "녹화에 음성이 없다"고 비어 있던 쪽이 채워졌다 — <a href="#s3">3쪽</a> 밴드 형성·밴드갭 숫자(실리콘 ×3, ×5) · <a href="#s4">4쪽</a> E−k·유효질량·direct/indirect·heavy/light hole·그래핀 · <a href="#s5">5쪽</a> DOS × FDF·2D/1D/0D·퀀텀닷. 수업 끝에 낸 <b>과제(테이크홈 메시지)</b>는 <a href="#s903">부록 ③</a>, 출장 이야기는 <a href="#s902">부록 ②</a>. 리뷰 수업을 들으며 <b>내 굿노트에 쓴 필기</b>(주황 상자)도 11개 쪽(3·4·5·10·11·12·15·16·18·19·32쪽)에 옮기고, 필기만 진하게 표시한 쪽 이미지를 접어 두었다. 타임스탬프 <span class="eq">리뷰① · 리뷰② · 리뷰③</span> = 리뷰 수업 녹음 세 개를 <b>수업 순서대로</b> 붙인 이름(10분 · 38분 · 20분).</div>
+<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c9"></i>내 굿노트 필기</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
 <div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Chapter Overview ①</a><a href="#s3">3쪽 · Chapter Overview ② + 리뷰</a><a href="#s4">4쪽 · Chapter Overview ③ + 리뷰</a><a href="#s5">5쪽 · Chapter Overview ④ + 리뷰 · 과제</a><a href="#s6">6쪽 · Chapter Overview ⑤</a><a href="#s7">7쪽 · Contents</a><a href="#s8">8쪽 · Lessons Learned ①</a><a href="#s9">9쪽 · Lessons Learned ②</a><a href="#s10">10쪽 · Energy Splitting</a><a href="#s11">11쪽 · Formation of Energy Bands ①</a><a href="#s12">12쪽 · Formation of Energy Bands ②</a><a href="#s13">13쪽 · Energy States of Silicon</a><a href="#s14">14쪽 · Bands and Bandgap in Silicon</a><a href="#s15">15쪽 · Electrical Conduction in Semiconductors</a><a href="#s16">16쪽 · Insulator vs. Semiconductor vs. Metal</a><a href="#s17">17쪽 · The Kronig-Penney Model ①</a><a href="#s18">18쪽 · The Kronig-Penney Model ②</a><a href="#s19">19쪽 · The Kronig-Penney Model ③</a><a href="#s20">20쪽 · The k-Space Diagram ①</a><a href="#s21">21쪽 · The k-Space Diagram ②</a><a href="#s22">22쪽 · E-k Diagram</a><a href="#s23">23쪽 · Reduced k-space Diagram</a><a href="#s24">24쪽 · Bands & Band Gap</a><a href="#s25">25쪽 · Energy Band and Bond Model</a><a href="#s26">26쪽 · Drift Current</a><a href="#s27">27쪽 · Electron Effective Mass</a><a href="#s28">28쪽 · Concept of the Hole ①</a><a href="#s29">29쪽 · Concept of the Hole ②</a><a href="#s30">30쪽 · Direct & Indirect Semiconductors</a><a href="#s31">31쪽 · Density of States (DOS)</a><a href="#s32">32쪽 · DOS Derivation (1D)</a><a href="#s33">33쪽 · DOS Derivation (3D) ①</a><a href="#s34">34쪽 · DOS Derivation (3D) ②</a><a href="#s35">35쪽 · Extension to Semiconductors</a><a href="#s36">36쪽 · Fermi-Dirac Distribution</a><a href="#s37">37쪽 · Fermi Energy</a><a href="#s901" class="apx">부록 ① 마무리 인사</a><a href="#s902" class="apx">부록 ② 출장 이야기</a><a href="#s903" class="apx">부록 ③ 과제 · 마무리</a></div>
 <h2 id="s1">1쪽<small>표지 — Ch.3 Introduction to the Quantum Theory of Solids</small></h2>
 <div class="row"><div class="orig">Semiconductor Engineering<br>Ch. 3 Introduction to the Quantum Theory of Solids<br>Dept. of Electrical Engineering<br>Jeongkyun Roh</div><div class="exp"><b>고체의 양자론 입문.</b> 2장이 <b>원자 하나</b> 안에 갇힌 전자를 다뤘다면, 3장은 그런 원자가 <b>수없이 모여 만든 고체(결정)</b> 안의 전자를 다룬다.<br>이름은 거창하지만 3장이 끝까지 붙들고 가는 질문은 딱 두 개다. <b>① 반도체의 밴드갭은 왜 생기는가</b>, <b>② 반도체 안에 전자가 몇 개인가.</b></div></div>
@@ -569,6 +579,17 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 07:43</span> <b>밴드갭 크기만으로는 못 가른다</b> — "우리가 반도체 공장에서 절연체로 <b>나이트라이드</b> 많이 쓰거든요. 실리콘 나이트라이드. 그런데 이 나이트라이드 밴드갭이 (울트라 와이드 밴드갭) 반도체보다 좁아요. 그러니까 이제 우리가 밴드갭 크기만 가지고 도체·부도체·반도체 이거를 얘기하기가 힘든 거죠." … "<b>다이아몬드</b>는 반도체로 쓸 수 있는 거고, <b>실리콘 나이트라이드</b>는 반도체로 쓸 수 없는 거죠." … "일반적으로는 틀린 말은 아닙니다. 하지만 좀 더 고민을 한다면 밴드갭 크기만 가지고는 정하기 어렵다. <b>다양한 요소들을 고려해야</b> 된다."<br>필기의 숫자를 나란히 놓으면 바로 보인다 — <b>Si₃N₄ 5.3 eV(절연체) &lt; 다이아몬드 5.5 eV(반도체)</b>. 필기 「P 도핑이 어려움」이 그 "다른 요소" 중 하나다.</div>
 <div class="exam"><b>★ 시험 포인트</b> <span class="ts">리뷰② 09:07</span> "여러분들 이제 반도체의 길을 가시려면, 적어도 <b>실리콘</b>과 이런 <b>와이드 밴드갭</b>, 그리고 <b>울트라 와이드 밴드갭</b> 이 정도는 자다가도 기억을 하고 있어야 됩니다. 근데 뭐 까먹을 게 별로 없겠죠. <b>실리콘 1.1</b> 기억하시고, <b>실리콘 3배 와이드 밴드갭</b>, <b>실리콘 5배 울트라 와이드 밴드갭</b>."<br>세 줄로 외운다: <b>Si 1.1 eV → WBG(SiC·GaN) ≈ 3.3 eV(×3) → UWBG(Ga₂O₃·다이아몬드) ≈ 5 eV 이상(×5)</b>. 덧붙여 Ge 0.7, GaAs 1.4. 그리고 서술형 대비로 <b>"밴드갭 크기만으로 부도체와 반도체를 가를 수 없다 — Si₃N₄ vs 다이아몬드"</b>.</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 리뷰 수업을 들으며 이 쪽에 빨간 펜으로 덧쓴 것이다. 교수님이 칠판에 밴드갭을 순서대로 적어 나간 것(리뷰② 02:30~07:41)을 그대로 받아 적었다.<br>
+• 왼쪽 여백, 밴드갭이 작은 것부터: <span class="gnh r">Ge · Si · GaAs</span> → <span class="gnh r">4H-SiC · GaN</span> → <span class="gnh r">β-Ga₂O₃ · diamond</span>. 그 옆에 <span class="gnh r">밴드갭이 역순 → Ge + Si</span>(흘려 씀) — Ge·Si 는 거꾸로 작은 쪽 끝이라는 메모다.<br>
+• 그 아래 절연체 줄: <span class="gnh r">Si₃N₄ · Al₂O₃ · SiO₂</span>. 교수님이 "나이트라이드, 알루미늄 옥사이드, 실리콘 옥사이드"라고 부른 세 개다. (숫자는 적지 않았다.)<br>
+• 맨 아래 <span class="gnh r">ultra wide bandgap</span>.<br>
+• 오른쪽 위에 숫자를 붙여 다시 정리: <span class="gnh r">Ge 0.7 · Si 1.1 · GaAs 1.4 eV</span> → 동그라미 <span class="gnh r">4H-SiC · GaN</span> + <span class="gnh r">wide bandgap</span>, 그 안에 한글 두 줄(실리콘 카바이드로 보임). 위로 <span class="gnh r">3배</span>를 크게 동그라미 치고 Si 에서 화살표로 이었다 — "<b>실리콘의 3배</b>, 그러면 절대 안 까먹습니다"를 그림으로 적은 것이다. 3배 옆 작은 숫자는 3.3 으로 보인다.<br>
+• 그 아래 큰 동그라미: <span class="gnh r">β-Ga₂O₃ · diamond</span> + <span class="gnh r">ultra wide bandgap</span>, 왼쪽 세로줄에 <span class="gnh r">ultra wide</span>와 숫자 하나(~5 로 보임) — "실리콘 5배 울트라 와이드 밴드갭"이다.<br>
+• 필기 「atom — 특성 따라~」의 <b>atom</b> 에 큰 겹동그라미, 거기서 Splitting 쪽으로 화살표. 가운데 Eg 상자에 <span class="gnh r">band structure</span>를 동그라미 — "원자의 처음 스테이트 → 밴드 스트럭처 → 도체·반도체·부도체"(리뷰① 09:35, 리뷰② 00:31)의 사슬을 동그라미 두 개로 이었다.<br>
+<span class="eq">읽는 법</span> 교수님 필기(파랑)는 "숫자 표", 내 필기(빨강)는 "외우는 법"이다 — Si 1.1 을 기준으로 <b>×3(WBG)</b>, <b>×5(UWBG)</b>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn03.jpg" alt="3쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s4">4쪽<small>Chapter Overview ③ — E−k 다이어그램과 유효질량</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> "graphene", "direct", "indirect", "effective mass" 를 다루는 대목이 <b>23쪽(유효질량)과 26쪽(직접·간접 밴드갭)</b>에 있으므로, 개념은 거기서 강의로 들을 수 있다. 다만 <b>이 쪽에 적힌 그래핀 이야기만은 녹화 어디에도 없다.</b></p>
 
@@ -624,6 +645,19 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 08:03</span> <b>그래핀 이야기</b> — "신소재가 나오면 과학자들은 기본 물성을 먼저 찾아봅니다. 기본 물성 중에 밴드 이런 게 있잖아요. 신소재를 발견했는데 E−k 다이어그램이 이렇게(극단적으로 뾰족하게) 됐어요." … "샤프하면 할수록 질량은 작아지죠. 그럼 극단적으로 샤프하면 질량이 어떻게 된다는 거예요? — <b>0</b>." … "질량이 없다는 게 무슨 말이에요? 마치 <b>자기부상열차처럼 아무런 저항 없이</b> 쭉 갈 수 있다는 말이에요. 한없이 가벼우면 조금만 힘을 가해도 … 전기가 무한대로 쭉 흐를 거 아니에요." … "이게 바로 <b>노벨상</b>을 받은 <b>그래핀</b>. 처음 나왔을 때 그래핀은 이펙티브 매스가 0 이다, 그래서 많이 주목을 받았죠." … "정확한 말로는 좀 잘못된 거긴 한데, 그만큼 이펙티브 매스라는 개념이 단순하게 딱 정의하기 쉽지는 않은 부분이 있다."<br>필기 「graphene : m* → 0 ⇒ bandgap = 0」과 X 자 그래프가 이 대목의 판서다. 교수님 스스로 "정확히는 잘못된 말"이라고 선을 그었다 — 그래핀의 E−k 는 포물선이 아니라 직선(원뿔)이라 이 유효질량 정의가 그대로 들어맞지 않기 때문이다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — ① <b>p = ℏk</b> ("이것도 외우셔야 돼요") ② <b>E−k 위의 점 하나 = 전자가 있을 수 있는 상태 하나</b> ③ <b>1차 미분(기울기) = 속도, 2차 미분(곡률) = 1/m*</b> — 샤프할수록 가볍다 ④ <b>direct(GaAs) vs indirect(Si)</b> — 모멘텀 변화가 필요하면 에너지가 <b>열</b>로 빠져 빛이 안 나온다 ⑤ <b>Si 가 GaAs 보다 플랫 → m* 가 크다</b> ⑥ 용어로 <b>heavy hole / light hole</b>, <b>CBM(E<sub>C</sub>) · VBM(E<sub>V</sub>)</b>.</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 리뷰 수업 E−k 대목(리뷰② 09:40 ~ 리뷰③ 10:45)을 들으며 쓴 것이다.<br>
+• 오른쪽 위: <span class="gnh r">sharp parabola (large curvature) → small m</span> / <span class="gnh r">flat parabola → large m</span>. 이 쪽의 결론을 영어 두 줄로 못박았다.<br>
+• 교수님 포물선 그림 위에 더 좁은 포물선을 겹쳐 그리고 점 하나에 <span class="gnh r">state</span>, 다시 <span class="gnh r">state</span>(동그라미 두 번) — "<b>E−k 위의 한 점 = 전자의 스테이트</b>"(리뷰② 13:35). 위쪽 겹동그라미 안 낱말은 판독 불가.<br>
+• 식을 다시 유도: <span class="gnh r">E = ℏ²k²/2m</span> → <span class="gnh r">∂E/∂k = (ℏ²/m)k</span> → <span class="gnh r">(1/ℏ²)·∂E/∂k = k/m</span>. 리뷰② 26:49 의 "한 번 미분하면 속도" 계산이다. (마지막 줄은 1/ℏ 을 곱해야 v = ℏk/m 이 나온다 — 받아 적을 때 ℏ² 로 쓴 것으로 보인다.)<br>
+• 왼쪽 아래: 별표 세 개 + 겹동그라미 <span class="gnh r">Curvature : 곡률</span>. 포물선 바닥에 수평 접선을 긋고 <span class="gnh r">V = 0</span> 동그라미 — "<b>기울기가 0 이면 속도 0</b>"(리뷰③ 03:38, CBM 에서 k ≠ 0 이어도 멈춰 있다). 그 아래 뒤집힌 포물선 하나.<br>
+• 가운데 GaAs 그림: 골과 봉우리를 동그라미로 묶고 <span class="gnh r">bandgap</span>, 왼쪽에 화살표와 <span class="gnh r">(τ) → hν</span>(빛) — direct 에서는 바로 떨어지며 빛이 나온다. 아래 <span class="gnh r">compound</span>.<br>
+• 그 밑 두 겹 봉우리 그림: 좁은 봉우리 → <span class="gnh r">heavy hole</span>, 넓은 봉우리 → <span class="gnh r">light hole</span> (리뷰② 35:31). ※ 곡률로 따지면 <b>뾰족한 쪽이 light, 완만한 쪽이 heavy</b> 다. 화살표 방향이 어느 곡선을 가리키는지는 그림에서 헷갈리므로 이 규칙으로 다시 확인할 것.<br>
+• Si 그림: 어긋난 골에 동그라미 두 개와 <span class="gnh r">bandgap</span> — indirect 에서 갭이 어디서 어디까지인지 표시.<br>
+• 제목 위 <span class="gnh r">Quantum dot</span> 동그라미 + <span class="gnh r">빛(?)</span> — 리뷰② 22:57 에 "실리콘도 퀀텀닷으로 만들면 빛을 낼 수는 있다"고 한 대목의 메모로 보인다.<br>
+• 필기 「⇒ (m*)」 옆 동그라미와 <span class="gnh r">3가지</span> — E−k 에서 읽는 <b>세 가지</b>(direct/indirect · 유효질량 · 속도, 리뷰③ 04:37).</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn04.jpg" alt="4쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s5">5쪽<small>Chapter Overview ④ — DOS × 확률, 그리고 차원</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> 다만 왼쪽 절반(n·p, DOS × FDF)은 <b>27·31·32쪽 강의와 같은 이야기</b>이므로 거기서 들을 수 있다.<br><b>오른쪽 아래의 1D·2D·3D·0D와 「Quantum Dot」, 「Display」는 녹화 어디에도 없다.</b> "quantum dot", "퀀텀", "양자점", "display" 가 전사 1,314줄에 <b>한 번도 나오지 않는다.</b> 프랙티스 세션에서 나온 심화 이야기로 보인다.</p>
 
@@ -666,6 +700,14 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 18:22</span> "제로디가 되면 DOS 가 어떻게 될까요?" — 학생: "델타…" — "맞습니다. 바로 <b>델타 함수</b>." … "DOS 가 델타 함수라는 거는 스테이트가 <b>딱 내가 원하는 에너지에만</b> 있다는 거죠. E₁, E₂, E₃. 이 <b>밴드가 아니라 하나만 딱</b> 있다는 거죠. <b>마치 아톰처럼</b>."<br>필기 「0D : (세로 막대 하나)」와 붉은 「Quantum Dot.」이 이 대목이다.</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 19:04</span> <b>원자에서 출발해 원자로 돌아온다</b> — "우리가 <b>아톰으로 시작</b>을 했어요. 아톰을 규칙적으로 어레인지를 하면 <b>3D</b>(결정)가 돼. 그런 다음에 걔를 자르고 잘라서 <b>퀀텀닷</b>. 아톰은 훨씬 더 작죠. 퀀텀닷은 그냥 작기만 한 건데 <b>수 나노미터</b>. 그런데 수 나노미터 영역에 들어오면 <b>마치 아톰과 유사한 성격</b>을 가지게 된다는 겁니다. 그래서 퀀텀닷을 다른 말로 <b>아티피셜 아톰(artificial atom, 인공 원자)</b>이라고 하나."<br>3장의 출발점(원자 하나의 띄엄띄엄한 준위, <a href="#s3">3쪽</a>)과 끝(양자점의 δ 함수 DOS)이 같은 모양이라는 것이 이 이야기의 요점이다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — ① <b>n = ∫ g(E)·f(E) dE</b>, 홀은 g<sub>v</sub>(E)·[1 − f(E)] ② 교재(3D) DOS <b>g(E) ∝ √E</b> ③ 차원별 DOS — <b>3D ∝ √E / 2D = 상수(계단) / 1D ∝ 1/√E / 0D = δ 함수</b> ④ 이름 짝 — <b>2D 나노시트(GAA) · 1D 나노와이어 · 0D 퀀텀닷</b> ⑤ <b>퀀텀닷 = artificial atom</b> ⑥ 리뷰는 여기서 시간이 다 돼 끝났다. <a href="#s6">6쪽</a>(페르미 에너지 정의)은 이 리뷰에서 다루지 못했다.</div>
+
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 리뷰 수업 DOS 대목(리뷰③ 10:45~19:41)을 들으며 쓴 것이다.<br>
+• 위: <span class="gnh r">DOS</span> 동그라미 · <span class="gnh r"># of state ⇒ density of state</span>(밑줄) — "number of states 를 볼륨으로 나누면 density of states"(리뷰③ 11:56).<br>
+• 가운데: <span class="gnh r">n = g(E) f(E)</span> → <span class="gnh r">n = ∫ g f dE = ∫ n dE</span> · <span class="gnh r">p = ∫ g(1 − f) dE = ∫ p dE</span>. 왼쪽 <span class="gnh r">e</span> · <span class="gnh r">h</span>(동그라미 두 개). 전자는 자리 × 차 있을 확률, 정공은 자리 × <b>비어 있을 확률</b>.<br>
+• 오른쪽: 차원별 DOS 그래프 세 개 — <span class="gnh r">3D</span> 루트 곡선 · <span class="gnh r">2D</span> 평평한 계단 · <span class="gnh r">1D</span> 가장자리에서 솟았다 떨어지는 곡선. 칠판에 나란히 그린 것(리뷰③ 16:22~16:52)을 옮겼다. <b>2D 가 수평선</b>이라는 점이 "일정하게 된다"는 말과 맞는다.<br>
+• 왼쪽 아래 0D 그림 위에 큰 동그라미: <span class="gnh r">특정 energy 에만 state</span>, <span class="gnh r">DOS</span>, 그리고 겹동그라미 <span class="gnh r">원자</span> — "DOS 가 델타 함수 → 딱 그 에너지에만 스테이트 → <b>마치 아톰처럼</b>"(리뷰③ 18:30~19:01). 과제(<a href="#s903">부록 ③</a>)를 생각할 때 출발점이 되는 메모다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn05.jpg" alt="5쪽 굿노트 필기" loading="lazy"></details>
 
 <h2 id="s6">6쪽<small>Chapter Overview ⑤ — 페르미 에너지의 정의</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> 오버뷰 다섯 장 중 마지막이고, 가장 짧다. 다만 여기 적힌 <b>E_F의 정의</b>는 <b>32·33쪽 강의에서 그대로 다뤄지므로</b>, 그 두 쪽을 보면 이 쪽은 요약으로 읽힌다.</p>
@@ -1128,6 +1170,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ⑦ 슬라이드 표기 <b>"spitted"</b>는 오기다. 바른 말은 <b>split</b>이며 교수님도 split이라 말한다</div>
 <div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 energy splitting 을 <b>인공위성 궤도</b>로 다시 설명했다 → <a href="#s3">3쪽</a> 초록 상자.</div>
 
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 「Merged two identical states」 에 빨간 겹동그라미(세 번), 파울리 문장 앞에 형광펜과 작은 별표. 두 원자의 같은 준위가 합쳐지는 순간 → 파울리 때문에 갈라진다(energy splitting)는 이 쪽의 핵심 두 곳에 표시했다. 리뷰 수업의 인공위성 비유(<a href="#s3">3쪽</a>)가 바로 이 장면이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn10.jpg" alt="10쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s11">11쪽<small>Formation of Energy Bands ① — 개수를 늘리면</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>Formation of Energy Bands</div><div class="exp"><b>"밴드"라는 말이 정식으로 태어나는 쪽</b>이다. 6쪽의 "원자 N개 → 준위 N개"를 끝까지 밀고 가면 여기가 나온다.</div></div>
 
@@ -1180,6 +1226,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ③ <b>quasi = half = semi</b> — 교수님이 직접 뜻을 풀어 준다<br>
 ④ <b>조건은 "N이 충분히 클 것"</b> 하나. 실리콘은 1 cm³에 약 5 × 10²² 개다<br>
 ⑤ 슬라이드의 <b>"district"</b>는 <b>distinct</b>의 오기로 보인다 (강의에서는 distinct라고 말한다)</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 「n atom interact」 끝에 작은 빨간 글씨 하나(판독 불가). 이 쪽 필기는 그것뿐이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn11.jpg" alt="11쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s12">12쪽<small>Formation of Energy Bands ② — 거리를 줄이면</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>Formation of Energy Bands</div><div class="exp">7쪽과 같은 제목이지만 <b>보는 각도가 다르다.</b> 7쪽은 <b>원자 개수</b>를 늘렸고, 이 쪽은 <b>원자 사이 거리</b>를 줄인다.<br>실제 결정에서는 개수를 늘릴 수 없다 — 이미 정해져 있다. 바뀌는 것은 <b>거리</b>이고, 그것이 물질마다 다르다. 그래서 이 쪽의 관점이 더 현실적이다.</div></div>
 
@@ -1243,6 +1293,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ④ 그래서 <b>결정의 전기적 성질은 바깥 껍질 전자만 결정한다.</b> 9쪽에서 실리콘의 <b>3s·3p만</b> 보는 근거<br>
 ⑤ <b>r₀</b>(실제 결정의 원자 간 거리)가 어디에 찍히느냐가 그 물질의 밴드 구조를 정한다 — 10쪽에서 다시 나온다<br>
 ※ <b>28:13~31:30 (약 3분 20초)는 전사가 깨졌다. 반드시 직접 들어볼 것.</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 「split into distinct energy states」 위에 작은 <span class="gnh r">splitting</span>, 그리고 오른쪽 아래 그래프의 세로축(Electron energy)을 길쭉한 동그라미로 감쌌다. 원자 간 거리가 줄수록 <b>세로 방향(에너지)</b>으로 준위가 퍼진다는 것을 짚은 표시다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn12.jpg" alt="12쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s13">13쪽<small>Energy States of Silicon — 혼성과 4N / 4N</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>Energy States of Silicon</div><div class="exp">지금까지는 <b>수소 원자</b>로 이야기했다. 이제 <b>진짜 주인공인 실리콘</b>으로 갈아탄다.<br>실리콘은 전자가 <b>14개</b>라 수소보다 복잡하지만, 정작 밴드를 만드는 것은 <b>바깥 4개</b>뿐이다 — 8쪽의 "바깥 껍질이 먼저"가 여기서 쓰인다.</div></div>
 
@@ -1515,6 +1569,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ④ <b>외부 에너지 세 가지 — 빛(light) · 열(heat) · 전기(electrical)</b><br>
 ⑤ <b>"반도체"라는 이름의 뜻</b> — <b>조건이 만족되면 전류를 통한다.</b> semi = 절반. 금속처럼 항상도, 부도체처럼 절대도 아니다. 서술형으로 좋은 문항이다<br>
 ⑥ <b>drift</b> = 전기장에 밀려 쏠려 흐르는 것 (5장의 주제어)</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 「All <span class="gnh">quantum states</span> in the VB are filled」 의 <b>quantum states</b> 에 형광펜. VB 가 꽉 차 있으면 전자가 움직일 빈자리가 없다 — "자리가 없으면 서 있는 게 아니라 없다"(리뷰② 14:58)와 같은 이야기다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn15.jpg" alt="15쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s16">16쪽<small>Insulator vs. Semiconductor vs. Metal</small></h2>
 <div class="row"><div class="orig">3.2 Electrical Conduction in Solids<br>Insulator vs. Semiconductor vs. Metal</div><div class="exp"><b>2쪽에서 예고한 "밴드갭 크기가 물질을 정한다"의 도착점</b>이다. 3.1~3.2절의 결론 쪽이고, <b>시험에 가장 자주 나오는 그림</b>이기도 하다.</div></div>
 
@@ -1625,6 +1683,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ⑥ 숫자 감각 — 상온의 kT ≈ <b>0.026 eV</b>, Si 1.1 eV, SiO₂ 9 eV<br>
 ⑦ <b>"같은 결과를 슈뢰딩거 방정식으로 다시 유도한다"</b> — 13~20쪽의 목적지가 이미 정해져 있다는 뜻</div>
 <div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 밴드가 꽉 참·반만 참·빔·겹침에 따라 도체·반도체·부도체가 갈리는 과정과, <b>밴드갭 크기만으로는 못 가른다(Si₃N₄ vs 다이아몬드)</b>는 이야기를 했다 → <a href="#s3">3쪽</a> 초록 상자.</div>
+
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> <span class="gnh">Empty CB</span> · <span class="gnh">Full VB</span> 에 형광펜 점, <span class="gnh">Metal</span> 밑에 형광펜과 빨간 밑줄. 금속 쪽 두 그림(overlapped · partially filled)이 리뷰에서 말한 "반만 차 있거나 오버랩되면 컨덕터"(리뷰② 00:00)다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn16.jpg" alt="16쪽 굿노트 필기" loading="lazy"></details>
 
 <h2 id="s17">17쪽<small>The Kronig-Penney Model ① — 주기적 퍼텐셜로 바꾸기</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>The Kronig-Penney Model</div><div class="exp"><b>수학 유도가 시작된다.</b> 13~20쪽 여덟 쪽이 한 덩어리이고, 목적지는 <b>이미 아는 결론</b>이다 — 12쪽에서 교수님이 <b>"the same result"</b>라고 못 박았다.<br>이 쪽은 그중 <b>준비 단계</b>다. 실제 결정의 퍼텐셜은 풀 수가 없어서, <b>풀 수 있는 모양으로 바꾸는</b> 작업만 한다.</div></div>
@@ -1791,6 +1853,14 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ⑤ <b>α² = 2mE/ℏ²</b> (구간 I, 골짜기) / <b>β² = 2m(E − V₀)/ℏ²</b> (구간 II, 장벽). <b>α는 에너지</b>라고 기억해 둘 것<br>
 ⑥ 슬라이드 오기 두 개 — <b>"Block"</b>은 <b>Bloch</b>, <b>u(t)</b>는 <b>u(x)</b>, 그리고 구간 II 식의 <b>u₁(x)</b>는 <b>u₂(x)</b><br>
 ※ <b>녹화5 07:12~08:30은 전사가 깨졌다.</b> 그 대목은 <b>녹화4 06:30~08:10</b>에 또렷하므로 그쪽을 들을 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> (남색 펜) 슬라이드에서 건너뛴 대입 계산을 직접 채웠다.<br>
+• 곱의 미분 두 줄: <span class="gnh">f′g + fg′</span> / <span class="gnh">f″g + 2f′g′ + fg″</span> — ψ = u(x)·e<sup>jkx</sup> 를 두 번 미분할 때 쓰는 규칙이다. 가운데 항 <b>2f′g′</b> 에서 <b>2jk·du/dx</b> 가 나온다.<br>
+• 구간 I: <span class="gnh">d²u₁/dx² + 2jk du₁/dx − (k² − α²)u₁(x) = 0</span> 을 직접 써서 확인.<br>
+• 구간 II: <span class="gnh">d²u₂/dx² + 2jk du₂/dx − (k² − α² + 2mV₀/ℏ²)u₂(x) = 0</span> — 슬라이드는 끝이 <b>u₁(x)</b> 로 인쇄돼 있는데 내 필기는 <b>u₂(x)</b> 로 고쳐 썼다. 위 ⑥의 오기 지적과 같다.<br>
+• ψ(x) = e<sup>jkx</sup> 밑에 <span class="gnh">x</span>, 첫 줄 슈뢰딩거 식과 구간 식 두 줄에 형광펜.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn18.jpg" alt="18쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s19">19쪽<small>The Kronig-Penney Model ③ — 경계 조건과 해의 조건</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>The Kronig-Penney Model</div><div class="exp"><b>경계 조건을 걸어 답을 좁히는 쪽</b>이다. 그리고 <b>이 단원에서 가장 중요한 한마디</b>가 여기서 나온다 — <b>"이 식을 풀어도 파동함수는 안 나온다. 이 식은 해가 존재할 조건일 뿐이다."</b></div></div>
 
@@ -1917,6 +1987,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ④ <b>E &lt; V₀ ⇒ β² &lt; 0 ⇒ β = jγ ⇒ sin → sinh, cos → cosh.</b> 속박 전자를 다루므로 필연이다<br>
 ⑤ <b>★ 이 식은 파동함수를 주지 않는다. 해가 존재할 "조건"을 줄 뿐이다.</b> 교수님이 <b>세 번</b> 반복한다. 이것이 크로니히–페니 유도 전체의 열쇠이고, 서술형 단골이다<br>
 ⑥ 최종 식이 묶는 것 — 왼쪽에 <b>α(에너지)·γ(퍼텐셜)</b>, 오른쪽에 <b>k(운동량)</b>. <b>E와 k의 관계식</b>이다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 형광펜 세로줄 두 개 — 왼쪽은 경계 조건 설명부터 「For E &lt; V₀: bounded electron」 까지, 오른쪽은 경계 조건 식에서 β = jγ 줄까지. <b>경계 조건 → cos k(a+b) 식 → β 가 허수 → sinh·cosh 식</b>으로 이어지는 흐름을 한 줄로 이어 본 표시다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn19.jpg" alt="19쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s20">20쪽<small>The k-Space Diagram ① — 자유 전자</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>The k-Space Diagram</div><div class="exp">앞 쪽의 식이 너무 복잡해서 <b>한 번 더 단순화</b>한다. 그리고 <b>자유 전자부터</b> 확인해 본다 — 아는 답이 나오는지 검산하는 셈이다.</div></div>
 
@@ -3224,6 +3298,10 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 ⑥ <b>스핀은 나중에 × 2</b>로 붙인다. 30쪽 식의 <b>2</b>가 이것이다<br>
 ⑦ <b>k-space</b> — 가로축을 위치가 아니라 <b>k</b>로 잡은 공간. 여기서 자리들이 균일하게 늘어선다<br>
 ⑧ 무한 우물에서는 양자수가 <b>n 하나</b>뿐이다 (원자는 n, l, m, s 넷)</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> (남색 펜) k² = 2mE/ℏ² 에 k = nπ/a 를 넣어 <span class="gnh">2mE/ℏ² = n²π²/a²</span> 로 적고, 위에 <span class="gnh">k =</span> 를 쓰다 말았다. 이 줄을 E 에 대해 풀면 바로 아래 <b>E<sub>n</sub> = ℏ²π²n²/2ma²</b> 가 된다 — 슬라이드가 건너뛴 한 줄이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch3/gn32.jpg" alt="32쪽 굿노트 필기" loading="lazy"></details>
+
 <h2 id="s33">33쪽<small>DOS Derivation (3D) ① — 자리 하나가 차지하는 부피</small></h2>
 <div class="row"><div class="orig">3.4 Density of States Function<br>DOS Derivation (3D)</div><div class="exp"><b>28쪽의 절차를 3차원에 그대로 옮기는 쪽</b>이다. 바뀌는 것은 딱 두 가지다.<br>· <b>"길이"가 "부피"로</b><br>· <b>k가 하나에서 셋(k<sub>x</sub>, k<sub>y</sub>, k<sub>z</sub>)으로</b><br>나머지는 28쪽과 완전히 같다. <b>새로 배우는 것이 거의 없다</b>는 것을 알고 보면 훨씬 수월하다.</div></div>
 
@@ -3728,7 +3806,7 @@ h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
 <b>④ 전자가 움직일 수 있는 방향이 줄어든다.</b> 2D 는 두 방향, 1D 는 한 방향으로만 흐를 수 있다. 전류는 결국 "움직일 수 있는 전자 수 × 속도"이므로 캐리어 수(①)와 함께 전류식의 모양 자체가 달라진다. GAA 나노시트 트랜지스터를 설계할 때 3D 공식을 그대로 쓸 수 없는 이유다.</div>
 <div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 19:41</span> "길어졌네요. <b>오늘 수업 여기까지</b> 하겠습니다. 감사합니다." — 5쪽(0D·퀀텀닷)까지 하고 끝났다. 6쪽(E<sub>F</sub> 의 정의)은 이 리뷰에서 다루지 못했다.</div>
 <div class="exam"><b>★ 참여 점수</b> <span class="ts">리뷰③ 19:59</span> "오늘 <b>참여 점수</b> — 오늘 (대답한) 학생들 나와 주세요." 수업 중 손 들어 대답한 학생을 수업 끝에 확인해 참여 점수를 준다.</div>
-<p class="fig" style="margin-top:40px">오프라인 리뷰 수업 인용은 자동 전사를 문맥으로 복원한 것이다. 강의실 녹음이라 인식 품질이 낮은 구간이 있어 조사·어미와 일부 숫자는 실제와 다를 수 있다. 흐린 대목은 본문에 따로 표시했다. 리뷰 수업 판서는 3~5쪽 필기에 이미 남아 있으므로 따로 옮기지 않았다.</p>
+<p class="fig" style="margin-top:40px">오프라인 리뷰 수업 인용은 자동 전사를 문맥으로 복원한 것이다. 강의실 녹음이라 인식 품질이 낮은 구간이 있어 조사·어미와 일부 숫자는 실제와 다를 수 있다. 흐린 대목은 본문에 따로 표시했다. 내 굿노트 필기는 굿노트 파일의 획 데이터를 직접 풀어 그린 것이고, 판독이 애매한 글자는 (판독 불가)·(~로 보임)으로 표시했다.</p>
 
 <a class="top" href="#top">맨 위로</a>
 </div>
