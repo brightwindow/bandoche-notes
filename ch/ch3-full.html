@@ -84,15 +84,24 @@ sub,sup{font-size:11px}
 .top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
      padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
 @media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+
+/* 오프라인(한국어) 수업 */
+:root{--rv:#e8f6f2;--rvb:#1f8a78}
+h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
+.said.rv{background:var(--rv);border-left-color:var(--rvb)}
+.said.rv b{color:#176b5d}
+.said.rv .ts{background:var(--rvb)}
+.c8{background:var(--rv);border-color:var(--rvb)}
 </style>
 </head>
 <body>
 <div class="wrap" id="top">
 <h1>반도체공학 Ch.3 — 고체의 양자론 입문 · 강의 통합 해설</h1>
 <div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
-<div class="cov ok">강의 전사 <b>1314줄 전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
-<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
-<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Chapter Overview ①</a><a href="#s3">3쪽 · Chapter Overview ②</a><a href="#s4">4쪽 · Chapter Overview ③</a><a href="#s5">5쪽 · Chapter Overview ④</a><a href="#s6">6쪽 · Chapter Overview ⑤</a><a href="#s7">7쪽 · Contents</a><a href="#s8">8쪽 · Lessons Learned ①</a><a href="#s9">9쪽 · Lessons Learned ②</a><a href="#s10">10쪽 · Energy Splitting</a><a href="#s11">11쪽 · Formation of Energy Bands ①</a><a href="#s12">12쪽 · Formation of Energy Bands ②</a><a href="#s13">13쪽 · Energy States of Silicon</a><a href="#s14">14쪽 · Bands and Bandgap in Silicon</a><a href="#s15">15쪽 · Electrical Conduction in Semiconductors</a><a href="#s16">16쪽 · Insulator vs. Semiconductor vs. Metal</a><a href="#s17">17쪽 · The Kronig-Penney Model ①</a><a href="#s18">18쪽 · The Kronig-Penney Model ②</a><a href="#s19">19쪽 · The Kronig-Penney Model ③</a><a href="#s20">20쪽 · The k-Space Diagram ①</a><a href="#s21">21쪽 · The k-Space Diagram ②</a><a href="#s22">22쪽 · E-k Diagram</a><a href="#s23">23쪽 · Reduced k-space Diagram</a><a href="#s24">24쪽 · Bands & Band Gap</a><a href="#s25">25쪽 · Energy Band and Bond Model</a><a href="#s26">26쪽 · Drift Current</a><a href="#s27">27쪽 · Electron Effective Mass</a><a href="#s28">28쪽 · Concept of the Hole ①</a><a href="#s29">29쪽 · Concept of the Hole ②</a><a href="#s30">30쪽 · Direct & Indirect Semiconductors</a><a href="#s31">31쪽 · Density of States (DOS)</a><a href="#s32">32쪽 · DOS Derivation (1D)</a><a href="#s33">33쪽 · DOS Derivation (3D) ①</a><a href="#s34">34쪽 · DOS Derivation (3D) ②</a><a href="#s35">35쪽 · Extension to Semiconductors</a><a href="#s36">36쪽 · Fermi-Dirac Distribution</a><a href="#s37">37쪽 · Fermi Energy</a><a href="#s901" class="apx">부록 · 부록</a></div>
+<div class="cov ok">영상 강의 전사 <b>1314줄</b> + 오프라인 리뷰 수업 전사 <b>1,301줄</b>(69분) <b>전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
+<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-09 추가 — 실제 오프라인 리뷰 수업(한국어)</b><br>영상 강의 위에 <b>교실에서 한 3장 리뷰 수업</b>(69분)을 겹쳐 넣었다. 초록색 상자가 그것이다. 이 수업은 <b>Chapter Overview 필기를 쓰면서 한 설명</b>이라, 그동안 "녹화에 음성이 없다"고 비어 있던 쪽이 채워졌다 — <a href="#s3">3쪽</a> 밴드 형성·밴드갭 숫자(실리콘 ×3, ×5) · <a href="#s4">4쪽</a> E−k·유효질량·direct/indirect·heavy/light hole·그래핀 · <a href="#s5">5쪽</a> DOS × FDF·2D/1D/0D·퀀텀닷. 수업 끝에 낸 <b>과제(테이크홈 메시지)</b>는 <a href="#s903">부록 ③</a>, 출장 이야기는 <a href="#s902">부록 ②</a>. 타임스탬프 <span class="eq">리뷰① · 리뷰② · 리뷰③</span> = 리뷰 수업 녹음 세 개를 <b>수업 순서대로</b> 붙인 이름(10분 · 38분 · 20분).</div>
+<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
+<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Chapter Overview ①</a><a href="#s3">3쪽 · Chapter Overview ② + 리뷰</a><a href="#s4">4쪽 · Chapter Overview ③ + 리뷰</a><a href="#s5">5쪽 · Chapter Overview ④ + 리뷰 · 과제</a><a href="#s6">6쪽 · Chapter Overview ⑤</a><a href="#s7">7쪽 · Contents</a><a href="#s8">8쪽 · Lessons Learned ①</a><a href="#s9">9쪽 · Lessons Learned ②</a><a href="#s10">10쪽 · Energy Splitting</a><a href="#s11">11쪽 · Formation of Energy Bands ①</a><a href="#s12">12쪽 · Formation of Energy Bands ②</a><a href="#s13">13쪽 · Energy States of Silicon</a><a href="#s14">14쪽 · Bands and Bandgap in Silicon</a><a href="#s15">15쪽 · Electrical Conduction in Semiconductors</a><a href="#s16">16쪽 · Insulator vs. Semiconductor vs. Metal</a><a href="#s17">17쪽 · The Kronig-Penney Model ①</a><a href="#s18">18쪽 · The Kronig-Penney Model ②</a><a href="#s19">19쪽 · The Kronig-Penney Model ③</a><a href="#s20">20쪽 · The k-Space Diagram ①</a><a href="#s21">21쪽 · The k-Space Diagram ②</a><a href="#s22">22쪽 · E-k Diagram</a><a href="#s23">23쪽 · Reduced k-space Diagram</a><a href="#s24">24쪽 · Bands & Band Gap</a><a href="#s25">25쪽 · Energy Band and Bond Model</a><a href="#s26">26쪽 · Drift Current</a><a href="#s27">27쪽 · Electron Effective Mass</a><a href="#s28">28쪽 · Concept of the Hole ①</a><a href="#s29">29쪽 · Concept of the Hole ②</a><a href="#s30">30쪽 · Direct & Indirect Semiconductors</a><a href="#s31">31쪽 · Density of States (DOS)</a><a href="#s32">32쪽 · DOS Derivation (1D)</a><a href="#s33">33쪽 · DOS Derivation (3D) ①</a><a href="#s34">34쪽 · DOS Derivation (3D) ②</a><a href="#s35">35쪽 · Extension to Semiconductors</a><a href="#s36">36쪽 · Fermi-Dirac Distribution</a><a href="#s37">37쪽 · Fermi Energy</a><a href="#s901" class="apx">부록 ① 마무리 인사</a><a href="#s902" class="apx">부록 ② 출장 이야기</a><a href="#s903" class="apx">부록 ③ 과제 · 마무리</a></div>
 <h2 id="s1">1쪽<small>표지 — Ch.3 Introduction to the Quantum Theory of Solids</small></h2>
 <div class="row"><div class="orig">Semiconductor Engineering<br>Ch. 3 Introduction to the Quantum Theory of Solids<br>Dept. of Electrical Engineering<br>Jeongkyun Roh</div><div class="exp"><b>고체의 양자론 입문.</b> 2장이 <b>원자 하나</b> 안에 갇힌 전자를 다뤘다면, 3장은 그런 원자가 <b>수없이 모여 만든 고체(결정)</b> 안의 전자를 다룬다.<br>이름은 거창하지만 3장이 끝까지 붙들고 가는 질문은 딱 두 개다. <b>① 반도체의 밴드갭은 왜 생기는가</b>, <b>② 반도체 안에 전자가 몇 개인가.</b></div></div>
 
@@ -530,7 +539,36 @@ sub,sup{font-size:11px}
 ② <b>갭이 넓다 = 절연에 가깝다 = 높은 전압을 견딘다</b> → SiO₂·Si₃N₄는 절연층, SiC·GaN·Ga₂O₃는 전력 소자<br>
 ③ <b>"겹칠 수도, 안 겹칠 수도"</b> — 갈라진 밴드가 겹치면 금속, 안 겹치면 반도체·부도체<br>
 ④ <b>Ga₂O₃·다이아몬드의 한계 = p형 도핑</b>. 갭만 넓다고 쓸 수 있는 게 아니다<br>
-※ 이 쪽은 <b>녹화에 음성이 없다.</b> 프랙티스 세션 필기로 보이므로, 아는 사람에게 물어 보완하는 것이 안전하다.</div>
+※ 영상 녹화에는 음성이 없지만, <b>오프라인 리뷰 수업</b>에서 이 필기를 쓰며 설명했다 — 아래 초록 상자.</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>리뷰① 00:00 ~ 10:37</b>(출장 이야기 04:30~07:30 은 <a href="#s902">부록 ②</a>)과 <b>리뷰② 00:00 ~ 09:40</b> 이 이 쪽이다. 이 쪽의 파란·붉은 필기가 바로 <b>이 수업에서 쓴 판서</b>다. 녹음은 수업 도중부터 시작한다 — 첫 줄 「Ch.2 : Bounded ⓔ ⇒ quantized E + Pauli」를 설명한 대목은 녹음에 없다.</div>
+
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 00:03</span> "여러 전자가 <b>인터랙션</b>을 하게 되면, 걔네들이 똑같은 양자화된 에너지를 갖고 있고 똑같은 스테이트를 갖고 있는데, <b>딱 한 개의 스테이트에는 한 개만</b> 있을 수 있어. 그래서 그거를 피하려고 뭘 하냐면, 바로 <b>에너지 스플리팅</b>이라는 거랍니다."<br>필기 「⇓ Splitting」의 설명이다. 파울리 배타 원리(한 자리에 하나만) 때문에 같은 에너지를 가진 전자들이 에너지를 조금씩 비켜 선다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰① 00:24</span> <b>인공위성 비유</b> — "스타링크에서 쏘아 올린 인공위성이 이렇게 돌고 있어. 그런데 <b>똑같은 궤도로 인공위성 하나 더</b> 들어가. 그럼 부딪힐 거 아니야?" … "둘 다 너무 많이 바꾸면 안 되니까 <b>한 개는 살짝 올라가고 한 개는 살짝 내려가서</b> 돌면 안 부딪힐 거 아니에요. 그게 바로 에너지 스플리팅의 개념."<br>
+"그런데 인공위성을 <b>100만 개</b> 쏘려고 했어. … 100만 개의 다른 궤도로 스플리팅을 해야 돼요. … 그 간격이 엄청 촘촘해야겠죠? <b>거의 연속적으로</b> 보인다는 거죠. 지구에서 봤을 때는 마치 <b>하나의 큰 띠</b>를 가지고 인공위성들이 가득 찬 것처럼 보이겠죠? <b>이게 바로 밴드의 개념</b>입니다."<br>
+필기 「&lt;atom&gt; → &lt;crystal&gt;, ΔE → 0, band」를 그대로 풀어 준 비유다. 궤도 = 에너지 준위, 인공위성 = 전자, 띠 = 밴드. 개수가 늘수록 줄 사이 간격 ΔE 가 0 에 가까워져 한 덩어리처럼 보인다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰① 02:44</span> <b>스핀도 같은 비유로</b> — "스핀이라는 건 뭐예요? 인공위성이 돌면서 <b>공전 방향이랑 자전 방향이 같냐, 다르냐</b>. 이게 이제 전자의 스핀이에요. … 에너지가 조금 달라지기 때문에 (한 궤도에) 두 개가 들어갈 수 있는 것."<br>한 준위에 전자가 <b>둘</b>(스핀 위·아래)까지 들어가는 이유를 인공위성의 자전 방향으로 설명했다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 03:17</span> "아톰들의 규칙적인 배열을 뭐라고 합니까?" — "결정, 크리스탈." … "실리콘을 1 cm 이렇게 잘랐을 때 그 안에 실리콘 원자가 몇 개 있다 했어요?" — "<b>10의 22승</b>." … "우리가 평소에 생각도 못 하는 엄청난 숫자예요. 그러면 10의 22승 개의 전자가 인터랙션하기 때문에 아주 촘촘하게 밴드를 만드는 거죠."<br>1장에서 "외우라"고 한 숫자(1 cm³ 에 Si 원자 10²²개)를 여기서 다시 꺼냈다. 인공위성 100만 개가 아니라 <b>10²²개</b>이니 줄 간격은 사실상 0 이다. (중간에 숫자 크기를 비교하는 대목 03:48~04:00 은 인식이 흐리다.)</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 07:46</span> "스테이트가 모여서 만드는 게 밴드였어요. E₂ 가 에너지 스플리팅으로 만든 게 E₂ 밴드, E₃ 가 만든 게 E₃ 밴드." … "애초에 인터랙션하는 스테이트 자체가 <b>꽉 차 있는</b> 스테이트라면 만들어진 밴드 역시 모든 스테이트가 꽉 차 있는 <b>fully occupied</b> 밴드가 되고요. <b>텅텅 비어 있는</b> 스테이트로 만들면 <b>completely empty</b> 밴드. <b>반만 차 있는</b> 스테이트로 만들면 <b>half filled</b> 밴드."<br>필기의 E₁·E₂·E₃ 빗금 상자 그림이 이 말이다. 빗금이 꽉 찬 준위 → 꽉 찬 밴드, 빈 준위 → 빈 밴드.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 09:11</span> "경우에 따라서는 <b>E₂ 와 E₃ 의 간격이 좁으면</b>, 밴드를 만들었을 때 이 밴드가 크게 스플리팅하고 저 밴드도 크게 스플리팅하면 뭐가 생겨요? — <b>오버랩</b>이 생기죠. 밴드끼리 오버랩되는 경우도 발생을 하더라."<br>필기 「겹칠 수도, 안 겹칠 수도.」의 뜻이 여기서 풀린다. 원래 준위 간격이 좁으면 퍼진 띠끼리 겹친다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 09:35</span> "그래서 만들어지는 <b>아톰의 처음 스테이트가 중요</b>한 거죠. 이 스테이트들이 꽉 차 있냐, 반만 차 있냐, 텅텅 비어 있냐, 그리고 스테이트와 스테이트의 간격이 얼마냐에 따라서 최종 크리스탈의 <b>밴드 스트럭처가 정해지고</b>, 그 밴드 스트럭처에 따라서 이 물체가 반도체가 되기도 하고 도체가 되기도 하고 부도체가 되기도 하고."<br>필기 「atom — 특성 따라~ → band 형태 결정」을 말로 한 것이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 09:57</span> "반도체를 예를 들면 E₂ 까지 꽉 차 있다 치자. 그러면 E₂ 밴드도 꽉 차 있겠죠. E₃ 는 텅텅 비어 있어요. 그러면 요 사이에는 <b>아무런 스테이트가 없습니다</b>. … 전자가 꽉 차 있는 아래쪽 밴드는 <b>밸런스 밴드</b>, 텅텅 비어 있는 <b>컨덕션 밴드</b>, 그리고 그 사이에 <b>밴드갭</b>이 있는 구조가 일반적인 반도체의 구조다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 00:00</span> (도체는) "반만 차 있는 스테이트로 시작해서 반만 차 있거나, 아니면 밴드끼리 <b>오버랩</b>을 하거나, 꽉 차 있는 밴드와 오버랩을 했거나, 밴드갭이 없거나 — 그런 경우에 <b>컨덕터</b>가 됐고요. 반도체는 꽉 차 있는 밴드와 텅 비어 있는 밴드가 <b>적절한 크기의 밴드갭</b>을 가질 때, 밴드갭이 너무 크면 <b>인슐레이터</b>."<br>필기의 상자 세 개(빗금이 위까지 / Eg 좁음 / Eg 넓음)와 「conductor · semiconductor · insulator」가 이 순서다.</div>
+<div class="key"><b>정리</b> <span class="ts">리뷰② 00:31</span> "정리하자면, 물질이 도체·부도체·반도체가 되는 것은 뭐 때문이다? — <b>밴드 스트럭처</b> 때문에. 그리고 그 밴드 스트럭처가 어떻게 정해지냐 — 결국 <b>원자가 전자를 몇 개 갖고 있느냐, 그 전자들이 어떤 배열을 갖고 있느냐</b>."<br>원자의 준위 상태 → 결정의 밴드 구조 → 물질의 전기적 성질. 이 쪽 필기의 붉은 화살표(atom → band 형태 결정)가 이 사슬이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 01:34</span> "전기가 흐른다는 건 이 위에 텅텅 비어 있는 곳에서 전자가 움직여야 되는데, 위에는 전자가 없어. 그렇기 때문에 밑에서 위로 전자가 <b>점프</b>해서 움직여야 돼요. 부도체인 경우에는 이게 너무 크면 점프해서 올라가기 힘드니까 전기가 안 흐르는 거고, 반도체는 크기가 적절하면 적절한 <b>열 에너지, 전기 에너지, 빛 에너지</b>를 통해서 전자를 끌어올릴 수 있으니까 경우에 따라서 전기가 흐를 수 있다."<br>필기 오른쪽 아래 CB·VB 상자와 붉은 「I!」가 이 그림이다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 02:14</span> "그런데 최근에 <b>전력 반도체</b>가 나오면서, 텍스트북에서는 밴드갭의 크기로만 얘기를 하는데 이제 약간 그 <b>경계가 허물어지고 있다</b>, 이런 얘기를 많이 들어봤을 겁니다." — 그래서 칠판에 반도체 밴드갭을 크기 순서로 적어 나갔다(아래).</div>
+
+<h3 class="rvh">밴드갭 숫자 — 교수님이 불러 준 값과 "외우는 값"</h3>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 03:04</span> "<b>저마늄</b>, 제가 <b>0.7</b> 로 밴드갭을 외우라고 했었습니다. 정확히는 0.66 이고 단위는 일렉트론볼트입니다. 그런데 이렇게 외우면 헷갈리니까 그냥 0.7." … "<b>실리콘</b> 같은 경우에는 정확히 <b>1.12</b>. 그런데 헷갈리니까 <b>1.1</b>." … "<b>갈륨아세나이드는 1.42</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 03:38</span> "<b>4H-SiC</b>, 실리콘 카바이드요. 실리콘도 4족, 카본도 4족, 맞죠? 두 개가 이렇게 격자를 만들고 있는데, 4H 라는 말은 실리콘 카바이드의 독특한 특성이긴 한데 … 크리스탈의 결정을 이루는 형태가 아주 많아요. <b>100가지가 넘어</b>. 그중에서 가장 많이 쓰이는 게 4H-SiC. 4 는 4번 반복되는 유닛이 있고, H 는 헥사고날인데 <b>그건 몰라도 되고</b>."</div>
+<div class="exam"><b>★ 외우는 법</b> <span class="ts">리뷰② 04:24</span> "실리콘 카바이드는 밴드갭 얼마? 제가 어떻게 말했어요?" — "3배?" — "<b>3배. 실리콘의 3배.</b> 그러면 절대 안 까먹습니다." … "갈륨나이트라이드도 정확히 3.4, 얘(SiC)가 3.26, 이렇게 하는데 <b>3.3</b> 만 외우고 … 이 두 개 <b>묶어서 3.3</b>." … "<b>중요한 거는 실리콘보다 곱하기 3배.</b>"<br>필기 「[SiC / GaN] → 3.3 eV」의 괄호가 "묶어서 외워라"는 뜻이다. "실리콘의 3배"를 세 번 반복했다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 05:06</span> <b>밴드갭이 너무 작아도, 너무 커도 문제</b> — "히스토리에서 <b>저마늄</b>이 제일 먼저 응용이 됐었는데 곧 실리콘으로 대체됐다고 얘기했었습니다. 그 원인 중 하나가, 저마늄은 밴드갭이 너무 작기 때문에 <b>내가 원하지도 않았는데 항상 전기가 흘러</b>." … "반대로 실리콘 카바이드, 갈륨나이트라이드는 <b>내가 원할 때도 전기를 흘리게 만들기가 어려워</b>. 밴드갭이 크니까. 실리콘은 여기 있는 전자를 이만큼 올리면 되는데 실리콘 카바이드는 3배(사실 3배보다 더)의 에너지가 있어야 돼. 그렇기 때문에 많이 사용이 안 됐었는데, 이제 <b>전력 반도체</b> 때문에 얘가 응용이 된."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 05:57</span> "그리고 <b>베타 갈륨옥사이드</b>(β-Ga₂O₃), 산화갈륨이라고 불리는데 … 한 <b>4.5 에서 4.9</b> 사이인데, 이것도 외우기 귀찮으니까 대충 <b>5 일렉트론볼트</b>." … "<b>다이아몬드는 5.5</b> 일렉트론볼트."<br>필기에는 Ga₂O₃ 4.5 eV 로 적혀 있다. 교수님은 범위(4.5~4.9)를 말하고 "대충 5"로 외우라고 했다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 06:36</span> Si·Ge·GaAs 는 "<b>트래디셔널 일렉트로닉스</b>에서 썼던 거"이고, SiC·GaN 은 "<b>와이드 밴드갭</b> 세미컨덕터" — "이쪽은 이미 <b>상업화가 성공</b>했습니다." Ga₂O₃·다이아몬드는 "<b>울트라 와이드 밴드갭</b>" — "요쪽은 이제 <b>미래 기술</b>입니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 07:17</span> 인슐레이터로는 "(실리콘) <b>나이트라이드, 알루미늄 옥사이드, 실리콘 옥사이드</b>"를 칠판에 적고 밴드갭을 불렀다. (숫자를 부른 대목 07:26~07:41 은 인식이 흐려 직접 들어볼 것. 필기에는 Si₃N₄ 5.3 eV, SiO₂ 9 eV 가 남아 있다.)</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 07:43</span> <b>밴드갭 크기만으로는 못 가른다</b> — "우리가 반도체 공장에서 절연체로 <b>나이트라이드</b> 많이 쓰거든요. 실리콘 나이트라이드. 그런데 이 나이트라이드 밴드갭이 (울트라 와이드 밴드갭) 반도체보다 좁아요. 그러니까 이제 우리가 밴드갭 크기만 가지고 도체·부도체·반도체 이거를 얘기하기가 힘든 거죠." … "<b>다이아몬드</b>는 반도체로 쓸 수 있는 거고, <b>실리콘 나이트라이드</b>는 반도체로 쓸 수 없는 거죠." … "일반적으로는 틀린 말은 아닙니다. 하지만 좀 더 고민을 한다면 밴드갭 크기만 가지고는 정하기 어렵다. <b>다양한 요소들을 고려해야</b> 된다."<br>필기의 숫자를 나란히 놓으면 바로 보인다 — <b>Si₃N₄ 5.3 eV(절연체) &lt; 다이아몬드 5.5 eV(반도체)</b>. 필기 「P 도핑이 어려움」이 그 "다른 요소" 중 하나다.</div>
+<div class="exam"><b>★ 시험 포인트</b> <span class="ts">리뷰② 09:07</span> "여러분들 이제 반도체의 길을 가시려면, 적어도 <b>실리콘</b>과 이런 <b>와이드 밴드갭</b>, 그리고 <b>울트라 와이드 밴드갭</b> 이 정도는 자다가도 기억을 하고 있어야 됩니다. 근데 뭐 까먹을 게 별로 없겠죠. <b>실리콘 1.1</b> 기억하시고, <b>실리콘 3배 와이드 밴드갭</b>, <b>실리콘 5배 울트라 와이드 밴드갭</b>."<br>세 줄로 외운다: <b>Si 1.1 eV → WBG(SiC·GaN) ≈ 3.3 eV(×3) → UWBG(Ga₂O₃·다이아몬드) ≈ 5 eV 이상(×5)</b>. 덧붙여 Ge 0.7, GaAs 1.4. 그리고 서술형 대비로 <b>"밴드갭 크기만으로 부도체와 반도체를 가를 수 없다 — Si₃N₄ vs 다이아몬드"</b>.</div>
+
 <h2 id="s4">4쪽<small>Chapter Overview ③ — E−k 다이어그램과 유효질량</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> "graphene", "direct", "indirect", "effective mass" 를 다루는 대목이 <b>23쪽(유효질량)과 26쪽(직접·간접 밴드갭)</b>에 있으므로, 개념은 거기서 강의로 들을 수 있다. 다만 <b>이 쪽에 적힌 그래핀 이야기만은 녹화 어디에도 없다.</b></p>
 
@@ -551,7 +589,41 @@ sub,sup{font-size:11px}
 ② <b>1/m* = (1/ℏ²)·d²E/dk²</b> — 유효질량은 <b>E−k 그래프의 곡률</b>에서 읽는다. <b>완만할수록 무겁다</b><br>
 ③ <b>1차 미분 = 속도, 2차 미분 = 질량</b>. 이 대응은 23쪽 강의에서도 그대로 나온다<br>
 ④ <b>direct(GaAs) = 발광 소자, indirect(Si) = 발광 불가</b>. 차이는 <b>운동량 변화가 필요한가</b><br>
-⑤ <b>그래핀 m* → 0, bandgap = 0</b> — 녹화에 없는 항목이다. 프랙티스 세션에서 나온 이야기로 보인다</div>
+⑤ <b>그래핀 m* → 0, bandgap = 0</b> — 영상에는 없고 <b>오프라인 리뷰 수업</b>에서 나온 이야기다(아래 초록 상자, 리뷰③ 08:03)</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>리뷰② 09:40 ~ 37:55</b>, <b>리뷰③ 00:00 ~ 10:45</b> 가 이 쪽이다. 이 쪽 필기 전체(E−k, p = ℏk, 미분 두 번, "무게↑↑", GaAs·Si, "열", graphene)가 이 45분 동안 쓴 판서다. 위에서 "녹화에 없다"고 적어 둔 <b>그래핀</b> 이야기도 여기서 나왔다(리뷰③ 08:03).</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 09:42</span> "그다음 토픽은 바로 <b>E−k 다이어그램</b>입니다. E−k 다이어그램에서 중요한 부분이 두 가지가 있습니다." … "<b>E−k 다이어그램의 의미가 뭡니까?</b>" — 이 질문을 연달아 네 번 던졌다. 학생 대답이 없자 기본식부터 다시 세웠다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 11:15</span> "에너지! 운동 에너지는 여러분 다 알다시피 <b>½mv²</b> 입니다. 얘를 수식을 조금 건드리면 <b>(mv)²/2m</b> 이 되고요, 얘가 바로 <b>p²/2m</b>, 모멘텀의 제곱이 되죠." … "양자역학에서 모멘텀은 어떻게 정의가 됐습니까? — <b>ℏk</b>. <b>이것도 외우셔야 돼요.</b> 유도 과정은 강의 자료에 있습니다(드브로이 파장)." … "이걸 이용하게 되면 <b>E = ℏ²k²/2m</b>. E−k 다이어그램은 기본적으로 <b>포물선</b> 쉐이프가 될 겁니다."<br>필기 「p = ℏk, ℏ = h/2π / E = p²/2m = (ℏ²/2m)k²」가 이 순서다. ℏ²/2m 은 상수라 포물선이 넓어지거나 좁아지기만 한다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 13:16</span> "ℏk 는 모멘텀입니다. 그럼 별거 없어요. E−k 다이어그램은 <b>모멘텀과 에너지를 그린 것</b>." — 필기에서 k 위에 「(파수)」, 아래에 「momentum」을 단 이유다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 13:35</span> "이걸 그렸을 때 <b>한 점 한 점이 전자의 스테이트</b>입니다." … "예를 들면, 우리가 그냥 공이 있어. 내가 뻥 찼어. 그럼 질량이 있으니까 모멘텀이 있을 거 아니야? 그리고 운동 에너지가 있을 거 아니야? 그러면 이 공에 대한 에너지와 모멘텀을 그렸어. 그러면 이 점이 의미하는 건 뭐냐? <b>이 공의 상태</b>라는 거죠."<br>필기 포물선 위 한 점에 붉게 단 「state」가 이 말이다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 14:58</span> <b>빈자리 비유</b> — "양자역학에서 이 스테이트라는 개념이 참 애매한데 … 클래식 피직스에서는 이 자리가 없으면 사람이 못 앉잖아. 그럼 사람은 <b>옆에 서 있는</b> 거죠. 그런데 양자역학에서는 자리가 없으면 <b>서 있는 게 아니라 없어</b>. 그냥 존재를 못 하는 거야. 그래서 스테이트라는 개념을 좀 받아들여야 됩니다." … "그래프 상의 점이 백만 개다 그러면, 거기 전자가 존재할 수 있는 상태가 백만 개라는 겁니다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 16:44</span> E−k 위에 반도체를 그렸다 — 위쪽 포물선(컨덕션 밴드)은 "전자는 한 개도 없고 전자가 머물 수 있는 스테이트만 있는" <b>빈 점</b>들, 아래쪽 뒤집힌 포물선(밸런스 밴드)은 "모든 스테이트에 꽉 차 있는" 점들.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 18:26</span> "이런 걸 아주 쉽게 표현하기 위해서 <b>에너지 밴드 다이어그램</b>(상자 그림)을 그리는데, 이 Y축은 에너지인데 <b>X축은 아무런 의미를 가지지 않는</b> 그림입니다. 그런데 이 그림(E−k)은 X축도 의미가 있어. X축이 뭐예요?" — 학생: "k." "모멘텀." — "그렇죠."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 19:17</span> "상자 그림에서는 여기서 점프해서 올라간 전자가 여기서 이렇게 (바로) 떨어질 수 있겠네, 이렇게 생각하죠. 그런데 E−k 그림에서는 올라왔다가 여기로 떨어지는 게 아니고, <b>또르르 굴러떨어져서</b> 여기(바닥)까지 온 다음에 다시 떨어지는 거죠." … "그래서 E−k 다이어그램으로 하면 <b>더 많은 정보</b>를 얻을 수가 있다." … "E−k 가 어떻게 생겼는지는 크로니히−페니 격자로 수업(영상) 시간에 아주 복잡하게 유도를 하죠." (→ <a href="#s17">17~23쪽</a>)</div>
+
+<h3 class="rvh">첫 번째 정보 — direct / indirect</h3>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 20:31</span> "문제는 여기서 발생합니다. E−k 다이어그램을 반도체에 대해서 다 그려 봤더니, 어떤 놈은 이렇게(골과 봉우리가 마주 보게) 만들어지는데 어떤 놈은 (어긋나게) 만들어진다는 거예요." … "1번은 떨어지는 거랑 올라가는 거랑 자유롭게 될 건데, 2번은 요기 있던 놈이 떨어지려면 <b>k 가 k′ 에서 0 으로 바뀐다</b>는 말이죠. k 는 뭘 의미했어요? — 모멘텀. 떨어지려면 <b>모멘텀의 변화</b>가 있어야 된다는 거죠." … "먼저 모멘텀을 바꾸고 떨어져야 돼요. 그래서 이 과정 중에 <b>열로서 에너지를 소비</b>하고, 그 때문에 빛이 나오지 않습니다."<br>필기 Si 쪽의 「열」이 이 말이다. GaAs(골이 바로 위아래) = <b>direct</b>, Si(어긋남) = <b>indirect</b>.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 22:38</span> "인다이렉트 밴드갭의 가장 대표적인 물질이 뭐냐?" — "실리콘." — "그렇지. 그렇기 때문에 실리콘으로는 일반적으로 빛을 못 낸다. 그렇기 때문에 <b>LED, 형광등, 레이저 포인터</b> 이런 거를 실리콘으로는 못 만든다." (22:57 에 "사실 뭐 낼 수는 있어요, 안 되는 거 없죠"라며 실리콘 양자점 이야기를 짧게 덧붙였다 — 인식이 흐리다.)</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 23:21</span> "빛을 내는 애들은 무조건 <b>다이렉트 밴드갭</b> 반도체로 만들어야 되는데, 주로 무슨 반도체가 다이렉트 밴드갭이다?" — "화합물, 영어로는 <b>컴파운드</b> 세미컨덕터." … (방금 본 와이드 밴드갭 SiC·GaN 도 화합물이다.)</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 24:12</span> <b>LED 사람과 전력 반도체 사람은 한 동네</b> — "이 전력 소자 연구하는 사람들이랑 빛을 내는 LED 연구하는 사람들이랑 <b>풀(pool)이 같아</b>. 예를 들어서 <b>삼성</b> 같은 경우에 전력 반도체가 좀 뜨니까 내부에 TF 팀을 만들었는데, 그게 어느 팀에서 했냐면 <b>LED 만들던 화합물 반도체 팀</b>에서 그거를 한 거예요. 지금 LED 학회 이런 데 가도 전력 반도체 엄청 하고 있고." … "실리콘 기반 반도체가 시장이 엄청 크고, 화합물 반도체로 LED 를 하던 쪽에서 최근에 전력 반도체를 같이 하는 거죠."</div>
+
+<h3 class="rvh">두 번째 정보 — 기울기 = 속도, 곡률 = 질량</h3>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 26:49</span> "X축이 k 니까 k 에 대해서 한 번 미분을 때려 보는 겁니다." … dE/dk = ℏ²k/m. "ℏk 가 뭐가 돼요? — <b>p</b>." "1/ℏ 을 이렇게 묶으면 (1/ℏ)·dE/dk 는 p/m 이 되는데 p/m 은 뭡니까? — <b>v</b>(속도)." … "한 번 미분한 걸 뭐라 그래? <b>기울기</b>. 기울기를 찾았더니 <b>속도</b>가 나오는 거야."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 28:40</span> "한 번 더 미분을 해 볼까?" … (1/ℏ²)·d²E/dk² 는 "<b>1/m</b> 입니다. 그러면 정리하면 — <b>한 번 미분하면 속도</b>랑 관련, <b>두 번 미분하면 질량</b>이랑 관련이 있다."<br>필기 「d²E/dk² = ℏ²/m = const ~ 질량」의 붉은 물결 밑줄이 이 결론이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 29:30</span> "y = x² 라고 했잖아. y′ 하면 2x, y″ 하면 2. 만약에 y = 3x² 라고 합시다. y′ 하면 6x, y″ 하면 6. 이 그래프랑 이 그래프랑 무슨 차이가 있어요?" … "두 번 미분해서 나온 상수는 바로 <b>곡률, 커버처</b>랑 관련이 있어." … "그럼 정리하면, 요게 <b>샤프</b>하다(곡률이 크다) — 반대로 좀 더 <b>플랫</b>한, 뚱뚱한 포물선." 샤프하면 전자의 질량이 작고(가볍고), 플랫하면 크다(무겁다).<br>필기의 두 포물선 옆 「무게↑↑」가 넓은 쪽이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 32:06</span> "그런데 이게 이상하잖아. 전자의 질량은 — 내 몸무게가 <b>집에서 재나 학교에서 재나 똑같듯이</b> — 같은 거잖아. 프리 스페이스에서 전자의 질량은 동일합니다. 하지만 반도체 내부로 들어가면, 외부에서 작용하는 힘에 100% 반응하는 게 아니고 <b>주변에서 작용하는 힘에 더해지거나 빼져서</b> 움직이는 거잖아. 그런데 크리스탈 내에서 작용하는 힘의 크기는 정확히 알 수 없으니 <b>질량의 정의를 바꾸자</b>. 그렇게 해서 나온 개념이 뭡니까? — <b>이펙티브 매스</b>." … "그래서 여기 있는 m 은 사실은 <b>m*</b> 라고 해야 됩니다."<br>필기 「m → m* effective mass ⇒ 내부 힘 알아내기 어려워 사용하는 개념 ⇒ E−K diagram 통해」 세 줄이 이 대목이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰② 33:43</span> "갈륨아세나이드는 다이렉트 밴드갭이고 실리콘은 인다이렉트 밴드갭인데, 어디가 더 <b>플랫</b>해요?" — "실리콘이 더 뚱뚱하죠. 얘(GaAs)는 더 샤프하고." — "그러면 유효질량이 어떻다는 거예요? — <b>실리콘이 더 크다</b>는 겁니다. 그래서 E−k 다이어그램 상에서 <b>유효질량 값을 알 수가 있다</b>."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 34:56</span> <b>교재 그림을 읽는 법</b> — "지금 우리 교재에 나와 있는 그림은 E−k 다이어그램이 <b>디렉션(결정 방향)에 따라</b> 달라집니다. 그래서 교재 그림은 <b>k 가 양인 쪽은 어떤 디렉션</b>, <b>음인 쪽은 또 다른 디렉션</b>을 같이 그려서 아까 그림이 있는 거고." 가장 간단히 그리면 좌우 대칭 포물선이 된다. (교재의 Si·GaAs 밴드 그림이 좌우 비대칭인 이유다.)</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰② 35:31</span> <b>heavy hole · light hole</b> — "실리콘 같은 경우에는 <b>밸런스 밴드의 밸리가 한 개가 더</b> 있어요. … 여러분들 여기 학부 과정에서 그렇게 중요한 건 아닌데 그냥 용어만 기억하면 돼." 전자가 떨어지면서 hole 1 로도, hole 2 로도 갈 수 있다. "홀 1 이랑 홀 2 가 뭐가 다른 것 같아요?" — 학생: "질량." — "무슨 질량? 영어로 해도 돼." — "그렇지, <b>이펙티브 매스</b>." … "홀 1 을 <b>헤비 홀</b>, 홀 2 를 <b>라이트 홀</b>. 몰라도 되는데, 나중에 어디서 들을 거거든." "홀은 홀이지 무거운 홀은 뭐야, 가벼운 홀은 뭐야 — 이게 <b>같은 물질</b> 안에서 헤비 홀과 라이트 홀이 있는 거다."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 00:17</span> <b>E−k 로 전류 보기</b> — "(E−k 를) 페르미 에너지까지 꽉 채웠다고 하자. 이 상태에서 전류가 흐르는가? 정답은 <b>흐르지 않는다</b>. X축이 모멘텀이라고 했으니까 이쪽(+k) 애들은 오른쪽으로 움직이는 애들, 이쪽(−k) 애들은 왼쪽으로 움직이는 애들 — <b>쌤쌤</b>이 돼서 전류가 안 흐르죠." … "그러다가 <b>일렉트릭 필드</b>가 걸리면 전체적으로 <b>시프트</b>를 하면서 한쪽이 더 많아지니까 전류가 흐른다. 기억나요? 물리전자에서 배운 의미." (→ <a href="#s26">26쪽 Drift Current</a>)</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 02:55</span> "컨덕션 밴드의 이 (가장 낮은) 위치를 뭐라고 했습니까? — <b>컨덕션 밴드 미니멈</b>. CBM 이라고도 하고 <b>E<sub>C</sub></b> 라고도 합니다. 이 점은 <b>밸런스 밴드 맥시멈</b>, 또는 <b>E<sub>V</sub></b>."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 03:38</span> <b>k 가 0 이 아닌데 왜 안 움직이나</b> — (실리콘의 CBM 은) "k 가 얼마예요? k 가 0 이 아니야. 그럼 모멘텀이 있죠? 그러면 얘가 이렇게 움직여야 되는 거 아니에요?" … "우리가 앞에서 배운 거 — <b>한 번 미분한 기울기가 속도</b>. 여기서 기울기가 뭐야? <b>0</b> 이잖아. 그럼 여기는 <b>속도가 0</b> 이지." 인다이렉트 반도체의 CBM 에 앉은 전자는 k ≠ 0 이어도 멈춰 있다. 속도는 k 가 아니라 <b>기울기</b>로 읽는다.</div>
+<div class="key"><b>정리 — E−k 에서 읽는 세 가지</b> <span class="ts">리뷰③ 04:37</span> "E−k 다이어그램에서 얘기할 수 있는 게 상당히 많이 있다. ① <b>CBM 과 VBM 이 동일 k 에 위치하는지, 다른 k 에 위치하는지</b>에 따라서 반도체의 분류 — 빛을 낼 수 있는 반도체인가, 낼 수 없는 반도체인가. ② <b>커버처 모양</b>, 얼마나 샤프한가 뚱뚱한가에 따라서 <b>이펙티브 매스</b>. ③ <b>기울기</b>에 따라서 <b>속도</b>. 그리고 심지어 동일 물질에서도 밸런스 밴드의 두 가지 밸리가 존재해서 <b>홀의 이펙티브 매스가 달라진다</b>."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 05:46</span> <b>축구공과 물 비유</b> — "여기 축구공이 있어. 내가 뻥 차. 그러면 내가 가한 힘에 의해서 얘가 속도가 얼마나 나오는가 이게 명확하잖아요. 그런데 축구공을 <b>물속에 들고 들어가서</b> 뻥 차. 그런데 이 물 때문에 축구공이 안 나가잖아. … 물이 가하는 힘을 정확히 완벽히 구할 수 없으니 어떻게 할까? — <b>질량이 바뀐 걸로 하자</b>. 이게 바로 이펙티브 매스의 개념인 거지." … "물속에서 공의 이펙티브 매스가 더 커진 거잖아요." "전자가 프리 스페이스에 있을 때의 질량을 <b>레스트 매스</b>라고 합니다."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 07:39</span> "그렇게 생각하면 반도체 내부에서는 유효질량이 커질 것 같은 느낌이 있잖아요. 그런데 이펙티브 매스란 개념은 그렇게 단순하지가 않습니다. 찾아보면 유효질량이 <b>레스트 매스보다 더 작게</b> 되는 경우도 나오고, 심지어 <b>음수</b>가 되는 경우도 있다."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 08:03</span> <b>그래핀 이야기</b> — "신소재가 나오면 과학자들은 기본 물성을 먼저 찾아봅니다. 기본 물성 중에 밴드 이런 게 있잖아요. 신소재를 발견했는데 E−k 다이어그램이 이렇게(극단적으로 뾰족하게) 됐어요." … "샤프하면 할수록 질량은 작아지죠. 그럼 극단적으로 샤프하면 질량이 어떻게 된다는 거예요? — <b>0</b>." … "질량이 없다는 게 무슨 말이에요? 마치 <b>자기부상열차처럼 아무런 저항 없이</b> 쭉 갈 수 있다는 말이에요. 한없이 가벼우면 조금만 힘을 가해도 … 전기가 무한대로 쭉 흐를 거 아니에요." … "이게 바로 <b>노벨상</b>을 받은 <b>그래핀</b>. 처음 나왔을 때 그래핀은 이펙티브 매스가 0 이다, 그래서 많이 주목을 받았죠." … "정확한 말로는 좀 잘못된 거긴 한데, 그만큼 이펙티브 매스라는 개념이 단순하게 딱 정의하기 쉽지는 않은 부분이 있다."<br>필기 「graphene : m* → 0 ⇒ bandgap = 0」과 X 자 그래프가 이 대목의 판서다. 교수님 스스로 "정확히는 잘못된 말"이라고 선을 그었다 — 그래핀의 E−k 는 포물선이 아니라 직선(원뿔)이라 이 유효질량 정의가 그대로 들어맞지 않기 때문이다.</div>
+<div class="exam"><b>★ 시험 포인트</b> — ① <b>p = ℏk</b> ("이것도 외우셔야 돼요") ② <b>E−k 위의 점 하나 = 전자가 있을 수 있는 상태 하나</b> ③ <b>1차 미분(기울기) = 속도, 2차 미분(곡률) = 1/m*</b> — 샤프할수록 가볍다 ④ <b>direct(GaAs) vs indirect(Si)</b> — 모멘텀 변화가 필요하면 에너지가 <b>열</b>로 빠져 빛이 안 나온다 ⑤ <b>Si 가 GaAs 보다 플랫 → m* 가 크다</b> ⑥ 용어로 <b>heavy hole / light hole</b>, <b>CBM(E<sub>C</sub>) · VBM(E<sub>V</sub>)</b>.</div>
+
 <h2 id="s5">5쪽<small>Chapter Overview ④ — DOS × 확률, 그리고 차원</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> 다만 왼쪽 절반(n·p, DOS × FDF)은 <b>27·31·32쪽 강의와 같은 이야기</b>이므로 거기서 들을 수 있다.<br><b>오른쪽 아래의 1D·2D·3D·0D와 「Quantum Dot」, 「Display」는 녹화 어디에도 없다.</b> "quantum dot", "퀀텀", "양자점", "display" 가 전사 1,314줄에 <b>한 번도 나오지 않는다.</b> 프랙티스 세션에서 나온 심화 이야기로 보인다.</p>
 
@@ -579,7 +651,22 @@ sub,sup{font-size:11px}
 ③ <b>3D DOS g(E) ∝ √E</b> — 이 비례 관계 하나는 반드시<br>
 ④ <b>차원이 줄면 DOS 모양이 바뀐다</b> — 3D √E 곡선 → 2D 계단 → 1D 톱니 → <b>0D 막대(양자점)</b><br>
 ⑤ <b>0D = Quantum Dot, 균일 ⇒ Display</b> — <b>녹화에는 없는 자료 전용 항목</b>이다. 다만 뿌리는 18~19쪽 무한 우물과 같다<br>
-※ 이 쪽은 음성이 없다. 특히 <b>1D·2D·0D</b>는 본문 슬라이드에도 유도가 없으니, 프랙티스 세션 자료를 확인하는 것이 안전하다.</div>
+※ 영상 녹화에는 음성이 없지만, <b>오프라인 리뷰 수업</b>에서 1D·2D·0D 와 퀀텀닷을 설명하고 <b>과제</b>까지 냈다 — 아래 초록 상자.</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">리뷰 수업 <b>리뷰③ 10:45 ~ 19:41</b> 이 이 쪽이다. 위에서 "녹화 어디에도 없다"고 적은 <b>1D·2D·3D·0D, Quantum Dot</b> 이 이 대목에서 나왔다. 수업 마지막에 낸 <b>과제(테이크홈 메시지)</b>도 이 쪽 이야기다 — <a href="#s903">부록 ③</a>에 따로 모았다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 11:03</span> "그다음 계획이 바로 <b>Density of States + Fermi</b>." … "반도체 내에서 <b>전자가 몇 개 있냐, 홀이 몇 개 있냐</b>를 얘기하기 위해서 우리가 하나 둘 셋 넷 이렇게 세야 되는데, 전자는 입자가 아니라 <b>파동</b>이기 때문에 정확한 위치를 알 수가 없고. 그렇기 때문에 어떻게 하자 — 전자가 존재할 수 있는 <b>방의 개수</b>, 즉 스테이트의 개수를 세고, 거기다가 그 스테이트를 채울 <b>확률을 곱하자</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 11:56</span> "원래 하면 <b>number of states</b> 죠. 그런데 반도체가 커지면 스테이트 개수는 늘어나니까 이걸 당연히 <b>볼륨으로 나눠</b>줘야 되고, 그렇기 때문에 얘가 <b>density of states</b>." … "DOS 는 <b>function of energy</b> 입니다. 주로 g(E). 페르미−디랙 디스트리뷰션도 function of energy, f(E). 이거 두 개를 곱하면 <b>전자 밀도</b>가 나오죠. 이거를 <b>전체 에너지에 대해서 적분</b>하면 전체 전자 밀도가 나오더라." … "홀 같은 경우는 밸런스 밴드 DOS 에다가 전자를 <b>채우지 않을 확률</b>."<br>필기 「# of state in the CB/Vol × Probability = # of ⓔ in CB/Vol」과 「DOS × FDF, function of E」가 이 설명이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 14:00</span> "유도 과정을 잘 따라가 보면 DOS 가 아주 복잡하게 나오는데, 결국 핵심은 <b>√E 에 비례하더라</b>. 유도 과정은 교재를 참고하시면 되고요." (→ <a href="#s32">32~34쪽</a>)</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 14:23</span> <b>교재의 DOS 는 3차원 전용</b> — "추가로 알아야 될 것. 우리 교재에 나온 거는 일반적인 DOS 인데, 일반적인 DOS 는 바로 <b>3차원 반도체</b>에 대한 DOS 입니다. 그냥 덩어리 반도체." … "만약에 3차원 덩어리를 <b>아주 얇게 잘랐어</b>. 2차원 반도체가 되면 반도체에 존재하는 방의 수가 몇 개가 되냐, 이게 이제 궁금합니다."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 15:12</span> <b>2차원은 이미 공장에 있다</b> — "멀쩡한 3차원 반도체를 왜 2차원으로 잘라? — 실제로 상업화해서 지금 쓰고 있죠. 3D <b>FinFET</b> 구조 다음에 이제 <b>게이트 올 어라운드(GAA)</b> 구조 많이 들어봤죠. 그래서 지금 <b>나노시트</b>를 씁니다. 반도체 실리콘을 <b>5 나노</b>로 만들어요. 5 나노면 — 실리콘 격자 상수가 몇이에요? <b>0.5 나노</b>잖아 — 유닛셀을 <b>한 10번 정도 반복한</b> 아주 얇은 애를 실제 소자에 쓰는 거죠."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 15:51</span> "그럼 2차원 반도체의 2차원 DOS 는 뭐가 되냐면 — <b>일정</b>하게 된다(에너지에 무관한 상수, 계단). 그리고 더 나아가서 1차원(1D)." … 3D·2D·1D DOS 를 에너지에 대해 칠판에 나란히 그렸다(16:22~16:52, 그리는 동안 말이 거의 없다). … "이 <b>방의 개수와 방들이 분포한 에너지의 분포</b>가 반도체의 모양(차원)에 따라서 달라진다는 겁니다."<br>필기 왼쪽 아래 「( 1D / 2D / 3D ∝ √E」가 이 판서다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 17:14</span> "지금 여러분도 알다시피 반도체는 이미 <b>나노 영역</b>에 들어왔어요. 그래서 2차원 반도체, 1차원 반도체 이런 것들이 <b>미래의 얘기가 아니고 현재 기술</b>에서 사용하고 있는."</div>
+<div class="exam"><b>★ 과제 — 테이크홈 메시지</b> <span class="ts">리뷰③ 17:27</span> "그런데 생각해 보면, 여기(DOS)가 달라지면 뭐가 달라지지? <b>테이크홈 메시지</b>. 생각해 보세요. 우리가 지금 수업 시간에 배웠던 건 <b>다 3차원 기반</b>이었습니다. 그럼 <b>전류식</b> 이런 것도 다 3차원 DOS 로 유도하는 거죠. 그런데 반도체가 2차원이 되면 이 DOS 가 달라지는데, <b>DOS 가 달라지면 도대체 뭐가 달라질까?</b> 한번 생각을 해 보시죠."<br>→ 생각해 볼 방향은 <a href="#s903">부록 ③</a>에 정리했다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 17:55</span> "2차원, 1차원이잖아요? 그러면 <b>제로디(0D)</b>가 있습니다. 제로디는 이 반도체를 아주 작게 해 볼래요. 그럼 얘 어디서 많이 본 것 같아요? — 바로 얘를 우리가 <b>퀀텀닷</b>(양자점), <b>양자 구속 효과</b>." … 1D 는 <b>나노와이어</b>, 2D 는 <b>나노시트</b>, 0D 는 <b>퀀텀닷</b>.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 18:22</span> "제로디가 되면 DOS 가 어떻게 될까요?" — 학생: "델타…" — "맞습니다. 바로 <b>델타 함수</b>." … "DOS 가 델타 함수라는 거는 스테이트가 <b>딱 내가 원하는 에너지에만</b> 있다는 거죠. E₁, E₂, E₃. 이 <b>밴드가 아니라 하나만 딱</b> 있다는 거죠. <b>마치 아톰처럼</b>."<br>필기 「0D : (세로 막대 하나)」와 붉은 「Quantum Dot.」이 이 대목이다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰③ 19:04</span> <b>원자에서 출발해 원자로 돌아온다</b> — "우리가 <b>아톰으로 시작</b>을 했어요. 아톰을 규칙적으로 어레인지를 하면 <b>3D</b>(결정)가 돼. 그런 다음에 걔를 자르고 잘라서 <b>퀀텀닷</b>. 아톰은 훨씬 더 작죠. 퀀텀닷은 그냥 작기만 한 건데 <b>수 나노미터</b>. 그런데 수 나노미터 영역에 들어오면 <b>마치 아톰과 유사한 성격</b>을 가지게 된다는 겁니다. 그래서 퀀텀닷을 다른 말로 <b>아티피셜 아톰(artificial atom, 인공 원자)</b>이라고 하나."<br>3장의 출발점(원자 하나의 띄엄띄엄한 준위, <a href="#s3">3쪽</a>)과 끝(양자점의 δ 함수 DOS)이 같은 모양이라는 것이 이 이야기의 요점이다.</div>
+<div class="exam"><b>★ 시험 포인트</b> — ① <b>n = ∫ g(E)·f(E) dE</b>, 홀은 g<sub>v</sub>(E)·[1 − f(E)] ② 교재(3D) DOS <b>g(E) ∝ √E</b> ③ 차원별 DOS — <b>3D ∝ √E / 2D = 상수(계단) / 1D ∝ 1/√E / 0D = δ 함수</b> ④ 이름 짝 — <b>2D 나노시트(GAA) · 1D 나노와이어 · 0D 퀀텀닷</b> ⑤ <b>퀀텀닷 = artificial atom</b> ⑥ 리뷰는 여기서 시간이 다 돼 끝났다. <a href="#s6">6쪽</a>(페르미 에너지 정의)은 이 리뷰에서 다루지 못했다.</div>
+
 <h2 id="s6">6쪽<small>Chapter Overview ⑤ — 페르미 에너지의 정의</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> 오버뷰 다섯 장 중 마지막이고, 가장 짧다. 다만 여기 적힌 <b>E_F의 정의</b>는 <b>32·33쪽 강의에서 그대로 다뤄지므로</b>, 그 두 쪽을 보면 이 쪽은 요약으로 읽힌다.</p>
 
@@ -1039,6 +1126,8 @@ sub,sup{font-size:11px}
 ⑤ <b>원자 N개 → 준위 N개</b>, 그리고 <b>N이 클수록 간격이 좁아진다</b><br>
 ⑥ <b>"really important"를 세 번</b> 말한 쪽이다<br>
 ⑦ 슬라이드 표기 <b>"spitted"</b>는 오기다. 바른 말은 <b>split</b>이며 교수님도 split이라 말한다</div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 energy splitting 을 <b>인공위성 궤도</b>로 다시 설명했다 → <a href="#s3">3쪽</a> 초록 상자.</div>
+
 <h2 id="s11">11쪽<small>Formation of Energy Bands ① — 개수를 늘리면</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>Formation of Energy Bands</div><div class="exp"><b>"밴드"라는 말이 정식으로 태어나는 쪽</b>이다. 6쪽의 "원자 N개 → 준위 N개"를 끝까지 밀고 가면 여기가 나온다.</div></div>
 
@@ -1535,6 +1624,8 @@ sub,sup{font-size:11px}
 ⑤ <b>"밴드갭의 크기와 성질에 따라 물질이 분류된다"</b> — 2쪽에서 예고하고 여기서 회수되는 문장<br>
 ⑥ 숫자 감각 — 상온의 kT ≈ <b>0.026 eV</b>, Si 1.1 eV, SiO₂ 9 eV<br>
 ⑦ <b>"같은 결과를 슈뢰딩거 방정식으로 다시 유도한다"</b> — 13~20쪽의 목적지가 이미 정해져 있다는 뜻</div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 밴드가 꽉 참·반만 참·빔·겹침에 따라 도체·반도체·부도체가 갈리는 과정과, <b>밴드갭 크기만으로는 못 가른다(Si₃N₄ vs 다이아몬드)</b>는 이야기를 했다 → <a href="#s3">3쪽</a> 초록 상자.</div>
+
 <h2 id="s17">17쪽<small>The Kronig-Penney Model ① — 주기적 퍼텐셜로 바꾸기</small></h2>
 <div class="row"><div class="orig">3.1 Allowed and Forbidden Energy Bands<br>The Kronig-Penney Model</div><div class="exp"><b>수학 유도가 시작된다.</b> 13~20쪽 여덟 쪽이 한 덩어리이고, 목적지는 <b>이미 아는 결론</b>이다 — 12쪽에서 교수님이 <b>"the same result"</b>라고 못 박았다.<br>이 쪽은 그중 <b>준비 단계</b>다. 실제 결정의 퍼텐셜은 풀 수가 없어서, <b>풀 수 있는 모양으로 바꾸는</b> 작업만 한다.</div></div>
 
@@ -2399,6 +2490,8 @@ sub,sup{font-size:11px}
 ⑥ <b>dE = Fdx = Fvdt</b> — 전기장이 한 일이 에너지를 올리고, 그것이 k의 변화로 나타난다<br>
 ⑦ <b>conduction electron = 전도대에 있는 전자</b><br>
 ※ 슬라이드의 <b>"ith ion"</b>은 전자를 뜻한다 (오기)</div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 E−k 위의 대칭(쌤쌤) → 전기장으로 시프트 → 전류를 다시 설명했다 → <a href="#s4">4쪽</a> 초록 상자(리뷰③ 00:17).</div>
+
 <h2 id="s27">27쪽<small>Electron Effective Mass — 내부 힘을 질량에 숨기다</small></h2>
 <div class="row"><div class="orig">3.2 Electrical Conduction in Solids<br>Electron Effective Mass</div><div class="exp"><b>유효질량</b>이 나오는 쪽이다. 3쪽 오버뷰에서 <b>m*에 붉은 동그라미</b>가 쳐져 있던 그 개념이다.<br>발상 자체는 아주 실용적이다 — <b>계산할 수 없는 것을 질량 안에 숨겨 버린다.</b></div></div>
 
@@ -2494,6 +2587,8 @@ sub,sup{font-size:11px}
 ⑥ <b>parabolic approximation</b> — 결정의 E−k는 포물선이 아니지만 <b>밴드 바닥 근처</b>만 보면 포물선으로 근사할 수 있다. 이 근사 위에서만 m*가 정의된다<br>
 ⑦ <b>m*는 진짜 무게가 아니다.</b> 결정의 붙잡는 효과까지 뭉뚱그린 <b>겉보기 질량</b>이고, 물질마다 다르다<br>
 ⑧ <b>rest mass</b> = 자유 공간에서의 진짜 질량 m</div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 유효질량을 <b>물속 축구공</b>으로, 곡률과 질량을 y = x² · 3x² 비교로, <b>그래핀 m* → 0</b> 을 다시 설명했다 → <a href="#s4">4쪽</a> 초록 상자.</div>
+
 <h2 id="s28">28쪽<small>Concept of the Hole ① — 빈자리가 움직인다</small></h2>
 <div class="row"><div class="orig">3.2 Electrical Conduction in Solids<br>Concept of the Hole</div><div class="exp"><b>정공(hole)</b>이 정식으로 나오는 쪽이다. 교수님이 <b>"really important"</b>라고 못 박는다.<br>반도체에서 전하 운반자는 <b>전자와 정공 둘</b>이고, 4장과 5장이 전부 이 둘로 돌아간다.</div></div>
 
@@ -2701,6 +2796,8 @@ sub,sup{font-size:11px}
 ⑤ <b>"near the top of the allowed band"</b>라는 조건이 붙는다. 밴드 전체가 아니다<br>
 ⑥ <b>표기법 변경</b> — <b>"from now on"</b>, VB를 CB처럼 <b>빈 바탕에 + 몇 개</b>로 그린다. 4·5장의 모든 그림이 이 방식이다<br>
 ⑦ 26쪽에서 <b>J = qΣv<sub>i</sub></b> 형태를 준비한 이유가 ①의 조작 때문이다</div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 실리콘 밸런스 밴드의 두 밸리 → <b>heavy hole · light hole</b> 을 소개했다 → <a href="#s4">4쪽</a> 초록 상자(리뷰② 35:31).</div>
+
 <h2 id="s30">30쪽<small>Direct & Indirect Semiconductors — 실리콘으로 LED를 못 만드는 이유</small></h2>
 <div class="row"><div class="orig">3.3 Extension to Three Dimensions<br>Direct &amp; Indirect Semiconductors</div><div class="exp"><b>3.3절 전체가 이 한 쪽</b>이다. 목차 제목은 "3차원으로 확장"이지만 실제 내용은 <b>direct / indirect 밴드갭</b>이고, 3쪽에서 교수님이 그렇게 예고했다.<br><b>"실리콘으로는 LED를 만들 수 없다"</b>는 결론이 여기서 나온다.</div></div>
 
@@ -2804,6 +2901,8 @@ sub,sup{font-size:11px}
 ⑥ <b>direct = 광전 소자(LED, laser)용</b><br>
 ⑦ <b>"Si가 더 넓음 ⇒ m* ↑"</b> — Si의 CB 골이 더 완만하므로 <b>유효질량이 크다</b>. 23쪽의 곡률–질량 관계를 적용한 것<br>
 ⑧ <b>E−k는 k에 대해 대칭</b>이므로 반쪽씩 붙여 그릴 수 있다</div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 direct / indirect 를 다시 설명하며 <b>LED 팀과 전력 반도체 팀이 한 동네</b>라는 이야기를 덧붙였다 → <a href="#s4">4쪽</a> 초록 상자.</div>
+
 <h2 id="s31">31쪽<small>Density of States (DOS) — 세는 대신 자리를 센다</small></h2>
 <div class="row"><div class="orig">3.4 Density of States Function<br>Density of States (DOS)</div><div class="exp"><b>3장 뒷부분이 시작된다.</b> 2쪽 오버뷰에서 <b>「전자 수 = DOS × 확률」</b>이라고 말로 세운 것의 <b>첫 인자</b>다.<br>이 쪽은 유도가 아니라 <b>"왜 이런 함수가 필요한가"</b>를 납득시키는 쪽이다. 그리고 <b>자료에 없는 비유</b>가 하나 나온다.</div></div>
 
@@ -3001,6 +3100,8 @@ sub,sup{font-size:11px}
 ⑤ <b>집 짓기 비유 (자료에 없음)</b> — 사람 = 전자, 방 = quantum state, 짓는 속도 = 전류. <b>방이 많아야 사람을 더 쓸 수 있다</b><br>
 ⑥ <b>구체 예</b> — E₃에 자리 4개, 전자 3개 ⇒ 확률 <b>3/4 = 75%</b> ⇒ <b>4 × 3/4 = 3</b>개. 2쪽의 「50 × ½ = 25」와 같은 계산<br>
 ⑦ <b>"직접 세는 것과 결과가 같아 보이는데 왜?"</b> — 교수님이 먼저 꺼낸 의문이다. 답은 <b>전자의 위치를 정확히 말할 수 없기 때문</b></div>
+<div class="fig" style="border-left-color:#1f8a78;background:#e8f6f2">오프라인 리뷰 수업에서 DOS × FDF 를 다시 설명하고, <b>2D·1D·0D DOS</b> 와 <b>과제(테이크홈 메시지)</b>를 냈다 → <a href="#s5">5쪽</a> 초록 상자, <a href="#s903">부록 ③</a>.</div>
+
 <h2 id="s32">32쪽<small>DOS Derivation (1D) — 자리 하나가 차지하는 길이</small></h2>
 <div class="row"><div class="orig">3.4 Density of States Function<br>DOS Derivation (1D)</div><div class="exp"><b>4쪽 오버뷰에서 ★★★ 「유도과정!」이라고 형광까지 친 그 유도</b>가 시작된다.<br>이 쪽은 <b>1차원</b>이다. 실제로 필요한 것은 3차원인데, <b>1차원에서 방법을 익히고 그대로 3차원에 옮기는</b> 구성이다. <b>절차를 통째로 외우는 것이 목표</b>다.</div></div>
 
@@ -3594,7 +3695,7 @@ sub,sup{font-size:11px}
 ⑥ <b>3장의 최종 두 식</b><br>&nbsp;&nbsp;<b>전자 : n(E) = g<sub>c</sub>(E)·f<sub>F</sub>(E)</b><br>&nbsp;&nbsp;<b>정공 : p(E) = g<sub>v</sub>(E)·[1 − f<sub>F</sub>(E)]</b><br>&nbsp;&nbsp;4장이 여기서 시작한다<br>
 ⑦ 두 곡선이 <b>E<sub>F</sub>에서 교차</b>하는 이유 — 거기서 둘 다 ½<br>
 ※ <b>41:42~43:35 (약 1분 50초)</b>와 <b>44:27~45:15 (약 50초)</b>는 전사가 깨졌다. <b>반드시 직접 들어볼 것.</b></div>
-<h2 id="s901">부록<small>부록 — 3장 마무리 인사</small></h2>
+<h2 id="s901">부록<small>부록 ① 3장 마무리 인사 (영상)</small></h2>
 <p class="fig">슬라이드와 직접 이어지지 않는 대목이다. <b>녹화7 45:15 ~ 46:36</b>, 3장 마지막 1분이다.</p>
 
 <div class="said"><b>강의</b> <span class="ts">녹화7 45:15</span> "이제 이 챕터입니다."</div>
@@ -3610,6 +3711,25 @@ sub,sup{font-size:11px}
 <b>앞부분(3.1~3.3)</b> · 속박 ⇒ 양자화된 에너지 ⇒ (+파울리) ⇒ <b>energy splitting</b> ⇒ <b>energy band</b> ⇒ <b>band gap</b>. 같은 결론을 <b>크로니히–페니 모델</b>로 한 번 더 유도했고, 갭의 크기로 <b>부도체·반도체·금속</b>이 갈렸다. 그리고 갭의 <b>성질</b>(direct / indirect)이 발광 소자의 가능 여부를 갈랐다.<br><br>
 <b>뒷부분(3.4~3.5)</b> · 전자는 <b>세는 것이 아니라</b> <b>자리(DOS) × 확률(페르미–디락)</b>로 구한다. <b>n = ∫ g(E) f(E) dE.</b><br><br>
 <b>4장으로</b> · 그 n 과 p 를 가지고 <b>실제 전류</b>를 계산하는 것이 다음 단원이다. 3장 목차 판서에 적힌 <b>「→ ch.4 current ?」</b>가 그 예고였다.</div>
+<h2 id="s902">부록<small>부록 ② 리뷰 수업 중 — 프랑스 출장 이야기 · 질문을 해 달라는 부탁</small></h2>
+<p class="fig">3장 리뷰 수업 <b>리뷰① 04:30 ~ 07:30</b> 구간이다. 밴드 이야기를 하다가 잠시 옆으로 샜다.</p>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 04:30</span> "제가 사실 지난주에 <b>출장</b>을 갔다 왔습니다." — 프랑스의 <b>그랑제콜</b> 이야기. 일반 대학과 별도로 있는 최상위 엘리트 학교로, 고등학교를 마치고 2년간 따로 준비해 들어가고, 4년을 마치면 일반 대학 석사와 같다. "프랑스의 1등부터 5등까지 그랑제콜에 다 가고, 정계나 산업계 사람들이 다 그랑제콜 출신."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰① 05:46</span> 그곳 교수와 이야기해 보니 수업 방식이 <b>우리와 비슷</b>했다. 예를 들어 양자역학이면 그 분야 최고 권위자가 <b>수백 명 전체 강의</b>를 하고, 12명의 교수와 책임 교수 한 명(13명)이 한 팀이 되어 <b>10명 남짓씩 디스커션</b>을 맡는다. "우리랑 유사한 방식입니다. 근데 차이가 뭐예요 — 거기는 (한 조에) 12명이고 저는 60명. 60명이면 디스커션이 안 되잖아." 그리고 13명의 교수가 <b>매주 점심을 같이 먹으면서</b> "오늘 디스커션 세션에서 이런 얘기가 나왔는데, 이걸 강의 내용에 반영하면 어떻게 해야 될까" 토론해 강의를 업그레이드한다고.</div>
+<div class="exam"><b>★ 참여</b> <span class="ts">리뷰① 07:12</span> "그래서 여러분들도 참여 — 제가 말하는 거에 손 들고 대답하는 거 말고도, <b>'저게 저렇게 되면 어떻게 돼요?'</b> 이런 <b>질문</b>도 좀 해 줬으면 좋겠다." 대답뿐 아니라 질문도 참여로 본다는 뜻이다.</div>
+
+<h2 id="s903">부록<small>부록 ③ 과제(테이크홈 메시지)와 마무리</small></h2>
+<p class="fig">3장 리뷰 수업 마지막 구간이다 — 과제는 <b>리뷰③ 17:27</b>, 마무리는 <b>리뷰③ 19:41 ~ 20:14</b>. 과제 원문은 <a href="#s5">5쪽</a>에도 있다.</p>
+<div class="exam"><b>★ 과제 원문</b> <span class="ts">리뷰③ 17:27</span> "여기(DOS)가 달라지면 뭐가 달라지지? <b>테이크홈 메시지</b>. 생각해 보세요. 우리가 지금 수업 시간에 배웠던 건 <b>다 3차원 기반</b>이었습니다. 그럼 <b>전류식</b> 이런 것도 다 3차원 DOS 로 유도하는 거죠. 그런데 반도체가 2차원이 되면 이 DOS 가 달라지는데, <b>DOS 가 달라지면 도대체 뭐가 달라질까?</b> 한번 생각을 해 보시죠."<br>제출 형식·기한은 녹음에 없다. 말로 던진 <b>생각해 올 질문</b>이다.</div>
+<div class="key"><b>생각해 볼 방향</b> — <i>여기부터는 정리한 사람이 3장 내용으로 풀어 본 것이다. 교수님이 준 답이 아니다.</i><br>
+출발점은 5쪽 필기의 공식 하나다. <b>n = ∫ g(E)·f(E) dE</b>. f(E)(페르미−디랙)는 차원과 상관없다. 바뀌는 건 <b>g(E)</b> 하나뿐인데, 그게 바뀌면 이 식에서 나오는 모든 것이 따라 바뀐다.<br><br>
+<b>① 전자 수 n, 정공 수 p 가 바뀐다.</b> 3D 는 g(E) ∝ √E 라 밴드 바닥(E<sub>C</sub>)에서 자리가 0 부터 천천히 늘어난다. 2D 는 바닥에서부터 <b>곧바로 일정한 값</b>이다. 같은 E<sub>F</sub>·같은 온도라도 적분 결과가 달라진다. 4장에서 배울 n = N<sub>c</sub>·exp[−(E<sub>C</sub>−E<sub>F</sub>)/kT] 의 <b>N<sub>c</sub></b>(유효 상태 밀도)는 3D 에서 T<sup>3/2</sup> 에 비례하지만, 2D 로 다시 유도하면 T 에 비례하는 꼴로 바뀐다. 교수님 말대로 "전류식도 다 3차원으로 유도한 것"이므로 <b>다시 유도해야 한다</b>.<br><br>
+<b>② 밴드갭이 사실상 커진다.</b> 얇게(또는 작게) 자르면 전자가 갇혀 무한 우물(18~19쪽)처럼 에너지가 E₁, E₂ … 로 양자화된다. 가장 낮은 자리가 밴드 바닥보다 <b>위로 올라가므로</b> 전자가 넘어야 할 갭이 넓어진다. 크기가 작을수록 더 넓어진다(E<sub>n</sub> ∝ 1/a²).<br><br>
+<b>③ 빛의 색과 선명도가 바뀐다.</b> 0D(퀀텀닷)는 DOS 가 δ 함수라 전자가 딱 정해진 에너지에서만 떨어진다. 크기만 바꿔 <b>색을 고를 수 있고</b>, 크기를 균일하게 만들면 모두 같은 색을 낸다. 5쪽 필기 「균일 ⇒ Display」가 이 말이다. 1D 는 g ∝ 1/√E 로 밴드 가장자리에서 DOS 가 뾰족하게 솟아 흡수·발광 스펙트럼이 좁아진다.<br><br>
+<b>④ 전자가 움직일 수 있는 방향이 줄어든다.</b> 2D 는 두 방향, 1D 는 한 방향으로만 흐를 수 있다. 전류는 결국 "움직일 수 있는 전자 수 × 속도"이므로 캐리어 수(①)와 함께 전류식의 모양 자체가 달라진다. GAA 나노시트 트랜지스터를 설계할 때 3D 공식을 그대로 쓸 수 없는 이유다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰③ 19:41</span> "길어졌네요. <b>오늘 수업 여기까지</b> 하겠습니다. 감사합니다." — 5쪽(0D·퀀텀닷)까지 하고 끝났다. 6쪽(E<sub>F</sub> 의 정의)은 이 리뷰에서 다루지 못했다.</div>
+<div class="exam"><b>★ 참여 점수</b> <span class="ts">리뷰③ 19:59</span> "오늘 <b>참여 점수</b> — 오늘 (대답한) 학생들 나와 주세요." 수업 중 손 들어 대답한 학생을 수업 끝에 확인해 참여 점수를 준다.</div>
+<p class="fig" style="margin-top:40px">오프라인 리뷰 수업 인용은 자동 전사를 문맥으로 복원한 것이다. 강의실 녹음이라 인식 품질이 낮은 구간이 있어 조사·어미와 일부 숫자는 실제와 다를 수 있다. 흐린 대목은 본문에 따로 표시했다. 리뷰 수업 판서는 3~5쪽 필기에 이미 남아 있으므로 따로 옮기지 않았다.</p>
+
 <a class="top" href="#top">맨 위로</a>
 </div>
 </body>
