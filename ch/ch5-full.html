@@ -922,19 +922,526 @@ sub,sup{font-size:11px}
 ⑥ <b>보상 반도체에서는 근사를 쓸 수 없다</b><br>
 ⑦ <b>외인성은 다수 캐리어만, 진성은 둘 다</b></div>
 <h2 id="s10">10쪽<small>Velocity Saturation — 속도 포화 (5.1)</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig">5.1 Carrier Drift — Velocity Saturation</div><div class="exp"><b>속도 포화.</b> 5.1절의 마지막 장이고 <b>지금까지 쓴 식이 깨지는 조건</b>을 다룬다.<br>v<sub>d</sub> = μE 는 <b>전기장이 약할 때만</b> 맞다.</div></div>
+
+<div class="row"><div class="orig">At low electric fields, the drift velocity will increase linearly with an applied electric field.<br><span class="hand">(붉은 동그라미)</span> v<sub>d</sub> = μE , where μ is a constant</div><div class="exp"><b>"At low electric fields"</b> — 지금까지의 모든 식에 이 조건이 숨어 있었다.<br><b>"where μ is a constant"</b> 가 핵심 단서다. μ 가 상수여야 비례가 성립하는데, 전기장이 세지면 <b>μ 가 더 이상 상수가 아니다.</b></div></div>
+
+<div class="row"><div class="orig">- At high electric fields, the drift <u>velocity saturates</u> and becomes <u>independent</u> to the <u>applied electric field</u><br>- Saturation velocity: maximum velocity of charge carrier</div><div class="exp"><b>이 쪽의 결론</b>이고 밑줄이 세 군데다.<br><b>전기장을 아무리 올려도 속도가 그대로</b>다. 실리콘에서 <b>약 10⁷ cm/s</b>.<br><b>왜 큰일인가</b> — v<sub>d</sub> = μE 가 안 통하면 <b>J = σE 도 안 통한다.</b> 곧 <b>옴의 법칙이 깨진다.</b></div></div>
+
+<div class="row"><div class="orig">- Increasing electric field from the point of velocity saturation → the carrier velocity no longer increases because the carriers lose energy through <u>increased levels of interaction with the lattice</u></div><div class="exp"><b>왜 포화되는가</b>에 대한 답이고 서술형에 그대로 쓰는 문장이다.<br><b>에너지의 수지</b>다. 전기장은 에너지를 주고 전자는 격자에 부딪혀 잃는다. 세게 밀수록 <b>격자와의 상호작용도 격해져</b> 잃는 양이 함께 커지고, 결국 <b>주는 만큼 잃는</b> 상태에서 속도가 멈춘다.<br>비 오는 날 우산 들고 뛰는 것과 같다. 빨리 뛸수록 맞는 비도 세져서 어느 속도 이상은 못 낸다.</div></div>
+
+<div class="fig">왼쪽 그래프 — 가로축 <b>Electric field</b>, 세로축 <b>Carrier drift velocity</b>, 둘 다 로그 눈금. <b>T = 300 K</b>, 실선 <b>Electrons</b>, 점선 <b>Holes</b>.<br>· <b>Si·Ge</b> — 왼쪽에서 직선으로 올라가다 <b>10⁴ V/cm 부근부터 꺾여 10⁷ cm/s 근처에서 평평</b>해진다<br>· <b>GaAs</b> — 혼자 다르다. 봉우리를 찍고 <b>오히려 내려온다</b><br><b>로그 그래프라 직선 구간이 v = μE, 평평한 구간이 포화</b>다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">38:04</span> 제목 줄 위에 <b>F 와 E</b> 를 동그라미로 묶고 그 사이를 화살표로 잇는다. 그리고 <b>v<sub>d</sub> = μ(E)E</b> 꼴로 다시 써 놓는다 — <b>μ 자체가 E 에 따라 변한다</b>는 것을 식 모양으로 보이는 것이다. 슬라이드의 <b>"where μ is a constant"</b> 조건이 왜 중요한지를 손으로 말한 셈이다.<br><b>v<sub>d</sub> = μE</b> 에 동그라미를 치고, 그래프의 <b>꺾이는 지점</b>에 표시를 한다.</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">34:36</span> "So we [discussed] that <b>when there is a charge particle, electron or hole, and if we apply the electric field, there will be force applied to the charge particle, and [the] charge particle will gain energy to drift, and this velocity is called as drift velocity.</b>"</div>
+<div class="exp"><b>5.1절 전체를 한 문장으로 되감는다.</b> 속도 포화를 말하기 전에 <b>원래 식이 어디서 왔는지</b>부터 다시 세우는 구성이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">34:45</span> "and <b>mobility is the parameter [that] tells you how well this charged particle will move under this field</b>,"</div>
+<div class="exp">μ 의 정의를 다시 꺼낸다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">35:21</span> "so we can describe the relationship … as <b>velocity equal to mobility times E. That means if we increase the electric field, then we have increased drift velocity.</b>"</div>
+<div class="exp"><b>비례 관계</b>를 확인한다. 여기까지는 지금까지 배운 그대로다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">35:45</span> "So according to this equation, <b>if we increase the electric field further and further, then we can increase the drift velocity further and further</b> — <b>but what really happens is the drift velocity will stop increasing</b> when we increase the electric field."</div>
+<div class="exp"><b>이 쪽의 반전</b>이다. <b>"but what really happens(실제로 일어나는 일은)"</b> — 식이 말하는 것과 현실이 다르다고 못 박는다.<br>식을 믿고 끝까지 밀면 <b>속도가 무한대</b>가 되어야 하는데 그렇지 않다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">35:45</span> "so at a certain point of E field, <b>this drift velocity becomes saturated</b>,"</div>
+<div class="exp"><b>어느 지점부터</b> 멈춘다. 그래프에서 꺾이는 자리다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">36:13</span> "so <b>this phenomenon is called a velocity saturation.</b> So at low electric field, the drift velocity increases linearly … <b>however, when E field becomes high, the drift velocity no longer increases with increasing E field.</b>"</div>
+<div class="exp"><b>두 영역을 가른다.</b> <b>낮은 전기장 = 직선</b>, <b>높은 전기장 = 평평</b>.</div>
+
+<div class="said"><b>강의</b> <span class="ts">36:41</span> "so instead the drift velocity [is] saturated and <b>becomes independent to the applied E field</b>, so as shown in this figure, <b>all the semiconductors — silicon, germanium, and gallium arsenide — the drift velocity increases with increasing E field in the low E field region</b>,"</div>
+<div class="exp">그래프로 간다. <b>어느 물질이나 낮은 영역에서는 직선</b>이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">37:06</span> "as the E field increases, the drift velocity [is] saturated and no longer increases. And here, <b>saturation velocity is the maximum velocity of [the] charge carriers.</b>"</div>
+<div class="exp"><b>포화 속도의 정의</b>다. <b>낼 수 있는 최고 속도</b>.<br>소자 설계에 직결되는 숫자다. 트랜지스터가 얼마나 빨리 스위칭할 수 있는지의 <b>상한</b>을 정한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">37:31</span> "[the velocity no longer increases] because <b>under the high electric field, the interaction between carriers and the lattice also increases</b>, so <b>due to the increased level of interaction with the lattice, the drift velocity of carrier no longer increases with increasing electric field.</b>"</div>
+<div class="exp"><b>포화의 이유</b>를 두 번 돌려 말한다. 슬라이드의 밑줄 친 문장 그대로다.<br><b>전기장이 세지면 격자와의 상호작용도 함께 세진다</b> — 얻는 만큼 잃게 되어 더 빨라질 수가 없다.</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>v<sub>d</sub> = μE 는 낮은 전기장에서만</b> 성립한다. 조건 <b>"μ 가 상수일 때"</b> 가 붙어 있다<br>
+② <b>높은 전기장에서는 속도가 포화 → 전기장과 무관</b>해진다 → <b>옴의 법칙이 깨진다</b><br>
+③ <b>포화 이유</b> — <b>격자와의 상호작용이 격해져 얻는 만큼 에너지를 잃기</b> 때문. 이 문장이 답이다<br>
+④ <b>Si 포화 속도 ≈ 10⁷ cm/s</b>, 포화 시작 <b>≈ 10⁴ V/cm</b><br>
+⑤ <b>"식대로면 무한히 빨라져야 하는데 실제로는 멈춘다"</b> — 교수님이 반전을 주는 구조로 설명한다</div>
 <h2 id="s11">11쪽<small>Diffusion & Total Current Density — 확산과 전체 전류 (5.2)</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig">5.2 Carrier Diffusion — Diffusion &amp; Total Current Density</div><div class="exp"><b>5.2절</b>이다. 두 번째 움직이는 방식인 <b>확산</b>을 다루고, 마지막에 <b>drift 와 합쳐</b> 전체 전류를 완성한다. <b>5.2절은 이 한 쪽</b>뿐이다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] concentration gradient.</span><br><b>Diffusion</b>: flow of particles from a region of <u>high concentration</u> toward a region of <u>low concentration</u></div><div class="exp"><b>확산의 정의</b>다. <b>많은 쪽에서 적은 쪽으로.</b><br><b>왜 그렇게 되나</b> — 알갱이 하나하나는 <b>방향을 모른다.</b> 그저 열 때문에 제멋대로 튄다. 그런데 왼쪽에 100개, 오른쪽에 10개면 무작위로 튀어도 <b>왼→오로 건너가는 수가 더 많다.</b><br><b>drift 와의 결정적 차이 — 미는 힘이 없다.</b> 전기장도 필요 없고 전하를 띠지 않아도 일어난다.</div></div>
+
+<div class="row"><div class="orig">J<sub>nx|dif</sub> = eD<sub>n</sub> <span class="hand">(dn/dx 에 동그라미)</span> &nbsp; D<sub>n</sub>: electron diffusion coefficient, unit: cm²/s<br>J<sub>px|dif</sub> = −eD<sub>p</sub>(dp/dx) &nbsp; D<sub>p</sub>: hole diffusion coefficient, unit: cm²/s</div><div class="exp"><b>두 확산 전류</b>이고 <b>부호가 반대</b>다.<br>· <b>전자 +</b> — 전자는 많은 쪽→적은 쪽으로 가고(마이너스 하나), <b>음전하</b>라 전류가 반대(마이너스 또 하나). <b>두 번 뒤집혀 +</b><br>· <b>정공 −</b> — 흐르는 방향은 같은데 <b>양전하</b>라 전류 방향이 같다. 상쇄될 마이너스가 없어 <b>−</b> 가 남는다<br><b>drift 에서는 둘 다 + 였다.</b> 절마다 부호 규칙이 다르니 표로 묶어 외우는 편이 안전하다.<br><b>D 의 단위 cm²/s</b> 는 <b>넓이 ÷ 시간</b> 이다. 확산 거리가 시간이 아니라 <b>√시간</b> 에 비례하는 성질을 담고 있다.</div></div>
+
+<div class="fig">가운데 그림 둘 — <b>flux(흐름)</b> 와 <b>current(전류)</b> 를 나눠 보여 준다.<br><b>왼쪽(전자)</b> — 농도가 오른쪽으로 갈수록 높다. <b>Electron flux</b> 화살표는 <b>왼쪽</b>(많은 쪽에서 적은 쪽), <b>Electron diffusion current density</b> 는 <b>오른쪽</b>(음전하라 반대).<br><b>오른쪽(정공)</b> — <b>Hole flux</b> 와 <b>Hole diffusion current</b> 가 <b>둘 다 왼쪽</b>(양전하라 같은 방향).<br><b>이 그림 하나로 위 두 식의 부호가 설명된다.</b></div>
+
+<div class="row"><div class="orig"><span class="hand">(Total current density 에 동그라미)</span> <b>Total current density</b><br>J = <u>enμ<sub>n</sub>E<sub>x</sub> + epμ<sub>p</sub>E<sub>x</sub></u> + <u>eD<sub>n</sub>(dn/dx) − eD<sub>p</sub>(dp/dx)</u><br><span style="font-size:.9em">└─ Drift current ─┘ └─ Diffusion current ─┘</span></div><div class="exp"><b>5장 전체의 결론식</b>이다. 슬라이드가 중괄호로 두 덩어리를 묶어 이름까지 붙여 놓았다.<br><b>3쪽 Contents 에서 「4가지 성분」이라고 한 그것이 여기 네 항</b>이다.<br><b>(캐리어 2종) × (방식 2가지) = 네 항.</b> 외울 것이 아니라 <b>구조를 알면 만들어 낼 수 있다.</b><br><b>어떤 항이 살아남나</b> — 균일 도핑에 전압만 걸면 <b>drift 둘만</b>, 전압 없이 한쪽에 빛을 쬐면 <b>diffusion 둘만</b>, pn 접합이면 <b>넷 전부</b>.</div></div>
+
+<div class="row"><div class="orig">In three dimensions,<br>J = enμ<sub>n</sub>E<sub>x</sub> + epμ<sub>p</sub>E<sub>x</sub> + eD<sub>n</sub>∇n − eD<sub>p</sub>∇p</div><div class="exp"><b>d/dx 가 ∇ 로</b> 바뀐 것뿐이다. <b>∇(나블라)</b> 은 <b>세 방향 기울기를 한꺼번에</b> 쓰는 기호다. 새 물리는 없고, 시험에서는 거의 1차원으로 푼다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">42:12</span> · 왼쪽에 <b>봉우리 모양 곡선 두 개</b>를 그리고 각각 <b>n</b> 과 <b>p</b> 라 적는다. <b>한곳에 몰린 캐리어가 양옆으로 퍼지는</b> 모습으로, 슬라이드의 직선 그래프보다 <b>실제 소자에서 벌어지는 일</b>에 가깝다<br>· <b>dn/dx</b> 와 <b>dp/dx</b> 에 각각 동그라미 — <b>기울기가 원인</b>임을 짚는다<br>· 가운데 그림의 <b>Electron flux</b> 에 동그라미, <b>diffusion current density</b> 화살표를 따라 덧그린다<br>· 아래 <b>Total current density</b> 를 크게 동그라미로 묶고, <b>drift 두 항</b>과 <b>diffusion 두 항</b>에 각각 밑줄<br>· <b>두 diffusion 항 사이의 − 기호</b>에 따로 표시를 한다 — <b>부호가 다르다</b>를 못 박는 것</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">38:00</span> "so following to the drift current, <b>we will look at another mechanism generating current in semiconductors, that is diffusion current</b>, so <b>diffusion is a flow of particle due to concentration gradient.</b>"</div>
+<div class="exp">5.2절이 시작된다. <b>원인이 농도 기울기</b>다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">38:34</span> "so when there is a density gradient or concentration gradient, <b>there is a flow of particle from a region of high concentration toward the region of lower concentration.</b>"</div>
+<div class="exp">슬라이드 정의를 읽는다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">38:56</span> "and this figure shows the density gradient of electron or hole with respect to the position, so <b>this is an electron rich region, and this is the hole rich region.</b>"</div>
+<div class="exp">그림의 두 영역을 짚는다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">39:12</span> "because of a high electron density in this region, <b>we have a diffusion of electron from this side to this side.</b>"</div>
+<div class="exp">전자의 흐름 방향이다. <b>많은 쪽 → 적은 쪽.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">39:28</span> "and <b>when there is a movement of charged particle, so there is always a current generated</b>, so because of this movement of electron due to diffusion, so we have an electron current in this direction — <b>so no, actually opposite direction as the movement of electron</b>,"</div>
+<div class="exp"><b>교수님이 말하다 스스로 고치는 대목</b>이다. 방향을 한 번 잘못 말했다가 <b>"아니, 반대 방향"</b> 이라고 바로잡는다.<br>그만큼 <b>헷갈리기 쉬운 자리</b>라는 뜻이다. 전자는 음전하라 <b>흐름 방향과 전류 방향이 반대</b>다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">39:48</span> "so similarly we have a high concentration of hole in this region, so we have a diffusion from this region to this region … <b>so the hole current is going to be the same direction as the movement of hole.</b>"</div>
+<div class="exp"><b>정공은 반대다.</b> 양전하라 <b>흐름과 전류가 같은 방향</b>이다.<br>이 한 쌍이 <b>위 두 식의 부호</b>를 그대로 설명한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">40:18</span> "so we can mathematically describe diffusion current of electron or hole as <b>a product of elementary charge, diffusion coefficient, and density gradient</b> — so here <b>dn/dx, dp/dx is the density gradient</b>, and <b>D<sub>n</sub> or D<sub>p</sub> is the electron and hole diffusion coefficient.</b>"</div>
+<div class="exp"><b>식을 세 조각으로</b> 나눠 읽어 준다. <b>전하량 × 확산계수 × 농도 기울기.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">40:48</span> "so <b>this diffusion coefficient tells you how well this charged particle can diffuse when there is a concentration gradient.</b>"</div>
+<div class="exp"><b>D 의 정의를 한 줄로</b>. drift 의 μ 와 <b>정확히 같은 자리</b>를 맡는다 — μ 는 "전기장이 있을 때 얼마나 잘 움직이나", D 는 "농도 차가 있을 때 얼마나 잘 퍼지나".<br>이 대칭이 <b>11쪽 아인슈타인 관계식</b>의 복선이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">40:59</span> "so <b>we have a plus and minus sign here, and you can easily understand why we have plus or minus sign from these figures.</b>"</div>
+<div class="exp"><b>부호를 외우지 말고 그림에서 읽으라</b>는 지시다. flux 화살표와 current 화살표의 방향을 보면 바로 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">41:21</span> "then we can write the total current density in semiconductors, so <b>the total current density is the current due to drift plus current due to diffusion.</b>"</div>
+<div class="exp"><b>5.1 + 5.2 가 합쳐진다.</b> 3쪽에서 두 절을 묶어 current 로 보낸 그 화살표가 여기서 식이 된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">41:42</span> "This is the current due to drift, and this is the current due to diffusion. So, <b>electron drift, hole drift, and electron diffusion, and hole diffusion.</b>"</div>
+<div class="exp"><b>네 항을 하나씩 이름 붙여</b> 읽는다. <b>3쪽 Contents 에서 "총 4가지 성분"이라고 한 그대로</b>다. 두 쪽에 걸쳐 같은 구조를 두 번 말한 셈이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">41:56</span> "And we can also write the total current density like this in three dimensions. So here <b>we use a del operator to describe the density gradient.</b>"</div>
+<div class="exp">3차원 형태다. <b>∇</b> 는 세 방향 기울기를 묶은 기호다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">42:12</span> "So <b>this is the general expression for current density in semiconductors.</b>"</div>
+<div class="exp"><b>"general expression(일반식)"</b> — 반도체 안의 전류를 쓰는 <b>가장 완전한 형태</b>다. 5장의 종착점이고, 4장 이후 모든 계산이 이 식 위에서 이루어진다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">39:28 · 40:48 · 40:59</span><br>
+· <b>"아니, 반대 방향"</b> — 전자 전류 방향을 말하다 스스로 고치는 대목. 헷갈리기 쉬운 자리라는 신호<br>
+· <b>"D 는 농도 차가 있을 때 얼마나 잘 퍼지는가를 말해 준다"</b> — μ 와 같은 자리임을 드러내는 설명<br>
+· <b>"부호는 외우지 말고 그림에서 읽어라"</b></div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>확산의 원인 = 농도 기울기.</b> <b>미는 힘이 없어도</b> 일어난다<br>
+② <b>전자 J = +eD<sub>n</sub>(dn/dx)</b>, <b>정공 J = −eD<sub>p</sub>(dp/dx)</b> — <b>부호가 반대</b>. drift 에서는 둘 다 + 였으니 혼동 주의<br>
+③ <b>부호가 갈리는 이유</b> — 전자는 <b>흐름과 전류가 반대</b>(마이너스 2번 → +), 정공은 <b>같다</b>(마이너스 1번 → −)<br>
+④ <b>★ 전체 전류 = 네 항</b> — <b>(전자·정공) × (drift·diffusion)</b>. 3쪽과 11쪽에서 <b>두 번</b> 강조된다<br>
+⑤ <b>D 의 단위 cm²/s</b>. D 는 diffusion 쪽의 μ 에 해당한다<br>
+⑥ 농도가 평평하면 <b>확산 전류는 0</b></div>
 <h2 id="s12">12쪽<small>Induced Electric Field — 유도 전기장 (5.3)</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig">5.3 Graded Impurity Distribution — Induced Electric Field</div><div class="exp"><b>5.3절</b>이다. <b>도핑이 위치에 따라 달라지면</b> 무슨 일이 생기는지를 다룬다.<br><b>induced(유도된)</b> — 우리가 전원을 연결해 만든 것이 아니라 <b>저절로 생겨난</b> 전기장이라는 뜻이고, 이 절의 핵심어다.</div></div>
+
+<div class="row"><div class="orig">Nonuniformly doped semiconductor → carrier density gradient → <u>diffusion current</u><br>Diffusion of majority carrier from the region of high concentration to the region of low concentration</div><div class="exp"><b>사슬의 처음 두 칸</b>이다. 도핑이 불균일하면 캐리어 농도에 기울기가 생기고, 그러면 <b>확산이 일어난다</b>(5.2절).<br>지금까지는 도핑이 어디나 같다고 가정하고 왔다. 그 가정을 푸는 순간 새 현상이 나온다.</div></div>
+
+<div class="row"><div class="orig">The flow of negative electrons <u>leaves behind positively charged donor ions</u></div><div class="exp"><b>이 절의 핵심</b>이고 밑줄이 그어져 있다. <b>leaves behind(뒤에 남긴다)</b> 가 결정적인 낱말이다.<br>전자는 떠날 수 있지만 <b>도너 이온은 격자에 박혀 못 움직인다.</b> 전자가 빠져나간 자리에는 <b>+ 를 띤 이온만 남는다.</b><br>손님이 떠나도 <b>의자는 못 따라가는</b> 것과 같다.</div></div>
+
+<div class="row"><div class="orig">The separation of positive and negative charge induces an electric field, that is in a direction to oppose the diffusion process<br>When the equilibrium is reached, the induced electric field prevents further separation of charge</div><div class="exp"><b>사슬의 나머지</b>다.<br><b>"oppose the diffusion process(확산을 방해하는 방향으로)"</b> 가 중요하다. 이 전기장은 확산을 <b>돕는 게 아니라 막는다.</b> 전자가 빠져나간 쪽이 +가 되었으니 <b>떠나간 전자를 다시 끌어당기기</b> 때문이다.<br><b>스스로를 억제하는 되먹임</b>이라 확산이 끝없이 계속되지 않고, <b>나가는 양과 돌아오는 양이 같아지는</b> 지점에서 멈춘다. 그것이 <b>평형</b>이다.</div></div>
+
+<div class="fig">왼쪽 그림 — <b>밴드 다이어그램</b>이다. 위에서부터 <b>E<sub>c</sub></b>, <b>E<sub>F</sub></b>(파란 일점쇄선), <b>E<sub>Fi</sub></b>(검은 점선), <b>E<sub>v</sub></b>.<br><b>핵심은 기울기</b>다. E<sub>c</sub>·E<sub>Fi</sub>·E<sub>v</sub> 는 오른쪽으로 갈수록 올라가는데 <b>E<sub>F</sub> 만 수평</b>이다.<br>· <b>밴드가 기울었다 = 전기장이 있다</b><br>· <b>E<sub>F</sub> 가 수평이다 = 평형이다</b><br>왼쪽이 도핑이 진한 쪽이다. E<sub>c</sub> 와 E<sub>F</sub> 가 가까울수록 전자가 많기 때문이다.</div>
+
+<div class="row"><div class="orig">φ = +(1/e)(E<sub>F</sub> − E<sub>Fi</sub>) &nbsp; E<sub>x</sub> = dφ/dx = (1/e)(dE<sub>Fi</sub>/dx)<br>φ: electric potential, E<sub>x</sub>: electric field in one dimension</div><div class="exp"><b>밴드 그림에서 전기장을 꺼내는 과정</b>이다.<br>밴드 다이어그램은 <b>에너지</b> 그림인데 전기장을 구하려면 <b>전위</b>가 필요하다. 에너지를 e 로 나누면 전위가 된다.<br>미분하면 <b>E<sub>F</sub> 항은 사라진다</b> — 평형이라 상수이기 때문이다. <b>E<sub>Fi</sub> 항만 남는다.</b><br><b>그래서 E<sub>Fi</sub> 가 기울어져 있으면 전기장이 있다.</b></div></div>
+
+<div class="row"><div class="orig">Assume a quasi-neutral condition,<br>n₀ = n<sub>i</sub> exp[(E<sub>F</sub> − E<sub>Fi</sub>)/kT] ≈ N<sub>d</sub>(x) &nbsp; E<sub>F</sub> − E<sub>Fi</sub> = kT ln[N<sub>d</sub>(x)/n<sub>i</sub>]<br>Taking the derivative both sides, −dE<sub>Fi</sub>/dx = (kT/N<sub>d</sub>(x))(dN<sub>d</sub>(x)/dx)</div><div class="exp"><b>quasi-neutral(준중성)</b> — 전하가 갈리기는 했지만 그 양이 아주 적어 <b>전체적으로는 거의 중성</b>이라고 보는 가정이다. 그래서 <b>n₀ ≈ N<sub>d</sub>(x)</b> 로 쓸 수 있다.<br>로그를 취해 미분하면 <b>E<sub>Fi</sub> 의 기울기</b>가 <b>도핑의 상대적 기울기</b>로 바뀐다.</div></div>
+
+<div class="row"><div class="orig">then, we get &nbsp; <span class="hand">(붉은 동그라미)</span> <b>E<sub>x</sub> = −(kT/e)(1/N<sub>d</sub>(x))(dN<sub>d</sub>(x)/dx)</b></div><div class="exp"><b>5.3절의 결론식</b>이고 크게 동그라미가 쳐져 있다.<br><b>도핑 농도의 상대적 기울기가 그대로 전기장이 된다.</b><br>· <b>1/N<sub>d</sub> 로 나눈 것</b> — 절대량이 아니라 <b>비율</b>이 중요하다. 10¹⁶→10¹⁷ 과 10¹⁷→10¹⁸ 이 같은 효과를 낸다<br>· <b>kT/e</b> — 상온에서 약 <b>0.0259 V</b><br>· <b>마이너스</b> — 도핑이 <b>증가하는 방향과 반대</b>로 전기장이 생긴다. 확산을 막는 방향이다<br><b>가장 중요한 점 — 전원을 하나도 연결하지 않았는데 전기장이 생겼다.</b> pn 접합의 내장 전위와 같은 원리다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">47:20</span> · 밴드 그림 왼쪽에 <b>e↑↑</b> 와 <b>n type</b> 을 적는다 — <b>왼쪽에 전자가 많다</b>는 표시<br>· 전자가 오른쪽으로 가는 <b>화살표</b>를 긋고, 그 아래로 <b>E⃗</b> 화살표를 <b>나란히</b> 그린다<br>· 왼쪽 영역에 <b>⊕ 기호를 여러 개</b> 찍는다 — <b>전자가 떠나고 남은 도너 이온</b>이다. 슬라이드의 "leaves behind"를 그림으로 만든 것<br>· 오른쪽 결론식 <b>E<sub>x</sub> = −(kT/e)(1/N<sub>d</sub>)(dN<sub>d</sub>/dx)</b> 를 <b>크게 동그라미</b>로 묶는다<br>· <b>E<sub>F</sub></b> 수평선을 따라 덧그리며 <b>"어디서나 같다"</b>를 강조한다</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">42:20</span> "Okay, then let's see the concept of induced electric field. <b>If a semiconductor has a non-uniform doping profile across the semiconductor, then there will be diffusion of charge carrier, which means that there will be diffusion current.</b>"</div>
+<div class="exp">사슬의 첫 두 칸이다. <b>불균일 도핑 → 확산.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">42:40</span> "So the energy band diagram of [a] non-uniformly doped semiconductor can be described like this. So <b>the Fermi energy level is constant throughout the entire system.</b>"</div>
+<div class="exp"><b>E<sub>F</sub> 가 수평인 이유</b>다. <b>열평형이면 페르미 준위가 계 전체에서 하나</b>다. 밴드 다이어그램을 그릴 때 <b>가장 먼저 긋는 선</b>이기도 하다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">42:55</span> "And <b>we can see that this is the n-type semiconductor because the Fermi energy level is located above the intrinsic Fermi energy level.</b>"</div>
+<div class="exp"><b>그림만 보고 형을 읽는 법</b>이다. <b>E<sub>F</sub> 가 E<sub>Fi</sub> 보다 위면 n형.</b> 4장에서 배운 것이 바로 쓰인다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">43:04</span> "And <b>this is much closer to the conduction band edge compared to the valence band edge.</b> So this is definitely [an] n-type semiconductor."</div>
+<div class="exp">같은 판단을 다른 기준으로 한 번 더. <b>E<sub>F</sub> 가 E<sub>c</sub> 에 가까우면 n형.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">43:14</span> "Also, we can tell that <b>the left side has high electron concentration [compared to] the right side, because the Fermi energy is much closer to the conduction band edge.</b>"</div>
+<div class="exp"><b>그림에서 농도까지 읽어낸다.</b> 왼쪽에서 E<sub>c</sub> 와 E<sub>F</sub> 사이가 <b>좁으므로</b> 전자가 많다.<br>밴드 그림 하나로 <b>형·농도·기울기</b>를 전부 읽는 연습이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">43:32</span> "which means <b>it has a high doping concentration</b> … so <b>this is more electron rich than this region.</b>"</div>
+<div class="exp">왼쪽이 진하게 도핑된 쪽이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">43:47</span> "So due to the density gradient, <b>there will be diffusion of electron from the left side to the right side.</b>"</div>
+<div class="exp">확산 방향이 정해진다. <b>진한 쪽 → 옅은 쪽.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">43:55</span> "So <b>diffusion takes place in these non-uniformly doped semiconductors because there is a density gradient.</b>"</div>
+<div class="exp">원인을 다시 못 박는다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">44:06</span> "And <b>the flow of electron from the left side to the right side will leave behind positively charged donor ions in the left side region.</b>"</div>
+<div class="exp"><b>이 절의 핵심 문장</b>이다. 슬라이드의 밑줄 친 줄이고, 판서에서 ⊕ 를 찍는 자리다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">44:21</span> "So because the electron move[s] from left hand side to the right side, <b>there will be positive ions left behind.</b> And <b>there will be accumulation of electron in this right side.</b>"</div>
+<div class="exp"><b>양쪽을 다 말한다.</b> 왼쪽은 <b>+</b>, 오른쪽은 <b>−</b>. 전하가 갈린다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">44:38</span> "So because of those charge carriers, <b>there will be an electric field generated from this region to this region. So E field is generated.</b>"</div>
+<div class="exp"><b>전기장이 생긴다.</b> 전원을 안 걸었는데도.</div>
+
+<div class="said"><b>강의</b> <span class="ts">44:55</span> "Okay, so <b>this field will push electron back to the left hand side</b> because the force is applied by [F = qE]."</div>
+<div class="exp"><b>"push back(도로 밀어낸다)"</b> 이 정확한 말이다. 확산과 <b>정반대 방향</b>이다.<br>슬라이드의 <b>"oppose the diffusion process"</b> 가 이 말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">45:10</span> "And <b>when the equilibrium is reached, the induced electric field prevents a further separation of charge carriers.</b>"</div>
+<div class="exp"><b>평형의 정의</b>다. 더 이상 갈라지지 않는 상태다. <b>아무 일도 안 일어나는 게 아니라 두 흐름이 상쇄된</b> 상태다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">45:22</span> "So <b>this is the induced electric field because of diffusion of electron in a non-uniformly doped semiconductor.</b>"</div>
+<div class="exp"><b>induced</b> 라는 이름의 뜻이 확정된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">45:33</span> "So <b>we are going to derive the mathematical expression for this induced electric field.</b>"</div>
+<div class="exp">말로 한 것을 <b>식으로</b> 옮기기 시작한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">45:43</span> "So <b>we will start from the electric potential. And electric potential is related to electron potential energy by the charge.</b>"</div>
+<div class="exp"><b>에너지 → 전위</b> 변환이다. 밴드 그림은 에너지인데 전기장은 전위에서 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">46:00</span> "So <b>if we take a derivative with respect to the position, then we can obtain the electric field.</b>"</div>
+<div class="exp"><b>전기장 = 전위의 기울기.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">46:12</span> "So <b>if we assume a quasi-neutral condition, we can approximate the thermal equilibrium electron concentration as the concentration of donor atom, N<sub>d</sub>.</b>"</div>
+<div class="exp"><b>준중성 가정</b>이다. 이게 없으면 푸아송 방정식까지 동원해야 해서 훨씬 복잡해진다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">46:29</span> "Then if we rearrange the equation, then we obtain [this] equation. Okay, so <b>if we take the derivative on both sides</b>, then we get [this] equation. And <b>we finally obtain [this] by rearranging.</b>"</div>
+<div class="exp">정리와 미분을 거쳐 결론식에 이른다. 계산 자체는 로그 미분 한 번이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">46:51</span> "Okay, so <b>this is the induced electric field due to a non-uniform doping distribution.</b>"</div>
+<div class="exp">동그라미 친 그 식이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">47:01</span> "So again, <b>when the semiconductor is non-uniformly doped, there will be diffusion of majority carrier due to density gradient. And as a result, there will be induced E field across the semiconductor.</b>"</div>
+<div class="exp"><b>사슬 전체를 한 번 더 되감는다.</b> 이 쪽에서 <b>세 번째</b> 같은 흐름이다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">42:55~43:32 · 44:55</span><br>
+· <b>밴드 그림만 보고 형·농도를 읽어내는 연습</b> — "E<sub>F</sub> 가 E<sub>Fi</sub> 보다 위라서 n형", "E<sub>c</sub> 에 가까우니 왼쪽이 더 진하다". 슬라이드는 그림만 보여 줄 뿐 읽는 법을 알려 주지 않는다<br>
+· <b>"이 전기장이 전자를 도로 왼쪽으로 밀어낸다"</b> — oppose 를 동작으로 풀어 준 설명</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>사슬</b> — 불균일 도핑 → 농도 기울기 → <b>확산</b> → <b>전자만 이동, 도너 이온은 남음</b> → 전하 분리 → <b>전기장 유도</b> → 확산을 <b>막음</b> → 평형<br>
+② <b>"leaves behind"</b> 가 핵심이다. <b>도너 이온은 격자에 박혀 못 움직인다</b><br>
+③ <b>유도 전기장은 확산을 방해하는 방향</b>이다<br>
+④ <b>E<sub>x</sub> = −(kT/e)(1/N<sub>d</sub>)(dN<sub>d</sub>/dx)</b> — 도핑의 <b>상대적 기울기</b>가 전기장이 된다<br>
+⑤ <b>E<sub>F</sub> 는 평형에서 수평</b>, <b>E<sub>Fi</sub> 가 기울면 전기장이 있다</b><br>
+⑥ <b>밴드 그림 읽는 법</b> — E<sub>F</sub> 가 E<sub>Fi</sub> 위면 n형, E<sub>c</sub> 에 가까울수록 농도가 높다<br>
+⑦ <b>전원 없이 전기장이 생긴다</b> — pn 접합 내장 전위의 뿌리</div>
 <h2 id="s13">13쪽<small>Einstein Relation — D 와 μ 를 잇는 식</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig">5.1 Einstein Relation — Einstein Relation</div><div class="exp"><b>아인슈타인 관계식.</b> 5장에서 가장 예쁜 결과이고, 2쪽 Overview 에서 <b>06:50</b> 에 "이 두 가지는 관계가 있다"고 미리 깔아 둔 그것이다.<br>지금까지 <b>drift(μ)</b> 와 <b>diffusion(D)</b> 를 따로 배웠는데, 여기서 <b>둘이 묶여 있다</b>는 것을 보인다.<br>※ 머리말이 <b>「5.1」</b> 인데 내용상 <b>5.3절에 이어지는 부분</b>이다. 슬라이드 표기 실수로 보이며 고쳐 적지 않는다.</div></div>
+
+<div class="row"><div class="orig"><b>Einstain relation</b> relates <span class="hand">(mobility 동그라미)</span> and the <u>diffusion coefficient</u></div><div class="exp"><b>이 쪽이 할 일을 한 줄로</b> 말한 것이다.<br><b>왜 놀라운가</b> — drift 는 <b>전기장이 미는</b> 이야기, diffusion 은 <b>농도 차로 퍼지는</b> 이야기다. 전혀 달라 보이는데 <b>뿌리가 같은 열운동</b>이라 고정된 관계가 나온다.<br>※ 슬라이드에 <b>"Einstain"</b> 으로 적혀 있다. 바른 철자는 <b>Einstein</b> 이다.</div></div>
+
+<div class="row"><div class="orig">- Consider the nonuniformly doped semiconductor<br>- If we assume there are no electrical connections in thermal equilibrium, then the individual electron and hole currents must be zero</div><div class="exp"><b>유도 전체의 열쇠</b>다. 조건이 둘이다.<br>· <b>전선을 연결하지 않았다</b> — 바깥으로 전류가 나갈 길이 없다<br>· <b>열평형</b> — 안정된 상태<br><b>그러면 전류가 0이어야 한다.</b> 다만 <b>아무것도 안 움직여서 0이 아니라</b> <b>확산으로 가는 양과 drift 로 돌아오는 양이 정확히 같아서</b> 0이다.<br><b>individual(각각)</b> — 전자와 정공이 서로 상쇄되어 합이 0인 게 아니라 <b>각각이 0</b>이다.</div></div>
+
+<div class="row"><div class="orig"><u>J<sub>n</sub> = 0 = enμ<sub>n</sub>E<sub>x</sub> + eD<sub>n</sub>(dn/dx)</u><br>Assume a quasi-neutral condition n ≈ N<sub>d</sub>(x),<br>Since &nbsp; E<sub>x</sub> = −(kT/e)(1/N<sub>d</sub>)(dN<sub>d</sub>/dx)</div><div class="exp"><b>출발식과 재료</b>다. 9쪽 전체 전류식에서 <b>전자 항 둘만</b> 떼어 0으로 놓고, 거기에 <b>앞 쪽에서 구한 E<sub>x</sub></b> 를 끼워 넣는다.<br><b>10쪽과 11쪽이 이어져 있다</b>는 증거다. 앞 쪽이 없으면 이 유도가 성립하지 않는다.</div></div>
+
+<div class="row"><div class="orig">then, 0 = −<s>e</s>μ<sub>n</sub><s>N<sub>d</sub></s>(kT/<s>e</s>)(1/<s>N<sub>d</sub></s>)(dN<sub>d</sub>/dx) + eD<sub>n</sub>(dN<sub>d</sub>/dx)<br>This is valid for the condition, &nbsp; <b>D<sub>n</sub>/μ<sub>n</sub> = kT/e</b> &nbsp; Similarly for holes, <span class="hand">(동그라미)</span> <b>D<sub>p</sub>/μ<sub>p</sub> = kT/e</b></div><div class="exp"><b>이 쪽에서 가장 통쾌한 대목</b>이다. 대입하면 <b>e, N<sub>d</sub>, dN<sub>d</sub>/dx 가 전부 약분</b>된다.<br><b>위치에 따라 달라지는 것들이 몽땅 지워진다</b> — 그 말은 <b>도핑을 어떻게 기울여 놓든 결과가 같다</b>는 뜻이고, 그래서 <b>보편적인 관계식</b>이 된다.</div></div>
+
+<div class="row"><div class="orig" style="border:1px solid #c00">→ <b>D<sub>n</sub>/μ<sub>n</sub> = D<sub>p</sub>/μ<sub>p</sub> = kT/e</b> &nbsp; Einstain relation<br>The <u>diffusion coefficient</u> and <u>mobility</u> are <u>not independent</u> parameters</div><div class="exp"><b>5장의 결론식</b>이고 <b>붉은 네모</b>로 둘러싸여 있다.<br><b>세 값이 전부 같다.</b> 물질이 뭐든 도핑이 얼마든 상관없고 <b>온도만</b>이 정한다.<br><b>kT/e</b> 는 <b>열전압(V<sub>T</sub>)</b> 이라 부르고 상온에서 <b>약 0.0259 V</b> 다.<br><b>쓰는 법</b> — μ 를 재면 D 가 계산된다. 실리콘 전자로 확인하면 1350 × 0.0259 ≈ <b>35 cm²/s</b> — 오른쪽 표의 값 그대로다.</div></div>
+
+<div class="fig"><b>Table 5.2</b> (T = 300 K) — <b>Silicon</b> μ<sub>n</sub> 1350 / D<sub>n</sub> 35 / μ<sub>p</sub> 480 / D<sub>p</sub> 12.4, <b>GaAs</b> 8500 / 220 / 400 / 10.4, <b>Ge</b> 3900 / 101 / 1900 / 49.2.<br><b>아인슈타인 관계식의 검산표</b>다. 아무 줄이나 D 를 μ 로 나누면 전부 <b>0.0259 근처</b>가 나온다.<br>※ 첫 열 머리글이 <b>μ<sub>m</sub></b> 으로 적혀 있는데 <b>μ<sub>n</sub></b> 의 오기로 보인다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">52:08</span> · 제목 위에 <b>J<sub>n</sub> = 0</b>, <b>J<sub>p</sub> = 0</b> 을 나란히 적는다 — <b>각각이 0</b> 이라는 조건을 맨 위에 못 박는 것<br>· <b>μ</b> 와 <b>D</b> 를 각각 동그라미로 묶고 그 사이를 <b>굵은 곡선</b>으로 잇는다<br>· 출발식 <b>J<sub>n</sub> = 0 = …</b> 전체에 밑줄<br>· 약분되는 <b>e · N<sub>d</sub> · dN<sub>d</sub>/dx</b> 에 <b>빗금</b>을 그어 지운다 — <b>무엇이 사라지는지</b>를 손으로 보이는 것<br>· 마지막 <b>D<sub>n</sub>/μ<sub>n</sub> = D<sub>p</sub>/μ<sub>p</sub> = kT/e</b> 를 <b>크게 동그라미</b>로 묶고, 옆에 <b>Const</b> 라고 적는다<br>· 오른쪽 표의 <b>D 열과 μ 열</b>에 각각 표시를 하고 화살표로 잇는다 — <b>비가 일정하다</b>를 표에서 확인시키는 것</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">47:21</span> "So let's see the next concept, <b>Einstein relation. So the Einstein relation is the equation relating mobility and diffusion coefficient.</b>"</div>
+<div class="exp">이 쪽의 목표다. <b>두 상수를 잇는다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">47:38</span> "So let's consider the non-uniformly doped semiconductor."</div>
+<div class="exp"><b>무대는 앞 쪽과 같다.</b> 확산도 있고 유도 전기장에 의한 drift 도 있는 시료라야 둘을 비교할 수 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">47:42</span> "And <b>if we assume there is no electrical connection in thermal equilibrium, then the individual electron and the hole current must be zero.</b>"</div>
+<div class="exp"><b>유도의 전제</b>다. 조건 둘이 다 필요하다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">47:51</span> "So this is a non-uniformly doped semiconductor, and <b>we don't have any electrical connection. Then the current due to electron should be zero, and current due to hole should be zero, because there is no electrical connection.</b>"</div>
+<div class="exp"><b>왜 0인지</b>를 풀어 말한다. <b>나갈 데가 없으니</b> 0이다. 판서에서 맨 위에 J<sub>n</sub> = 0, J<sub>p</sub> = 0 을 적은 자리다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">48:13</span> "So <b>J<sub>n</sub>, the current due to electron, is zero, and it can be described like this. So the total current is due to drift current plus diffusion current. So this equals to zero.</b>"</div>
+<div class="exp"><b>0 의 속내</b>가 드러난다. <b>drift + diffusion = 0</b> — 둘이 <b>크기가 같고 방향이 반대</b>라는 뜻이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">48:34</span> "And <b>if we assume a quasi-neutral condition, then we can approximate n as N<sub>d</sub></b>, which is doping concentration."</div>
+<div class="exp">앞 쪽과 같은 가정이다. 이렇게 해야 앞 쪽의 E<sub>x</sub> 식을 끼워 넣을 수 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">48:56</span> "and because <b>the induced E field we just derived in the previous slide</b> can be described like this … then we can use this equation to derive this equation."</div>
+<div class="exp"><b>앞 쪽의 결과를 가져온다.</b> 10쪽과 11쪽이 한 덩어리임을 보여 주는 대목이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">49:25</span> "and because <b>this N<sub>d</sub> can cancel out, and then [the kT] can cancel out, and this e can cancel out also,</b>"</div>
+<div class="exp"><b>약분</b>이다. 판서에서 빗금을 긋는 자리다. <b>위치에 따라 달라지던 것들이 전부 사라진다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">49:41</span> "then this equation becomes <b>(dN<sub>d</sub>/dx) times [−μ<sub>n</sub>kT + eD<sub>n</sub>] equal to 0.</b>"</div>
+<div class="exp"><b>곱이 0인 꼴</b>로 정리된다. 둘 중 하나가 0이어야 한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">50:02</span> "so <b>this part cannot be 0, so this has to be 0, right?</b>"</div>
+<div class="exp"><b>논리의 결정적 한 걸음</b>이다.<br><b>dN<sub>d</sub>/dx 는 0이 될 수 없다</b> — 애초에 <b>도핑이 기울어진</b> 시료를 가정했기 때문이다. 0이면 균일 도핑이라 이 문제 자체가 성립하지 않는다.<br>그러니 <b>괄호 안이 0</b>이어야 한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">50:08</span> "then <b>eD<sub>n</sub> equal to μ<sub>n</sub> [times] kT</b>, then in order to satisfy this equation, then we have this relationship,"</div>
+<div class="exp">괄호를 0으로 놓으면 <b>eD<sub>n</sub> = μ<sub>n</sub>kT</b>, 정리하면 <b>D<sub>n</sub>/μ<sub>n</sub> = kT/e</b> 다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">50:28</span> "so similarly we can write the equation for holes, then we can obtain this equation, and <b>because the right hand side of this equation is same as kT over e, then we can write this equation like this.</b>"</div>
+<div class="exp"><b>정공도 같은 값</b>이다. 그래서 셋을 등호로 이을 수 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">50:47</span> "so <b>this is the Einstein relation, so this equation relate[s] mobility and diffusion coefficient.</b>"</div>
+<div class="exp">붉은 네모 안의 식이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">51:00</span> "so that means that <b>the diffusion coefficient and mobility are not independent parameters, but actually interdependent related parameters.</b>"</div>
+<div class="exp"><b>슬라이드 마지막 문장을 풀어 준다.</b> <b>"not independent"</b> 에 그치지 않고 <b>"interdependent(서로 의존하는)"</b> 라고 바꿔 말한다.<br>둘 중 하나를 알면 <b>다른 하나가 자동으로 정해진다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">51:14</span> "so <b>this table shows mobility and diffusion coefficient values for some semiconductors.</b>"</div>
+<div class="exp">Table 5.2 로 간다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">51:23</span> "so according to Einstein relation, <b>the ratio between diffusion coefficient and mobility is always constant</b>, so this is a constant, right? <b>So always constant.</b>"</div>
+<div class="exp"><b>"always constant" 를 두 번</b> 말한다. 판서에서 <b>Const</b> 라고 적은 자리다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">51:38</span> "so as you can see, <b>if the semiconductor has a high mobility, then it also has a high diffusion coefficient</b>, as you can see in this table."</div>
+<div class="exp"><b>표를 읽는 법</b>이다. 비가 일정하니 <b>μ 가 큰 물질은 D 도 크다.</b> GaAs 가 μ<sub>n</sub> 8500 으로 가장 크고 D<sub>n</sub> 220 으로 역시 가장 크다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">51:52</span> "so <b>high mobility, always the high diffusion coefficient</b>, as you can see in this table. So this is the Einstein relation."</div>
+<div class="exp">같은 말을 한 번 더 못 박고 닫는다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">50:02 · 51:00 · 51:38</span><br>
+· <b>"dN<sub>d</sub>/dx 는 0이 될 수 없으니 괄호가 0이어야 한다"</b> — 유도의 논리적 분기점. 슬라이드는 결과만 적어 둔다<br>
+· <b>"not independent 가 아니라 interdependent"</b> — 표현을 바꿔 뜻을 분명히 한 대목<br>
+· <b>"이동도가 큰 물질은 확산계수도 크다"</b> — 표를 실용적으로 읽는 법</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>D<sub>n</sub>/μ<sub>n</sub> = D<sub>p</sub>/μ<sub>p</sub> = kT/e</b> — 붉은 네모. 반드시 외울 것<br>
+② <b>kT/e ≈ 0.0259 V</b> (300 K), <b>열전압 V<sub>T</sub></b><br>
+③ <b>유도의 전제</b> — <b>전선 없는 열평형</b>이라 <b>전자·정공 전류가 각각 0</b>. "안 움직여서"가 아니라 <b>drift 와 diffusion 이 정확히 상쇄되어서</b><br>
+④ <b>유도 과정에서 e·N<sub>d</sub>·dN<sub>d</sub>/dx 가 전부 약분</b>된다 → <b>도핑 분포와 무관한 보편 관계</b><br>
+⑤ <b>dN<sub>d</sub>/dx ≠ 0 이므로 괄호가 0</b> — 논리의 분기점<br>
+⑥ <b>D 와 μ 는 독립이 아니다.</b> 하나를 알면 다른 하나가 정해진다<br>
+⑦ 검산 — <b>1350 × 0.0259 ≈ 35</b>, <b>480 × 0.0259 ≈ 12.4</b><br>
+※ 슬라이드 오기 — 머리말 <b>「5.1」</b>(내용상 5.3에 이어짐), <b>"Einstain"</b>, 표의 <b>μ<sub>m</sub></b></div>
 <h2 id="s14">14쪽<small>Hall Effect — 로렌츠 힘과 금속에서의 홀 효과 (5.4)</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig">5.4 Hall Effect — Hall Effect</div><div class="exp"><b>5.4절</b>이자 마지막 절이다. 앞의 셋이 <b>이론</b>이라면 이것은 <b>측정</b>이다.<br>지금까지 다룬 n, p, μ 는 <b>눈에 보이지 않는 값</b>들이었다. 홀 효과는 그것들을 <b>전압계 하나로 재는</b> 방법이고, 이 쪽은 <b>금속</b>에서 먼저 본다.</div></div>
+
+<div class="row"><div class="orig"><b>Lorentz force</b>: the force (<b>F</b>) exerted on a charged particle q moving with velocity <b>v</b> through an electric E and magnetic field <b>B</b>, <b>F = qv × B</b></div><div class="exp"><b>홀 효과의 뿌리</b>다.<br><b>× 는 곱셈이 아니라 외적(cross product)</b> 이고, 성질이 둘이다.<br>① <b>결과가 두 벡터 모두에 수직</b><br>② <b>v 와 B 가 나란하면 힘이 0</b> → 그래서 자기장을 <b>전류에 수직</b>으로 걸어야 한다<br><b>전하가 음수면 방향이 뒤집힌다</b> — 13쪽에서 n형과 p형을 가르는 근거가 이것이다.</div></div>
+
+<div class="fig">오른쪽 위 그림 — 로렌츠 힘을 <b>두 경우로 나눠</b> 보인다.<br><b>Charge = +q</b> 와 <b>Charge = −q</b> 가 나란히 있는데, 전하 부호도 속도 방향도 반대라 <b>두 번 뒤집혀</b> 결국 <b>F 가 같은 방향(아래)</b> 을 가리킨다.<br><b>전자든 정공이든 같은 쪽 면에 쌓인다</b>는 것이 이 그림의 요점이다.</div>
+
+<div class="row"><div class="orig"><b>Hall effect</b>: the production of a <span class="hand">(voltage difference 동그라미)</span> across a conductor, as moving charges by the electric field experiences magnetic field<br>*Hall effect in metals</div><div class="exp"><b>홀 효과의 정의</b>다. 일어나는 순서는 다섯 단계다.<br>① 전기장으로 전하를 <b>움직이게</b> 한다 → ② <b>자기장</b>을 건다 → ③ 로렌츠 힘으로 <b>옆으로 밀린다</b> → ④ 한쪽 면에 <b>쌓인다</b> → ⑤ <b>전압 차</b>가 생긴다<br><b>중요한 조건 — 전하가 움직이고 있어야 한다.</b> 가만히 있으면 v = 0 이라 힘이 0이다.<br>금속은 <b>전자만</b> 나르므로 반도체보다 간단해 먼저 다룬다.</div></div>
+
+<div class="fig">아래 그림 셋 — 왼쪽부터 단계가 진행된다.<br>① <b>자기장 없음</b> — E<sub>x</sub> 오른쪽, 전자 ⊖ 들이 왼쪽으로, 전류 J<sub>x</sub> 오른쪽<br>② <b>자기장을 걺</b> — <b>⊙ B<sub>z</sub></b>(지면에서 나오는 방향), <b>F<sub>B</sub> = ev<sub>dx</sub>B<sub>z</sub></b> 화살표가 아래를 향하고 위쪽에 ⊕ 가 나타난다. "Magnetic field applied → Negative charge accumulation near the bottom"<br>③ <b>평형</b> — 위에 ⊕, 아래에 전자, 사이에 <b>E<sub>H</sub></b> 화살표. "Charge re-distribution → Internal electric field generation: Hall field (E<sub>H</sub>)"</div>
+
+<div class="board"><b>판서</b> <span class="ts">55:40</span> · 오른쪽 위 로렌츠 힘 그림에서 <b>+q 와 −q 두 경우</b>에 각각 표시를 하고 <b>F 화살표가 같은 쪽</b>임을 짚는다<br>· 아래 세 그림 중 <b>가운데와 오른쪽</b>을 각각 <b>큰 동그라미</b>로 묶는다<br>· 가운데 그림의 <b>전자가 아래로 밀리는 화살표</b>를 굵게 덧그리고, 위쪽 <b>⊕ 표시</b>를 따라 그린다<br>· 오른쪽 그림의 <b>E<sub>H</sub></b> 에 동그라미를 치고, <b>로렌츠 힘과 반대 방향</b>임을 화살표 두 개로 마주 보게 그린다<br>· 맨 오른쪽에 <b>전압계 기호</b>와 <b>V</b> 를 그려 넣는다 — <b>결국 재는 것은 전압</b>임을 표시</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">52:13</span> "so <b>the last topic we are going to discuss today is the Hall effect</b>, so in order to understand the Hall effect, <b>we need to discuss the Lorentz force.</b>"</div>
+<div class="exp">마지막 절이다. <b>로렌츠 힘부터</b> 세운다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">52:24</span> "so <b>Lorentz force is the force exerted on a charged particle q, moving with a velocity v, [when] an electric field E and magnetic field B are applied.</b>"</div>
+<div class="exp">정의를 읽는다. <b>조건이 셋</b>이다 — <b>전하가 있고, 움직이고 있고, 자기장이 있을 것.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">52:37</span> "so <b>when charged particles are moving under the E field, so it has a drift velocity, and if the magnetic field [is] applied, then the particle will experience a force defined like this.</b>"</div>
+<div class="exp"><b>drift 가 먼저 있어야 한다</b>는 점을 짚는다. 5.1절이 여기서 쓰인다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">52:49</span> "so this is the Lorentz force, and <b>the Hall effect is the production of voltage difference across the conductor as moving charges by the E field experience a magnetic field</b>, so <b>we need to understand the Hall effect in a metal first.</b>"</div>
+<div class="exp">정의를 읽고 <b>금속부터</b> 보겠다고 한다. 캐리어가 하나뿐이라 간단하다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">53:19</span> "so suppose that we apply a voltage across the metal, and we have a current generated here, so <b>under the E field the electron is moving toward the opposite direction as the direction of E field</b>,"</div>
+<div class="exp">첫째 그림이다. <b>전자는 전기장과 반대로</b> 간다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">53:37</span> "and in this situation, <b>this electron will have a drift velocity v under this E field, and in this situation we apply the magnetic field.</b>"</div>
+<div class="exp">둘째 그림으로 간다. <b>자기장을 더한다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">53:50</span> "and <b>moving particle under this E field will experience [the] Lorentz force as we apply the magnetic field</b>,"</div>
+<div class="exp">로렌츠 힘이 작용한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">54:01</span> "so as we apply the magnetic field, <b>negative charge accumulation happens because this Lorentz force will push electron to the bottom side.</b>"</div>
+<div class="exp"><b>전자가 아래로 밀린다.</b> 슬라이드의 "Negative charge accumulation near the bottom" 이 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">54:14</span> "so there will be the accumulation of electron, and <b>because of movement of electron from the top side to the bottom, there will be a positive ion left behind in the top region.</b>"</div>
+<div class="exp"><b>10쪽과 똑같은 구조</b>가 또 나온다. <b>"left behind"</b> — 전자는 움직이지만 <b>이온은 못 움직여</b> 위쪽이 +가 된다.<br>5.3절에서 본 것과 같은 논리라 한 번 익히면 두 번 쓰인다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">54:30</span> "and <b>because of separation of charge carriers, we have the new electric field generated between the top side to the bottom</b>,"</div>
+<div class="exp"><b>전기장이 저절로 생긴다.</b> 역시 10쪽과 같은 구조다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">54:41</span> "and <b>this electric field is called as a Hall field</b>, okay? and <b>when there is an electric field generated, that means there is also a voltage generated.</b>"</div>
+<div class="exp"><b>전기장 → 전압.</b> 전기장은 못 재지만 <b>전압은 잴 수 있다</b>는 것이 홀 효과가 쓸모 있는 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">54:58</span> "so <b>the generation of voltage across these [materials] due to this separation of charges is called as a Hall effect.</b>"</div>
+<div class="exp"><b>홀 효과의 정의가 완성된다.</b> <b>전하가 갈려 생긴 전압</b>이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">55:09</span> "and <b>this Hall field will generate force to the opposite direction as the Lorentz force</b>, so <b>the equilibrium will occur when the Lorentz force is balanced out with the force generated by this Hall field.</b>"</div>
+<div class="exp"><b>평형의 정의</b>다. <b>로렌츠 힘과 홀 전기장의 힘이 맞먹는</b> 상태.<br>11쪽 아인슈타인 관계식 때와 <b>같은 발상</b>이다 — 두 힘이 상쇄되는 지점을 찾아 식을 세운다. 13쪽에서 이것을 식으로 쓴다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">55:36</span> "so <b>this is the Hall effect.</b>"</div>
+<div class="exp">금속에서의 홀 효과가 닫힌다. 다음 쪽부터 <b>반도체</b>다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">54:14 · 55:09</span><br>
+· <b>"전자가 내려가고 위에는 양이온이 남는다"</b> — 5.3절의 "leaves behind" 와 <b>같은 구조</b>임을 드러내는 설명<br>
+· <b>"로렌츠 힘과 홀 전기장의 힘이 맞먹을 때 평형"</b> — 다음 쪽 계산의 출발점을 말로 먼저 세워 준다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>F = qv × B</b> — <b>외적</b>이다. <b>v·B 모두에 수직</b>, <b>v ∥ B 이면 0</b>. 그래서 자기장은 <b>전류에 수직</b>으로 건다<br>
+② <b>전자든 정공이든 같은 면에 쌓인다</b> — 전하 부호와 속도 방향이 <b>둘 다 반대</b>라 두 번 뒤집히기 때문<br>
+③ <b>순서</b> — 전류 → 자기장 → <b>로렌츠 힘</b> → 한쪽 면에 전하 쌓임 → <b>홀 전기장 E<sub>H</sub></b> → 전압<br>
+④ <b>E<sub>H</sub> 는 로렌츠 힘과 반대 방향</b>이라 쌓임을 멈추게 한다 → <b>평형</b><br>
+⑤ <b>전하가 움직이고 있어야</b> 홀 효과가 일어난다<br>
+⑥ <b>5.3절과 같은 구조</b> — 전하가 갈리고(이온은 남고) 전기장이 저절로 생겨 그 과정을 막는다</div>
 <h2 id="s15">15쪽<small>Hall Effect in Semiconductors — 평형과 n·p 판별 (5.4)</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig"><span class="hand">(Semiconductors 에 크게 동그라미)</span> 5.4 Hall Effect — Hall Effect in Semiconductors</div><div class="exp"><b>반도체에서의 홀 효과</b>다. 제목에 크게 동그라미가 쳐져 있다 — <b>금속과 다르다</b>는 표시다.<br><b>무엇이 다른가</b> — 금속은 전자만 있었는데 반도체에는 <b>전자와 정공이 둘 다</b> 있다. 그래서 <b>어느 쪽이 다수 캐리어인가</b> 에 따라 결과가 달라지고, 바로 그것이 홀 효과를 쓸모 있게 만든다.</div></div>
+
+<div class="row"><div class="orig">Votalge (V<sub>x</sub>) → Electric field (E<sub>x</sub>) → electron (v<sub>ex</sub>), hole (v<sub>hx</sub>) drift<br>Magnetic field (B<sub>z</sub>) → F<sub>B</sub> = qv × B → F<sub>ey</sub> = −ev<sub>dx</sub>B<sub>z</sub>, F<sub>hy</sub> = −ev<sub>dx</sub>B<sub>z</sub><br>→ Electron &amp; hole accumulation at the bottom</div><div class="exp"><b>방향 관계가 핵심</b>이다. 전류 <b>x</b>, 자기장 <b>z</b> → 힘은 <b>y</b>. 셋이 서로 수직이다.<br><b>두 힘의 부호가 같다</b>는 것이 이 쪽에서 가장 중요하다. 전자는 전하가 −이고 정공은 +인데 힘이 같은 방향이다 — <b>속도 방향도 반대라 두 번 뒤집히기</b> 때문이다.<br><b>그래서 전자와 정공이 같은 면(아래)에 쌓인다.</b> 다만 <b>쌓이는 전하의 부호가 반대</b>라 전압의 부호가 갈린다.<br>※ <b>"Votalge"</b> 는 <b>Voltage</b> 의 오기다.</div></div>
+
+<div class="row"><div class="orig">Internal electric field (E<sub>y</sub>) generation<br>At equilibrium (steady-state), J<sub>y</sub> = 0<br>F = qE + qv × B = 0 &nbsp; → &nbsp; qE<sub>y</sub> = qv<sub>x</sub>B<sub>z</sub></div><div class="exp"><b>평형 조건</b>이고 다음 쪽 계산의 출발점이다.<br><b>J<sub>y</sub> = 0</b> — 옆면이 막혀 있어 나갈 데가 없다. 다만 <b>아무 일도 안 일어나서 0이 아니라</b> <b>로렌츠 힘으로 밀리는 양과 홀 전기장에 밀려 돌아오는 양이 같아서</b> 0이다.<br><b>q 가 양변에서 지워진다</b>는 점이 중요하다 — <b>전자든 정공이든 이 관계 자체는 같다.</b> 남는 것은 <b>E<sub>y</sub> = v<sub>x</sub>B<sub>z</sub></b> 한 줄이고, <b>홀 효과 계산의 전부</b>다.</div></div>
+
+<div class="row"><div class="orig">The induced electric field: Hall field (E<sub>H</sub>)<br>→ Hall voltage: <span class="hand">(동그라미)</span> V<sub>H</sub> = +E<sub>H</sub>W</div><div class="exp"><b>실제로 재는 값</b>이다. <b>전기장 × 거리 = 전압</b> 이므로 홀 전기장에 <b>폭 W</b> 를 곱한다.<br><b>E<sub>H</sub> 는 못 재지만 V<sub>H</sub> 는 전압계로 바로 읽는다.</b> 밴드니 유효질량이니 하는 것들과 달리 <b>손에 잡히는 숫자</b>다.</div></div>
+
+<div class="row"><div class="orig">V<sub>H</sub> &gt; 0: p-type &nbsp; V<sub>H</sub> &lt; 0: n-type &nbsp; <span class="hand">[필기] 판별 가능!</span><br><u>Hall effect is used to distinguish whether a semiconductor is</u> <span class="hand">(n-type or p-type 동그라미)</span></div><div class="exp"><b>이 쪽의 결론</b>이고 <b>「판별 가능!」</b> 이 적혀 있다.<br>· <b>p형</b> — 아래에 <b>정공(+)</b> 이 쌓여 아래가 고전위 → <b>V<sub>H</sub> &gt; 0</b><br>· <b>n형</b> — 아래에 <b>전자(−)</b> 가 쌓여 아래가 저전위 → <b>V<sub>H</sub> &lt; 0</b><br><b>V<sub>H</sub> 의 부호 = 다수 캐리어의 전하 부호</b> 로 기억하면 헷갈리지 않는다.<br><b>왜 대단한가</b> — n형 실리콘과 p형 실리콘은 <b>겉으로 똑같이 생겼고 저항을 재도 비슷</b>할 수 있다. <b>홀 전압의 부호 하나로 즉시 갈린다.</b></div></div>
+
+<div class="fig">오른쪽 그림 — 직육면체 시료에 <b>B<sub>z</sub></b> 가 위로, <b>I<sub>x</sub></b> 가 x 방향으로 흐르고 아래에 전원 <b>V<sub>x</sub></b>. 앞뒤 면에 <b>V<sub>H</sub></b> 단자가 있고, 치수 <b>d</b>(두께) <b>W</b>(폭) <b>L</b>(길이)이 표시되어 있다.<br><b>V<sub>H</sub> 단자의 + 는 앞면, − 는 뒷면</b>에 붙는다. 캐리어가 쌓이는 면이 <b>+ 단자 쪽</b>이라 그 면의 전하 부호가 그대로 V<sub>H</sub> 의 부호가 된다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">59:52</span> · 시료 위쪽 면에 <b>⊖⊖ ⊖⊖</b> 와 <b>⊕⊕</b> 를 나란히 적고 각각 동그라미 — <b>두 경우(n형·p형)를 같이</b> 그려 비교한다<br>· 아래쪽 면에도 <b>⊕⊕⊕⊕</b> 와 <b>⊖⊖</b> 를 적고 동그라미<br>· 위에서 아래로 <b>굵은 붉은 화살표 두 쌍</b>을 그어 <b>전하가 아래로 밀리는 것</b>을 표시한다<br>· <b>Hall field</b> 라 적고 <b>E<sub>H</sub></b> 화살표를 따라 그린다<br>· <b>V<sub>H</sub> = +E<sub>H</sub>W</b> 를 동그라미로 묶는다<br>· <b>V<sub>H</sub> &gt; 0 / V<sub>H</sub> &lt; 0</b> 두 줄을 괄호로 묶고 <b>「판별 가능!」</b> 을 적으며 밑줄을 긋는다<br>· 맨 아래 <b>n-type or p-type</b> 에 크게 동그라미</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<p class="fig"><b>이 쪽 앞머리 56:04 ~ 57:05 (약 1분)은 전사가 완전히 깨져 있다.</b> 한국어 조각만 남아 뜻을 복원할 수 없어 옮기지 않는다. <b>직접 들어볼 것.</b> 앞뒤 문맥으로 보아 <b>반도체에서는 전자와 정공이 둘 다 있다</b>는 점과 <b>전기장·자기장을 거는 상황</b>을 다시 세우는 대목으로 보인다.</p>
+
+<div class="said"><b>강의</b> <span class="ts">56:04 ~ 57:05</span> [전사 불능 — 약 1분]</div>
+<div class="exp"><b>옮길 수 없다. 직접 들어볼 것.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">57:06</span> "There will be <b>accumulation of electron and hole at the bottom.</b>"</div>
+<div class="exp">음성이 다시 또렷해진다. <b>둘 다 아래에 쌓인다</b> — 14쪽에서 본 그대로다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">57:11</span> "And <b>because of the difference in electron or hole concentration, or because of the difference in drift velocity, there will be a different amount of accumulation on the bottom.</b>"</div>
+<div class="exp"><b>이 쪽에서 가장 중요한 한 줄이고 슬라이드에는 없다.</b><br>둘 다 쌓이는데 <b>쌓이는 양이 다르다.</b> 이유가 둘이다 — <b>농도가 다르거나</b>(다수 vs 소수), <b>이동도가 달라 속도가 다르거나</b>.<br><b>이 불균형이 홀 전압을 만든다.</b> 만약 전자와 정공이 똑같이 쌓이면 서로 상쇄되어 전압이 0이 된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">57:23</span> "So, for example, <b>we have a more accumulation of hole on the bottom than electron. Then because of those unbalanced accumulation, so we have a negative charge here and positive charge on the top.</b>"</div>
+<div class="exp"><b>p형의 경우</b>를 예로 든다. 정공이 더 많이 쌓이면 <b>아래가 +</b> 가 된다.<br>※ 교수님이 "negative charge here"라고 말하는데 문맥상 <b>아래가 양, 위가 음</b>을 가리키는 것으로 보인다. 말이 꼬인 대목이라 <b>슬라이드의 V<sub>H</sub> &gt; 0 : p-type 으로 판단</b>하는 것이 안전하다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">57:38</span> "And <b>those unbalanced charge distribution will generate a new field. So, this is a Hall field.</b>"</div>
+<div class="exp"><b>불균형이 전기장을 만든다.</b> 14쪽·10쪽과 같은 구조다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">57:48</span> "So, <b>Hall field is in the direction from the bottom to the top.</b> And so, <b>this internal electric field is generated due to the charge distribution.</b>"</div>
+<div class="exp">홀 전기장의 방향이다. 아래가 +이면 전기장은 <b>+에서 −로</b>, 곧 아래에서 위로 향한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">58:04</span> "And <b>thermal equilibrium is reached when the force by this Hall field is balanced with the Lorentz force.</b>"</div>
+<div class="exp"><b>평형 조건</b>이다. 14쪽에서 말로 세운 것을 다시 못 박는다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">58:15</span> "And when thermal equilibrium is reached, <b>we don't have any movement of electron or hole in a vertical direction. So, we have a zero current in the [y] direction.</b>"</div>
+<div class="exp"><b>J<sub>y</sub> = 0 의 뜻</b>이다. <b>세로 방향으로는 더 이상 안 움직인다.</b><br>쌓이는 것이 멈춘 상태이지 <b>전류 자체가 0인 것은 아니다</b> — x 방향으로는 여전히 I<sub>x</sub> 가 흐르고 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">58:31</span> "So, in thermal equilibrium, <b>we have voltage generated in a [y] direction. Then, that voltage is called the Hall voltage.</b>"</div>
+<div class="exp"><b>홀 전압</b>의 정의다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">58:43</span> "And <b>Hall voltage can be defined as a Hall field times the width of the semiconductor.</b>"</div>
+<div class="exp"><b>V<sub>H</sub> = E<sub>H</sub>W.</b> <b>폭 W</b> 가 들어간다 — 다음 쪽 농도 계산에는 <b>두께 d</b> 가 들어가므로 혼동하지 말 것.</div>
+
+<div class="said"><b>강의</b> <span class="ts">58:50</span> "So, using this — <b>by looking at the polarity of the Hall voltage, we can determine whether this semiconductor is p-type or n-type.</b>"</div>
+<div class="exp"><b>홀 효과의 첫 번째 쓸모</b>다. <b>polarity(극성)</b> = 부호.</div>
+
+<div class="said"><b>강의</b> <span class="ts">59:03</span> "So, <b>if the Hall voltage is a positive value, then the semiconductor is p-type because we have more accumulation of hole on the bottom.</b>"</div>
+<div class="exp"><b>V<sub>H</sub> &gt; 0 → p형.</b> 이유까지 붙인다 — <b>정공이 더 많이 쌓여서</b>다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">59:13</span> "And <b>if the polarity of Hall voltage is negative, then this semiconductor is n-type because we have more accumulation of electron on the bottom.</b>"</div>
+<div class="exp"><b>V<sub>H</sub> &lt; 0 → n형.</b> <b>전자가 더 많이 쌓여서</b>다.<br>두 줄을 나란히 놓으면 <b>「쌓인 전하의 부호 = V<sub>H</sub> 의 부호 = 다수 캐리어의 부호」</b> 가 보인다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">59:24</span> "So, <b>this is a pretty practical tool to determine whether this semiconductor is p-type or n-type.</b>"</div>
+<div class="exp"><b>"practical tool(실용적인 도구)"</b> — 이론이 아니라 <b>실제로 쓰는 방법</b>이라는 뜻이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">59:31</span> "Because <b>sometimes, we don't know if the semiconductor wafer [is] n-type or p-type, then we can just bring it to the Hall measurement system. Then, by looking at the polarity of the Hall voltage, we can determine if this semiconductor is n-type or p-type.</b>"</div>
+<div class="exp"><b>슬라이드에 없는 현장 이야기</b>다.<br><b>웨이퍼를 받았는데 n형인지 p형인지 모르는 상황</b>이 실제로 있고, 그때 <b>홀 측정 장비에 올려 놓으면 바로 나온다.</b> 왜 이 측정이 표준이 되었는지에 대한 답이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">59:52</span> "So, <b>this is a pretty practical tool.</b> We can also use the Hall effect to <b>measure the carrier concentration</b> in semiconductors."</div>
+<div class="exp"><b>두 번째 쓸모</b>를 예고하며 다음 쪽으로 넘어간다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">57:11 · 59:31</span><br>
+· <b>"농도가 다르거나 이동도가 달라 쌓이는 양이 다르고, 그 불균형이 홀 전압을 만든다"</b> — 슬라이드는 결과만 적어 둔다. <b>왜</b> 전압이 생기는지에 대한 답<br>
+· <b>"웨이퍼가 n형인지 p형인지 모를 때 홀 측정 장비에 올리면 된다"</b> — 현장에서 쓰는 방법</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>방향 관계</b> — 전류 <b>x</b>, 자기장 <b>z</b>, 힘과 홀 전기장은 <b>y</b>. 셋이 수직<br>
+② <b>F<sub>ey</sub> 와 F<sub>hy</sub> 의 부호가 같다</b> → <b>전자와 정공이 같은 면에 쌓인다</b><br>
+③ <b>쌓이는 양이 다른 이유 둘</b> — <b>농도 차이</b> 또는 <b>이동도(속도) 차이</b>. 이 불균형이 홀 전압을 만든다<br>
+④ <b>평형 J<sub>y</sub> = 0</b> → <b>qE<sub>y</sub> = qv<sub>x</sub>B<sub>z</sub></b> → <b>E<sub>y</sub> = v<sub>x</sub>B<sub>z</sub></b>. 다음 쪽 계산의 출발점<br>
+⑤ <b>V<sub>H</sub> = E<sub>H</sub>W</b> — <b>폭 W</b>. (농도 계산에는 <b>두께 d</b>)<br>
+⑥ <b>★ V<sub>H</sub> &gt; 0 → p형, V<sub>H</sub> &lt; 0 → n형.</b> <b>쌓인 전하의 부호 = 다수 캐리어의 부호</b><br>
+⑦ <b>J<sub>y</sub> = 0 은 세로 방향만</b>이다. x 방향 전류는 계속 흐른다<br>
+※ <b>56:04~57:05 (약 1분)은 전사가 깨졌다. 직접 들어볼 것.</b> 슬라이드 오기 <b>"Votalge"</b></div>
 <h2 id="s16">16쪽<small>Hall Effect in Semiconductors — 농도와 이동도 측정 (5.4)</small></h2>
-<p class="fig"><b>이 쪽은 아직 작성 중이다.</b> 곧 갱신된다. (전사·판서·쪽 배정은 이미 끝나 있고 해설만 남았다.)</p>
+<div class="row"><div class="orig">5.4 Hall Effect — Hall Effect in Semiconductors</div><div class="exp"><b>5장의 마지막 쪽</b>이다. 앞 쪽에서 <b>형(n/p)</b> 을 판별했고, 여기서는 <b>농도</b>와 <b>이동도</b>까지 뽑아낸다. 홀 효과의 세 가지 쓸모가 완성된다.</div></div>
+
+<div class="row"><div class="orig"><b>Carrier concentration</b><br>For p-type semiconductors, &nbsp; v<sub>x</sub> = J<sub>x</sub>/(ep) = I<sub>x</sub>/[(ep)(Wd)] → V<sub>H</sub> = I<sub>x</sub>B<sub>z</sub>/(epd) → <span class="hand">(동그라미)</span> <b>p = I<sub>x</sub>B<sub>z</sub>/(edV<sub>H</sub>)</b></div><div class="exp"><b>정공 농도를 재는 식</b>이다.<br><b>절차</b> — ① <b>J = ρv<sub>d</sub></b> 를 뒤집어 v<sub>x</sub> 를 구하고 ② <b>J = I/A</b>(A = Wd)로 측정량으로 바꾸고 ③ 앞 쪽의 <b>V<sub>H</sub> = E<sub>H</sub>W</b> 와 <b>E<sub>H</sub> = v<sub>x</sub>B<sub>z</sub></b> 를 합친다.<br><b>W 가 약분되어 사라진다</b> — 시료의 <b>폭은 결과에 영향을 주지 않고 두께 d 만</b> 남는다.<br>오른쪽 값들(I<sub>x</sub>, B<sub>z</sub>, d, V<sub>H</sub>)이 <b>전부 잴 수 있는 것</b>이라는 점이 핵심이다. <b>눈에 안 보이는 캐리어 개수를 전압계로 읽어낸다.</b><br><b>V<sub>H</sub> 가 분모</b>라 농도가 낮을수록 홀 전압이 크게 나온다. 그래서 <b>순수한 시료일수록 측정이 쉽다.</b></div></div>
+
+<div class="row"><div class="orig">For n-type semiconductors, &nbsp; v<sub>x</sub> = −J<sub>x</sub>/(en) → V<sub>H</sub> = −I<sub>x</sub>B<sub>z</sub>/(end) → <span class="hand">(동그라미)</span> <b>n = −I<sub>x</sub>B<sub>z</sub>/(edV<sub>H</sub>)</b></div><div class="exp"><b>n형도 같은 절차</b>이고 <b>마이너스</b>만 붙는다. 전자는 음전하라 전류와 반대로 움직이기 때문이다.<br><b>마이너스에 놀라지 말 것</b> — V<sub>H</sub> 자체가 음수이므로 <b>음수 ÷ 음수 = 양수</b> 가 되어 n 은 제대로 양수로 나온다.<br>앞 쪽의 <b>「V<sub>H</sub> &lt; 0 : n-type」</b> 이 여기서 <b>식으로 확인된다.</b></div></div>
+
+<div class="row"><div class="orig"><b>Mobility measurement</b><br>J<sub>x</sub> = epμ<sub>p</sub>E<sub>x</sub> → I<sub>x</sub>/(Wd) = epμ<sub>p</sub>V<sub>x</sub>/L<br>→ <span class="hand">(동그라미)</span> <b>μ<sub>p</sub> = I<sub>x</sub>L / (epV<sub>x</sub>Wd)</b> &nbsp; <span class="hand">(동그라미)</span> <b>μ<sub>n</sub> = I<sub>x</sub>L / (enV<sub>x</sub>Wd)</b></div><div class="exp"><b>이동도를 재는 식</b>이다. 4쪽의 drift 전류식에 <b>J = I/A</b> 와 <b>E = V/L</b> 을 넣은 것뿐이다(7쪽에서 쓴 것과 같은 두 관계).<br><b>중요한 것은 p 가 식에 들어 있다는 점</b>이다. 위에서 <b>홀 전압으로 p 를 먼저 구했기</b> 때문에 쓸 수 있다.<br><b>측정 순서</b> — ① 홀 전압 <b>부호</b>로 형 → ② 홀 전압 <b>크기</b>로 농도 → ③ 그 농도로 <b>이동도</b>. <b>한 번의 실험으로 셋을 다 얻는다.</b></div></div>
+
+<div class="row"><div class="orig"><u>Hall effect is used to measure the majority carrier concentration and majority carrier mobility</u></div><div class="exp"><b>5장을 닫는 문장</b>이다.<br><b>"majority carrier(다수 캐리어)"</b> 라는 한정에 주의할 것. 소수 캐리어는 개수가 몇 자릿수 적어 홀 전압에 거의 기여하지 못한다. n형에서 얻는 것은 <b>전자의 농도와 이동도</b>뿐이다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">62:44</span> · 위쪽에 <b>J<sub>x</sub> = ρv<sub>x</sub></b> 와 <b>qE<sub>y</sub> = qv<sub>x</sub>B<sub>z</sub></b> 를 나란히 적는다 — <b>두 식이 재료</b>임을 먼저 세우는 것<br>· <b>v<sub>x</sub></b> 를 여러 번 동그라미 치며 <b>식에서 식으로 옮겨 가는 경로</b>를 화살표로 잇는다<br>· <b>V<sub>H</sub> = E<sub>H</sub>W</b> 를 다시 적고 <b>W</b> 에 표시 — 약분되는 자리를 짚는 것<br>· <b>p = I<sub>x</sub>B<sub>z</sub>/(edV<sub>H</sub>)</b> 와 <b>n = −I<sub>x</sub>B<sub>z</sub>/(edV<sub>H</sub>)</b> 두 식을 <b>큰 동그라미로 함께</b> 묶는다 — <b>짝으로 외우라</b>는 표시<br>· 아래 <b>μ<sub>p</sub></b> 와 <b>μ<sub>n</sub></b> 식에도 각각 동그라미<br>· 맨 아래 결론 문장에 <b>밑줄 두 줄</b></div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">60:04</span> "So, for p-type semiconductor, <b>we start from J equal to [e·p·v<sub>x</sub>]. And this [ρ] is going to be e times p.</b>"</div>
+<div class="exp"><b>4쪽의 J = ρv<sub>d</sub></b> 에서 출발한다. 5장 첫 식이 마지막 쪽에서 다시 쓰인다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">60:18</span> "Then, <b>you can use I<sub>x</sub> over Wd instead of J<sub>x</sub> because this is a current density.</b>"</div>
+<div class="exp"><b>측정량으로 바꾸는 자리</b>다. <b>J = I/A</b> 이고 단면적이 <b>W × d</b> 다.<br><b>왜 바꾸나</b> — 속도 v<sub>x</sub> 는 잴 수 없지만 <b>전류와 치수는 잴 수 있다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">60:25</span> "Then, we can derive this equation because <b>at thermal equilibrium, the force due to the Hall field is same as the Lorentz force. So, we have E<sub>H</sub> equal to v<sub>x</sub>B<sub>z</sub>.</b>"</div>
+<div class="exp"><b>앞 쪽의 평형 조건</b>을 가져온다. <b>E<sub>H</sub> = v<sub>x</sub>B<sub>z</sub>.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">60:44</span> "And <b>we have Hall voltage equal to E<sub>H</sub> times the dimension of the semiconductor.</b>"</div>
+<div class="exp"><b>V<sub>H</sub> = E<sub>H</sub>W.</b> 세 식이 모였다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">60:59</span> "So, we can write the Hall voltage like this. Then, <b>we can put v<sub>x</sub> equal to this into this equation. Then, we can obtain this equation.</b>"</div>
+<div class="exp">대입한다. 이 과정에서 <b>W 가 약분</b>된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">61:14</span> "Then, by rearranging this equation, <b>we can get p equal to I<sub>x</sub>B<sub>z</sub> over edV<sub>H</sub>.</b>"</div>
+<div class="exp"><b>정공 농도 식</b>이 완성된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">61:22</span> "So, <b>this is a constant and this is a dimension of semiconductor, so we already know. And those three parameters can be measurable. So, we can obtain this p, the hole carrier concentration.</b>"</div>
+<div class="exp"><b>이 쪽에서 가장 중요한 짚기</b>다. 식의 오른쪽을 <b>세 종류로 분류</b>한다.<br>· <b>상수</b> — e<br>· <b>이미 아는 치수</b> — d<br>· <b>측정 가능한 값</b> — I<sub>x</sub>, B<sub>z</sub>, V<sub>H</sub><br><b>모르는 것이 하나도 없다.</b> 그래서 p 가 나온다. 이것이 홀 측정이 실용적인 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">61:36</span> "So, similarly, <b>we can also obtain the carrier concentration in n-type semiconductors.</b> So, we start from this equation. Then, we can obtain this equation. So, <b>we can also obtain the n, the carrier concentration of electron.</b>"</div>
+<div class="exp">n형도 같은 절차다. 부호만 다르다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">61:53</span> "So, <b>we can also use the Hall effect to measure the mobility of semiconductors.</b>"</div>
+<div class="exp"><b>세 번째 쓸모</b>로 넘어간다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">61:59</span> "So, we start from this equation. Then, <b>we change our J<sub>x</sub> as I<sub>x</sub> over Wd and E<sub>x</sub> to V<sub>x</sub> over L.</b>"</div>
+<div class="exp"><b>7쪽에서 쓴 것과 똑같은 두 관계</b>다. <b>J = I/A</b>, <b>E = V/L</b>. 반복해서 나오니 손에 익혀 둘 것.</div>
+
+<div class="said"><b>강의</b> <span class="ts">62:16</span> "Then, we can obtain this equation. Then, <b>we can obtain this equation for electron also.</b>"</div>
+<div class="exp">정공과 전자 두 식이 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">62:23</span> "So, in these equations, <b>all the parameters can be measurable or the parameters we already know. So, we can obtain the hole mobility or the electron mobility.</b>"</div>
+<div class="exp"><b>같은 논리를 다시</b> 쓴다. 식에 모르는 것이 없으니 μ 가 나온다.<br>다만 <b>p 나 n 이 식에 들어 있다</b>는 점이 중요하다 — <b>앞에서 농도를 먼저 구했기 때문에</b> 쓸 수 있는 식이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">62:33</span> "so <b>Hall effect can be used to measure the majority carrier concentration and majority carrier mobility.</b> So <b>this is a very practical tool to measure the basic properties of semiconductors.</b>"</div>
+<div class="exp"><b>5장을 닫는 마지막 문장</b>이다.<br><b>"basic properties(기본 물성)"</b> — 반도체를 특징짓는 값들이 <b>형·농도·이동도</b> 셋이고, 홀 측정 하나가 그 셋을 전부 준다.<br>5장 내내 식으로만 다루던 n, p, μ 가 <b>실제로 손에 잡히는 숫자가 되는</b> 지점이다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">61:22 · 62:23 · 62:33</span><br>
+· <b>"상수 / 이미 아는 치수 / 측정 가능한 값 — 모르는 게 하나도 없다"</b> — 식을 세 종류로 분류해 왜 쓸 수 있는지 보인 대목. 두 번 반복한다<br>
+· <b>"반도체의 기본 물성을 재는 아주 실용적인 도구"</b> — 5장을 닫는 평가</div>
+
+<div class="key"><b>정리 — 5장이 남긴 것</b><br>
+<b>움직이는 방식이 둘이다.</b> <b>drift</b>(전기장이 민다, 상수 <b>μ</b>)와 <b>diffusion</b>(농도 차로 퍼진다, 상수 <b>D</b>).<br><br>
+<b>전체 전류는 네 항</b> — (전자·정공) × (drift·diffusion). 3쪽 판서와 9쪽 식에서 <b>두 번</b> 강조된다.<br>J = enμ<sub>n</sub>E + epμ<sub>p</sub>E + eD<sub>n</sub>(dn/dx) − eD<sub>p</sub>(dp/dx)<br><br>
+<b>μ 는 산란으로 정해진다.</b> 격자(T<sup>−3/2</sup>, 상온 지배)와 불순물(T<sup>+3/2</sup>/N, 저온 지배)이 <b>1/μ = 1/μ<sub>L</sub> + 1/μ<sub>I</sub></b> 로 합쳐진다.<br><br>
+<b>D 와 μ 는 독립이 아니다.</b> <b>D/μ = kT/e ≈ 0.0259 V</b>.<br><br>
+<b>도핑이 기울면 전기장이 저절로 생긴다.</b> pn 접합의 뿌리다.<br><br>
+<b>그리고 그 모든 값을 홀 측정 하나로 잰다</b> — 형, 농도, 이동도.</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>p = I<sub>x</sub>B<sub>z</sub>/(edV<sub>H</sub>)</b>, <b>n = −I<sub>x</sub>B<sub>z</sub>/(edV<sub>H</sub>)</b> — 부호만 다르다. <b>짝으로</b> 외울 것<br>
+② <b>μ<sub>p</sub> = I<sub>x</sub>L/(epV<sub>x</sub>Wd)</b>, <b>μ<sub>n</sub> = I<sub>x</sub>L/(enV<sub>x</sub>Wd)</b><br>
+③ <b>★ 측정 순서</b> — 부호로 <b>형</b> → 크기로 <b>농도</b> → 농도로 <b>이동도</b>. <b>한 번의 실험으로 셋</b><br>
+④ <b>"majority carrier" 만</b> 측정된다. 소수 캐리어는 기여가 없다<br>
+⑤ <b>홀 전압에 W 는 약분되어 안 들어간다.</b> <b>두께 d</b> 만 관계한다<br>
+⑥ 치수 <b>L(길이)·W(폭)·d(두께)</b> 가 어느 식에 들어가는지 구별할 것 — <b>V<sub>H</sub> 에는 W, 농도에는 d, 이동도에는 L·W·d 전부</b><br>
+⑦ <b>J = I/A</b> 와 <b>E = V/L</b> 은 7쪽·14쪽에서 반복해 나온다. 손에 익혀 둘 것</div>
 <a class="top" href="#top">맨 위로</a>
 </div>
 </body>
