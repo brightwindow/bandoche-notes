@@ -84,6 +84,24 @@ sub,sup{font-size:11px}
 .top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
      padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
 @media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+
+/* 오프라인(한국어) 수업 */
+:root{--rv:#e8f6f2;--rvb:#1f8a78}
+h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
+.said.rv{background:var(--rv);border-left-color:var(--rvb)}
+.said.rv b{color:#176b5d}
+.said.rv .ts{background:var(--rvb)}
+.c8{background:var(--rv);border-color:var(--rvb)}
+/* 내 굿노트 필기 */
+.gn{margin:12px 0;padding:11px 16px;background:#fff7e6;border-left:3px solid #e08a00;border-radius:0 6px 6px 0;font-size:14.3px}
+.gn>b:first-child{color:#a35f00}
+.gnh{color:#0b3d91;font-weight:600;background:#eef3ff;padding:0 4px;border-radius:3px}
+.gnh.r{color:#b00000;background:#fff0f0}
+.gnh.y{color:#5b6b00;background:#f6fbd6}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#a35f00;font-size:13.5px}
+details.gnd img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
+.c9{background:#fff7e6;border-color:#e08a00}
+h3.gnh3{color:#a35f00;border-bottom-color:#f3c77a}
 </style>
 </head>
 <body>
@@ -91,8 +109,11 @@ sub,sup{font-size:11px}
 <h1>반도체공학 Ch.5 전하 수송 현상 — 강의 통합 해설</h1>
 <div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
 <div class="cov ok">강의 전사 <b>557줄 전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
-<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
-<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Overview</a><a href="#s3">3쪽 · Overview ②</a><a href="#s4">4쪽 · Overview ③</a><a href="#s5">5쪽 · Contents</a><a href="#s6">6쪽 · Drift Current Density</a><a href="#s7">7쪽 · Mobility & Scattering ①</a><a href="#s8">8쪽 · Mobility & Scattering ②</a><a href="#s9">9쪽 · Conductivity</a><a href="#s10">10쪽 · Velocity Saturation</a><a href="#s11">11쪽 · Diffusion & Total Current Density</a><a href="#s12">12쪽 · Induced Electric Field</a><a href="#s13">13쪽 · Einstein Relation</a><a href="#s14">14쪽 · Hall Effect</a><a href="#s15">15쪽 · Hall Effect in Semiconductors</a><a href="#s16">16쪽 · Hall Effect in Semiconductors</a></div>
+<div class="intro" style="border-left-color:#1f8a78;background:#e8f6f2"><b>2026-10 추가 — 오프라인 리뷰 수업(한국어) · 내 굿노트 필기</b><br>
+4장 리뷰 수업의 마지막 14분이 5장 시작이었다. 그 육성을 <a href="#s3">3쪽</a>(그동안 "녹화 음성 없음"이던 Overview ②)에 초록 상자로 넣었다 — drift·이동도(계곡의 돌 비유), <b>Si 이동도 1350 / 480</b>, 속도 포화 <b>10⁷ cm/s · 30 kV/cm</b>, MOSFET 채널이 짧아지면 왜 문제인가(쇼트 채널 효과), 그리고 수업 끝에 낸 <b>과제 — GaAs 는 왜 전기장을 올리면 속도가 줄어드나(NDR · Gunn effect)와 답</b>. 타임스탬프 <span class="eq">리뷰⑥ · 리뷰⑦</span> 은 <a href="ch4-full.html#top">Ch.4 통합 해설</a>과 같은 이름이다. 내 굿노트 필기(주황 상자)도 9개 쪽에 옮겼다.</div>
+
+<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c8"></i>오프라인 수업 육성(한국어)</span><span><i class="chip c9"></i>내 굿노트 필기</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
+<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Overview</a><a href="#s3">3쪽 · Overview ② + 리뷰 · 과제</a><a href="#s4">4쪽 · Overview ③</a><a href="#s5">5쪽 · Contents</a><a href="#s6">6쪽 · Drift Current Density</a><a href="#s7">7쪽 · Mobility & Scattering ①</a><a href="#s8">8쪽 · Mobility & Scattering ②</a><a href="#s9">9쪽 · Conductivity</a><a href="#s10">10쪽 · Velocity Saturation</a><a href="#s11">11쪽 · Diffusion & Total Current Density</a><a href="#s12">12쪽 · Induced Electric Field</a><a href="#s13">13쪽 · Einstein Relation</a><a href="#s14">14쪽 · Hall Effect</a><a href="#s15">15쪽 · Hall Effect in Semiconductors</a><a href="#s16">16쪽 · Hall Effect in Semiconductors</a></div>
 <h2 id="s1">1쪽<small>표지 — Ch.5 Charge Transport Phenomena</small></h2>
 <div class="row"><div class="orig">Semiconductor Engineering<br>Ch. 5 Charge Transport Phenomena<br>Dept. of Electrical Engineering<br>Jeongkyun Roh</div><div class="exp"><b>전하 수송 현상.</b> 낱말을 뜯으면 단원이 할 일이 그대로 나온다.<br>· <b>charge(전하)</b> — 반도체에서는 <b>전자</b>와 <b>정공</b> 둘이다<br>· <b>transport(수송)</b> — 그것이 <b>옮겨 다니는 것</b><br>4장까지는 <b>"몇 개 있는가"</b>를 셌다. 5장은 <b>"어떻게 움직이는가"</b>다. 개수와 움직임이 갖춰져야 <b>전류</b>가 나온다.</div></div>
 
@@ -281,8 +302,8 @@ sub,sup{font-size:11px}
 ⑥ <b>진성에서 n = p 인 이유</b> — 전자가 올라가면 정공이 <b>"어쩔 수 없이"</b> 쌍으로 생기기 때문. 도핑은 그 묶음을 풀어 <b>한쪽만</b> 올린다<br>
 ⑦ <b>drift 와 diffusion 은 관계가 있다</b>고 미리 못 박는다 → 11쪽 아인슈타인 관계식<br>
 ⑧ <b>"이 두 가지만 확실히 알아 두면 된다"</b> — 단원 범위를 두 낱말로 좁혀 준 구두 강조</div>
-<h2 id="s3">3쪽<small>Overview ② — drift 사슬 · 속도 포화 (녹화 음성 없음)</small></h2>
-<p class="fig"><b>이 쪽을 설명하는 녹화 구간이 없다.</b> 이번 녹화(63분)의 Overview 는 <b>2쪽 자리에 새로 그린 판서 하나</b>로 끝나고, 이 쪽의 필기는 다른 세션의 것이다.<br>다만 <b>여기 적힌 내용은 전부 본문에서 강의로 다뤄진다.</b> 항목마다 몇 쪽에서 들을 수 있는지 적어 두었다.</p>
+<h2 id="s3">3쪽<small>Overview ② — drift 사슬 · 속도 포화 + 리뷰 수업 · 과제</small></h2>
+<p class="fig"><b>이 쪽을 설명하는 영상 녹화 구간은 없다.</b> 대신 <b>오프라인 리뷰 수업</b>에서 이 필기를 쓰며 설명했다 — 아래 초록 상자. 이번 녹화(63분)의 Overview 는 <b>2쪽 자리에 새로 그린 판서 하나</b>로 끝나고, 이 쪽의 필기는 다른 세션의 것이다.<br>다만 <b>여기 적힌 내용은 전부 본문에서 강의로 다뤄진다.</b> 항목마다 몇 쪽에서 들을 수 있는지 적어 두었다.</p>
 
 <h3>왼쪽 — 회로와 금속</h3>
 
@@ -317,8 +338,29 @@ sub,sup{font-size:11px}
 ② <b>v<sub>d</sub> = μE</b>, 단위 <b>cm²/V·s</b><br>
 ③ <b>σ = enμ 가 나오는 과정</b> — J = e·n·v<sub>d</sub> 에 v<sub>d</sub> = μE 대입 (7쪽)<br>
 ④ <b>속도 포화</b> — 원인 <b>산란</b>, Si 포화 속도 <b>10⁷ cm/s</b>, 시작 <b>10⁴ V/cm</b> (8쪽)<br>
-⑤ <b>GaAs 의 NDR · Gunn effect</b> — <b>슬라이드에도 녹화에도 없는 필기 전용 항목</b>이다. 따로 확인할 것<br>
-※ 이 쪽은 <b>이번 녹화에 대응하는 음성이 없다.</b></div>
+⑤ <b>GaAs 의 NDR · Gunn effect</b> — 슬라이드·영상에는 없고 <b>오프라인 리뷰 수업 끝에 낸 과제</b>다(아래 초록 상자, 리뷰⑦ 05:46). 답: 전기장이 세면 전자가 가벼운 Γ 골에서 무거운 L 골로 옮겨 가 평균 속도가 준다.<br>
+※ 영상 녹화에는 이 쪽 음성이 없지만 <b>오프라인 리뷰 수업</b>이 채운다.</div>
+<h3 class="rvh">오프라인 리뷰 수업에서 (실제 강의 · 한국어)</h3>
+<div class="fig">4장 리뷰 수업(약 55분, 녹음 일곱 조각 — 자세한 것은 <a href="ch4-full.html#top">Ch.4 통합 해설</a> 머리말)의 <b>마지막 14분</b>이 5장 시작이다. <b>리뷰⑥ 01:14 ~ 07:08</b> 이 drift 사슬과 이동도, <b>리뷰⑦ 00:00 ~ 07:08</b> 이 이동도 숫자·속도 포화·과제다. 위에서 "녹화 음성이 없다"고 적어 둔 이 쪽 필기를 <b>이 수업에서 쓰며 설명했다.</b> 리뷰⑥ 01:23~01:34 은 인식이 비어 있다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑥ 01:38</span> "반도체에서 전류가 얼마나 흐르나, 이게 궁금한 거죠. 그러면 전자가 있어야 돼요. 그 전자가 움직이면 전하가 바뀌면서 전류가 만들어집니다. 그럼 이제 우리의 퀘스트는 <b>움직일 수 있는 전자가 몇 개가 있냐</b>, 또는 홀이 몇 개가 있냐, 이게 궁금한 거고요(4장). 두 번째 질문 뭐예요? <b>얘네들이 어떻게 움직일 수 있는지</b>, 움직일 때 뭐가 바뀌는가, 어떻게 하면 더 빨리 움직이냐(5장)."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑥ 02:16</span> "가장 간단한 상황 — 우리가 <b>E 필드를 걸어 줍니다</b>. 그러면 일렉트론은 반대 방향으로 힘을 받습니다. 힘은 F = ma 이니까, 힘을 받으면 가속도가 발생하면서 속도가 생깁니다. 그 속도를 뭐라고 부른다고 했습니까? — <b>드리프트</b>." … "강이 있고 여기에 배가 있으면 우리가 이거를 드리프트한다고 했잖아요. 이런 상황이랑 똑같은 거죠. 일렉트릭 필드가 있고 거기에 전자가 있으면 얘가 드리프트하는 거고, 그 결과로 생긴 속도를 <b>드리프트 속도</b>라고 하는 거죠."<br>필기 사슬 「V → (E) → F = qE = ma → v<sub>d</sub> → I ⇒ drift」를 말로 한 것이다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑥ 03:28</span> "일렉트릭 필드를 1 을 가했어, 속도가 예를 들어 2 가 됐어. 2 를 가했어, 4 가 됐어. 3 을 가했더니 6 이 됐어. … 걸어 주는 필드에 <b>비례</b>해서 드리프트 벨로시티가 커지더라. 정비례하니까 당연히 <b>비례 상수</b>가 존재하는 거죠. 그 비례 상수를 우리가 뭐라고 한다? — <b>모빌리티(이동도)</b>." … "일렉트릭 필드 하에서 <b>얼마나 잘 움직이냐</b>, 그 정도가 바로 이동도."<br>필기 「✳✳ v<sub>d</sub> = μE」(붉은 별 두 개)가 이 결론이다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰⑥ 05:07</span> <b>계곡의 돌과 나무 비유</b> — "빈 공간에 일렉트론이 있을 때는 내가 같은 일렉트릭 필드 10 을 걸더라도 속도가 10 으로 나오는데, 여기 <b>방해하는 물질들</b>이 막 이렇게 있는 상황에서는 똑같이 걸더라도 막 부딪히기 때문에 속도가 10 만큼 안 나오고 5 밖에 못 나온다." … "계곡으로 따진다면, <b>돌이랑 나무 이런 게 아무것도 없는 계곡</b>에서는 배가 빨리 떠내려오는 거죠. 돌이랑 이런 것들이 있으면 천천히 내려오잖아요. 이동도가 <b>처한 상황에 따라서</b> 달라지는 거죠." 돌·나무 = 산란(격자 진동·불순물, <a href="#s7">7쪽</a>·<a href="#s8">8쪽</a>).</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑥ 06:19</span> "일렉트릭 필드가 <b>인풋</b>이고, 나오는 속도가 아웃풋입니다. 이게 너무 중요한 게 뭐냐면, 빨리 움직이면 그만큼 전류도 많이 흐를 거 아니야. 걸어 준 전압에서 얼마나 많은 전류를 흘려보내냐 — 그래서 <b>이동도라는 개념이 상당히 중요</b>해지게 됩니다. 그래서 반도체에서는 이동도로 평가를 하는 거죠."</div>
+<div class="exam"><b>★ 외울 숫자</b> <span class="ts">리뷰⑥ 07:01 · 리뷰⑦ 00:00</span> — "실리콘의 이동도 — (전자) <b>1350</b>, (홀은) 정확한 값은 아니지만 <b>480</b> 정도. <b>3분의 1</b> 정도." … "같은 물살이 있더라도 뭐가 더 반응을 잘한다는 거예요? 일렉트론이 더 반응을 잘한다는 거죠. <b>3배 더 빨리 움직인다</b>는 거죠. 홀은 좀 천천히 움직여요." (<a href="#s6">6쪽</a> 표: Si μ<sub>n</sub> 1350, μ<sub>p</sub> 480.)</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑦ 00:30</span> "그런데 여기에서 어떤 문제가 발생하게 되는데 — 분명히 일렉트릭 필드를 1, 2, 3, 4 올렸을 때 속도가 1, 2, 3, 4 선형적으로 증가를 했어요. 그런데 갑자기 어느 일렉트릭 필드, 예를 들어 7 을 걸었어요. 그랬더니 7 로 증가해야 될 때 6 에서 증가를 안 하는 거예요." … "그러면 이때가 얼마냐? 속도는 <b>10의 7승</b>(cm/s), 그리고 일렉트릭 필드는 <b>30 kV/cm</b>." … "더 이상 증가하지 않는 것을 영어로 <b>saturation</b>, 속도가 증가하지 않기 때문에 <b>velocity saturation, 속도 포화</b>."</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑦ 02:13</span> "왜 이러는 거예요?" — 학생: "스캐터링." — "그렇지. 일렉트릭 필드가 증가하면서 얘가 빨리 움직이니까 <b>더 많이 부딪치는</b> 거예요." … "여러분들도 마찬가지죠. 천천히 걸어가면 피해 갈 수 있잖아요. 근데 늦어서 뛰어가면 부딪치잖아요." 필기 「Si Scattering 때문. 10⁷ cm/s」가 이것이다.</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">리뷰⑦ 02:47</span> <b>왜 요즘 와서 중요해졌나 — MOSFET 채널 길이 계산</b> — "과거에 이게 중요했을까? 과거에는 이게 안 중요했어. 왜? 우리가 노는 영역이 (직선) 영역이었기 때문에." … "MOSFET 의 소스·드레인이 있고 이거를 채널 길이라고 했을 때, <b>1 μm</b> 라고 해 둘게요. 지금 우리 학교에서 소자를 만들면 1 μm 에서 10 μm 사이를 만들거든요. 내가 전압을 <b>1 V</b> 를 걸었다고 치면 … 1 V / 10⁻⁴ cm = <b>10 kV/cm</b>. 그럼 상관이 없습니다." … "근데 소자가 작아져서 L 이 <b>100 nm</b> 라고 합시다. 그러면 <b>100 kV/cm</b> — 이미 약간 이 영역에 들어간 거죠. 근데 L 이 <b>10 nm</b> 가 돼. 그리고 1 V 를 걸어 주면 <b>1 MV/cm</b> 가 돼 가지고 완전히 이 영역이 돼." … "이 영역에서는 <b>내가 기대한 전류보다 훨씬 더 낮은 전류</b>가 나온다는 거죠. 채널이 길 때는 없었는데 채널이 짧아지니까 발생하는 현상이다, 그래서 이거를 나중에 <b>쇼트 채널 이펙트</b>라고도 배웁니다. 쇼트 채널 이펙트 중에 한 개다."</div>
+<div class="key"><b>정리</b> <span class="ts">리뷰⑦ 05:36</span> "이거 발생하는 영역이 일렉트릭 필드 상으로 <b>수십 kV/cm</b>, 이 정도 알아 두시면 좋고." → 필기 「10⁴ V/cm」(= 10 kV/cm) 부근에서 꺾이기 시작해 수십 kV/cm 에서 포화. <b>E = V/L</b> 이라 같은 1 V 라도 <b>채널이 짧을수록</b> 전기장이 커져 포화에 들어간다.</div>
+<div class="said rv"><b>리뷰</b> <span class="ts">리뷰⑦ 05:46</span> "그리고 우리 교재에 좀 재밌는 게 있는데, 이 속도와 전기장 곡선이 올라가다가 <b>내려가는</b> — 똑같이 물살에 배가 내려오는데 물살이 더 세졌어, 근데 배가 더 천천히 내려오는 거야. … 전압을 4 에서 5 로 높였는데 전류가 더 줄었고. 말이 안 되죠? 근데 <b>갈륨아세나이드</b>는 이런 현상을 보여요. <b>이게 왜 이런지 여러분들 교재를 읽어 보시면 나와 있어요. 제출하는 건 아니고, 찾아보시면 되겠습니다.</b> … effective mass 대목부터 해서 <b>negative differential resistance</b> 대목까지 개념이 다 나와 있으니 교재를 읽어 보시면 좋겠습니다. 오늘 수업은 여기까지입니다."<br>위 필기 「GaAs NDR Gunn effect」가 바로 이 과제다. 위에서 "녹화에 없는 필기 전용 항목"이라고 적었던 것의 출처가 이 수업이다.</div>
+<div class="exam"><b>★ 과제 답</b> — 전기장이 세지면 GaAs 의 전자가 <b>유효질량이 작은 Γ 골(m* ≈ 0.067 m₀)</b>에서 <b>약 0.3 eV 위의, 유효질량이 큰 L 골(m* ≈ 0.55 m₀)</b>로 옮겨 간다(intervalley transfer). 옮겨 간 전자는 무거워 이동도가 낮으므로 <b>전기장을 올려도 평균 표류 속도가 줄어든다</b> → <b>음의 미분 이동도 / 음의 미분 저항(NDR)</b>. 이 성질로 마이크로파를 내는 소자가 <b>Gunn 다이오드</b>다. 실리콘은 이런 "가벼운 골 → 무거운 골" 전이가 없어 내려가지 않고 포화만 된다.<br>단계별 풀이와 답안 문장은 <a href="ch4-full.html#s902">Ch.4 통합 해설 부록 ②</a>.</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 이 수업을 들으며 남색·연두색으로 덧쓴 것이다.<br>
+• 왼쪽 아래 남색 그래프 — 가로축 E, 세로축 v. <b>봉우리를 찍고 내려와 점선 높이로 수렴하는 곡선</b>(GaAs)과 <b>직선으로 오르다 꺾여 평평해지는 곡선</b>(Si)을 함께 그리고, 꺾이는 자리에 세로선과 <span class="gnh">10⁴</span>. 교수님 그림을 다시 그려 두 물질의 차이를 정리했다.<br>
+• 가운데 교수님 그래프의 Si 곡선 위에 남색으로 덧그림 — 직선 구간(v = μE)과 꺾이는 구간을 따라 그었다.<br>
+• 「GaAs NDR Gunn effect」 옆 남색 동그라미 안 짧은 낱말 + ‖ — 「과제」로 보이지만 <b>판독 불확실</b>. 수업 끝 과제(리뷰⑦ 06:37)를 표시한 것으로 보인다.<br>
+• 오른쪽 위 연두색 v−E 그래프 — 봉우리 있는 곡선과 완만한 곡선, 위쪽 점선(포화 속도). 같은 내용을 한 번 더 그렸다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn03.jpg" alt="03쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s4">4쪽<small>Overview ③ — 산란 · Hall · Einstein (녹화 음성 없음)</small></h2>
 <p class="fig"><b>이 쪽도 설명하는 녹화 구간이 없다.</b> Overview 세 장 중 마지막이다. 역시 <b>항목마다 본문 몇 쪽에서 강의되는지</b> 적어 두었다.</p>
 
@@ -585,6 +627,9 @@ sub,sup{font-size:11px}
 ⑦ <b>μ<sub>n</sub> &gt; μ<sub>p</sub> 인 이유</b> — 전자는 <b>거의 빈 전도대</b>에서 자유롭게, 정공은 <b>꽉 찬 가전자대</b>에서 묶인 채 자리를 바꾼다. <b>서술형에 좋다</b><br>
 ⑧ Si <b>1350 / 480</b>, GaAs <b>8500 / 400</b>, Ge <b>3900 / 1900</b><br>
 ※ 전자 식 아래첨자 <b>J<sub>p|drf</sub></b> 는 슬라이드 오기 (J<sub>n|drf</sub> 가 맞다)</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 연두색으로 J<sub>p|drf</sub> 식 위에 <span class="gnh y">μ<sub>p</sub>pE</span>, J<sub>n|drf</sub> 위에 <span class="gnh y">e μ<sub>n</sub>nE</span>, 맨 아래 J<sub>drf</sub> 옆에 <span class="gnh y">e(μ<sub>n</sub>n + …)</span> — 전자·정공 표류 전류를 각각 쓰고 더하는 과정을 따라 적었다. J = σE 의 σ = e(μ<sub>n</sub>n + μ<sub>p</sub>p) 로 이어진다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn06.jpg" alt="06쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s7">7쪽<small>Mobility & Scattering ① — 격자 산란 (5.1)</small></h2>
 <div class="row"><div class="orig">5.1 Carrier Drift — Mobility &amp; Scattering Mechanisms</div><div class="exp"><b>이동도와 산란.</b> 4쪽에서 μ 를 <b>숫자 하나로 받아들이고</b> 넘어갔는데, 이 쪽에서 <b>그 숫자가 어디서 오는지</b>를 연다.<br>답은 <b>산란</b>이다. 부딪히는 원인이 둘이고, 이 쪽에서 <b>격자 산란</b>, 다음 쪽에서 <b>불순물 산란</b>을 다룬다.</div></div>
 
@@ -720,6 +765,9 @@ sub,sup{font-size:11px}
 ⑤ <b>μ<sub>L</sub> ∝ T<sup>−3/2</sup></b> — <b>온도가 오르면 떨어진다.</b> 교수님이 <b>두 번 연속</b> 말한다. 판서에서 ↑↓ 화살표로 반비례를 표시<br>
 ⑥ <b>τ 는 "부딪히기까지의 평균 시간"</b>이고, 부딪히는 상대는 <b>격자와 불순물 둘</b><br>
 ⑦ <b>저농도 곡선은 가파르고 고농도 곡선은 평평하다</b> — 고농도에서는 불순물 산란이 지배하기 때문</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 남색 <span class="gnh">ma = m dv/dt = eE</span> → 동그라미 <span class="gnh">eEt/m</span> ‖, 아래 <span class="gnh">v = eEt/m</span>. 처음 속도 0 에서 시작해 전기장으로 가속되면 시간에 비례해 속도가 붙는다는 식(→ τ 를 넣으면 μ = eτ/m*).</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn07.jpg" alt="07쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s8">8쪽<small>Mobility & Scattering ② — 불순물 산란과 합성 (5.1)</small></h2>
 <div class="row"><div class="orig">5.1 Carrier Drift — Mobility &amp; Scattering Mechanisms</div><div class="exp">앞 쪽에 이어지는 둘째 장이다. <b>두 번째 산란</b>을 다루고, 마지막에 <b>둘을 합치는 법</b>으로 닫는다.</div></div>
 
@@ -812,6 +860,9 @@ sub,sup{font-size:11px}
 ⑤ <b>dt/τ = 산란이 일어날 확률.</b> 확률이라서 더할 수 있다<br>
 ⑥ <b>μ<sub>I</sub>·μ<sub>L</sub> 은 가상의 값</b>이고, 실제로 측정되는 것은 합쳐진 μ 하나뿐<br>
 ⑦ 그래프 — <b>10¹⁶ 부터 꺾이고 10¹⁹ 에서 1/10</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> τ 정의 줄 위 남색 <span class="gnh">dt/τ = dt/τ<sub>I</sub> + …</span> — 아래 인쇄된 dt/τ = dt/τ<sub>I</sub> + dt/τ<sub>L</sub> 를 먼저 적어 본 것. 확률이 더해진다 → 1/μ = 1/μ<sub>I</sub> + 1/μ<sub>L</sub>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn08.jpg" alt="08쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s9">9쪽<small>Conductivity — 전도도 · 비저항 · 옴의 법칙 (5.1)</small></h2>
 <div class="row"><div class="orig">5.1 Carrier Drift — Conductivity</div><div class="exp"><b>전도도.</b> 4쪽에서 얻은 전류식을 <b>옴의 법칙</b> 모양으로 정리하는 쪽이다.<br>여기까지 오면 <b>회로에서 재는 저항 R</b> 과 <b>반도체 안의 캐리어 농도</b> 가 한 줄로 이어진다.</div></div>
 
@@ -921,6 +972,9 @@ sub,sup{font-size:11px}
 ⑤ <b>같은 V = IR 이어도 반도체는 σ 의 정의가 다르다.</b> 서술형에 좋다<br>
 ⑥ <b>보상 반도체에서는 근사를 쓸 수 없다</b><br>
 ⑦ <b>외인성은 다수 캐리어만, 진성은 둘 다</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 비저항 식 옆 남색 <span class="gnh">1/σ = e(μ<sub>n</sub> + …)</span> 짧은 메모 — ρ = 1/σ 를 확인한 흔적.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn09.jpg" alt="09쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s10">10쪽<small>Velocity Saturation — 속도 포화 (5.1)</small></h2>
 <div class="row"><div class="orig">5.1 Carrier Drift — Velocity Saturation</div><div class="exp"><b>속도 포화.</b> 5.1절의 마지막 장이고 <b>지금까지 쓴 식이 깨지는 조건</b>을 다룬다.<br>v<sub>d</sub> = μE 는 <b>전기장이 약할 때만</b> 맞다.</div></div>
 
@@ -969,6 +1023,9 @@ sub,sup{font-size:11px}
 ③ <b>포화 이유</b> — <b>격자와의 상호작용이 격해져 얻는 만큼 에너지를 잃기</b> 때문. 이 문장이 답이다<br>
 ④ <b>Si 포화 속도 ≈ 10⁷ cm/s</b>, 포화 시작 <b>≈ 10⁴ V/cm</b><br>
 ⑤ <b>"식대로면 무한히 빨라져야 하는데 실제로는 멈춘다"</b> — 교수님이 반전을 주는 구조로 설명한다</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 오른쪽 위 연두색 작은 v−E 그래프 — 봉우리 있는 곡선과 평평해지는 곡선에 <span class="gnh y">Si</span>·<span class="gnh y">GaAs</span>(로 보이는) 표시. <a href="#s3">3쪽</a> 과제(GaAs 의 NDR)와 같은 그림이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn10.jpg" alt="10쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s11">11쪽<small>Diffusion & Total Current Density — 확산과 전체 전류 (5.2)</small></h2>
 <div class="row"><div class="orig">5.2 Carrier Diffusion — Diffusion &amp; Total Current Density</div><div class="exp"><b>5.2절</b>이다. 두 번째 움직이는 방식인 <b>확산</b>을 다루고, 마지막에 <b>drift 와 합쳐</b> 전체 전류를 완성한다. <b>5.2절은 이 한 쪽</b>뿐이다.</div></div>
 
@@ -1037,6 +1094,9 @@ sub,sup{font-size:11px}
 ④ <b>★ 전체 전류 = 네 항</b> — <b>(전자·정공) × (drift·diffusion)</b>. 3쪽과 11쪽에서 <b>두 번</b> 강조된다<br>
 ⑤ <b>D 의 단위 cm²/s</b>. D 는 diffusion 쪽의 μ 에 해당한다<br>
 ⑥ 농도가 평평하면 <b>확산 전류는 0</b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> D<sub>n</sub> 설명 아래 남색 <span class="gnh">D<sub>n</sub> dn/dx</span>, <span class="gnh">−eD<sub>p</sub> dp/dx</span> — 전자 확산 전류는 +, 정공 확산 전류는 − 부호라는 것을 다시 적었다(전자는 음전하라 흐름과 전류 방향이 반대).</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn11.jpg" alt="11쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s12">12쪽<small>Induced Electric Field — 유도 전기장 (5.3)</small></h2>
 <div class="row"><div class="orig">5.3 Graded Impurity Distribution — Induced Electric Field</div><div class="exp"><b>5.3절</b>이다. <b>도핑이 위치에 따라 달라지면</b> 무슨 일이 생기는지를 다룬다.<br><b>induced(유도된)</b> — 우리가 전원을 연결해 만든 것이 아니라 <b>저절로 생겨난</b> 전기장이라는 뜻이고, 이 절의 핵심어다.</div></div>
 
@@ -1220,6 +1280,13 @@ sub,sup{font-size:11px}
 ⑥ <b>D 와 μ 는 독립이 아니다.</b> 하나를 알면 다른 하나가 정해진다<br>
 ⑦ 검산 — <b>1350 × 0.0259 ≈ 35</b>, <b>480 × 0.0259 ≈ 12.4</b><br>
 ※ 슬라이드 오기 — 머리말 <b>「5.1」</b>(내용상 5.3에 이어짐), <b>"Einstain"</b>, 표의 <b>μ<sub>m</sub></b></div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 아인슈타인 관계를 남색으로 처음부터 다시 유도했다.<br>
+• <span class="gnh">eμ<sub>n</sub>nE<sub>x</sub> + eD<sub>n</sub> dn/dx</span> (= J<sub>n</sub> = 0)<br>
+• <span class="gnh">φ = (E<sub>F</sub>−E<sub>Fi</sub>)/e</span>, <span class="gnh">−dφ/dx = (1/e)·dE<sub>Fi</sub>/dx = E<sub>x</sub></span> — 전기장을 E<sub>Fi</sub> 의 기울기로 쓴다.<br>
+• <span class="gnh">E<sub>F</sub>−E<sub>Fi</sub> = kT ln(N<sub>d</sub>/n<sub>i</sub>)</span> → <span class="gnh">−dE<sub>Fi</sub>/dx = (kT/N<sub>d</sub>)·dN<sub>d</sub>/dx</span> — 슬라이드의 E<sub>x</sub> = −(kT/e)(1/N<sub>d</sub>)(dN<sub>d</sub>/dx) 가 어디서 왔는지(4장 식) 채웠다.<br>
+• <span class="gnh">eμ<sub>n</sub>N<sub>d</sub>E<sub>x</sub> + eD<sub>n</sub> dN<sub>d</sub>/dx = 0</span> → <span class="gnh">D<sub>n</sub>/μ<sub>n</sub> = kT/e</span>.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn13.jpg" alt="13쪽 굿노트 필기" loading="lazy"></details>
 <h2 id="s14">14쪽<small>Hall Effect — 로렌츠 힘과 금속에서의 홀 효과 (5.4)</small></h2>
 <div class="row"><div class="orig">5.4 Hall Effect — Hall Effect</div><div class="exp"><b>5.4절</b>이자 마지막 절이다. 앞의 셋이 <b>이론</b>이라면 이것은 <b>측정</b>이다.<br>지금까지 다룬 n, p, μ 는 <b>눈에 보이지 않는 값</b>들이었다. 홀 효과는 그것들을 <b>전압계 하나로 재는</b> 방법이고, 이 쪽은 <b>금속</b>에서 먼저 본다.</div></div>
 
@@ -1442,6 +1509,9 @@ sub,sup{font-size:11px}
 ⑤ <b>홀 전압에 W 는 약분되어 안 들어간다.</b> <b>두께 d</b> 만 관계한다<br>
 ⑥ 치수 <b>L(길이)·W(폭)·d(두께)</b> 가 어느 식에 들어가는지 구별할 것 — <b>V<sub>H</sub> 에는 W, 농도에는 d, 이동도에는 L·W·d 전부</b><br>
 ⑦ <b>J = I/A</b> 와 <b>E = V/L</b> 은 7쪽·14쪽에서 반복해 나온다. 손에 익혀 둘 것</div>
+<h3 class="gnh3">내 굿노트 필기</h3>
+<div class="gn"><b>내 굿노트 필기</b> 남색으로 홀 전압 식을 풀었다 — <span class="gnh">v<sub>x</sub> = J<sub>x</sub>/(ep)</span>, <span class="gnh">v<sub>x</sub>B<sub>z</sub>W = I<sub>x</sub>B<sub>z</sub>/(epd) = V<sub>H</sub></span>(홀 전기장 × 폭 = 홀 전압), 이동도 쪽은 <span class="gnh">epμ<sub>p</sub>E<sub>x</sub> = J = I/(Wd)</span>, <span class="gnh">I<sub>x</sub>L/(ep V<sub>x</sub> W d)</span>. 슬라이드의 화살표 사이 생략된 대입을 채운 것이다.</div>
+<details class="gnd"><summary>내 필기만 진하게 표시한 쪽 이미지 보기</summary><img src="img/ch5/gn16.jpg" alt="16쪽 굿노트 필기" loading="lazy"></details>
 <a class="top" href="#top">맨 위로</a>
 </div>
 </body>
