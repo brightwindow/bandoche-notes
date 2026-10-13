@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>반도체공학 Ch.6 — 불평형 상태의 여분 캐리어 · 강의 통합 해설</title>
+<style>/* 강의 통합 해설 표준 서식. build_html.py 에서 <style> 안에 그대로 넣는다. */
+:root{--ink:#1a1a1a;--dim:#6b7280;--line:#e3e7ec;--navy:#12305e;--acc:#0057b8;
+      --bg:#fff;--soft:#f5f8fc;--code:#f7f9fb;--hand:#c0392b;--handbg:#fff5f4;
+      --exam:#fff8e1;--examb:#d4a017;--key:#e8f4ea;--keyb:#4a9d5f;
+      --said:#eef4fb;--saidb:#5b87c4;--only:#f3eefb;--onlyb:#7d5ba6;
+      --board:#fdf0ea;--boardb:#c2612f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+     font-size:15.5px;line-height:1.85;-webkit-text-size-adjust:100%}
+.wrap{max-width:980px;margin:0 auto;padding:40px 22px 110px}
+h1{font-size:27px;margin:0 0 8px;letter-spacing:-.5px;color:var(--navy)}
+.sub{color:var(--dim);font-size:14px;margin:0 0 6px}
+.intro{background:var(--soft);border-left:4px solid var(--acc);padding:14px 18px;
+       margin:22px 0 8px;font-size:14.5px;border-radius:0 8px 8px 0}
+.intro b{color:var(--navy)}
+.cov{margin:10px 0 4px;padding:10px 16px;border-radius:7px;font-size:14px}
+.cov.ok{background:var(--key);border:1px solid var(--keyb);color:#2f6b40}
+.cov.bad{background:#fdecea;border:1px solid #d9534f;color:#a3372f}
+.cov b{font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 30px;font-size:13.5px;color:var(--dim)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.chip{display:inline-block;width:15px;height:15px;border-radius:3px;border:1px solid #ccc}
+.c1{background:var(--code)} .c2{background:var(--handbg);border-color:#e6b0aa}
+.c3{background:var(--exam);border-color:var(--examb)} .c4{background:var(--key);border-color:var(--keyb)}
+.c5{background:var(--said);border-color:var(--saidb)} .c6{background:var(--only);border-color:var(--onlyb)}
+.c7{background:var(--board);border-color:var(--boardb)}
+h2{font-size:19px;margin:56px 0 2px;padding:11px 16px;background:var(--navy);
+   color:#fff;border-radius:7px 7px 0 0;line-height:1.4}
+h2 small{font-weight:400;opacity:.8;font-size:13.5px;display:block;margin-top:2px}
+h3{font-size:15.5px;margin:26px 0 8px;color:#22406e;border-bottom:2px solid var(--line);padding-bottom:5px}
+.row{margin:0 0 -1px;border:1px solid var(--line)}
+.orig{background:var(--code);padding:9px 15px;font-size:14px;color:#2b2b2b;
+      border-bottom:1px dashed var(--line)}
+.hand{background:var(--handbg);color:var(--hand);font-weight:600;
+      padding:1px 5px;border-radius:3px}
+.exp{padding:11px 15px;background:#fff}
+.exp b{color:var(--navy)}
+.fig{margin:14px 0;padding:11px 16px;background:var(--soft);border-left:3px solid #90a4b8;
+     font-size:14.3px;border-radius:0 6px 6px 0}
+.said{margin:12px 0;padding:11px 16px;background:var(--said);
+      border-left:3px solid var(--saidb);border-radius:0 6px 6px 0;font-size:14.3px}
+.said b{color:#28527f}
+.said .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--saidb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.said q{font-style:normal;color:#1f3f63}
+.only{margin:12px 0;padding:11px 16px;background:var(--only);
+      border-left:3px solid var(--onlyb);border-radius:0 6px 6px 0;font-size:14.3px}
+.only>b:first-child{color:#5c3f80}
+.only .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--onlyb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.board{margin:12px 0;padding:11px 16px;background:var(--board);
+       border-left:3px solid var(--boardb);border-radius:0 6px 6px 0;font-size:14.3px}
+.board>b:first-child{color:#9c4a1f}
+.board .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+           background:var(--boardb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+           vertical-align:1px}
+.exam{margin:16px 0;padding:12px 16px;background:var(--exam);border:1px solid var(--examb);
+      border-radius:7px;font-size:14.5px}
+.exam b{color:#8a6d0b}
+.exam .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--examb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.key{margin:16px 0;padding:12px 16px;background:var(--key);border:1px solid var(--keyb);
+     border-radius:7px;font-size:14.5px}
+.key b{color:#2f6b40}
+.eq{font-family:Consolas,"D2Coding",monospace;font-size:14px;background:#fff;
+    padding:2px 6px;border:1px solid var(--line);border-radius:4px;white-space:nowrap}
+sub,sup{font-size:11px}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:16px 20px;margin:8px 0 10px}
+.toc b{display:block;margin-bottom:6px;color:var(--navy)}
+.toc a{color:var(--acc);text-decoration:none;display:inline-block;margin:3px 14px 3px 0;font-size:13.5px}
+.toc a:hover{text-decoration:underline}
+.toc a.apx{color:var(--onlyb)}
+.top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
+     padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
+@media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+<h1>반도체공학 Ch.6 — 불평형 상태의 여분 캐리어 · 강의 통합 해설</h1>
+<div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
+<div class="cov ok">강의 전사 <b>448줄 전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
+<div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
+<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Overview ①</a><a href="#s3">3쪽 · Overview ②</a><a href="#s4">4쪽 · Overview ③</a><a href="#s5">5쪽 · Contents</a><a href="#s6">6쪽 · 6.1 The Semiconductor in Equilibrium</a><a href="#s7">7쪽 · 6.1 Excess Carrier Generation and Recombination</a><a href="#s8">8쪽 · 6.1 Excess Carrier Recombination Rates (R′ₙ, R′ₚ)</a><a href="#s9">9쪽 · 6.2 Continuity Equations</a><a href="#s10">10쪽 · 6.2 Diffusion Equations</a><a href="#s11">11쪽 · 6.3 Ambipolar Transport</a><a href="#s12">12쪽 · 6.3 Ambipolar Transport Equations ★ 이 장의 중심</a><a href="#s13">13쪽 · 6.3 Ambipolar Transport</a><a href="#s14">14쪽 · 6.3 Ambipolar Transport</a><a href="#s15">15쪽 · 6.3 Applications</a><a href="#s16">16쪽 · 6.3 Applications</a><a href="#s17">17쪽 · 6.4 Quasi-Fermi Energy Levels</a><a href="#s18">18쪽 · 6.5·6.6 Shockley-Read-Hall / Surface Effects</a><a href="#s901" class="apx">부록 · 녹화 상태와 확인할 것</a></div>
+<h2 id="s1">1쪽<small>표지 — Ch.6 Nonequilibrium Excess Carrier</small></h2>
+<div class="row"><div class="orig">Semiconductor Engineering<br><b>Ch. 6 Nonequilibrium Excess Carrier in Semiconductors</b><br>Dept. of Electrical Engineering · Jeongkyun Roh</div><div class="exp">표지다. 제목만으로 이 장의 성격이 다 드러난다.<br><b>Nonequilibrium</b> — <b>평형이 아닌 상태</b>. Ch.4 가 "가만히 둔 반도체"를 다뤘다면 여기는 <b>건드린 반도체</b>다.<br><b>Excess Carrier</b> — <b>여분의 캐리어</b>. 빛을 쬐거나 열을 올리면 원래 있던 것 <b>위에 더 생기는</b> 전자와 정공이다.<br>그래서 이 장의 주인공은 <b>n₀, p₀ 가 아니라 δn, δp</b> 다. 기호에 δ(델타)가 붙으면 "원래 있던 것 말고 더 생긴 것"이라고 읽으면 된다.</div></div>
+
+<div class="said"><b>강의</b> <span class="ts">00:00</span> "반도체공학, <b>챕터 6 강의</b> 시작하도록 하겠습니다. 마찬가지로 <b>챕터 6을 전체적으로 살펴보도록</b> 하죠."</div>
+<div class="exp">바로 Overview 로 넘어간다. 이 교수님은 <b>늘 전체 지도를 먼저 그리고</b> 본문에 들어간다.</div>
+
+<div class="key"><b>이 장이 답하는 질문 하나</b><br>
+<b>"반도체에 빛을 쬐면, 그때 생긴 여분의 전자와 정공은 시간이 지나고 자리를 옮기면서 어떻게 되는가?"</b><br>
+이 한 문장에 답하기 위해 <b>재결합률 → 연속방정식 → 확산방정식 → 쌍극성 수송 방정식</b> 네 단계를 거친다. 식이 많아 보여도 <b>한 줄로 이어진 하나의 유도</b>다.</div>
+<h2 id="s2">2쪽<small>Overview ① — 이 장의 지도</small></h2>
+<div class="row"><div class="orig">Overview <span class="hand">[필기] Ch.4 ⟹ 평형상태!</span></div><div class="exp">한 학기 전체에서 <b>가장 값진 쪽</b>이다. 인쇄된 글자는 "Overview" 하나뿐이고 나머지는 전부 손글씨다.<br>첫 줄부터 <b>Ch.4 와의 대비</b>로 시작한다. Ch.4 는 <b>평형상태(equilibrium)</b> — 건드리지 않고 가만히 둔 반도체였다.<br><b>평형상태</b>란 "아무 일도 안 일어난다"가 아니라 <b>"들어오는 양과 나가는 양이 똑같아서 겉보기에 안 변한다"</b>는 뜻이다. 이 구별이 이 장 전체의 출발점이다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] Ch.5 ⟹ (물결 화살표) → [ n₀ + δn / p₀ + δp ]</span></div><div class="exp">Ch.5 는 <b>drift 와 diffusion</b>, 즉 캐리어가 <b>어떻게 움직이는가</b>였다.<br>그리고 Ch.6 에서 다룰 양을 네모 안에 박아 넣었다 — <b>n₀ + δn</b>, <b>p₀ + δp</b>.<br><b>n₀</b>는 원래 있던 전자 농도, <b>δn</b>은 빛이나 열로 <b>추가로 생긴</b> 전자 농도다. 이 장의 모든 식은 이 두 글자를 분리해 쓰는 데서 시작한다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] (밴드 그림) ⊖⊖ ⊖ ⊖ ⊖ ⊖ ——— E<sub>c</sub> · <u>excess ⊖</u> / hν (물결 화살표) ↑ / ——— E<sub>v</sub> · ⊕ ⊕ ⊕ ⊕ · <u>excess hole</u></span></div><div class="exp"><b>그림 하나로 이 장을 설명한다.</b><br><b>hν</b>는 <b>빛 알갱이 하나의 에너지</b>다. h 는 플랑크 상수, ν(뉴)는 빛의 진동수. 빛을 "에너지 덩어리"로 셀 때 쓰는 기호다.<br>그 빛이 들어오면 <b>E<sub>v</sub>(원자가띠 꼭대기)에 있던 전자가 E<sub>c</sub>(전도띠 바닥)로 뛰어오른다.</b> 위에는 전자가 하나 늘고, 아래에는 빈자리 하나가 생긴다.<br><b>늘 한 쌍으로 생긴다</b>는 점이 핵심이다. 그래서 윗줄 "excess ⊖"와 아랫줄 "excess hole"에 각각 밑줄이 그어져 있다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] 평형 X.  ⟶ (큰 괄호) <u>excess carrier.</u></span></div><div class="exp">빛이 들어온 순간 <b>평형이 깨진다</b>("평형 X"). 그리고 그때 생긴 것들을 묶어 부르는 이름이 <b>excess carrier(여분 캐리어)</b> 다.<br><b>carrier(캐리어)</b>는 전하를 나르는 것, 즉 <b>전자와 정공을 통틀어</b> 부르는 말이다. 둘을 따로 말하기 번거로워 한 단어로 묶은 것뿐이다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] (세로 긴 타원) −δn ——— n₀ ——— CB / 같은 μ, D → <u>ambipolar transport. eqn.</u> / +δp ——— p₀ ——— VB</span></div><div class="exp"><b>이 장의 결론이 여기 미리 적혀 있다.</b><br>δn(여분 전자)과 δp(여분 정공)을 <b>하나의 긴 타원으로 묶었다.</b> 둘이 <b>따로 놀지 않고 한 덩어리로 움직인다</b>는 그림이다.<br><b>μ(뮤)</b>는 이동도 — 전기장을 걸었을 때 얼마나 잘 끌려가는가. <b>D</b>는 확산계수 — 농도가 기울었을 때 얼마나 잘 퍼지는가. Ch.5 에서 배운 두 글자다.<br><b>"같은 μ, D"</b> — 전자와 정공이 <b>똑같은 μ 와 똑같은 D 로 움직인다</b>는 뜻이고, 그렇게 움직이는 현상의 이름이 <b>ambipolar transport(쌍극성 수송)</b> 다.<br><b>ambi-</b> 는 "양쪽", <b>polar</b> 는 "극(+, −)". <b>+극과 −극이 함께 움직인다</b>는 말을 그대로 옮긴 이름이다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] ∇·J⃗ = −∂ρ/∂t  ⟹  Diffusion eqn.</span></div><div class="exp"><b>쌍극성 수송 방정식까지 가는 길</b>을 적어 둔 것이다.<br><b>∇·J⃗ = −∂ρ/∂t</b> 는 <b>전하 보존 법칙</b>이다. ∇·(다이버전스)는 "어떤 점에서 밖으로 빠져나가는 양", J⃗ 는 전류밀도, ρ(로)는 전하밀도.<br>읽으면 <b>"어떤 자리에서 전류가 빠져나간 만큼 그 자리의 전하가 줄어든다"</b>. 전하는 사라지지 않는다는 당연한 말을 식으로 쓴 것이고, 이것이 <b>연속방정식</b>이다.<br>여기서 출발해 <b>확산방정식(Diffusion eqn.)</b>으로 가고, 거기서 다시 <b>쌍극성 수송 방정식</b>으로 간다.</div></div>
+
+<div class="fig">왼쪽 위 네모와 오른쪽 큰 괄호 — <b>Ch.4(n₀, p₀만)</b> 와 <b>Ch.6(n₀+δn, p₀+δp)</b> 를 나란히 놓아 <b>무엇이 더해졌는지</b>만 보게 만든 배치다. 두 그림의 차이가 곧 이 장의 내용이다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">10:56</span> · 영상 속 이 쪽은 자료의 필기보다 <b>훨씬 더 그려져 있다</b>. 자료에 남지 않은 것만 적는다.<br>
+· 제목 왼쪽에 <b>"thermal."</b> 이라 쓰고 <b>체크 표시</b>를 했다 — "평형"이라고만 하지 말고 <b>thermal equilibrium(열평형)</b> 이라고 정확히 부르라는 표시<br>
+· <b>"Ch.4 Semiconductor in equilibrium"</b> 을 영어로 길게 풀어 쓰고 <b>통째로 밑줄</b> — 교재의 장 제목 그대로다<br>
+· 윗 밴드 그림 안에 <b>generation</b> 과 <b>recombination</b> 을 각각 써 넣고 <b>둘을 하나의 큰 동그라미로 묶었다</b> — 평형에서는 <b>둘이 짝</b>이라는 표시<br>
+· <b>δn</b> 과 <b>n₀</b> 를 각각 따로 <b>여러 겹 동그라미</b>로 감쌌다. 오른쪽에 <b>"p-type"</b> 과 <b>CB</b>, 아래에 <b>"minority carrier"</b> 밑줄, <b>VB</b> 와 <b>p₀</b><br>
+· 가운데 <b>"non equilibrium"</b> 을 쓰고 밑줄<br>
+· 오른쪽 아래에 <b>drift / diffusion</b> 을 각각 네모로 치고, 그 옆에 <b>μ</b> 와 <b>D</b> 를 동그라미로 묶었다 — <b>drift↔μ, diffusion↔D</b> 짝을 눈으로 박아 넣는 그림<br>
+· 그 아래 <b>ambipolar transport</b> 를 네모 치고, 다시 그 아래 <b>continuity eqn ⇒ diffusion eqn</b> 을 네모로 묶어 <b>세 단계가 위에서 아래로 흐르게</b> 배치했다<br>
+· 왼쪽에 <b>hν</b> 와 <b>T</b> 를 동그라미로 — <b>평형을 깨는 두 가지 방법</b>(빛, 온도)</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="fig">이 구간(<b>00:17 ~ 02:09</b>)은 전사가 크게 망가졌다. 같은 문장이 네 번 반복되고, <b>01:15 ~ 01:41</b> 은 강의와 무관한 문장("제1교시 종료령입니다" 등)이 섞여 들어왔다. <b>인식 오류이지 실제 발언이 아니다.</b> 이 1분 30초는 직접 들어볼 것.</div>
+
+<div class="said"><b>강의</b> <span class="ts">00:17</span> "<b>챕터 4에서 뭘 배웠는지 생각을 해보면</b>, 챕터 4에서 배우는 내용은 <b>semiconductor in equilibrium</b> 입니다."</div>
+<div class="exp">새 장을 <b>이전 장의 제목을 되뇌는 것</b>으로 연다. 필기 첫 줄 "Ch.4 ⟹ 평형상태!" 가 이 말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">02:09</span> "<b>실제로는 사실 수없이 많은 일들이 일어나고 있습니다.</b> 이것을 예를 들어 밴드 구조로 보게 된다면 여기 이제 conduction band 가 있고 valence band 가 있고요."</div>
+<div class="exp"><b>평형에 대한 오해를 먼저 깬다.</b> "안 변한다"는 것은 겉모습일 뿐이라는 말이다.<br>슬라이드에는 이 경고가 없다. <b>평형 = 정지</b> 로 외워 버리면 이 장 전체가 안 읽힌다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">02:39</span> "여기 있던 <b>electron 이 이렇게 올라가면서 새로운 electron 을 만들고</b>, 그다음에 <b>새로운 hole 을 동시에 만드는</b> 거죠. 왜냐하면 electron 과 hole 은 같이 만들어지기 때문에, 이 <b>generation 과정</b>도 일어나고요."</div>
+<div class="exp"><b>"동시에"</b> 가 두 번 나온다. 전자 하나가 올라가면 <b>반드시</b> 아래에 빈자리가 하나 생긴다 — 그래서 g′<sub>n</sub> = g′<sub>p</sub> 다. 5쪽의 식이 여기서 미리 설명된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">03:01</span> "<b>평형 상태일 때는 generation 과 recombination 이 동시에 일어나기 때문에</b> — 이 rate 가 안 일어난다는 게 아니고 <b>이 rate 가 밸런스를 이루고 있기 때문에</b> — 우리가 겉으로 봤을 때는 이 electron 의 농도와 hole 의 농도가 <b>변하지 않는 것처럼 보이는</b> 거예요."</div>
+<div class="exp"><b>이 장에서 가장 중요한 한 문장</b>이다. 평형은 <b>0 이 아니라 균형</b>이다.<br>이것을 받아들여야 4쪽의 G<sub>n₀</sub> = G<sub>p₀</sub> = R<sub>n₀</sub> = R<sub>p₀</sub> 가 "왜 이런 걸 쓰나" 싶지 않게 읽힌다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">03:18</span> "실제로는 <b>이런 많은 다이나믹스가 일어나고 있지만</b>, 겉으로 봤을 때는 그냥 <b>이게 n₀, p₀ 로 고정이 있구나 라고 생각을 하는 상태</b>가 열평형 상태입니다."</div>
+<div class="exp"><b>열평형의 정의를 말로 다시 내린다.</b> "다이나믹스"는 <b>쉼 없이 오가는 움직임</b>을 뜻한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">03:32</span> "그래서 우리가 <b>챕터 4에서 다뤘던 것은 이 열평형 상태에서의 전자와 정공의 개수</b>에 대해서 다뤘던 거예요. 그다음에 <b>Fermi level 까지</b> 다뤘죠."</div>
+<div class="exp">Ch.4 의 범위를 한 줄로 정리한다 — <b>개수(n₀, p₀) 와 Fermi 준위</b>. Ch.6 의 15쪽에서 이 Fermi 준위가 <b>둘로 갈라진다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">03:58</span> "만약에 <b>급격하게 온도가 확 올라가거나</b>, 또는 <b>어떤 갑자기 빛이 쬐어진다거나</b> 이런 경우를 생각을 하는 겁니다."</div>
+<div class="exp"><b>평형을 깨는 두 가지 방법</b>을 든다. 판서에서 <b>hν</b> 와 <b>T</b> 를 동그라미 친 것이 이것이다. (7쪽에서 <b>전류</b>가 셋째로 추가된다.)</div>
+
+<div class="said"><b>강의</b> <span class="ts">04:26</span> "<b>intrinsic semiconductor 에서는 여기가 같지만</b>, 지금 이 경우에서 <b>n-type 이라고 한다면 n₀ 가 p₀ 보다 크게</b> 되겠죠."</div>
+<div class="exp">지나가듯 말했지만 <b>그림을 읽는 규칙</b>이다. <b>진성(intrinsic)</b> 이면 위아래 점의 개수가 같고, <b>n형</b>이면 위가 더 빽빽하다. 11쪽 이후 그림이 전부 이 규칙으로 그려져 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">04:45</span> "그러면 이거에 대해서 <b>순간적으로 얘가 이제 평형 상태가 아니게 되어 버리는</b> 겁니다. 그래서 이런 평형 상태가 아닐 때, 이것을 이제 <b>non-equilibrium</b> 이라 하고."</div>
+<div class="exp"><b>"순간적으로"</b> 가 중요하다. 빛이 닿는 즉시 평형이 깨진다 — <b>시간이 걸려 서서히 깨지는 게 아니다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">05:20</span> "물론 <b>빛에 의해서 생길 수도 있겠지만 열이 갑자기 올라가서도</b> 이런 식으로 excess electron 과 excess hole 이 생길 수 있습니다. 그래서 <b>얘들 합쳐서 excess carrier</b> 라 그럽니다."</div>
+<div class="exp">용어가 여기서 정의된다. <b>excess electron + excess hole = excess carrier.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">05:33</span> "그러면 원래 얘네들이 <b>추가로 생기는 거기 때문에 델타를 붙이고요. 델타 n, 델타 p 이렇게 부릅니다</b> — 얘네들의 <b>농도</b>를요."</div>
+<div class="exp"><b>δ 를 왜 쓰는지</b>를 말해 준다. "추가분"이라는 뜻이다. 그리고 <b>δn 은 개수가 아니라 농도</b>(cm⁻³)라는 점도 짚었다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">06:20</span> "얘네 두 개가 <b>마이너스 플러스</b>로, 얘네들이 살짝 이렇게 <b>두 개가 끌어당기는</b> 그런 일이 발생합니다. 그래서 <b>얘네들이 같이 움직여요.</b> 이렇게 <b>diffusion 도 같이 하고 drift 도 같이</b> 합니다."</div>
+<div class="exp"><b>쌍극성 수송의 핵심이 한 문장으로 나왔다.</b> 이유는 간단하다 — <b>전자는 −, 정공은 + 라서 서로 끌어당긴다.</b><br>9쪽에서 이것을 "내부 전기장"이라는 말로 다시 설명하지만, <b>"끌어당긴다"</b> 가 더 먼저이고 더 본질이다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">03:01 · 04:26 · 06:20</span><br>
+· <b>"평형은 rate 가 0 인 게 아니라 rate 가 밸런스를 이룬 것"</b> — 이 장 전체를 떠받치는 문장인데 슬라이드에는 "are still happening" 다섯 단어뿐이다<br>
+· <b>"intrinsic 이면 위아래가 같고 n형이면 위가 많다"</b> — 밴드 그림을 읽는 규칙. 어느 쪽에도 안 적혀 있다<br>
+· <b>"전자는 −, 정공은 + 라서 서로 끌어당겨 같이 움직인다"</b> — 9쪽 "internal electric field" 의 진짜 이유<br>
+· <b>"δ 는 추가분이라는 뜻이고, δn 은 개수가 아니라 농도"</b></div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>평형 = 균형이지 정지가 아니다</b> — generation 과 recombination 은 평형에서도 계속 일어난다. 교수님이 <b>세 번</b> 다른 말로 반복했다<br>
+② <b>n = n₀ + δn, p = p₀ + δp</b> — 이 장의 모든 식이 이 분리에서 시작한다<br>
+③ <b>평형을 깨는 것 셋</b> — <b>빛(hν) · 열(T) · 전류</b><br>
+④ <b>excess electron 과 excess hole 은 항상 짝으로 생긴다</b> → g′<sub>n</sub> = g′<sub>p</sub>, R′<sub>n</sub> = R′<sub>p</sub><br>
+⑤ <b>둘이 서로 끌어당겨 같은 μ, 같은 D 로 함께 움직인다</b> = <b>ambipolar transport</b>. 이 장의 종착점<br>
+⑥ <b>유도의 순서</b> — 재결합률 → <b>연속방정식</b> → <b>확산방정식</b> → <b>쌍극성 수송 방정식</b>. 필기에 세 단계가 그대로 적혀 있다</div>
+<h2 id="s3">3쪽<small>Overview ② — 평형과 불평형, 그리고 감쇠 유도</small></h2>
+<div class="fig"><b>이 쪽은 이번 녹화에 해당하는 음성이 없다.</b><br>같은 Overview 슬라이드에 <b>다른 때 적은 필기</b>다. 1차 녹화(10/11)의 오버뷰는 2쪽 필기까지만 다뤘고, 2차 녹화(10/12)는 <b>소리가 통째로 비어 있다</b>.<br>다만 <b>여기 적힌 유도는 6쪽(슬라이드 6)에서 그대로 강의된다</b> — 1차 녹화 <b>25:37 ~ 32:37</b> 이다. 그쪽 인용을 함께 읽으면 이 쪽 필기가 전부 풀린다.</div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] ○ 불평형 상태에서 반도체</span></div><div class="exp">이 쪽의 제목이다. <b>불평형(non-equilibrium)</b> 상태의 반도체에서 <b>식이 어떻게 달라지는지</b>를 왼쪽·오른쪽으로 갈라 비교한다.<br>세로줄 하나로 지면을 반 가른 구성 자체가 설명이다 — <b>왼쪽 = 평형, 오른쪽 = 불평형.</b></div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] (왼쪽) eq / g ( n₀ ——— E<sub>c</sub> ‖ p₀ ——— E<sub>v</sub> ) R / <u>g = R ∝ n₀p₀ = n<sub>i</sub>²</u></span></div><div class="exp"><b>평형 쪽</b>이다. <b>eq</b> 는 equilibrium 의 줄임.<br>왼쪽 화살표 <b>g</b> 는 아래에서 위로(생성), 오른쪽 화살표 <b>R</b> 는 위에서 아래로(재결합). <b>둘이 맞물려 원을 그린다.</b><br><b>g = R</b> — 평형의 정의다. 그리고 그 값이 <b>n₀p₀ 에 비례</b>하고, 평형에서는 <b>n₀p₀ = n<sub>i</sub>²</b> 이다.<br><b>왜 n₀p₀ 에 비례하나?</b> 재결합이 일어나려면 <b>전자 하나와 정공 하나가 만나야</b> 한다. 둘이 만날 확률은 <b>각자의 농도의 곱</b>에 비례한다. 전자가 2배 많아지면 만남도 2배, 정공까지 2배면 4배 — 그래서 곱이다.<br>그리고 평형에서는 생성률이 재결합률과 같아야 하므로 <b>생성률도 n<sub>i</sub>² 에 비례</b>하게 된다. 6쪽의 α<sub>r</sub>n<sub>i</sub>² 가 이 줄에서 나온다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] (오른쪽) non − eq  ( 빛, 열, 전류 )</span></div><div class="exp"><b>불평형 쪽</b>이고, 괄호 안이 <b>평형을 깨는 세 가지</b>다 — <b>빛 · 열 · 전류</b>.<br>슬라이드 본문(5쪽)은 "temperature change, external excitation e.g., light" 둘만 적는다. <b>전류</b>는 필기에만 있다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] g′ (아래에 "= α n₀p₀") ( n₀+δn ——— E<sub>c</sub> ‖ p₀+δp ——— E<sub>v</sub> ) R</span></div><div class="exp">같은 그림인데 <b>농도가 n₀+δn, p₀+δp 로 바뀌었다.</b> 생성률에는 <b>프라임(′)</b>이 붙어 g′ 가 됐다.<br><b>프라임은 "여분의 것"이라는 표시</b>다. g′ 는 빛이 추가로 만들어내는 생성률.<br><b>α(알파)</b> 는 비례상수다. "농도의 곱에 비례한다"를 등호로 쓰려면 상수가 하나 필요한데, 그게 α 다. 6쪽에서는 <b>α<sub>r</sub></b> 로 쓴다(r = recombination).</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] hν ~~~ → [ p type · δn = δp ] / p₀ ≫ δn / <u>low level inject.</u></span></div><div class="exp"><b>조건을 셋 세운다.</b> 이 셋이 없으면 아래 계산이 안 끝난다.<br>① <b>p type</b> — p형이다. 즉 <b>정공이 다수, 전자가 소수</b>.<br>② <b>δn = δp</b> — 늘 쌍으로 생기니 여분 전자와 여분 정공의 수가 같다.<br>③ <b>p₀ ≫ δn</b>, 이름이 <b>low level injection(저준위 주입)</b> 이다. <b>원래 있던 다수 캐리어가 새로 생긴 것보다 압도적으로 많다</b>는 뜻.<br>숫자로 느껴 보면 p₀ = 10¹⁵, δn = 10¹⁰ 같은 상황이다. <b>10만 배</b> 차이라 δn 을 p₀ 옆에 더해도 p₀ 는 꿈쩍하지 않는다. <b>이 "꿈쩍 안 함"이 식을 1차 미분방정식으로 만든다.</b></div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] dn(t)/dt = d/dt ( n₀ + δn(t) ) = d(δn)/dt = g′ − R<br>(g′ 아래에 "n<sub>i</sub>²", R 옆에 "R ∝ n(t)p(t)")</span></div><div class="exp"><b>유도의 첫 줄</b>이다.<br><b>n₀ 는 상수라서 미분하면 0</b> 이다. 그래서 <b>dn/dt 와 d(δn)/dt 가 같아진다.</b> 이 한 걸음이 이 장 내내 되풀이된다(8쪽에서도 똑같이 쓴다).<br>오른쪽은 <b>"변화율 = 생기는 속도 − 없어지는 속도"</b>. 물탱크로 치면 <b>수위 변화 = 수도꼭지 − 배수구</b> 다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] = α { n<sub>i</sub>² − n(t)p(t) }<br>= α { n<sub>i</sub>² − (n₀+δn)(p₀+δp) }   (δp 위에 δn 표시)<br>= α { − δn (n̶₀̶ + p₀) + (δn)²̶ }<br>= − α δn · p₀</span></div><div class="exp"><b>대입하고 정리한다.</b> 전개하면 n<sub>i</sub>² 와 n₀p₀ 가 서로 지워진다(평형에서 둘이 같으니까). 남는 것이 <b>−δn(n₀+p₀) − (δn)²</b> 다.<br>그리고 <b>두 군데를 지웠다</b> — <b>n₀</b> 와 <b>(δn)²</b>.<br>· <b>n₀ 를 지우는 이유</b>: p형이라 p₀ ≫ n₀. 큰 것 옆의 작은 것은 버린다<br>· <b>(δn)² 을 지우는 이유</b>: δn 이 작으면 그 제곱은 <b>훨씬</b> 더 작다. δn 이 p₀ 의 10만분의 1이면 δn² 은 δn·p₀ 의 10만분의 1이다<br>남는 것은 <b>−α δn p₀</b> 하나뿐이다. <b>조건 세 개를 쓴 대가로 항이 하나로 줄었다.</b><br><span class="hand">[필기 그대로] 세 번째 줄의 (δn)² 앞 부호가 <b>+</b> 로 적혀 있다. 전개하면 <b>−</b> 가 맞다. 어차피 지워 버리는 항이라 결과에는 영향이 없다.</span></div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] ⇒ δn = δn(0) e^(−αp₀t)   (지수의 분모에 τ 표시) ⇒ (작은 그래프: n₀ 에서 아래로 꺾여 내려가는 곡선)</span></div><div class="exp"><b>답이다.</b> d(δn)/dt = −αp₀·δn 은 <b>"줄어드는 속도가 지금 남아 있는 양에 비례한다"</b>는 꼴이고, 이런 식의 답은 언제나 <b>지수 감소</b>다.<br><b>δn(0)</b> 은 빛을 끈 순간의 양. <b>e^(−t/τ)</b> 에서 <b>τ(타우) = 1/(αp₀)</b> 를 <b>수명(lifetime)</b> 이라 부른다.<br><b>τ 가 뭘 뜻하나</b> — t = τ 를 넣으면 e⁻¹ ≈ 0.37. 즉 <b>τ 는 처음 양의 37 %만 남을 때까지 걸리는 시간</b>이다.<br>그리고 <b>τ = 1/(αp₀)</b> 라는 모양이 말해 주는 것: <b>다수 캐리어 p₀ 가 많을수록 수명이 짧다.</b> 부딪힐 상대가 많으니 빨리 사라진다.<br>오른쪽 작은 그래프가 그 모습이다 — <b>n₀ 선 위로 솟았다가 n₀ 로 되돌아가며 사그라든다.</b> 평형으로 돌아가는 것이다.</div></div>
+
+<div class="only"><b>자료에 없음</b> — 이 쪽 필기 전체<br>
+· <b>"g = R ∝ n₀p₀ = n<sub>i</sub>²"</b> — 슬라이드 4쪽은 G = R 만 말하고 <b>무엇에 비례하는지</b>는 말하지 않는다<br>
+· <b>평형 / 불평형을 세로줄 하나로 갈라 같은 그림을 두 번 그린 배치</b> — 바뀐 것이 <b>δ 두 개뿐</b>임을 눈으로 보게 만든다<br>
+· <b>"n₀ 와 (δn)² 을 지운다"는 두 번의 판단</b> — 슬라이드 6쪽은 결과만 보여 주고 <b>무엇을 왜 버렸는지</b>는 안 적는다<br>
+· <b>전류</b>가 평형을 깨는 셋째 방법이라는 것</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>재결합률이 n·p 곱에 비례하는 이유</b> — <b>전자와 정공이 만나야</b> 재결합이고, 만날 확률은 둘의 농도의 곱이다<br>
+② <b>n₀ 는 시간의 함수가 아니라 dn/dt = d(δn)/dt</b> — 이 장에서 가장 자주 쓰는 한 걸음<br>
+③ <b>저준위 주입에서 버리는 두 항</b> — <b>n₀</b>(p형이라 p₀ 에 밀림)와 <b>(δn)²</b>(2차 항)<br>
+④ <b>τ<sub>n0</sub> = 1/(α<sub>r</sub>p₀)</b> — <b>다수 캐리어 농도가 클수록 수명이 짧다</b><br>
+⑤ <b>δn(t) = δn(0)e^(−t/τ)</b> — 지수 감소. <b>τ 는 37 % 남을 때까지의 시간</b><br>
+⑥ 이 유도는 <b>6쪽에서 그대로 다시 나온다</b>. 거기까지 보고 오면 이 쪽이 요약본으로 읽힌다</div>
+<h2 id="s4">4쪽<small>Overview ③ — 쌍극성 수송 방정식까지 가는 길</small></h2>
+<div class="row"><div class="orig"><span class="hand">[필기] ambipolar transport eqn.</span></div><div class="exp">Overview 셋째 장이고, <b>이 장의 도착점 하나를 미리 통째로 적어 둔 쪽</b>이다.<br>2쪽이 "무엇을 배우나", 3쪽이 "평형과 불평형이 어떻게 다른가"였다면 여기는 <b>"그래서 식이 어떻게 생겼나"</b> 다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] F(x) ⟹ (정육면체 상자, 화살표가 관통) → F(x+dx).</span></div><div class="exp"><b>연속방정식의 그림</b>이다. 7쪽 슬라이드의 그 상자를 손으로 다시 그린 것.<br><b>F 는 flux(플럭스)</b> — <b>단위 시간에 단위 넓이를 지나가는 입자 수</b>다. "흐름의 세기"라고 읽으면 된다.<br>왼쪽으로 <b>F(x)</b> 가 들어가고 오른쪽으로 <b>F(x+dx)</b> 가 나간다. <b>들어간 양과 나간 양이 다르면 상자 안의 개수가 변한다</b> — 이게 연속방정식의 전부다.<br>통장으로 치면 <b>입금 − 출금 = 잔고 변화</b> 다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] (동그라미) dp(t)/dt = − dF(x)/dx + g′ − R</span></div><div class="exp"><b>연속방정식</b>이다. 세 항을 한 번에 읽으면,<br>· <b>− dF/dx</b> — 흐름이 들어온 것보다 나간 게 많으면 줄어든다. <b>앞의 음수 부호</b>가 그 뜻이다<br>· <b>+ g′</b> — 빛이 만들어 넣는 몫<br>· <b>− R</b> — 재결합으로 사라지는 몫<br>dp/dt 를 동그라미 친 것은 <b>"우리가 알고 싶은 건 이것"</b> 이라는 표시다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] = (큰 타원) [ D<sub>p</sub> ∂²(δp)/∂x² − μ<sub>p</sub>E ∂(δp)/∂x + g′ − R̶ → p/τ ]</span></div><div class="exp"><b>같은 식을 F 를 풀어 쓴 모습</b>이고, 이것이 <b>확산방정식</b>이다. 큰 타원으로 통째로 묶어 <b>"이 모양을 외워라"</b> 라고 표시했다.<br>세 항의 뜻은 이렇다.<br>· <b>D<sub>p</sub> ∂²(δp)/∂x²</b> — <b>확산</b>. 2계 미분이다. <b>"기울기의 기울기"</b> 라서, 가운데가 양옆보다 볼록하면 퍼져 나간다<br>· <b>−μ<sub>p</sub>E ∂(δp)/∂x</b> — <b>드리프트</b>. 전기장 E 가 끌고 가는 몫<br>· <b>+g′ − p/τ</b> — 생성과 재결합<br><span class="hand">[필기 그대로] R 에 사선을 긋고 그 자리에 <b>p/τ</b> 를 써 넣었다 — <b>"R 은 그냥 R 이 아니라 농도 나누기 수명"</b> 이라는 치환이다. 6쪽에서 R′ = δn/τ<sub>n0</sub> 을 유도하는 이유가 이것이다.</span></div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] F<sub>p</sub> = J<sub>p</sub>/e<br>J<sub>p</sub> = J<sub>drift</sub> + J<sub>diff</sub> = e μ<sub>p</sub> p E − e D<sub>p</sub> ∂p/∂x</span></div><div class="exp"><b>연속방정식에서 확산방정식으로 넘어가는 다리</b>다. 8쪽 전체가 이 두 줄이다.<br>맨 위 식의 <b>F</b> 를 지우고 싶은데, F 는 입자 수의 흐름이고 우리가 Ch.5 에서 배운 것은 <b>전류 J</b> 다. 둘은 <b>전하 e 하나 차이</b>다.<br><b>F<sub>p</sub> = J<sub>p</sub>/e</b> — 전류를 전하로 나누면 입자 흐름이 된다. 돈의 흐름을 1,000원권 장수로 바꾸는 것과 같다.<br>그리고 J<sub>p</sub> 는 Ch.5 에서 이미 구했다 — <b>드리프트 + 확산</b>. <b>Ch.5 의 결과를 Ch.6 의 식에 꽂아 넣는 지점</b>이다.</div></div>
+
+<div class="fig">이 쪽의 배치가 곧 <b>유도의 순서</b>다. <b>상자 그림(보존) → 연속방정식 → J 대입 → 확산방정식</b> 이 왼쪽에서 오른쪽으로, 위에서 아래로 흐른다. 식을 외우지 말고 <b>이 흐름</b>을 외우면 매번 다시 세울 수 있다.</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">07:05</span> "그런데 이렇게 우리가 <b>여분에 생긴 electron 과 hole 은 이 두 개가 서로 같이 움직여서 같은 drift 특징, 같은 diffusion 특징</b>을 가진다는 건데, <b>같은 mobility 와 같은 diffusion coefficient 를 가지고 행동을 하는</b> 게 이제 우리가 알게 된 거죠."</div>
+<div class="exp"><b>쌍극성 수송의 정의</b>를 다시 말로 내린다. 핵심은 <b>"같은 μ, 같은 D"</b> 다 — 두 종류의 입자인데 <b>하나의 숫자 쌍으로 다룰 수 있게</b> 된다는 것.</div>
+
+<div class="said"><b>강의</b> <span class="ts">07:36</span> "어떤 semiconductor 에 <b>빛이 가해지거나 열이 가해지거나</b> 해서, <b>또는 이제 전류가 흐른다고 할 수도 있겠죠. 전류가 갑자기 흐르면</b> 이 equilibrium 상태가 깨지게 되는 거죠."</div>
+<div class="exp"><b>전류</b>를 셋째로 덧붙인다. 슬라이드 5쪽은 <b>온도와 빛 둘만</b> 적는다. 3쪽 필기의 "(빛, 열, 전류)" 가 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">07:54</span> "얘들은 서로 <b>마치 한 개의 물질처럼</b> 같은 diffusion coefficient 와 같은 mobility 를 가지고 이제 행동을 하게 됩니다."</div>
+<div class="exp"><b>"마치 한 개의 물질처럼"</b> — 이 비유 하나가 ambipolar 라는 말을 대신한다. 9쪽에서 "as if they were a single particle" 로 영어로 다시 말한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">08:17</span> "그런데 <b>ambipolar transport equation 을 우리가 유도를 하고 싶은 거예요.</b> 왜냐하면 우리가 알고 싶은 것은 이 excess electron 과 excess hole 이 <b>어떤 mobility 와 어떤 diffusion coefficient 를 가지고 같이 움직이니까</b>, 이걸 알고 싶어서."</div>
+<div class="exp"><b>왜 유도하는지</b>를 먼저 말한다. 목표는 식 자체가 아니라 <b>μ′ 와 D′ 라는 숫자 두 개</b>다. 10쪽에서 그 두 개가 나오고, 11쪽에서 <b>정체가 밝혀진다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">08:39</span> "<b>continuity equation</b> 이에요. 여기서 <b>연속 방정식</b>. 그래서 우리는 이 continuity equation 에서 시작할 거예요. continuity equation 을 해서 <b>diffusion equation 으로 간 다음에</b>, 이걸 이용해서 <b>ambipolar transport equation 을 유도</b>를 할 겁니다."</div>
+<div class="exp"><b>세 단계를 한 문장에 담았다.</b> 이 쪽 필기의 배치가 정확히 이 순서다. 7·8·10쪽이 각각 이 세 단계다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">09:10</span> "얘네들의 움직임을 결정을 하는 파라미터인 mobility 와 diffusion coefficient 는, 이 excess electron 과 excess hole 중에 <b>minority carrier 의 특성의 영향을 받는다</b> 라는 게 <b>ambipolar transport equation 의 결론</b>입니다. <b>지금 무슨 말인지 잘 모르겠죠.</b>"</div>
+<div class="exp"><b>결론을 먼저 말해 버린다.</b> 그리고 <b>"지금은 모르겠죠"</b> 라고 덧붙인다 — 지금 안 와닿는 게 정상이라는 뜻이다.<br><b>minority carrier(소수 캐리어)</b> 는 그 반도체에서 <b>수가 적은 쪽</b>이다. p형이면 전자, n형이면 정공.<br>신기한 결론이다. <b>수가 적은 쪽이 전체의 속도를 정한다.</b> 11쪽에서 식으로 확인한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">09:30</span> "그래서 만약에 <b>p-type 에서 얘기를 한다면</b>, excess electron 과 excess hole 이 있을 때 뭐가 minority carrier 냐 — 당연히 <b>excess electron 이 minority carrier</b> 죠. 그래서 p-type semiconductor 에서 이 excess electron 과 excess hole 의 움직임은 <b>이 excess electron 에 의해서 결정이 된다</b>고 생각을 하면 됩니다."</div>
+<div class="exp"><b>추상을 바로 구체로 내린다.</b> p형 → 전자가 소수 → <b>전자의 D<sub>n</sub>, μ<sub>n</sub> 이 전체를 지배한다.</b> 11쪽의 D′ = D<sub>n</sub>, μ′ = μ<sub>n</sub> 이 정확히 이 말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">09:58</span> "자, 그래서 <b>이번 단원에서는 수식이 상당히 많이 나옵니다.</b> … 수식이 많이 나오지만 여러분들은 이것을 <b>크게 너무 어려워할 필요는 없고요. 그냥 수식은 쭉 따라가 보면</b> 되고."</div>
+<div class="exp"><b>공부하는 태도에 대한 조언</b>이다. 이 장은 식의 개수로 겁을 주지만, <b>각 식이 앞 식에서 한 걸음씩 나온 것</b>이라 흐름만 잡으면 된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">10:03</span> "<b>generation</b>, electron 과 hole 이 만들어지는 과정. generation 과 그다음에 hole 과 electron 이 없어지는 과정, <b>recombination</b>. 이 과정을 배우게 되고, 얘네들의 <b>rate</b> … 하나하나씩 정의를 함에 따라서 <b>recombination rate 를 구해 볼 거예요.</b> 그래서 그 recombination rate 를 통해서 아까 말한 요 <b>연속방정식</b>을 구하고요."</div>
+<div class="exp"><b>왜 6쪽에서 R′ 을 그렇게 공들여 구하는지</b>에 대한 답이다. R′ 은 그 자체가 목적이 아니라 <b>연속방정식에 넣을 재료</b>다. 7쪽 식의 마지막 항 p/τ<sub>pt</sub> 가 그 자리다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">10:49</span> "그래서 마지막으로 우리가 알게 된 요 <b>ambipolar transport equation</b> 있죠. 이 ambipolar transport equation 을 통해서 <b>excess electron, excess hole 의 움직임을 파악</b>을 하는데 이거 사용을 하는 겁니다. 그래서 여러분들이 <b>최종적으로 알고 중요하게 생각해야 되는 것은 ambipolar transport equation 이다.</b>"</div>
+<div class="exp"><b>"최종적으로 중요한 것"</b> 이라고 못 박았다. 이 장에서 하나만 가져가야 한다면 <b>쌍극성 수송 방정식</b>이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">11:12</span> "뭐 예를 들어서 <b>반도체가 이렇게 있었는데 요 가운데 영역에 빛을 딱 쬈을 때</b> — 그럼 요 가운데에서 이제 전자·정공이 생길 거 아니에요. 얘들이 이제 <b>시간과 공간에 따라서 어떻게 퍼져 나가는가</b>, 그런 거를 이 ambipolar transport equation 을 통해서 우리가 구할 수가 있는 거죠."</div>
+<div class="exp"><b>14쪽 Example 6.4 를 미리 그려 보인다.</b> 가운데만 빛을 쬐고 양옆으로 퍼지는 그 문제다.<br><b>"시간과 공간에 따라"</b> — 이 두 단어가 왜 <b>시간 미분과 공간 미분이 한 식에 같이 들어 있는지</b>를 설명한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">11:33</span> "이번 단원의 목표는 여러분들이 <b>ambipolar transport equation 의 유도 과정을 이해</b>하고, 그걸 <b>이용을 해서 다양한 상황에서</b> 이 minority carrier … 얘들의 <b>움직임이 어떻게 되는가</b>에 대해서 알 수 있게 되는 게 이번 단원의 목표죠."</div>
+<div class="exp"><b>목표를 두 개로 못 박았다</b> — <b>① 유도 과정을 이해할 것 ② 그것으로 문제를 풀 것.</b> 시험이 이 두 갈래로 나온다는 신호로 읽어도 된다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">07:36 · 09:10 · 09:30 · 11:12</span><br>
+· <b>"전류가 흐르는 것"도 평형을 깨는 방법</b> — 슬라이드는 온도와 빛만 적는다<br>
+· <b>"마치 한 개의 물질처럼"</b> — ambipolar 라는 낱말을 대신하는 비유<br>
+· <b>결론을 맨 앞에서 미리 말해 버린 것</b> — "minority carrier 가 전체를 결정한다", 그리고 <b>"지금 무슨 말인지 잘 모르겠죠"</b><br>
+· <b>p형 → excess electron 이 소수 → 전자가 지배</b> 라는 구체적 대입<br>
+· <b>"가운데에만 빛을 쬐면 어떻게 퍼지나"</b> — 14쪽 예제를 11분 시점에 미리 그려 보인다<br>
+· <b>"수식은 그냥 쭉 따라가 보면 된다"</b> 는 공부 방법 조언</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>유도의 세 단계</b> — <b>연속방정식 → 확산방정식 → 쌍극성 수송 방정식</b>. 교수님이 <b>세 번</b> 반복했다<br>
+② <b>F = J/e</b> — 연속방정식(플럭스)과 Ch.5(전류)를 잇는 다리. 이 한 줄이 7쪽과 8쪽을 연결한다<br>
+③ <b>R 을 p/τ 로 바꿔 쓴다</b> — 6쪽에서 R′ = δn/τ<sub>n0</sub> 을 구하는 목적이 바로 이 치환이다<br>
+④ <b>쌍극성 수송 방정식이 이 장의 최종 결론</b> — <b>"최종적으로 중요하게 생각해야 되는 것"</b> 이라고 직접 말했다<br>
+⑤ <b>μ′, D′ 는 소수 캐리어 값으로 떨어진다</b> — p형이면 μ<sub>n</sub>, D<sub>n</sub>. <b>11쪽에서 증명</b><br>
+⑥ <b>단원 목표가 둘</b> — <b>유도 과정 이해</b> + <b>여러 상황에 적용</b>. 13·14쪽 예제가 둘째에 해당한다</div>
+<h2 id="s5">5쪽<small>Contents — 6.1 ~ 6.6</small></h2>
+<div class="row"><div class="orig">Contents<br>6.1 Carrier <u>Generation and Recombination</u><br>6.2 Characteristics of Excess Carriers <span class="hand">[필기] (Excess Carriers 에 동그라미) 연속방정식 ⇒ diff eqn.</span><br><span class="hand">[필기] ✸</span> 6.3 Ambipolar Transport <span class="hand">[필기] eqn.</span><br>6.4 Qusi-Fermi Energy Level<br>6.5 Excess Carrier Lifetime<br>6.6 Surface Effect<br><span class="hand">[필기] (6.4 왼쪽에서 6.6 까지 내려오는 긴 화살표)</span></div><div class="exp"><b>목차에 적힌 표시가 곧 중요도 지도</b>다. 세 가지가 눈에 띈다.<br>① <b>6.3 앞에만 별표(✸)</b> — 이 장에서 <b>가장 중요한 절</b>이라는 뜻이고, 교수님도 말로 "6.3이 사실 가장 중요하다"고 했다<br>② <b>6.2 옆에 "연속방정식 ⇒ diff eqn."</b> — 절 제목만 봐서는 안 드러나는 <b>실제 내용</b>을 적어 둔 것. 6.2 는 사실상 "연속방정식과 확산방정식"이다<br>③ <b>6.4~6.6 을 하나의 화살표로 묶었다</b> — 셋을 <b>한 덩어리</b>로 보라는 표시. 실제로 슬라이드도 15·16쪽 두 장뿐이다<br><span class="hand">[슬라이드 오기] 6.4 의 "Qusi-Fermi" 는 <b>Quasi-Fermi</b> 의 오타다. 본문 15쪽에는 제대로 적혀 있다.</span></div></div>
+
+<div class="board"><b>판서</b> <span class="ts">18:16</span> · 목차 오른쪽 빈 자리에 <b>이 장 전체를 한 장으로 압축한 그림</b>을 그렸다. 자료에는 없다.<br>
+· <b>E<sub>c</sub> 와 E<sub>v</sub> 두 줄</b>을 긋고 각각 <b>CB · VB</b> 라고 쓴 뒤, 오른쪽 끝에 다시 <b>E<sub>c</sub>, E<sub>v</sub></b> 를 크게 적었다 — <b>같은 선을 두 이름으로 부른다</b>는 것을 보이는 배치<br>
+· 두 줄 사이에 <b>위아래 화살표</b>를 그려 generation / recombination 을 표시하고, 각각 <b>여러 겹 동그라미</b><br>
+· 위에 <b>δn</b>, 아래에 <b>δp</b> 를 <b>큰 타원으로 하나씩</b> 감쌌다. 위쪽에 <b>n₀</b>, 아래쪽에 <b>p₀</b><br>
+· 그 아래 <b>좌우 화살표(←, →)</b>를 그리고 <b>네모 상자</b>를 쳤다 — <b>공간을 따라 퍼져 나가는 움직임</b><br>
+· 오른쪽 아래에 <b>μ</b> 와 <b>D</b> 를 각각 동그라미 치고 옆에 <b>drift</b> 와 <b>diff</b> 를 써서 밑줄 — <b>μ↔drift, D↔diffusion</b> 짝을 또 한 번 박아 넣는다. 2쪽 판서에서도 같은 짝을 그렸다<br>
+· <b>6.1 전체를 큰 동그라미</b>로 묶고, <b>6.2 아래에 "Continuity eq ⟶ diff. equation"</b> 을 써서 밑줄<br>
+· <b>6.3 아래에 "ambipolar transport eqn." 을 쓰고 타원</b>으로 감쌌다<br>
+· <b>6.4 · 6.6 각각에 동그라미</b>, 왼쪽에 <b>6.1부터 6.6까지 전체를 감싸는 긴 괄호</b><br>
+· 왼쪽 아래 빈 공간에 <b>따로 작은 그림</b> — E<sub>c</sub>, E<sub>v</sub> 두 줄 사이에 <b>세로선 두 개와 동그라미</b>를 그렸다. <b>16쪽의 trap(포획 준위) 그림</b>을 미리 그려 본 것이다</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">12:15</span> "여러분들 <b>확실해야 되는 게</b> — 여기는 이제 conduction band 고 valence band 예요. 그리고 여기 <b>E<sub>c</sub> 라고 불리는 것은 conduction band 에서 에너지가 가장 낮은 영역</b>입니다. <b>경계</b>라고 볼 수 있는 거죠."</div>
+<div class="exp">목차 설명 도중에 <b>기호의 뜻부터 다시 잡는다.</b><br><b>E<sub>c</sub> 는 전도띠 전체가 아니라 그 바닥선</b>이다. 띠는 위로 쭉 열려 있고, 그중 <b>가장 아래 모서리</b>가 E<sub>c</sub> 다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">12:33</span> "그다음에 <b>E<sub>v</sub> 는 valence band 에서 제일 높은</b> 거예요, 에너지가. 그래서 E<sub>c</sub> 를 <b>conduction band edge</b>, 그리고 <b>valence band edge</b> 라고 — <b>경계면</b>이라고 얘기를 하고요."</div>
+<div class="exp"><b>edge(엣지) = 가장자리, 모서리.</b> E<sub>c</sub> 와 E<sub>v</sub> 를 <b>"띠의 가장자리"</b> 라고 부르는 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">12:44</span> "그리고 요기 conduction band edge 와 valence band edge, <b>요 사이의 전이를 band transition</b> 이렇게 부릅니다."</div>
+<div class="exp"><b>band transition(밴드 간 전이)</b> — 전자가 <b>E<sub>v</sub> 에서 E<sub>c</sub> 로, 또는 그 반대로 건너뛰는 것</b>. 6쪽에서 "direct band-to-band" 라는 말로 다시 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">12:54</span> "<b>generation 은</b> 이제 요기 valence band 에 있던 <b>electron 이 한계를 점프해서 올라가는 과정</b>을 generation 이라 얘기를 하죠. 그러면서 <b>valence band 의 hole 과 conduction band 의 electron</b> 을 <b>동시에 만들어내는</b> 과정을 generation 이라 했고."</div>
+<div class="exp"><b>생성의 정의</b>다. "한계를 점프"란 <b>밴드갭을 뛰어넘는다</b>는 뜻. 또 <b>"동시에"</b> 가 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">13:10</span> "반대로 <b>떨어지는 과정</b> — <b>떨어진다는 말은</b> 빈 공간, valence band 는 빈 공간, 즉 <b>hole 에게 electron 이 다시 떨어짐으로써 빈 공간을 없앤다</b>는 말이기 때문에, <b>electron 과 hole 을 동시에 없애는 과정</b>이죠. 그것을 이제 <b>recombination</b> 이라고 했었죠."</div>
+<div class="exp"><b>재결합을 "정공이 메워진다"로 번역해 준다.</b><br>정공은 물건이 아니라 <b>빈자리</b>다. 전자가 그 자리로 내려오면 <b>전자도 사라지고 빈자리도 사라진다.</b> 둘이 동시에 없어지는 이유가 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">13:39</span> "excess carrier — 우리가 어떤 반도체에서 여기 <b>n₀ 가 있고 p₀ 가 이렇게 있었는데</b>, 요기 이제 <b>열이 가해진다든지 빛이 들어온다든지</b> 해서 <b>추가로 이제 δn 만큼</b>…"</div>
+<div class="exp">6.2 절을 소개하며 또 δn 을 그린다. <b>이 장에서 같은 그림을 다섯 번 넘게 다시 그린다.</b> 그만큼 이 그림 하나로 돌아간다는 뜻이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">14:14</span> "반도체가 이렇게 있었을 때 아까 얘기를 했지만 <b>빛을 여기에 때린다면 excess carrier 가 여기 생기겠죠.</b> 그러면 이 excess carrier 가 <b>공간에 따라서</b> — 이쪽 반도체에서 이렇게 퍼져 나가는지 안 그러면 가운데만 있는지 — 이걸 알아야 하는 게 <b>공간에 대한 변화</b>고요."</div>
+<div class="exp"><b>"공간에 따른 변화"가 무슨 말인지</b>를 구체적으로 풀어 준다. 퍼지느냐 머무르느냐 — 이것이 <b>∂/∂x</b> 가 식에 들어가는 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">14:31</span> "그다음에 얘가 <b>시간에 따라서는 어떤 식으로 되는지</b>를 알아야 하는 게 <b>시간에 따른 변화</b>입니다. 그래서 우리가 궁극적으로 이번 단원에서 알고 싶은 것은, <b>excess carrier 가 시간과 공간에 따라서 어떻게 움직이는지</b>, 어떤 식으로 행동을 하는지 알고 싶은 게 이번 단원의 목표입니다."</div>
+<div class="exp"><b>이 장의 목표를 가장 짧게 말한 문장</b>이다. <b>시간 + 공간.</b> 그래서 모든 식에 <b>∂/∂t 와 ∂²/∂x² 가 함께</b> 들어 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">14:57</span> "이 excess carrier 의 움직임을 표현할 수 있는 equation 인 <b>diffusion equation 을 continuity equation — 연속 방정식을 통해서</b> … <b>여기가 이제 연속 방정식</b>이에요."</div>
+<div class="exp">목차의 6.2 옆 필기 <b>"연속방정식 ⇒ diff eqn."</b> 이 이 말이다. <b>6.2 라는 제목만 보면 안 보이는 내용</b>을 적어 둔 것.</div>
+
+<div class="said"><b>강의</b> <span class="ts">15:39</span> "ambipolar transport 의 개념은, 이 electron 과 hole — 이제 excess carrier 가 이렇게 생겼을 때 <b>얘네 두 개가 따로 움직이는 게 아니고 얘들이 drift 도 같이 하고 diffusion 도 같이 하고, 마치 하나의 파티클인 것처럼 움직인다</b>라는 겁니다. <b>두 개가 살짝 bound 돼 있다는 거죠.</b>"</div>
+<div class="exp"><b>bound(묶여 있다)</b> 라는 낱말이 나온다. 쇠사슬로 묶인 게 아니라 <b>전기력으로 서로 붙잡고 있다</b>는 뜻이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">16:03</span> "<b>얘네들의 mobility 가 똑같고</b> — mobility 가 똑같다는 말은 <b>drift 를 같이 한다</b>는 말이고, 그다음에 <b>diffusion coefficient 가 똑같고</b> — diffusion coefficient 가 똑같다는 말은 이 <b>diffusion 을 같이 한다</b>는 말이죠."</div>
+<div class="exp"><b>"같은 μ, D" 가 무슨 뜻인지</b>를 한 글자씩 풀어 준다. 판서에서 μ↔drift, D↔diff 짝을 두 번이나 그린 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">16:35</span> "<b>ambipolar transport 의 가장 중요한 결론 중에 하나</b>입니다. 그래서 <b>6.3이 사실 가장 중요할 텐데요.</b>"</div>
+<div class="exp"><b>직접 "가장 중요하다"고 말했다.</b> 목차의 별표(✸)가 6.3 앞에만 붙은 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">17:32</span> "이건 이제 별건 아니고 — 이 <b>밴드갭 사이에</b>, 원래 그 <b>direct band-to-band transition</b> 의 경우에는 우리가 지금까지 이런 거 마찬가지로 했던 거죠. 그런데 <b>실제로는 이 밴드 사이에 이렇게 state 가 있는 경우</b>가 있습니다. 이런 경우에 <b>trap state</b> 라고 불리는데."</div>
+<div class="exp">6.5 를 소개한다. <b>지금까지는 전자가 밴드갭을 "한 번에" 건넌다고 가정</b>했는데, 실제로는 <b>중간에 디딤돌이 있다</b>는 이야기다.<br><b>trap(트랩) = 덫.</b> 전자나 정공을 <b>중간에 붙잡아 두는 자리</b>다. 16쪽에서 자세히 본다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">17:56</span> "그다음에 이제 <b>표면에 trap state 가 존재하는</b>, 그 <b>surface state</b> 에 대해서 배우는 게 이 <b>6.6</b> 입니다."</div>
+<div class="exp">6.6 을 한 줄로 요약한다 — <b>표면에 생기는 trap</b>. 16쪽 아래 절반이 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">18:04</span> "그래서 사실 <b>6.1, 2, 3 — 이 세 부분이 어렵습니다.</b> 많은 수식이 있는데 여러분들 <b>넘어가려 하지 마시고요. 차근차근 살펴보시면</b> 이제 큰 문제 없이 해결해 나갈 수 있을 것입니다."</div>
+<div class="exp"><b>어디가 어려운지를 미리 알려 준다</b> — <b>6.1 · 6.2 · 6.3</b>. 뒤집어 보면 <b>6.4~6.6 은 비교적 가볍다</b>는 말이기도 하다. 목차에서 6.4~6.6 을 화살표 하나로 묶은 것과 같은 판단이다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">12:15 · 13:10 · 14:14 · 16:35 · 18:04</span><br>
+· <b>E<sub>c</sub>, E<sub>v</sub> 가 "띠"가 아니라 "띠의 가장자리(edge)"</b> 라는 설명 — 목차 쪽에서 굳이 다시 짚었다<br>
+· <b>"정공은 빈자리이고, 전자가 그 자리로 내려오면 둘이 동시에 사라진다"</b> — 재결합을 말로 번역한 것<br>
+· <b>"공간에 따른 변화 = 퍼지느냐 가운데 머무르느냐"</b> — ∂/∂x 가 식에 있는 이유<br>
+· <b>"6.3이 가장 중요하다"</b>, <b>"6.1·6.2·6.3 이 어렵다"</b> — 난이도와 비중을 직접 말했다<br>
+· <b>trap 을 "밴드 사이의 디딤돌"로 소개</b> — 16쪽보다 다섯 쪽 앞서 개념을 깔아 둔다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>6.3 Ambipolar Transport 가 이 장의 중심</b> — 목차에 <b>별표</b>가 붙었고 말로도 <b>"가장 중요하다"</b> 고 했다<br>
+② <b>6.2 의 실제 내용은 "연속방정식 → 확산방정식"</b> — 제목만 봐서는 안 보인다. 필기에 적혀 있다<br>
+③ <b>E<sub>c</sub> = conduction band edge, E<sub>v</sub> = valence band edge</b> — 둘 다 <b>선 하나</b>이지 띠 전체가 아니다<br>
+④ <b>generation / recombination 은 늘 전자와 정공을 동시에</b> 만들고 없앤다<br>
+⑤ <b>이 장의 목표 = 시간과 공간</b>. 식에 ∂/∂t 와 ∂²/∂x² 가 같이 있는 이유<br>
+⑥ <b>6.4~6.6 은 한 덩어리</b>로 묶어 보라 — 슬라이드도 두 장뿐이다<br>
+⑦ <b>어려운 곳을 미리 지목했다 — 6.1 · 6.2 · 6.3</b></div>
+<h2 id="s6">6쪽<small>6.1 The Semiconductor in Equilibrium</small></h2>
+<div class="row"><div class="orig"><b>Carrier concentration in thermal equilibrium:</b> the concentration of electrons (𝑛₀) and holes (𝑝₀) are <u>independent of time</u></div><div class="exp"><b>열평형의 정의</b>다. 딱 한 가지만 요구한다 — <b>시간이 지나도 농도가 안 변할 것.</b><br><b>independent of time(시간에 무관)</b> 에 밑줄이 그어져 있다. <b>"공간에 무관"은 요구하지 않는다</b>는 점이 중요하다. 농도가 자리마다 달라도 시간만 안 변하면 평형이다.<br>그래서 8쪽에서 <b>"homogeneous(균질한) 반도체라면"</b> 이라는 조건을 따로 또 붙이게 된다.</div></div>
+
+<div class="row"><div class="orig">Generation and recombination <u>are still happening</u> in thermal equilibrium</div><div class="exp"><b>이 장 전체에서 가장 자주 반복되는 문장</b>이다. 교수님이 2쪽 오버뷰에서 이미 세 번 말했다.<br><b>평형은 "멈춤"이 아니라 "맞물림"</b> 이다. 겉으로 안 변할 뿐, 안에서는 쉼 없이 생기고 사라진다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] (Generation · Recombination 두 줄 왼쪽에 큰 괄호 "(" )</span><br><b>Generation:</b> the process whereby electrons and holes are created<br><b>Recombination:</b> the process whereby electrons and holes are annihilated</div><div class="exp"><b>두 낱말의 정의</b>이고, 왼쪽 괄호로 <b>한 쌍</b>임을 표시했다.<br>· <b>Generation(생성)</b> — <b>created</b>, 만들어진다<br>· <b>Recombination(재결합)</b> — <b>annihilated</b>, 소멸한다<br>두 정의 모두 <b>"electrons and holes"</b> 라고 복수로 함께 적었다. <b>따로 생기거나 따로 사라지는 일은 없다.</b><br><b>re-combination</b> 은 글자 그대로 <b>"다시 합쳐짐"</b> 이다. 떨어져 있던 전자와 빈자리가 다시 하나가 된다는 뜻.</div></div>
+
+<div class="row"><div class="orig"><b>Generation and recombination rate</b><br>𝐺<sub>n₀</sub> = 𝐺<sub>p₀</sub>  ·  𝑅<sub>n₀</sub> = 𝑅<sub>p₀</sub>  (#/𝑐𝑚³·𝑠)</div><div class="exp"><b>rate(률)</b> 이 처음 나온다. 단위가 전부를 말해 준다 — <b>#/cm³·s</b>, <b>1초 동안 1 cm³ 안에서 몇 개</b>.<br>농도(cm⁻³)가 아니라 <b>농도를 초로 나눈 것</b>이다. "얼마나 있나"가 아니라 <b>"얼마나 빨리 생기나"</b>.<br>아래첨자 <b>0 은 평형값</b>이라는 표시다. 이 장에서 <b>아래첨자 0 = 평형, 프라임(′) = 여분</b> 두 규칙만 알면 기호가 다 읽힌다.<br>그리고 <b>G<sub>n₀</sub> = G<sub>p₀</sub></b> — 전자가 하나 생기면 정공도 하나 생기니 당연하다. R 도 마찬가지.</div></div>
+
+<div class="row"><div class="orig">𝐺<sub>n₀</sub>: thermal generation rates of electrons · 𝐺<sub>p₀</sub>: thermal generation rates of holes<br>𝑅<sub>n₀</sub>: recombination rates of electrons · 𝑅<sub>p₀</sub>: recombination rates of holes</div><div class="exp">네 기호의 이름이다. <b>thermal(열적)</b> 이 붙은 이유는 <b>에너지의 출처가 열</b>이기 때문이다.<br>평형에서는 빛도 전류도 없다. 그런데도 전자가 밴드갭을 넘는 것은 <b>온도가 0 K 이 아니기 때문</b>이다. 상온의 열이 알아서 전자 몇 개를 밀어 올린다. 그 몫이 <b>n<sub>i</sub></b> 다.</div></div>
+
+<div class="row"><div class="orig">→ In order to maintain the concentrations, <u>𝐺<sub>n₀</sub> = 𝐺<sub>p₀</sub> = 𝑅<sub>n₀</sub> = 𝑅<sub>p₀</sub></u></div><div class="exp"><b>이 쪽의 결론</b>이고, 빨간 밑줄이 그어져 있다.<br><b>네 개가 전부 같다.</b> 앞의 두 등호는 "쌍으로 생기니까", 가운데 등호는 <b>"농도가 유지되려면"</b> 이다.<br><b>in order to maintain(유지하려면)</b> — 이것이 조건이다. 농도가 변하지 않으려면 <b>들어오는 속도와 나가는 속도가 같아야</b> 한다.<br>욕조로 치면 <b>수도꼭지와 배수구가 같은 속도</b>일 때 수위가 그대로인 것과 같다. 물은 계속 흐르고 있다.</div></div>
+
+<div class="fig">오른쪽 그림 — <b>직접 밴드 간 생성·재결합(Direct band-to-band)</b>.<br>왼쪽에서 <b>파란 화살표가 아래(⊕)에서 위(⊖)로</b> 올라가며 "Electron–hole generation", 오른쪽에서 <b>위에서 아래로</b> 내려오며 "Electron–hole recombination". <b>두 화살표가 하나의 고리</b>를 이룬다.<br>오른쪽 아래의 <b>× 표시</b>는 정공이 메워져 <b>없어졌다</b>는 뜻이다.<br><span class="hand">[필기] 고리 가운데에 빨간 글씨로 <b>G = R</b> 을 크게 써 넣었다 — 이 그림이 말하려는 전부가 이 세 글자다.</span></div>
+
+<div class="board"><b>판서</b> <span class="ts">21:48</span> · 자료의 필기 위에 더 그어진 것들이다.<br>
+· <b>제목 "The Semiconductor in Equilibrium" 에 통째로 밑줄</b><br>
+· 첫 줄의 <b>(n₀)</b> 와 <b>(p₀)</b> 를 각각 따로 <b>밑줄</b> — 이 쪽의 주인공이 둘이라는 표시<br>
+· <b>Generation</b> 과 <b>recombination</b> 을 <b>각각 동그라미</b>로 감쌌다<br>
+· <b>"electrons and holes are created"</b> 와 <b>"annihilated"</b> 에 각각 밑줄 — <b>created ↔ annihilated</b> 를 대비시킨다<br>
+· <b>G<sub>n₀</sub> = G<sub>p₀</sub></b> 아래에 물결 밑줄, <b>R<sub>n₀</sub> = R<sub>p₀</sub></b> 는 <b>크게 동그라미</b><br>
+· 그림 안의 <b>⊖ 두 개와 ⊕ 두 개를 각각 동그라미</b>로 치고, 생성 화살표와 재결합 화살표를 <b>빨갛게 덧그렸다</b><br>
+· 맨 아래 <b>G<sub>n₀</sub> = G<sub>p₀</sub> = R<sub>n₀</sub> = R<sub>p₀</sub></b> 에서 <b>네 기호를 하나씩 따로 동그라미</b> 치고, <b>전체를 다시 네모</b>로 둘렀다 — <b>"넷이 전부 같다"</b> 는 것을 두 겹으로 강조한 것</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="fig">이 쪽부터 <b>강의가 영어로 바뀐다.</b> 1~3쪽의 오버뷰·목차는 한국어, 본문은 영어다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">18:29</span> "So <b>before we talk about nonequilibrium condition, let's see the semiconductors in equilibrium.</b>"</div>
+<div class="exp"><b>왜 평형 이야기부터 하는지</b>를 밝힌다. <b>기준선</b>을 먼저 그어야 "거기서 얼마나 벗어났나(δ)"를 말할 수 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">18:53</span> "And although the semiconductors are in thermal equilibrium, <b>it does not mean that all the charges remain in the same positions.</b>"</div>
+<div class="exp"><b>"제자리에 가만히 있다는 뜻이 아니다"</b> — 슬라이드의 "are still happening" 다섯 단어를 한 문장으로 풀어 준 것이다. 오버뷰에서 한국어로 했던 말을 영어로 되풀이한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">19:30</span> "So in thermal equilibrium, <b>although we do not see any change in carrier concentration, many things are actually going on inside.</b>"</div>
+<div class="exp"><b>"겉으로는 안 보이지만 안에서는 많은 일이 벌어진다."</b> 같은 말을 이 쪽에서만 <b>세 번</b> 반복했다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">19:58</span> "<b>We just don't see the change because the generation rate is the same as the recombination rate</b> in thermal equilibrium."</div>
+<div class="exp"><b>이유를 못 박는다.</b> 안 보이는 이유는 <b>속도가 같아서</b>다. 슬라이드 맨 아래 결론 식이 이 문장이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">20:18</span> "So we first have the <b>thermal generation rate of electron.</b> Thermal generation rate of electron is the same as the thermal generation of holes <b>because producing electron in the conduction band is always accompanied by the production of hole in the valence band.</b>"</div>
+<div class="exp"><b>G<sub>n₀</sub> = G<sub>p₀</sub> 의 근거</b>다. <b>accompanied by(반드시 동반된다)</b> — 전자 하나가 올라가면 <b>빈자리가 반드시 하나 남는다.</b> 선택의 여지가 없다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">20:42</span> "The <b>recombination rate of electron is the same as the recombination of holes.</b> So this also makes sense because recombination removes an electron from the conduction band…"</div>
+<div class="exp"><b>R<sub>n₀</sub> = R<sub>p₀</sub> 도 같은 논리</b>다. <b>"this also makes sense"</b> — 외울 게 아니라 당연한 것이라는 뜻.</div>
+
+<div class="said"><b>강의</b> <span class="ts">21:01</span> "In order to maintain the carrier concentration of electron and hole, <b>these relationships have to be satisfied</b> … <b>the generation and recombination rate have to be the same.</b>"</div>
+<div class="exp"><b>가운데 등호(G = R)의 이유</b>다. <b>have to be(반드시 그래야 한다)</b> 를 두 번 썼다. <b>농도 유지가 원인이고 G = R 이 결과</b>라는 순서를 분명히 한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">21:31</span> "so <b>generation of electron and recombination rate of hole, they should be the same</b>, so we have this relationship. <b>This is the condition for the semiconductor in equilibrium.</b>"</div>
+<div class="exp"><b>"평형의 조건"</b> 이라고 이름 붙여 닫는다. 네 개를 한 줄로 이은 식이 <b>평형의 정의 그 자체</b>다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">21:44</span> "Then let's see the <b>semiconductor in non-equilibrium.</b>"</div>
+<div class="exp">다음 쪽으로 넘어간다. <b>기준선을 그었으니 이제 벗어나 볼 차례</b>다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">18:53 · 20:18 · 21:01</span><br>
+· <b>"모든 전하가 제자리에 머무른다는 뜻이 아니다"</b> — 슬라이드의 "are still happening" 을 길게 풀어 준 설명<br>
+· <b>"전도띠에 전자를 만드는 일에는 반드시 원자가띠의 정공 생성이 동반된다"</b> — G<sub>n₀</sub> = G<sub>p₀</sub> 가 왜 성립하는지. 슬라이드는 등호만 적는다<br>
+· <b>"농도를 유지하려면 반드시 그래야 한다"</b> — <b>농도 유지가 원인, G = R 이 결과</b> 라는 인과의 방향<br>
+· <b>"this also makes sense"</b> — 외우지 말고 이해하라는 신호</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>열평형의 정의 = 농도가 시간에 무관</b>. <b>공간은 조건이 아니다</b><br>
+② <b>평형에서도 생성·재결합은 계속 일어난다</b> — 교수님이 이 쪽에서만 <b>세 번</b> 말했다<br>
+③ <b>G<sub>n₀</sub> = G<sub>p₀</sub> = R<sub>n₀</sub> = R<sub>p₀</sub></b> — 앞 두 등호는 <b>쌍 생성</b>, 가운데 등호는 <b>농도 유지</b>. 이유가 서로 다르다<br>
+④ <b>rate 의 단위는 #/cm³·s</b> — 농도가 아니라 <b>농도를 초로 나눈 것</b><br>
+⑤ <b>아래첨자 0 = 평형값</b>, <b>프라임(′) = 여분</b>. 이 장의 기호 규칙 전부<br>
+⑥ <b>thermal 이 붙는 이유</b> — 평형에서 밴드갭을 넘게 하는 에너지의 출처가 <b>열</b>이기 때문<br>
+⑦ 판서에서 <b>마지막 네 기호를 하나씩 동그라미 치고 전체를 다시 네모로 둘렀다</b> — 이 쪽의 결론</div>
+<h2 id="s7">7쪽<small>6.1 Excess Carrier Generation and Recombination</small></h2>
+<div class="row"><div class="orig"><b>Semiconductor in <span class="hand">(nonequilibrium 에 동그라미)</span></b><br>- Any deviation from thermal equilibrium (<span class="hand">(temperature change 에 동그라미)</span>, external <span class="hand">(excitation 에 동그라미)</span> e.g., light) will <u>change the electron and hole concentrations</u> (𝑛, 𝑝) in a semiconductor</div><div class="exp"><b>불평형의 정의</b>다. 가장 중요한 낱말은 <b>any deviation(어떤 벗어남이든)</b> 이다.<br>평형에서 <b>조금이라도</b> 벗어나면 그 순간부터 불평형이다. 정도의 문제가 아니라 <b>있고 없고의 문제</b>다.<br><b>excitation(여기, 들뜸)</b> — 밖에서 에너지를 넣어 전자를 <b>들뜨게</b> 하는 것. e.g. 뒤에 <b>light</b> 가 예로 붙었다.<br>그리고 결과는 하나뿐이다 — <b>n 과 p 가 변한다.</b> 밑줄이 거기 그어져 있다.<br><span class="hand">[필기] "temperature change" 와 "excitation" 두 군데에 각각 동그라미 — <b>평형을 깨는 두 가지</b>를 콕 집은 것이다. 강의에서는 여기에 <b>전류</b>를 셋째로 덧붙였다.</span></div></div>
+
+<div class="row"><div class="orig"><b><u>Ex</u>cessive electron-hole generation</b><br>- When high-energy photons are incident on a semiconductor, an electron-hole pair is generated: <i>excess electrons</i> and <i>excess holes</i>   <span class="hand">(g′<sub>n</sub> = g′<sub>p</sub> 에 물결 밑줄)</span> 𝑔′<sub>𝑛</sub> = 𝑔′<sub>𝑝</sub></div><div class="exp"><b>여분 캐리어가 생기는 과정</b>이다.<br><b>photon(광자)</b> 은 빛 알갱이 하나. <b>high-energy</b> 라고 한 이유는 <b>밴드갭보다 큰 에너지</b> 라야 전자를 건너뛰게 할 수 있기 때문이다. 에너지가 모자란 빛은 그냥 통과한다.<br><b>electron-hole pair(전자–정공 쌍)</b> — <b>pair</b> 라는 낱말이 핵심이다. 하나씩 따로가 아니라 <b>한 쌍</b>으로 생긴다.<br>그래서 <b>g′<sub>n</sub> = g′<sub>p</sub></b>. 프라임은 "여분의 것", 소문자 g 는 "여분 생성률"이다. 4쪽의 대문자 G<sub>n₀</sub>(평형 생성률)와 구별된다.<br><b>대문자 G = 평형, 소문자 g′ = 여분.</b> 이 장의 기호 규칙이다.</div></div>
+
+<div class="row"><div class="orig">- Electron and hole concentration (𝑛, 𝑝) with excess carriers<br><u>𝑛 = 𝑛₀ + 𝛿𝑛,    𝑝 = 𝑝₀ + 𝛿𝑝</u>   → 𝑛𝑝 ≠ 𝑛₀𝑝₀ = 𝑛<sub>𝑖</sub>²</div><div class="exp"><b>이 장 전체를 떠받치는 두 줄</b>이다. 모든 식이 이 치환에서 시작한다.<br>오른쪽 결론이 더 중요하다 — <b>np ≠ n<sub>i</sub>²</b>.<br>Ch.4 에서 <b>n₀p₀ = n<sub>i</sub>²</b> 는 <b>온도만 같으면 도핑과 무관하게 늘 성립</b>하는 법칙이었다(질량작용의 법칙). 그런데 <b>여분 캐리어가 생기면 그 법칙이 깨진다.</b><br>왜 깨지나 — n 과 p 가 <b>각각 늘어나니</b> 곱은 <b>n₀p₀ 보다 커진다.</b> 숫자로 보면 n₀ = 10¹⁵, p₀ = 10⁵ 일 때 곱은 10²⁰ 인데, 양쪽에 10¹³ 씩 더하면 곱이 10²⁸ 쯤 된다. <b>8자리나 커진다.</b><br><b>"n₀p₀ = n<sub>i</sub>² 는 평형에서만 성립한다"</b> — Ch.4 에서는 당연하던 것이 여기서 조건부가 된다.</div></div>
+
+<div class="row"><div class="orig"><b>Excessive electron-hole recombination</b>   <span class="hand">(그림에서 식으로 빨간 화살표)</span> 𝑅′<sub>𝑛</sub> = 𝑅′<sub>𝑝</sub></div><div class="exp"><b>생긴 것은 다시 사라진다.</b><br>여분 전자가 전도띠에 올라가 있어도 <b>영원히 있지 않는다.</b> 아래로 떨어져 정공과 재결합한다.<br>재결합도 <b>쌍</b>으로 일어나니 <b>R′<sub>n</sub> = R′<sub>p</sub></b>.<br>그리고 이 R′ 이 <b>다음 쪽의 주제</b>다 — <b>이 값이 얼마인가</b>를 구하는 것이 6쪽 전체다.</div></div>
+
+<div class="fig">오른쪽 위 그림 — <b>빛에 의한 생성</b>.<br><b>hν</b> 가 왼쪽에서 파란 물결로 들어와 <b>아래(E<sub>v</sub>)에서 위(E<sub>c</sub>)로 화살표 세 개</b>를 올린다. 위쪽에 생긴 것이 <b>δn</b>, 아래쪽 빈자리가 <b>δp</b>.<br>오른쪽에는 원래부터 있던 <b>n₀</b> 와 <b>p₀</b> 가 점선으로 그려져 있다. <b>새로 생긴 것(실선)과 원래 있던 것(점선)을 좌우로 나란히</b> 놓아 양을 비교하게 만든 배치다.</div>
+
+<div class="fig">왼쪽 아래 그림 — <b>재결합</b>. 위의 ⊖ 두 개가 아래로 내려오고, 아래 ⊕ 옆에 <b>×</b> 가 찍힌다. 둘 다 없어진다는 표시다.</div>
+
+<div class="fig">오른쪽 아래 <b>기호 표</b> — 이 장에서 쓰는 기호 전부가 한 표에 정리돼 있다. <b>이 표 하나만 외워도 이 장의 식이 읽힌다.</b><br>· <b>n₀, p₀</b> 평형 농도 (시간에도 보통 위치에도 무관)<br>· <b>n, p</b> 전체 농도 (시간·위치의 함수일 수 있음)<br>· <b>δn = n − n₀, δp = p − p₀</b> 여분 농도<br>· <b>g′<sub>n</sub>, g′<sub>p</sub></b> 여분 생성률 · <b>R′<sub>n</sub>, R′<sub>p</sub></b> 여분 재결합률<br>· <b>τ<sub>n0</sub>, τ<sub>p0</sub></b> 여분 소수 캐리어 수명</div>
+
+<div class="board"><b>판서</b> <span class="ts">25:36</span><br>
+· 오른쪽 위 빈 자리에 <b>hν 와 물결 화살표</b>를 크게 그려 넣었다 — 그림 속 작은 hν 를 <b>따로 꺼내 크게</b> 쓴 것<br>
+· 그림 속 <b>δn · n₀ · δp · p₀ 네 기호를 각각 동그라미</b> 치고, 생성 화살표를 <b>빨갛게 덧그렸다</b><br>
+· 그림 오른쪽 아래에 <b>np = n<sub>i</sub>²</b> 를 <b>네모 상자</b>에 써 넣고 <b>등호에 사선을 그었다</b> — <b>"이제 이게 성립하지 않는다"</b> 를 손으로 표시한 것. 인쇄된 ≠ 기호를 못 보고 지나칠까 봐 한 번 더 그린 셈이다<br>
+· <b>"nonequilibrium"</b> 을 네모로 두르고, <b>"temperature change"</b> 와 <b>"excitation e.g., light"</b> 에 각각 밑줄<br>
+· <b>n = n₀ + δn</b> 에서 <b>n₀ 와 δn 을 따로따로 동그라미</b> — <b>두 조각으로 나눠 보라</b>는 표시<br>
+· <b>"excess electrons and excess holes"</b> 와 <b>g′<sub>n</sub> = g′<sub>p</sub></b> 에 물결 밑줄<br>
+· <b>R′<sub>n</sub> = R′<sub>p</sub></b> 를 <b>네모로 두르고 그림에서 화살표</b>를 끌어왔다<br>
+· 오른쪽 표에서 <b>"Excess electron and hole recombination rates" 줄</b>에 밑줄 — <b>다음 쪽에서 구할 값</b>을 미리 짚는다</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">22:03</span> "<b>If there's any change from thermal equilibrium</b> — if we increase the temperature, or if we illuminate the light — then we will have change in the electron and hole concentration in semiconductors."</div>
+<div class="exp">슬라이드의 <b>any deviation</b> 을 <b>any change</b> 로 바꿔 말한다. <b>온도를 올리거나 빛을 비추거나</b> — 구체적인 두 손잡이를 든다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">22:23</span> "In non-equilibrium condition, <b>we have additional generation of electrons and holes, due to the thermal change or light illumination.</b> Those electrons and holes are called <b>excess electron and excess hole</b>."</div>
+<div class="exp"><b>additional(추가의)</b> 이 바로 <b>excess</b> 이고 <b>δ</b> 다. 같은 뜻을 세 가지 말로 번갈아 쓰고 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">22:41</span> "So excess electron and hole generation <b>also take place together</b>, so we have <b>a same excess electron and hole generation rate.</b>"</div>
+<div class="exp"><b>take place together(함께 일어난다)</b> — g′<sub>n</sub> = g′<sub>p</sub> 의 근거다. 4쪽의 G<sub>n₀</sub> = G<sub>p₀</sub> 와 <b>똑같은 논리가 여분에도 그대로</b> 적용된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">22:59</span> "So in this figure, <b>n₀ and p₀ are the thermal equilibrium electron and hole concentration</b>, so <b>before illumination, we already have a certain amount of electron and hole</b> in semiconductors."</div>
+<div class="exp"><b>"빛을 쬐기 전에 이미 있던 것"</b> — n₀ 와 p₀ 가 <b>0 이 아니라는</b> 점을 짚는다. 그림에서 점선으로 그려진 쪽이 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">23:21</span> "And <b>delta n and delta p are the excess electron and hole concentration due to light illumination</b>, so the total electron and hole concentration is going to be <b>higher than</b> electron and hole concentration in thermal equilibrium."</div>
+<div class="exp"><b>총량 = 원래 있던 것 + 새로 생긴 것.</b> 그리고 <b>반드시 커진다</b>(higher than) — δ 는 음수가 될 수 없다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">23:42</span> "so the total electron concentration <b>can be described like n equals to n₀ plus delta n</b>, so <b>this is thermal equilibrium electron density and this is excess electron density.</b>"</div>
+<div class="exp">식의 <b>두 조각을 손가락으로 하나씩 가리키며</b> 읽는다. 판서에서 n₀ 와 δn 을 따로 동그라미 친 것이 이 대목이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">24:10</span> "So you may have noticed that <b>the mass action rule does not apply anymore in non-equilibrium condition.</b> So in thermal equilibrium we have np equals to n<sub>i</sub> square, so <b>this always applied, but in non-equilibrium condition this mass action rule does not apply anymore</b>, because of the excess electron and hole density."</div>
+<div class="exp"><b>이 쪽에서 가장 중요한 한 문장</b>이다.<br><b>mass action rule(질량작용의 법칙)</b> = <b>n₀p₀ = n<sub>i</sub>²</b>. Ch.4 내내 <b>무조건 성립</b>하던 식이다.<br>그런데 <b>"does not apply anymore"</b> 를 <b>두 번</b> 말했다. <b>평형이라는 전제가 깨지면 같이 깨지는 법칙</b>이라는 뜻이다.<br>Ch.4 의 습관으로 n₀p₀ = n<sub>i</sub>² 를 아무 데나 쓰면 이 장에서는 틀린다. 판서에서 등호에 사선을 그은 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">24:37</span> "So <b>some of these excess carriers also experience recombination just like electron and hole in thermal equilibrium</b>, so excess electron in the conduction band falls down into the valence band leading to the process of excess electron and hole recombination."</div>
+<div class="exp"><b>just like(평형에서와 똑같이)</b> — 여분이라고 특별 취급되지 않는다. <b>같은 규칙으로 사라진다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">24:59</span> "So <b>this recombination process always accompanies both electron and hole</b>, so we have the same recombination rate for electron and hole, so we have <b>R<sub>n</sub> prime equals to R<sub>p</sub> prime.</b>"</div>
+<div class="exp"><b>always accompanies both</b> — <b>"항상 둘이 같이"</b>. 이 장에서 이 표현이 네 번째로 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">25:20</span> "so we would like to know <b>how this parameter R<sub>n</sub> prime</b>, which is excess electron and hole recombination rate, <b>is described</b> … <b>in order to derive the continuity equation.</b>"</div>
+<div class="exp"><b>다음 쪽을 왜 하는지</b>를 미리 말한다. R′ 을 구하는 목적은 <b>연속방정식에 넣을 재료</b>이기 때문이다.<br>4쪽 오버뷰에서 <b>"R 을 지우고 그 자리에 p/τ 를 쓴다"</b> 고 적어 둔 것이 바로 이 재료다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">25:37</span> "so we start from <b>the net rate of change in the electron concentration.</b>"</div>
+<div class="exp">6쪽으로 넘어간다. <b>net rate of change</b> — <b>알짜 변화율</b>. 생기는 것에서 사라지는 것을 뺀 값이다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">22:59 · 24:10 · 25:20</span><br>
+· <b>"빛을 쬐기 전에 이미 일정량이 있었다"</b> — 그림에서 점선 쪽이 왜 있는지에 대한 설명<br>
+· <b>"질량작용의 법칙은 더 이상 성립하지 않는다"를 두 번 반복</b> — 슬라이드는 ≠ 기호 하나로만 표시한다. 판서에서 등호에 사선까지 그었다<br>
+· <b>"R′ 을 구하는 이유는 연속방정식을 유도하기 위해서"</b> — 다음 쪽의 목적을 미리 밝힌 것<br>
+· <b>"여분 캐리어도 평형의 캐리어와 똑같이 재결합을 겪는다"</b> — 특별 취급이 없다는 점</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>np ≠ n₀p₀ = n<sub>i</sub>²</b> — <b>질량작용의 법칙은 평형에서만</b> 성립한다. 교수님이 <b>두 번</b> 말했고 판서에서 등호에 <b>사선</b>까지 그었다<br>
+② <b>n = n₀ + δn, p = p₀ + δp</b> — 이 장의 모든 식의 출발점<br>
+③ <b>대문자 G = 평형 생성률, 소문자 g′ = 여분 생성률</b>. 아래첨자 0 과 프라임의 구별<br>
+④ <b>g′<sub>n</sub> = g′<sub>p</sub>, R′<sub>n</sub> = R′<sub>p</sub></b> — 이유는 둘 다 <b>"항상 쌍으로"</b><br>
+⑤ <b>high-energy photon</b> — <b>밴드갭보다 큰</b> 에너지라야 전자를 건너뛰게 한다<br>
+⑥ <b>오른쪽 기호 표는 이 장의 사전</b>이다. 식이 안 읽히면 여기로 돌아오면 된다<br>
+⑦ <b>다음 쪽에서 R′ 을 구하는 목적</b> — 연속방정식의 재결합 항에 넣기 위해서</div>
+<h2 id="s8">8쪽<small>6.1 Excess Carrier Recombination Rates (R′ₙ, R′ₚ)</small></h2>
+<div class="row"><div class="orig"><b>Excess Carrier Recombination Rates (𝑹′<sub>𝒏</sub>, 𝑹′<sub>𝒑</sub>)</b><br>- The net rate of change in the <u>electron concentration</u> <span class="hand">[필기] n(t)</span></div><div class="exp">이 장에서 <b>처음으로 긴 유도가 나오는 쪽</b>이다. 목표는 하나 — <b>R′ 이 얼마인지를 구체적인 식으로 쓰는 것.</b><br>제목 옆에 손으로 <b>n(t)</b> 라고 적었다. <b>"농도가 이제 시간의 함수다"</b> 라는 표시다. Ch.4 의 n₀ 는 그냥 숫자였지만 여기서는 <b>t 가 붙는다.</b><br><b>net(알짜)</b> — 생기는 것과 사라지는 것을 <b>상쇄하고 남은</b> 것.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">(dn(t)/dt 에 겹동그라미)</span> 𝑑𝑛(𝑡)/𝑑𝑡 = generation rate − recombination rate = 𝛼<sub>𝑟</sub>[𝑛<sub>𝑖</sub>² − 𝑛(𝑡)𝑝(𝑡)]<br>𝛼<sub>𝑟</sub>𝑛<sub>𝑖</sub>²: thermal-equilibrium generation rate · 𝛼<sub>𝑟</sub>𝑛(𝑡)𝑝(𝑡): recombination rate</div><div class="exp"><b>출발점</b>이다. 겹동그라미는 <b>"여기서 시작한다"</b> 는 표시.<br>글로 쓰면 <b>변화율 = 생기는 속도 − 없어지는 속도</b>. 욕조의 수위 = 수도꼭지 − 배수구.<br>오른쪽 두 항의 정체가 따로 적혀 있다.<br>· <b>α<sub>r</sub>n(t)p(t)</b> = 재결합률. <b>전자와 정공이 만나야</b> 하므로 <b>둘의 농도의 곱</b>에 비례한다<br>· <b>α<sub>r</sub>n<sub>i</sub>²</b> = 열적 생성률. <b>왜 하필 n<sub>i</sub>² 인가</b> — 평형에서는 생성과 재결합이 같아야 하는데, 평형의 재결합률은 α<sub>r</sub>n₀p₀ 이고 평형에서는 n₀p₀ = n<sub>i</sub>² 이다. <b>그래서 생성률이 n<sub>i</sub>² 에 묶인다.</b><br>중요한 것은 <b>생성률은 빛이 없는 한 바뀌지 않는다</b>는 점이다. 열적 생성은 <b>온도만의 함수</b>라서, n 과 p 가 변해도 그대로다. <b>변하는 쪽은 재결합률뿐</b>이다.<br><b>α<sub>r</sub>(알파 r)</b> — 비례상수. r 은 recombination. 물질마다 정해진 값이다.</div></div>
+
+<div class="row"><div class="orig">= 𝑑[𝑛₀+𝛿𝑛(𝑡)]/𝑑𝑡 = 𝑑(𝛿𝑛(𝑡))/𝑑𝑡 <span class="hand">[필기] (아래 빨간 네모) n(t) = n₀ + δn(t), p(t) = p₀ + δp(t)</span></div><div class="exp"><b>왼쪽을 바꿔 쓴다.</b> n(t) = n₀ + δn(t) 를 넣고 미분하는데, <b>n₀ 는 상수라서 미분하면 0</b> 이다.<br>그래서 <b>dn/dt = d(δn)/dt</b>. 이 한 걸음이 이 장에서 <b>네 번</b> 쓰인다(3쪽 필기, 여기, 8쪽, 12쪽).<br>빨간 네모와 위로 향한 화살표는 <b>"이걸 대입했다"</b> 는 표시다.</div></div>
+
+<div class="row"><div class="orig">= 𝛼<sub>𝑟</sub>[𝑛<sub>𝑖</sub>² − (𝑛₀+𝛿𝑛(𝑡))(𝑝₀+𝛿𝑝(𝑡))] = −𝛼<sub>𝑟</sub>𝛿𝑛(𝑡)[(𝑛₀+𝑝₀) + 𝛿𝑛(𝑡)] <span class="hand">[필기] (아래 빨간 네모) δn(t) = δp(t)</span></div><div class="exp"><b>오른쪽도 대입하고 정리한다.</b> 전개하면 n<sub>i</sub>² 와 n₀p₀ 가 지워지고(평형에서 둘이 같으니), 남는 것이 이 모양이다.<br><b>δn = δp</b> 를 쓴 덕분에 <b>δp 가 전부 δn 으로 바뀌어</b> 미지수가 하나로 줄었다. 빨간 네모가 그 표시다.<br><b>−δn[(n₀+p₀) + δn]</b> 의 모양을 보라. <b>전체에 마이너스</b>가 붙었다. <b>δn 이 양수면 변화율이 음수</b> — 즉 <b>여분 캐리어는 줄어드는 쪽으로만 움직인다.</b> 식이 "평형으로 돌아가려 한다"고 말하고 있다.</div></div>
+
+<div class="row"><div class="orig">- <u>low-level injection condition</u>: the magnitude of the excess carrier concentration (𝛿𝑛 or 𝛿𝑝) is small compared with the thermal-equilibrium <u>majority</u> carrier concentrations (𝑛₀ or 𝑝₀)<br><span class="hand">(오른쪽) *high-level injection: 𝛿𝑛~𝑝₀ or 𝛿𝑝~𝑛₀</span></div><div class="exp"><b>저준위 주입</b>의 정의다. <b>δn ≪ 다수 캐리어 농도.</b><br><b>비교 상대가 "다수 캐리어"</b> 라는 점이 핵심이다. 소수 캐리어와 비교하는 게 아니다. p형이면 δn 을 <b>p₀ 와</b> 견준다.<br>숫자로 보면 p₀ = 10¹⁵, δn = 10¹⁰ 정도. <b>10만 배</b> 차이라 p₀ + δn ≈ p₀ 로 써도 틀리지 않는다.<br>오른쪽에 <b>고준위 주입</b>이 대비로 적혀 있다 — <b>δn 이 다수 캐리어와 비슷해지는</b> 경우. 이때는 아래 근사가 전부 깨지고 식이 비선형이 되어 손으로 못 푼다. <b>그래서 이 장은 저준위만 다룬다.</b></div></div>
+
+<div class="row"><div class="orig">For p-type semiconductor <span class="hand">(p₀≫n₀, p₀≫δn(t) 에 밑줄·동그라미)</span> 𝑝₀ ≫ 𝑛₀, 𝑝₀ ≫ 𝛿𝑛(𝑡)  → <span class="hand">(빨간 네모·화살표)</span> 𝑑(𝛿𝑛(𝑡))/𝑑𝑡 = −𝛼<sub>𝑟</sub>𝑝₀𝛿𝑛(𝑡)</div><div class="exp"><b>두 번 버린다.</b> 대괄호 안 [(n₀+p₀) + δn] 에서,<br>· <b>n₀ 를 버린다</b> — p형이라 p₀ 가 훨씬 크다<br>· <b>δn 을 버린다</b> — 저준위 주입이라 p₀ 가 훨씬 크다<br>남는 것은 <b>p₀</b> 하나. 그래서 식이 <b>d(δn)/dt = −α<sub>r</sub>p₀·δn</b> 으로 줄어든다.<br><b>이 모양을 알아보는 것이 중요하다.</b> "변화율이 자기 자신에 비례하고 부호가 음수" — <b>지수 감소의 전형</b>이다. 방사성 붕괴, 커패시터 방전, 식은 커피가 전부 같은 모양이다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] Sol</span> 𝛿𝑛(𝑡) = 𝛿𝑛(0)𝑒<sup>−𝑡/𝜏<sub>𝑛0</sub></sup> where <span class="hand">(τ<sub>n0</sub> 에 동그라미)</span> 𝜏<sub>𝑛0</sub> = (𝛼<sub>𝑟</sub>𝑝₀)<sup>−1</sup> : the <u>excess minority carrier lifetime</u><br>→ Describes the <u>decay of excess electron</u> (minority carrier)</div><div class="exp"><b>답이다.</b> 왼쪽의 "Sol" 은 solution(해).<br><b>δn(0)</b> 은 t = 0 일 때의 값, 즉 <b>빛을 끈 순간의 양</b>.<br><b>τ<sub>n0</sub> = 1/(α<sub>r</sub>p₀)</b> — <b>여분 소수 캐리어 수명</b>이다. 이름이 길지만 한 글자씩 뜯으면,<br>· <b>excess</b> 여분의 · <b>minority</b> 소수 쪽(p형이니 전자) · <b>carrier</b> 캐리어의 · <b>lifetime</b> 수명<br><b>τ 가 뜻하는 것</b> — t = τ 를 넣으면 e⁻¹ ≈ 0.37. <b>처음의 37 %만 남을 때까지 걸리는 시간</b>이다.<br><b>τ = 1/(α<sub>r</sub>p₀) 라는 모양</b>이 말해 주는 것: <b>p₀ 가 클수록 τ 가 짧다.</b> 부딪힐 정공이 많으니 여분 전자가 빨리 잡아먹힌다. 사람 많은 방에서 아는 사람을 더 빨리 만나는 것과 같다.<br><b>τ 가 왜 "소수 캐리어" 수명인가</b> — 사라지는 쪽은 δn(여분 전자)이고, p형에서 전자가 소수 캐리어이기 때문이다. 수명이라는 말은 <b>소수 쪽에만</b> 붙는다.</div></div>
+
+<div class="row"><div class="orig"><b>The recombination rate (positive quantity)</b><br><span class="hand">(R′<sub>n</sub> 에 동그라미)</span> 𝑅′<sub>𝑛</sub> = −𝑑(𝛿𝑛(𝑡))/𝑑𝑡 = +𝛼<sub>𝑟</sub>𝑝₀𝛿𝑛(𝑡) <span class="hand">(큰 동그라미)</span> = 𝛿𝑛(𝑡)/𝜏<sub>𝑛0</sub></div><div class="exp"><b>드디어 R′ 이 나온다.</b> 이 쪽의 목적이 이 한 줄이다.<br><b>(positive quantity)</b> 라고 괄호로 못 박은 이유가 있다. <b>재결합률은 "얼마나 빨리 사라지나"</b> 이므로 <b>양수로 정의</b>한다. 그런데 d(δn)/dt 는 음수다. 그래서 <b>앞에 마이너스를 붙여</b> 양수로 만든다.<br>결과가 아름답다 — <b>R′<sub>n</sub> = δn/τ<sub>n0</sub></b>.<br><b>읽는 법</b>: "남아 있는 양을 수명으로 나눈 것". <b>많이 남아 있을수록 빨리 사라지고, 수명이 길수록 천천히 사라진다.</b> 두 가지가 한 분수에 들어 있다.<br><b>이 꼴이 중요한 이유</b> — 7쪽 연속방정식의 마지막 항 <b>p/τ<sub>pt</sub></b> 가 바로 이것이다. 4쪽 오버뷰 필기의 "R 을 지우고 p/τ 를 쓴다" 가 여기서 완성된다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">(R′<sub>p</sub> 에 동그라미)</span> 𝑅′<sub>𝑝</sub> = 𝑅′<sub>𝑛</sub> = <span class="hand">(큰 동그라미)</span> 𝛿𝑛(𝑡)/𝜏<sub>𝑝0</sub>  (for the direct band-to-band recombination)</div><div class="exp">정공 쪽도 똑같다. <b>쌍으로 사라지니 R′<sub>p</sub> = R′<sub>n</sub></b>.<br><b>(for the direct band-to-band recombination)</b> 이 조건이 붙은 이유 — 지금까지는 전자가 <b>밴드갭을 한 번에</b> 건넌다고 가정했다. <b>중간에 trap 이 있으면 이야기가 달라진다.</b> 그게 6.5절(16쪽)이다.<br><span class="hand">[슬라이드 그대로] 분자가 <b>δn(t)</b> 로 적혀 있다. 정공 쪽이니 δp(t) 가 자연스럽지만, 이 장에서 <b>δn = δp</b> 로 두었으므로 값은 같다.</span></div></div>
+
+<div class="board"><b>판서</b> <span class="ts">32:28</span> · 자료의 필기에 더해 영상에서만 보이는 것들이다.<br>
+· 제목 위에 <b>d(δn)/dt</b> 를 크게 써 넣었다 — <b>"결국 구하려는 건 이것"</b><br>
+· 첫 줄 <b>"The net rate of change in the electron concentration"</b> 에 통째로 밑줄<br>
+· <b>d[n₀+δn(t)]/dt</b> 와 <b>d(δn(t))/dt</b> 를 <b>각각 따로 동그라미</b> 치고 그 사이에 화살표 — <b>둘이 같다</b>는 걸 눈으로 잇는다<br>
+· 오른쪽 끝 <b>−α<sub>r</sub>δn[(n₀+p₀)+δn]</b> 전체를 <b>큰 타원</b>으로 감싸고, 거기서 <b>아래 저준위 주입 조건까지 긴 화살표</b>를 끌어 내렸다 — <b>"이 괄호를 저 조건으로 줄인다"</b> 는 동선<br>
+· <b>p₀ ≫ n₀</b> 와 <b>p₀ ≫ δn(t)</b> 를 <b>각각 따로 동그라미</b> — <b>두 번 버린다</b>는 표시<br>
+· 줄어든 식 <b>d(δn)/dt = −α<sub>r</sub>p₀δn(t)</b> 를 <b>네모로 두르고 그 옆에 "D.E" 라고 썼다</b> — <b>differential equation(미분방정식)</b>. <b>"여기서부터는 수학 문제"</b> 라는 표시다<br>
+· <b>τ<sub>n0</sub></b> 에 동그라미, <b>"excess minority carrier lifetime"</b> 에 밑줄<br>
+· 오른쪽 아래 빈 자리에 <b>R′<sub>n</sub> = δn(t)/τ<sub>n0</sub></b> 와 <b>R′<sub>p</sub> = δn(t)/τ<sub>p0</sub></b> 를 <b>크게 다시 쓰고 각각 큰 동그라미</b>를 쳤다 — 슬라이드에 이미 있는 식을 <b>굳이 한 번 더 크게</b> 쓴 것. 이 쪽에서 가져갈 것이 이 둘이라는 뜻이다</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">26:01</span> "so <b>in non-equilibrium, electron concentration changes with time</b>, so it can be described as n(t) … and we would like to know that rate of change, so <b>we need to determine dn(t) over dt.</b>"</div>
+<div class="exp"><b>왜 미분이 나오는지</b>를 먼저 말한다. 농도가 <b>시간에 따라 변하니</b> 변화율을 물을 수밖에 없다. 제목 옆에 손으로 쓴 <b>n(t)</b> 가 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">26:27</span> "and this dn(t) over dt, the net rate of change in the electron concentration, can be described as <b>generation rate minus recombination rate.</b>"</div>
+<div class="exp">식 전체를 <b>한 문장으로</b> 읽어 준다. 이 장에서 이 꼴은 계속 반복된다 — <b>변화 = 들어옴 − 나감.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">26:41</span> "we <b>additionally have a certain amount of electron because of generation</b>, and we <b>lose a certain amount of electron because of recombination</b>, so we end up having a rate of change in the electron concentration."</div>
+<div class="exp"><b>더해지는 쪽과 빠지는 쪽</b>을 말로 나눠 설명한다. 식의 두 항이 각각 무엇인지가 여기서 분명해진다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">27:07</span> "and <b>generation rate is proportional to n<sub>i</sub> square, and recombination rate is proportional to electron and hole concentration</b>, so <b>by putting a proper proportionality constant</b>, we can make the equation like this."</div>
+<div class="exp"><b>α<sub>r</sub> 이 어디서 왔는지</b>에 대한 답이다. <b>"비례한다"를 "같다"로 바꾸려면 상수가 하나 필요하다.</b> 그뿐이다.<br>그리고 <b>생성은 n<sub>i</sub>² 에, 재결합은 n·p 에</b> 비례한다는 비대칭이 이 식의 핵심이다. 3쪽 필기의 "g = R ∝ n₀p₀ = n<sub>i</sub>²" 가 이 말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">27:39</span> "and we know this n(t) — <b>n(t) is n₀ plus delta n</b>, again <b>this is equilibrium electron concentration, this is excess electron concentration</b>, and p(t) equals to p₀ plus delta p(t). So <b>using this relationship we can make the equation like this.</b>"</div>
+<div class="exp"><b>again(또)</b> 이라고 말한다. 같은 분해를 몇 번째 반복하는지 본인도 알고 있다. 그만큼 <b>이 분해가 전부</b>라는 뜻이다.</div>
+
+<div class="fig">이 구간(<b>28:06 ~ 28:42</b>, <b>29:06 ~ 29:24</b>)은 전사가 크게 망가져 뜻이 잡히지 않는다. 문맥상 <b>"n₀ 는 상수라서 시간으로 미분하면 사라진다"</b> 와 <b>"δn = δp 를 쓴다"</b> 를 말하는 대목이다. <b>약 1분, 직접 들어볼 것.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">28:42</span> "And here <b>we assume low-level injection condition.</b> Low-level injection condition is when the magnitude of the excess carrier concentration <b>is much smaller than the thermal equilibrium majority carrier concentration.</b>"</div>
+<div class="exp"><b>조건을 세우는 순간</b>이다. 비교 대상이 <b>majority carrier(다수 캐리어)</b> 라는 것을 또렷이 말한다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">29:24</span> "if you assume low-level injection, then <b>for p-type semiconductors p₀ is much greater than n₀, because this is p-type.</b> And if we assume the low-level injection, we have this relationship also — <b>the thermal equilibrium majority carrier concentration is much greater than the excess minority carrier.</b>"</div>
+<div class="exp"><b>부등식 두 개의 출처가 서로 다르다</b>는 점을 짚는다.<br>· <b>p₀ ≫ n₀</b> ← <b>p형이라서</b>. 도핑이 정한 것<br>· <b>p₀ ≫ δn</b> ← <b>저준위 주입이라서</b>. 빛의 세기가 정한 것<br>둘을 한 덩어리로 외우면 안 된다. 판서에서 <b>각각 따로 동그라미</b>를 친 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">29:51</span> "Then <b>we can simplify this equation like this.</b> … So this is actually <b>the first-order differential equation for the excess electron concentration.</b>"</div>
+<div class="exp"><b>"1차 미분방정식"</b> 이라고 이름을 붙인다. 판서의 <b>"D.E"</b> 가 이것이다.<br><b>1차(first-order)</b> 는 <b>미분이 한 번만</b> 들어 있다는 뜻. 1차 미분방정식 중에서도 <b>자기 자신에 비례하는 꼴</b>은 답이 언제나 지수함수다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">30:18</span> "So <b>by solving this first-order differential equation we have this equation as a solution.</b> And this equation describes <b>the decay behavior of the excess electron.</b>"</div>
+<div class="exp"><b>decay(감쇠)</b> — 사그라드는 것. 빛을 끄면 여분 전자가 <b>지수적으로 줄어든다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">30:34</span> "And here <b>we define a new parameter tau n0</b> … <b>as 1 over α<sub>r</sub>p₀.</b> And this is <b>the excess minority carrier lifetime.</b> And because we consider p-type semiconductors, <b>electron is a minority carrier</b>, so we call this as an excess minority carrier lifetime."</div>
+<div class="exp"><b>이름이 왜 그렇게 긴지</b>를 한 글자씩 설명한다. <b>p형 → 전자가 소수 → 그래서 "minority"</b>.<br>n형이었다면 정공이 소수이고 기호는 <b>τ<sub>p0</sub></b> 가 된다. 12쪽에서 그렇게 쓴다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">31:00</span> "So <b>if we go back to the recombination rate, R<sub>n</sub> prime</b> — <b>so this is our purpose</b>, right. So R<sub>n</sub> prime is the rate of change in the excess carrier, so it can be described like this."</div>
+<div class="exp"><b>"this is our purpose"</b> — 이 쪽을 왜 하고 있었는지를 되짚는다. τ 를 구한 건 중간 단계고, <b>원래 목표는 R′</b> 이었다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">31:35</span> "So we can also write <b>this equation using the parameter of excess minority carrier lifetime, tau n0.</b> And <b>for the direct band-to-band recombination</b>, the excess majority carrier recombination rate <b>is the same as the excess minority carrier recombination rate.</b>"</div>
+<div class="exp"><b>R′<sub>p</sub> = R′<sub>n</sub> 의 근거</b>다. 그리고 <b>"direct band-to-band 일 때"</b> 라는 단서를 붙인다 — trap 이 끼면 달라진다는 복선이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">32:04</span> "So <b>we found the excess carrier recombination rate, R<sub>n</sub> prime and R<sub>p</sub> prime, by assuming a low-level injection condition.</b> So <b>we will use this relationship</b> … <b>to derive the continuity equations.</b>"</div>
+<div class="exp"><b>이 쪽을 닫고 다음 쪽의 용도를 말한다.</b><br><b>"by assuming a low-level injection condition"</b> 을 다시 붙인 것이 중요하다. <b>R′ = δn/τ 는 공짜로 얻은 식이 아니다.</b> 저준위 주입이라는 조건 위에 서 있다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">27:07 · 29:24 · 29:51 · 32:04</span><br>
+· <b>"비례한다를 같다로 바꾸려고 비례상수를 넣었다"</b> — α<sub>r</sub> 의 정체. 슬라이드는 α<sub>r</sub> 을 설명 없이 쓴다<br>
+· <b>"p₀ ≫ n₀ 는 p형이라서, p₀ ≫ δn 은 저준위 주입이라서"</b> — <b>두 부등식의 출처가 다르다</b>는 구별. 슬라이드는 한 줄에 나란히만 적는다<br>
+· <b>"이것은 1차 미분방정식이다"</b> — 판서에 "D.E" 로 적혀 있다. 식의 성격에 이름을 붙여 주는 대목<br>
+· <b>"이것이 우리의 목적이었다"</b> — τ 가 아니라 <b>R′ 이 목표</b>였음을 되짚는 말<br>
+· <b>"저준위 주입을 가정했기 때문에 얻은 결과"</b> — 조건을 두 번 되붙인다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>R′<sub>n</sub> = δn(t)/τ<sub>n0</sub></b>, <b>R′<sub>p</sub> = δn(t)/τ<sub>p0</sub></b> — 판서에서 <b>크게 다시 쓰고 동그라미</b>를 쳤다. 이 쪽의 결론<br>
+② <b>τ<sub>n0</sub> = 1/(α<sub>r</sub>p₀)</b> — <b>다수 캐리어가 많을수록 수명이 짧다.</b> τ 는 <b>37 % 남을 때까지의 시간</b><br>
+③ <b>δn(t) = δn(0)e<sup>−t/τ<sub>n0</sub></sup></b> — 지수 감소<br>
+④ <b>버리는 두 항과 그 근거</b> — <b>n₀</b>(p형이라서) · <b>δn</b>(저준위 주입이라서). 출처가 다르다<br>
+⑤ <b>생성률은 n<sub>i</sub>² 에, 재결합률은 n·p 에 비례</b> — 이 비대칭이 유도 전체를 굴린다<br>
+⑥ <b>R′ 은 양수로 정의</b>한다. 그래서 −d(δn)/dt 로 쓴다<br>
+⑦ <b>"direct band-to-band 일 때"</b> 라는 단서 — trap 이 있으면 달라진다(6.5절)<br>
+⑧ 이 결과의 쓸모는 <b>연속방정식의 재결합 항</b>이다. 7쪽의 p/τ<sub>pt</sub> 가 여기서 나온다</div>
+<h2 id="s9">9쪽<small>6.2 Continuity Equations</small></h2>
+<div class="row"><div class="orig"><span class="hand">(Continuity equation 에 동그라미)</span> <b>Continuity equation:</b> equation about the carrier concentration that applies generally; <u>established based on conservation of carriers</u></div><div class="exp"><b>연속방정식</b>이다. 이름부터 풀면, <b>continuity(연속)</b> — <b>"캐리어가 중간에 뚝 사라지거나 뜬금없이 생기지 않는다"</b> 는 뜻이다.<br>정의에서 두 가지를 말한다.<br>· <b>applies generally(일반적으로 성립)</b> — 조건이 거의 없다. p형이든 n형이든, 빛이 있든 없든 성립한다<br>· <b>conservation of carriers(캐리어 보존)</b> — 근거가 <b>보존 법칙</b>이다. 에너지 보존, 운동량 보존과 같은 종류의 당연한 법칙<br><b>왜 "당연한 법칙"에서 식이 나오나</b> — 당연한 말을 <b>수식으로 정확히 적으면</b> 쓸 수 있는 도구가 되기 때문이다. "돈은 사라지지 않는다"를 적으면 회계 장부가 되는 것과 같다.</div></div>
+
+<div class="row"><div class="orig">- 𝐹⁺<sub>𝑝𝑥</sub>: the hole-particle flux<br><span class="hand">(빨간 네모)</span> 𝐹⁺<sub>𝑝𝑥</sub>(𝑥+𝑑𝑥) = 𝐹⁺<sub>𝑝𝑥</sub>(𝑥) + (∂𝐹⁺<sub>𝑝𝑥</sub>/∂𝑥)𝑑𝑥</div><div class="exp"><b>flux(플럭스)</b> 를 먼저 정의한다. <b>단위 시간에 단위 넓이를 지나가는 입자의 개수</b>다. 단위는 #/cm²·s.<br>전류와 닮았지만 다르다 — <b>전류는 "전하가 얼마나"</b>, <b>플럭스는 "알갱이가 몇 개나"</b>. 8쪽에서 둘을 e 로 연결한다.<br>기호 읽는 법: <b>F</b> 플럭스, 아래첨자 <b>p</b> 정공, 아래첨자 <b>x</b> x방향, 위첨자 <b>+</b> 양전하.<br>둘째 줄은 <b>테일러 전개의 첫 두 항</b>이다. 겁먹을 것 없다. <b>"조금 떨어진 곳의 값 = 지금 값 + 기울기 × 떨어진 거리"</b>.<br>언덕에서 1 m 앞의 높이를 묻는 것과 같다 — <b>지금 높이 + 경사 × 1 m</b>. dx 가 아주 작으면 이 근사가 정확해진다.</div></div>
+
+<div class="row"><div class="orig">- The net increase in the number of holes per unit time within the differential volume element due to the x-component of hole flux<br>(∂𝑝/∂𝑡)𝑑𝑥𝑑𝑦𝑑𝑧 = [𝐹⁺<sub>𝑝𝑥</sub>(𝑥) − 𝐹⁺<sub>𝑝𝑥</sub>(𝑥+𝑑𝑥)]𝑑𝑦𝑑𝑧 = −(∂𝐹⁺<sub>𝑝𝑥</sub>/∂𝑥)𝑑𝑥𝑑𝑦𝑑𝑧</div><div class="exp"><b>이 쪽의 뼈대</b>다. 왼쪽에서 들어오고 오른쪽으로 나간다.<br><b>[들어온 것] − [나간 것] = [쌓인 것]</b>. 통장과 똑같다.<br><b>differential volume element(미소 부피 요소)</b> — <b>아주 작은 상자 하나</b>. dx × dy × dz. 작게 잡는 이유는 그 안에서 <b>농도가 거의 균일하다</b>고 볼 수 있어서다.<br><b>dydz 가 곱해진 이유</b> — 플럭스는 <b>넓이당</b> 개수다. 실제 개수를 얻으려면 <b>단면적(dy·dz)</b>을 곱해야 한다.<br>그리고 테일러 식을 넣으면 <b>F(x) − F(x+dx) = −(∂F/∂x)dx</b> 가 되어 <b>음수 부호</b>가 나온다. <b>흐름이 x 방향으로 커지고 있으면(기울기 양수) 상자 안의 개수는 줄어든다</b> — 나가는 쪽이 더 세니까.</div></div>
+
+<div class="row"><div class="orig">- The generation and recombination rate of holes within the differential volume will also affect the hole concentration :<br>(∂𝑝/∂𝑡)𝑑𝑥𝑑𝑦𝑑𝑧 = −(∂𝐹⁺<sub>𝑝</sub>/∂𝑥)𝑑𝑥𝑑𝑦𝑑𝑧 + 𝑔<sub>𝑝</sub>𝑑𝑥𝑑𝑦𝑑𝑧 − (𝑝/𝜏<sub>𝑝𝑡</sub>)𝑑𝑥𝑑𝑦𝑑𝑧<br><span class="hand">(각 항 아래 빨간 화살표)</span> Hole flux · Generation · Recombination 𝑅′<sub>𝑝</sub> = 𝛿𝑝/𝜏<sub>𝑝</sub></div><div class="exp"><b>두 항을 더한다.</b> 흐름만으로는 부족하다 — 상자 안에서 <b>새로 생기기도 하고 사라지기도</b> 한다.<br>세 항에 각각 빨간 화살표와 이름이 붙어 있다. <b>Hole flux · Generation · Recombination.</b> 이 세 단어가 식 전체다.<br>· <b>+g<sub>p</sub></b> 생성 — 들어오는 쪽이니 양수<br>· <b>−p/τ<sub>pt</sub></b> 재결합 — 나가는 쪽이니 음수. <b>6쪽에서 구한 R′ = δp/τ 가 여기 들어왔다</b><br><b>τ<sub>pt</sub> 의 t</b> 는 total 이다 — 아래 설명에 "thermal-equilibrium carrier lifetime 과 excess carrier lifetime 을 모두 포함"이라고 적혀 있다. 평형에서 원래 일어나던 재결합과 여분 때문에 더 일어나는 재결합을 <b>한 글자에 몰아넣은</b> 기호다.</div></div>
+
+<div class="row"><div class="orig"><b>Continuity equation for holes</b><br>∂𝑝/∂𝑡 = −∂𝐹⁺<sub>𝑝</sub>/∂𝑥 + 𝑔<sub>𝑝</sub> − 𝑝/𝜏<sub>𝑝𝑡</sub></div><div class="exp"><b>양변을 dxdydz 로 나누면</b> 상자 크기가 사라지고 이 모양이 남는다. <b>상자를 얼마나 크게 잡았든 결과가 같다</b>는 뜻이라 안심해도 된다.<br>세 항을 한 문장으로 읽으면 — <b>"농도가 변하는 이유는 셋뿐이다. 흘러 들어오거나 나가거나, 새로 생기거나, 재결합으로 사라지거나."</b><br><b>이 식 하나가 6.2절의 전부</b>다.</div></div>
+
+<div class="row"><div class="orig"><b>Continuity equation for electrons</b><br>∂𝑛/∂𝑡 = −∂𝐹⁺<sub>𝑛</sub>/∂𝑥 + 𝑔<sub>𝑛</sub> − 𝑛/𝜏<sub>𝑛𝑡</sub></div><div class="exp">전자 쪽도 <b>글자만 바꾸면 같다</b>. 보존 법칙이라 전하 부호와 무관하게 성립한다.<br><span class="hand">[슬라이드 오기] <b>F<sub>n</sub> 의 위첨자가 "+" 로 적혀 있다. "−" 가 맞다.</b><br>근거가 셋이다. ① 바로 다음 쪽(8쪽)에서 전자 플럭스를 <b>F<sub>n</sub>⁻</b> 로 정의한다 — J<sub>n</sub>/(−e) = F<sub>n</sub>⁻. ② 위첨자는 <b>전하의 부호</b>를 뜻하므로 전자는 당연히 −다. ③ 이 식을 전개한 8쪽 결과가 <b>+μ<sub>n</sub>∂(nE)/∂x</b> 로 부호가 뒤집혀 나오는데, F<sub>n</sub>⁻ 여야 그렇게 된다.<br>교재(Neamen)에도 F<sub>n</sub>⁻ 로 되어 있다. <b>옮겨 적을 때의 오타</b>다.</span></div></div>
+
+<div class="fig">오른쪽 그림 — <b>미소 부피 상자</b>. 가로 dx, 세로 dz, 안쪽 dy 인 정육면체다.<br>왼쪽 면(x)에 <b>F⁺<sub>px</sub>(x)</b> 가 파란 화살표로 들어가고, 오른쪽 면(x+dx)에서 <b>F⁺<sub>px</sub>(x+dx)</b> 가 나간다.<br><b>그림이 1차원인 이유</b> — 화살표가 x 방향 하나뿐이다. 실제로는 y, z 로도 흐르지만 <b>이 장은 1차원만 다룬다.</b> 식에 ∂/∂x 만 있고 ∂/∂y, ∂/∂z 가 없는 까닭이다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">38:20</span><br>
+· 제목 왼쪽 위 여백에 <b>"Ambipolar transport eqn."</b> 을 크게 썼다 — <b>"지금 하는 건 중간 단계고 목적지는 저것"</b> 이라는 표시. 연속방정식이 왜 필요한지를 쪽 머리에 박아 둔 셈이다<br>
+· 그림 위에 <b>dV = dxdydz</b> 를 써 넣었다 — 상자의 부피에 이름을 붙인다<br>
+· 테일러 식 옆에 <b>−(∂F⁺<sub>px</sub>/∂x)·dx</b> 를 따로 크게 다시 썼다 — <b>부호가 왜 음수인지</b>를 떼어 내 보여 주는 대목<br>
+· <b>F⁺<sub>px</sub>(x) − F⁺<sub>px</sub>(x+dx)</b> 를 <b>네모로 두르고</b>, 그 결과 <b>−(∂F⁺<sub>px</sub>/∂x)dxdydz</b> 도 따로 네모<br>
+· 그림 속 <b>x 와 x+dx</b> 를 각각 <b>동그라미</b>, 플럭스 화살표를 빨갛게 덧그렸다<br>
+· <b>dxdydz</b> 를 동그라미 치고 왼쪽 아래로 <b>긴 곡선 화살표</b>를 끌어내렸다 — <b>"이걸 양변에서 나눈다"</b> 는 동선<br>
+· 맨 아래 두 연속방정식에서 <b>∂p/∂t · ∂F⁺<sub>p</sub>/∂x · g<sub>p</sub> · p/τ<sub>pt</sub> 네 항을 하나씩 따로 동그라미</b> 치고 전체에 밑줄. 전자 쪽도 똑같이 — <b>"항이 넷이고 각각 뜻이 있다"</b> 를 손으로 분해해 보인 것</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">32:41</span> "So basically, <b>we would like to know how the excess carriers behave with time and space.</b>"</div>
+<div class="exp">목표를 다시 말한다 — <b>시간과 공간</b>. 목차 쪽에서도 같은 말을 했다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">32:49</span> "And when excess carriers, electrons and holes, are generated inside the semiconductors, <b>they do not move individually. So instead, they are bounded together, so they diffuse and drift together.</b> So this phenomenon is called ambipolar transport."</div>
+<div class="exp"><b>individually(따로따로) 가 아니라 bounded together(묶여서)</b>. 이 대비 하나가 ambipolar 의 정의다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">33:16</span> "So we would like to know <b>the diffusion constant or drift mobility of bounded excess carriers.</b> So <b>in order to know those parameters, we need to develop the ambipolar transport equation.</b> And to develop the ambipolar transport equation, <b>we need to start from the continuity equations.</b>"</div>
+<div class="exp"><b>왜 연속방정식부터 하는지</b>를 세 단계로 말한다. 판서에서 제목 위에 "Ambipolar transport eqn." 을 써 놓은 것이 이 대목이다.<br>목표는 <b>D′ 와 μ′ 라는 숫자 두 개</b>이고, 연속방정식은 거기로 가는 <b>첫 계단</b>이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">33:43</span> "So continuity equations is about the carrier concentration, and <b>it can be applied generally</b>, and <b>it was established based on the conservation of carriers.</b>"</div>
+<div class="exp">슬라이드 정의를 그대로 읽는다. <b>두 가지 — 일반적으로 성립, 보존이 근거.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">33:58</span> "So this figure shows <b>a differential volume</b> — differential volume is dx, dy, dz, <b>where a hole-particle flux is entering at x</b>. So this is <b>one-dimensional</b> hole-particle flux, entering at x and <b>leaving at x plus dx.</b>"</div>
+<div class="exp"><b>"one-dimensional(1차원)"</b> 을 분명히 말한다. 상자는 3차원으로 그려 놓고 <b>흐름은 x 하나만</b> 본다. 식에 ∂/∂x 만 있는 이유다.<br>그리고 <b>entering / leaving</b> — 들어오고 나간다. 식의 뺄셈이 이 두 단어다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">34:39</span> "And we can describe the <b>hole flux at x plus dx</b> like this."</div>
+<div class="exp">테일러 전개 줄이다. <b>"조금 떨어진 곳의 값"</b> 을 어떻게 쓰는지.</div>
+
+<div class="said"><b>강의</b> <span class="ts">35:22</span> "x component, hole flux, so <b>we have this term only</b>, and then we can write this equation like this, using this relationship here."</div>
+<div class="exp"><b>"this term only"</b> — y, z 성분은 안 본다는 말이다. 1차원 가정이 여기서 쓰인다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">35:38</span> "so this term — <b>this is the net increase in hole concentration inside this differential volume, due to the hole flux.</b>"</div>
+<div class="exp">식 한 덩어리에 <b>이름을 붙여 준다.</b> "흐름 때문에 상자 안이 얼마나 늘었나".</div>
+
+<div class="said"><b>강의</b> <span class="ts">36:12</span> "but <b>we also need to consider generation and recombination happening within this differential volume.</b> … and the first term is <b>an increase of hole concentration due to hole flux</b>."</div>
+<div class="exp"><b>"also need to consider"</b> — 흐름만으로는 부족하다. 상자 안에서도 일이 벌어진다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">36:47</span> "and the second term here is <b>the increase of hole concentration due to generation</b>, and the third term is <b>the decrease of hole concentration due to recombination</b>. So as a recombination constant, <b>we use delta p over tau p as we just derived in the previous slide.</b>"</div>
+<div class="exp"><b>세 항을 하나씩 이름 붙여 읽는다.</b> 그리고 <b>"바로 앞 쪽에서 유도한 δp/τ 를 쓴다"</b> — 6쪽의 결과가 여기 들어오는 순간을 직접 가리킨다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">37:06</span> "so <b>if we divide by the unit volume, dx dy dz, on both sides of the equations</b>, then we have the continuity equation for the hole."</div>
+<div class="exp"><b>마지막 한 걸음.</b> 양변을 부피로 나누면 상자가 사라진다. 판서에서 dxdydz 에 동그라미 치고 화살표를 끌어 내린 대목이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">37:16</span> "so <b>these continuity equations are pretty straightforward</b>, because <b>charge has to be conserved</b>, so the total number of charge carriers has to be always maintained, right."</div>
+<div class="exp"><b>"pretty straightforward(사실 당연하다)"</b> — 식이 길어 보여도 <b>내용은 상식</b>이라는 말이다. 겁먹을 식이 아니다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">37:44</span> "so <b>the change of hole concentration is due to generation and recombination within this differential volume, and also due to the hole flux due to the current flow.</b> And similarly, the change of electron concentration is due to the generation of electron minus the recombination … plus the electron flux due to the current."</div>
+<div class="exp"><b>식을 통째로 한국말 문장처럼 다시 읽어 준다.</b> 정공 쪽과 전자 쪽을 나란히. <b>글자만 바뀌고 구조는 같다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">38:10</span> "so these are the continuity equations. So <b>using these continuity equations, we are going to derive diffusion equations</b>, and after we derive the diffusion equations, <b>then we will derive the ambipolar transport equation.</b>"</div>
+<div class="exp"><b>다음 두 계단을 예고한다.</b> 오버뷰에서 세 번 말한 그 순서다 — <b>연속 → 확산 → 쌍극성.</b></div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">33:16 · 33:58 · 36:47 · 37:16</span><br>
+· <b>"목표는 D′ 와 μ′ 이고, 연속방정식은 거기로 가는 첫 계단"</b> — 판서에도 제목 위에 "Ambipolar transport eqn." 으로 적어 두었다<br>
+· <b>"이것은 1차원이다"</b> — 상자는 3차원으로 그려 놓고 흐름은 x 하나만 본다는 것. 슬라이드에는 그 말이 없다<br>
+· <b>"앞 쪽에서 유도한 δp/τ 를 여기에 쓴다"</b> — 6쪽과 7쪽이 이어지는 지점을 손으로 가리킨다<br>
+· <b>"사실 당연한 식이다(pretty straightforward)"</b> — 식의 길이에 겁먹지 말라는 말<br>
+· <b>식 전체를 한국말 문장처럼 다시 읽어 준 대목</b> — 슬라이드에는 항 이름 세 개만 적혀 있다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>연속방정식 = 캐리어 보존</b>. <b>"흘러 들어오고 나간 것 + 생긴 것 − 사라진 것 = 쌓인 것"</b><br>
+② <b>∂p/∂t = −∂F⁺<sub>p</sub>/∂x + g<sub>p</sub> − p/τ<sub>pt</sub></b> — 항이 셋이고 각각 <b>flux · generation · recombination</b><br>
+③ <b>앞의 음수 부호가 왜 붙나</b> — 흐름의 기울기가 양수면 <b>나가는 쪽이 더 세서</b> 상자 안이 줄어든다<br>
+④ <b>F 는 플럭스(#/cm²·s)</b>, 전류가 아니다. 다음 쪽에서 <b>F = J/e</b> 로 잇는다<br>
+⑤ <b>τ<sub>pt</sub> 의 t 는 total</b> — 평형 수명과 여분 수명을 모두 포함한 값<br>
+⑥ <b>1차원 가정</b> 때문에 식에 ∂/∂x 만 있다<br>
+⑦ <b>슬라이드 오기 — 전자 연속방정식의 F<sub>n</sub>⁺ 는 F<sub>n</sub>⁻ 가 맞다.</b> 위첨자는 전하 부호를 뜻한다<br>
+⑧ 판서에서 제목 위에 <b>"Ambipolar transport eqn."</b> 을 써 둔 것 — <b>이 쪽은 목적지가 아니라 경유지</b></div>
+<h2 id="s10">10쪽<small>6.2 Diffusion Equations</small></h2>
+<div class="row"><div class="orig"><b>Hole and electron current densities</b><br>𝐽<sub>𝑝</sub> = 𝑒𝜇<sub>𝑝</sub>𝑝𝐸 − 𝑒𝐷<sub>𝑝</sub> ∂𝑝/∂𝑥    𝐽<sub>𝑛</sub> = 𝑒𝜇<sub>𝑛</sub>𝑛𝐸 + 𝑒𝐷<sub>𝑛</sub> ∂𝑛/∂𝑥</div><div class="exp"><b>Ch.5 의 결과를 그대로 가져온다.</b> 새로 유도하는 게 아니라 <b>꺼내 쓰는</b> 것이다.<br>두 항씩이다 — <b>drift(앞) + diffusion(뒤)</b>.<br>· <b>eμ<sub>p</sub>pE</b> — 전기장 E 가 끌고 가는 몫. 농도 p 가 크고 잘 끌려갈수록(μ 큼) 크다<br>· <b>−eD<sub>p</sub>∂p/∂x</b> — 농도가 기울어 저절로 퍼지는 몫<br><b>부호의 차이를 보라.</b> 확산항이 정공은 <b>−</b>, 전자는 <b>+</b> 다.<br>이유는 <b>전하 부호</b> 때문이다. 둘 다 <b>농도가 높은 쪽에서 낮은 쪽으로</b> 퍼지는 것은 같은데, 정공은 +전하라 그 방향이 곧 전류 방향이고, 전자는 −전하라 <b>움직이는 방향과 전류 방향이 반대</b>다. 그래서 부호가 뒤집힌다.</div></div>
+
+<div class="row"><div class="orig">- If we divide by +𝑒 for the hole current density and −𝑒 for the electron current density<br>𝐽<sub>𝑝</sub>/(+𝑒) = 𝐹⁺<sub>𝑝</sub> = 𝜇<sub>𝑝</sub>𝑝𝐸 − 𝐷<sub>𝑝</sub> ∂𝑝/∂𝑥   ·   𝐽<sub>𝑛</sub>/(−𝑒) = 𝐹⁻<sub>𝑛</sub> = −𝜇<sub>𝑛</sub>𝑛𝐸 − 𝐷<sub>𝑛</sub> ∂𝑛/∂𝑥</div><div class="exp"><b>7쪽과 8쪽을 잇는 다리</b>다. 7쪽 식에는 F(플럭스)가 들어 있는데 우리가 아는 건 J(전류)뿐이니, <b>둘을 바꿔 줘야</b> 한다.<br><b>전류 ÷ 전하 = 입자 흐름.</b> 1초에 흐른 전하량을 알갱이 하나의 전하로 나누면 <b>알갱이 개수</b>가 나온다.<br><b>나누는 수가 정공은 +e, 전자는 −e</b> 다. 전자의 전하가 음수이기 때문이다. 그래서 전자 쪽은 <b>부호가 전부 뒤집혀</b> F<sub>n</sub>⁻ = −μ<sub>n</sub>nE − D<sub>n</sub>∂n/∂x 가 된다.<br><b>위첨자가 여기서 정해진다</b> — 정공은 <b>F⁺</b>, 전자는 <b>F⁻</b>. 7쪽에서 전자 연속방정식에 F<sub>n</sub>⁺ 라 적힌 것이 오타임을 이 줄이 증명한다.</div></div>
+
+<div class="row"><div class="orig">- Taking the divergence and substituting back into the continuity equations,<br>∂𝑝/∂𝑡 = −𝜇<sub>𝑝</sub> ∂(𝑝𝐸)/∂𝑥 + 𝐷<sub>𝑝</sub> ∂²𝑝/∂𝑥² + 𝑔<sub>𝑝</sub> − 𝑝/𝜏<sub>𝑝𝑡</sub><br>∂𝑛/∂𝑡 = +𝜇<sub>𝑛</sub> ∂(𝑛𝐸)/∂𝑥 + 𝐷<sub>𝑛</sub> ∂²𝑛/∂𝑥² + 𝑔<sub>𝑛</sub> − 𝑛/𝜏<sub>𝑛𝑡</sub></div><div class="exp"><b>대입한다.</b> 방금 구한 F 를 7쪽 연속방정식의 −∂F/∂x 자리에 넣고 x 로 한 번 더 미분하면 이 모양이 나온다.<br><b>divergence(발산)</b> 는 여기서는 그냥 <b>∂/∂x</b> 다. 3차원이면 ∇· 이지만 1차원이라 미분 한 번이다.<br><b>−∂F/∂x 에서 F 의 두 항이 각각 미분되면서</b>,<br>· 드리프트 항 μ<sub>p</sub>pE 는 <b>−μ<sub>p</sub>∂(pE)/∂x</b> 로<br>· 확산 항 −D<sub>p</sub>∂p/∂x 는 음수 두 번 만나 <b>+D<sub>p</sub>∂²p/∂x²</b> 로<br><b>여기서 2계 미분이 처음 등장한다.</b> ∂²p/∂x² 는 "기울기의 기울기"이고, 이것이 확산의 본체다.<br><b>전자 식의 드리프트 항이 +μ<sub>n</sub> 로 부호가 다르다.</b> F<sub>n</sub>⁻ 의 앞 항이 −μ<sub>n</sub>nE 였고, 그 앞에 연속방정식의 − 가 또 붙어 <b>음수 둘이 양수</b>가 된 것이다. 7쪽의 F<sub>n</sub>⁺ 가 오타라는 셋째 근거가 이 부호다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">(빨간 네모)</span> ∂(𝑝𝐸)/∂𝑥 = 𝐸 ∂𝑝/∂𝑥 + 𝑝 ∂𝐸/∂𝑥</div><div class="exp"><b>곱의 미분</b>이다. 고등학교에서 배운 (fg)′ = f′g + fg′ 그대로.<br>왜 굳이 푸나 — <b>E 도 x 에 따라 변할 수 있기 때문</b>이다. 전기장이 자리마다 다르면 ∂E/∂x 가 0 이 아니다.<br>이 둘째 항이 <b>9쪽의 "내부 전기장"</b>으로 이어진다. 여분 캐리어가 갈려서 생긴 전기장은 <b>자리마다 다르기 때문</b>에 ∂E/∂x 가 살아 있다.<br>빨간 네모가 쳐진 이유는 <b>이 전개를 안 하면 다음 줄이 안 나오기</b> 때문이다.</div></div>
+
+<div class="row"><div class="orig"><b><u>Time dependent diffusion equations</u></b>: behavior of the excess carriers in time and space<br>𝐷<sub>𝑝</sub> ∂²𝑝/∂𝑥² − 𝜇<sub>𝑝</sub>(𝐸 ∂𝑝/∂𝑥 + 𝑝 ∂𝐸/∂𝑥) + 𝑔<sub>𝑝</sub> − 𝑝/𝜏<sub>𝑝𝑡</sub> = ∂𝑝/∂𝑡<br>𝐷<sub>𝑛</sub> ∂²𝑛/∂𝑥² + 𝜇<sub>𝑛</sub>(𝐸 ∂𝑛/∂𝑥 + 𝑛 ∂𝐸/∂𝑥) + 𝑔<sub>𝑛</sub> − 𝑛/𝜏<sub>𝑛𝑡</sub> = ∂𝑛/∂𝑡</div><div class="exp"><b>시간 의존 확산방정식</b>이다. 곱의 미분을 풀어 넣고 순서만 바꿔 쓴 것.<br>이름에 <b>time dependent(시간 의존)</b> 가 붙은 이유 — 우변에 <b>∂/∂t</b> 가 살아 있기 때문이다. 13쪽에서 <b>정상상태(steady state)</b> 를 가정하면 이 우변이 0 이 되어 식이 훨씬 쉬워진다.<br>네 항의 정체를 한 번에 정리하면,<br>· <b>D∂²/∂x²</b> 확산 · <b>μE∂/∂x</b> 드리프트 · <b>+g</b> 생성 · <b>−/τ</b> 재결합<br><b>이 네 항이 이 장 끝까지 같은 자리를 지킨다.</b> 10·12·13·14쪽 식이 전부 이 모양이다.</div></div>
+
+<div class="row"><div class="orig">- Thermal equilibrium → 𝑛₀, 𝑝₀ are <u>independent of time</u> → ∂𝑛/∂𝑡 = ∂(𝑛₀+𝛿𝑛)/∂𝑡 = ∂𝛿𝑛/∂𝑡<br>- For <u>homogeneous</u> semiconductors, 𝑛₀, 𝑝₀ are <u>independent of the space</u> → ∂𝑛/∂𝑥 = ∂𝛿𝑛/∂𝑥</div><div class="exp"><b>n, p 를 δn, δp 로 갈아끼우는 두 개의 근거</b>다. 조건이 서로 다르니 따로 봐야 한다.<br>① <b>시간 미분</b> — n₀ 는 <b>평형값이라 시간에 무관</b>하다. 미분하면 0. 그래서 ∂n/∂t = ∂δn/∂t<br>② <b>공간 미분</b> — 이건 공짜가 아니다. <b>homogeneous(균질한)</b> 라는 조건이 필요하다.<br><b>homogeneous 란</b> <b>도핑 농도가 전체에 걸쳐 일정</b>하다는 뜻이다. 도핑이 자리마다 다르면 n₀ 도 자리마다 달라서 ∂n₀/∂x ≠ 0 이 된다.<br>이 조건이 왜 중요한가 — <b>pn 접합은 균질하지 않다.</b> 한쪽은 p형, 한쪽은 n형이니 도핑이 위치의 함수다. Ch.7 에서는 이 가정을 버려야 한다.<br>13·14쪽 예제가 전부 <b>"homogeneous"</b> 로 시작하는 이유가 이것이다.</div></div>
+
+<div class="row"><div class="orig">𝐷<sub>𝑝</sub> ∂²(𝛿𝑝)/∂𝑥² − 𝜇<sub>𝑝</sub>(𝐸 ∂(𝛿𝑝)/∂𝑥 + 𝑝 ∂𝐸/∂𝑥) + 𝑔<sub>𝑝</sub> − 𝑝/𝜏<sub>𝑝𝑡</sub> = ∂(𝛿𝑝)/∂𝑡<br>𝐷<sub>𝑛</sub> ∂²(𝛿𝑛)/∂𝑥² + 𝜇<sub>𝑛</sub>(𝐸 ∂(𝛿𝑛)/∂𝑥 + 𝑛 ∂𝐸/∂𝑥) + 𝑔<sub>𝑛</sub> − 𝑛/𝜏<sub>𝑛𝑡</sub> = ∂(𝛿𝑛)/∂𝑡</div><div class="exp"><b>이 쪽의 결론</b>이다. 미분이 걸린 자리의 <b>p 와 n 이 전부 δp, δn 으로 바뀌었다.</b><br><b>다 바뀐 게 아니라는 점</b>을 눈여겨봐야 한다. <b>p∂E/∂x 의 p</b> 와 <b>p/τ<sub>pt</sub> 의 p</b> 는 그대로다. <b>미분 안에 든 것만</b> 바뀐다. n₀ 가 사라지는 건 미분될 때뿐이기 때문이다.<br>이제 식이 <b>온전히 여분 캐리어의 언어</b>로 쓰였다. 이것이 10쪽 쌍극성 수송 방정식의 재료가 된다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">43:08</span><br>
+· 오른쪽 위 여백에 <b>dF⁺<sub>p</sub>/dx = μ<sub>p</sub> d(pE)/dx − D<sub>p</sub> d²p/dx²</b> 를 <b>크게 쓰고 네모</b>로 둘렀다 — 슬라이드가 <b>"Taking the divergence"</b> 한마디로 건너뛴 계산을 <b>손으로 직접 보여 준</b> 것이다. <b>이 쪽에서 가장 값진 판서</b>다. 이 한 줄이 있어야 연속방정식과 확산방정식이 이어진다<br>
+· <b>J<sub>p</sub>/(+e)</b> 아래에 <b>"hole flux"</b>, <b>J<sub>n</sub>/(−e)</b> 아래에 <b>"electron flux"</b> 라고 써 넣었다 — <b>F 라는 기호에 말로 이름표</b>를 붙인 것<br>
+· <b>F⁺<sub>p</sub></b> 와 <b>F⁻<sub>n</sub></b> 를 각각 <b>네모</b>로 두르고, <b>(+e)</b> 와 <b>(−e)</b> 를 동그라미 — <b>나누는 수가 다르다</b>는 데 눈을 붙들어 놓는다<br>
+· 두 전류밀도 식 사이에 <b>길게 휜 화살표</b>를 그어 <b>J<sub>p</sub> 와 J<sub>n</sub> 을 이었다</b> — 같은 꼴임을 보이는 선<br>
+· <b>∂(pE)/∂x 를 동그라미</b> 치고, 오른쪽 <b>곱의 미분 상자</b>로 선을 이었다<br>
+· 시간 의존 확산방정식의 <b>∂²p/∂x²</b> 와 <b>∂²n/∂x²</b> 에 각각 <b>체크 표시</b><br>
+· 맨 아래 두 식의 <b>δp, δn</b> 을 각각 <b>동그라미</b> 치고, 위 식에서 아래 식으로 <b>왼쪽을 크게 돌아가는 화살표</b> 두 개를 그렸다 — <b>"p 가 δp 로 바뀐다"</b> 는 변환의 동선<br>
+· 맨 아래 여백에 <b>"→ ambipolar transport equation"</b> — <b>다음이 종착점</b>이라는 표시</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">38:30</span> "so <b>using the continuity equations, we will derive the diffusion equations, which describes the behavior of the excess carriers in time and space.</b> So we start from <b>the hole and electron current densities</b>, and <b>as we learned previously, the current is due to the drift and diffusion.</b>"</div>
+<div class="exp"><b>"as we learned previously(앞에서 배운 대로)"</b> — Ch.5 를 가리킨다. 이 쪽의 첫 두 줄은 <b>새 내용이 아니다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">39:01</span> "so electron current density is due to the drift of electron or diffusion of electron. So <b>if we divide these equations by the elementary charge on both sides, then we can obtain these equations.</b>"</div>
+<div class="exp"><b>elementary charge(기본 전하)</b> = e ≈ 1.6 × 10⁻¹⁹ C. <b>알갱이 하나가 지닌 전하량</b>이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">39:22</span> "so <b>the current divided by the elementary charge represents the flux.</b> So <b>this is the hole flux, and this is the electron flux.</b>"</div>
+<div class="exp"><b>이 쪽에서 가장 중요한 한 문장</b>이다. <b>전류 ÷ 전하 = 플럭스.</b> 7쪽의 F 와 Ch.5 의 J 가 여기서 만난다.<br>판서에서 두 식 아래에 "hole flux", "electron flux" 라고 적어 둔 것이 이 말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">39:48</span> "so if we have this equation, and <b>if we take the derivative</b> — ∂F<sub>p</sub>/∂x = μ<sub>p</sub> ∂(pE)/∂x − D<sub>p</sub> ∂²p/∂x² — and <b>if we take the derivative and put it into the continuity equation we just derived in the previous slide, then we have this equation.</b>"</div>
+<div class="exp"><b>슬라이드가 건너뛴 계산을 말로 또박또박 읽어 준다.</b> 판서에 큰 네모로 적어 둔 그 식이다.<br>여기서 <b>2계 미분 ∂²p/∂x² 가 어디서 생겼는지</b>가 드러난다 — <b>이미 미분이 한 번 들어 있던 확산항을 한 번 더 미분</b>해서 나온 것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">40:19</span> "and because of this part — <b>this part can be described like this</b> — so then we can obtain <b>this time dependent diffusion equations.</b>"</div>
+<div class="exp"><b>곱의 미분 상자</b>를 가리키는 대목이다. ∂(pE)/∂x 를 풀어 넣으면 최종형이 나온다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">40:43</span> "so these equations describe the space and time behavior of the excess carriers, so <b>these equations tell us how excess carriers behave in time and space.</b>"</div>
+<div class="exp">같은 말을 <b>두 번 되풀이</b>한다. <b>시간과 공간</b> — 이 장의 목표 문장이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">41:11</span> "and <b>in thermal equilibrium we have constant n₀ and p₀</b>, then <b>n₀ and p₀ are independent of time</b>, so we can describe ∂n/∂t as ∂δn/∂t, <b>because this n₀ is independent of time.</b>"</div>
+<div class="exp"><b>시간 미분을 바꾸는 근거</b>다. n₀ 가 상수라 미분하면 0.</div>
+
+<div class="said"><b>강의</b> <span class="ts">41:36</span> "and also <b>for homogeneous semiconductors — homogeneous semiconductors means the doping concentration is constant over the whole area of semiconductors</b> — so that means n₀ and p₀ are independent of the space."</div>
+<div class="exp"><b>homogeneous 의 정의를 직접 내려 준다</b> — <b>"도핑 농도가 전체에 걸쳐 일정하다".</b> 슬라이드에는 낱말만 있고 뜻풀이가 없다.<br>이 조건이 있어야 <b>공간 미분</b>도 δ 로 바꿀 수 있다. 13·14쪽 예제가 전부 "homogeneous" 로 시작하는 이유다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">41:57</span> "so <b>using this relationship we can rewrite this time dependent diffusion equation in terms of excess carriers.</b>"</div>
+<div class="exp"><b>in terms of excess carriers(여분 캐리어의 말로)</b> — 식의 언어를 바꾸는 작업이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">42:27</span> "so — sorry — <b>the time dependent diffusion equation in terms of hole or electron, but these equations are the time dependent diffusion equations of excess hole and excess electron.</b>"</div>
+<div class="exp"><b>말하다 스스로 고친다("sorry").</b> 위 식은 <b>p, n 에 대한</b> 것이고 아래 식은 <b>δp, δn 에 대한</b> 것이다. <b>둘을 헷갈리기 쉬운 자리</b>라는 신호로 읽으면 된다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">42:45</span> "so <b>using these equations we will derive the ambipolar transport equation</b>, so <b>this equation will lead us to the ambipolar transport equation.</b>"</div>
+<div class="exp">판서 맨 아래의 <b>"→ ambipolar transport equation"</b> 이 이 말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">43:10</span> "so <b>before deriving the ambipolar transport equation, we need to know what the ambipolar transport is.</b>"</div>
+<div class="exp">9쪽으로 넘어간다. <b>식을 세우기 전에 그림부터</b> — 이 교수님의 일관된 순서다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">39:22 · 39:48 · 41:36 · 42:27</span><br>
+· <b>"전류를 기본 전하로 나눈 것이 플럭스"</b> — 7쪽과 Ch.5 를 잇는 한 문장. 슬라이드는 식만 보인다<br>
+· <b>∂F⁺<sub>p</sub>/∂x 를 직접 전개해 보인 것</b> — 슬라이드는 <b>"Taking the divergence"</b> 한마디로 건너뛴다. 판서에 네모로 크게 적혀 있다<br>
+· <b>"homogeneous = 도핑 농도가 전체에 걸쳐 일정"</b> — 낱말의 정의. 슬라이드에는 없다<br>
+· <b>말하다 스스로 고친 대목</b> — p·n 에 대한 식과 δp·δn 에 대한 식의 구별</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>F = J/e</b> — 정공은 <b>+e</b>, 전자는 <b>−e</b> 로 나눈다. <b>F⁺<sub>p</sub>, F⁻<sub>n</sub></b> 의 위첨자가 여기서 정해진다<br>
+② <b>2계 미분 ∂²/∂x² 가 생기는 자리</b> — 확산항을 <b>한 번 더 미분</b>할 때. 이것이 확산의 본체다<br>
+③ <b>전자 식의 드리프트 항만 부호가 +</b> — F<sub>n</sub>⁻ 의 −μ<sub>n</sub> 과 연속방정식의 − 가 만나 뒤집힌 것<br>
+④ <b>∂(pE)/∂x = E∂p/∂x + p∂E/∂x</b> — 곱의 미분. E 가 자리마다 다를 수 있어서 푼다<br>
+⑤ <b>n → δn 으로 바꾸는 근거 둘</b> — <b>시간</b>은 평형이라 공짜, <b>공간</b>은 <b>homogeneous 조건</b>이 필요<br>
+⑥ <b>미분 안에 든 것만 δ 로 바뀐다</b> — p∂E/∂x 의 p 와 p/τ 의 p 는 그대로<br>
+⑦ <b>네 항의 자리</b> — <b>확산 · 드리프트 · 생성 · 재결합</b>. 이 장 끝까지 같은 순서로 나온다<br>
+⑧ <b>homogeneous 가 깨지는 대표적 경우가 pn 접합</b>이다. Ch.7 에서 이 가정을 버린다</div>
+<h2 id="s11">11쪽<small>6.3 Ambipolar Transport — 개념</small></h2>
+<div class="row"><div class="orig">- Applied E-field → separation of excessive holes and electrons → induce an <u>internal electric field</u> → attracting the electrons and holes back toward each other<br><span class="hand">(밑줄·물결)</span> 𝐸 = 𝐸<sub>𝑎𝑝𝑝</sub> + 𝐸<sub>𝑖𝑛𝑡</sub></div><div class="exp"><b>쌍극성 수송이 왜 일어나는지</b>를 네 단계 화살표로 보인다. 한 단계씩 뜯으면,<br>① <b>전기장을 건다</b> — 밖에서 E<sub>app</sub>(applied, 인가된)을 걸어 준다<br>② <b>여분 전자와 정공이 갈린다</b> — 전하 부호가 반대라 <b>서로 반대쪽으로</b> 밀린다<br>③ <b>내부 전기장이 생긴다</b> — 한쪽에 −가, 반대쪽에 +가 몰리면 <b>그 사이에 저절로 전기장</b>이 선다. 이것이 E<sub>int</sub>(internal, 내부의)<br>④ <b>다시 끌어당긴다</b> — 그 전기장은 갈라진 둘을 <b>도로 붙이는</b> 방향으로 작용한다<br><b>중요한 것은 ③과 ④의 관계다.</b> <b>갈라지는 행위 자체가 갈라짐을 막는 힘을 만든다.</b> 자기 제동이 걸리는 구조다.<br>총 전기장은 <b>둘의 합</b> — E = E<sub>app</sub> + E<sub>int</sub>. 식에 쓰이는 E 는 언제나 이 <b>합</b>이다.<br><b>Ch.5 에서 본 적 있는 구조</b>다. 비균일 도핑에서 전자가 퍼지면 뒤에 양이온이 남아 전기장이 서고, 그 전기장이 퍼짐을 멈춘다. <b>같은 논리가 여기서 또 쓰인다.</b></div></div>
+
+<div class="row"><div class="orig">- Since the internal E-field creates a force attracting the electrons and holes, <b>this E-field will hold the pulses of excess electrons and excess holes <span class="hand">(together 에 겹동그라미)</span> together.</b></div><div class="exp"><b>hold ... together(붙잡아 둔다)</b> 가 이 절의 핵심 동사다. 교수님이 <b>together 에 동그라미를 세 겹</b>이나 쳤다.<br><b>pulse(펄스)</b> — 빛을 짧게 쬐면 그 자리에 <b>봉우리 모양</b>으로 캐리어가 몰린다. 그 덩어리를 펄스라 부른다.<br>그림으로 그리면 δn 봉우리와 δp 봉우리가 <b>서로 겹쳐서 같이 이동한다.</b> 떨어지려 하면 전기력이 도로 당긴다.<br><b>묶는 끈이 전기력</b>이라는 점을 기억하면 된다. 물리적으로 붙어 있는 게 아니다.</div></div>
+
+<div class="row"><div class="orig">- The electrons and holes will drift or diffuse together with a <u>single effective mobility or diffusion coefficient</u> : <b><u>Ambipolar diffusion</u> or <u>ambipolar transport</u></b></div><div class="exp"><b>결론이자 이름 붙이기</b>다.<br><b>single(하나의)</b> 이 중요하다. 원래는 μ<sub>n</sub>, μ<sub>p</sub>, D<sub>n</sub>, D<sub>p</sub> 네 개를 따로 써야 하는데, 묶여 움직이니 <b>μ′ 하나, D′ 하나</b>로 끝난다.<br><b>effective(유효)</b> — 실제로 존재하는 물리량이 아니라 <b>"마치 그런 값인 것처럼 행동한다"</b>는 뜻의 접두어다. Ch.3 의 유효질량 m* 과 같은 쓰임이다.<br><b>ambipolar</b> = ambi(양쪽) + polar(극). <b>+와 − 가 함께 움직인다</b>는 말을 그대로 옮긴 이름이다.<br>이제 남은 일은 하나 — <b>그 μ′ 와 D′ 가 구체적으로 얼마인가.</b> 10쪽이 그 답이다.</div></div>
+
+<div class="fig">오른쪽 그림 — <b>전기장을 걸었을 때 벌어지는 일</b>을 한 장에 담았다.<br>· 위에 <b>E<sub>app</sub></b> 가 오른쪽을 향한 검은 화살표<br>· 왼쪽에서 <b>δn</b> 이 들어가고 오른쪽에서 <b>δp</b> 가 들어온다 — <b>서로 반대쪽으로 밀려났다</b>는 표시<br>· 왼쪽 면에 <b>−</b> 가 세 개, 오른쪽 면에 <b>+</b> 가 세 개 쌓여 있다<br>· 그 사이에 <b>E<sub>int</sub></b> 가 <b>왼쪽을 향한 화살표</b>로 그려져 있다 — <b>E<sub>app</sub> 와 반대 방향</b>이다<br>· 점선 네모는 전기장을 걸기 전의 원래 분포, 실선은 걸고 난 뒤<br><b>두 화살표가 마주 보는 것</b>이 이 그림의 전부다. 미는 힘과 되당기는 힘.</div>
+
+<div class="board"><b>판서</b> <span class="ts">45:56</span><br>
+· 제목 "6.3 Ambipolar Transport" 위에 <b>네모 상자를 그리고 안에 δn 과 δp 를 나란히</b> 썼다 — <b>이 절의 주인공이 이 둘</b>이라는 표시<br>
+· 제목 <b>"Ambipolar Transport"</b> 에 밑줄<br>
+· <b>E = E<sub>app</sub> + E<sub>int</sub></b> 에서 <b>E<sub>app</sub> 와 E<sub>int</sub> 를 각각 따로 동그라미</b> — 둘이 다른 것임을 가른다<br>
+· 그림에서 <b>왼쪽 − 무리와 오른쪽 + 무리를 각각 세로로 긴 동그라미</b>로 감싸고, <b>E<sub>int</sub></b> 에도 동그라미. 양옆에서 안쪽을 향하는 <b>화살표 두 개</b>를 덧그렸다 — <b>되당기는 힘</b><br>
+· 위쪽 <b>E<sub>app</sub></b> 화살표를 따라 긴 선을 긋고, 그림 전체를 <b>큰 네모</b>로 둘렀다<br>
+· 식 오른쪽 빈 자리에 <b>따로 네모를 그리고 그 안에 뭉친 덩어리를 그렸다</b> — <b>전자와 정공이 한 덩어리로 뭉쳐 있는 모습</b>을 그림으로 보인 것<br>
+· <b>"Ambipolar diffusion"</b> 과 <b>"ambipolar transport"</b> 에 각각 물결 밑줄, <b>"single effective mobility or diffusion"</b> 에도 밑줄</div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="said"><b>강의</b> <span class="ts">43:10</span> "so <b>suppose we have a semiconductor and we have excess electron and excess hole</b> … generated within the semiconductors, <b>and if you apply the electric field</b>."</div>
+<div class="exp">상황을 세운다. <b>여분 캐리어가 이미 있는 상태</b>에서 <b>전기장을 거는</b> 것이 출발점이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">43:40</span> "now if you apply the electric field, then <b>excess electron and hole are separated because they experience force in an opposite direction.</b> So if this is the direction of the electric field, <b>excess hole moves in the same direction as the electric field, and excess electron moves the opposite direction</b>."</div>
+<div class="exp"><b>왜 갈라지는지</b>를 부호로 설명한다.<br><b>정공은 +전하라 전기장과 같은 방향</b>, <b>전자는 −전하라 반대 방향</b>. 당연한 이야기지만, <b>이 당연함이 분리를 만들고 분리가 내부 전기장을 만든다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">44:10</span> "so under this electric field the distribution of excess electron and hole will be like this. So <b>this separation of excess electron and hole will induce an electric field, internal electric field.</b>"</div>
+<div class="exp"><b>induce(유도한다)</b> — 밖에서 걸어 준 게 아니라 <b>저절로 생긴다</b>는 뜻이다. E<sub>app</sub> 와 E<sub>int</sub> 를 가르는 기준이 이것이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">44:29</span> "and <b>this internal electric field will create a force that attracts the excess electron and excess hole back together with each other.</b> Then the total electric field is going to be <b>the applied electric field and internal electric field.</b>"</div>
+<div class="exp"><b>back together(도로 붙게)</b> — 되돌리는 방향이라는 점이 핵심이다.<br>그리고 <b>총 전기장 = 인가 + 내부</b>. 식에 쓰는 E 는 이 합이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">44:39</span> "so <b>because of this internal electric field, the pulses of excess electrons and excess holes are held together.</b>"</div>
+<div class="exp"><b>held together(붙들려 있다)</b>. 판서에서 together 에 동그라미를 세 겹 친 그 낱말이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">45:06</span> "so this is again the semiconductor, and <b>if you illuminate the light in this position, excess electron and holes are generated in this region, and they are held together because of this phenomenon.</b> So <b>they are not separated because of the internal electric field</b>, so that means <b>these excess electrons and holes will drift or diffuse together.</b>"</div>
+<div class="exp">같은 이야기를 <b>전기장이 아니라 빛으로</b> 다시 한다.<br>중요한 점 — <b>전기장을 안 걸어도 쌍극성 수송은 일어난다.</b> 빛으로 한 자리에만 캐리어를 만들어도 둘은 함께 퍼진다. 14쪽 예제가 바로 그 경우다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">45:36</span> "with <b>a single effective mobility and diffusion coefficient</b>, so <b>they move as if they were a single particle</b>, so this phenomenon is called as <b>ambipolar diffusion or ambipolar transport.</b>"</div>
+<div class="exp"><b>"as if they were a single particle(마치 하나의 입자인 것처럼)"</b> — 오버뷰에서 한국어로 했던 비유를 영어로 되풀이한다. 이 비유 하나가 ambipolar 라는 낱말의 뜻 전부다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">46:06</span> "so we would like to know <b>how the effective mobility and diffusion coefficient are defined for this ambipolar transport</b>, so <b>we will derive the ambipolar transport equation.</b>"</div>
+<div class="exp">다음 쪽의 과제를 못 박는다 — <b>μ′ 와 D′ 를 구하는 것.</b> 그것이 10쪽의 전부다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">43:40 · 44:10 · 45:06</span><br>
+· <b>"정공은 전기장과 같은 방향, 전자는 반대 방향으로 움직인다"</b> — <b>왜 갈라지는가</b>에 대한 답. 슬라이드는 "separation" 한 단어로 끝낸다<br>
+· <b>"induce(저절로 생긴다)"의 뜻</b> — 인가 전기장과 내부 전기장을 가르는 기준<br>
+· <b>"전기장을 걸지 않고 빛만 쬐어도 둘은 함께 움직인다"</b> — 같은 이야기를 두 상황으로 설명한 대목. 14쪽 예제의 전제가 여기서 깔린다<br>
+· <b>"as if they were a single particle"</b> — 이 절의 비유</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>네 단계 연쇄</b> — <b>전기장 → 분리 → 내부 전기장 유도 → 되당김</b>. 화살표 네 개로 슬라이드에 그대로 적혀 있다<br>
+② <b>갈라지는 행위가 갈라짐을 막는 힘을 만든다</b> — 자기 제동 구조. Ch.5 의 비균일 도핑과 같은 논리<br>
+③ <b>E = E<sub>app</sub> + E<sub>int</sub></b> — 식에 쓰는 E 는 언제나 <b>둘의 합</b><br>
+④ <b>묶는 끈은 전기력</b>이다. 물리적으로 붙어 있는 게 아니다<br>
+⑤ <b>single effective mobility / diffusion coefficient</b> — 네 개(μ<sub>n</sub>, μ<sub>p</sub>, D<sub>n</sub>, D<sub>p</sub>)가 <b>두 개(μ′, D′)로</b> 줄어든다<br>
+⑥ <b>전기장이 없어도 성립</b>한다 — 빛으로 한 자리에만 만들어도 둘은 함께 퍼진다<br>
+⑦ <b>effective(유효)</b> 는 <b>"마치 그런 값인 것처럼"</b> 이라는 뜻. 유효질량 m* 과 같은 쓰임</div>
+<h2 id="s12">12쪽<small>6.3 Ambipolar Transport Equations ★ 이 장의 중심</small></h2>
+<div class="row"><div class="orig"><b>Derivation of the ambipolar transport equation</b><br><span class="hand">(물결)</span> 𝑔<sub>𝑛</sub> = 𝑔<sub>𝑝</sub> = 𝑔  ·  <span class="hand">(물결)</span> 𝑅<sub>𝑛</sub> = 𝑛/𝜏<sub>𝑝𝑡</sub> = 𝑅<sub>𝑝</sub> = 𝑝/𝜏<sub>𝑝𝑡</sub> = 𝑅  ·  <span class="hand">(밑줄)</span> 𝛿𝑛 ≈ 𝛿𝑝</div><div class="exp"><b>이 장에서 가장 중요한 쪽</b>이다. 목차에 별표가 붙은 6.3 의 본체이고, 교수님이 <b>"최종적으로 중요한 것"</b> 이라고 말한 식이 여기서 나온다.<br>유도는 <b>가정 세 개</b>로 시작한다. 셋 다 물결·밑줄이 그어져 있다.<br>① <b>g<sub>n</sub> = g<sub>p</sub> = g</b> — 쌍으로 생기니 하나의 g 로 쓴다<br>② <b>R<sub>n</sub> = R<sub>p</sub> = R</b> — 쌍으로 사라지니 하나의 R 로 쓴다<br>③ <b>δn ≈ δp</b> — <b>전하 중성 조건</b>에서 온다. 여분 전자와 여분 정공의 수가 어긋나면 그 자리에 알짜 전하가 쌓이는데, 반도체는 그것을 <b>엄청나게 빨리 되돌린다.</b> 그래서 사실상 같다고 두어도 된다<br><b>이 세 가정 덕분에</b> 두 식에서 g, R, δ 가 <b>공통 기호</b>가 되어 더할 수 있게 된다. 가정이 없으면 두 식은 서로 남이다.<br><b>≈ 기호를 쓴 이유</b> — 완전히 같지는 않다. 아주 작은 차이가 있어야 내부 전기장이 생긴다. 다만 계산에서는 무시할 만큼 작다.</div></div>
+
+<div class="row"><div class="orig">𝐷<sub>𝑝</sub> ∂²(𝛿𝑝)/∂𝑥² − 𝜇<sub>𝑝</sub>(𝐸 ∂𝛿𝑝/∂𝑥 + 𝑝 <span class="hand">(∂E/∂x 에 사선)</span> ∂𝐸/∂𝑥) + 𝑔 − 𝑅 = ∂(𝛿𝑛)/∂𝑡<br>𝐷<sub>𝑛</sub> ∂²(𝛿𝑛)/∂𝑥² + 𝜇<sub>𝑛</sub>(𝐸 ∂𝛿𝑛/∂𝑥 + 𝑛 <span class="hand">(∂E/∂x 에 사선)</span> ∂𝐸/∂𝑥) + 𝑔 − 𝑅 = ∂(𝛿𝑛)/∂𝑡<br><span class="hand">[필기] (위 식 오른쪽) × μ<sub>n</sub>n   (아래 식 오른쪽) × μ<sub>p</sub>p   (두 식 사이) + ─────</span></div><div class="exp"><b>8쪽에서 가져온 두 식</b>이다. 이제 <b>하나로 합칠 차례.</b><br><b>필기가 방법을 통째로 알려 준다</b> — 위 식에 <b>μ<sub>n</sub>n 을</b>, 아래 식에 <b>μ<sub>p</sub>p 를</b> 곱하고 <b>더한다</b>.<br><b>왜 하필 그 둘을 곱하나?</b> 지우고 싶은 항이 있기 때문이다. <b>∂E/∂x</b> 항은 내부 전기장 때문에 생긴 것인데 <b>계산이 안 된다</b> — E 를 모르기 때문이다.<br>그런데 <b>위 식의 ∂E/∂x 항에는 −μ<sub>p</sub>p 가, 아래 식에는 +μ<sub>n</sub>n 이</b> 붙어 있다. 위에 μ<sub>n</sub>n 을, 아래에 μ<sub>p</sub>p 를 곱하면 두 항이 <b>−μ<sub>p</sub>p·μ<sub>n</sub>n</b> 과 <b>+μ<sub>n</sub>n·μ<sub>p</sub>p</b> 가 되어 <b>크기가 똑같고 부호가 반대</b>가 된다. 더하면 <b>정확히 0</b> 이다.<br><b>곱하는 수를 그렇게 고른 이유가 오직 이것이다.</b> 양쪽 ∂E/∂x 에 빨간 사선이 그어져 있는 것이 그 표시다.<br>이 한 수가 이 장 전체에서 <b>가장 기교적인 대목</b>이고, 시험에 "왜 μ<sub>n</sub>n 과 μ<sub>p</sub>p 를 곱하는가"로 나오기 좋다.<br><span class="hand">[슬라이드 그대로] 위 식의 우변이 <b>∂(δn)/∂t</b> 로 적혀 있다. 좌변이 δp 에 대한 식이니 <b>∂(δp)/∂t</b> 가 자연스럽다. 다만 δn ≈ δp 를 이미 썼으므로 값은 같다.</span></div></div>
+
+<div class="row"><div class="orig">- <u>Multiply by 𝜇<sub>𝑛</sub>𝑛 and 𝜇<sub>𝑝</sub>𝑝, and add two equations,</u><br>(𝜇<sub>𝑛</sub>𝑛𝐷<sub>𝑝</sub> + 𝜇<sub>𝑝</sub>𝑝𝐷<sub>𝑛</sub>) ∂²(𝛿𝑛)/∂𝑥² + (𝜇<sub>𝑛</sub>𝜇<sub>𝑝</sub>)(𝑝 − 𝑛)𝐸 ∂(𝛿𝑛)/∂𝑥 + (𝜇<sub>𝑛</sub>𝑛 + 𝜇<sub>𝑝</sub>𝑝)(𝑔 − 𝑅) = (𝜇<sub>𝑛</sub>𝑛 + 𝜇<sub>𝑝</sub>𝑝) ∂(𝛿𝑛)/∂𝑥</div><div class="exp"><b>곱해서 더한 결과</b>다. ∂E/∂x 항은 사라졌고 세 항이 남았다.<br>드리프트 항을 보면 <b>(p − n)</b> 이라는 뺄셈이 생겼다. 위에는 −μ<sub>p</sub>E·μ<sub>n</sub>n, 아래에는 +μ<sub>n</sub>E·μ<sub>p</sub>p 였으니 더하면 <b>μ<sub>n</sub>μ<sub>p</sub>E(p − n)</b> 이다.<br><b>이 뺄셈이 뒤에서 결정적인 역할</b>을 한다. 11쪽에서 μ′ 의 부호가 n형일 때 음수가 되는 이유가 이 (p − n) 이다.<br><span class="hand">[슬라이드 오기] 우변이 <b>∂(δn)/∂x</b> 로 적혀 있다. <b>∂(δn)/∂t</b> 가 맞다. 바로 아래 줄에서 (μ<sub>n</sub>n + μ<sub>p</sub>p) 로 나눈 결과가 ∂(δn)/∂t 로 제대로 나오는 것이 그 근거다.</span></div></div>
+
+<div class="row"><div class="orig">- Divide by the term (<u>𝜇<sub>𝑛</sub>𝑛</u> + <u>𝜇<sub>𝑝</sub>𝑝</u>),<br><span class="hand">(빨간 네모 + 체크)</span> <b>𝐷′ ∂²(𝛿𝑛)/∂𝑥² + 𝜇′𝐸 ∂(𝛿𝑛)/∂𝑥 + 𝑔 − 𝑅 = ∂(𝛿𝑛)/∂𝑡</b><br><b>Ambipolar transport equation</b> : describes the behavior of the excess electrons and holes in time and space</div><div class="exp"><b>이 장의 도착점</b>이다. 빨간 네모로 둘러져 있고, 교수님이 오버뷰에서 <b>"최종적으로 중요하게 생각해야 되는 것"</b> 이라고 한 식이다.<br>모양을 보라 — <b>8쪽의 확산방정식과 똑같다.</b> 달라진 것은 단 둘뿐이다.<br>· D<sub>n</sub> 이나 D<sub>p</sub> 가 아니라 <b>D′</b><br>· μ<sub>n</sub> 이나 μ<sub>p</sub> 가 아니라 <b>μ′</b><br><b>즉 두 종류의 입자를 하나의 입자처럼 다루는 데 성공했다.</b> 9쪽에서 말로 한 "as if they were a single particle" 이 식으로 실현된 것이다.<br>네 항의 뜻도 그대로다 — <b>확산 · 드리프트 · 생성 · 재결합.</b></div></div>
+
+<div class="row"><div class="orig">,where <span class="hand">(Einstein relation 네모와 화살표)</span><br>𝐷′ = (𝜇<sub>𝑛</sub>𝑛𝐷<sub>𝑝</sub> + 𝜇<sub>𝑝</sub>𝑝𝐷<sub>𝑛</sub>)/(𝜇<sub>𝑛</sub>𝑛 + 𝜇<sub>𝑝</sub>𝑝) = <b>𝐷<sub>𝑛</sub>𝐷<sub>𝑝</sub>(𝑛 + 𝑝)/(𝐷<sub>𝑛</sub>𝑛 + 𝐷<sub>𝑝</sub>𝑝)</b>  <b>Ambipolar diffusion coefficient</b><br>𝜇′ = 𝜇<sub>𝑛</sub>𝜇<sub>𝑝</sub>(𝑝 − 𝑛)/(𝜇<sub>𝑛</sub>𝑛 + 𝜇<sub>𝑝</sub>𝑝)  <b>Ambipolar mobility</b></div><div class="exp"><b>μ′ 와 D′ 의 정체</b>다. 오버뷰 8분 시점에 "이걸 알고 싶어서 유도한다"고 한 그 두 숫자다.<br><b>D′ 의 둘째 표현이 중요하다.</b> 첫 표현에는 μ 와 D 가 섞여 있는데, 둘째 표현은 <b>D 만으로</b> 되어 있다. 어떻게 바꿨나 — <b>아인슈타인 관계식</b> 때문이다.<br><b>Einstein relation: D/μ = kT/e.</b> Ch.5 에서 배운 식으로, <b>D 와 μ 는 서로 독립이 아니다.</b> μ = D·e/kT 를 분자·분모에 넣으면 공통인수 e/kT 가 약분되어 D 만 남는다. 슬라이드에서 그 자리에 <b>빨간 네모와 화살표</b>로 "Einstein relation" 이라고 표시해 둔 이유다.<br><b>μ′ 의 분자에 (p − n) 이 있다는 점</b>을 눈여겨봐야 한다. 뺄셈이라 <b>부호가 뒤집힐 수 있다.</b> n > p 면 μ′ 가 <b>음수</b>가 된다. 이동도가 음수라는 것은 <b>전기장의 반대 방향으로 끌려간다</b>는 뜻이고, 11쪽에서 n형일 때 μ′ = −μ<sub>p</sub> 가 되는 근거다.<br><b>D′ 는 (n + p) 라 늘 양수</b>다. 확산은 방향을 뒤집지 않는다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">47:08 (1차) · 2차 녹화 03:40</span> · 이 쪽은 <b>두 녹화에 걸쳐 있다.</b> 1차 녹화는 슬라이드를 띄우자마자 끝났고, 실제 유도는 2차 녹화에서 진행됐다.<br>
+<b>1차 녹화 끝(47:08)</b> — <b>g<sub>n</sub> = g<sub>p</sub> = g</b>, <b>R<sub>n</sub> = R<sub>p</sub> = R</b>, <b>δn ≈ δp</b> 세 줄에만 물결 밑줄이 그어진 상태다. <b>가정 세 개까지만 말하고 녹화가 끊겼다.</b><br>
+<b>2차 녹화(소리 없음)</b> — 같은 쪽이 끝까지 채워져 있다.<br>
+· 위 식 왼쪽에 <b>체크 표시(√)</b>, 아래 식 왼쪽에도 <b>+ 와 체크</b> 를 쓰고 <b>두 식을 가로지르는 긴 선</b>을 그었다 — <b>"두 식을 더한다"</b> 는 표시<br>
+· 위 식 오른쪽 끝에 <b>× μ<sub>n</sub>n</b>, 아래 식 오른쪽 끝에 <b>× μ<sub>p</sub>p</b> 를 크게 썼다 — <b>엇갈려 곱한다</b>는 것을 양 끝에 적어 눈에 박는다<br>
+· 양쪽 <b>∂E/∂x 를 각각 동그라미 치고 사선으로 그어 지웠다</b> — <b>이 항이 사라진다</b>는 것이 이 쪽의 기교다<br>
+· 결과 식 <b>D′∂²(δn)/∂x² + μ′E∂(δn)/∂x + g − R = ∂(δn)/∂t</b> 왼쪽에 <b>큰 체크 두 개</b>, <b>D′ 와 μ′ 를 각각 동그라미</b><br>
+· 오른쪽 <b>D′ 의 분자·분모를 각각 밑줄</b> 치고, <b>D<sub>n</sub>D<sub>p</sub>(n+p)/(D<sub>n</sub>n+D<sub>p</sub>p)</b> 를 <b>크게 동그라미</b> — <b>외울 것은 둘째 표현</b>이라는 표시<br>
+· <b>"Ambipolar diffusion coefficient"</b> 와 <b>"Ambipolar mobility"</b> 를 각각 <b>타원</b>으로 감쌌다<br>
+· <b>"Ambipolar transport equation"</b> 글자에도 네모<br>
+· <b>μ′ 의 분자 μ<sub>n</sub>μ<sub>p</sub>(p − n)</b> 에 동그라미 — <b>11쪽에서 부호가 갈리는 자리</b></div>
+
+<h3>강의 한 줄 해설 — 이 쪽에서 한 말 전부</h3>
+
+<div class="fig"><b>1차 녹화가 47:25 에 문장 도중에 끊긴다.</b> 이 쪽은 <b>가정 세 개를 세우는 데까지만</b> 음성이 남아 있다. 나머지 유도는 2차 녹화에서 진행됐는데 <b>그 녹화에는 소리가 전혀 없다.</b></div>
+
+<div class="said"><b>강의</b> <span class="ts">46:06</span> "so we will derive the ambipolar transport equation. <b>So we start from the diffusion equations for excess holes and electrons</b> that describe the behavior of the excess carriers, first. … <b>and first we set a generation rate of electron is same as the generation of holes.</b>"</div>
+<div class="exp"><b>출발 재료를 밝힌다</b> — 8쪽의 확산방정식 두 개. 새로 만드는 게 아니라 <b>가진 것을 합치는</b> 작업이다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">46:39</span> "<b>because when there is a generation of electron, there is always a generation of holes, so they are created in pairs</b>, right? so <b>we can set those two parameters as g.</b> And similarly we can also set the recombination rate of electron is the same as the recombination of holes, <b>so we can set those two parameters as R.</b>"</div>
+<div class="exp"><b>가정 ①②의 근거</b>다. <b>created in pairs(쌍으로 생긴다)</b> — 이 장에서 몇 번째 반복인지 모를 문장이다.<br>그리고 <b>"set those two parameters as g"</b> — <b>기호를 하나로 통일하는 것</b>이 요점이다. 그래야 두 식을 더할 수 있다.</div>
+
+<div class="said"><b>강의</b> <span class="ts">47:03</span> "so the electron and holes will combine together, so <b>they are annihilated in pairs</b>, so the recombination rates are same. <b>And if we also suppose the charge neutrality condition, then the semiconductor region has to maintain the charge neutrality,</b> …"</div>
+<div class="exp"><b>가정 ③의 근거</b>를 꺼내다 녹화가 끊긴다.<br><b>charge neutrality(전하 중성)</b> — 반도체 안의 어느 자리든 <b>+전하 총량과 −전하 총량이 같아야</b> 한다. 어긋나면 그 자리에 전기장이 서고, 그 전기장이 캐리어를 끌어와 <b>순식간에 되돌린다.</b><br>그래서 <b>δn ≈ δp</b> 다. 여분 전자가 여분 정공보다 많으면 그 자리가 음전하를 띠는데, 반도체는 그 상태를 유지하지 못한다.<br><b>그 "순식간"이 얼마나 빠른지</b>를 나타내는 양이 <b>유전완화 시간상수</b>이고, 실리콘에서 10⁻¹² 초 수준이다. 캐리어 수명(10⁻⁶ 초 수준)보다 <b>백만 배 빠르다.</b> 그래서 안심하고 δn = δp 로 둔다.</div>
+
+<div class="only"><b>자료에 없음</b> <span class="ts">46:39 · 47:03</span><br>
+· <b>"두 파라미터를 하나의 g 로 둔다"</b> — 기호를 통일하는 것이 가정의 목적임을 밝힌 대목<br>
+· <b>"전하 중성 조건을 가정하면"</b> — 슬라이드는 δn ≈ δp 라고만 적고 <b>그 근거를 말하지 않는다</b><br>
+· <b>μ<sub>n</sub>n 과 μ<sub>p</sub>p 를 엇갈려 곱하는 이유</b> — 슬라이드에도 녹화에도 말로는 없다. <b>판서에서 ∂E/∂x 를 양쪽 다 지운 것</b>으로만 드러난다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것 — 이 장의 핵심</b><br>
+① <b>쌍극성 수송 방정식</b><br>　<b>D′ ∂²(δn)/∂x² + μ′E ∂(δn)/∂x + g − R = ∂(δn)/∂t</b><br>　교수님이 <b>"최종적으로 중요하게 생각해야 되는 것"</b> 이라고 직접 말한 식이다<br>
+② <b>가정 세 개</b> — <b>g<sub>n</sub> = g<sub>p</sub></b>(쌍 생성) · <b>R<sub>n</sub> = R<sub>p</sub></b>(쌍 소멸) · <b>δn ≈ δp</b>(전하 중성)<br>
+③ <b>μ<sub>n</sub>n 과 μ<sub>p</sub>p 를 엇갈려 곱해 더하는 이유</b> — <b>∂E/∂x 항을 지우기 위해서.</b> 계산할 수 없는 항을 없애는 한 수다. <b>시험에 나오기 좋은 자리</b><br>
+④ <b>D′ = D<sub>n</sub>D<sub>p</sub>(n+p)/(D<sub>n</sub>n+D<sub>p</sub>p)</b> — <b>아인슈타인 관계식(D/μ = kT/e)</b> 으로 μ 를 지워 얻은 꼴. 외울 것은 이 표현<br>
+⑤ <b>μ′ = μ<sub>n</sub>μ<sub>p</sub>(p−n)/(μ<sub>n</sub>n+μ<sub>p</sub>p)</b> — 분자가 <b>(p − n)</b> 이라 <b>음수가 될 수 있다</b>. 11쪽의 −μ<sub>p</sub> 가 여기서 온다<br>
+⑥ <b>D′ 는 (n+p) 라 항상 양수</b>, <b>μ′ 는 (p−n) 이라 부호가 갈린다</b> — 이 대비를 꼭 기억할 것<br>
+⑦ <b>식의 모양이 8쪽과 똑같다</b>. 바뀐 것은 D → D′, μ → μ′ 둘뿐 — <b>두 입자를 하나로 다루는 데 성공했다는 뜻</b></div>
+<h2 id="s13">13쪽<small>6.3 Ambipolar Transport — 소수 캐리어 값으로</small></h2>
+<div class="fig"><b>이 쪽부터 끝까지는 음성이 없다.</b><br>1차 녹화(10/11)는 10쪽 가정 세 개를 말하다 <b>47:25 에 문장 도중 끊겼고</b>, 이어지는 2차 녹화(10/12, 45분)는 <b>전 구간이 디지털 무음</b>이다 — 영상은 멀쩡한데 소리만 통째로 비어 있다. 녹화 설정에서 시스템 오디오가 안 잡힌 것으로 보인다.<br>따라서 아래 네 쪽(11~14쪽)과 15·16쪽은 <b>슬라이드 원문 + 영상에 남은 판서</b> 로만 복원했다. <b>교수님 육성 인용이 없는 것은 선택이 아니라 소리가 없기 때문</b>이다. 이 범위는 <b>직접 다시 들을 수 있는 방법이 없으므로</b> 판서를 특히 꼼꼼히 옮겼다.</div>
+
+<div class="row"><div class="orig">- For extrinsic semiconductor & <span class="hand">(low-level injection 에 동그라미)</span> low-level injection: <b>p-type</b> <span class="hand">(동그라미)</span> 𝑝₀ ≫ 𝑛₀, 𝑝₀ ≫ 𝛿𝑛(𝑡)</div><div class="exp"><b>10쪽에서 구한 D′ 와 μ′ 의 정체를 밝히는 쪽</b>이다. 일반식은 복잡한데, <b>조건을 두 개 걸면 놀랄 만큼 간단해진다.</b><br>조건이 둘이다.<br>· <b>extrinsic(외인성)</b> — <b>도핑된</b> 반도체. 진성(intrinsic)이 아니라는 뜻이다. 그래야 n₀ 와 p₀ 가 크게 차이 난다<br>· <b>low-level injection</b> — 6쪽에서 본 저준위 주입<br>그리고 <b>p형</b>을 먼저 다룬다. <b>p₀ ≫ n₀</b>(도핑이 정함) 와 <b>p₀ ≫ δn(t)</b>(빛의 세기가 정함) — <b>출처가 다른 두 부등식</b>이다.</div></div>
+
+<div class="row"><div class="orig">𝐷′ = 𝐷<sub>𝑛</sub>𝐷<sub>𝑝</sub>(𝑛+𝑝)/(𝐷<sub>𝑛</sub>𝑛+𝐷<sub>𝑝</sub>𝑝) = 𝐷<sub>𝑛</sub>𝐷<sub>𝑝</sub>[(𝑛₀+𝛿𝑛)+(𝑝₀+𝛿𝑛)]/[𝐷<sub>𝑛</sub>(𝑛₀+𝛿𝑛)+𝐷<sub>𝑝</sub>(𝑝₀+𝛿𝑛)] = <span class="hand">(물결)</span> <b>𝐷<sub>𝑛</sub></b></div><div class="exp"><b>복잡한 분수가 글자 하나로 줄어든다.</b> 과정을 따라가면,<br>① <b>n = n₀ + δn, p = p₀ + δn</b> 을 대입한다(δp = δn 이므로 둘 다 δn)<br>② <b>분자의 대괄호</b>: (n₀ + δn) + (p₀ + δn). 넷 중 <b>p₀ 가 압도적</b>이다 → <b>≈ p₀</b><br>③ <b>분모</b>: D<sub>n</sub>(n₀+δn) + D<sub>p</sub>(p₀+δn). 여기서도 <b>D<sub>p</sub>p₀ 가 압도적</b>이다 → <b>≈ D<sub>p</sub>p₀</b><br>④ 그러면 <b>D<sub>n</sub>D<sub>p</sub>·p₀ / (D<sub>p</sub>p₀) = D<sub>n</sub></b><br><b>D<sub>p</sub> 와 p₀ 가 위아래에서 통째로 약분된다.</b> 남는 것은 <b>D<sub>n</sub> 하나.</b><br><b>D<sub>n</sub> 은 전자의 확산계수</b>이고, p형에서 전자는 <b>소수 캐리어</b>다.</div></div>
+
+<div class="row"><div class="orig">𝜇′ = <span class="hand">(μ<sub>n</sub>μ<sub>p</sub> 에 동그라미)</span> 𝜇<sub>𝑛</sub>𝜇<sub>𝑝</sub>(𝑝−𝑛)/(𝜇<sub>𝑛</sub>𝑛 + <span class="hand">(μ<sub>p</sub>p 에 동그라미)</span> 𝜇<sub>𝑝</sub>𝑝) = <span class="hand">(동그라미)</span> <b>𝜇<sub>𝑛</sub></b>  <span class="hand">[필기] (D<sub>n</sub> 에서 μ<sub>n</sub> 으로 길게 휜 화살표)</span></div><div class="exp">이동도도 같은 식으로 줄어든다.<br>· <b>분자 (p − n)</b> ≈ p₀ (p형이라 p 가 훨씬 큼)<br>· <b>분모</b> ≈ μ<sub>p</sub>p₀<br>· 따라서 <b>μ<sub>n</sub>μ<sub>p</sub>p₀ / (μ<sub>p</sub>p₀) = μ<sub>n</sub></b><br><b>부호가 양수</b>라는 점을 보라. p형에서는 p > n 이라 (p − n) 이 양수다.<br><span class="hand">[필기] D<sub>n</sub> 에서 μ<sub>n</sub> 으로 <b>길게 휜 화살표</b>를 그었다 — <b>둘이 같은 결론(전자 쪽)</b>이라는 표시다.</span></div></div>
+
+<div class="row"><div class="orig">- For extrinsic semiconductor & low-level injection: <b>n-type</b> 𝑛₀ ≫ 𝑝₀, 𝑛₀ ≫ 𝛿𝑛(𝑡)<br>𝐷′ = … = <span class="hand">(겹동그라미)</span> <b>𝐷<sub>𝑝</sub></b>   ·   𝜇′ = … = <span class="hand">(별표)</span> <b>−𝜇<sub>𝑝</sub></b></div><div class="exp"><b>n형은 전부 뒤집힌다.</b><br>· <b>D′ = D<sub>p</sub></b> — n형에서 소수 캐리어는 <b>정공</b>이니 정공의 확산계수<br>· <b>μ′ = −μ<sub>p</sub></b> — <b>마이너스가 붙는다</b><br><b>음수가 왜 나오나</b> — μ′ 의 분자가 <b>(p − n)</b> 인데, n형에서는 <b>n ≫ p</b> 라 <b>이 괄호가 음수</b>가 된다. 분모는 μ<sub>n</sub>n₀, 분자는 μ<sub>n</sub>μ<sub>p</sub>(−n₀) 이므로 결과가 <b>−μ<sub>p</sub></b>.<br><b>음의 이동도가 뜻하는 것</b> — 쌍극성 덩어리가 <b>전기장의 반대 방향으로 끌려간다</b>는 말이다. n형에서는 다수 캐리어인 전자가 워낙 많아 전기장을 거의 다 가려 버리고, 묶인 덩어리는 <b>소수 캐리어인 정공을 따라</b> 움직이기 때문이다.<br>슬라이드에서 이 한 자리에만 <b>별표</b>가 찍혀 있다.<br><span class="hand">[슬라이드 그대로] n형의 D′ 전개식이 <b>p형 것과 글자 하나 다르지 않게</b> 적혀 있다. 조건이 n₀ ≫ p₀ 로 바뀌었으니 어느 항을 버리느냐가 달라질 뿐, 식 자체는 같은 일반식에서 출발하므로 결과(D<sub>p</sub>)는 맞다.</span></div></div>
+
+<div class="row"><div class="orig">- For extrinsic semiconductor & low-level injection, ambipolar parameters <u>reduce to the <span class="hand">(동그라미)</span> minority-carrier values</u></div><div class="exp"><b>이 쪽의 결론이자 이 장에서 가장 기억에 남을 한 줄</b>이다.<br><b>"쌍극성 파라미터는 소수 캐리어 값으로 떨어진다."</b><br>| | 다수 캐리어 | <b>소수 캐리어</b> | D′ | μ′ |<br>|---|---|---|---|---|<br>| <b>p형</b> | 정공 | <b>전자</b> | <b>D<sub>n</sub></b> | <b>+μ<sub>n</sub></b> |<br>| <b>n형</b> | 전자 | <b>정공</b> | <b>D<sub>p</sub></b> | <b>−μ<sub>p</sub></b> |<br><b>왜 수가 적은 쪽이 지배하는가</b> — 묶인 덩어리는 <b>둘이 함께</b>여야만 움직인다. 다수 캐리어는 넘쳐나니 아쉬울 게 없고, <b>부족한 쪽이 못 따라오면 전체가 못 간다.</b> 두 사람이 손을 잡고 걸을 때 <b>느린 사람의 속도</b>로 가는 것과 같다.<br>교수님이 오버뷰 9분 시점에 <b>"지금 무슨 말인지 잘 모르겠죠"</b> 라며 미리 말해 둔 결론이 이것이다.<br><b>이 결론의 쓸모</b> — 12쪽부터는 D′, μ′ 라는 복잡한 분수를 더 쓰지 않는다. <b>그냥 D<sub>n</sub>, μ<sub>n</sub>(p형) 또는 D<sub>p</sub>, μ<sub>p</sub>(n형)</b> 로 쓴다. 13·14쪽 예제 식이 전부 그렇다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">2차 녹화 10:08 (소리 없음)</span><br>
+· 첫 줄 위에 <b>체크 표시 세 개</b>를 나란히 — "조건을 하나씩 확인한다"<br>
+· <b>p₀ ≫ n₀</b> 와 <b>p₀ ≫ δn(t)</b> 를 각각 <b>동그라미</b> 치고, 위쪽에 <b>"δp = δn"</b> 을 써 넣었다 — 대입할 때 쓰는 관계<br>
+· 분자의 <b>(n₀+δn)</b> 과 <b>(p₀+δn)</b> 을 각각 동그라미, 분모의 <b>D<sub>p</sub></b> 에 동그라미 — <b>약분되는 자리</b>를 짚는다<br>
+· <b>μ′ 의 분자 (p − n)</b> 위에 <b>작은 표시</b>, <b>μ<sub>p</sub>p</b> 에 동그라미<br>
+· 오른쪽 빈 자리에 크게 <b>"→ electron !"</b> 이라고 쓰고, <b>D<sub>n</sub> 과 μ<sub>n</sub> 에서 그리로 긴 곡선 화살표</b> 두 개를 끌었다 — <b>p형의 답은 전자</b><br>
+· 그 아래 다시 크게 <b>"→ hole !"</b> 이라고 쓰고 <b>D<sub>p</sub></b> 에서 화살표 — <b>n형의 답은 정공</b><br>
+· <b>느낌표를 둘 다 붙였다.</b> 이 쪽에서 가져갈 것이 이 두 단어라는 뜻이다<br>
+· n형 조건 <b>n₀ ≫ p₀</b> 와 <b>n₀ ≫ δn(t)</b> 에도 각각 동그라미<br>
+· 맨 아래 <b>"minority-carrier values"</b> 를 <b>동그라미 치고 밑줄</b>, 앞의 <b>"ambipolar parameters reduce to"</b> 에도 밑줄</div>
+
+<div class="only"><b>자료에 없음 — 판서에만</b> <span class="ts">2차 녹화 10:08</span><br>
+· <b>"→ electron !" 과 "→ hole !"</b> — 복잡한 분수 두 개의 결론을 <b>낱말 하나씩</b>으로 적어 둔 것. 슬라이드는 D<sub>n</sub>, D<sub>p</sub> 라는 기호로만 끝난다<br>
+· <b>약분되는 자리를 하나씩 동그라미로 짚은 것</b> — 어디가 사라지는지가 눈에 보인다<br>
+· <b>조건 위의 체크 표시</b> — 조건을 하나씩 확인하고 넘어가는 순서</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>쌍극성 파라미터는 소수 캐리어 값으로 떨어진다</b> — 이 장에서 <b>가장 자주 반복된 결론</b>이다<br>
+② <b>p형 → D′ = D<sub>n</sub>, μ′ = +μ<sub>n</sub></b> (소수 = 전자)<br>
+③ <b>n형 → D′ = D<sub>p</sub>, μ′ = −μ<sub>p</sub></b> (소수 = 정공). <b>마이너스를 빠뜨리기 쉽다.</b> 슬라이드에서 이 한 자리에만 별표가 찍혀 있다<br>
+④ <b>마이너스가 나오는 이유</b> — μ′ 분자의 <b>(p − n)</b> 이 n형에서 음수가 되기 때문. D′ 는 <b>(n + p)</b> 라 늘 양수<br>
+⑤ <b>왜 소수 캐리어가 지배하나</b> — 묶여 움직이므로 <b>부족한 쪽이 전체를 제한</b>한다. 느린 사람의 속도<br>
+⑥ <b>필요한 조건 둘</b> — <b>extrinsic(도핑됨)</b> 과 <b>low-level injection</b>. 둘 다 있어야 이 단순화가 성립한다<br>
+⑦ <b>이후 모든 예제 식에 D<sub>n</sub> 또는 D<sub>p</sub> 가 바로 등장하는 근거</b>가 이 쪽이다</div>
+<h2 id="s14">14쪽<small>6.3 Ambipolar Transport — 생성·재결합 항</small></h2>
+<div class="row"><div class="orig">- The generation and recombination terms in the ambipolar transport equation for electrons,<br><span class="hand">(왼쪽에 빨간 괄호)</span> 𝑔 − 𝑅 = 𝑔<sub>𝑛</sub> − 𝑅<sub>𝑛</sub> = (𝐺<sub>𝑛₀</sub> + 𝑔′<sub>𝑛</sub>) − (𝑅<sub>𝑛₀</sub> + 𝑅′<sub>𝑛</sub>) <span class="hand">(G<sub>n₀</sub> 와 R<sub>n₀</sub> 에 각각 사선)</span></div><div class="exp"><b>10쪽 식의 g − R 자리를 구체적으로 채우는 쪽</b>이다. 쌍극성 수송 방정식에서 아직 손대지 않은 부분이 이 두 글자였다.<br><b>생성도 재결합도 두 몫으로 나뉜다.</b><br>· <b>G<sub>n₀</sub></b> 평형 생성률(열 때문에 늘 일어나던 것) + <b>g′<sub>n</sub></b> 여분 생성률(빛 때문에 새로 생긴 것)<br>· <b>R<sub>n₀</sub></b> 평형 재결합률 + <b>R′<sub>n</sub></b> 여분 재결합률<br><b>대문자 = 평형, 소문자 프라임 = 여분.</b> 5쪽에서 세운 기호 규칙이 여기서 제값을 한다.<br>그리고 필기에서 <b>G<sub>n₀</sub> 와 R<sub>n₀</sub> 에 각각 사선</b>이 그어져 있다 — <b>둘이 서로 지워진다</b>는 표시다.</div></div>
+
+<div class="row"><div class="orig">𝐺<sub>𝑛₀</sub>: the thermal-equilibrium electron generation rate<br>𝑔′<sub>𝑛</sub>: the thermal-equilibrium excess electron generation rate<br>𝑅<sub>𝑛₀</sub>: the thermal-equilibrium electron recombination rate<br>𝑅′<sub>𝑛</sub>: the thermal-equilibrium excess electron recombination rate</div><div class="exp">네 기호의 이름이다.<br><span class="hand">[슬라이드 오기] <b>g′<sub>n</sub> 과 R′<sub>n</sub> 의 설명에 "thermal-equilibrium" 이 붙어 있는데 틀렸다.</b> 프라임이 붙은 것은 <b>여분</b>이고, 여분은 정의상 <b>평형이 아닌</b> 상태의 것이다. <b>"excess electron generation rate"</b>, <b>"excess electron recombination rate"</b> 가 맞다.<br>5쪽 오른쪽 기호 표에는 제대로 <b>"Excess electron and hole generation rates"</b> 라고 적혀 있다. 윗줄을 복사해 붙이면서 지우지 않은 것으로 보인다.</span></div></div>
+
+<div class="row"><div class="orig">For thermal equilibrium, <u>𝐺<sub>𝑛₀</sub> = 𝑅<sub>𝑛₀</sub></u><br>𝑔 − 𝑅 = 𝑔′<sub>𝑛</sub> − 𝑅′<sub>𝑛</sub> = <span class="hand">(큰 동그라미)</span> 𝑔′<sub>𝑛</sub> − 𝛿𝑛/𝜏<sub>𝑛</sub>   ·  𝜏<sub>𝑛</sub>: the excess minority carrier electron lifetime</div><div class="exp"><b>4쪽의 결론이 여기서 쓰인다.</b> 평형에서는 <b>G<sub>n₀</sub> = R<sub>n₀</sub></b> 이므로 둘이 지워진다.<br>남는 것은 <b>g′<sub>n</sub> − R′<sub>n</sub></b> — <b>여분끼리의 싸움</b>만 남는다는 뜻이다. 평형의 생성·재결합은 서로 상쇄되어 <b>식에 아무 영향을 주지 않는다.</b><br>그리고 <b>R′<sub>n</sub> = δn/τ<sub>n</sub></b> 을 넣는다. 이것이 <b>6쪽에서 공들여 구한 그 결과</b>다. 오버뷰 4쪽 필기의 "R 을 지우고 p/τ 를 쓴다" 가 드디어 완성된다.<br><b>g′ − δn/τ 를 읽는 법</b>: <b>"빛이 만들어 넣는 속도 − 사라지는 속도"</b>. 둘이 같아지면 δn 이 더 이상 변하지 않는다. 13쪽 Example 6.3 의 포화값이 거기서 나온다.<br>큰 동그라미가 쳐진 자리가 여기다.</div></div>
+
+<div class="row"><div class="orig">- Similarly, for holes, 𝑔 − 𝑅 = 𝑔<sub>𝑝</sub> − 𝑅<sub>𝑝</sub> = (𝐺<sub>𝑝₀</sub> + 𝑔′<sub>𝑝</sub>) − (𝑅<sub>𝑝₀</sub> + 𝑅′<sub>𝑝</sub>)   ·   𝑔 − 𝑅 = 𝑔′<sub>𝑝</sub> − 𝑅′<sub>𝑝</sub> = 𝑔′<sub>𝑝</sub> − 𝛿𝑝/𝜏<sub>𝑝</sub></div><div class="exp">정공 쪽도 <b>글자만 바꾸면 같다.</b> 이 장 내내 되풀이되는 구조다.</div></div>
+
+<div class="row"><div class="orig"><b>For p-type semiconductors under <span class="hand">(low injection 에 밑줄·화살표)</span> low injection</b><br><span class="hand">(빨간 네모)</span> 𝐷<sub>𝑛</sub> ∂²(𝛿𝑛)/∂𝑥² + 𝜇<sub>𝑛</sub>𝐸 ∂(𝛿𝑛)/∂𝑥 + 𝑔′ − 𝛿𝑛/𝜏<sub>𝑛0</sub> = ∂(𝛿𝑛)/∂𝑡</div><div class="exp"><b>이 장의 작업용 완성식</b>이다. 10쪽의 D′, μ′ 가 11쪽에서 D<sub>n</sub>, μ<sub>n</sub> 으로 바뀌었고, g − R 이 이 쪽에서 g′ − δn/τ<sub>n0</sub> 으로 바뀌었다. <b>더 이상 프라임이 붙은 기호가 없다.</b><br>네 항을 마지막으로 정리하면,<br>· <b>D<sub>n</sub>∂²(δn)/∂x²</b> 확산 — 농도가 볼록한 곳에서 퍼진다<br>· <b>+μ<sub>n</sub>E∂(δn)/∂x</b> 드리프트 — 전기장이 끌고 간다<br>· <b>+g′</b> 생성 — 빛이 넣어 준다<br>· <b>−δn/τ<sub>n0</sub></b> 재결합 — 수명에 따라 사라진다<br><b>이 네 항이 전부다.</b> 13·14쪽 예제는 전부 <b>이 식에서 몇 항을 0 으로 지우는 문제</b>다.</div></div>
+
+<div class="row"><div class="orig">Similarly, <b>For n-type semiconductors under low injection</b><br><span class="hand">(빨간 네모)</span> 𝐷<sub>𝑝</sub> ∂²(𝛿𝑝)/∂𝑥² − 𝜇<sub>𝑝</sub>𝐸 ∂(𝛿𝑝)/∂𝑥 + 𝑔′ − 𝛿𝑝/𝜏<sub>𝑝0</sub> = ∂(𝛿𝑝)/∂𝑡<br>: describe the <u>drift</u>, <u>diffusion</u>, and <u>recombination</u> of excess minority carriers as a function of spatial coordinates and as a function of time.</div><div class="exp">n형 판이다. <b>드리프트 항의 부호가 −</b> 로 바뀐 것을 놓치면 안 된다.<br><b>11쪽에서 μ′ = −μ<sub>p</sub> 였던 것</b>이 그대로 넘어온 것이다. 마이너스는 거기서 왔다.<br>맨 아래 한 줄이 이 식의 이름표다 — <b>drift · diffusion · recombination</b> 셋에 각각 밑줄이 그어져 있고, <b>excess minority carriers(여분 소수 캐리어)</b> 의 거동을 <b>공간과 시간의 함수</b>로 기술한다고 적혀 있다.<br><b>"minority" 라는 낱말이 또 나왔다.</b> 11쪽 결론이 여기서 이름으로 굳는다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">2차 녹화 13:08 (소리 없음)</span><br>
+· 첫 식 왼쪽에 <b>작은 화살표</b>를 그려 넣고 <b>g − R</b> 에 밑줄 — <b>"여기를 채운다"</b><br>
+· <b>(G<sub>n₀</sub> + g′<sub>n</sub>)</b> 과 <b>(R<sub>n₀</sub> + R′<sub>n</sub>)</b> 두 괄호에 각각 물결 밑줄<br>
+· 오른쪽 기호 설명 네 줄 중 <b>g′<sub>n</sub> 과 R′<sub>n</sub> 두 줄에만 밑줄</b> — <b>살아남는 둘</b>을 짚은 것이다. 지워지는 G<sub>n₀</sub>, R<sub>n₀</sub> 에는 밑줄이 없다<br>
+· <b>"For thermal equilibrium, G<sub>n₀</sub> = R<sub>n₀</sub>"</b> 에 밑줄 — <b>지워지는 근거</b><br>
+· <b>g′<sub>n</sub> − R′<sub>n</sub></b> 과 <b>g′<sub>n</sub> − δn/τ<sub>n</sub></b> 에 각각 물결, <b>"excess minority carrier electron lifetime"</b> 에 긴 밑줄<br>
+· 정공 쪽 <b>g′<sub>p</sub> − δp/τ<sub>p</sub></b> 에도 밑줄<br>
+· <b>"For p-type semiconductors under low injection"</b> 에 밑줄을 긋고, 아래 네모 상자로 <b>굵은 화살표</b>를 내렸다. n형 쪽도 같은 화살표<br>
+· <b>두 완성식 상자를 각각 빨갛게 덧그려 두 겹</b>으로 만들었다 — <b>이 쪽에서 외울 것은 이 두 상자</b><br>
+· 맨 아래 <b>"drift, diffusion, and recombination"</b> 세 낱말에 각각 밑줄</div>
+
+<div class="only"><b>자료에 없음 — 판서에만</b> <span class="ts">2차 녹화 13:08</span><br>
+· <b>기호 설명 네 줄 중 g′<sub>n</sub> 과 R′<sub>n</sub> 두 줄에만 밑줄</b> — <b>무엇이 살아남고 무엇이 지워지는지</b>를 가른 표시<br>
+· <b>두 완성식 상자를 두 겹으로 덧그린 것</b> — 이 쪽의 결론이 그 둘이라는 표시<br>
+· <b>p형·n형 제목에서 상자로 내린 굵은 화살표</b> — 조건과 결과를 잇는 동선</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>작업용 완성식 두 개</b> — 13·14쪽 예제가 전부 이 둘에서 출발한다<br>
+　<b>p형</b> : D<sub>n</sub>∂²(δn)/∂x² <b>+</b> μ<sub>n</sub>E∂(δn)/∂x + g′ − δn/τ<sub>n0</sub> = ∂(δn)/∂t<br>
+　<b>n형</b> : D<sub>p</sub>∂²(δp)/∂x² <b>−</b> μ<sub>p</sub>E∂(δp)/∂x + g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t<br>
+② <b>드리프트 항의 부호</b> — p형 <b>+</b>, n형 <b>−</b>. 11쪽의 μ′ = −μ<sub>p</sub> 가 여기로 넘어온 것<br>
+③ <b>G<sub>n₀</sub> 와 R<sub>n₀</sub> 가 지워지는 이유</b> — <b>평형에서 둘이 같기</b> 때문. 4쪽의 결론이 여기서 쓰인다<br>
+④ <b>g − R = g′ − δn/τ</b> — <b>여분끼리만 남는다.</b> 평형의 생성·재결합은 식에 영향이 없다<br>
+⑤ <b>δn/τ 는 6쪽에서 구한 R′</b> 이다. 6쪽을 공들여 한 목적이 이 치환이었다<br>
+⑥ <b>식의 주어는 "여분 소수 캐리어"</b> — 11쪽 결론이 이름으로 굳는 자리<br>
+⑦ <b>슬라이드 오기</b> — g′<sub>n</sub>, R′<sub>n</sub> 설명의 <b>"thermal-equilibrium"</b> 은 빼야 한다. 5쪽 기호 표에는 올바르게 적혀 있다</div>
+<h2 id="s15">15쪽<small>6.3 Applications — Example 6.2 · 6.3</small></h2>
+<div class="row"><div class="orig"><b>[Example 6.2]</b> Consider an infinitely large, homogeneous <span class="hand">(n-type 에 동그라미)</span> n-type semiconductor with <u>zero applied electric field</u>. Assume that at time 𝑡 = 0, a <u>uniform concentration of excess carriers exists</u> in the crystal, but assume that <u>𝑔′ = 0</u> for 𝑡 &gt; 0. … then the <u>low-injection condition</u> applies. <u>Calculate the excess carrier concentration as a function of time</u> 𝑡 ≥ 0.</div><div class="exp"><b>쌍극성 수송 방정식을 처음 써 보는 문제</b>다. 그리고 <b>이 장의 예제가 다 그렇듯, 푸는 게 아니라 지우는 게 일</b>이다.<br>문제가 준 조건을 식의 항과 하나씩 짝지으면,<br>· <b>infinitely large(무한히 크다)</b> → 경계가 없으니 <b>경계조건을 안 따져도 된다</b><br>· <b>homogeneous(균질)</b> → 8쪽에서 본 조건. n → δn 치환이 성립한다<br>· <b>n-type</b> → 12쪽의 <b>n형 완성식</b>을 쓴다. D<sub>p</sub>, μ<sub>p</sub>, τ<sub>p0</sub><br>· <b>zero applied electric field</b> → <b>E = 0</b> → 드리프트 항이 0<br>· <b>uniform concentration(균일한 농도)</b> → <b>어디나 같다</b> → ∂/∂x = 0 → 확산 항이 0<br>· <b>g′ = 0 for t &gt; 0</b> → <b>빛을 껐다</b> → 생성 항이 0<br>· <b>low injection</b> → 12쪽 식이 그대로 쓰인다<br><b>네 항 중 셋이 지워진다.</b> 남는 것은 재결합 항뿐.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">(∂²(δp)/∂x² 에 사선·화살표, "uniform" 이라 씀)</span> 𝐷<sub>𝑝</sub> ∂²(𝛿𝑝)/∂𝑥² <span class="hand">(사선·화살표)</span> + 𝜇<sub>𝑝</sub>𝐸 ∂(𝛿𝑝)/∂𝑥 <span class="hand">(사선 + "0")</span> + 𝑔′ − 𝛿𝑝/𝜏<sub>𝑝0</sub> = ∂(𝛿𝑝)/∂𝑡</div><div class="exp"><b>세 항에 사선이 그어졌다.</b> 각각 지워지는 근거가 다르다는 점이 중요하다.<br>· <b>확산 항</b> ← <b>uniform</b>(필기에 그대로 적혀 있다). 농도가 어디나 같으면 기울기가 0 이고, 기울기가 0 이면 2계 미분도 0<br>· <b>드리프트 항</b> ← <b>E = 0</b><br>· <b>생성 항</b> ← <b>g′ = 0</b>(필기에 "0" 이라 적혀 있다)<br>남는 것은 <b>−δp/τ<sub>p0</sub> = ∂(δp)/∂t</b>.<br><b>이 식의 모양을 6쪽에서 이미 봤다.</b> "변화율이 자기 자신에 비례하고 부호가 음수" — 지수 감소다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] δp(t) = δp(0) e<sup>−t/τ<sub>p0</sub></sup> = <u>δn(t)</u></span></div><div class="exp"><b>답이다.</b> 빛을 끈 순간의 양에서 시작해 <b>수명 τ<sub>p0</sub> 로 지수 감소</b>한다.<br>필기 끝의 <b>= δn(t)</b> 가 중요하다. <b>δn 과 δp 는 같다</b>(전하 중성). 문제가 "excess carrier concentration" 을 물었으니 <b>둘 다 같은 답</b>이라고 적어 준 것이다.<br><b>이 답이 왜 당연한가</b> — 넣어 주는 것도 없고(g′ = 0), 퍼지지도 않고(uniform), 끌려가지도 않으니(E = 0), <b>할 수 있는 일이 사라지는 것뿐</b>이다.<br><b>6쪽의 결과와 완전히 같은 식</b>이라는 점도 확인해 두면 좋다. 거기서는 p형 전자였고 여기서는 n형 정공일 뿐, 구조는 같다.</div></div>
+
+<div class="fig">오른쪽 <b>Table 6.2 — Common ambipolar transport equation simplifications</b>.<br><b>이 표가 13·14쪽 예제의 열쇠</b>다. 문장으로 주어진 조건을 <b>식의 어느 항이 0 이 되는지</b>로 번역해 준다.<br>| 조건 | 0 이 되는 것 |<br>|---|---|<br>| <b>Steady state</b> (정상상태) | ∂(δn)/∂t = 0, ∂(δp)/∂t = 0 |<br>| <b>Uniform distribution</b> (균일 분포) | D<sub>n</sub>∂²(δn)/∂x² = 0, D<sub>p</sub>∂²(δp)/∂x² = 0 |<br>| <b>Zero electric field</b> (전기장 없음) | E∂(δn)/∂x = 0, E∂(δp)/∂x = 0 |<br>| <b>No excess carrier generation</b> | g′ = 0 |<br>| <b>No excess carrier recombination</b> (무한 수명) | δn/τ<sub>n0</sub> = 0, δp/τ<sub>p0</sub> = 0 |<br><b>시험에서 가장 먼저 할 일</b>이 이 표에 따라 항을 지우는 것이다. 지우고 나면 남는 식은 거의 늘 한두 항이라 바로 풀린다.</div>
+
+<div class="row"><div class="orig"><b>[Example 6.3]</b> Consider an infinitely large, <span class="hand">(homogeneous 에 파란 동그라미)</span> homogeneous n-type semiconductor with <u>zero applied electric field</u>. Assume that for 𝑡 &lt; 0, the semiconductor is in thermal equilibrium and that for 𝑡 ≥ 0, <u>a uniform generation rate</u> exists in the crystal. Calculate the <u>excess carrier concentration</u> as a function of time <u>assuming the condition of low injection</u>.</div><div class="exp"><b>6.2 를 뒤집은 문제</b>다. 6.2 는 <b>빛을 끈 뒤</b>였고, 6.3 은 <b>빛을 켠 뒤</b>다.<br>지워지는 항은 똑같이 둘(확산, 드리프트)인데 <b>생성 항 g′ 가 살아남는다.</b><br>남는 식은 <b>g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</b>.<br><b>읽는 법</b>: 들어오는 속도 g′ 는 일정한데, 나가는 속도 δp/τ 는 <b>δp 가 쌓일수록 커진다.</b> 처음에는 들어오는 쪽이 이겨 δp 가 늘지만, 늘수록 나가는 쪽이 세져서 <b>어느 지점에서 둘이 같아진다.</b> 거기서 멈춘다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기·파란색] 𝑔′ − 𝛿𝑝/𝜏<sub>𝑝0</sub> = ∂(𝛿𝑝)/∂𝑡  →  𝑔′𝜏 − 𝛿𝑝 = 𝜏 · ∂𝛿𝑝/∂𝑡  →  𝛿𝑝 = 𝑔′𝜏 − 𝑔′𝜏 𝑒<sup>−𝑡/𝜏</sup></span><br><span class="hand">[필기·빨간색] → 𝛿𝑝(𝑡) = 𝑔′ 𝜏<sub>𝑝0</sub> (1 − 𝑒<sup>−𝑡/𝜏<sub>𝑝0</sub></sup>)</span></div><div class="exp"><b>답이다.</b> 중간 과정도 필기에 남아 있다 — 양변에 τ 를 곱해 정리한 뒤 푼다.<br><b>δp(t) = g′τ<sub>p0</sub>(1 − e<sup>−t/τ<sub>p0</sub></sup>)</b><br><b>이 식을 읽는 법</b><br>· <b>t = 0</b> 이면 괄호가 (1 − 1) = 0 → <b>δp = 0</b>. 빛을 켜기 전이니 당연하다<br>· <b>t → ∞</b> 면 괄호가 (1 − 0) = 1 → <b>δp = g′τ<sub>p0</sub></b>. <b>포화값</b>이다<br><b>포화값이 g′τ 라는 것이 핵심</b>이다. <b>"초당 들어오는 양 × 평균 머무는 시간 = 쌓여 있는 양"</b>.<br>가게로 치면 <b>1분에 10명 들어오고 평균 30분 머무르면 가게 안에 300명</b> 이 있는 것과 같다. 아주 자주 쓰이는 관계다.<br><b>6.2 와 6.3 은 거울상</b>이다. 하나는 <b>e<sup>−t/τ</sup></b> 로 내려가고, 하나는 <b>1 − e<sup>−t/τ</sup></b> 로 올라간다. 커패시터의 방전과 충전과 똑같다.</div></div>
+
+<div class="board"><b>판서</b> <span class="ts">2차 녹화 21:20 (소리 없음)</span><br>
+· Example 6.2 의 <b>"n-type"</b> 과 <b>"zero applied electric field"</b>, <b>"low-injection condition"</b> 에 각각 동그라미와 밑줄 — <b>조건을 하나씩 집는다</b><br>
+· 식의 <b>D<sub>p</sub>∂²(δp)/∂x²</b> 와 <b>μ<sub>p</sub>E∂(δp)/∂x</b> 를 <b>각각 동그라미 치고 사선</b>, <b>g′</b> 위에 <b>0</b> 을 썼다<br>
+· 식 아래에 <b>"→ simple eq."</b> 라고 썼다 — <b>지우고 나면 쉬운 식이 된다</b>는 한마디. 이 장 예제 풀이의 요령 전부다<br>
+· 식 오른쪽에 <b>δp(t) = δp(0)e<sup>−t/τ<sub>p0</sub></sup></b> 와 <b>(= δn(t))</b> 를 크게 쓰고 <b>동그라미</b><br>
+· <b>Table 6.2 의 다섯 줄을 하나씩 따로 동그라미</b>로 감쌌다 — <b>"Steady state"</b>, <b>"Uniform distribution"</b>, <b>"Zero electric field"</b>, <b>"No excess carrier generation"</b>, <b>"No excess carrier recombination"</b><br>
+· 표의 오른쪽 결과 칸에서 <b>∂(δn)/∂t = 0</b> 과 <b>δn/τ<sub>n0</sub> = 0</b> 을 네모로 두르고, 마지막 줄 옆에 <b>R′</b> 라고 써 넣었다 — <b>"재결합이 없다는 건 R′ 이 0 이라는 뜻"</b><br>
+· Example 6.3 의 <b>"homogeneous"</b> 와 <b>"n-type"</b> 에 동그라미, <b>"a uniform generation rate"</b> 에 밑줄<br>
+· 6.3 의 식에서도 <b>확산·드리프트 항에 사선</b>, <b>g′ 에는 동그라미</b>(지우지 않는다는 표시)<br>
+· 오른쪽에 <b>g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</b> 를 다시 쓰고 <b>동그라미</b>, 그 아래 <b>δp(t) = g′τ<sub>p0</sub>(1 − e<sup>−t/τ<sub>p0</sub></sup>)</b> 를 쓰고 <b>네모</b>로 둘렀다 — 이 쪽의 최종 답</div>
+
+<div class="only"><b>자료에 없음 — 판서에만</b> <span class="ts">2차 녹화 21:20</span><br>
+· <b>"→ simple eq."</b> — 조건을 적용해 항을 지우고 나면 식이 쉬워진다는 한마디. 이 장 예제 풀이법의 요약<br>
+· <b>Table 6.2 다섯 줄을 하나씩 동그라미로 감싼 것</b> — 이 표를 <b>체크리스트처럼</b> 쓰라는 표시<br>
+· <b>"= δn(t)"</b> — δp 를 구하고도 δn 이 같다는 것을 덧붙인 것<br>
+· <b>마지막 표 줄 옆의 "R′"</b> — "재결합이 없다"를 6쪽의 기호와 이어 준다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>Table 6.2 를 체크리스트로 쓴다</b> — 문제의 조건을 읽으면서 <b>지워질 항에 바로 사선</b>을 긋는 것이 첫 단계<br>
+② <b>Example 6.2 (빛을 끈 뒤)</b> — 남는 식 <b>−δp/τ<sub>p0</sub> = ∂(δp)/∂t</b> → <b>δp(t) = δp(0)e<sup>−t/τ<sub>p0</sub></sup></b><br>
+③ <b>Example 6.3 (빛을 켠 뒤)</b> — 남는 식 <b>g′ − δp/τ<sub>p0</sub> = ∂(δp)/∂t</b> → <b>δp(t) = g′τ<sub>p0</sub>(1 − e<sup>−t/τ<sub>p0</sub></sup>)</b><br>
+④ <b>포화값 = g′τ<sub>p0</sub></b> — <b>"초당 들어오는 양 × 평균 머무는 시간"</b>. 아주 자주 쓰인다<br>
+⑤ <b>둘은 거울상</b> — e<sup>−t/τ</sup> 와 1 − e<sup>−t/τ</sup>. 커패시터의 방전과 충전<br>
+⑥ <b>지워지는 근거를 각각 댈 수 있어야 한다</b> — 확산은 <b>uniform</b>, 드리프트는 <b>E = 0</b>, 생성은 <b>g′ = 0</b>. 서술형에서 이 근거를 묻는다<br>
+⑦ <b>n형 문제이므로 D<sub>p</sub>, μ<sub>p</sub>, τ<sub>p0</sub></b> — 11쪽 결론(소수 캐리어 값)이 여기서 바로 쓰인다<br>
+⑧ <b>δn = δp</b> 이므로 어느 쪽을 구해도 답은 같다</div>
+<h2 id="s16">16쪽<small>6.3 Applications — Example 6.4 · 확산거리 L</small></h2>
+<div class="row"><div class="orig"><b>[Example 6.4]</b> Consider <span class="hand">(a p-type 에 동그라미)</span> a p-type semiconductor that is homogeneous and infinite in extent. Assume a <u>zero applied electric field</u>. For a one-dimensional crystal, assume that excess carriers are <u>being generated at 𝑥 = 0 only</u>. The excess carriers being generated at 𝑥 = 0 will begin diffusing in both the +𝑥 direction and −𝑥 directions. Calculate the <span class="hand">(동그라미)</span> <u>steady-state excess carrier concentration</u> as a function of 𝑥.</div><div class="exp"><b>이 장에서 가장 중요한 예제</b>다. 교수님이 오버뷰 11분 시점에 <b>"가운데에만 빛을 쬐면 어떻게 퍼지나"</b> 라며 미리 그려 보인 그 문제이고, <b>확산거리 L</b> 이라는 새 개념이 여기서 나온다.<br>앞의 두 예제와 결정적으로 다른 점 — <b>13쪽은 시간 문제, 여기는 공간 문제</b>다.<br>조건을 하나씩 항과 짝지으면,<br>· <b>p-type</b> → 12쪽의 <b>p형 완성식</b>. D<sub>n</sub>, μ<sub>n</sub>, τ<sub>n0</sub><br>· <b>zero applied electric field</b> → <b>드리프트 항 0</b><br>· <b>generated at x = 0 only</b> → <b>x ≠ 0 인 모든 곳에서 g′ = 0</b>. x = 0 은 경계조건으로 들어간다<br>· <b>steady-state(정상상태)</b> → <b>∂/∂t = 0</b>. 시간이 충분히 지나 더 이상 변하지 않는 상태<br><b>이번에는 확산 항이 살아남는다.</b> 공간에 따라 농도가 달라지니 당연하다.</div></div>
+
+<div class="row"><div class="orig">𝐷<sub>𝑛</sub> ∂²(𝛿𝑛)/∂𝑥² <span class="hand">(사선 + "0")</span> + 𝜇<sub>𝑛</sub>𝐸 ∂(𝛿𝑛)/∂𝑥 <span class="hand">(사선 + "0")</span> + 𝑔′ − 𝛿𝑛/𝜏<sub>𝑛0</sub> = <span class="hand">(사선 + "0")</span> ∂(𝛿𝑛)/∂𝑡</div><div class="exp"><b>세 항에 사선</b>이 그어진다. 13쪽과 지워지는 항이 <b>다르다</b>는 점이 중요하다.<br>· <b>드리프트 항</b> ← E = 0<br>· <b>생성 항</b> ← x ≠ 0 에서 g′ = 0<br>· <b>시간 미분</b> ← <b>정상상태</b><br>남는 것은 <b>확산과 재결합</b> 둘이다 — <b>D<sub>n</sub> d²(δn)/dx² − δn/τ<sub>n0</sub> = 0</b>.<br><b>이 식이 말하는 것</b>: 한 자리에서 <b>확산으로 흘러나간 만큼</b>이 <b>재결합으로 사라진 만큼</b>과 같다. 둘이 균형을 이뤄 모양이 더 이상 변하지 않는다. 그것이 정상상태다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] ∂²(𝛿𝑛)/∂𝑥² − 𝛿𝑛/<span style="border:1px solid #c0392b">𝐷<sub>𝑛</sub>𝜏<sub>𝑛0</sub></span> = 0   (𝐷<sub>𝑛</sub>𝜏<sub>𝑛0</sub> 아래에 <b>𝐿<sub>𝑛</sub>²</b>)</span></div><div class="exp"><b>이 쪽에서 가장 중요한 한 줄</b>이다. D<sub>n</sub> 으로 나눠 정리하면 분모에 <b>D<sub>n</sub>τ<sub>n0</sub></b> 가 생기는데, 교수님이 거기에 동그라미를 치고 아래에 <b>L<sub>n</sub>²</b> 이라고 적었다.<br><b>L<sub>n</sub> = √(D<sub>n</sub>τ<sub>n0</sub>)</b> — <b>확산거리(diffusion length)</b> 다.<br><b>왜 길이가 되는가</b> — 단위를 보면 바로 보인다. D 는 cm²/s, τ 는 s. 곱하면 <b>cm²</b>, 제곱근을 씌우면 <b>cm</b>. 길이다.<br><b>뜻</b>: <b>여분 캐리어가 사라지기 전까지 평균적으로 퍼져 나가는 거리.</b><br>· <b>D 가 크면</b> 빨리 퍼지니 멀리 간다<br>· <b>τ 가 길면</b> 오래 사니 멀리 간다<br>둘의 기하평균이 L 이다.<br><b>τ 가 "시간의 척도"라면 L 은 "거리의 척도"</b> 다. 둘은 짝이고, 이 장의 두 축이다.<br><b>실제 크기 감각</b> — 실리콘에서 L 은 보통 수십 μm ~ 수백 μm 다. 소자 하나의 크기와 비슷해서, <b>L 이 소자보다 길면 캐리어가 반대쪽까지 살아서 도달한다.</b> Ch.7 의 pn 접합 다이오드가 작동하는 근거가 이것이다.</div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] 𝛿𝑛(𝑥) = 𝐴 𝑒<sup>𝑥/𝐿<sub>𝑛</sub></sup> + 𝐵 𝑒<sup>−𝑥/𝐿<sub>𝑛</sub></sup></span></div><div class="exp"><b>일반해</b>다. d²y/dx² = y/L² 꼴의 답은 <b>지수함수 둘의 합</b>이다. 하나는 커지는 쪽, 하나는 작아지는 쪽.<br>이제 <b>물리적으로 말이 되는 쪽만 남긴다.</b> 이 단계를 <b>경계조건을 쓴다</b>고 한다.<br><span class="hand">[필기 그대로] 왼쪽을 <b>δn(t)</b> 로 적었다. 이 문제는 <b>x 의 함수</b>이므로 <b>δn(x)</b> 가 맞다. 앞 쪽(13쪽)에서 t 를 쓰던 손버릇으로 보인다.</span></div></div>
+
+<div class="row"><div class="orig"><span class="hand">[필기] 𝑥 &gt; 0.  𝐵 = 0  →  𝛿𝑛(𝑥) = 𝛿𝑛(0) 𝑒<sup>−𝑥/𝐿<sub>𝑛</sub></sup></span><br><span class="hand">[필기] 𝑥 &lt; 0.  𝐴 = 0  →  𝛿𝑛(𝑥) = 𝛿𝑛(0) 𝑒<sup>𝑥/𝐿<sub>𝑛</sub></sup></span></div><div class="exp"><b>좌우를 따로 푼다.</b> 그리고 <b>버리는 항의 근거가 둘 다 같다</b> — <b>무한히 멀어지면 0 이 되어야 한다.</b><br>· <b>x &gt; 0 쪽</b>: x 가 커질 때 e<sup>x/L</sup> 는 <b>무한대로 발산</b>한다. 농도가 무한대일 수는 없으니 <b>A 쪽을 버린다</b>… 가 아니라, 필기는 <b>B = 0</b> 이라 적었다. 식에서 A 가 e<sup>+x/L</sup> 의 계수이므로 <b>발산하는 쪽을 버리면 A = 0</b> 이 되어야 한다<br><span class="hand">[필기 그대로] x &gt; 0 에 <b>B = 0</b>, x &lt; 0 에 <b>A = 0</b> 이라 적혀 있는데, 바로 옆에 쓴 답은 <b>x &gt; 0 에서 e<sup>−x/L</sup></b>, <b>x &lt; 0 에서 e<sup>+x/L</sup></b> 로 <b>올바르다</b>. 즉 <b>A 와 B 의 이름표만 서로 바뀌었고 결론은 맞다.</b> A 를 e<sup>−x/L</sup> 의 계수로 두었다면 그대로 맞는 표기이기도 하다.</span><br><b>결론은 분명하다</b> — <b>양쪽 모두 바깥으로 갈수록 지수적으로 줄어든다.</b> 부호가 다른 이유는 x 가 음수인 쪽에서도 <b>|x| 가 커지면 작아지게</b> 만들기 위해서다.<br>두 식을 하나로 쓰면 <b>δn(x) = δn(0) e<sup>−|x|/L<sub>n</sub></sup></b> 이다.<br><b>L<sub>n</sub> 의 뜻이 여기서 눈에 보인다</b> — x = L<sub>n</sub> 인 자리에서 농도가 <b>가운데의 37 %</b> 로 떨어진다. τ 가 시간에 대해 하던 역할을 L 이 거리에 대해 한다.</div></div>
+
+<div class="fig">오른쪽 위 <b>Figure 6.6</b> — <b>Steady-state generation rate at x = 0.</b><br>반도체 막대 가운데 <b>x = 0 자리에만 g′ 가 뾰족하게 솟은</b> 그림이다. <span class="hand">[필기] 그 자리에 <b>hν</b> 를 쓰고, 양옆에 각각 <b>g = 0</b> 이라고 적었다. 좁은 빛줄기 하나만 쬐는 상황이라는 뜻이다.</span></div>
+
+<div class="fig">오른쪽 아래 <b>Figure 6.7</b> — <b>정상상태의 전자·정공 농도 분포</b>(세로축이 로그 눈금).<br><b>빨간 곡선(전자)</b> 과 <b>파란 곡선(정공)</b> 이 <b>x = 0 에서 뾰족한 봉우리</b>를 이루고 양옆으로 지수적으로 내려간다.<br><b>두 곡선이 겹쳐 그려진 것</b>이 이 그림의 요점이다 — <b>δn = δp</b>, 전자와 정공이 같은 모양으로 함께 퍼진다. 9쪽에서 말한 <b>"묶여서 함께 움직인다"</b> 가 그림으로 나타난 것이다.<br><b>로그 눈금인 이유</b> — 지수함수는 로그 축에서 <b>직선</b>이 된다. 봉우리 양옆이 직선으로 보이면 <b>지수 감소가 맞다</b>는 증거다.<br><b>높이 차이도 읽어야 한다.</b> p형이라 바닥선이 <b>p₀ 는 높고 n₀ 는 낮다.</b> 같은 δn(0) 을 더해도 <b>소수 캐리어 쪽(전자)의 봉우리가 훨씬 도드라진다.</b> 다수 캐리어 쪽은 원래 많아서 δ 가 묻힌다 — <b>소수 캐리어가 중요한 이유</b>가 그림에 그대로 있다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">2차 녹화 27:12 (소리 없음)</span><br>
+· 식의 <b>μ<sub>n</sub>E∂(δn)/∂x</b> 와 <b>g′</b>, <b>∂(δn)/∂t</b> 에 각각 <b>사선과 "0"</b> 을 그렸다. 식 왼쪽에는 <b>굵은 화살표</b><br>
+· 아래에 <b>∂²(δn)/∂x² − δn/(D<sub>n</sub>τ<sub>n0</sub>) = 0</b> 을 다시 쓰고, <b>D<sub>n</sub>τ<sub>n0</sub> 를 동그라미 친 뒤 그 아래에 L<sub>n</sub>²</b> 이라고 썼다 — <b>확산거리가 정의되는 순간</b>이다. 슬라이드 어디에도 L<sub>n</sub> 은 없다<br>
+· <b>δn(x) = A e<sup>x/L<sub>n</sub></sup> + B e<sup>−x/L<sub>n</sub></sup></b> 를 크게 쓰고, 두 지수항을 각각 <b>동그라미</b><br>
+· 오른쪽에 <b>x → ∞ 이면 δn → 0</b>, <b>x → −∞ 이면 δn → 0</b> 을 <b>두 줄로 나란히</b> 쓰고 각각 동그라미 — <b>경계조건을 말로 적어 둔 것</b>. 슬라이드에는 없다<br>
+· <b>x &gt; 0 / x &lt; 0</b> 을 각각 <b>×표로 강조</b>하고, 그 옆에 결과식을 쓴 뒤 <b>크게 동그라미</b><br>
+· 오른쪽 그림 위에 <b>"Semiconductor"</b> 라고 쓰고 막대를 <b>빨간 네모</b>로 둘렀다. 그 안에 <b>x &lt; 0 : g = 0</b>, <b>x = 0 : hν</b>, <b>x &gt; 0 : g = 0</b> 를 각각 써 넣고 <b>x = 0 자리에 세로로 긴 타원</b>을 그렸다 — <b>빛이 한 점에만 들어온다</b>는 그림<br>
+· Figure 6.7 의 <b>두 봉우리 꼭대기에 각각 동그라미</b>를 치고, 아래쪽 <b>n₀ 선에도 동그라미</b>, 봉우리에서 아래로 <b>V 자 표시</b> — <b>n₀ 위에 δn(0) 이 얹힌 구조</b>를 짚는다<br>
+· 그림 왼쪽에 <b>큰 화살표 두 개</b>를 겹쳐 그려 <b>양옆으로 퍼지는 방향</b>을 표시</div>
+
+<div class="only"><b>자료에 없음 — 판서에만</b> <span class="ts">2차 녹화 27:12</span><br>
+· <b>L<sub>n</sub>² = D<sub>n</sub>τ<sub>n0</sub></b> — <b>확산거리의 정의.</b> 슬라이드에는 L 이라는 기호가 아예 없다. 영상 판서에만 있고, <b>Ch.7 에서 계속 쓰는 핵심 기호</b>다<br>
+· <b>x → ±∞ 이면 δn → 0</b> — <b>경계조건을 말로 적어 둔 것</b>. 어느 지수항을 버리는지에 대한 근거<br>
+· <b>"Semiconductor" 막대에 g = 0 / hν / g = 0 세 구역을 나눠 쓴 그림</b> — 문제 상황을 한눈에 보이게 다시 그린 것<br>
+· <b>Figure 6.7 에서 n₀ 선과 봉우리 꼭대기를 잇는 표시</b> — 전체 농도가 n₀ + δn 임을 그림에서 짚는다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>확산거리 L<sub>n</sub> = √(D<sub>n</sub>τ<sub>n0</sub>)</b> — <b>판서에만 있는 기호인데 Ch.7 에서 계속 쓴다.</b> 반드시 챙길 것<br>
+② <b>L 의 뜻</b> — <b>사라지기 전까지 평균적으로 퍼지는 거리.</b> x = L 에서 농도가 <b>37 %</b> 로 떨어진다<br>
+③ <b>τ 는 시간의 척도, L 은 거리의 척도</b> — 둘이 짝이다<br>
+④ <b>정상상태 식</b> : <b>D<sub>n</sub> d²(δn)/dx² − δn/τ<sub>n0</sub> = 0</b> → <b>δn(x) = δn(0) e<sup>−|x|/L<sub>n</sub></sup></b><br>
+⑤ <b>13쪽과 지워지는 항이 다르다</b> — 13쪽은 <b>확산</b>을 지웠고(uniform), 여기는 <b>시간 미분</b>을 지운다(steady state). <b>조건을 보고 지울 항을 고르는 것이 이 유형의 전부</b><br>
+⑥ <b>경계조건은 "무한히 멀면 0"</b> — 발산하는 지수항을 버리는 근거. 서술형에서 이걸 안 쓰면 감점 자리다<br>
+⑦ <b>Figure 6.7 에서 두 곡선이 겹친다</b> — δn = δp, 묶여서 함께 퍼진다는 증거<br>
+⑧ <b>로그 눈금에서 직선 = 지수 감소</b><br>
+⑨ <b>소수 캐리어 쪽 봉우리가 더 도드라진다</b> — 다수 캐리어는 원래 많아 δ 가 묻힌다</div>
+<h2 id="s17">17쪽<small>6.4 Quasi-Fermi Energy Levels</small></h2>
+<div class="row"><div class="orig"><b>Quasi-Fermi level</b>: Fermi-level in nonequilibrium<br>- If <span class="hand">(excess carriers 에 동그라미)</span> excess carriers are created in a semiconductor, we are no longer in thermal equilibrium and the <u>Fermi energy level is strictly no longer defined</u></div><div class="exp"><b>6.4 절</b>이고, Ch.4 에서 배운 Fermi 준위가 <b>어떻게 되는가</b>에 답한다.<br><b>핵심은 "no longer defined(더 이상 정의되지 않는다)"</b> 이다. 왜인가.<br><b>Fermi 준위는 평형 상태에서만 정의된다.</b> Fermi–Dirac 분포 자체가 "평형에 도달한 계"를 전제로 유도된 식이기 때문이다. 평형이 깨지면 <b>그 식을 쓸 근거가 사라진다.</b><br>온도와 비슷하다. 물 한 통이 고르게 섞여 있으면 "이 물의 온도는 20도"라고 말할 수 있지만, 한쪽에 뜨거운 물을 부은 직후에는 <b>통 전체의 온도</b>라는 게 없다.<br><b>strictly(엄밀히 말하면)</b> 라는 단서가 붙은 이유도 그래서다.</div></div>
+
+<div class="row"><div class="orig">- We may define a <b>quasi-Fermi levels</b> for electron and holes that apply for nonequilibrium.</div><div class="exp"><b>그래서 쓰는 방법이 quasi-Fermi 준위</b>다.<br><b>quasi-</b> 는 <b>"유사-", "준-"</b> 이라는 접두어다. <b>"진짜는 아니지만 그런 셈 치고 쓰는 것"</b>.<br>발상이 좋다. 평형에서는 <b>Fermi 준위 하나</b>로 전자와 정공을 모두 설명했다. 평형이 깨지면 그게 안 되니, <b>전자용 하나(E<sub>Fn</sub>)와 정공용 하나(E<sub>Fp</sub>)를 따로</b> 둔다.<br><b>하나가 둘로 갈라진다</b> — 이것이 이 절의 전부다.<br>그리고 <b>둘이 얼마나 벌어졌는지</b>가 평형에서 얼마나 멀어졌는지를 재는 자가 된다. 둘이 겹치면 평형이다.</div></div>
+
+<div class="row"><div class="orig"><b>In equilibrium</b><br>𝑛₀ = 𝑛<sub>𝑖</sub> exp[−(𝐸<sub>𝐹𝑖</sub> − 𝐸<sub>𝐹</sub>)/𝑘𝑇]<br>𝑝₀ = 𝑛<sub>𝑖</sub> exp[−(𝐸<sub>𝐹</sub> − 𝐸<sub>𝐹𝑖</sub>)/𝑘𝑇]</div><div class="exp"><b>Ch.4 에서 가져온 두 식</b>이다. 기호부터 보면,<br>· <b>E<sub>Fi</sub></b> — <b>진성 Fermi 준위</b>. 도핑이 전혀 없을 때의 Fermi 준위로, 밴드갭 거의 한가운데에 있다. <b>움직이지 않는 기준선</b>이다<br>· <b>E<sub>F</sub></b> — 실제 Fermi 준위. 도핑에 따라 위아래로 움직인다<br><b>읽는 법</b>: n형이면 E<sub>F</sub> 가 E<sub>Fi</sub> <b>위</b>에 있으니 (E<sub>Fi</sub> − E<sub>F</sub>) 가 음수가 되고, 앞의 마이너스와 만나 지수가 <b>양수</b>가 된다 → <b>n₀ &gt; n<sub>i</sub></b>. 맞는 말이다.<br><b>E<sub>F</sub> 가 E<sub>Fi</sub> 에서 얼마나 떨어져 있는지가 곧 농도</b>다. 이 장에서 <b>거리를 농도로, 농도를 거리로</b> 바꿔 읽는 연습이 필요하다.</div></div>
+
+<div class="row"><div class="orig"><b>In nonequilibrium</b><br>𝑛₀ + 𝛿𝑛 = 𝑛<sub>𝑖</sub> exp[−(𝐸<sub>𝐹𝑖</sub> − 𝐸<sub>𝐹𝑛</sub>)/𝑘𝑇]<br>𝑝₀ + 𝛿𝑝 = 𝑛<sub>𝑖</sub> exp[−(𝐸<sub>𝐹𝑝</sub> − 𝐸<sub>𝐹𝑖</sub>)/𝑘𝑇]</div><div class="exp"><b>불평형 판</b>이다. 바뀐 것은 <b>딱 두 군데</b>다.<br>· 왼쪽이 n₀ → <b>n₀ + δn</b>, p₀ → <b>p₀ + δp</b><br>· 오른쪽의 <b>E<sub>F</sub> 가 E<sub>Fn</sub> 과 E<sub>Fp</sub> 로 갈라졌다</b><br><b>E<sub>Fi</sub> 는 그대로</b>라는 점이 중요하다. 기준선은 움직이지 않는다. 움직이는 건 두 quasi-Fermi 준위뿐이다.<br>그래서 그림에서 <b>E<sub>Fi</sub> 를 가운데 두고 E<sub>Fn</sub> 은 위로, E<sub>Fp</sub> 는 아래로</b> 벌어진다.<br><b>벌어지는 정도가 곧 "얼마나 불평형인가"</b> 이고, Ch.7 에서 pn 접합에 전압을 걸었을 때 <b>그 벌어진 간격이 바로 걸어 준 전압</b>이 된다. 이 절이 다음 장의 준비인 이유다.</div></div>
+
+<div class="row"><div class="orig"><b>[Example 6.7]</b> An n-type semiconductor at 𝑇 = 300𝐾 with 𝑛₀ = 10¹⁵ 𝑐𝑚⁻³, 𝑛<sub>𝑖</sub> = 10¹⁰ 𝑐𝑚⁻³, <span class="board" style="display:inline;padding:0 4px">[영상 슬라이드에는 𝑝₀ = 10⁵ 𝑐𝑚⁻³ 도 함께 적혀 있다]</span> 𝛿𝑛 = 𝛿𝑝 = 10¹³ 𝑐𝑚⁻³</div><div class="exp"><b>숫자가 이 절의 교훈을 통째로 보여 주는 예제</b>다. 음성이 없으므로 끝까지 계산해 둔다. kT = 0.0259 eV 를 쓴다.<br><b>p₀ 는 어디서 왔나</b> — 평형이므로 <b>p₀ = n<sub>i</sub>²/n₀ = 10²⁰/10¹⁵ = 10⁵ cm⁻³</b>. 영상 속 슬라이드에는 이 값이 함께 적혀 있다.<br><br><b>① 평형일 때 (그림 왼쪽)</b><br>E<sub>F</sub> − E<sub>Fi</sub> = kT·ln(n₀/n<sub>i</sub>) = 0.0259 × ln(10⁵) = 0.0259 × 11.51 = <b>0.2982 eV</b><br>→ E<sub>F</sub> 가 E<sub>Fi</sub> 보다 <b>0.2982 eV 위</b>에 있다. 슬라이드 그림의 숫자와 같다<br><br><b>② 불평형, 전자 쪽</b><br>n = n₀ + δn = 10¹⁵ + 10¹³ = <b>1.01 × 10¹⁵</b> (겨우 <b>1 % 증가</b>)<br>E<sub>Fn</sub> − E<sub>Fi</sub> = 0.0259 × ln(1.01 × 10⁵) = <b>0.2984 eV</b><br>→ <b>0.2982 에서 0.2984 로, 0.0002 eV 움직였다.</b> 사실상 제자리다<br><br><b>③ 불평형, 정공 쪽</b><br>p = p₀ + δp = 10⁵ + 10¹³ ≈ <b>10¹³</b> (무려 <b>1억 배 증가</b>)<br>E<sub>Fi</sub> − E<sub>Fp</sub> = 0.0259 × ln(10¹³/10¹⁰) = 0.0259 × ln(10³) = <b>0.179 eV</b><br>→ 평형에서 E<sub>F</sub> 는 E<sub>Fi</sub> 보다 0.2982 <b>위</b>였는데, E<sub>Fp</sub> 는 0.179 <b>아래</b>로 내려갔다. <b>0.477 eV 나 이동했다</b><br><br><b>이 예제가 말하려는 것</b><br><b>같은 δ = 10¹³ 을 더했는데, 다수 캐리어는 꿈쩍도 안 하고 소수 캐리어는 1억 배로 뛴다.</b><br>그래서 E<sub>Fn</sub> 은 거의 안 움직이고 <b>E<sub>Fp</sub> 만 크게 떨어진다.</b> 슬라이드의 <b>0.179 eV 에 동그라미와 "변화!"</b> 가 붙은 이유다.<br><b>이것이 이 장에서 "소수 캐리어"를 그토록 강조하는 궁극적인 이유</b>다. 여분 캐리어가 하는 일은 <b>거의 전부 소수 캐리어 쪽에서 일어난다.</b> 11쪽의 "쌍극성 파라미터가 소수 캐리어 값으로 떨어진다"도 같은 사정이다.</div></div>
+
+<div class="fig">오른쪽 위 그림 — <b>평형의 밴드 다이어그램</b>. E<sub>c</sub>, E<sub>v</sub> 사이에 <b>E<sub>Fi</sub>(검은 점선)</b> 와 <b>E<sub>F</sub>(파란 점선)</b> 가 거의 붙어 그려져 있다. n형이라 E<sub>F</sub> 가 E<sub>Fi</sub> 보다 위다.</div>
+
+<div class="fig">아래 두 그림 — <b>Example 6.7 의 결과</b>를 평형(왼쪽) · 불평형(오른쪽)으로 나란히 놓았다.<br>· <b>왼쪽</b>: E<sub>c</sub> 에서 E<sub>F</sub> 까지 <b>0.2982 eV</b>, 그 아래 E<sub>Fi</sub><br>· <b>오른쪽</b>: <b>E<sub>Fn</sub></b> 이 E<sub>F</sub> 자리에 거의 겹쳐 있고(0.2984 eV), <b>E<sub>Fp</sub></b> 는 E<sub>Fi</sub> 아래로 뚝 떨어져 E<sub>v</sub> 쪽에 가 있다<br><b>두 그림을 겹쳐 보면 E<sub>Fn</sub> 은 제자리, E<sub>Fp</sub> 만 크게 내려간 것</b>이 한눈에 보인다. <span class="hand">[필기] 오른쪽 그림의 <b>0.179 eV 에 동그라미</b>를 치고 그 아래에 <b>"변화!"</b> 라고 썼다.</span></div>
+
+<div class="board"><b>판서</b> <span class="ts">2차 녹화 31:08 (소리 없음)</span><br>
+· <b>평형 쪽 두 식의 E<sub>F</sub> 를 각각 동그라미</b> 치고, 거기서 <b>불평형 쪽 식으로 휜 화살표 두 개</b>를 그었다 — <b>E<sub>F</sub> 하나가 E<sub>Fn</sub> 과 E<sub>Fp</sub> 둘로 갈라진다</b>는 동선. 이 절의 요점을 선 두 개로 그린 셈이다<br>
+· 불평형 쪽 <b>n₀ + δn</b> 을 <b>통째로 큰 타원</b>으로 감싸고 <b>δn 에 다시 동그라미</b>, <b>p₀ + δp</b> 도 같은 방식<br>
+· 불평형 쪽 <b>E<sub>Fn</sub> 과 E<sub>Fi</sub></b> 가 든 지수 부분에 <b>크게 동그라미</b><br>
+· 평형 쪽 두 식 사이를 <b>가로지르는 긴 선</b> — 둘이 짝임을 표시<br>
+· Example 6.7 의 <b>n₀ = 10¹⁵</b>, <b>p₀ = 10⁵</b>, <b>δn = δp = 10¹³</b> 를 <b>각각 동그라미</b> 치고 <b>전체를 다시 큰 타원</b>으로 둘렀다 — <b>주어진 숫자 네 개</b>를 한 덩어리로 묶는다<br>
+· 왼쪽(평형) 밴드 그림 <b>전체를 아주 큰 동그라미</b>로 감싸고, E<sub>F</sub> 자리에 <b>아래로 향한 화살표</b>를 그렸다<br>
+· 오른쪽(불평형) 그림의 <b>0.2982 eV 와 0.2984 eV 를 각각 동그라미</b> 치고, <b>0.179 eV 에는 네모</b> — <b>거의 안 변한 둘</b>과 <b>크게 변한 하나</b>를 다른 모양으로 표시해 갈랐다</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>Fermi 준위는 평형에서만 정의된다</b> — 그래서 불평형에서는 <b>quasi-Fermi 준위</b> 를 쓴다<br>
+② <b>하나(E<sub>F</sub>)가 둘(E<sub>Fn</sub>, E<sub>Fp</sub>)로 갈라진다.</b> 판서에서 화살표 두 개로 그렸다<br>
+③ <b>E<sub>Fi</sub> 는 기준선이라 움직이지 않는다.</b> 움직이는 건 E<sub>Fn</sub> 과 E<sub>Fp</sub> 뿐<br>
+④ <b>Example 6.7 의 결론</b> — 같은 δ = 10¹³ 인데 <b>다수 캐리어는 1 % 증가, 소수 캐리어는 1억 배 증가</b><br>
+⑤ 그 결과 <b>E<sub>Fn</sub> 은 0.0002 eV 만 움직이고(0.2982→0.2984), E<sub>Fp</sub> 는 0.477 eV 나 내려간다</b>(위 0.2982 → 아래 0.179)<br>
+⑥ <b>여분 캐리어의 효과는 거의 전부 소수 캐리어 쪽에서 나타난다</b> — 이 장이 소수 캐리어를 강조하는 궁극적인 이유<br>
+⑦ <b>두 준위가 겹치면 평형, 벌어지면 불평형.</b> 벌어진 간격이 불평형의 크기를 잰다<br>
+⑧ <b>Ch.7 의 준비</b> — pn 접합에 전압을 걸면 그 벌어진 간격이 곧 인가 전압이 된다<br>
+⑨ <b>계산 요령</b> — E − E<sub>Fi</sub> = kT·ln(농도/n<sub>i</sub>). <b>농도비의 로그에 kT 를 곱한다.</b> 10배마다 0.0259 × ln10 ≈ <b>0.06 eV</b> 씩 움직인다고 외워 두면 암산이 된다</div>
+
+<div class="key"><b>영상 슬라이드와 배포 PDF 가 다르다 — 확인할 것</b><br>
+2차 녹화에 띄워진 슬라이드는 <b>네 식의 아래첨자가 모두 뒤바뀐 판</b>이다.<br>
+· 영상 : n₀ = n<sub>i</sub>exp[−(E<sub>F</sub> − E<sub>Fi</sub>)/kT], p₀ = n<sub>i</sub>exp[−(E<sub>Fi</sub> − E<sub>F</sub>)/kT], n₀+δn = n<sub>i</sub>exp[−(E<sub>Fn</sub> − E<sub>Fi</sub>)/kT], p₀+δp = n<sub>i</sub>exp[−(E<sub>Fi</sub> − E<sub>Fp</sub>)/kT]<br>
+· <b>배포 PDF (위에 옮긴 것) : 이것이 맞다.</b><br>
+<b>어느 쪽이 맞는지는 숫자를 넣어 보면 바로 갈린다.</b> n형이면 E<sub>F</sub> 가 E<sub>Fi</sub> 보다 <b>위</b>에 있고 n₀ 는 n<sub>i</sub> 보다 <b>커야</b> 한다. PDF 판은 지수가 양수가 되어 n₀ &gt; n<sub>i</sub> 가 나오지만, 영상 판은 지수가 음수가 되어 <b>n₀ &lt; n<sub>i</sub></b> 라는 틀린 결과가 나온다.<br>
+영상 판서에서 <b>E<sub>F</sub> 를 두 식 모두 동그라미 치고 화살표로 이어 놓은 것</b>이 이 자리와 겹친다. 그 자리에서 무슨 말을 했는지는 <b>소리가 없어 확인할 수 없다.</b><br>
+<b>시험 대비로는 PDF 판을 외울 것.</b> 영상 화면을 캡처해 공부하면 부호를 거꾸로 익히게 된다.</div>
+<h2 id="s18">18쪽<small>6.5·6.6 Shockley-Read-Hall / Surface Effects</small></h2>
+<div class="row"><div class="orig"><b>Shockley-Read-Hall Theory of Recombination</b>  (6.5 Excess-Carrier Lifetime, 6.6 Surface Effects)<br><b>Trap:</b> an allowed energy state within the forbidden bandgap cased by <span class="hand">(defects 에 동그라미)</span> defects or <span class="hand">(imperfection 에 동그라미)</span> imperfection of periodic potential</div><div class="exp"><b>마지막 쪽</b>이고, 6.5 와 6.6 두 절이 한 장에 들어 있다.<br><b>지금까지의 가정이 여기서 깨진다.</b> 8쪽까지는 전자가 <b>밴드갭을 한 번에</b> 건넌다고 보았다(direct band-to-band). 실제로는 <b>중간에 디딤돌이 있다.</b> 그 디딤돌이 <b>trap</b> 이다.<br><b>낱말을 하나씩 뜯으면</b>,<br>· <b>allowed energy state(허용된 에너지 준위)</b> — 전자가 머무를 수 있는 자리<br>· <b>forbidden bandgap(금지대)</b> — <b>원래는 전자가 있을 수 없는</b> 구간. 그래서 "금지"다<br>· 합치면 <b>"있으면 안 되는 자리에 생긴 머무를 수 있는 자리"</b>. 모순처럼 들리는 이름이 곧 정의다<br><b>원인이 둘</b>이고, 교수님이 각각 동그라미를 쳤다.<br>· <b>defect(결함)</b> — 원자가 빠졌거나 자리를 벗어났거나 불순물이 끼어든 것<br>· <b>imperfection of periodic potential(주기적 퍼텐셜의 불완전)</b> — Ch.3 의 핵심 가정이 깨진 것이다. 밴드 구조는 <b>"원자가 완벽하게 주기적으로 늘어서 있다"</b>는 전제에서 나왔다. 그 주기성이 흐트러지면 <b>밴드갭 안에 준위가 생긴다</b><br><span class="hand">[슬라이드 오기] <b>"cased by"</b> 는 <b>"caused by"</b> 의 오타다.</span></div></div>
+
+<div class="row"><div class="orig"><b>These trap states act as a recombination center, capturing both electrons and holes with almost equal probability</b></div><div class="exp"><b>trap 이 하는 일</b>이다.<br><b>recombination center(재결합 중심)</b> — 전자와 정공이 <b>만나는 약속 장소</b> 역할을 한다.<br><b>왜 재결합이 쉬워지나</b> — 밴드갭이 1.12 eV(실리콘)라면 전자가 한 번에 내려오기는 어렵다. 그런데 <b>중간에 자리가 있으면 두 번에 나눠</b> 내려올 수 있다. 2층에서 1층으로 뛰어내리기는 어렵지만 계단이 있으면 쉬운 것과 같다.<br><b>그래서 trap 이 많으면 캐리어 수명 τ 가 짧아진다.</b> 6.5 절의 제목이 "Excess-Carrier Lifetime" 인 이유가 이것이다 — <b>trap 이 τ 를 정한다.</b><br><b>"almost equal probability(거의 같은 확률로)"</b> 가 중요하다. 전자도 정공도 <b>가리지 않고</b> 잡는다. 한쪽만 잡으면 그냥 전하가 쌓일 뿐 재결합이 안 된다. <b>둘 다 잡아야 소멸이 완성된다.</b><br><b>실제 응용</b> — 태양전지나 LED 를 만들 때는 trap 이 <b>적어야</b> 좋다. 애써 만든 캐리어가 빛이 되기 전에 trap 에서 사라지기 때문이다. 반대로 고속 스위칭 소자에서는 <b>일부러 trap 을 넣어</b> 수명을 줄이기도 한다.</div></div>
+
+<div class="fig">가운데 네 그림 — <b>SRH 이론의 네 가지 과정</b>이다. 이 넷이 SRH 이론의 전부다.<br>각 그림에서 E<sub>c</sub> 와 E<sub>v</sub> 사이의 <b>작은 네모</b>가 trap 준위다.<br>· <b>Process 1 — Electron capture(전자 포획)</b> : 전도띠의 전자(−)가 <b>아래로 내려와</b> trap 에 잡힌다<br>· <b>Process 2 — Electron emission(전자 방출)</b> : trap 에 잡혀 있던 전자가 <b>다시 위로</b> 올라간다<br>· <b>Process 3 — Hole capture(정공 포획)</b> : 원자가띠의 정공(+)이 <b>올라와</b> trap 에 잡힌다. 실제로는 trap 의 전자가 아래로 내려가 정공을 메우는 것이다<br>· <b>Process 4 — Hole emission(정공 방출)</b> : trap 에서 정공이 <b>다시 아래로</b> 빠진다<br><b>구조가 깔끔하다</b> — <b>전자 포획/방출, 정공 포획/방출.</b> 2 × 2 다. 포획과 방출은 서로 반대 과정이다.<br><b>재결합이 완성되는 길</b> — <b>Process 1 + Process 3</b> 이다. 전자를 잡고(1), 이어서 정공을 잡으면(3) 전자와 정공이 trap 에서 만나 <b>둘 다 사라진다.</b><br>반대로 2 와 4 는 <b>재결합을 되돌리는</b> 쪽이다. 열이 충분하면 잡혔던 것이 다시 풀려난다.<br><b>평형에서는 1·2 가 균형을, 3·4 가 균형을 이룬다.</b> 4쪽의 G = R 이 여기서도 똑같이 적용된다.</div>
+
+<div class="row"><div class="orig"><b>Surface states</b><br>The disruption of the periodic-potential function results in allowed electronic energy states within the energy bandgap</div><div class="exp"><b>6.6 절</b>이고, trap 의 가장 흔한 사례다.<br><b>왜 하필 표면인가</b> — 결정 안쪽의 원자는 사방이 이웃으로 둘러싸여 <b>주기성이 유지</b>된다. 그런데 <b>표면의 원자는 한쪽에 이웃이 없다.</b> 결합이 끊긴 채 남는다(끊긴 결합을 dangling bond 라고 한다).<br>거기서 <b>주기적 퍼텐셜이 끊어지고</b>(disruption), 그 결과 <b>밴드갭 안에 준위가 생긴다.</b> 위의 trap 정의와 원인이 정확히 같다 — <b>주기성의 파괴</b>.<br><b>표면 trap 의 특징</b> — 하나둘이 아니라 <b>표면을 따라 촘촘하게 깔린다.</b> 그래서 그림에서 <b>여러 줄이 겹쳐</b> 그려져 있다.<br><b>실제로 얼마나 중요한가</b> — 소자가 작아질수록 부피 대비 표면이 커지므로 <b>표면 재결합이 전체를 좌우</b>한다. 실리콘 소자에서 표면을 <b>SiO₂ 로 덮는(passivation)</b> 가장 큰 이유가 끊긴 결합을 산소로 메워 표면 준위를 줄이는 것이다. MOSFET 의 게이트 산화막이 하는 숨은 일이기도 하다.</div></div>
+
+<div class="fig">오른쪽 아래 그림 — <b>표면 준위</b>.<br>가로축의 왼쪽 끝이 <b>Surface(표면)</b> 다. E<sub>c</sub> 와 E<sub>v</sub> 사이, <b>표면 쪽에만</b> 짧은 가로선이 <b>여러 개 촘촘히</b> 그려져 있고, 안쪽으로 들어가면 사라진다.<br><b>E<sub>t</sub>(점선)</b> 는 trap 준위의 대표 위치다. t 는 trap.<br><b>그림이 말하는 것</b> — <b>표면에 가까울수록 금지대 안에 자리가 많다.</b> 결정 안쪽은 깨끗하다.</div>
+
+<div class="board"><b>판서</b> <span class="ts">2차 녹화 34:52 (소리 없음)</span><br>
+· 제목 오른쪽 위 여백에 <b>"no state."</b> 라고 쓰고, 그 옆에 <b>작은 밴드 그림</b>을 그렸다 — 가로선 둘을 긋고 위를 <b>CB</b>, 아래를 <b>VB</b> 라 적은 뒤 <b>그 사이를 타원으로 감싸고 빗금</b>을 쳤다.<br>　<b>이 쪽에서 가장 값진 판서</b>다. <b>"원래 밴드갭 안에는 자리가 없다"</b> 를 먼저 그려 놓고 본문의 trap 과 대비시킨 것이다. 지금까지 배운 것이 <b>"no state"</b> 였고, 이 쪽에서 <b>"state 가 생긴다"</b> 로 바뀐다는 구성을 그림 하나로 보인다<br>
+· <b>"Trap"</b> 에 동그라미, <b>"defects"</b> 와 <b>"imperfection"</b> 에 각각 물결 밑줄<br>
+· <b>Process 1</b> — 내려오는 화살표를 <b>빨갛게 덧그리고</b> trap 네모를 <b>동그라미</b>, 아래로 <b>꼬리</b>를 달았다<br>
+· <b>Process 2</b> — 올라가는 화살표를 덧그리고 trap 을 <b>타원</b>으로 감싼 뒤 <b>위로 휜 선</b><br>
+· <b>Process 3</b> — trap 네모에 동그라미, <b>아래 ⊕ 에서 올라오는 화살표</b>를 굵게 덧그리고 <b>"Hole capture"</b> 에 밑줄<br>
+· <b>Process 4</b> — <b>⊕ ⊖ 가 든 네모를 동그라미</b> 치고, 양옆에 <b>세로로 긴 고리 두 개</b>를 그렸으며 E<sub>c</sub>·E<sub>v</sub> 양 끝에도 동그라미 — 네 그림 중 <b>가장 많이 표시된 자리</b><br>
+· <b>"Surface states"</b> 에 밑줄<br>
+· 오른쪽 아래 표면 준위 그림에서 <b>촘촘한 가로선 묶음을 큰 동그라미 두 겹</b>으로 감싸고, <b>위아래로 사선 화살표 두 개</b>를 그어 <b>E<sub>c</sub> 와 E<sub>v</sub> 양쪽으로 드나든다</b>는 것을 표시했다</div>
+
+<div class="only"><b>자료에 없음 — 판서에만</b> <span class="ts">2차 녹화 34:52</span><br>
+· <b>"no state." 와 CB/VB 미니 밴드 그림</b> — <b>"원래 금지대에는 자리가 없다"</b> 를 먼저 세워 놓고 trap 과 대비시킨 것. 슬라이드에는 이 대비가 없다<br>
+· <b>Process 4 에 표시가 가장 많다</b> — 네 과정 중 여기에 손이 가장 많이 갔다<br>
+· <b>표면 준위에서 위아래로 그은 사선 화살표 두 개</b> — 표면 준위가 <b>전도띠와 원자가띠 양쪽으로</b> 캐리어를 주고받는다는 표시</div>
+
+<div class="exam"><b>★ 이 쪽에서 챙길 것</b><br>
+① <b>Trap 의 정의</b> — <b>금지대 안에 생긴 허용 준위.</b> 원인은 <b>결함(defect)</b> 과 <b>주기적 퍼텐셜의 불완전</b><br>
+② <b>Ch.3 과 이어진다</b> — 밴드갭은 <b>"원자가 완벽히 주기적"</b>이라는 가정에서 나왔다. <b>주기성이 깨지면 밴드갭 안에 준위가 생긴다</b><br>
+③ <b>trap 은 재결합 중심</b> — 전자와 정공을 <b>거의 같은 확률로</b> 잡는다. 둘 다 잡아야 소멸이 완성된다<br>
+④ <b>trap 이 많으면 수명 τ 가 짧아진다</b> — 6.5 절 제목이 "Excess-Carrier Lifetime" 인 이유<br>
+⑤ <b>SRH 네 과정</b> — <b>전자 포획 · 전자 방출 · 정공 포획 · 정공 방출.</b> 2 × 2 구조. <b>재결합은 Process 1 + 3</b><br>
+⑥ <b>surface state</b> — 표면 원자는 <b>한쪽에 이웃이 없어</b> 결합이 끊기고, 거기서 주기성이 깨져 준위가 생긴다<br>
+⑦ <b>표면 준위는 촘촘하게 깔린다</b> — 소자가 작아질수록 표면 재결합이 전체를 좌우한다. <b>SiO₂ passivation</b> 이 그래서 쓰인다<br>
+⑧ <b>"direct band-to-band" 라는 단서가 6쪽에 붙어 있던 이유</b>가 이 쪽이다. trap 이 있으면 그 결과가 달라진다<br>
+⑨ <b>슬라이드 오기</b> — <b>"cased by"</b> 는 <b>"caused by"</b></div>
+
+<div class="key"><b>Ch.6 전체를 한 줄로</b><br>
+<b>빛이나 열로 생긴 여분의 전자와 정공은, 서로 끌어당겨 한 덩어리로 움직이며(쌍극성 수송), 그 덩어리의 속도는 수가 적은 쪽(소수 캐리어)이 정하고, 시간으로는 τ 만큼, 거리로는 L = √(Dτ) 만큼 버티다 사라진다.</b><br><br>
+식 하나만 외운다면 <b>쌍극성 수송 방정식</b>이다.<br>
+<b>D′ ∂²(δn)/∂x² + μ′E ∂(δn)/∂x + g′ − δn/τ = ∂(δn)/∂t</b><br>
+그리고 <b>p형이면 D′ = D<sub>n</sub>, μ′ = +μ<sub>n</sub> / n형이면 D′ = D<sub>p</sub>, μ′ = −μ<sub>p</sub>.</b></div>
+<h2 id="s901">부록<small>녹화 상태와 확인할 것</small></h2>
+<div class="row"><div class="orig">이 문서가 어떤 재료로 만들어졌는가</div><div class="exp">Ch.6 은 <b>두 번에 나눠 녹화됐고, 두 번째 녹화에는 소리가 없다.</b> 어느 쪽이 어디까지인지를 적어 둔다.</div></div>
+
+<div class="fig"><b>1차 녹화 — 2026-10-11 22:32, 47분 25초</b><br>
+소리와 영상이 모두 정상이다. 전사 <b>448줄</b>이 전부 쪽에 배정됐고, 판서 <b>12장</b>을 건졌다.<br>
+<b>다룬 범위 : 표지 ~ 10쪽(Ambipolar Transport Equations) 가정 세 개까지.</b><br>
+마지막이 깔끔하게 끝나지 않았다. <b>47:25 에 "charge neutrality condition 을 가정하면 …" 이라고 말하던 도중 녹화가 끊긴다.</b></div>
+
+<div class="fig"><b>2차 녹화 — 2026-10-12 01:15, 45분 8초</b><br>
+<b>오디오 트랙 전 구간이 −91 dB, 즉 디지털 무음이다.</b> 조용한 게 아니라 아예 신호가 없다. 녹화 설정에서 시스템 소리가 잡히지 않은 것으로 보인다.<br>
+<b>영상은 정상</b>이라 판서 <b>8장</b>을 건졌다. 10쪽의 완성 상태부터 16쪽까지가 여기 들어 있다.<br>
+약 <b>35분</b> 지점부터 끝까지는 화면이 검다 — 수업이 끝나고 녹화만 돌아간 구간이다.</div>
+
+<div class="fig"><b>그래서 이 문서에서</b><br>
+· <b>1쪽 ~ 10쪽</b> — 원문 · 해설 · <b>교수님 육성 인용</b> · 자료에 없는 내용 · 판서<br>
+· <b>11쪽 ~ 16쪽</b> — 원문 · 해설 · <b>판서</b>. <b>육성 인용이 없다.</b> 고를 수 있었는데 안 넣은 게 아니라 <b>소리가 없어서</b>다<br>
+· <b>3쪽(Overview 둘째 장)</b> — 이번 두 녹화 어디에도 해당하는 음성이 없다. 다른 때 적은 필기로 보인다. 다만 거기 적힌 유도는 <b>6쪽에서 그대로 강의되므로</b>(1차 25:37~32:37) 교차참조를 달아 두었다<br><br>
+뒷부분이 중요하지 않아서 짧은 게 아니다. <b>오히려 11쪽(소수 캐리어 결론)과 14쪽(확산거리 L)이 이 장의 핵심</b>인데, 그 설명이 소리로 남지 않았다. 판서를 평소보다 더 꼼꼼히 옮긴 이유다.</div>
+
+<div class="exam"><b>★ 직접 들어봐야 할 구간 (1차 녹화)</b><br>
+① <b>00:17 ~ 02:09</b> — 전사가 크게 망가졌다. 같은 문장이 네 번 반복되고, <b>01:15~01:41</b> 은 강의와 무관한 문장이 섞여 들어왔다(인식 오류이지 실제 발언이 아니다). <b>약 1분 30초</b><br>
+② <b>13:55 ~ 14:14</b> — 약 20초 비어 있다<br>
+③ <b>17:02 ~ 17:32</b> — 약 30초 비어 있다. 6.4~6.6 절을 소개하던 대목<br>
+④ <b>28:06 ~ 28:42</b>, <b>29:06 ~ 29:24</b> — 뜻이 잡히지 않는다. 문맥상 "n₀ 는 상수라 미분하면 사라진다"와 "δn = δp 를 쓴다"를 말하는 자리. <b>약 1분</b><br>
+⑤ <b>47:03 ~ 47:25</b> — 문장 도중에 녹화가 끊긴다. <b>전하 중성 조건에서 δn ≈ δp 가 나오는 대목</b>이라 내용이 중요하다</div>
+
+<div class="exam"><b>★ 확인이 필요한 두 가지</b><br>
+① <b>15쪽 — 영상 슬라이드와 배포 PDF 의 quasi-Fermi 식이 서로 다르다.</b> 아래첨자가 통째로 뒤바뀌어 있고, <b>배포 PDF 쪽이 맞다.</b> 영상 화면을 캡처해 공부하면 부호를 거꾸로 익히게 된다. 15쪽 맨 아래에 근거를 적어 두었다<br>
+② <b>14쪽 — 확산거리 L<sub>n</sub> = √(D<sub>n</sub>τ<sub>n0</sub>) 는 슬라이드 어디에도 없다.</b> 판서에만 나오는데 <b>Ch.7 에서 계속 쓰는 기호</b>다. 이 녹화에 소리가 없으니 설명을 들을 수 없다 — 교재(Neamen 6.4절)나 다른 자료로 보충해 둘 것</div>
+
+<div class="key"><b>이 과목에서 발견된 슬라이드 오기 (Ch.6)</b><br>
+· <b>5쪽 목차</b> : "Qusi-Fermi" → <b>Quasi-Fermi</b><br>
+· <b>7쪽</b> : 전자 연속방정식의 <b>F<sub>n</sub>⁺ → F<sub>n</sub>⁻</b> (위첨자는 전하 부호를 뜻한다. 8쪽 정의와 모순)<br>
+· <b>10쪽</b> : 곱해서 더한 식의 우변 <b>∂(δn)/∂x → ∂(δn)/∂t</b><br>
+· <b>12쪽</b> : g′<sub>n</sub>, R′<sub>n</sub> 설명의 <b>"thermal-equilibrium"</b> 삭제 (프라임은 여분을 뜻하므로 평형일 수 없다. 5쪽 기호 표에는 올바르게 적혀 있다)<br>
+· <b>16쪽</b> : "cased by" → <b>caused by</b><br>
+· <b>15쪽</b> : 배포 PDF 는 맞고, <b>영상에 띄워진 판의 아래첨자가 뒤바뀌어 있다</b><br><br>
+<b>고치지 않고 그대로 옮긴 뒤 해설에서 짚었다.</b> 시험지에 슬라이드 그대로 나올 수도 있기 때문이다.</div>
+<a class="top" href="#top">맨 위로</a>
+</div>
+</body>
+</html>
