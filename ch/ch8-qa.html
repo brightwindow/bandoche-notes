@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>반도체공학 Ch.8 — 수업 예상 질문</title>
+<style>/* 강의 통합 해설 표준 서식. build_html.py 에서 <style> 안에 그대로 넣는다. */
+:root{--ink:#1a1a1a;--dim:#6b7280;--line:#e3e7ec;--navy:#12305e;--acc:#0057b8;
+      --bg:#fff;--soft:#f5f8fc;--code:#f7f9fb;--hand:#c0392b;--handbg:#fff5f4;
+      --exam:#fff8e1;--examb:#d4a017;--key:#e8f4ea;--keyb:#4a9d5f;
+      --said:#eef4fb;--saidb:#5b87c4;--only:#f3eefb;--onlyb:#7d5ba6;
+      --board:#fdf0ea;--boardb:#c2612f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+     font-size:15.5px;line-height:1.85;-webkit-text-size-adjust:100%}
+.wrap{max-width:980px;margin:0 auto;padding:40px 22px 110px}
+h1{font-size:27px;margin:0 0 8px;letter-spacing:-.5px;color:var(--navy)}
+.sub{color:var(--dim);font-size:14px;margin:0 0 6px}
+.intro{background:var(--soft);border-left:4px solid var(--acc);padding:14px 18px;
+       margin:22px 0 8px;font-size:14.5px;border-radius:0 8px 8px 0}
+.intro b{color:var(--navy)}
+.cov{margin:10px 0 4px;padding:10px 16px;border-radius:7px;font-size:14px}
+.cov.ok{background:var(--key);border:1px solid var(--keyb);color:#2f6b40}
+.cov.bad{background:#fdecea;border:1px solid #d9534f;color:#a3372f}
+.cov b{font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 30px;font-size:13.5px;color:var(--dim)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.chip{display:inline-block;width:15px;height:15px;border-radius:3px;border:1px solid #ccc}
+.c1{background:var(--code)} .c2{background:var(--handbg);border-color:#e6b0aa}
+.c3{background:var(--exam);border-color:var(--examb)} .c4{background:var(--key);border-color:var(--keyb)}
+.c5{background:var(--said);border-color:var(--saidb)} .c6{background:var(--only);border-color:var(--onlyb)}
+.c7{background:var(--board);border-color:var(--boardb)}
+h2{font-size:19px;margin:56px 0 2px;padding:11px 16px;background:var(--navy);
+   color:#fff;border-radius:7px 7px 0 0;line-height:1.4}
+h2 small{font-weight:400;opacity:.8;font-size:13.5px;display:block;margin-top:2px}
+h3{font-size:15.5px;margin:26px 0 8px;color:#22406e;border-bottom:2px solid var(--line);padding-bottom:5px}
+.row{margin:0 0 -1px;border:1px solid var(--line)}
+.orig{background:var(--code);padding:9px 15px;font-size:14px;color:#2b2b2b;
+      border-bottom:1px dashed var(--line)}
+.hand{background:var(--handbg);color:var(--hand);font-weight:600;
+      padding:1px 5px;border-radius:3px}
+.exp{padding:11px 15px;background:#fff}
+.exp b{color:var(--navy)}
+.fig{margin:14px 0;padding:11px 16px;background:var(--soft);border-left:3px solid #90a4b8;
+     font-size:14.3px;border-radius:0 6px 6px 0}
+.said{margin:12px 0;padding:11px 16px;background:var(--said);
+      border-left:3px solid var(--saidb);border-radius:0 6px 6px 0;font-size:14.3px}
+.said b{color:#28527f}
+.said .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--saidb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.said q{font-style:normal;color:#1f3f63}
+.only{margin:12px 0;padding:11px 16px;background:var(--only);
+      border-left:3px solid var(--onlyb);border-radius:0 6px 6px 0;font-size:14.3px}
+.only>b:first-child{color:#5c3f80}
+.only .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--onlyb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.board{margin:12px 0;padding:11px 16px;background:var(--board);
+       border-left:3px solid var(--boardb);border-radius:0 6px 6px 0;font-size:14.3px}
+.board>b:first-child{color:#9c4a1f}
+.board .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+           background:var(--boardb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+           vertical-align:1px}
+.exam{margin:16px 0;padding:12px 16px;background:var(--exam);border:1px solid var(--examb);
+      border-radius:7px;font-size:14.5px}
+.exam b{color:#8a6d0b}
+.exam .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--examb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.key{margin:16px 0;padding:12px 16px;background:var(--key);border:1px solid var(--keyb);
+     border-radius:7px;font-size:14.5px}
+.key b{color:#2f6b40}
+.eq{font-family:Consolas,"D2Coding",monospace;font-size:14px;background:#fff;
+    padding:2px 6px;border:1px solid var(--line);border-radius:4px;white-space:nowrap}
+sub,sup{font-size:11px}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:16px 20px;margin:8px 0 10px}
+.toc b{display:block;margin-bottom:6px;color:var(--navy)}
+.toc a{color:var(--acc);text-decoration:none;display:inline-block;margin:3px 14px 3px 0;font-size:13.5px}
+.toc a:hover{text-decoration:underline}
+.toc a.apx{color:var(--onlyb)}
+.top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
+     padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
+@media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+
+/* 오프라인(한국어) 수업 */
+:root{--rv:#e8f6f2;--rvb:#1f8a78}
+h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
+.said.rv{background:var(--rv);border-left-color:var(--rvb)}
+.said.rv b{color:#176b5d}
+.said.rv .ts{background:var(--rvb)}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#176b5d;font-size:13.5px}
+details.gnd img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
+</style>
+<style>
+.q{margin:16px 0;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.q h4{margin:0 0 6px;font-size:16px;color:var(--navy)}
+.q .n{display:inline-block;min-width:30px;color:#fff;background:var(--navy);border-radius:4px;text-align:center;margin-right:6px;font-size:13px}
+.q .a{margin:6px 0 0;padding:8px 12px;background:var(--key);border-left:3px solid var(--keyb);border-radius:0 6px 6px 0}
+.q .a b:first-child{color:#2f6f3f}
+.q .why{margin:6px 0 0;font-size:13.5px;color:var(--dim)}
+.tag{display:inline-block;font-size:12px;padding:0 6px;border-radius:3px;margin-left:4px;vertical-align:1px}
+.t1{background:#fde2e2;color:#a40000}.t2{background:#fff1c2;color:#7a5a00}.t3{background:#e4eefc;color:#1b4f9c}
+.pat{border-collapse:collapse;width:100%;font-size:14px}.pat td,.pat th{border:1px solid var(--line);padding:6px 8px;vertical-align:top}.pat th{background:var(--soft)}
+</style>
+</head><body><div class="wrap" id="top">
+<h1>반도체공학 Ch.8 — 수업 중 예상 질문</h1>
+<p class="sub">pn Junction Diode · 노정균 교수님 오프라인 수업 대비 · 2026-11-04 작성</p>
+<div class="key"><b>이 페이지</b> 교수님이 오프라인 수업에서 학생에게 <b>묻는 질문</b>(답하면 점수)과, 학생이 <b>던지기 좋은 질문</b>을 Ch.8 슬라이드 17쪽 · Neamen 4판 8장(원서 276~323쪽) · Ch.4·5·7 오프라인 수업 녹음에 나온 질문 습관을 맞춰 뽑은 것이다. 답은 수업에서 바로 말할 수 있게 한두 문장으로 썼다.</div>
+<div class="toc"><b>목차</b><a href="#pat">질문은 어디서 나오나</a><a href="#rev">7장 복습 질문</a><a href="#p1">8.1 전류 원리</a><a href="#p2">8.1 식·그래프</a><a href="#p3">8.2 생성·재결합</a><a href="#p4">8.3~8.5</a><a href="#ask">내가 던질 질문</a><a href="#nums">외울 숫자</a></div>
+<h2 id="pat">질문은 어디서 나오나<small>Ch.4 · 5 · 7 오프라인 수업 녹음에서 교수님이 실제로 물은 것</small></h2>
+<p>교수님 질문은 교재 문제에서 나오지 않는다. 지금까지 녹음을 보면 <b>여섯 가지 틀</b>을 반복한다. 아래 예상 질문은 이 틀을 Ch.8 내용에 하나씩 대입한 것이다.</p>
+<table class="pat"><tr><th>틀</th><th>실제로 물은 것 (녹음)</th><th>Ch.8 에 대입하면</th></tr>
+<tr><td><b>① 숫자·단위 기억</b></td><td>"N<sub>c</sub>, N<sub>v</sub> 대충 얼마? 단위는?" (Ch.4 리뷰①01:04) · "실리콘 덴시티 얼마예요? — 10의 22" (리뷰③07:43)</td><td>V<sub>t</sub> = 0.0259 V, 60 mV 마다 10배, 10 °C 마다 J<sub>s</sub> 4배</td></tr>
+<tr><td><b>② 한 문장 정의</b></td><td>"인트린직과 익스트린직 차이 한 문장으로?" (리뷰③03:50) · "교재에서 이런 접합 뭐라고 했어요? — One-sided" (Ch.7 ②48:30)</td><td>low-level injection, short diode, 역포화 전류, ideality factor</td></tr>
+<tr><td><b>③ 오르나 내리나 (감)</b></td><td>"도핑 올리면 W 어떻게 될 것 같아?" (Ch.7 ②27:26) · "SiC 는 n 이 잘 될까 p 가 잘 될까?" (Ch.5 리뷰⑤02:22)</td><td>도핑·온도·밴드갭이 J<sub>s</sub> 에 주는 영향, 순방향 W 변화</td></tr>
+<tr><td><b>④ 왜?</b></td><td>"왜 이러는 거예요? — 스캐터링" (Ch.5 리뷰⑦02:13) · "쏘기만 하면 도핑 끝날까? 왜?" (Ch.7 ②14:05)</td><td>왜 역방향 전류는 전압과 무관? 왜 소수 캐리어가 지수 감쇠?</td></tr>
+<tr><td><b>⑤ 가정이 깨지는 경우</b></td><td>"완전 이온화를 가정하지 않는 경우가 있을까? 어떤 경우인가?" (Ch.5 리뷰⑤00:28)</td><td>이상 다이오드 가정이 깨지는 경우 → 생성·재결합 전류, high injection</td></tr>
+<tr><td><b>⑥ 그래프 넓이·기울기 뜻</b></td><td>"이 면적이 의미하는 건가? — 전압" (Ch.7 ②54:28)</td><td>ln J – V<sub>a</sub> 기울기, 소수 캐리어 분포의 기울기 = 전류</td></tr></table>
+<div class="exam"><b>★ 첫 질문 후보</b> — Ch.7 마지막에 "다음 시간에 오늘 얘기한 거 조금 더 하고 들어간다"(Ch.7 ②55:31)고 했다. 그래서 8장 첫머리는 <b>7장 복습 질문</b>(아래 R1~R5)으로 시작할 가능성이 크다.</div>
+<h2 id="rev">7장 복습 질문<small>수업 첫 5분에 나올 것</small></h2>
+<div class="q"><h4><span class="n">R1</span>pn 접합의 주요 특성 두 가지는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> <b>공핍층 폭 W</b> 와 <b>built-in potential V<sub>bi</sub></b>.</div><div class="why"><b>출처</b> Ch.7 오프라인 ②25:06 (교수님이 직접 '주요 특성 두 가지'라고 말함)</div><div class="why">틀 ②</div></div>
+<div class="q"><h4><span class="n">R2</span>도핑을 올리면 W 와 V<sub>bi</sub> 는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> W 는 줄고 V<sub>bi</sub> 는 오른다. 단 농도 높은 쪽은 고정하고 <b>낮은 쪽 농도를 올리는</b> 경우 기준.</div><div class="why"><b>출처</b> Ch.7 오프라인 ②29:52 · 판서</div><div class="why">틀 ③. 조건(낮은 쪽 기준)까지 말하면 점수 받기 좋다.</div></div>
+<div class="q"><h4><span class="n">R3</span>pn 접합을 붙이면 일어나는 일 세 가지는?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> ① 다수 캐리어 확산 ② 재결합 → 공핍층(공간전하층) ③ 공간전하 때문에 전기장 → built-in potential.</div><div class="why"><b>출처</b> Ch.7 오프라인 ②18:38 · 판서</div></div>
+<div class="q"><h4><span class="n">R4</span>E–x 그래프의 넓이는 무엇을 뜻하나? 역전압을 걸면?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 넓이 = 전압(다이오드가 버티는 전압). 역전압을 걸면 W 가 넓어지고 삼각형이 커진다. 한계를 넘으면 항복.</div><div class="why"><b>출처</b> Ch.7 오프라인 ②54:28 (수업 마지막에 물은 질문)</div><div class="why">틀 ⑥. 다음 시간에 '조금 더' 한다고 했던 부분이다.</div></div>
+<div class="q"><h4><span class="n">R5</span>열평형에서 전자는 왜 n → p 로 더 못 넘어가나? 정공은?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 높이 eV<sub>bi</sub> 의 장벽 때문. 밴드 그림은 전자의 PE 라서 정공은 위아래를 뒤집어 보면 같은 높이의 장벽이 있다.</div><div class="why"><b>출처</b> Ch.7 오프라인 ②45:20~47:21</div><div class="why">8장 첫 슬라이드(4쪽)가 바로 이 장벽이 바이어스로 바뀌는 그림이다.</div></div>
+<h2 id="p1">8.1 전류 원리<small>Ch.8 슬라이드 4~8쪽 · 교재 원서 276~285쪽</small></h2>
+<div class="q"><h4><span class="n">1</span>순방향·역방향 바이어스에서 장벽 높이는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 순방향 V<sub>a</sub>: e(V<sub>bi</sub> − V<sub>a</sub>) 로 낮아짐. 역방향 V<sub>R</sub>: e(V<sub>bi</sub> + V<sub>R</sub>) 로 높아짐.</div><div class="why"><b>출처</b> Ch.8 슬라이드 4쪽 · 교재 원서 277쪽</div><div class="why">틀 ③.</div></div>
+<div class="q"><h4><span class="n">2</span>순방향을 걸면 공핍층 폭은 어떻게 되나?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> 줄어든다. W ∝ √(V<sub>bi</sub> − V<sub>a</sub>). 공핍층 안 전기장도 약해진다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 7쪽 첫 줄('net electric field … is reduced') · Ch.7 W 식</div><div class="why">틀 ③. 7장 식에 V<sub>R</sub> 대신 −V<sub>a</sub> 를 넣는다는 연결을 말하면 좋다.</div></div>
+<div class="q"><h4><span class="n">3</span>n 에서 p 로 넘어간 전자는 p 영역에서 뭐가 되나? 그다음엔?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> <b>과잉 소수 캐리어(excess minority carrier)</b>가 된다. 확산하며 p 쪽 다수 캐리어(정공)와 재결합해 점점 줄어든다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 8, 13쪽 · 교재 원서 290쪽 Summary of Physics</div><div class="why">틀 ②. 슬라이드 13쪽 흐름(장벽↓ → 주입 → 소수 캐리어 → 확산 → 재결합)을 통째로 말하게 할 수 있다.</div></div>
+<div class="q"><h4><span class="n">4</span>이상 다이오드 식을 유도할 때 가정은? 그중 하나라도 깨지는 경우는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> ① 공핍층 경계가 칼같이 끊김, 바깥은 중성 ② 볼츠만 근사 ③ <b>low-level injection</b> + 완전 이온화 ④ 전체 전류 일정 ⑤ 전자·정공 전류가 연속 ⑥ 공핍층 안에서 각 전류 일정.<br>깨지는 경우: 공핍층 안 <b>생성·재결합</b>(8.2), 주입이 많아지는 <b>high-level injection</b>.</div><div class="why"><b>출처</b> Ch.8 슬라이드 5쪽 · 교재 원서 278쪽</div><div class="why">틀 ⑤. Ch.5 에서 '완전 이온화를 가정하지 않는 경우?'를 똑같은 방식으로 물었다.</div></div>
+<div class="q"><h4><span class="n">5</span>low-level injection 이 뭔가?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> 주입된 과잉 소수 캐리어 농도가 그 영역의 <b>다수 캐리어 농도보다 훨씬 작은</b> 상태. 그래서 다수 캐리어 농도는 거의 그대로다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 5쪽 · 교재 원서 278쪽</div><div class="why">틀 ②.</div></div>
+<div class="q"><h4><span class="n">6</span>n<sub>p0</sub> = n<sub>n0</sub> exp(−eV<sub>bi</sub>/kT) 는 무엇을 말하나?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 열평형에서 <b>n 영역 다수 전자 농도와 p 영역 소수 전자 농도의 관계</b>. 장벽 eV<sub>bi</sub> 를 넘을 수 있는 비율(볼츠만 인자)만큼만 p 쪽에 있다. (판서: Junction law)</div><div class="why"><b>출처</b> Ch.8 슬라이드 6쪽 · 교재 원서 280쪽</div><div class="why">틀 ④. 유도는 V<sub>bi</sub> = V<sub>t</sub> ln(N<sub>a</sub>N<sub>d</sub>/n<sub>i</sub><sup>2</sup>) 를 뒤집고 n<sub>0</sub>p<sub>0</sub> = n<sub>i</sub><sup>2</sup> 를 쓰면 끝.</div></div>
+<div class="q"><h4><span class="n">7</span>순방향 V<sub>a</sub> 를 걸면 p 쪽 공핍층 경계의 소수 전자 농도는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> n<sub>p</sub>(−x<sub>p</sub>) = n<sub>p0</sub> exp(eV<sub>a</sub>/kT). 장벽이 V<sub>a</sub> 만큼 낮아져 열평형보다 exp(V<sub>a</sub>/V<sub>t</sub>) 배 많아진다. 정공도 p<sub>n</sub>(x<sub>n</sub>) = p<sub>n0</sub> exp(eV<sub>a</sub>/kT).</div><div class="why"><b>출처</b> Ch.8 슬라이드 7쪽 · 교재 원서 281~282쪽</div><div class="why">틀 ③·①. 숫자로 물으면: V<sub>a</sub> = 0.6 V 이면 exp(0.6/0.0259) ≈ 10<sup>10</sup> 배.</div></div>
+<div class="q"><h4><span class="n">8</span>역방향이면 그 경계 농도는?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> exp(−eV<sub>R</sub>/kT) 가 곱해져 거의 <b>0</b> 이 된다. 경계의 소수 캐리어가 공핍층 전기장에 바로 쓸려 간다.</div><div class="why"><b>출처</b> 교재 원서 282쪽 · 교재 Review Q2(b)</div><div class="why">틀 ③.</div></div>
+<h2 id="p2">8.1 식·그래프<small>Ch.8 슬라이드 8~14쪽 · 교재 원서 283~294쪽</small></h2>
+<div class="q"><h4><span class="n">9</span>중성 영역의 과잉 소수 캐리어는 거리에 따라 어떻게 분포하나? 왜?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 경계에서 가장 많고 <b>지수 함수로 감쇠</b>: δp<sub>n</sub> ∝ exp[−(x − x<sub>n</sub>)/L<sub>p</sub>]. 다수 캐리어와 <b>재결합</b>하며 줄기 때문.</div><div class="why"><b>출처</b> Ch.8 슬라이드 9쪽 ('Exponentially decay … Recombination with majority carriers') · 교재 원서 285쪽</div><div class="why">틀 ④.</div></div>
+<div class="q"><h4><span class="n">10</span>L<sub>p</sub> 는 무엇이고 식은?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> <b>소수 캐리어 확산 길이</b>. 재결합 전까지 평균적으로 퍼지는 거리. L<sub>p</sub> = √(D<sub>p</sub>τ<sub>p0</sub>).</div><div class="why"><b>출처</b> Ch.8 슬라이드 8쪽 · 교재 원서 284쪽</div><div class="why">틀 ②·①. Si 기본값 D<sub>p</sub> = 10, τ<sub>p0</sub> = 10<sup>−7</sup> 이면 L<sub>p</sub> ≈ 10 μm.</div></div>
+<div class="q"><h4><span class="n">11</span>일반해 A e<sup>x/L</sup> + B e<sup>−x/L</sup> 에서 A = 0 인 이유는?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> x → ∞ 에서 농도가 열평형 값 p<sub>n0</sub> 로 돌아가야 하므로 커지는 항이 있으면 안 된다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 9~10쪽 (판서 '④ A = 0')</div><div class="why">틀 ④. 유도 과정에서 손으로 짚은 부분이라 물을 가능성 있음.</div></div>
+<div class="q"><h4><span class="n">12</span>다이오드 전류는 결국 무엇이 만드나? drift? diffusion?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> <b>공핍층 경계에서 소수 캐리어의 확산 전류</b>: J = J<sub>p</sub>(x<sub>n</sub>) + J<sub>n</sub>(−x<sub>p</sub>). 경계에서는 전기장을 0 으로 보아 drift 는 무시. 접합에서 멀리 떨어진 중성 영역에서는 <b>다수 캐리어 drift</b> 가 전류를 이어 받는다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 11, 13쪽 · 교재 원서 286, 291쪽 · 교재 Review Q5</div><div class="why">틀 ④. '전체 전류는 어디서나 일정한데 성분이 바뀐다'까지 말하면 완벽.</div></div>
+<div class="q"><h4><span class="n">13</span>이상 다이오드 식을 쓰고 J<sub>s</sub> 의 이름은?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> J = J<sub>s</sub>[exp(eV<sub>a</sub>/kT) − 1], J<sub>s</sub> = eD<sub>p</sub>p<sub>n0</sub>/L<sub>p</sub> + eD<sub>n</sub>n<sub>p0</sub>/L<sub>n</sub>. J<sub>s</sub> = <b>역포화 전류 밀도(reverse-saturation current density)</b>.</div><div class="why"><b>출처</b> Ch.8 슬라이드 12쪽 · 교재 원서 287쪽</div><div class="why">틀 ②. Contents 판서에 'J–V 유도 !' 라고 표시돼 있다.</div></div>
+<div class="q"><h4><span class="n">14</span>역방향 전류는 왜 전압과 상관없이 일정한가?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 역방향 몇 V<sub>t</sub> 이상이면 exp 항이 0 이 되어 J ≈ −J<sub>s</sub>. 경계 소수 농도가 0 으로 고정되고, 공급되는 소수 캐리어 자체가 n<sub>i</sub><sup>2</sup>/N 만큼밖에 없어 전압을 더 걸어도 늘지 않는다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 12쪽 · 교재 원서 287쪽</div><div class="why">틀 ④.</div></div>
+<div class="q"><h4><span class="n">15</span>순방향 전류를 10 배 늘리려면 전압을 얼마나 올려야 하나?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> V<sub>t</sub> ln10 ≈ <b>60 mV</b> (0.0259 × 2.303 = 59.6 mV).</div><div class="why"><b>출처</b> 교재 원서 323쪽 연습문제 8.1(a)</div><div class="why">틀 ①. 숫자로 바로 답하면 눈에 띈다.</div></div>
+<div class="q"><h4><span class="n">16</span>J<sub>s</sub> 를 줄이려면 도핑을 올려야 하나 내려야 하나? p<sup>+</sup>n 이면?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 올려야 한다. p<sub>n0</sub> = n<sub>i</sub><sup>2</sup>/N<sub>d</sub> 라서 도핑이 높을수록 소수 캐리어가 적다. p<sup>+</sup>n 이면 J<sub>s</sub> ≈ eD<sub>p</sub>p<sub>n0</sub>/L<sub>p</sub> — <b>저농도(n) 쪽 항이 지배</b>.</div><div class="why"><b>출처</b> Ch.8 슬라이드 12쪽 식 · Ch.7 one-sided 강조와 연결</div><div class="why">틀 ③. Ch.7 에서 '실제 다이오드는 대부분 one-sided'라고 했으니 이어서 물을 만하다.</div></div>
+<div class="q"><h4><span class="n">17</span>온도가 오르면 J<sub>s</sub> 는? 대략 얼마나?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> n<sub>i</sub><sup>2</sup> 에 비례해서 급격히 증가. Si 는 <b>10 °C 마다 약 4 배</b>.</div><div class="why"><b>출처</b> 교재 원서 292쪽 (8.1.7 Temperature Effects, 슬라이드에는 없음) · 교재 Review Q6</div><div class="why">틀 ③·①.</div></div>
+<div class="q"><h4><span class="n">18</span>Si, GaAs, SiC 중 J<sub>s</sub> 가 가장 작은 것은? 왜?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> SiC. 밴드갭이 클수록 n<sub>i</sub> 가 작고 J<sub>s</sub> ∝ n<sub>i</sub><sup>2</sup> 라서.</div><div class="why"><b>출처</b> Ch.8 슬라이드 12쪽 식 + Ch.4 n<sub>i</sub> ∝ exp(−E<sub>g</sub>/2kT)</div><div class="why">틀 ③. Ch.5 리뷰에서 SiC 를 직접 꺼낸 적 있음(리뷰⑤02:22).</div></div>
+<div class="q"><h4><span class="n">19</span>short diode 란? long diode 보다 전류가 큰 이유는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 중성 영역 길이 W<sub>n</sub> 이 확산 길이 L<sub>p</sub> 보다 훨씬 짧은 다이오드. 소수 캐리어 분포가 <b>직선</b>이 되고(오믹 접촉에서 0), 기울기가 커서 확산 전류가 커진다(L<sub>p</sub> 대신 W<sub>n</sub>). 짧은 영역 안에서 재결합이 거의 없다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 14쪽 · 교재 원서 293~294쪽</div><div class="why">틀 ②·④.</div></div>
+<h2 id="p3">8.2 생성·재결합 전류<small>Ch.8 슬라이드 15~16쪽 · 교재 원서 294~305쪽</small></h2>
+<div class="q"><h4><span class="n">20</span>실제 Si 다이오드의 역방향 전류가 J<sub>s</sub> 보다 훨씬 큰 이유는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 공핍층 안에서 전자·정공이 <b>생성</b>되어 바로 쓸려 나가는 <b>생성 전류</b> J<sub>gen</sub> = en<sub>i</sub>W/2τ<sub>0</sub> 가 더해지기 때문. 교재 예제에서 상온 Si 는 J<sub>gen</sub> 이 J<sub>s</sub> 의 약 <b>10<sup>3</sup>~10<sup>4</sup> 배</b>.</div><div class="why"><b>출처</b> Ch.8 슬라이드 15쪽 · 교재 원서 298쪽 예제 Comment</div><div class="why">틀 ⑤·④.</div></div>
+<div class="q"><h4><span class="n">21</span>J<sub>s</sub> 와 J<sub>gen</sub> 의 차이는? (역전압 의존성)<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> J<sub>s</sub> 는 역전압과 무관. J<sub>gen</sub> 은 W 에 비례하고 W 는 역전압이 클수록 넓어지므로 <b>역전압에 따라 커진다</b>.</div><div class="why"><b>출처</b> Ch.8 슬라이드 15쪽 마지막 두 줄</div><div class="why">틀 ③.</div></div>
+<div class="q"><h4><span class="n">22</span>순방향 재결합 전류는 왜 생기고, 지수에 왜 2kT 가 붙나?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> 순방향에서는 공핍층 전기장이 약해 전자·정공이 공핍층 안에 남아 있다가 <b>그 안에서 재결합</b>한다. 그 손실을 메우려 캐리어를 더 주입해야 하는 것이 재결합 전류. 공핍층 중간의 np 곱이 n<sub>i</sub><sup>2</sup>exp(eV<sub>a</sub>/kT) 라 n, p 각각은 exp(eV<sub>a</sub>/2kT) 로 커진다.</div><div class="why"><b>출처</b> Ch.8 슬라이드 15~16쪽 · 교재 원서 299~301쪽</div><div class="why">틀 ④.</div></div>
+<div class="q"><h4><span class="n">23</span>ideality factor n 이 1 이면? 2 이면? ln J–V<sub>a</sub> 그래프 기울기는?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> n ≈ 1: <b>확산 전류</b>가 지배(높은 순방향). n ≈ 2: <b>재결합 전류</b>가 지배(낮은 순방향). 기울기는 각각 1/V<sub>t</sub>, 1/(2V<sub>t</sub>).</div><div class="why"><b>출처</b> Ch.8 슬라이드 16쪽 · 교재 원서 302쪽</div><div class="why">틀 ⑥. 그래프 기울기 의미를 묻는 습관과 맞는다.</div></div>
+<div class="q"><h4><span class="n">24</span>순방향을 아주 크게 걸면 (high-level injection) I–V 는 어떻게 되나?<span class="tag t2">중간</span></h4><div class="a"><b>답</b> 주입된 과잉 캐리어가 다수 캐리어와 비슷해져 low-injection 가정이 깨진다. 전류가 다시 exp(eV<sub>a</sub>/2kT) 로 덜 가파르게 늘고, 더 크면 직렬 저항 때문에 선형에 가까워진다.</div><div class="why"><b>출처</b> 교재 원서 303~304쪽 (8.2.4, 슬라이드 Contents 에만 제목) · 교재 Review Q9</div><div class="why">틀 ⑤. 슬라이드 5쪽 low-injection 가정과 짝으로 물을 수 있다.</div></div>
+<h2 id="p4">8.3~8.5<small>Ch.8 슬라이드 3, 17쪽 · 교재 원서 305~320쪽</small></h2>
+<div class="fig">이 PDF 에는 8.3(소신호 모델)·8.4(전하 저장·과도 응답) 본문 슬라이드가 없고 목차에만 있다. 수업에서 말로만 짚고 넘어갈 수 있어 짧게 넣었다.</div>
+<div class="q"><h4><span class="n">25</span>터널 다이오드의 조건과 특징은?<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> p, n <b>양쪽을 모두 degenerate</b> 로 도핑(E<sub>F</sub> 가 밴드 안). 공핍층이 아주 얇아져 n 의 전도대 전자가 p 의 가전자대로 <b>직접 터널링</b>. 순방향 일부 구간에서 전압이 오르는데 전류가 줄어드는 <b>음성 미분 저항</b>.</div><div class="why"><b>출처</b> Ch.8 슬라이드 17쪽 · 교재 원서 318~320쪽</div><div class="why">틀 ②.</div></div>
+<div class="q"><h4><span class="n">26</span>터널 다이오드는 왜 공핍층이 얇은가? (7장과 연결)<span class="tag t1">가능성 높음</span></h4><div class="a"><b>답</b> 도핑을 극단적으로 높였으니까. 7장의 '도핑↑ → W↓' 그대로.</div><div class="why"><b>출처</b> Ch.8 슬라이드 17쪽 둘째 줄 + Ch.7 판서 'Doping↑ → W↓'</div><div class="why">틀 ③. 교수님이 '감' 질문을 앞 장과 엮는 경우가 많다.</div></div>
+<div class="q"><h4><span class="n">27</span>확산 커패시턴스는 왜 생기나?<span class="tag t3">한 번쯤</span></h4><div class="a"><b>답</b> 순방향에서 중성 영역에 쌓인 과잉 소수 캐리어 전하가 전압에 따라 변하기 때문(전압↑ → 저장 전하↑). 역방향에서 중요한 접합 커패시턴스와 달리 <b>순방향</b>에서 크다.</div><div class="why"><b>출처</b> 교재 원서 306~308쪽 (8.3) · 교재 Review Q10</div><div class="why">틀 ④.</div></div>
+<div class="q"><h4><span class="n">28</span>순방향으로 켜 둔 다이오드를 갑자기 끄면? 전류 방향은?<span class="tag t3">한 번쯤</span></h4><div class="a"><b>답</b> 쌓여 있던 소수 캐리어가 빠져나갈 때까지 잠깐 <b>역방향 전류</b>가 거의 일정하게 흐른다. 그 시간이 <b>storage time t<sub>s</sub></b>. 소수 캐리어 수명이 짧을수록 빨리 꺼진다.</div><div class="why"><b>출처</b> 교재 원서 315~317쪽 (8.4) · 교재 Review Q11</div><div class="why">틀 ④. 전력 소자 이야기를 좋아하셔서 스위칭 속도로 엮을 수 있다.</div></div>
+<h2 id="ask">내가 던질 질문<small>교재에 근거가 있고, 교수님이 좋아하는 주제(전력 소자·실제 공정·감)로 이어지는 것</small></h2>
+<div class="fig">"모르겠다"가 아니라 <b>식을 보고 생각한 흔적</b>이 보이게 묻는 것이 핵심이다. 앞부분 근거를 짧게 붙이고 끝을 질문으로 맺는다.</div>
+<div class="q"><h4><span class="n">A1</span>p<sup>+</sup>n⁻ 전력 다이오드는 항복 전압 때문에 n⁻ 를 두껍게 만든다고 하셨는데요, 그러면 W<sub>n</sub> 이 L<sub>p</sub> 보다 길어져서 short diode 가 아니게 되고 순방향 전류가 줄어드는 trade-off 가 생기나요?</h4><div class="why"><b>근거</b> Ch.7 오프라인 ②55:22(전력 소자는 삼각형 넓이 키우기) + 슬라이드 14쪽 short diode</div></div>
+<div class="q"><h4><span class="n">A2</span>이상 다이오드 식은 low-level injection 을 가정하는데, 전력 다이오드처럼 큰 전류가 흐를 때는 n⁻ 쪽에 주입된 캐리어가 도핑보다 많아질 것 같습니다. 그러면 저항이 오히려 줄어드는 효과가 있나요?</h4><div class="why"><b>근거</b> 슬라이드 5쪽 가정 + 교재 8.2.4 high-level injection (전도도 변조로 이어지는 질문)</div></div>
+<div class="q"><h4><span class="n">A3</span>슬라이드 15쪽에서 Si 는 생성 전류가 역방향 전류를 지배한다고 했는데, SiC 처럼 밴드갭이 큰 소재는 n<sub>i</sub> 가 아주 작으니까 누설 전류가 거의 안 생기는 게 SiC 전력 소자를 쓰는 이유 중 하나인가요?</h4><div class="why"><b>근거</b> 슬라이드 15쪽 J<sub>gen</sub> = en<sub>i</sub>W/2τ<sub>0</sub> + Ch.5 리뷰 SiC 이야기</div></div>
+<div class="q"><h4><span class="n">A4</span>I–V 를 측정해서 ideality factor 가 1.5 쯤 나오면, 확산 전류와 재결합 전류가 섞인 구간이라고 보면 되나요? 실제 소자 평가할 때 이 값으로 공정 품질(결함)을 판단하기도 하나요?</h4><div class="why"><b>근거</b> 슬라이드 16쪽 n ≈ 1, n ≈ 2</div></div>
+<div class="q"><h4><span class="n">A5</span>스위칭을 빠르게 하려면 소수 캐리어 수명을 줄여야 storage time 이 짧아지는데, 수명을 줄이면 L 이 짧아져서 J<sub>s</sub> 랑 생성 전류는 커질 것 같습니다. 실제로는 이 둘을 어떻게 맞추나요?</h4><div class="why"><b>근거</b> 교재 8.4 storage time + 슬라이드 12쪽 J<sub>s</sub>(L 이 분모) + 15쪽 J<sub>gen</sub>(τ<sub>0</sub> 가 분모)</div></div>
+<div class="q"><h4><span class="n">A6</span>Ch.7 에서 GaAs 에 Si 를 넣으면 위치에 따라 p, n 이 다 된다고 하셨는데, 직접 천이형인 GaAs 는 수명이 짧아서 L 이 짧을 텐데 그러면 같은 구조라도 Si 보다 short diode 에 가깝게 동작하나요?</h4><div class="why"><b>근거</b> Ch.7 오프라인 ②16:19 + 교재 8장 연습문제 기본값(GaAs τ<sub>n0</sub> = 5×10<sup>−8</sup> s)</div></div>
+<div class="q"><h4><span class="n">A7</span>터널 다이오드가 예전엔 발진기에 쓰였는데 지금은 다른 소자로 바뀌었다고 교재에 나와 있던데요, 터널링 원리 자체는 요즘 어떤 소자(예: TFET)에서 다시 쓰이나요?</h4><div class="why"><b>근거</b> 교재 원서 318쪽 'used in oscillator circuits in the past'</div></div>
+<div class="q"><h4><span class="n">A8</span>슬라이드 13쪽에 접합 근처는 다수 캐리어 drift 와 소수 캐리어 diffusion 이 같이 있다고 했는데, 중성 영역이라 전기장이 0 이라고 가정했는데 어떻게 다수 캐리어 drift 전류가 흐를 수 있나요?</h4><div class="why"><b>근거</b> 슬라이드 13쪽 마지막 두 줄 (교재 291~292쪽 예제 8.4: 중성 영역 전기장을 실제로 계산해 보면 아주 작지만 다수 캐리어가 많아 drift 전류가 충분함)</div></div>
+<div class="key"><b>A8 은 답을 미리 알고 묻는 질문</b>이다. 교재 예제 8.4(291~292쪽)가 답이다: 중성 영역에도 아주 약한 전기장이 있고, 다수 캐리어 농도가 커서 그것만으로 충분한 drift 전류가 된다(그래서 '전기장 0'은 근사). 되물으면 이렇게 받으면 된다.</div>
+<h2 id="nums">바로 대답할 숫자<small>틀 ① 대비</small></h2>
+<div class="key">
+V<sub>t</sub> = kT/e = <b>0.0259 V</b> (300 K) — Ch.7 에서 "외워라" ·
+전류 10 배 = <b>약 60 mV</b> ·
+Si n<sub>i</sub> = <b>1.5×10<sup>10</sup> cm<sup>−3</sup></b> ·
+J<sub>s</sub> 는 Si 에서 <b>10 °C 마다 약 4 배</b> ·
+상온 Si 에서 J<sub>gen</sub>/J<sub>s</sub> ≈ <b>10<sup>3</sup>~10<sup>4</sup></b> ·
+ideality factor <b>1(확산) ~ 2(재결합)</b> ·
+L = √(Dτ), Si 기본값 D<sub>p</sub> = 10 cm²/s, τ<sub>p0</sub> = 10<sup>−7</sup> s → L<sub>p</sub> ≈ <b>10 μm</b> ·
+0.6 V 순방향이면 경계 소수 농도 <b>약 10<sup>10</sup> 배</b>
+</div>
+<div class="key"><b>출처 표기</b> "Ch.8 슬라이드 N쪽" = [반도체공학 강의자료] Chapter 8 PDF 의 N번째 쪽(표지 = 1). "교재 원서 N쪽" = Neamen 4판 인쇄 쪽 번호(PDF 쪽 = 인쇄 쪽 + 25). 오프라인 수업 타임스탬프는 Ch.7·Ch.4·Ch.5 통합 해설 페이지와 같다.</div>
+<a class="top" href="#top">맨 위로</a>
+</div></body></html>
