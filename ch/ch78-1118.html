@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>반도체공학 Ch.7·8 — 11/18 오프라인 수업</title>
+<style>/* 강의 통합 해설 표준 서식. build_html.py 에서 <style> 안에 그대로 넣는다. */
+:root{--ink:#1a1a1a;--dim:#6b7280;--line:#e3e7ec;--navy:#12305e;--acc:#0057b8;
+      --bg:#fff;--soft:#f5f8fc;--code:#f7f9fb;--hand:#c0392b;--handbg:#fff5f4;
+      --exam:#fff8e1;--examb:#d4a017;--key:#e8f4ea;--keyb:#4a9d5f;
+      --said:#eef4fb;--saidb:#5b87c4;--only:#f3eefb;--onlyb:#7d5ba6;
+      --board:#fdf0ea;--boardb:#c2612f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+     font-size:15.5px;line-height:1.85;-webkit-text-size-adjust:100%}
+.wrap{max-width:980px;margin:0 auto;padding:40px 22px 110px}
+h1{font-size:27px;margin:0 0 8px;letter-spacing:-.5px;color:var(--navy)}
+.sub{color:var(--dim);font-size:14px;margin:0 0 6px}
+.intro{background:var(--soft);border-left:4px solid var(--acc);padding:14px 18px;
+       margin:22px 0 8px;font-size:14.5px;border-radius:0 8px 8px 0}
+.intro b{color:var(--navy)}
+.cov{margin:10px 0 4px;padding:10px 16px;border-radius:7px;font-size:14px}
+.cov.ok{background:var(--key);border:1px solid var(--keyb);color:#2f6b40}
+.cov.bad{background:#fdecea;border:1px solid #d9534f;color:#a3372f}
+.cov b{font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 30px;font-size:13.5px;color:var(--dim)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.chip{display:inline-block;width:15px;height:15px;border-radius:3px;border:1px solid #ccc}
+.c1{background:var(--code)} .c2{background:var(--handbg);border-color:#e6b0aa}
+.c3{background:var(--exam);border-color:var(--examb)} .c4{background:var(--key);border-color:var(--keyb)}
+.c5{background:var(--said);border-color:var(--saidb)} .c6{background:var(--only);border-color:var(--onlyb)}
+.c7{background:var(--board);border-color:var(--boardb)}
+h2{font-size:19px;margin:56px 0 2px;padding:11px 16px;background:var(--navy);
+   color:#fff;border-radius:7px 7px 0 0;line-height:1.4}
+h2 small{font-weight:400;opacity:.8;font-size:13.5px;display:block;margin-top:2px}
+h3{font-size:15.5px;margin:26px 0 8px;color:#22406e;border-bottom:2px solid var(--line);padding-bottom:5px}
+.row{margin:0 0 -1px;border:1px solid var(--line)}
+.orig{background:var(--code);padding:9px 15px;font-size:14px;color:#2b2b2b;
+      border-bottom:1px dashed var(--line)}
+.hand{background:var(--handbg);color:var(--hand);font-weight:600;
+      padding:1px 5px;border-radius:3px}
+.exp{padding:11px 15px;background:#fff}
+.exp b{color:var(--navy)}
+.fig{margin:14px 0;padding:11px 16px;background:var(--soft);border-left:3px solid #90a4b8;
+     font-size:14.3px;border-radius:0 6px 6px 0}
+.said{margin:12px 0;padding:11px 16px;background:var(--said);
+      border-left:3px solid var(--saidb);border-radius:0 6px 6px 0;font-size:14.3px}
+.said b{color:#28527f}
+.said .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--saidb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.said q{font-style:normal;color:#1f3f63}
+.only{margin:12px 0;padding:11px 16px;background:var(--only);
+      border-left:3px solid var(--onlyb);border-radius:0 6px 6px 0;font-size:14.3px}
+.only>b:first-child{color:#5c3f80}
+.only .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--onlyb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.board{margin:12px 0;padding:11px 16px;background:var(--board);
+       border-left:3px solid var(--boardb);border-radius:0 6px 6px 0;font-size:14.3px}
+.board>b:first-child{color:#9c4a1f}
+.board .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+           background:var(--boardb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+           vertical-align:1px}
+.exam{margin:16px 0;padding:12px 16px;background:var(--exam);border:1px solid var(--examb);
+      border-radius:7px;font-size:14.5px}
+.exam b{color:#8a6d0b}
+.exam .ts{display:inline-block;font-family:Consolas,"D2Coding",monospace;font-size:12px;
+          background:var(--examb);color:#fff;border-radius:3px;padding:0 5px;margin:0 5px 0 2px;
+          vertical-align:1px}
+.key{margin:16px 0;padding:12px 16px;background:var(--key);border:1px solid var(--keyb);
+     border-radius:7px;font-size:14.5px}
+.key b{color:#2f6b40}
+.eq{font-family:Consolas,"D2Coding",monospace;font-size:14px;background:#fff;
+    padding:2px 6px;border:1px solid var(--line);border-radius:4px;white-space:nowrap}
+sub,sup{font-size:11px}
+.toc{background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:16px 20px;margin:8px 0 10px}
+.toc b{display:block;margin-bottom:6px;color:var(--navy)}
+.toc a{color:var(--acc);text-decoration:none;display:inline-block;margin:3px 14px 3px 0;font-size:13.5px}
+.toc a:hover{text-decoration:underline}
+.toc a.apx{color:var(--onlyb)}
+.top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
+     padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
+@media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+
+/* 오프라인(한국어) 수업 */
+:root{--rv:#e8f6f2;--rvb:#1f8a78}
+h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
+.said.rv{background:var(--rv);border-left-color:var(--rvb)}
+.said.rv b{color:#176b5d}
+.said.rv .ts{background:var(--rvb)}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#176b5d;font-size:13.5px}
+details.gnd img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}.gal figure{margin:0}.gal img,.pg img{width:100%;border:1px solid var(--line);border-radius:6px}.gal figcaption{font-size:12.5px;color:var(--dim)}.pg figure{margin:0 0 18px}.tx{font-size:13.5px;line-height:1.7}.tx .t{font-family:Consolas,monospace;color:var(--saidb);margin-right:6px}details{margin:8px 0;border:1px solid var(--line);border-radius:7px;padding:6px 14px}summary{cursor:pointer;font-weight:700;color:var(--navy)}</style></head>
+<body><div class="wrap" id="top">
+<p class="sub"><a href="../index.html">← 목록</a></p><h1>Ch.7·8 — 11/18 오프라인 수업 (바이어스 · minority 분포 · BJT · non-ideal)</h1>
+<p class="sub">녹음 3개 약 69분 · 판서 사진 10장 · 손글씨 정리 10쪽</p>
+<div class="intro"><b>범위</b>: Ch.7 숙제 리뷰(실제 pn 접합 = 확산 도핑, ρ 가 기울어진 직선이어도 E·V·PE 모양은 교과서와 거의 같다) → <b>Ch.8 Overview</b>: w/o bias · forward · reverse 세 상황, 장벽 V<sub>bi</sub>∓V<sub>a</sub>, W↓/↑ → 밴드가 휜다 = 전하가 있다(→ MOS flat band) → <b>minority carrier 분포</b>(forward 주입 → 지수 감소, 기울기 = diffusion current) → reverse 가장자리 감소 = <b>leakage current</b> → <b>npn BJT</b>(E 접합 forward + C 접합 reverse, base 를 좁게) → <b>ideal diode 식</b>, ln J 직선 → <b>non-ideal effect 2가지</b>(reverse generation · forward recombination, ideality factor n).<br>
+<b>시험 언급</b>: "non-ideal effect 두 가지 — 시험 문제 꽤 많이 냈던 것 같아요"(③48:17). 작년 필기에도 reverse generation 옆에 "22기출!!". "forward → 공핍층 ↓, reverse → 공핍층 ↑ 는 고민하지 말고 바로 나와야 돼요"(③04:51).<br>
+<b>색</b>: 손글씨 정리에서 파랑 = 판서 · 빨강 = 강조 · 초록 = 말로만 한 내용(①~③ 녹음 시각) · 회색 = 작년(2025-11-12) 필기 대조 · 주황 = 슬라이드 쪽. 이번 Ch.8 굿노트엔 손필기가 없고 녹음만 있다.</div>
+<div class="toc"><b>바로가기</b><a href="#hw">손글씨 정리 10쪽</a><a href="#board">판서 사진 10장</a><a href="#tx">강의 전사 전문</a><a href="ch78-1118.pdf">PDF (10쪽)</a><a href="ch8-full.html#rv18">Ch.8 통합 해설에 합친 자리</a></div>
+<h2 id="hw">손글씨 정리 10쪽<small>판서 + 녹음 + 작년 필기 · Overview 양식 · <a style="color:#fff" href="ch78-1118.pdf">PDF</a></small></h2><div class="pg">
+<figure><img src="img/ch78/n18_p01.jpg" alt="손글씨 정리 1쪽 — Ch.7 숙제 리뷰 ① 실제 pn 접합 (확산 도핑)" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p02.jpg" alt="손글씨 정리 2쪽 — Ch.7 숙제 리뷰 ② textbook vs practical" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p03.jpg" alt="손글씨 정리 3쪽 — Ch.8 Overview — 3가지 상황" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p04.jpg" alt="손글씨 정리 4쪽 — 바이어스에 따른 에너지 밴드" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p05.jpg" alt="손글씨 정리 5쪽 — minority carrier 분포 (평형·forward)" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p06.jpg" alt="손글씨 정리 6쪽 — reverse → leakage current" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p07.jpg" alt="손글씨 정리 7쪽 — npn BJT" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p08.jpg" alt="손글씨 정리 8쪽 — ideal diode 식, ln J 직선" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p09.jpg" alt="손글씨 정리 9쪽 — non-ideal effect 2가지" loading="lazy"></figure>
+<figure><img src="img/ch78/n18_p10.jpg" alt="손글씨 정리 10쪽 — 오늘 정리" loading="lazy"></figure>
+</div><h2 id="board">판서 사진 10장<small>수업 순서 · 같은 판서가 쌓여 가는 과정까지</small></h2><div class="gal">
+<figure><img src="img/ch78/n18_b01.jpg" loading="lazy" alt="판서 1"><figcaption>1. Ch.7 숙제 리뷰 — SiO₂ 마스크 확산 단면, N_a(x) vs N_d, 접합 x</figcaption></figure>
+<figure><img src="img/ch78/n18_b02.jpg" loading="lazy" alt="판서 2"><figcaption>2. ρ(x) 그리기 시작 — 기울어진 직선</figcaption></figure>
+<figure><img src="img/ch78/n18_b03.jpg" loading="lazy" alt="판서 3"><figcaption>3. textbook vs practical case — ρ → E(x), E_max</figcaption></figure>
+<figure><img src="img/ch78/n18_b04.jpg" loading="lazy" alt="판서 4"><figcaption>4. Ch.8 Overview — w/o bias · forward · reverse</figcaption></figure>
+<figure><img src="img/ch78/n18_b05.jpg" loading="lazy" alt="판서 5"><figcaption>5. w/o bias 밴드 — 평형·forward·reverse 장벽 (eV_bi, e(V_bi+V_a))</figcaption></figure>
+<figure><img src="img/ch78/n18_b06.jpg" loading="lazy" alt="판서 6"><figcaption>6. minority 분포 그리기 시작 — 평형 10¹⁶/10⁴, 10¹⁵/10⁵</figcaption></figure>
+<figure><img src="img/ch78/n18_b07.jpg" loading="lazy" alt="판서 7"><figcaption>7. minority 분포 완성 — forward 주입·지수 감소, reverse 가장자리 감소, Diffusion current e D dn/dx</figcaption></figure>
+<figure><img src="img/ch78/n18_b08.jpg" loading="lazy" alt="판서 8"><figcaption>8. npn BJT — n⁺⁺|p⁺|n, Forward / Reverse, minority 분포</figcaption></figure>
+<figure><img src="img/ch78/n18_b09.jpg" loading="lazy" alt="판서 9"><figcaption>9. npn BJT — base 폭 줄이기 (덧그림)</figcaption></figure>
+<figure><img src="img/ch78/n18_b10.jpg" loading="lazy" alt="판서 10"><figcaption>10. J = J_s[exp(eV_a/kT) − 1], J_s, ln J = ln J_s + V_a/(kT/e), Non-ideal effect 2가지</figcaption></figure>
+</div><h2 id="tx">강의 전사 전문<small>굿노트 자동 전사 — 영어 용어는 소리 나는 대로 깨진 곳 있음</small></h2>
+<details open><summary>① 3분 27초 — Ch.7 숙제 리뷰: 확산 도핑, 접합 위치</summary><div class="tx">
+<div><span class="t">00:00</span>결정성 있는 단독체를 만드는 방법을</div>
+<div><span class="t">00:03</span>엔프탁시를 이용하면,</div>
+<div><span class="t">00:09</span>한층 한층 한땀 한땀 쌓는 거야</div>
+<div><span class="t">00:13</span>이렇게 하면 피의 다이어도 만들어집니다.</div>
+<div><span class="t">00:18</span>이렇게 만든 방법도 있긴 한데</div>
+<div><span class="t">00:20</span>만약에 펜타입 위터가 있을 때 그 위에</div>
+<div><span class="t">00:27</span>P타입으로 덧칠을 하는 식으로 많이 만든다고 했습니다</div>
+<div><span class="t">00:30</span>그렇죠?</div>
+<div><span class="t">00:31</span>기탈로 덧칠하는 식으로 해서 이렇게 만든다. 그런데 이제 제가 뭐라고 얘기했을지</div>
+<div><span class="t">00:36</span>이게 디페전이라는 도핑 방식을 쓰게 되면 10일씩 구승해서 시작하면</div>
+<div><span class="t">00:42</span>그리고 표본은 19승인데 점점 이렇게 들어가는 들어갈수록</div>
+<div><span class="t">00:46</span>10에 18승, 10에 17승, 10에 16승 이렇게 줄어든다고 했습니다.</div>
+<div><span class="t">00:51</span>도핑, 군보가 쭉 줄어들어요.</div>
+<div><span class="t">00:55</span>그쵸? 그럼 예를 들어서 여기를 이제 백수축이라고 하는</div>
+<div><span class="t">01:00</span>원래 10에 16승이었습니다</div>
+<div><span class="t">01:03</span>그리고 표현을 한번 시어 볼까요?</div>
+<div><span class="t">01:05</span>그리고 그 다음에</div>
+<div><span class="t">01:09</span>그리고 그 다음은</div>
+<div><span class="t">01:12</span>원래 x축에 상관없이 얘는 anti-wafer 하잖아</div>
+<div><span class="t">01:20</span>엔터에 위치한 웨이퍼입니다.</div>
+<div><span class="t">01:25</span>아</div>
+<div><span class="t">01:27</span>N, D라는 일정한 도끼목도를 가져라.</div>
+<div><span class="t">01:31</span>맞죠?</div>
+<div><span class="t">01:34</span>근데 반면에 이 피타이 도판드 같은 경우는</div>
+<div><span class="t">01:39</span>아</div>
+<div><span class="t">01:44</span>실시 구성요약을 많이 하셨습니다.</div>
+<div><span class="t">01:45</span>이렇게 했을 때 표면이 제일 높은데</div>
+<div><span class="t">01:54</span>파도체 공정을 배우면 이 쉐이프가</div>
+<div><span class="t">02:00</span>어떤 수학적 모델을 따라야 할지 많이 한번 더</div>
+<div><span class="t">02:05</span>좀 더 유메이카하게 풀 수 있는 배우긴 한데, 지금 여러분들이 감으로 생각하더라도 표현이 제일 높고</div>
+<div><span class="t">02:14</span>깊이가 깊어질 수 있겠다</div>
+<div><span class="t">02:16</span>그리고 얘가 점점 더 옅어지니까 결국에는</div>
+<div><span class="t">02:20</span>0이 되는 지점까지도 있겠지?</div>
+<div><span class="t">02:24</span>맞죠?</div>
+<div><span class="t">02:26</span>그럼 정선을 어디로 못보신가요?</div>
+<div><span class="t">02:29</span>이렇게 했을 때, 이 접어로</div>
+<div><span class="t">02:33</span>그래서 우리는 정선을 요지점으로</div>
+<div><span class="t">02:37</span>이 지점을, 즉, 이 호핵농도가</div>
+<div><span class="t">02:42</span>N에 있는 사실은 어떤 컨셉이 아니라</div>
+<div><span class="t">02:45</span>이거죠? n의 x에다 함수죠?</div>
+<div><span class="t">02:49</span>함수잖아요. NA0가 10에 19생인거고</div>
+<div><span class="t">02:55</span>그럼 얘가 이 백그라운드와 같아지는</div>
+<div><span class="t">02:59</span>바타지는 요</div>
+<div><span class="t">03:03</span>그리고 x가, 얘를 우리가 점수으로 본다는 거죠</div>
+<div><span class="t">03:06</span>진짜?</div>
+<div><span class="t">03:09</span>네</div>
+<div><span class="t">03:11</span>그렇게 되면 예를 들어서 우리가 벌어질 수</div>
+<div><span class="t">03:17</span>2X를 뺄 수 있겠지?</div>
+<div><span class="t">03:20</span>우리가 편의상</div>
+</div></details>
+<details><summary>② 7분 20초 — textbook vs practical ρ·E·V</summary><div class="tx">
+<div><span class="t">00:00</span>이렇게 되어 있으면 여기는 N,A가 있고 여기는 N,D가 있잖아. 그쵸?</div>
+<div><span class="t">00:04</span>근데 여기는 홀이 있으니까 홀 플러스고 여기는 일렉트로만이 났어.</div>
+<div><span class="t">00:09</span>그래서 나 자체는 마이너스입니다.</div>
+<div><span class="t">00:17</span>얘가 또 마이너스도 많죠? 그럼 전화가 어떻게 돼?</div>
+<div><span class="t">00:20</span>그럼 나가면 이렇게 됩니다</div>
+<div><span class="t">00:22</span>네.</div>
+<div><span class="t">00:26</span>이게 사실 샤파가 이렇게 떨어지는 게 아니고</div>
+<div><span class="t">00:37</span>이 쪽은 뭐냐?</div>
+<div><span class="t">00:40</span>x가 양인 영역은</div>
+<div><span class="t">00:43</span>여기 nd가 아까 말한 것처럼 nd도 플러스고</div>
+<div><span class="t">00:48</span>그럼 반대로 열면 돼, 같이</div>
+<div><span class="t">00:57</span>여러분들 차이 아시겠나요? 지금 제가 뭘 하고 있나요?</div>
+<div><span class="t">01:06</span>뭐라고 하냐면</div>
+<div><span class="t">01:09</span>그냥 우리가 이렇게 교과서에서</div>
+<div><span class="t">01:13</span>단순화에서 그린</div>
+<div><span class="t">01:20</span>이런 피해는 적받 같은 경우에는</div>
+<div><span class="t">01:24</span>전화 공포가 어떻게 됐어요?</div>
+<div><span class="t">01:49</span>원래는 우리가 이렇게 그랬잖아요, 그렇죠?</div>
+<div><span class="t">01:52</span>근데 실제로는 어떻게 하는 거야?</div>
+<div><span class="t">01:55</span>실제로 피엔접합은 이렇게 단순하게 만들 수 있어요.</div>
+<div><span class="t">01:59</span>엔타 위에 퀴를 더 씌우는 형태로 만들어진 것입니다. 실제 전화 부분은 여기가 아니라 이렇게 됩니다.</div>
+<div><span class="t">02:05</span>이해하셨나요?</div>
+<div><span class="t">02:08</span>차이 아시겠죠?</div>
+<div><span class="t">02:11</span>이게 텍스터블</div>
+<div><span class="t">02:14</span>이게 이제 실제 공정에서 이루어진</div>
+<div><span class="t">02:19</span>아, 프리티콘이</div>
+<div><span class="t">02:26</span>됐나요?</div>
+<div><span class="t">02:35</span>여기서 일렉트리 필드 분포를 보면</div>
+<div><span class="t">02:40</span>전원을 전원으로 전달합니다.</div>
+<div><span class="t">02:45</span>상수니까 전부 나면 1차항수</div>
+<div><span class="t">02:49</span>그럼 얘는 어떻게 될까?</div>
+<div><span class="t">02:53</span>2참수</div>
+<div><span class="t">02:57</span>오케이, 멘트</div>
+<div><span class="t">03:03</span>아래로</div>
+<div><span class="t">03:14</span>여기서부터 여러분이 보면</div>
+<div><span class="t">03:17</span>전화 공포 모양이 엄청 다르잖아</div>
+<div><span class="t">03:22</span>근데 이 일렉트리스는 궁금해하는 것 어때요?</div>
+<div><span class="t">03:27</span>모양이 똑같잖아요.</div>
+<div><span class="t">03:32</span>그리고 중형이 뭐예요?</div>
+<div><span class="t">03:37</span>엑스가이</div>
+<div><span class="t">03:40</span>그는 무슨 말이냐면, 우리가 교과서에서는 이걸 계속</div>
+<div><span class="t">03:44</span>예로 해도</div>
+<div><span class="t">03:47</span>그게 상관이 없다고</div>
+<div><span class="t">03:49</span>실제로는 달라요</div>
+<div><span class="t">03:52</span>그러니까 실제는 좀 더 얘랑 가깝잖아 얘랑 가까운데</div>
+<div><span class="t">03:57</span>대략 가까운데...</div>
+<div><span class="t">04:02</span>이렇게 골로</div>
+<div><span class="t">04:04</span>전체 전체 분포가 비슷하면 당연히 포텐셜 분포가 비슷합니다.</div>
+<div><span class="t">04:10</span>이 정도는 비싸요</div>
+<div><span class="t">04:11</span>2차음수로 볼로</div>
+<div><span class="t">04:21</span>이 차음 수니까 이것도 마찬가지로 비슷해요</div>
+<div><span class="t">04:26</span>이것도 이렇게 똑같습니다</div>
+<div><span class="t">04:32</span>똑같이 나옵니다. 기울기가 좀 더 다를 뿐이죠.</div>
+<div><span class="t">04:38</span>기울기가 좀 더 갚아내는 느낌이 들기도 하는데</div>
+<div><span class="t">04:42</span>그러면</div>
+<div><span class="t">04:44</span>전기필드 모양, 포텐셜 모양, 포텐셜 에너지 모양 등이 있습니다.</div>
+<div><span class="t">04:48</span>그래서 에너지맨트 다이어드랩이 우리가 교과사에서 배운 대로 그리고 실제 소재를</div>
+<div><span class="t">04:58</span>요시오빠</div>
+<div><span class="t">05:02</span>홈을 해, 홈</div>
+<div><span class="t">05:06</span>됐죠?</div>
+<div><span class="t">05:08</span>제가 계속 하고 싶은 말은 우리가 교과서에 대응을 해야 되잖아요.</div>
+<div><span class="t">05:19</span>이렇게 한 다음에 이 가운데를 아래로 보려고 위로 보려고</div>
+<div><span class="t">05:24</span>근데 여러분들 의미는 갈 수 있잖아</div>
+<div><span class="t">05:27</span>실제로 열까?</div>
+<div><span class="t">05:39</span>근데 이걸 고려해서 계산을 해도</div>
+<div><span class="t">05:45</span>이 가운데가 조금 더, 조금 더 큼</div>
+<div><span class="t">06:10</span>혹시 집에서 그려본 사람 있어요?</div>
+<div><span class="t">06:18</span>자 그리고 오늘</div>
+<div><span class="t">06:24</span>5장 더</div>
+<div><span class="t">06:29</span>그냥 정신이 안 나요</div>
+<div><span class="t">06:38</span>자</div>
+<div><span class="t">06:43</span>어...</div>
+<div><span class="t">06:49</span>PN 정션만 제대로 알면 정상 다이어드가</div>
+<div><span class="t">06:55</span>네</div>
+<div><span class="t">06:58</span>여러분이 PN정치환을 3가지 경험을 해볼꺼에요</div>
+</div></details>
+<details><summary>③ 58분 41초 — Ch.8: 바이어스 3상황 → 밴드 → minority 분포 → leakage → BJT → ideal diode → non-ideal 2가지</summary><div class="tx">
+<div><span class="t">00:00</span>두 번째는</div>
+<div><span class="t">00:03</span>모두가</div>
+<div><span class="t">00:07</span>그리고 마지막은</div>
+<div><span class="t">00:10</span>월성라이터</div>
+<div><span class="t">00:17</span>자, 그 바이어스가 안 걸린 상태에서</div>
+<div><span class="t">00:21</span>바야스가 안 걸린 상태에서</div>
+<div><span class="t">00:24</span>서벌 리킬을 한 상태에는 어떤 일을 한다고 했습니까? 두 개를 포천하면</div>
+<div><span class="t">00:30</span>오 리이너봐! 엘렉트로이너봐!</div>
+<div><span class="t">00:33</span>정성끈증 후재결합으로</div>
+<div><span class="t">00:40</span>그 경제 주변에 캐리어가</div>
+<div><span class="t">00:45</span>공격증이 나요</div>
+<div><span class="t">00:48</span>여러분 이거 공피스 그릴 때</div>
+<div><span class="t">00:54</span>피쪽이 풀었는지 헷갈리잖아</div>
+<div><span class="t">00:58</span>아, 큰일 나</div>
+<div><span class="t">01:00</span>옛날에 공부할 때 헷갈렸었는데</div>
+<div><span class="t">01:02</span>이거 어떻게 생각하면 되죠?</div>
+<div><span class="t">01:05</span>홀이 플러스니까 당연히 여기는 NA-</div>
+<div><span class="t">01:08</span>그래서 이 부분은 마이너스가 됩니다.</div>
+<div><span class="t">01:13</span>그리고 여기는 일렉트리 마이너스</div>
+<div><span class="t">01:20</span>그리고 여기에</div>
+<div><span class="t">01:31</span>이만큼 장벽이 만들어지게 됩니다</div>
+<div><span class="t">01:36</span>그래서 이 장갑 때문에, 이게 해석을 두 가지로 할 수 있는 거죠.</div>
+<div><span class="t">01:39</span>일렉트리 숄드 때문에 일렉트로니 넘어가려는 것 같고 홀도 이렇게</div>
+<div><span class="t">01:45</span>이 일렉트리 퓨는 데에 힘이 맞고 있다 이렇게 해석을 해도 되고</div>
+<div><span class="t">01:48</span>이 자동차의 자유력 때문에 전기와 홀이 더 이상</div>
+<div><span class="t">01:56</span>이런 상황입니다</div>
+<div><span class="t">02:00</span>자 그래서 우리가</div>
+<div><span class="t">02:11</span>오케이, 샤넬</div>
+<div><span class="t">02:14</span>이라고 했고요</div>
+<div><span class="t">02:16</span>그리고</div>
+<div><span class="t">02:18</span>동시에</div>
+<div><span class="t">02:23</span>그 불리성에 의해</div>
+<div><span class="t">02:28</span>자, 만들어지게 됩니다.</div>
+<div><span class="t">02:37</span>4WD 바이오스를 걸면</div>
+<div><span class="t">02:41</span>공평층과 뷸틴 포텐션은 어떻게 해야 합니까?</div>
+<div><span class="t">02:45</span>포도 바이오스로 가면</div>
+<div><span class="t">02:46</span>주런</div>
+<div><span class="t">02:49</span>공비증은? 얇아져. 줄어들고.</div>
+<div><span class="t">02:53</span>1등 포텐션은?</div>
+<div><span class="t">02:55</span>자 같이</div>
+<div><span class="t">02:58</span>포드 바이오스를 간다는 건, 이것도 참 좋습니다.</div>
+<div><span class="t">03:02</span>처음에 헷갈릴 수 있어요</div>
+<div><span class="t">03:06</span>여기가 클러스 말이야</div>
+<div><span class="t">03:11</span>이게 그냥 파지티브 쪽에 플러스</div>
+<div><span class="t">03:20</span>P타임 중에 플러스, N타임 중에 마이너스</div>
+<div><span class="t">03:24</span>이렇게 가는걸 올라서</div>
+<div><span class="t">03:36</span>3, 4</div>
+<div><span class="t">03:39</span>리버스 바이오스를 건너야 하는 반대로</div>
+<div><span class="t">03:47</span>그냥 베이비 오토기를 할 거야</div>
+<div><span class="t">03:51</span>We applied. Applied vibrancy.</div>
+<div><span class="t">03:58</span>이렇게 했을 때</div>
+<div><span class="t">04:02</span>교체의 포텐셜은</div>
+<div><span class="t">04:06</span>별딧potential은</div>
+<div><span class="t">04:08</span>걸어주는 거에서</div>
+<div><span class="t">04:11</span>무슨 말이냐면 장명이 줄어들어</div>
+<div><span class="t">04:14</span>그리고 Diffraction Rhythm은</div>
+<div><span class="t">04:19</span>W는 줄어들어</div>
+<div><span class="t">04:21</span>반대로 reverse fire가 들어가면 장벽을</div>
+<div><span class="t">04:26</span>VBI</div>
+<div><span class="t">04:31</span>이거 W나?</div>
+<div><span class="t">04:34</span>이걸 이 위에 그림으로 그려보면</div>
+<div><span class="t">04:39</span>어떻게 되냐면 이렇게</div>
+<div><span class="t">04:43</span>그리고 이만큼은 이만큼은</div>
+<div><span class="t">04:51</span>여러분들 이거는 그냥</div>
+<div><span class="t">04:54</span>어떻게 되더라 이렇게 생각하면 안 되고 바로바로 나와야 돼</div>
+<div><span class="t">04:59</span>4도가 있다면 공기층이 줄어들고, 리벌스가 있다면 공기층이 늘어나는 것입니다.</div>
+<div><span class="t">05:05</span>상식</div>
+<div><span class="t">05:07</span>그래서 이건 고민...해서는 안 되는 거예요. 그냥 바로 말해 봐야 돼요.</div>
+<div><span class="t">05:11</span>나중에 목숨 뺄 때 마찬가지고</div>
+<div><span class="t">05:14</span>본필증이 forward bias를 걸면</div>
+<div><span class="t">05:19</span>기존의 썸머 이퀴리그를 사용해서</div>
+<div><span class="t">05:23</span>이 홀이 넘어 갈련된 것에 대해서는</div>
+<div><span class="t">05:30</span>그리고 이 일렉트리 퓨전이 미러되는 퓨전에 의한 폴스가</div>
+<div><span class="t">05:36</span>균형을 맞추고 있습니다. 그죠? 균형을 맞추고 있어요. 그러니까 딜 수준이 더 이상 못 넘어가는 거죠.</div>
+<div><span class="t">05:42</span>엘렉티드 필드가 밀어들어니까 그런데 이 포드 바이오스를 걸게 되면</div>
+<div><span class="t">05:58</span>여기서는 확산이 일렉트리 필드에서 멈춰져 있었어요.</div>
+<div><span class="t">06:05</span>여기서는</div>
+<div><span class="t">06:11</span>그리고 또한 확산을 시작해요</div>
+<div><span class="t">06:14</span>그렇죠?</div>
+<div><span class="t">06:16</span>이걸 또 다르게 해석하면 어떻게 해석할 수 있습니까?</div>
+<div><span class="t">06:20</span>원래는</div>
+<div><span class="t">06:22</span>원래는 별툰 포텐션에도 없었어요</div>
+<div><span class="t">06:24</span>PN을 딱 두 개 만나면</div>
+<div><span class="t">06:28</span>그런데 어떻게 생각하시나요?</div>
+<div><span class="t">06:35</span>공기증 만들어지고</div>
+<div><span class="t">06:40</span>그래서 VBR의 빌딩 포텐셜 규정적으로 맞는 한 가지가 생기는 겁니다.</div>
+<div><span class="t">06:45</span>그럼 얘가 장별이었어.</div>
+<div><span class="t">06:51</span>지금 장벽이 어떻게 되셨어요?</div>
+<div><span class="t">06:54</span>걸어오는 전압에 장벽이 줄었죠.</div>
+<div><span class="t">07:00</span>여러분들 두 가지 멘트에서 얘기를 할 수 있는 거죠</div>
+<div><span class="t">07:03</span>전기장에 막혀있던 디퓨전이 확산, 다시 시작한다고 생각합니다.</div>
+<div><span class="t">07:07</span>그래도 뭐</div>
+<div><span class="t">07:09</span>별댄포텐셜이 줄어들어서 넘어가기</div>
+<div><span class="t">07:15</span>리버스 바이오스는 어때요?</div>
+<div><span class="t">07:20</span>공기층이 늘어나요. 그러면 일렉트리싱도 떠져요.</div>
+<div><span class="t">07:23</span>그러면 원래 확산이 멈춰 있었죠?</div>
+<div><span class="t">07:28</span>근데 일렉트리 필드가 더 세지니까 확산이 어떻게 돼?</div>
+<div><span class="t">07:31</span>전기가 안으로</div>
+<div><span class="t">07:34</span>그리고 장렬침에서 봐도 원래 별팀 포텐션에 장렬이 되고</div>
+<div><span class="t">07:41</span>운동하기 상한게 아닌데</div>
+<div><span class="t">07:43</span>어떻게 됐어요? 장벽이 더해졌죠?</div>
+<div><span class="t">07:47</span>장비들이 더 있기 때문에 얘가</div>
+<div><span class="t">07:51</span>더 운동한다</div>
+<div><span class="t">07:54</span>사실 여기에 일렉터원에 대한 장배의 크기는</div>
+<div><span class="t">08:02</span>이렇게 하면 됩니다</div>
+<div><span class="t">08:11</span>에너지맨도 침묵해</div>
+<div><span class="t">08:31</span>자 이런 상황이었고 이 장배의 크기가 얼마다?</div>
+<div><span class="t">08:36</span>이?</div>
+<div><span class="t">08:40</span>V.I였습니다. 그쵸?</div>
+<div><span class="t">08:42</span>이런 상황에서</div>
+<div><span class="t">09:09</span>MBC 뉴스 김수근입니다.</div>
+<div><span class="t">09:12</span>지금 저는</div>
+<div><span class="t">09:15</span>얘가 이렇게 줄어드는 장벽의 크기가 호워드 바이언트에서 줄어든데 요만큼이었잖아</div>
+<div><span class="t">09:20</span>근데 더 정교하게 그리려면 두 가지가 고려가 더 되어야 돼요</div>
+<div><span class="t">09:25</span>전원을 걸어주면서 아까 뭐가 바뀐다고 했습니까?</div>
+<div><span class="t">09:29</span>공필추</div>
+<div><span class="t">09:37</span>휜다는 건 거기</div>
+<div><span class="t">09:40</span>전화가 존재한다는 말이에요</div>
+<div><span class="t">09:57</span>플랫밴드 전압이라는 모스팻의 대념으로 다 이어지는 건데</div>
+<div><span class="t">10:02</span>에너지맨트 다이어브레임이 휘었다는 것 자체가 멀림이 한다.</div>
+<div><span class="t">10:51</span>수사소환을 하면</div>
+<div><span class="t">10:54</span>리버스 바야소를 밀면</div>
+<div><span class="t">10:59</span>요</div>
+<div><span class="t">11:02</span>더 이렇게</div>
+<div><span class="t">11:05</span>1회 VR에 도움이 되었습니다.</div>
+<div><span class="t">11:08</span>이렇게 장백이 더 늘어납니다</div>
+<div><span class="t">11:11</span>이렇게 생각하는 것처럼</div>
+<div><span class="t">11:14</span>휘어진이 형이 결국 뭘 의미한다?</div>
+<div><span class="t">11:18</span>공부이층</div>
+<div><span class="t">11:22</span>전화양이 존재하는 의견이기 때문입니다.</div>
+<div><span class="t">11:25</span>나중에 모스펙 가서 여러분 뭘 배웠냐면</div>
+<div><span class="t">11:29</span>모습을 딱 처음 만들었는데 얘가 막 밴드가 휘어있어</div>
+<div><span class="t">11:32</span>그럼 여러분들이 이 밴드를 플랫하게 만들어놓고</div>
+<div><span class="t">11:36</span>플랫하게 만들어오면 그 상태</div>
+<div><span class="t">11:43</span>그건 나중에 뒤에 배울 거고</div>
+<div><span class="t">11:45</span>어쨌든 에너지 밴드 나야 돼</div>
+<div><span class="t">11:54</span>자지가 중요하고</div>
+<div><span class="t">11:58</span>차를 이어서</div>
+<div><span class="t">12:03</span>엘렉트리 필드에 의해서 포텐셜, 그리고 포텐셜 에너지</div>
+<div><span class="t">13:25</span>마이널리티, 체리어, 분포</div>
+<div><span class="t">13:29</span>그 때 그 면은 뭐...</div>
+<div><span class="t">13:36</span>마이너리티는</div>
+<div><span class="t">13:41</span>소수잖아요 소수 소수</div>
+<div><span class="t">13:45</span>그래서 마이노리티, 메조리티</div>
+<div><span class="t">13:51</span>뭐가 더 중요한 거야?</div>
+<div><span class="t">13:53</span>너가 더 중요해.</div>
+<div><span class="t">13:57</span>그럼 안녕</div>
+<div><span class="t">13:58</span>그런데 이 반도체 소장에서는 마이노리 캐리어가 너무</div>
+<div><span class="t">14:06</span>그런데 이게...</div>
+<div><span class="t">14:10</span>특히나 피해 정상에서는 마이건이</div>
+<div><span class="t">14:13</span>otchler는 지금 expand이 후기있어질때 타는것으로 기선을ued apply 그리다, BECAUSE 게이�ığın hy price at the moment must be girlfriend.</div>
+<div><span class="t">14:14</span>마이너리 캐리어는 무시하지 않습니다.</div>
+<div><span class="t">14:18</span>이번 경우</div>
+<div><span class="t">14:21</span>전용경제에서 전용을 어떻게 하는지</div>
+<div><span class="t">14:23</span>바이였을 가해죠.</div>
+<div><span class="t">14:27</span>일렉트로니 넘어가 맞죠?</div>
+<div><span class="t">14:29</span>홀은 넘어가면 뭐가 됩니다?</div>
+<div><span class="t">14:34</span>N타입의 홀은 뭐예요?</div>
+<div><span class="t">14:37</span>마이너지 캐리어</div>
+<div><span class="t">14:39</span>그런데 넘어갈 때는 뭐야?</div>
+<div><span class="t">14:41</span>전기전기</div>
+<div><span class="t">14:58</span>그래서 마이너리티 케어가 양이 적다고 무시하지 않으셨는데</div>
+<div><span class="t">15:02</span>시작은 매절이 되었다</div>
+<div><span class="t">15:07</span>그리고 두 번째가</div>
+<div><span class="t">15:09</span>결국 전료를 만드는 것은 둘 중에 하나입니다.</div>
+<div><span class="t">15:15</span>전율을 만드는</div>
+<div><span class="t">15:20</span>두 가지 요인, 뭡니까? 말해볼 수 있는 학생</div>
+<div><span class="t">15:25</span>우리 피하자면 다 세탁화야</div>
+<div><span class="t">15:29</span>감사합니다.</div>
+<div><span class="t">15:30</span>뭐야?</div>
+<div><span class="t">15:32</span>전류를 만든 두 가지</div>
+<div><span class="t">15:34</span>자, 결과가... 아, 제가 질문을 너무...</div>
+<div><span class="t">15:38</span>아, 제너로 해야겠나?</div>
+<div><span class="t">15:42</span>근데 걔들을 움직이게 만드는 드라이빙 펄스 두 가지</div>
+<div><span class="t">15:46</span>뭐요?</div>
+<div><span class="t">15:50</span>드리프트 랍, 퓨전</div>
+<div><span class="t">15:53</span>전기필드에 의한 농도 차이의 디퓨전</div>
+<div><span class="t">15:58</span>그래서 농도차가 발산하면</div>
+<div><span class="t">16:05</span>그렇기 때문에 변화량이 미비합니다.</div>
+<div><span class="t">16:13</span>지금 볼 것만 있으면</div>
+<div><span class="t">16:34</span>이건 캐리어 컨센트레이저 입니다</div>
+<div><span class="t">16:45</span>공필층이 이만큼</div>
+<div><span class="t">16:49</span>이거는 공기증이 더 작겠죠?</div>
+<div><span class="t">17:02</span>여기는 P형, 여기는 N형입니다.</div>
+<div><span class="t">17:06</span>사실 그...</div>
+<div><span class="t">17:09</span>매조리티랑 마인드캐리어</div>
+<div><span class="t">17:13</span>예를 들어서 10-16승</div>
+<div><span class="t">17:17</span>얘는 10일 15승이라고 해볼게요.</div>
+<div><span class="t">17:20</span>얘도 마찬가지로 똑같은거죠</div>
+<div><span class="t">17:26</span>p타일 홀럼도는</div>
+<div><span class="t">17:30</span>10월 16일에 그럴 수 있겠죠</div>
+<div><span class="t">17:34</span>엔타이버 홀록 엔플로농가</div>
+<div><span class="t">17:39</span>10은 15</div>
+<div><span class="t">17:42</span>이렇게 그릴 수 있습니다. 맞죠?</div>
+<div><span class="t">17:46</span>공기층 내부는 전환할 게 없다</div>
+<div><span class="t">17:50</span>응? 차지하게?</div>
+<div><span class="t">17:51</span>그... 일렉트로니나 홀이 있다 없다? 없다 고무중 내면은 없습니다</div>
+<div><span class="t">17:57</span>엉덩이를 쌓는 거</div>
+<div><span class="t">18:00</span>여기서</div>
+<div><span class="t">18:02</span>마이너리티 캐리어를 같이 그려봅시다</div>
+<div><span class="t">18:06</span>자, P 타임, 마요네즈 캐릭터가 뭡니까?</div>
+<div><span class="t">18:11</span>전자동도 얼마에요?</div>
+<div><span class="t">18:15</span>네, 잘했어요</div>
+<div><span class="t">18:23</span>엔타이비는 호르몬도입니다.</div>
+<div><span class="t">18:28</span>시메?</div>
+<div><span class="t">18:31</span>PN은 NI2, C에 의해서</div>
+<div><span class="t">18:35</span>얘는 조금 더 위에 들여야죠.</div>
+<div><span class="t">18:37</span>맞나요?</div>
+<div><span class="t">18:42</span>이렇게 드렸습니다</div>
+<div><span class="t">18:45</span>이 상황에서</div>
+<div><span class="t">18:48</span>이게 서바이리 킬로드 상황이에요</div>
+<div><span class="t">18:51</span>4도에서</div>
+<div><span class="t">18:59</span>시도에서 왔어</div>
+<div><span class="t">19:13</span>자, ForWardVirus 걸면 무슨 일이 벌어진다는 거예요?</div>
+<div><span class="t">19:19</span>여기는 너미, 여기는 너미 어떻게 된다?</div>
+<div><span class="t">19:23</span>이쪽으로 넘어가기 시작한다</div>
+<div><span class="t">19:30</span>얘는 여기서 넘어간 놈이 있기 시작을 합니다.</div>
+<div><span class="t">19:38</span>자 그럼 얘가 넘어가는데 몇 개 넘어갈 것 같아요?</div>
+<div><span class="t">19:46</span>이렇게 하는 거가</div>
+<div><span class="t">19:48</span>그거는 그때 그때 다르죠 장배의 크기, 걸어준 바이오스, 그가 예상</div>
+<div><span class="t">19:53</span>그런데 어쨌든 요만한 애가 넘어가면</div>
+<div><span class="t">19:58</span>이게 마치 산을 오르는 거랑 똑같잖아요?</div>
+<div><span class="t">20:00</span>이렇게 한라산이 있고 밑에 학생들이 1000명이 출발을 해</div>
+<div><span class="t">20:06</span>그럼 1000명이 출발하더라도 도달하는 사람은 체력적으로 몇만원 도달할꺼 아니야? 그럼 비슷한거죠. 여기서 또 장벽을 넘어서 와야 되기 때문에</div>
+<div><span class="t">20:13</span>요 중에 1분 만에 도착을 하겠죠</div>
+<div><span class="t">20:15</span>더 차게 해서 얘가 요만큼 이렇게 더해지게 됩니다</div>
+<div><span class="t">20:21</span>이만큼 출발할 때가 이만큼 떨어졌어</div>
+<div><span class="t">20:25</span>이 지점에</div>
+<div><span class="t">20:28</span>엑스 엔딩한 지점에 요만큼 도달했다고 칩시다. 그쵸?</div>
+<div><span class="t">20:33</span>그럼 그때부터는 어떤 일이 벌어집니까?</div>
+<div><span class="t">20:39</span>여기 일렉트로 마찬가지로</div>
+<div><span class="t">20:54</span>그래서 16승에서 일부가 이만큼 도착하고</div>
+<div><span class="t">20:58</span>15세 생각해 주시면 효과가 이만큼 좋잖아요</div>
+<div><span class="t">21:00</span>자, 그럼 생각을 해보면 보세요</div>
+<div><span class="t">21:03</span>이렇게 넘어갔는데 얘는 워낙 많아</div>
+<div><span class="t">21:10</span>그런데 이 선수는 10월 16승에서 1만 1만 100만 분 넘었다고 쳤습니다.</div>
+<div><span class="t">21:16</span>10에 10승이 넘어갑니다.</div>
+<div><span class="t">21:22</span>10만배가 큰 애가 들어온 거야</div>
+<div><span class="t">21:25</span>그럼 이 마이널리티 캐릭터의 입장에서</div>
+<div><span class="t">21:29</span>그리고 캐리어 농도 차이가 어마어마하게 늘어나죠</div>
+<div><span class="t">21:32</span>농도 차이가 많이 벌어지는데 레저리티 캐릭터 입장에서는 그게 그거란 말이죠</div>
+<div><span class="t">21:40</span>마찬가지입니다.</div>
+<div><span class="t">21:46</span>100만 분의 1만 넘어가더라고</div>
+<div><span class="t">21:52</span>농도 차이가 크고 전류를 만들 수 있습니다.</div>
+<div><span class="t">21:56</span>여기 도착하겠지?</div>
+<div><span class="t">22:02</span>재결합이 일어나겠죠?</div>
+<div><span class="t">22:06</span>여기서 일렉트로를 넘어가고</div>
+<div><span class="t">22:22</span>그 와중에 콜라 트랩 속도가</div>
+<div><span class="t">22:27</span>그거를 풀면 얘가 이렇게 익스포니셜하게 농도가 강하게</div>
+<div><span class="t">22:47</span>이렇게 된다는 걸 알 수가</div>
+<div><span class="t">22:53</span>이렇게 된다는 걸 알 수가 있다</div>
+<div><span class="t">22:58</span>이게 의미하는 게 뭘까요?</div>
+<div><span class="t">23:04</span>자 보시면, 넘어가서</div>
+<div><span class="t">23:08</span>여기서 잘 겨라 공격당하고 또 넘어가서 잘 겨라</div>
+<div><span class="t">23:11</span>재결합하다가 어느 특정 지점에 가게 되면 더 이상</div>
+<div><span class="t">23:15</span>이거 넣은 거 내가 할 수 없다</div>
+<div><span class="t">23:22</span>그래서 이 forward-에 의해서 이렇게 되는데</div>
+<div><span class="t">23:28</span>크기가 커지면 당연히</div>
+<div><span class="t">23:39</span>1번과 2번이 차이가 없을 때</div>
+<div><span class="t">23:47</span>일반은 캐리어 농도의 변화가 있습니다.</div>
+<div><span class="t">23:52</span>이번 캐리어 공동의 변화가 있어요</div>
+<div><span class="t">23:56</span>무슨 말이냐? 캐리어 농도에 변화가 있습니다.</div>
+<div><span class="t">24:05</span>특히나?</div>
+<div><span class="t">24:07</span>항상 디투런트 하는 데가 좋네요</div>
+<div><span class="t">24:18</span>안녕</div>
+<div><span class="t">24:29</span>이렇게 DfcxNg</div>
+<div><span class="t">24:34</span>전용 과정이 있다면 폴에 대해서는 반대가 됩니다.</div>
+<div><span class="t">24:40</span>그렇다면 전체 전류는 얘랑 얘에 의해서 결정이 된다고 봐도 됩니다.</div>
+<div><span class="t">24:46</span>그럼 무슨 말이냐면</div>
+<div><span class="t">24:48</span>이건 사실 모든 반도체 선정이 공통입니다</div>
+<div><span class="t">25:06</span>이렇게 그래디언트가 있다.</div>
+<div><span class="t">25:17</span>그럼 얘 같은 경우는 어떨까?</div>
+<div><span class="t">25:21</span>리버스 파이언스는 뭐지?</div>
+<div><span class="t">25:23</span>레저르트 케이와는 그냥 똑같이 10에 16</div>
+<div><span class="t">25:27</span>10에 15승</div>
+<div><span class="t">25:35</span>하...</div>
+<div><span class="t">25:41</span>이렇게 그림이 되는데</div>
+<div><span class="t">25:44</span>이렇게 그리면 뭐랑 똑같아요?</div>
+<div><span class="t">25:47</span>뭐랑 똑같아? 1번이랑 똑같지? 1번이랑 3번이랑 뭐가 다를까요?</div>
+<div><span class="t">25:53</span>마이너리트 캐리어 분포가 조금 달라집니다. 어떻게 달라질 것 같아요?</div>
+<div><span class="t">26:00</span>1번과 3번의 차이를 생각하면 조금 추측이...</div>
+<div><span class="t">26:08</span>뭐, 포워드가 위로 꺾였으니까</div>
+<div><span class="t">26:11</span>원래는 이만큼 있었는데 여기서 넘어가면</div>
+<div><span class="t">26:21</span>근데 얘 같은 경우는</div>
+<div><span class="t">26:25</span>없죠? 그러니까 여기 올라갈 당연히 없고</div>
+<div><span class="t">26:29</span>그러면 1번이랑 똑같이 그리면 될 것 같죠?</div>
+<div><span class="t">26:34</span>그러니까 한 가지 다른 게 있습니다.</div>
+<div><span class="t">26:37</span>뭘까?</div>
+<div><span class="t">26:43</span>한가지 다른게 뭐냐면, 일렉트리 필드에 세게</div>
+<div><span class="t">26:50</span>이게 무슨 말이냐?</div>
+<div><span class="t">26:56</span>3번이 경우는 전기필드가 어때요?</div>
+<div><span class="t">27:09</span>홀 이쪽으로 쉬어봐요</div>
+<div><span class="t">27:13</span>이 끝에 있는 애들 있잖아요</div>
+<div><span class="t">27:18</span>그럼 어떻게 되냐? 리버스 바이어스가 걸렸을 때는</div>
+<div><span class="t">27:25</span>이 끝에가 조금 이렇게 줄어들어요</div>
+<div><span class="t">27:40</span>너무 필드가 세니까</div>
+<div><span class="t">27:43</span>휠이 세니까 끝에 있는 애들이 끝에 존재할 수가 없어</div>
+<div><span class="t">27:46</span>이 경우는 괜찮은데, 이 경우는 이렇게 대동대로</div>
+<div><span class="t">27:51</span>남 떨어지기 급하다고 생각합니다</div>
+<div><span class="t">27:56</span>얘는 괜찮은데 얘는 아니라는</div>
+<div><span class="t">28:00</span>에너지 밴드 상으로도 극혐하게 되어 있고, 엘렉트리 필드에 힘 상으로도 세니까</div>
+<div><span class="t">28:05</span>그때 캐리어가 존재할 수가 없는 영향이 되기 때문에</div>
+<div><span class="t">28:10</span>그럼</div>
+<div><span class="t">28:14</span>자 그럼 제가 뭐라 했어요? 캐리어 컨설터레이션을 그렸을 때</div>
+<div><span class="t">28:20</span>일정하지 않고 변화가 있으면 항상 뭐가 있어야 할지 모르겠어요.</div>
+<div><span class="t">28:23</span>그럼 이건 전류가 있다는 건 없다는 건가?</div>
+<div><span class="t">28:27</span>있다 근데 우린 졸려 안 했는데</div>
+<div><span class="t">28:30</span>이걸 써야 습득</div>
+<div><span class="t">28:33</span>캐리가 없으니까?</div>
+<div><span class="t">28:39</span>이거는 전류가 있어요</div>
+<div><span class="t">28:44</span>이거는 커머너이 통하는 거예요. 무조건 캐리어 농도 그렸는데 변화량이 딱 거긴 절과 있다는 거예요.</div>
+<div><span class="t">28:50</span>근데 뭐가 문제야?</div>
+<div><span class="t">28:52</span>크기가</div>
+<div><span class="t">28:54</span>요건 전류가 있는데 얘만큼 크지는 않아</div>
+<div><span class="t">28:59</span>얘는 전류가 엄청나게 작은 전류입니다. 제가 지금 여기 그림을</div>
+<div><span class="t">29:03</span>그림을 이렇게 그려서 그렇지 실제로는 얘가 훨씬 더 급격하고 얘는</div>
+<div><span class="t">29:09</span>미미해 끝부분을 맞이할 때</div>
+<div><span class="t">29:13</span>그래서 얘는 전류가 존재합니다. 그럼 무슨 전류냐?</div>
+<div><span class="t">29:18</span>여기서 여러분도 알다시피</div>
+<div><span class="t">29:21</span>이런 것 알지?</div>
+<div><span class="t">29:23</span>다이오드 곡선이</div>
+<div><span class="t">29:25</span>V랑 I 이렇게 그렸을 때, 이 forward 쪽에서는 exponential하게 이렇게</div>
+<div><span class="t">29:31</span>증가하는 다이어드 곡선이 있고</div>
+<div><span class="t">29:35</span>리벌스는 전율이 안을라이터입니다.</div>
+<div><span class="t">29:40</span>근데 실제로 아이디어 스위치라면 그렇겠지만 얘는 조금</div>
+<div><span class="t">29:45</span>맞죠? 요 조그만 흘리는 게 어디서 나는 거다?</div>
+<div><span class="t">29:50</span>팍 올리는게 요거 때문이에요</div>
+<div><span class="t">29:54</span>다시 한 번?</div>
+<div><span class="t">29:57</span>여기</div>
+<div><span class="t">30:00</span>캐리어 아래 대단한 자체가 전료가 하름나는 거고 그 말은</div>
+<div><span class="t">30:11</span>그래서 이걸 뭐라고 합니다?</div>
+<div><span class="t">30:15</span>이걸 이제 뭐 더 정확한 말로는 리벌스</div>
+<div><span class="t">30:22</span>쉽게 얘기하면 리키지 카드</div>
+<div><span class="t">30:27</span>아르바이트는</div>
+<div><span class="t">30:34</span>감사합니다.</div>
+<div><span class="t">30:37</span>고소한 섭취가 되었습니다.</div>
+<div><span class="t">30:49</span>자</div>
+<div><span class="t">30:55</span>여기에서 우리가 마이너리 캐리어 분포를 말해서</div>
+<div><span class="t">31:00</span>그럼 여러분들이 제가 이거 마이너 리켓의 분포를</div>
+<div><span class="t">31:06</span>BJT를 이해해 주세요</div>
+<div><span class="t">31:10</span>BJ들 이용 이해를 할 수 있습니다.</div>
+<div><span class="t">31:13</span>비제이트 혹시 전자를 어디까지 빼요?</div>
+<div><span class="t">31:17</span>아예 안 배워요?</div>
+<div><span class="t">31:20</span>사실 BJT가 예전에는 학교에서 많이 배웠었는데</div>
+<div><span class="t">31:27</span>직접화에는 모스펠</div>
+<div><span class="t">31:31</span>VJ가 그...</div>
+<div><span class="t">31:34</span>역할을 많이 상시했죠</div>
+<div><span class="t">31:38</span>그래서 BJ들 학교에서 갈수록 안 배우긴 하는데</div>
+<div><span class="t">31:54</span>이게 BJT인데</div>
+<div><span class="t">31:59</span>BJT는</div>
+<div><span class="t">32:02</span>단자가 3개입니다.</div>
+<div><span class="t">32:05</span>이렇게 하면 돼요</div>
+<div><span class="t">32:07</span>이게 다른 부분은</div>
+<div><span class="t">32:13</span>이런 모양이잖아요? 그자, 이런 모양이잖아요?</div>
+<div><span class="t">32:17</span>그러면 다이어드 소개가</div>
+<div><span class="t">32:20</span>서로 맞아보고 있는다</div>
+<div><span class="t">32:23</span>그러면 얘가 전류가 흐를 수가 있어요?</div>
+<div><span class="t">32:28</span>주관당겨놔도 전류가 안 흘러</div>
+<div><span class="t">32:32</span>근데 얘가 흐르는 방법이 딱 한 가지가 있는데</div>
+<div><span class="t">32:35</span>다이어드1, 다이어드2가 있잖아요?</div>
+<div><span class="t">32:39</span>여기서 다이어드 1이 포드 1</div>
+<div><span class="t">32:44</span>이가 포어되어 있고, 리퍼링도 있습니다.</div>
+<div><span class="t">32:49</span>4가지?</div>
+<div><span class="t">33:10</span>유일하게 이게 전류가 흐를 수 있는 게 뭐냐면</div>
+<div><span class="t">33:14</span>이쪽은 FW를 갖고</div>
+<div><span class="t">33:16</span>이쪽은 리벌스를 걸면</div>
+<div><span class="t">33:18</span>전유가 흐를 수 있어요.</div>
+<div><span class="t">33:22</span>4가지 조합 중에서 근데 그게 결국 이 마이너리티 캐리어 중프로부터</div>
+<div><span class="t">33:29</span>마이너이 캐리어</div>
+<div><span class="t">33:36</span>자, 후워드 건담 말은 이런 말이야</div>
+<div><span class="t">33:40</span>리버스 한단 말은?</div>
+<div><span class="t">33:41</span>이런 말이죠</div>
+<div><span class="t">33:44</span>한 번 더</div>
+<div><span class="t">33:45</span>이것도 숫자로 해야겠다</div>
+<div><span class="t">34:00</span>P 말고 N으로 합시다. MBN이 당성.</div>
+<div><span class="t">34:11</span>이렇게 됐을 때, 여기는 forward volume</div>
+<div><span class="t">34:17</span>그러니까 또 펜페인하면 반대로 해야죠</div>
+<div><span class="t">34:23</span>그래서 이쪽은 포드</div>
+<div><span class="t">34:29</span>그죠?</div>
+<div><span class="t">34:32</span>이게 MPN BJ입니다</div>
+<div><span class="t">34:37</span>물론 PMP, BJG도 있고</div>
+<div><span class="t">34:40</span>여러분들 보시다시피</div>
+<div><span class="t">34:45</span>이 BJT는 MPN이라고 하면 뭔가</div>
+<div><span class="t">34:50</span>좌우가 균형이 맞는 것처럼 보이는데, 그쵸?</div>
+<div><span class="t">34:53</span>균형이 맞는 것 같습니다. 실제로는 균형이 어떻다?</div>
+<div><span class="t">34:56</span>안 맞으세요?</div>
+<div><span class="t">34:59</span>여기가 forward reverse</div>
+<div><span class="t">35:04</span>이 그림을 이렇게 그릴 수 있어야 돼요</div>
+<div><span class="t">35:07</span>그는 그는 그는 그는 그는</div>
+<div><span class="t">35:14</span>그리고 이 그릴때도 디테일이</div>
+<div><span class="t">35:18</span>농도가 높은 쪽에 공기층이 많이 가요?</div>
+<div><span class="t">35:32</span>리벌스 부분은 공기층이 늘어나 줄어져</div>
+<div><span class="t">35:38</span>네.</div>
+<div><span class="t">35:40</span>늘어나자, 늘어나면 돼</div>
+<div><span class="t">35:43</span>피플리 더 엔쪽으로 공격을 더</div>
+<div><span class="t">35:47</span>말하지 말아야지</div>
+<div><span class="t">35:53</span>이렇게 되죠?</div>
+<div><span class="t">35:59</span>마이너이트 캐리어 분포를 제가 또 내려놓은</div>
+<div><span class="t">36:03</span>QN 접홈법에서 마이너리티 퀸이</div>
+<div><span class="t">36:08</span>그 부분을 가지고 BJD 동작 원리를 살펴보자는 거예요</div>
+<div><span class="t">36:12</span>네.</div>
+<div><span class="t">36:23</span>자, 여기 봉진고</div>
+<div><span class="t">36:26</span>그럼 캐리어 마이노리티 캐리어 농동화 보면은</div>
+<div><span class="t">36:30</span>여기는</div>
+<div><span class="t">36:34</span>10의 19선은 1N 넘는거죠?</div>
+<div><span class="t">36:41</span>18승 하면</div>
+<div><span class="t">36:43</span>심의 매승이에요</div>
+<div><span class="t">36:46</span>이 정도가 홀이 있는 거죠?</div>
+<div><span class="t">36:52</span>피플은 16승입니다.</div>
+<div><span class="t">36:56</span>이런 이쯤에 10에 16성 있을 거고</div>
+<div><span class="t">37:00</span>시벤</div>
+<div><span class="t">37:02</span>사슴, 얘는 반대로 얘가</div>
+<div><span class="t">37:06</span>그쵸? 맞나? 그리고 n을 10에 15선으로 뭐 이렇게 한다면</div>
+<div><span class="t">37:13</span>심심해서</div>
+<div><span class="t">37:16</span>네, 잘 됐습니다</div>
+<div><span class="t">37:19</span>그리고 여기가</div>
+<div><span class="t">37:24</span>기본 대 기본으로 이큐릭으로 상태로 그리게 되죠?</div>
+<div><span class="t">37:30</span>맞나요? 근데 이 상태에서 우리가 뭘 반영이 하면 돼요?</div>
+<div><span class="t">37:33</span>포도 바이오스, 리버스 바이오스를 반영하면 되죠</div>
+<div><span class="t">37:38</span>그래서 사실 이 메저리티 캐릭터가</div>
+<div><span class="t">37:57</span>여기는 리버스인가 어떻게 돼?</div>
+<div><span class="t">38:02</span>가자</div>
+<div><span class="t">38:05</span>이 상태에서는 전류를...</div>
+<div><span class="t">38:07</span>그러시다고</div>
+<div><span class="t">38:11</span>이 상태에서는 전용이 어떻게 해야 되냐면</div>
+<div><span class="t">38:17</span>이렇게 하고</div>
+<div><span class="t">38:20</span>왜? 왜 그랬습니까?</div>
+<div><span class="t">38:23</span>왜 그러냐면 지금 이쪽에서 발생하는 전류의 크기는</div>
+<div><span class="t">38:28</span>요 그래디언트 더하기 요 그래디언트 맞죠?</div>
+<div><span class="t">38:33</span>전류의 세기가 쎕니다 근데 이쪽에서 발생하는 전류는 어때?</div>
+<div><span class="t">38:37</span>이거 리키지 프런트밖에 없잖아. 그쵸? 리버스와 섹시 프런트밖에 없잖아.</div>
+<div><span class="t">38:42</span>그러면 예전류의 크기랑 예전류의 크기가 같지 않은 이상 이쪽으로 전류가 흐르지 않아요.</div>
+<div><span class="t">38:49</span>징렬장렬에서, 여러분들 징렬장렬이면 항상 전력 각도가 되잖아</div>
+<div><span class="t">38:54</span>그런데 전력이 같지 않기 때문에</div>
+<div><span class="t">38:58</span>전류가 여기 와서 이렇게 닭을</div>
+<div><span class="t">39:08</span>Q. B.J.T가 동작할 수 있는 방법이 있나요?</div>
+<div><span class="t">39:25</span>이 상태에서는 전력가...</div>
+<div><span class="t">39:28</span>Q. 전기전기 전기가 흐를 수 있을까요?</div>
+<div><span class="t">39:36</span>응두? 응두사과가?</div>
+<div><span class="t">39:41</span>눈도 다 쑤면 잘하면 될 것 같다</div>
+<div><span class="t">39:44</span>또 의견 있습니까?</div>
+<div><span class="t">39:51</span>자, 자, 자</div>
+<div><span class="t">40:00</span>어, 몸 비슷해요</div>
+<div><span class="t">40:03</span>유사하게 나왔습니다.</div>
+<div><span class="t">40:07</span>정리해 봅시다. 이 뭐냐면, 보세요. 기본적으로 여기에서 전류가 적게 흐르는 게 이거거든요.</div>
+<div><span class="t">40:13</span>농도 차가 나는 게 이거밖에 없으니까. 그쵸? 이게 다른 말이야.</div>
+<div><span class="t">40:18</span>어떤 느낌이 되냐면</div>
+<div><span class="t">40:22</span>일렉트로이 넘어왔는데 여기서 제갈하면 다 없어져. 그쵸?</div>
+<div><span class="t">40:26</span>다 없어지고 원래 평요 상태에 마이널리 캐리어 농구만 입다가</div>
+<div><span class="t">40:33</span>그렇기 때문에 얘가 만드는 전류는 얼마 안 돼요</div>
+<div><span class="t">40:38</span>어? 얘가 다 떨어지기 전에 얘를 만나면 어떻게 될까요?</div>
+<div><span class="t">40:44</span>지금 얘가 왜 끌려간다 했어요? 요게 리벌스바였으니까 엄청난 힘이 세가지고 끝에</div>
+<div><span class="t">40:50</span>근데 흘러가잖아</div>
+<div><span class="t">40:51</span>끝에 애들이 끊어가고 개의해서 전류가 조금이라도 만들어지는 건데</div>
+<div><span class="t">40:56</span>얘는 이쪽에서 많이 넘어갔는데</div>
+<div><span class="t">40:59</span>그래서 이 두 개가 별이기 때문에</div>
+<div><span class="t">41:04</span>이게 만약에 줄어들어 그럼 어떻게 돼요?</div>
+<div><span class="t">41:08</span>너무 와서 다 없어지기 전에 예를 만나면</div>
+<div><span class="t">41:12</span>너 먹은 애가 이쪽으로</div>
+<div><span class="t">41:15</span>이해되시나요?</div>
+<div><span class="t">41:21</span>이걸 베이스라고 하는데, 이 베이스 사용을 좁게 만들어요.</div>
+<div><span class="t">41:25</span>자, 레이스가 좁게 만들면 어떻게 됩니다? 어떻게 되냐면, 이걸, 얘가 이렇게 옮겨지겠지</div>
+<div><span class="t">41:33</span>이렇게 돼요</div>
+<div><span class="t">41:35</span>더 옮겼어. 그럼 요렇게 되는 거지.</div>
+<div><span class="t">41:37</span>안 돼?</div>
+<div><span class="t">41:39</span>더 좁게 만들면 이렇게 되겠지</div>
+<div><span class="t">41:44</span>무슨 말이냐?</div>
+<div><span class="t">41:46</span>너무 온 애가 다 없어지기 전에 엄청나게 힘이 센 영역을 만나게 되면</div>
+<div><span class="t">41:53</span>너무 많은 사람들이 바로 다 여기</div>
+<div><span class="t">41:58</span>그럼 마이노리키리의 궁북은 어떻게 되냐면</div>
+<div><span class="t">42:10</span>여기서 이렇게 줄어들잖아요? 그러면 이거 두 개가 합쳐져가지고</div>
+<div><span class="t">42:19</span>이렇게 됩니다</div>
+<div><span class="t">42:35</span>여기서 이렇게 넘어오는 애가 있고</div>
+<div><span class="t">42:42</span>이 두 가지를 동시에 만족시키려면 얘가 이렇게 돼요.</div>
+<div><span class="t">42:47</span>바운드가 강해진 때문에</div>
+<div><span class="t">42:49</span>그래서 BJT의 베이스를 짧게 만들면 마이너티 캐리어 분보가 이렇게 됩니다.</div>
+<div><span class="t">42:56</span>그럼 여기에도 농도 차있고 여기도 농도 차있자 그럼 여기 농도 차가 크잖아</div>
+<div><span class="t">43:04</span>이게 되시나요?</div>
+<div><span class="t">43:07</span>그러면 이 베이스, 이 옆 사람 뭐냐?</div>
+<div><span class="t">43:10</span>여기에서 홀이 넘어가줘야</div>
+<div><span class="t">43:15</span>일렉트로도 넘어옵니다. 그리고 그 넘어온 일렉트로는 여기로 가는 게 아닌가?</div>
+<div><span class="t">43:19</span>이해 되시나요? 근데 만약에 허리 안 넘으면 어떻게 되나요?</div>
+<div><span class="t">43:24</span>홀이 안넘어가면 일렉트로도 못돼</div>
+<div><span class="t">43:27</span>이곳은 전국의 한 대가가 있습니다.</div>
+<div><span class="t">43:34</span>그래서 이 조그만 전력이</div>
+<div><span class="t">43:42</span>그래서 BJT를 Count Control, Current, and Soc을 얘기하잖아요</div>
+<div><span class="t">43:49</span>전압에 의해서 전류를 조정하는 것입니다.</div>
+<div><span class="t">43:55</span>근데 BJT는 이 전류를 이용해서</div>
+<div><span class="t">44:04</span>사실 DJTI를 정확히 다 하려면 수식적으로 많이 들어갈 수 있어요.</div>
+<div><span class="t">44:09</span>그 다음에</div>
+<div><span class="t">44:13</span>기계가 오면 맞습니다.</div>
+<div><span class="t">44:16</span>그림을 여러분들께 말해보고 싶게 해볼까요?</div>
+<div><span class="t">44:27</span>여기가 렉스러워 한다면</div>
+<div><span class="t">44:31</span>원래 마이너리티 캐릭터가 캐릭터가 제일 높으니까</div>
+<div><span class="t">44:36</span>역수놀이를 골라야 겠다.</div>
+<div><span class="t">44:39</span>반대쪽은 옆으로 올라가야 하고, 그리고 여기서 이렇게 내려가는 게 있고,</div>
+<div><span class="t">44:44</span>그리고</div>
+<div><span class="t">44:48</span>여러가지가 있고, 여기서 커피는</div>
+<div><span class="t">44:52</span>그죠? 요 폭을 줄이는</div>
+<div><span class="t">44:56</span>줄이며 얘가 어떻게 된다면 이렇게</div>
+<div><span class="t">44:58</span>그냥 하나를 협찬해서 그릴 수 있다는 거죠.</div>
+<div><span class="t">45:05</span>그래서 이게 마이너시키리어 공포가 대단합니다.</div>
+<div><span class="t">45:13</span>그래서 조금 들어오는 홀은 다 여기로 넘어가는 거구요</div>
+<div><span class="t">45:18</span>여기에서</div>
+<div><span class="t">45:20</span>이 전류를 베이스 전류로 컷</div>
+<div><span class="t">45:26</span>이게 BJ디입니다</div>
+<div><span class="t">45:30</span>네</div>
+<div><span class="t">45:43</span>자</div>
+<div><span class="t">46:28</span>전료식을 구할 수 있습니다.</div>
+<div><span class="t">46:36</span>아까 제가 얘기한 것처럼 마이너리티 캐리어 궁금한게</div>
+<div><span class="t">46:39</span>이 부분에 대해서 디퓨전 커런트를 대상하면</div>
+<div><span class="t">46:45</span>이런 소식을 얻을 수가 있습니다.</div>
+<div><span class="t">46:51</span>강의에 있어요.</div>
+<div><span class="t">46:52</span>js가</div>
+<div><span class="t">47:05</span>이렇게 해서 얘를 우리가</div>
+<div><span class="t">47:08</span>세트리션 커넥터가 불었습니다.</div>
+<div><span class="t">47:12</span>이불 서바이너스</div>
+<div><span class="t">47:22</span>그리고 이제 그래프를 그리게 되면</div>
+<div><span class="t">47:38</span>이런 그래프를 얻을 수가 있었습니다.</div>
+<div><span class="t">47:42</span>이게 Typical Diode Grip</div>
+<div><span class="t">47:46</span>네.</div>
+<div><span class="t">47:50</span>이 그래프에서 VA가 이 끔으로 많이 간다고 치면</div>
+<div><span class="t">47:57</span>얘를 무시할 수 있잖아요</div>
+<div><span class="t">47:59</span>이렇게 세트로이셔너를 볼 수가 있습니다.</div>
+<div><span class="t">48:04</span>이게 우리가 유도하는 수식이에요.</div>
+<div><span class="t">48:09</span>유도, 비스전 카러트를 통해서 유도한 뜻입니다.</div>
+<div><span class="t">48:17</span>요동안 쓰시게 이렇게 되는데, 일단 시험 문제 제가 많이 되는 부분 중에서</div>
+<div><span class="t">48:23</span>아, 이건 어떤 아이디어를 일정하게 만들었을까요?</div>
+<div><span class="t">48:29</span>도안 아이디어 리셋트 두 가지</div>
+<div><span class="t">48:33</span>백돼리도 같이, 경고업무 기술이 꽤 많이 냈던 것 같아요.</div>
+<div><span class="t">48:40</span>논 아이디어 임팩트. 이게 뭡니까? 이론이랑 조금 다르게 나타나는 현상입니다.</div>
+<div><span class="t">48:46</span>여기서 이론이랑 뭐가 다른가?</div>
+<div><span class="t">48:50</span>VA가 계속 커지면</div>
+<div><span class="t">48:55</span>그 감수선을 무시하고</div>
+<div><span class="t">48:57</span>무시가 되기 때문에</div>
+<div><span class="t">49:00</span>얘는 마이너스 JS로 수형을 해야 되요.</div>
+<div><span class="t">49:03</span>실제로는 이렇게 조금씩 늘어나게 됩니다.</div>
+<div><span class="t">49:10</span>그리고 두껍이 늘어나다가</div>
+<div><span class="t">49:15</span>전용이 끊어져서 전용이 확 늘어난다고</div>
+<div><span class="t">49:25</span>그립다운이라고 얘기하면 되는데</div>
+<div><span class="t">49:28</span>얘는 왜 늘어나는 걸까? 전류가 조금씩 늘어나는 거</div>
+<div><span class="t">49:31</span>얘는 왜 늘어가는 걸까?</div>
+<div><span class="t">49:33</span>얘는 왜 저러는 거야?</div>
+<div><span class="t">49:37</span>이것이 사실 다 연결되어 있는데</div>
+<div><span class="t">49:42</span>요 그림으로도 우리가 이해할 수도 있습니다</div>
+<div><span class="t">49:45</span>자 그러니까 여러분들이</div>
+<div><span class="t">49:48</span>뭐 이렇게 생각하고 말하면 안 되고</div>
+<div><span class="t">49:51</span>제가 그래도 이겼잖아요</div>
+<div><span class="t">49:53</span>상식처럼 나와야 합니다.</div>
+<div><span class="t">49:58</span>1킬 포텐션이 없게 된 것.</div>
+<div><span class="t">50:01</span>리버스 바이오스에서는 뭐가 길어져? 공피증이? 길어져</div>
+<div><span class="t">50:09</span>생각해보면</div>
+<div><span class="t">50:11</span>공급증이 길어지면 반도체 영역의 면적이 늘어간다는 거죠</div>
+<div><span class="t">50:16</span>맞나요? 면적이 늘어나면 그 안에서 무슨 일이</div>
+<div><span class="t">50:21</span>1</div>
+<div><span class="t">50:31</span>간닥션 면에서 밸런스를 만들 수 있습니다.</div>
+<div><span class="t">50:37</span>이렇게 올라가면서 일렉트로 홀페어를 만들 수 있도록 하겠습니다.</div>
+<div><span class="t">52:20</span>생산 확률, 젠저레이션 확률은 더 늘어나요</div>
+<div><span class="t">52:24</span>무슨 말이냐? 이쪽 영역으로 갈 때 리버스 바이러스를 걸어주면 공급층이 더 늘어나죠</div>
+<div><span class="t">52:30</span>공피증 내부에서 생성된 것입니다.</div>
+<div><span class="t">52:36</span>재결하고 일렉트리슬링 때문에 안 일어나는데</div>
+<div><span class="t">52:51</span>이 쓰시기에 의하면 증가 안 해야 되는데 조금씩 증가하게 되는 거죠. 그렇죠?</div>
+<div><span class="t">52:56</span>이게 바로 넌 아이돌 이펙트 첫번째</div>
+<div><span class="t">53:00</span>리버스 바이오스</div>
+<div><span class="t">53:04</span>저희 노래 시작합니다</div>
+<div><span class="t">53:14</span>두 번째는 뭐냐면</div>
+<div><span class="t">53:17</span>이 수식, 여러분들, 그 EXPONENTIAL 수식이 나오면 여러분들 항상</div>
+<div><span class="t">53:22</span>데이터부터 확인할 때</div>
+<div><span class="t">53:25</span>제가 선생님 연구할 때도 항상 있을 것 같아요.</div>
+<div><span class="t">53:29</span>그럼 이걸 넘겨봅시다. L and J는 어떻게 돼?</div>
+<div><span class="t">53:34</span>그리고,</div>
+<div><span class="t">53:37</span>정하기 kt</div>
+<div><span class="t">53:40</span>예능이 이제 그한테는 좀 생략하고요</div>
+<div><span class="t">53:42</span>Kt분의 EVA인데 이 E는 이렇게 넘겨서</div>
+<div><span class="t">53:47</span>0.0259 이렇게 하면 되거든요</div>
+<div><span class="t">53:50</span>그러면 어떻게 돼요?</div>
+<div><span class="t">53:54</span>Y는 am</div>
+<div><span class="t">53:57</span>이렇게 되죠?</div>
+<div><span class="t">54:01</span>그래서 요거 전체를 위질로 잡게 되면</div>
+<div><span class="t">54:06</span>VA가 아니라 이거 전체를 x로 잡게 되면, 얘가 그냥 x 더하기 B라 말이야.</div>
+<div><span class="t">54:12</span>뭐냐면 이 그래프를 그렸잖아요</div>
+<div><span class="t">54:41</span>하게 되면</div>
+<div><span class="t">54:49</span>우연은 이렇게 나옵니다</div>
+<div><span class="t">54:53</span>왜냐하면</div>
+<div><span class="t">55:05</span>자, 요걸 보니까 기울기가 1이 나면 돼. 그죠? 요게 됐으니까.</div>
+<div><span class="t">55:09</span>근데 실제로는 어떻게 된다고요?</div>
+<div><span class="t">55:13</span>기울기가 1이 아니라 이렇게</div>
+<div><span class="t">55:19</span>2분의 1 지점과 이런 식으로</div>
+<div><span class="t">55:35</span>전압이 세지면 원래의 시대로 따라가는데</div>
+<div><span class="t">55:43</span>전압이 약할 때 원래 식 말고 뭔가 추가적인 요소가</div>
+<div><span class="t">55:50</span>안 나와?</div>
+<div><span class="t">55:53</span>그게 뭐냐면,</div>
+<div><span class="t">55:56</span>포노바이오스</div>
+<div><span class="t">56:05</span>첫번째 비 이상 효과가 리벌스 바이러스 효과입니다.</div>
+<div><span class="t">56:11</span>두 번째 비이사효과는 forward bias recombination current입니다.</div>
+<div><span class="t">56:16</span>4W가 되었으면 기본적으로 공피치가 어떻게 돼요?</div>
+<div><span class="t">56:20</span>공기층이 줄어들죠? 맞나요? 줄어들면은 일렉티브 줄 때가 어떻게 돼요?</div>
+<div><span class="t">56:25</span>줄어들지?</div>
+<div><span class="t">56:28</span>원래는 일렉트로몬이 쌩쌩 이렇게 지나가니까 둘이 못만나</div>
+<div><span class="t">56:34</span>그런데 포드 바이오스에서 엘렉티브 시즈가 줄어들면 얘가 만나면</div>
+<div><span class="t">56:40</span>재결합할 확률이</div>
+<div><span class="t">56:42</span>생긴다니까요, 그렇죠?</div>
+<div><span class="t">56:44</span>그게 무슨 말이야? 원래 절유가 흘러야 되는데</div>
+<div><span class="t">56:52</span>원래 홀이 이렇게 지나가야 전력이 흘러지는 거잖아</div>
+<div><span class="t">56:56</span>그런데 홀과 일렉트로니 지나가다가 요 사이에서</div>
+<div><span class="t">57:00</span>재결합을 할 가능성이 생긴다는 거예요.</div>
+<div><span class="t">57:03</span>맞죠? 재결화할 가능성이 생기더라</div>
+<div><span class="t">57:06</span>자 그럼 요 재결을 하게 되면은 그만큼 전류가 줄어들기 때문에</div>
+<div><span class="t">57:10</span>그래서 초반부</div>
+<div><span class="t">57:14</span>초과 후에 이런 비이상적인 효과가 나타나는 것 같아요.</div>
+<div><span class="t">57:18</span>후면 구간이 되면 사실 일렉터가 안가</div>
+<div><span class="t">57:26</span>포도 바이스가 더 세지면 일렉트리 필드가 더 줄어들어갈 수 있어요</div>
+<div><span class="t">57:34</span>공부시청이 너무 줄어들어가지고</div>
+<div><span class="t">57:38</span>이 딥플레이션 리전은 위치한 것입니다.</div>
+<div><span class="t">57:43</span>그래서 초반에 이 부위가 낮을때 그래도 공기줄 두개가 낮을때</div>
+<div><span class="t">57:48</span>언어도 있을 때 얘가 내려놓기 시작합니다.</div>
+<div><span class="t">57:50</span>그러면 이게 수식적으로 어떻게 나타냐?</div>
+<div><span class="t">57:55</span>여기에 N이 이렇게 붙게 되고요</div>
+<div><span class="t">58:00</span>N이 Ideality Factor 입니다.</div>
+<div><span class="t">58:04</span>그래서 1과 2 사이 각을 가지게 됩니다.</div>
+<div><span class="t">58:10</span>슬리공은 1.1에서 1.2</div>
+<div><span class="t">58:24</span>이런 다이어드 만들어서</div>
+</div></details>
+<p class="sub" style="margin-top:40px"><a href="#top">↑ 위로</a></p></div></body></html>

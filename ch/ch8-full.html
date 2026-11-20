@@ -84,6 +84,15 @@ sub,sup{font-size:11px}
 .top{position:fixed;right:16px;bottom:16px;background:var(--navy);color:#fff;
      padding:9px 14px;border-radius:22px;text-decoration:none;font-size:13px;opacity:.9}
 @media(max-width:640px){.wrap{padding:24px 13px 80px}h1{font-size:21px}.eq{white-space:normal}}
+
+/* 오프라인(한국어) 수업 */
+:root{--rv:#e8f6f2;--rvb:#1f8a78}
+h3.rvh{color:#176b5d;border-bottom-color:#9fd6cb;margin-top:34px}
+.said.rv{background:var(--rv);border-left-color:var(--rvb)}
+.said.rv b{color:#176b5d}
+.said.rv .ts{background:var(--rvb)}
+details.gnd{margin:6px 0 14px}details.gnd summary{cursor:pointer;color:#176b5d;font-size:13.5px}
+details.gnd img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;display:block}
 </style>
 </head>
 <body>
@@ -91,8 +100,9 @@ sub,sup{font-size:11px}
 <h1>반도체공학 Ch.8 — pn 접합 다이오드 · 강의 통합 해설</h1>
 <div class="intro">슬라이드 원문과 <b>그 쪽을 설명하던 강의 육성</b>을 한자리에 놓았다. 고등학교 수학(<b>미분 = 변화의 빠르기</b>)만 알면 읽히도록 풀었고, 전문 용어는 나올 때마다 일상어로 다시 설명한다. 원문에 있는 줄은 손글씨까지 하나도 빠뜨리지 않았고, 강의에서 한 말도 어느 쪽에 속하는지 전부 배정했다.</div>
 <div class="cov ok">강의 전사 <b>622줄 전부</b> 쪽별로 배정 완료 (커버리지 100%). 빠진 대목 없음.</div>
+<div class="cov ok"><b>+ 11/18 오프라인 수업</b>(녹음③ 58분 · 판서 사진 7장)을 2·4·9·11·14·15쪽 아래 <b>초록 상자</b>와 부록 BJT 에 합쳤다. 전사 전문·손글씨 정리는 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
 <div class="legend"><span><i class="chip c1"></i>원문</span><span><i class="chip c2"></i>손글씨 필기</span><span><i class="chip c5"></i>강의에서 한 말</span><span><i class="chip c6"></i>자료에 없는 내용</span><span><i class="chip c7"></i>강의 중 판서</span><span><i class="chip c3"></i>시험 포인트</span><span><i class="chip c4"></i>정리 · 배경</span></div>
-<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Course Overview</a><a href="#s3">3쪽 · Contents</a><a href="#s4">4쪽 · Charge Flow in a pn Junction</a><a href="#s5">5쪽 · Derivation of the Ideal Current-Voltage Relationship</a><a href="#s6">6쪽 · Boundary Condition</a><a href="#s7">7쪽 · Forward Bias: Boundary Condition</a><a href="#s8">8쪽 · Minority Carrier Distribution (1)</a><a href="#s9">9쪽 · Minority Carrier Distribution (2)</a><a href="#s10">10쪽 · Ideal pn Junction Current (1)</a><a href="#s11">11쪽 · Ideal pn Junction Current (2)</a><a href="#s12">12쪽 · Summary of Physics</a><a href="#s13">13쪽 · The "Short" Diode</a><a href="#s14">14쪽 · Generation-Recombination Currents</a><a href="#s15">15쪽 · Total Forward Bias Current</a><a href="#s16">16쪽 · Tunnel Diode</a><a href="#s901" class="apx">부록 · 부록</a><a href="#s902" class="apx">부록 · 부록</a></div>
+<div class="toc"><b>목차</b><a href="#s1">1쪽 · 표지</a><a href="#s2">2쪽 · Course Overview</a><a href="#s3">3쪽 · Contents</a><a href="#s4">4쪽 · Charge Flow in a pn Junction</a><a href="#s5">5쪽 · Derivation of the Ideal Current-Voltage Relationship</a><a href="#s6">6쪽 · Boundary Condition</a><a href="#s7">7쪽 · Forward Bias: Boundary Condition</a><a href="#s8">8쪽 · Minority Carrier Distribution (1)</a><a href="#s9">9쪽 · Minority Carrier Distribution (2)</a><a href="#s10">10쪽 · Ideal pn Junction Current (1)</a><a href="#s11">11쪽 · Ideal pn Junction Current (2)</a><a href="#s12">12쪽 · Summary of Physics</a><a href="#s13">13쪽 · The "Short" Diode</a><a href="#s14">14쪽 · Generation-Recombination Currents</a><a href="#s15">15쪽 · Total Forward Bias Current</a><a href="#s16">16쪽 · Tunnel Diode</a><a href="#s903" class="apx">부록 · 11/18 오프라인 — npn BJT</a><a href="#s901" class="apx">부록 · 부록</a><a href="#s902" class="apx">부록 · 부록</a></div>
 <h2 id="s1">1쪽<small>표지 — Ch.8 The pn Junction Diode</small></h2>
 <div class="row"><div class="orig">Semiconductor Engineering<br>Ch. 8 The pn Junction Diode<br>Dept. of Electrical Engineering · Jeongkyun Roh</div><div class="exp">반도체공학 8장, <b>pn 접합 다이오드</b>다. 노정균 교수님 강의다.<br>7장은 p와 n을 붙였을 때 <b>가만히 두면</b>(전압 0) 어떤 모양이 되는지 봤다. 8장은 여기에 <b>전압을 걸었을 때 전류가 얼마나 흐르나</b>를 식으로 만든다.<br>그 식이 다이오드의 J–V 식이다. 이 장의 목표는 이 식 하나를 유도하는 것이다.</div></div>
 <div class="said"><b>강의</b> <span class="ts">00:00</span> "반도체공학 챕터 8, pn junction diode 시작하도록 하겠습니다. 이번 챕터도 마찬가지로 챕터 오버뷰를 진행을 하고 진도를 나가 보도록 하죠."</div>
@@ -123,6 +133,18 @@ sub,sup{font-size:11px}
 <div class="said"><b>강의</b> <span class="ts">06:57</span> "추가로 나오는 것들은, 포워드 바이어스에서 일렉트릭 필드가 작아지는데 디플리션 영역 내부에서 제너레이션과 리컴비네이션이 일어나게 됩니다. … 그 효과도 고려해 줘야 되는 그런 것들도 추가로 배우게 될 겁니다."</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">07:31</span> 기호 약속. "<b>i 로 쓰면 전류, j 로 쓰면 전류 밀도</b>입니다." 슬라이드는 대부분 J(전류 밀도, A/cm²)로 쓰고 15쪽 마지막 식만 I 다. 면적을 곱하면 I 가 된다(65:03에서 다시 말함).</div>
 <div class="exam"><b>★ 강조</b> — 이 장의 목표는 <b>하나</b>: "다이오드의 전류–전압(I–V, J–V) 특성 식을 찾는 것"(06:25, 07:39, 08:03 세 번 반복). 그리고 "pn 접합 전류는 <b>drift 가 아니라 소수 캐리어의 diffusion</b>"(05:49) — 30:11 에서 영어로 한 번 더 못 박는다. 판서 사슬(excess minority carrier → ambipolar → current → J–V)은 서술형 "8장 유도 과정을 요약하라"의 답 골격이다.</div>
+<h3 class="rvh" id="rv18">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 00:00~08:31</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="board"><b>판서</b> <span class="ts">③00:17~08:31</span> w/o bias(thermal equilibrium) · forward bias · reverse bias 세 그림. 가운데 V<sub>bi</sub> → V<sub>bi</sub> − V<sub>a</sub>, W↓, "Ambipolar tr. eq" 동그라미 · 오른쪽 eV<sub>bi</sub> → e(V<sub>bi</sub> + V<sub>a</sub>), W↑. 아래 1번 그림 옆에 Built-in potential(V<sub>bi</sub>) · Depletion region(W) · pn = n<sub>i</sub>².<br><img src="img/ch78/n18_b06.jpg" alt="오프라인 판서 — 바이어스 3상황" loading="lazy" style="display:block;width:100%;max-width:820px;margin:8px 0;border:1px solid #ccc;border-radius:6px"></div>
+<div class="said rv"><b>오프라인</b> <span class="ts">②06:58</span> "여러분이 PN 정션을 [세] 가지 [상황으로] 경험을 해 볼 거예요." — 바이어스 없음 · forward · reverse</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③00:48</span> "여러분 이거 공핍층 그릴 때 [어느 쪽이 플러스인지] 헷갈리잖아. … 옛날에 공부할 때 [저도] 헷갈렸었는데 … <b>홀이 플러스니까 당연히 여기는 N<sub>A</sub>−</b>. 그래서 이 부분은 마이너스가 됩니다."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③01:36</span> "이 장벽 때문에, 이게 해석을 두 가지로 할 수 있는 거죠. <b>일렉트릭 필드 때문에</b> 일렉트론이 못 넘어가고 홀도 이렇게 … 이 일렉트릭 필드에 힘이 막고 있다 이렇게 해석을 해도 되고"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③02:37</span> "포워드 바이어스를 걸면 공핍층과 빌트인 포텐셜은 어떻게 됩니까? … 공핍층은? <b>얇아져. 줄어들고.</b>"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③04:51</span> "여러분들 이거는 그냥 '어떻게 되더라' 이렇게 생각하면 안 되고 <b>바로바로 나와야 돼</b>. 포워드면 공핍층이 줄어들고, 리버스면 공핍층이 늘어나는 것. … 상식. 그래서 이건 <b>고민해서는 안 되는 거예요</b>."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③05:14</span> "[평형에서는] 홀이 넘어가려는 것[확산]과 일렉트릭 필드에 의한 [힘이] 균형을 맞추고 있습니다. … 그런데 포워드 바이어스를 걸게 되면 … 확산이 일렉트릭 필드에 막혀 있었어요. … 또다시 확산을 시작해요."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③07:00</span> "여러분들 두 가지 면에서 얘기를 할 수 있는 거죠. <b>전기장에 막혀 있던 디퓨전이 다시 시작한다</b>고 생각해도 되고, <b>빌트인 포텐셜이 줄어들어서 넘어가기</b> [쉬워졌다고 해도 되고]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③07:15</span> "리버스 바이어스는 어때요? 공핍층이 늘어나요. 그러면 일렉트릭 필드도 세져요. … 원래 확산이 멈춰 있었죠? … 장벽이 더해졌죠?"</div>
+<div class="exam"><b>★ 강조 (오프라인)</b> — 바이어스 → 공핍층 폭·장벽 변화는 "생각하지 말고 바로". forward: 장벽 V<sub>bi</sub> − V<sub>a</sub>, W↓, 확산 재개 / reverse: 장벽 V<sub>bi</sub> + V<sub>R</sub>, W↑, E↑. 해석은 두 가지(① 전기장에 막힌 확산이 풀린다 ② 장벽이 낮아진다) 다 말할 수 있어야 한다.</div>
 <h2 id="s3">3쪽<small>Contents — 8장 지도</small></h2>
 <div class="row"><div class="orig">8.1 pn Junction Current</div><div class="exp">pn 접합에 흐르는 전류. 이 장의 본론이다. 이상적인 다이오드의 <b>J–V 식</b>(전류 밀도–전압 관계)을 유도한다.</div></div>
 <div class="row"><div class="orig">8.2 Generation-Recombination Currents and High-Injection Levels</div><div class="exp">8.1 의 이상적인 식이 실제와 어긋나는 이유 두 가지. 공핍층 안에서 전자·정공이 <b>생기거나(generation) 사라지는(recombination)</b> 데서 오는 전류, 그리고 전류를 아주 많이 흘릴 때(high injection).</div></div>
@@ -146,6 +168,14 @@ sub,sup{font-size:11px}
 <div class="said"><b>강의</b> <span class="ts">10:06</span> "Total potential barrier becomes the built-in potential barrier plus applied the reverse bias. So it becomes more difficult for electron and hole to diffuse into another region."</div>
 <div class="said"><b>강의</b> <span class="ts">11:08</span> "In these two cases, diffusion of electrons and holes are prevented because of high potential barrier. So there also exist high electric field in the depletion region and these field hold back diffusion … On the other hand, in the forward bias condition, the potential barrier is reduced. So diffusion of electron and hole becomes available. … there will be current flowing through the pn junction."</div>
 <div class="exam"><b>★ 시험 포인트</b> — 장벽 높이 세 개(eV<sub>bi</sub>, e(V<sub>bi</sub>+V<sub>R</sub>), e(V<sub>bi</sub>−V<sub>a</sub>))와 "역방향·0 은 확산 없음, 순방향은 확산 → 전류". 전압 극성(어느 쪽에 +)을 같이 쓴다.</div>
+<h3 class="rvh">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 08:31~12:03</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="board"><b>판서</b> <span class="ts">③08:31~11:45</span> w/o bias 그림 아래에 밴드 세 개를 겹쳐 그림 — 빨강 평형 eV<sub>bi</sub>, 초록·파랑으로 바이어스 걸었을 때 e(V<sub>bi</sub> + V<sub>a</sub>), E<sub>F</sub>.<br><img src="img/ch78/n18_b05.jpg" alt="오프라인 판서 — 바이어스 밴드" loading="lazy" style="display:block;width:100%;max-width:820px;margin:8px 0;border:1px solid #ccc;border-radius:6px"></div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③09:15</span> "얘가 이렇게 줄어드는 장벽의 크기가 포워드 바이어스에서 … 요만큼이었잖아. 근데 <b>더 정교하게 그리려면 두 가지가 고려가 더 되어야 돼요</b>. 전원을 걸어 주면서 아까 뭐가 바뀐다고 했습니까? <b>공핍층</b>."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③09:37</span> "휜다는 건 거기 <b>전하가 존재한다는 말</b>이에요."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③11:14</span> "휘어진 [영역이] 결국 뭘 의미한다? 공핍층. 전하가 존재하는 [영역]이기 때문입니다. 나중에 모스펫 가서 … 모스를 딱 처음 만들었는데 얘가 막 밴드가 휘어 있어. 그럼 여러분들이 이 밴드를 <b>플랫하게</b> 만들어 놓고 … 그건 나중에 뒤에 배울 거고."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">③09:57</span> <b>flat band voltage</b> — MOSFET 에서 휘어 있는 밴드를 평평하게 펴는 전압. "밴드가 휘었다 = 그 구간에 전하가 있다"는 같은 원리가 MOS(Ch.10)로 이어진다고 미리 짚었다.</div>
+<div class="key"><b>정리</b> 바이어스를 걸면 장벽 높이만 바뀌는 게 아니라 <b>휘는 구간의 길이(W)</b>도 바뀐다. forward 면 짧고 완만하게, reverse 면 길고 깊게. 휘어 있는 곳 = 공핍층 = 이온화된 도펀트 전하가 있는 곳.</div>
 <h2 id="s5">5쪽<small>Derivation of the Ideal Current-Voltage Relationship — 유도의 가정 6개</small></h2>
 <div class="row"><div class="orig">Basic assumptions to derive the Ideal Current-Voltage Relationship</div><div class="exp">이상적인 전류–전압 식을 유도하기 위해 깔고 가는 <b>기본 가정</b>들. "이상적(ideal)"이란 말은 이 가정들이 다 맞는다고 치겠다는 뜻이다. 8.2 는 이 가정이 깨지는 경우다.</div></div>
 <div class="row"><div class="orig">- The abrupt depletion layer approximation: the space charge regions have abrupt boundaries, and the semiconductor is neutral outside of the depletion region</div><div class="exp">① <b>공핍층 경계는 칼로 자른 듯 딱 끊긴다</b>(abrupt = 급격한). 공핍층 바깥은 전하가 0 인 <b>중성(neutral)</b> 영역이다. 7장에서 전기장을 그릴 때 쓴 그 가정이다.</div></div>
@@ -213,6 +243,25 @@ sub,sup{font-size:11px}
 <div class="only"><b>자료에 없음</b> <span class="ts">27:29</span> "먼 곳 = 열평형 값"이라는 경계 조건의 <b>물리적 이유</b>를 재결합으로 댔다. 과잉 소수 캐리어는 들어가면서 다수 캐리어와 재결합해 0 이 되므로, 전체 농도는 결국 열평형 값으로 "saturate"한다.</div>
 <div class="said"><b>강의</b> <span class="ts">29:08</span> "The excess minority carrier concentration exponentially decay with distance because diffused excess carriers recombine with the majority carrier. … total minority carrier concentration becomes the thermal equilibrium minority carrier concentration."</div>
 <div class="exam"><b>★ 시험 포인트</b> — 경계 조건 4개 → A = 0, D = 0 → 지수 감쇠 분포. 감쇠 이유는 "<b>다수 캐리어와의 재결합</b>"(슬라이드 빨간 글씨 + 말 두 번). 두 번째 결과식 분모 L<sub>p</sub> 는 L<sub>n</sub> 의 오기다(판서에서도 고치지 않음).</div>
+<h3 class="rvh">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 13:25~30:30</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="board"><b>판서</b> <span class="ts">③13:25~25:06</span> 평형(10¹⁶/10⁴, 10¹⁵/10⁵) → forward: 넘어온 minority 가 경계에서 솟았다가 지수적으로 감소, 아래에 "Diffusion current eD dn(x)/dx" · reverse: 가장자리에서 minority 가 줄어듦(F 화살표).<br><img src="img/ch78/n18_b07.jpg" alt="오프라인 판서 — minority 분포" loading="lazy" style="display:block;width:100%;max-width:820px;margin:8px 0;border:1px solid #ccc;border-radius:6px"></div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③13:41</span> "마이너리티는 소수잖아요. … 그런데 이 반도체 소자에서는 <b>마이너리티 캐리어</b>가 [중요해요] … 특히나 PN 접합에서는 마이너리티 캐리어를 무시하지 않습니다."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③14:27</span> "일렉트론이 넘어가죠? 홀은 넘어가면 뭐가 됩니까? N타입의 홀은 뭐예요? <b>마이너리티 캐리어</b>."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③15:09</span> "결국 전류를 만드는 것은 둘 중에 하나입니다. … 걔들을 움직이게 만드는 드라이빙 포스 두 가지 뭐요? <b>드리프트랑 디퓨전</b>. 전기 필드에 의한 [드리프트], 농도 차이의 디퓨전."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③17:46</span> "공핍층 내부는 [캐리어가] 있다 없다? <b>없다</b>."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③18:31</span> "PN은 n<sub>i</sub>², [그래서 minority 는] 이렇게 [그릴 수 있습니다]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③19:58</span> "이게 마치 <b>산을 오르는 거</b>랑 똑같잖아요? 이렇게 한라산이 있고 밑에 학생들이 1000명이 출발을 해. 그럼 1000명이 출발하더라도 도달하는 사람은 체력적으로 몇 명만 도달할 거 아니야? … 장벽을 넘어서 와야 되기 때문에."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③21:10</span> "10¹⁶승에서 100만 분의 1만 넘었다고 쳤습니다. <b>10¹⁰승이 넘어갑니다.</b> … [원래 minority 보다] 엄청 큰 애가 들어온 거야. 그럼 이 마이너리티 캐리어의 입장에서 … 캐리어 농도 차이가 어마어마하게 늘어나죠. … 메저리티 캐리어 입장에서는 그게 그거란 말이죠."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③21:52</span> "100만 분의 1만 넘어가더라도 농도 차이가 크고 <b>전류를 만들 수 있습니다</b>."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③22:02</span> "재결합이 일어나겠죠? … 그거를 풀면 얘가 이렇게 <b>익스포넨셜하게</b> 농도가 [줄어]. … 재결합하다가 어느 특정 지점에 가게 되면 더 이상 [변화가 없다]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③24:40</span> "그렇다면 전체 전류는 얘랑 얘에 의해서 결정이 된다고 봐도 됩니다. … 이건 사실 <b>모든 반도체 소자에 공통</b>입니다. … 이렇게 그래디언트가 있다."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③26:37</span> "[reverse 는 평형이랑] 한 가지 다른 게 있습니다. 뭘까? 한 가지 다른 게 뭐냐면, <b>일렉트릭 필드가 세게</b> [걸려 있어요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③27:18</span> "리버스 바이어스가 걸렸을 때는 이 끝에가 조금 이렇게 줄어들어요. … 필드가 세니까 <b>끝에 있는 애들이 끝에 존재할 수가 없어</b>."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③28:14</span> "캐리어 컨센트레이션을 그렸을 때 일정하지 않고 변화가 있으면 항상 뭐가 있다? … <b>이거는 전류가 있어요</b>. … 근데 뭐가 문제야? 크기가. 요건 전류가 있는데 얘만큼 크지는 않아. … 실제로는 얘가 훨씬 더 급격하고 얘는 미미해."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③29:21</span> "다이오드 곡선이 V랑 I 이렇게 그렸을 때, 포워드 쪽에서는 익스포넨셜하게 … 증가하는 [곡선이] 있고, 리버스는 전류가 [0이어야] … 실제로 [이상적인] 스위치라면 그렇겠지만 얘는 조금 [흘러요]. 요 조그만 흘리는 게 어디서 나는 거다? … 요거 때문이에요."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③30:15</span> "이걸 뭐 더 정확한 말로는 <b>리버스 [새추레이션 커런트]</b>, 쉽게 얘기하면 <b>리키지 커런트</b>."</div>
+<div class="exam"><b>★ 강조 (오프라인)</b> — "농도가 일정하지 않으면 항상 전류가 있다"(③28:20). forward 는 주입된 minority 의 기울기가 커서 큰 확산 전류, reverse 는 가장자리 minority 가 E 에 끌려 줄어든 기울기 → 아주 작은 reverse saturation(leakage) current. 그림으로 바로 그릴 수 있어야 한다.</div>
 <h2 id="s10">10쪽<small>Ideal pn Junction Current (1) — 경계에서 기울기를 잰다</small></h2>
 <div class="row"><div class="orig">Total current: due to diffusion of minority carrier<br>- hole diffusion current (at x = x<sub>n</sub>) + electron diffusion current (at x = −x<sub>p</sub>)</div><div class="exp"><b>전체 전류</b> = 소수 캐리어의 <b>확산 전류</b>로 계산한다. n 쪽 가장자리(x = x<sub>n</sub>)의 정공 확산 전류 + p 쪽 가장자리(x = −x<sub>p</sub>)의 전자 확산 전류.<br>왜 두 점 값을 그냥 더해도 되나? 5쪽 가정 ⑥ — 공핍층 안에서 각 전류가 일정하므로, x<sub>n</sub> 의 정공 전류 = −x<sub>p</sub> 의 정공 전류다. 그래서 한 단면에서 둘을 더한 것과 같다.</div></div>
 <div class="row"><div class="orig">(neglect any minority carrier drift current component because we assume the electric field is zero at the space charge edges)</div><div class="exp">소수 캐리어의 <b>drift(전기장에 끌려가는) 전류는 무시</b>한다. 공핍층 가장자리에서는 전기장이 0 이라고 가정했기 때문이다. 게다가 소수 캐리어는 수가 적어 drift 로 실어 나르는 양도 작다.</div></div>
@@ -240,6 +289,16 @@ sub,sup{font-size:11px}
 <div class="said"><b>강의</b> <span class="ts">36:00</span> "When V<sub>a</sub> becomes positive by more than a few kT over e, we can neglect this minus one. … by plotting ln J with respect to V<sub>a</sub>, then we can find the reverse saturation current density from the <b>y-intercept</b>."</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">36:17</span> ln J–V<sub>a</sub> 그래프의 쓰임: 측정한 I–V 로 직선을 그어 <b>y 절편에서 J<sub>s</sub> 를 뽑는다</b>. 슬라이드엔 그래프만 있고 이 용도는 말로만 했다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — 이상 다이오드 식과 J<sub>s</sub> 식, J<sub>s</sub> 의 이름이 붙은 이유(역방향에서 포화), 순방향 근사(−1 버림), ln J 그래프의 절편 = J<sub>s</sub>. 이 장의 목표 식이다.</div>
+<h3 class="rvh">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 46:28~48:09 · 53:14~55:13</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="board"><b>판서</b> <span class="ts">③46:28~55:13</span> J = J<sub>s</sub>exp(eV<sub>a</sub>/kT − 1) 동그라미, J<sub>s</sub> = eD<sub>p</sub>p<sub>n0</sub>/L<sub>p</sub> + eD<sub>n</sub>n<sub>p0</sub>/L<sub>n</sub> "reverse-biased saturation current" · J–V 곡선(∝ exp, −J<sub>s</sub>) · ln J = ln J<sub>s</sub> + V<sub>a</sub>/(kT/e) → y = ax + b.<br><img src="img/ch78/n18_b10.jpg" alt="오프라인 판서 — 이상 다이오드 식" loading="lazy" style="display:block;width:100%;max-width:820px;margin:8px 0;border:1px solid #ccc;border-radius:6px"></div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③46:28</span> "전류식을 구할 수 있습니다. 아까 제가 얘기한 것처럼 마이너리티 캐리어 [분포]가 … 이 부분에 대해서 <b>디퓨전 커런트</b>를 [계산]하면 이런 수식을 얻을 수가 있습니다. 강의에 있어요."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③47:08</span> "J<sub>s</sub>를 … <b>새추레이션 커런트</b>라고 불렀습니다. … 그래프를 그리게 되면 이런 그래프를 얻을 수가 있었습니다. 이게 Typical Diode [curve]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③47:50</span> "이 그래프에서 V<sub>A</sub>가 [마이너스로] 많이 간다고 치면 얘를 무시할 수 있잖아요. 이렇게 새추레이션 [되는 걸] 볼 수가 있습니다. 이게 우리가 유도하는 수식이에요. … 디퓨전 커런트를 통해서 유도한 [식]입니다."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③53:17</span> "그 익스포넨셜 수식이 나오면 여러분들 항상 … [로그를 취해서] 데이터부터 확인[해요]. 제가 연구할 때도 항상 [그렇게] … 그럼 이걸 넘겨 봅시다. ln J는 어떻게 돼?"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③53:42</span> "kT분의 eV<sub>A</sub>인데 이 e는 이렇게 넘겨서 <b>0.0259</b> 이렇게 하면 되거든요. … V<sub>A</sub>가 아니라 이거 전체를 x로 잡게 되면, 얘가 그냥 <b>ax + b</b>라 말이야."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③55:05</span> "기울기가 1이 나면 돼. … 근데 실제로는 어떻게 된다고요? 기울기가 1이 아니라 … <b>2분의 1</b> [쪽으로 가는] 지점이 [있어요]."</div>
+<div class="key"><b>정리</b> 이상 다이오드 식은 <b>minority carrier 분포의 경계 기울기 × eD</b> 로 나온 diffusion current 의 합이다. ln 을 취하면 V<sub>a</sub>/(kT/e) 에 대해 기울기 1인 직선 — 실측이 여기서 벗어나는 게 non-ideal effect(14·15쪽).</div>
 <h2 id="s12">12쪽<small>Summary of Physics — 다이오드 전류 이야기 한 장</small></h2>
 <div class="row"><div class="orig">Forward bias applied → lower the potential barrier → diffusion of electrons and holes → Electrons and holes are injected across the space charge region → the injected carriers become minority carriers → minority carriers diffuse from the junction and recombine with majority carriers</div><div class="exp">8.1 전체를 화살표 한 줄로 줄였다.<br>순방향 → <b>언덕이 낮아짐</b> → 전자·정공 <b>확산</b> → 공핍층을 건너 <b>주입</b> → 건너간 쪽에서 <b>소수 캐리어</b>가 됨 → 접합에서 멀어지며 확산하다 <b>다수 캐리어와 재결합</b>.<br>서술형으로 "순방향 전류가 흐르는 원리를 쓰라"고 하면 이 사슬을 그대로 쓴다.</div></div>
 <div class="row"><div class="orig">Minority carrier diffusion current densities<br>(x ≥ x<sub>n</sub>) J<sub>p</sub>(x) = (eD<sub>p</sub>p<sub>n0</sub>/L<sub>p</sub>)[exp(eV<sub>a</sub>/kT) − 1] exp((x<sub>n</sub> − x)/L<sub>p</sub>)<br>(x ≤ −x<sub>p</sub>) J<sub>n</sub>(x) = (eD<sub>n</sub>n<sub>p0</sub>/L<sub>n</sub>)[exp(eV<sub>a</sub>/kT) − 1] exp((x<sub>p</sub> + x)/L<sub>p</sub>)</div><div class="exp">10쪽은 가장자리 한 점의 값이었고, 여기는 <b>모든 위치 x 에서</b>의 소수 캐리어 확산 전류다. 가장자리에서 최대, 멀어질수록 지수적으로 줄어든다(9쪽 분포를 미분했으니 같은 지수가 붙는다). 두 번째 식 지수의 L<sub>p</sub> 는 역시 L<sub>n</sub> 이 맞다.</div></div>
@@ -294,6 +353,14 @@ sub,sup{font-size:11px}
 <div class="said"><b>강의</b> <span class="ts">58:00</span> "Once we consider the generation current, we now have the dependence of the applied reverse bias on the reverse bias current density. … as we increase the reverse bias further, then we also have the increased reverse bias current. So that's the <b>first non-ideal effect</b>. And the second thing we need to consider is the forward bias recombination current."</div>
 <div class="said"><b>강의</b> <span class="ts">59:39</span> "In the forward bias condition, this electric field is reduced. So low electric field in the space charge region means that there are some electron and hole stay in this depletion region. … existence of the electron and hole in this depletion region means that there is a possibility of recombination within the depletion region."</div>
 <div class="exam"><b>★ 시험 포인트</b> — 비이상 효과 두 개를 <b>짝으로</b>: ① 역방향 = 전기장 강함 → n·p ≈ 0 → 재결합 0, 생성만 → J<sub>gen</sub> ∝ n<sub>i</sub>W/τ<sub>0</sub>, 역전압에 따라 증가 ② 순방향 = 전기장 약함 → 공핍층에 전자·정공 존재 → 재결합 → J<sub>rec</sub> ∝ exp(eV<sub>a</sub>/2kT). "J<sub>s</sub> 는 V<sub>R</sub> 와 무관, J<sub>gen</sub> 은 W(V<sub>R</sub>) 를 통해 의존"을 말로 두 번 짚었다(55:08, 55:30).</div>
+<h3 class="rvh">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 48:17~53:04</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③48:17</span> "일단 <b>시험 문제 제가 많이 [냈던] 부분</b> 중에서 … [넌] 아이디얼 [이펙트] 두 가지 … 꽤 많이 냈던 것 같아요."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③48:40</span> "논 아이디얼 이펙트. 이게 뭡니까? <b>이론이랑 조금 다르게 나타나는 현상</b>입니다. … V<sub>A</sub>가 계속 커지면 [−1을] 무시하고 … 얘는 마이너스 J<sub>s</sub>로 수렴을 해야 돼요. <b>실제로는 이렇게 조금씩 늘어나게 됩니다.</b>"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③49:10</span> "그리고 [계속] 늘어나다가 … 전류가 확 늘어난다고 … <b>브레이크다운</b>이라고 얘기하면 되는데."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③50:01</span> "리버스 바이어스에서는 뭐가 길어져? 공핍층이? 길어져. … 공핍층이 길어지면 반도체 영역의 면적이 늘어간다는 거죠. … 면적이 늘어나면 그 안에서 … [전자가] 컨덕션 [밴드로] 이렇게 올라가면서 <b>일렉트론-홀 페어</b>를 만들 수 [있어요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③52:20</span> "생성 확률, <b>제너레이션 확률은 더 늘어나요</b>. … 리버스 바이어스를 걸어 주면 공핍층이 더 늘어나죠. … 공핍층 내부에서 생성된 것입니다. … 이 수식에 의하면 증가 안 해야 되는데 조금씩 증가하게 되는 거죠. 이게 바로 <b>논 아이디얼 이펙트 첫 번째</b>, 리버스 바이어스."</div>
+<div class="exam"><b>★ 강조 (오프라인)</b> — <b>시험 단골</b>(③48:17, 작년 필기 "22기출!!"). non-ideal ① reverse-bias generation current: reverse → W↑ → 공핍층 부피↑ → e–h 생성↑ → J<sub>R</sub> = J<sub>s</sub> + J<sub>gen</sub>, J<sub>gen</sub> = en<sub>i</sub>W/2τ<sub>0</sub> 이 V<sub>R</sub> 따라 커진다 → −J<sub>s</sub> 에서 포화하지 않고 조금씩 증가.</div>
 <h2 id="s15">15쪽<small>Total Forward Bias Current — ideality factor n</small></h2>
 <div class="row"><div class="orig">- The total forward bias current density = the recombination current + the ideal diffusion current densities<br>J = J<sub>rec</sub> + J<sub>D</sub> &nbsp; J<sub>D</sub> = J<sub>s</sub> exp(eV<sub>a</sub>/kT) &nbsp; J<sub>rec</sub> = J<sub>r0</sub> exp(eV<sub>a</sub>/2kT)</div><div class="exp">실제 <b>순방향 전류</b> = 재결합 전류 + 이상 확산 전류. J<sub>D</sub>(D = diffusion)는 11쪽 식에서 −1 을 버린 것이다.</div></div>
 <div class="row"><div class="orig">- When some of injected charge carriers are recombined in the space charge region, then additional charge carriers must be injected to compensate the recombination loss → recombination current</div><div class="exp">재결합 전류가 왜 "전류"인가: 주입된 캐리어 일부가 공핍층 안에서 재결합해 <b>없어지면</b>, 그 손실을 메우려고 전극에서 캐리어를 <b>더 넣어 줘야</b> 한다. 이 추가 공급분이 외부에서 보면 전류로 잡힌다.</div></div>
@@ -312,6 +379,14 @@ sub,sup{font-size:11px}
 <div class="said"><b>강의</b> <span class="ts">66:01</span> "If the pn junction diode has an IV relationship with the ideality factor close to 2, that means the non-ideal recombination current is dominant over the diffusion current. <b>So by obtaining this n value in the pn diode, we can evaluate the ideality of the pn junction diode.</b>"</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">66:08</span> ideality factor 의 <b>쓰임</b>: 만든 다이오드의 I–V 를 재서 n 을 구하면 그 다이오드가 얼마나 이상적인지 평가할 수 있다. 슬라이드엔 n ≈ 1, 2 의 뜻만 있다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — J = J<sub>rec</sub> + J<sub>D</sub>, 재결합 전류의 기원("추가 주입으로 손실 보충 — origin"), ln J 기울기 1 vs ½, ideality factor n ≈ 1(확산)·≈ 2(재결합)와 그 용도(이상성 평가). 그래프에서 낮은 전압은 재결합 직선, 높은 전압은 확산 직선을 따른다.</div>
+<h3 class="rvh">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 55:13~58:24</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③55:35</span> "전압이 세지면 원래의 식대로 따라가는데, <b>전압이 약할 때</b> 원래 식 말고 뭔가 추가적인 요소가 [나와요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③56:05</span> "첫 번째 비이상 효과가 리버스 바이어스 [제너레이션]이고 <b>두 번째 비이상 효과는 forward bias recombination current</b>입니다."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③56:16</span> "포워드가 되었으면 기본적으로 공핍층이 어떻게 돼요? 줄어들죠? … 일렉트릭 필드가 어떻게 돼요? 줄어들지? 원래는 일렉트론이 쌩쌩 이렇게 지나가니까 둘이 못 만나. 그런데 … 필드가 줄어들면 얘가 만나면 <b>재결합할 확률이 생긴다</b>니까요."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③57:06</span> "요 재결합을 하게 되면 그만큼 전류가 줄어들기 때문에 … <b>초반부</b>에 이런 비이상적인 효과가 나타나는 [거예요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③57:50</span> "그러면 이게 수식적으로 어떻게 나타나냐? 여기에 <b>n</b>이 이렇게 붙게 되고요. n이 <b>ideality factor</b>입니다. 그래서 1과 2 사이 값을 가지게 됩니다. <b>실리콘은 1.1에서 1.2</b>."</div>
+<div class="exam"><b>★ 강조 (오프라인)</b> — non-ideal ② forward-bias recombination current: forward → W↓, E↓ → 공핍층에서 e·h 가 만나 재결합 → 저전압에서 전류 손실 → ln J 기울기 1/2 (n ≈ 2, recombination dominant), 고전압에서 기울기 1 (n ≈ 1, diffusion dominant). J = J<sub>s</sub>[exp(eV<sub>a</sub>/nkT) − 1], Si n ≈ 1.1~1.2.</div>
 <h2 id="s16">16쪽<small>Tunnel Diode — 장벽을 뚫고 지나간다</small></h2>
 <div class="row"><div class="orig">- Degenerate semiconductors: Fermi levels lie in the conduction band or valence band</div><div class="exp"><b>축퇴 반도체(degenerate semiconductor)</b> = 도핑을 너무 많이 해서 페르미 준위가 밴드갭을 벗어나 n 형은 <b>전도대 안</b>, p 형은 <b>가전자대 안</b>까지 들어간 반도체(4장). 터널 다이오드는 p, n 양쪽을 다 이렇게 만든다.</div></div>
 <div class="row"><div class="orig">- As doping concentrations go high, the depletion region width decreases → direct tunneling from the conduction band of the n-type region to the valence band of the p-type region</div><div class="exp">도핑이 높을수록 <b>공핍층이 얇아진다</b>(7장: W ∝ 1/√N). 아주 얇아지면 n 쪽 전도대 전자가 언덕을 넘지 않고 <b>뚫고 지나가</b> p 쪽 가전자대의 빈자리로 바로 건너간다. 2장의 <b>터널링</b>(장벽이 얇으면 입자가 통과할 확률이 생김)이다.</div></div>
@@ -326,6 +401,23 @@ sub,sup{font-size:11px}
 <div class="said"><b>강의</b> <span class="ts">69:56</span> "In the reverse bias condition, we also have a direct tunneling from the valence band of the p-region to the conduction band of the n-region. So the current monotonically increases with the reverse bias voltage."</div>
 <div class="only"><b>자료에 없음</b> <span class="ts">68:32</span> 도핑이 높으니 <b>V<sub>bi</sub> 도 높다</b>(7장 V<sub>bi</sub> ∝ ln(N<sub>a</sub>N<sub>d</sub>)). 그래도 W 가 매우 얇아 터널링이 된다. 그리고 순방향 끝에서 전류가 다시 오르는 이유를 "터널링이 아니라 낮아진 장벽 때문(보통 다이오드의 확산 전류)"이라고 구분했다. 슬라이드엔 그림만 있다.</div>
 <div class="exam"><b>★ 시험 포인트</b> — "간단히만"(08:41) 다룬 쪽이지만 순서는 분명하다: 양쪽 degenerate(E<sub>F</sub> 가 밴드 안) → 도핑↑ → W↓ → 직접 터널링. 순방향 I–V: 증가(터널링) → 감소(밴드가 어긋남, 음성 미분 저항) → 다시 증가(장벽↓, 확산). 역방향: 단조 증가(p 가전자대 → n 전도대 터널링).</div>
+<h2 id="s903">부록<small>11/18 오프라인 — npn BJT 를 minority 분포로 이해하기</small></h2>
+<h3 class="rvh">오프라인 수업에서 (11/18 · 한국어)</h3>
+<div class="fig">11/18 강의실 수업 녹음 <b>녹음③ 30:55~45:26</b> 이 이 쪽 내용이다. 판서는 강의실 화면을 찍은 사진(쌓여 가는 판서는 마지막 상태 위주). 손글씨 정리본은 <a href="ch78-1118.html">11/18 수업 페이지</a>.</div>
+<div class="board"><b>판서</b> <span class="ts">③31:54~45:26</span> npn BJT: n⁺⁺ | p⁺ | n, 왼쪽 접합 Forward · 오른쪽 접합 Reverse, 그 아래 minority 분포(10², 10⁴, 10⁶). 오른쪽 위 "npn BJT · pnp BJT".<br><img src="img/ch78/n18_b08.jpg" alt="오프라인 판서 — npn BJT" loading="lazy" style="display:block;width:100%;max-width:820px;margin:8px 0;border:1px solid #ccc;border-radius:6px"></div>
+<div class="board"><b>판서</b> <span class="ts">③41:21~45:05</span> 같은 그림에 base 폭을 줄였을 때 분포를 덧그림.<br><img src="img/ch78/n18_b09.jpg" alt="오프라인 판서 — base 폭 줄이기" loading="lazy" style="display:block;width:100%;max-width:820px;margin:8px 0;border:1px solid #ccc;border-radius:6px"></div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③30:55</span> "여기에서 우리가 마이너리티 캐리어 분포를 [봤으니] … <b>BJT</b>를 이해할 수 있습니다. … 사실 BJT가 예전에는 학교에서 많이 배웠었는데 집적화에는 모스펫 … 그래서 BJT 학교에서 갈수록 안 배우긴 하는데."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③32:02</span> "[BJT는] 단자가 3개입니다. … 다이오드 [두 개가] 서로 마주 보고 있는 [모양] … 그러면 얘가 전류가 흐를 수가 있어요? … [그냥은] 전류가 안 흘러. 근데 얘가 흐르는 방법이 딱 한 가지가 있는데"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③33:10</span> "유일하게 이게 전류가 흐를 수 있는 게 뭐냐면, <b>이쪽은 포워드를 걸고, 이쪽은 리버스를 걸면</b> 전류가 흐를 수 있어요. 4가지 조합 중에서. 근데 그게 결국 이 마이너리티 캐리어 [분포]로부터"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③34:45</span> "이 BJT는 NPN이라고 하면 뭔가 좌우가 균형이 맞는 것처럼 보이는데 … 실제로는 균형이 [안 맞아요]. … 이 그림을 이렇게 그릴 수 있어야 돼요. … <b>농도가 높은 쪽에 공핍층이 많이 가요?</b>"</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③38:23</span> "지금 이쪽에서 발생하는 전류의 크기는 요 그래디언트 더하기 요 그래디언트 … 전류의 세기가 셉니다. 근데 이쪽에서 발생하는 전류는 어때? 이거 <b>리키지 커런트밖에 없잖아</b>. … 직렬, 여러분들 직렬이면 항상 전류가 같[아야] 되잖아. 그런데 전류가 같지 않기 때문에 [안 흘러요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③40:38</span> "[넘어온 일렉트론이] 여기서 재결합하면 다 없어져. … 그렇기 때문에 얘가 만드는 전류는 얼마 안 돼요. 어? 얘가 <b>다 떨어지기 전에 얘를 만나면</b> 어떻게 될까요? … 리버스니까 엄청난 힘이 세 가지고 끝에 [애들을 끌어가잖아]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③41:21</span> "이걸 <b>베이스</b>라고 하는데, 이 <b>베이스 사이즈를 좁게</b> 만들어요. … 너무 온 애가 다 없어지기 전에 엄청나게 힘이 센 영역을 만나게 되면 … [바로] 다 여기[로 넘어가요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③42:49</span> "BJT의 베이스를 짧게 만들면 마이너리티 캐리어 분포가 이렇게 됩니다. 그럼 여기에도 농도 차 있고 여기도 농도 차 있잖아."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③43:07</span> "여기에서 <b>홀이 넘어가 줘야 일렉트론도 넘어옵니다</b>. … 홀이 안 넘어가면 일렉트론도 못 [넘어와] … 그래서 이 조그만 전류가 … [큰 전류를 조절해요]."</div>
+<div class="said rv"><b>오프라인</b> <span class="ts">③43:42</span> "그래서 BJT를 <b>커런트 컨트롤</b> [소자라고] 얘기하잖아요. [MOSFET 은] 전압에 의해서 전류를 조정하는 것입니다. 근데 BJT는 이 전류를 이용해서 … 사실 BJT를 정확히 다 하려면 수식적으로 많이 들어갈 수 있어요."</div>
+<div class="only"><b>자료에 없음</b> <span class="ts">③30:55~45:26</span> 8장 슬라이드엔 BJT 가 없다. <b>minority 분포 그림을 응용 문제로</b> 보여 준 대목이다. 작년(2025-11-12) 필기에는 같은 그림 옆에 i<sub>C</sub> = α·i<sub>E</sub> (α ≈ 0.9~0.995), i<sub>C</sub> = β·i<sub>B</sub>, 이어서 Thyristor(SCR) pnpn 까지 적혀 있다.</div>
+<div class="key"><b>정리</b> npn BJT = pn 접합 두 개. 전류가 흐르는 조합은 <b>E 접합 forward + C 접합 reverse</b>(forward active) 하나. base 가 넓으면 주입된 전자가 재결합으로 사라져 C 쪽은 leakage 뿐 → base 를 좁히면 전자가 C 의 강한 전계에 바로 끌려가 큰 전류 → 작은 base 전류로 큰 전류를 제어(전류 제어 소자). MOSFET 은 전압 제어.</div>
 <h2 id="s901">부록<small>부록 — 마무리</small></h2>
 
 <div class="said"><b>강의</b> <span class="ts">70:29</span> "이렇게 해서 진도는 모두 나가 보았고요. 오늘도 긴 시간 동안 고생 많으셨습니다." — 다음 시간 예고나 공지는 없었다.</div>
